@@ -17,3 +17,23 @@ source_priority: "official-docs"
 
 Источник: [Next.js Docs](https://nextjs.org/docs).
 
+## Когда использовать
+
+Выбирай Next.js для SEO, full-stack React, Server Components, dashboards, SaaS, маркетплейсов, e-commerce и сайтов с preview/deploy workflow.
+
+## Когда не использовать
+
+Не выбирай Next.js для API-only backend, embedded SPA без SSR/SEO или команды, которая не готова понимать server/client boundary и caching.
+
+## Production-паттерны
+
+Server Components по умолчанию, Client Components только для интерактивности. Route Handlers для внешних API/webhooks. Metadata, image optimization, cache policy и env validation обязательны.
+
+## Частые ошибки
+
+Глобальный `"use client"`, секреты в client bundle, неявный cache, Route Handler без validation, server action без authorization, отсутствие loading/error states.
+
+## Проверка
+
+`next build`, typecheck, Playwright smoke, проверка protected routes, проверка metadata публичных страниц и отсутствие server-only env в client code.
+

@@ -15,3 +15,23 @@ source_priority: "official-docs"
 
 Источник: [Tailwind CSS Docs](https://tailwindcss.com/docs).
 
+## Когда использовать
+
+Используй Tailwind для быстрых production UI, где команда готова работать через tokens, utility classes и component extraction.
+
+## Когда не использовать
+
+Не используй Tailwind как замену UI-архитектуре. Если дизайн требует строгого enterprise design system с готовыми компонентами, одного Tailwind мало.
+
+## Production-паттерны
+
+Повторяемые композиции выноси в компоненты, tokens держи в config/theme, arbitrary values ограничивай, responsive states проверяй на реальных viewport.
+
+## Частые ошибки
+
+Копипастить длинные className без компонента, использовать случайные цвета/spacing, не учитывать dark mode, hover-only interactions на touch devices.
+
+## Проверка
+
+Visual review, responsive smoke, contrast, отсутствие overflow текста, отсутствие one-off palette drift.
+

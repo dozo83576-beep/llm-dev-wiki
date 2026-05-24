@@ -17,3 +17,23 @@ Production checklist: typed props, error boundaries для рискованны�
 
 Источник: [React Docs](https://react.dev/).
 
+## Когда использовать
+
+Используй React для интерактивных интерфейсов, dashboards, форм, rich UI, design systems и приложений, где component composition дает реальную выгоду.
+
+## Когда не использовать
+
+Не используй React как автоматический выбор для простого статического сайта, документации без интерактива или landing page, где Astro/HTML быстрее и проще.
+
+## Production-паттерны
+
+Компоненты маленькие, props typed, side effects изолированы, server state не смешивается с local UI state. Composition предпочтительнее глубокого prop drilling и глобального store.
+
+## Частые ошибки
+
+Хранить derived state, использовать global store для local UI, делать fetch в каждом компоненте, забывать cleanup effects, игнорировать accessibility.
+
+## Проверка
+
+Unit tests для logic hooks, component tests для сложных widgets, Playwright для user journeys, React profiler для подозрительных rerenders.
+

@@ -35,3 +35,11 @@ Design system нужен, когда интерфейс должен масшт�
 - Contrast и keyboard navigation.
 - Нет карточек внутри карточек и неконтролируемого overflow текста.
 
+## Частые ошибки
+
+Создать набор компонентов без tokens, менять primitives под конкретную страницу, использовать разные spacing шкалы, не документировать destructive/loading/disabled states.
+
+## Источники
+
+См. [[Shadcn|shadcn/ui]], [[Accessibility|Accessibility]] и [W3C Design Tokens Community Group](https://www.w3.org/community/design-tokens/).
+

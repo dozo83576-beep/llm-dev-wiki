@@ -35,5 +35,8 @@ Data fetching должен иметь явное место: Server Components, 
 - Integration: API contract.
 - E2E: loading/error/empty/success состояния.
 
-Источник: [Next.js data fetching](https://nextjs.org/docs/app/building-your-application/data-fetching), [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview).
+## Частые ошибки
 
+Дублировать один server state в нескольких stores, делать initial fetch через `useEffect` без причины, не задавать cache policy, смешивать sensitive server data с client props, не инвалидировать данные после mutation.
+
+Источник: [Next.js data fetching](https://nextjs.org/docs/app/building-your-application/data-fetching), [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview).

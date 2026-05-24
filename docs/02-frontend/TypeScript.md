@@ -15,3 +15,23 @@ TypeScript обязателен для production frontend/backend на JavaScri
 
 Источник: [TypeScript Docs](https://www.typescriptlang.org/docs/).
 
+## Когда использовать
+
+Используй TypeScript во всех production web-проектах на JavaScript-стеке: frontend, backend, scripts, shared contracts.
+
+## Когда не использовать
+
+Не отключай строгие проверки ради скорости. Для одноразового throwaway script можно упростить типы, но не переносить этот стиль в приложение.
+
+## Production-паттерны
+
+`strict: true`, typed public interfaces, inferred local types, runtime validation на IO boundaries, discriminated unions для состояний и ошибок.
+
+## Частые ошибки
+
+`any` на границе API, type assertions вместо validation, нестрогий tsconfig, дублирование типов между frontend/backend без генерации или shared package.
+
+## Проверка
+
+`tsc --noEmit`, type-level coverage для публичных contracts, negative tests для runtime validation.
+
