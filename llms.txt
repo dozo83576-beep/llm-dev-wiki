@@ -1,0 +1,31 @@
+# LLM Dev Wiki
+
+> Практическая русскоязычная база знаний для разработки frontend+backend сайтов, AI/RAG-приложений и production web-систем.
+
+## Core docs
+
+- [Overview](docs/00-start-here/overview.md)
+- [Document standard](docs/00-start-here/document-standard.md)
+- [Full cycle](docs/01-development-process/full-cycle.md)
+- [Stack selection](docs/01-development-process/stack-selection.md)
+- [Project playbooks](docs/13-playbooks/index.md)
+- [LLM indexing](docs/14-llm-indexing/index.md)
+
+## Rules
+
+- Не копировать чужие книги, статьи, курсы и документацию целиком.
+- Использовать собственные конспекты, ссылки на первоисточники и дату проверки.
+- Не сохранять секреты, токены, cookies, персональные данные и приватный код.
+- После проектов сохранять success/failure/lesson.
+
+## Prompts
+
+- [Create project](prompts/create-new-project.md)
+- [Code review](prompts/code-review.md)
+- [Security review](prompts/security-review.md)
+- [Update wiki](prompts/update-wiki.md)
+
+## Safety
+
+MCP и agent tools работают с минимальными правами. Production mutations, DNS, secrets, billing и destructive operations требуют явного подтверждения.
+
