@@ -1,0 +1,24 @@
+name: Technology updates
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  check-updates:
+    name: Check technology updates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run update check
+        shell: pwsh
+        run: |
+          $report = ./tools/check-updates.ps1
+          $report | Tee-Object -FilePath $env:GITHUB_STEP_SUMMARY
+

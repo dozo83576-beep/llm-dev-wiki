@@ -12,6 +12,126 @@ function Add-Failure {
     $Failures.Add($Message) | Out-Null
 }
 
+function Resolve-WikiLinkTarget {
+    param(
+        [string]$Target,
+        [System.IO.FileInfo]$SourceFile,
+        [string]$RootPath,
+        [System.IO.FileInfo[]]$MarkdownFiles
+    )
+
+    $cleanTarget = $Target.Trim()
+    if ([string]::IsNullOrWhiteSpace($cleanTarget)) {
+        return $true
+    }
+
+    $cleanTarget = ($cleanTarget -split "\|", 2)[0].Trim()
+    $cleanTarget = ($cleanTarget -split "#", 2)[0].Trim()
+
+    if ([string]::IsNullOrWhiteSpace($cleanTarget)) {
+        return $true
+    }
+
+    if ($cleanTarget -match "^[a-zA-Z][a-zA-Z0-9+.-]*:" -or $cleanTarget.StartsWith("#")) {
+        return $true
+    }
+
+    $candidateTargets = [System.Collections.Generic.List[string]]::new()
+    $normalizedTarget = $cleanTarget.Replace("/", [System.IO.Path]::DirectorySeparatorChar)
+
+    if ([System.IO.Path]::IsPathRooted($normalizedTarget)) {
+        $candidateTargets.Add($normalizedTarget) | Out-Null
+    }
+    elseif ($normalizedTarget.StartsWith(".")) {
+        $candidateTargets.Add((Join-Path $SourceFile.DirectoryName $normalizedTarget)) | Out-Null
+    }
+    elseif ($normalizedTarget.Contains([System.IO.Path]::DirectorySeparatorChar)) {
+        $candidateTargets.Add((Join-Path $RootPath $normalizedTarget)) | Out-Null
+        $candidateTargets.Add((Join-Path $SourceFile.DirectoryName $normalizedTarget)) | Out-Null
+    }
+    else {
+        $candidateTargets.Add((Join-Path $SourceFile.DirectoryName $normalizedTarget)) | Out-Null
+        $candidateTargets.Add((Join-Path $RootPath $normalizedTarget)) | Out-Null
+    }
+
+    $expandedCandidates = [System.Collections.Generic.List[string]]::new()
+    foreach ($candidate in $candidateTargets) {
+        $expandedCandidates.Add($candidate) | Out-Null
+        if ([System.IO.Path]::GetExtension($candidate) -eq "") {
+            $expandedCandidates.Add("$candidate.md") | Out-Null
+            $expandedCandidates.Add("$candidate.mdx") | Out-Null
+            $expandedCandidates.Add((Join-Path $candidate "index.md")) | Out-Null
+            $expandedCandidates.Add((Join-Path $candidate "index.mdx")) | Out-Null
+        }
+    }
+
+    foreach ($candidate in $expandedCandidates) {
+        if (Test-Path -LiteralPath $candidate) {
+            return $true
+        }
+    }
+
+    if (-not $cleanTarget.Contains("/") -and -not $cleanTarget.Contains('\')) {
+        $matchingNote = $MarkdownFiles | Where-Object {
+            [System.IO.Path]::GetFileNameWithoutExtension($_.Name) -eq $cleanTarget
+        } | Select-Object -First 1
+
+        if ($matchingNote) {
+            return $true
+        }
+    }
+
+    return $false
+}
+
+function Test-InternalLinks {
+    param(
+        [System.IO.FileInfo[]]$MarkdownFiles,
+        [string]$RootPath,
+        [System.Collections.Generic.List[string]]$Failures
+    )
+
+    foreach ($file in $MarkdownFiles) {
+        $inCodeBlock = $false
+        $lineNumber = 0
+        foreach ($line in Get-Content -LiteralPath $file.FullName) {
+            $lineNumber++
+            if ($line.TrimStart().StartsWith('```')) {
+                $inCodeBlock = -not $inCodeBlock
+                continue
+            }
+            if ($inCodeBlock) {
+                continue
+            }
+
+            $wikiMatches = [regex]::Matches($line, '\[\[([^\]]+)\]\]')
+            foreach ($match in $wikiMatches) {
+                $target = $match.Groups[1].Value
+                if (-not (Resolve-WikiLinkTarget -Target $target -SourceFile $file -RootPath $RootPath -MarkdownFiles $MarkdownFiles)) {
+                    Add-Failure $Failures ("Broken Obsidian link: {0}:{1} -> [[{2}]]" -f $file.FullName, $lineNumber, $target)
+                }
+            }
+
+            $markdownMatches = [regex]::Matches($line, '(?<!\!)\[[^\]]+\]\(([^)]+)\)')
+            foreach ($match in $markdownMatches) {
+                $target = $match.Groups[1].Value.Trim()
+                $target = ($target -split "\s+", 2)[0].Trim("<>").Trim()
+
+                if ([string]::IsNullOrWhiteSpace($target) -or
+                    $target.StartsWith("#") -or
+                    $target.StartsWith("mailto:") -or
+                    $target -match "^[a-zA-Z][a-zA-Z0-9+.-]*://") {
+                    continue
+                }
+
+                if (-not (Resolve-WikiLinkTarget -Target $target -SourceFile $file -RootPath $RootPath -MarkdownFiles $MarkdownFiles)) {
+                    Add-Failure $Failures ("Broken Markdown link: {0}:{1} -> {2}" -f $file.FullName, $lineNumber, $target)
+                }
+            }
+        }
+    }
+}
+
 $failures = [System.Collections.Generic.List[string]]::new()
 $rootPath = Resolve-Path -LiteralPath $Root
 $markdownFiles = Get-ChildItem -LiteralPath $rootPath -Recurse -File |
@@ -94,6 +214,8 @@ foreach ($relativePath in $requiredPaths) {
         Add-Failure $failures "Missing required path: $relativePath"
     }
 }
+
+Test-InternalLinks -MarkdownFiles $markdownFiles -RootPath $rootPath -Failures $failures
 
 Write-Host "Wiki audit"
 Write-Host "Root: $rootPath"

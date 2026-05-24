@@ -1,0 +1,150 @@
+[
+  {
+    "name": "Next.js",
+    "ecosystem": "npm",
+    "package": "next",
+    "currentVersion": "",
+    "docsUrl": "https://nextjs.org/docs",
+    "notes": "Full-stack React framework and App Router baseline."
+  },
+  {
+    "name": "React",
+    "ecosystem": "npm",
+    "package": "react",
+    "currentVersion": "",
+    "docsUrl": "https://react.dev/",
+    "notes": "UI runtime used by Next.js and SPA stacks."
+  },
+  {
+    "name": "TypeScript",
+    "ecosystem": "npm",
+    "package": "typescript",
+    "currentVersion": "",
+    "docsUrl": "https://www.typescriptlang.org/docs/",
+    "notes": "Type system and compiler for JavaScript projects."
+  },
+  {
+    "name": "Prisma",
+    "ecosystem": "npm",
+    "package": "prisma",
+    "currentVersion": "",
+    "docsUrl": "https://www.prisma.io/docs",
+    "notes": "TypeScript ORM and migration tooling."
+  },
+  {
+    "name": "NestJS",
+    "ecosystem": "npm",
+    "package": "@nestjs/core",
+    "currentVersion": "",
+    "docsUrl": "https://docs.nestjs.com/",
+    "notes": "Structured TypeScript backend framework."
+  },
+  {
+    "name": "Tailwind CSS",
+    "ecosystem": "npm",
+    "package": "tailwindcss",
+    "currentVersion": "",
+    "docsUrl": "https://tailwindcss.com/docs",
+    "notes": "Utility-first CSS framework."
+  },
+  {
+    "name": "Zod",
+    "ecosystem": "npm",
+    "package": "zod",
+    "currentVersion": "",
+    "docsUrl": "https://zod.dev/",
+    "notes": "Runtime validation for TypeScript."
+  },
+  {
+    "name": "FastAPI",
+    "ecosystem": "pypi",
+    "package": "fastapi",
+    "currentVersion": "",
+    "docsUrl": "https://fastapi.tiangolo.com/",
+    "notes": "Python API framework."
+  },
+  {
+    "name": "Django",
+    "ecosystem": "pypi",
+    "package": "django",
+    "currentVersion": "",
+    "docsUrl": "https://docs.djangoproject.com/",
+    "notes": "Python web framework."
+  },
+  {
+    "name": "SQLAlchemy",
+    "ecosystem": "pypi",
+    "package": "sqlalchemy",
+    "currentVersion": "",
+    "docsUrl": "https://docs.sqlalchemy.org/",
+    "notes": "Python SQL toolkit and ORM."
+  },
+  {
+    "name": "OpenAI Python SDK",
+    "ecosystem": "pypi",
+    "package": "openai",
+    "currentVersion": "",
+    "docsUrl": "https://platform.openai.com/docs",
+    "notes": "OpenAI API client for Python."
+  },
+  {
+    "name": "Qdrant",
+    "ecosystem": "github-releases",
+    "repository": "qdrant/qdrant",
+    "currentVersion": "",
+    "docsUrl": "https://qdrant.tech/documentation/",
+    "notes": "Vector database for RAG and semantic search."
+  },
+  {
+    "name": "pgvector",
+    "ecosystem": "github-releases",
+    "repository": "pgvector/pgvector",
+    "currentVersion": "",
+    "docsUrl": "https://github.com/pgvector/pgvector",
+    "notes": "PostgreSQL vector extension."
+  },
+  {
+    "name": "Model Context Protocol specification",
+    "ecosystem": "github-tags",
+    "repository": "modelcontextprotocol/specification",
+    "currentVersion": "",
+    "docsUrl": "https://modelcontextprotocol.io/docs",
+    "notes": "MCP specification and protocol updates."
+  },
+  {
+    "name": "PostgreSQL",
+    "ecosystem": "manual",
+    "currentVersion": "",
+    "docsUrl": "https://www.postgresql.org/docs/",
+    "notes": "Check major releases and documentation updates manually."
+  },
+  {
+    "name": "Docker",
+    "ecosystem": "manual",
+    "currentVersion": "",
+    "docsUrl": "https://docs.docker.com/",
+    "notes": "Check Docker Engine, Compose and security updates manually."
+  },
+  {
+    "name": "Vercel",
+    "ecosystem": "manual",
+    "currentVersion": "",
+    "docsUrl": "https://vercel.com/docs",
+    "notes": "Check platform, Next.js deployment and AI Gateway changes manually."
+  },
+  {
+    "name": "Cloudflare",
+    "ecosystem": "manual",
+    "currentVersion": "",
+    "docsUrl": "https://developers.cloudflare.com/",
+    "notes": "Check Workers, Pages, security and edge platform updates manually."
+  },
+  {
+    "name": "OWASP",
+    "ecosystem": "manual",
+    "currentVersion": "",
+    "docsUrl": "https://owasp.org/www-project-top-ten/",
+    "notes": "Check OWASP Top 10, WSTG and LLM Top 10 updates manually."
+  }
+]
+

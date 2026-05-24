@@ -9,6 +9,8 @@ source_priority: "internal"
 
 # LLM Dev Wiki
 
+[![Wiki audit](https://github.com/dozo83576-beep/llm-dev-wiki/actions/workflows/wiki-audit.yml/badge.svg)](https://github.com/dozo83576-beep/llm-dev-wiki/actions/workflows/wiki-audit.yml)
+
 Эта вики хранит практические знания для разработки сайтов и web-приложений: выбор стека, frontend, backend, базы данных, API, безопасность, MCP, AI-инструменты, DevOps, тестирование, промпты и проектные уроки.
 
 Основной источник правды: Git-репозиторий `dozo83576-beep/llm-dev-wiki`. Локальное хранилище Obsidian: `D:\frontend_raz`.
@@ -42,4 +44,3 @@ source_priority: "internal"
 - [Model Context Protocol Docs](https://modelcontextprotocol.io/docs)
 - [OpenAI Platform Docs](https://platform.openai.com/docs)
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-
