@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
 
 jobs:
   check-updates:
@@ -20,5 +21,67 @@ jobs:
         shell: pwsh
         run: |
           $report = ./tools/check-updates.ps1
-          $report | Tee-Object -FilePath $env:GITHUB_STEP_SUMMARY
+          $report | Tee-Object -FilePath technology-update-report.md
+          $report | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Encoding utf8
 
+      - name: Create or update review issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('technology-update-report.md', 'utf8');
+            const updates = Number((report.match(/Updates found:\s*(\d+)/) || [])[1] || 0);
+            const failures = Number((report.match(/Check failures:\s*(\d+)/) || [])[1] || 0);
+
+            if (updates === 0 && failures === 0) {
+              core.info('No technology updates or check failures found. No issue needed.');
+              return;
+            }
+
+            const title = 'Technology updates require wiki review';
+            const marker = '<!-- technology-update-monitor -->';
+            const body = `${marker}
+            # Technology updates require wiki review
+
+            The scheduled technology monitor found items that need human review.
+
+            ${report}
+
+            ## Required action
+
+            - Review the changed technologies against official documentation.
+            - Update affected wiki pages and front matter dates.
+            - Record major findings in \`lessons-learned\`, \`case-studies/successes\`, or \`case-studies/failures\`.
+
+            Workflow run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}
+            `;
+
+            const { owner, repo } = context.repo;
+            const existing = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'open',
+              per_page: 100
+            });
+
+            const issue = existing.data.find((item) =>
+              item.title === title && item.body && item.body.includes(marker)
+            );
+
+            if (issue) {
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: issue.number,
+                body
+              });
+              core.info(`Updated issue #${issue.number}`);
+            } else {
+              const created = await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                body
+              });
+              core.info(`Created issue #${created.data.number}`);
+            }

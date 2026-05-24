@@ -60,3 +60,13 @@ source_priority: "internal"
 
 Workflow `.github/workflows/technology-updates.yml` запускается раз в неделю и вручную через GitHub UI. Результат пишется в GitHub Actions summary.
 
+Если отчет содержит `Updates found > 0` или `Check failures > 0`, workflow создает или обновляет один открытый GitHub Issue с заголовком `Technology updates require wiki review`. Это предотвращает дубли задач и оставляет ревизию знаний ручным, осознанным шагом.
+
+## Как закрывать issue обновлений
+
+1. Открой issue и сравни отчет с официальной документацией.
+2. Обнови профильные документы в `docs/`, `stacks/`, `patterns` или `resources`.
+3. Если изменение существенно для будущих проектов, добавь `lessons-learned` или `case-studies`.
+4. Обнови `currentVersion` в `resources/technology-watchlist.json`, если хочешь отслеживать следующий drift от этой версии.
+5. Запусти `tools/wiki-audit.ps1` и `tools/check-updates.ps1`.
+6. Закрой issue после коммита обновлений.
