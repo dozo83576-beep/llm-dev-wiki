@@ -31,5 +31,21 @@ Spec генерируется из typed routes или проверяется в
 
 ## Проверка
 
-CI schema validation, contract tests, generated client build, diff review для breaking changes.
+CI schema validation, contract tests (`openapi-validator`), generated client build, diff review для breaking changes (`openapi-diff`), пример каждого response и request body.
+
+## Edge cases
+
+- Polymorphism: `oneOf` / `anyOf` / `discriminator` — генераторы клиентов справляются по-разному, тестировать.
+- Файловые поля (`multipart/form-data`) — особенности в TypeScript-генераторе.
+- Auth schemes: `bearerAuth`, OAuth2 flows, API keys — каждый endpoint должен явно указать `security`.
+- Schema reuse через `$ref` — следить за глубиной и циклами.
+
+## Security risks
+
+Раскрытие внутренних полей (debug, internal ids) в публичной schema, утечка структуры через `additionalProperties: true`, отсутствие auth-секции у defaults.
+
+## Источники
+
+- [OpenAPI Specification](https://spec.openapis.org/oas/latest.html) — проверено 2026-05-24.
+- См. [REST](REST.md), [Versioning](Versioning.md), [Contract testing](../09-testing/Contract-testing.md), [error-contract pattern](../../patterns/api/error-contract.md).
 

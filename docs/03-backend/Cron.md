@@ -36,7 +36,19 @@ Cron подходит для регулярных задач: billing sync, clea
 
 Проверь idempotency, distributed lock, повторный запуск, failure alert и safe resume после частичной обработки.
 
+## Edge cases
+
+- Пропущенный запуск во время downtime — нужна стратегия (catch-up vs skip) и явная политика.
+- Time zone и DST: фиксируй UTC и явный TZ в расписании, не "локальное серверное время".
+- Долгие jobs пересекаются с следующим запуском — нужен mutex и оповещение о переполнении.
+- Crash посередине: checkpoint / resume-точка, idempotent steps.
+- Tenant-aware jobs: запускать на каждый tenant отдельно с rate-limit, не в одну транзакцию.
+
+## Security risks
+
+Cron под привилегированной ролью с доступом ко всем tenants — minimal scope на job-уровне. Утечка через logs с user-payload. Cron, выполняющий пользовательский ввод (eval) — критическая дыра.
+
 ## Источники
 
-См. [[Background-jobs|Background jobs]], [[../08-devops-deploy/Incident-workflow|Incident workflow]].
+См. [Background jobs](Background-jobs.md), [Incident workflow](../08-devops-deploy/Incident-workflow.md).
 

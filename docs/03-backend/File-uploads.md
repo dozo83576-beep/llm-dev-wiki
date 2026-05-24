@@ -37,7 +37,19 @@ File upload — security boundary. Любой файл считается нед
 
 Не принимай файл через backend memory buffer, если ожидаются крупные файлы или высокая конкуренция. Direct-to-storage безопаснее и масштабируемее.
 
+## Edge cases
+
+- Resumable uploads (tus / multi-part) для крупных файлов и нестабильной сети.
+- EXIF / metadata strip перед публикацией изображений (могут содержать геоданные).
+- Path traversal в имени файла: всегда генерировать собственный storage path.
+- Race на overwrite: оптимистический lock по version или генерация уникального ключа.
+- Image resize / transcoding — отдельный async job, не в request handler.
+
+## Security risks
+
+SSRF при download from URL без allowlist, XSS через SVG со script тегом, malware download через `Content-Disposition: inline`, утечка чужих файлов через предсказуемые ID/ключи.
+
 ## Источники
 
-См. security guidance выбранного storage provider и [[../05-auth-security/Secrets|Secrets]].
+См. security guidance выбранного storage provider (S3 / R2 / GCS) и [Secrets](../05-auth-security/Secrets.md).
 

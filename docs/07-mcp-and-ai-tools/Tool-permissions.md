@@ -25,3 +25,23 @@ Tool permissions определяют, что агент может читать
 - Destructive operations требуют dry-run.
 - Секреты не передаются в model context.
 
+## Когда использовать
+
+Определяй tool permissions перед любым agent workflow, где есть filesystem, GitHub, DB, browser, deploy, cloud или внешние API.
+
+## Когда не использовать
+
+Не выдавай write permissions, если задача сводится к чтению, анализу, ревью или планированию.
+
+## Частые ошибки
+
+Один token для dev/staging/prod, отсутствие confirmation gates, broad filesystem access, неограниченные shell commands.
+
+## Проверка
+
+Permission matrix, audit logs, dry-run destructive commands, review enabled tools before execution.
+
+## Источники
+
+См. [[../../patterns/ai/mcp-read-only-default|MCP read-only default]], [[Prompt-injection|Prompt injection]].
+

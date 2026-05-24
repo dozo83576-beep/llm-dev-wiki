@@ -33,7 +33,19 @@ Backward-compatible additions, deprecation window, changelog, contract tests, ge
 
 API diff, contract tests для old/new clients, deprecation scan, changelog review.
 
+## Edge cases
+
+- URL versioning (`/v1/`) vs header (`Accept: application/vnd.api.v2+json`) — выбирай один стиль на проект.
+- Sunset header (`Sunset: Sat, 31 Dec 2026 23:59:59 GMT`) — стандартный способ объявить дату отключения версии.
+- Параллельное сосуществование v1 и v2: feature parity vs новый функционал только в v2.
+- Deprecation для отдельных полей внутри живой версии (`Deprecation: true` header).
+- Internal versioning через schema-evolution без bump'а URL — допустимо, если изменения backward-compatible.
+
+## Security risks
+
+Старая версия с известной CVE остаётся в production "потому что у клиентов нет апгрейда" — нужна явная политика и дата sunset. Утечка debug-полей в legacy version.
+
 ## Источники
 
-См. [[OpenAPI|OpenAPI]], [[REST|REST]].
+См. [OpenAPI](OpenAPI.md), [REST](REST.md), [Contract testing](../09-testing/Contract-testing.md).
 

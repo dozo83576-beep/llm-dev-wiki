@@ -33,5 +33,21 @@ DB session leak, blocking CPU work в async endpoint, business logic в route fu
 
 ## Проверка
 
-pytest для services, TestClient/httpx integration tests, OpenAPI contract checks, permission negative tests.
+pytest для services, TestClient/httpx integration tests, OpenAPI contract checks, permission negative tests, mypy/ruff на каждый PR.
+
+## Edge cases
+
+- Background tasks через `BackgroundTasks` хорош для лёгких задач, но не заменяет очередь (Celery/Arq/Dramatiq).
+- Async + блокирующие библиотеки (psycopg2 sync, requests) — нужны run_in_executor или async-альтернатива.
+- Dependency-overrides для тестов — следить, чтобы не утекало между тестами.
+- Стриминг (Server-Sent Events) — отдельный паттерн с `StreamingResponse`.
+
+## Security risks
+
+CORS slip с `allow_origins=["*"]`, утечка stack trace в JSON-ответе при DEBUG=True, отсутствие auth dependency по умолчанию — каждое route добавляет вручную.
+
+## Источники
+
+- [FastAPI Docs](https://fastapi.tiangolo.com/) — проверено 2026-05-24.
+- См. [Nodejs](Nodejs.md), [Background jobs](Background-jobs.md), [Error handling](Error-handling.md).
 

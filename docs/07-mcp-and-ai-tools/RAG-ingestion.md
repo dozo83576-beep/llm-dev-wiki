@@ -28,3 +28,19 @@ Ingestion превращает Markdown vault в searchable knowledge base. Ош
 - Устаревшие chunks удаляются при изменении файла.
 - Evals включают вопросы по stack selection, security, MCP и playbooks.
 
+## Когда не использовать
+
+Не строй ingestion pipeline, если корпус маленький и помещается в controlled prompt context. RAG нужен при росте объема и необходимости freshness.
+
+## Частые ошибки
+
+Индексировать черновики, не удалять stale chunks, терять source path, не хранить `updated`, игнорировать private data exclusions.
+
+## Проверка
+
+Dry-run ingestion, count chunks per document, retrieval evals, secret scan, freshness checks.
+
+## Источники
+
+См. [[../14-llm-indexing/chunking-policy|Chunking policy]], [[../14-llm-indexing/metadata-policy|Metadata policy]].
+

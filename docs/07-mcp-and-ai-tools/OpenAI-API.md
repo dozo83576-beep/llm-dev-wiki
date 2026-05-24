@@ -15,3 +15,23 @@ source_priority: "official-docs"
 
 Источник: [OpenAI Platform Docs](https://platform.openai.com/docs).
 
+## Когда использовать
+
+Используй OpenAI API для chat, structured extraction, tool-use agents, RAG/File Search, embeddings, classification и генерации контента.
+
+## Когда не использовать
+
+Не используй LLM для deterministic бизнес-правил, security decisions без проверки, billing logic и задач, где простая функция надежнее.
+
+## Production-паттерны
+
+Structured outputs, tool allowlist, request ids, usage/cost logging, evals, retries с backoff, timeout, content filtering по домену.
+
+## Частые ошибки
+
+Передавать secrets в prompt, не ограничивать tool calls, не делать evals, игнорировать latency/cost, не хранить traceability для ответов.
+
+## Проверка
+
+Evals, integration tests с mocked API, budget alerts, refusal/security probes, schema validation для structured output.
+

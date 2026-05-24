@@ -20,3 +20,27 @@ source_priority: "internal"
 
 По умолчанию MCP работает в read-only режиме.
 
+## Когда использовать
+
+Подключай server только когда он нужен текущему workflow: GitHub для PR/issues, Browser для UI, docs search для актуальной документации, DB для диагностики.
+
+## Когда не использовать
+
+Не подключай production DB, deploy, DNS, billing или secrets MCP без конкретной задачи, owner и confirmation policy.
+
+## Production-паттерны
+
+Минимальные scopes, отдельные credentials, read-only default, audit logs, documented purpose, periodic review of enabled servers.
+
+## Частые ошибки
+
+Оставить write tools включенными постоянно, дать filesystem root выше workspace, не ограничить database queries, не отключать unused servers.
+
+## Проверка
+
+MCP inventory review, permission review, dry-run для write tools, secret exposure check.
+
+## Источники
+
+См. [[MCP-overview|MCP overview]], [[Tool-permissions|Tool permissions]], [[../05-auth-security/MCP-security|MCP security]].
+

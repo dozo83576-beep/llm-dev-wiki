@@ -33,5 +33,21 @@ Session leak, lazy loading в hot path, бизнес-логика в model metho
 
 ## Проверка
 
-pytest integration tests, transaction rollback tests, query count, Alembic upgrade/downgrade на staging.
+pytest integration tests, transaction rollback tests, query count assertion (SQLAlchemy `event.listen`), Alembic upgrade/downgrade на staging, EXPLAIN на критичные запросы.
+
+## Edge cases
+
+- Async (SQLAlchemy 2.x async) — отдельная сессия, не миксовать с sync в одном scope.
+- Identity map: один и тот же объект из разных query — нюанс при тестах.
+- `expire_on_commit=True` (default) делает invalidation полей после commit — учитывать в API responses.
+- ORM relationships с `lazy="joined"` на больших коллекциях — потенциальный perf hit.
+
+## Security risks
+
+Mass-assignment через `**kwargs` без allowlist, raw SQL через `text()` с user-input без `:param`, утечка через repr модели в логах.
+
+## Источники
+
+- [SQLAlchemy Docs](https://docs.sqlalchemy.org/) — проверено 2026-05-24.
+- См. [PostgreSQL](PostgreSQL.md), [Migrations](Migrations.md), [Transactions](Transactions.md), [FastAPI](../03-backend/FastAPI.md).
 

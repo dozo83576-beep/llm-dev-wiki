@@ -33,5 +33,22 @@ TTL по умолчанию, key namespace, memory policy, cache stampede protec
 
 ## Проверка
 
-Integration tests на key builder/invalidation, load smoke, failure mode при недоступном Redis.
+Integration tests на key builder/invalidation, load smoke, failure mode при недоступном Redis (fallback / circuit breaker), memory eviction под нагрузкой.
+
+## Edge cases
+
+- Pub/sub at-most-once: для надёжной доставки бери Streams (XADD/XREAD) с consumer groups.
+- `KEYS *` на проде — блокирующий, используй `SCAN`.
+- Cluster vs standalone: разные ограничения на multi-key transactions и Lua.
+- TLS-only connections в managed сервисах (Upstash, ElastiCache).
+- Hot key в шардированном кластере — добавь user/tenant суффикс для распределения.
+
+## Security risks
+
+Default no-auth на open port (исторически частый incident), утечка через SSRF в Lua-скриптах, командная injection через user-input в имени ключа.
+
+## Источники
+
+- [Redis Docs](https://redis.io/docs/latest/) — проверено 2026-05-24.
+- См. [Caching](../03-backend/Caching.md), [Background jobs](../03-backend/Background-jobs.md).
 

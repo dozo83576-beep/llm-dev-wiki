@@ -36,4 +36,20 @@ source_priority: "official-docs"
 
 Сравни `EXPLAIN ANALYZE` до/после, проверь cardinality, index usage, p95 latency и отсутствие regressions для соседних запросов.
 
-Источник: [PostgreSQL EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html).
+## Edge cases
+
+- Partial indexes для запросов с устойчивым фильтром (`WHERE status = 'active'`) — дешевле полного индекса.
+- Index-only scan возможен только если все нужные колонки покрыты индексом — `INCLUDE (...)` в Postgres 11+.
+- Autovacuum на больших таблицах: следить за bloat и lag отдельно от запросов.
+- Plan flips при изменении статистики — `pg_stat_statements` + alert на регрессию p95.
+- Hot tables: рассмотреть partitioning по дате/tenant.
+
+## Security risks
+
+`EXPLAIN ANALYZE` выполняет запрос — на production с pii можно случайно засветить данные в логе плана. Открытый pg_stat_statements без auth.
+
+## Источники
+
+- [PostgreSQL EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html) — проверено 2026-05-24.
+- [Use The Index, Luke](https://use-the-index-luke.com/) — проверено 2026-05-24.
+- См. [PostgreSQL](PostgreSQL.md), [Database design](Database-design.md), [Migrations](Migrations.md).

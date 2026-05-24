@@ -37,7 +37,19 @@ Webhook endpoint должен быть идемпотентным, провер�
 
 Не используй webhook как замену синхронному API, если вызывающая сторона ожидает немедленный результат операции.
 
+## Edge cases
+
+- Out-of-order delivery: использовать `created_at` / event sequence, не порядок прихода.
+- Replays через webhook console провайдера — handler должен оставаться идемпотентным.
+- Signature через secret key — ротация требует overlap window с двумя валидными ключами.
+- HTTP 2xx даже при downstream failure — обрабатывать асинхронно с собственной retry-машиной.
+- Чрезвычайно большие payload (Stripe events с большими объектами) — буферизация в storage, не в memory.
+
+## Security risks
+
+Подмена событий без verify signature, IP spoofing если завязка на whitelist без подписи, replay attack без `event_id` cache, SSRF от webhook receiver, который тут же делает callback на user-controlled URL.
+
 ## Источники
 
-См. [[../../patterns/backend/webhook-idempotency|Webhook idempotency]], [[Background-jobs|Background jobs]].
+См. [Webhook idempotency](../../patterns/backend/webhook-idempotency.md), [Background jobs](Background-jobs.md), [Payments](Payments.md).
 

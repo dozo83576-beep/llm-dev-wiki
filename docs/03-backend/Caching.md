@@ -38,7 +38,18 @@ Cache нужен для снижения latency и нагрузки, но до�
 
 Не кэшируй данные, где stale result нарушает безопасность, платежи, права доступа или юридически значимые решения.
 
+## Edge cases
+
+- Cache stampede при expire популярного ключа: нужен probabilistic early expiration или single-flight lock.
+- Multi-region: разделять региональные кеши, не делиться через cross-region replication без контроля consistency.
+- Negative caching (cached "не найдено") — отдельный TTL, иначе долго не увидим появление данных.
+- Перегрев hot key в Redis — sharding по составному ключу или local in-process cache как L1.
+
+## Security risks
+
+Утечка чужих данных через неправильный key scope (cache key без user/tenant context), side-channel через timing на cache hit/miss, отравление кеша через user-controlled input в составе ключа.
+
 ## Источники
 
-См. [[../04-databases/Redis|Redis]], [[../02-frontend/Data-fetching|Data fetching]].
+См. [Redis](../04-databases/Redis.md), [Data fetching](../02-frontend/Data-fetching.md).
 

@@ -33,5 +33,21 @@ Drizzle выбирай, когда нужен TypeScript ORM ближе к SQL �
 
 ## Проверка
 
-Integration tests с PostgreSQL, migration dry-run, query plan для hot endpoints.
+Integration tests с PostgreSQL (Testcontainers / Docker), migration dry-run, query plan через `db.execute(sql\`EXPLAIN ANALYZE ...\`)` для hot endpoints.
+
+## Edge cases
+
+- Migrations через `drizzle-kit` генерятся из diff — ревьюить вручную перед apply.
+- Relations API хорош для типизации, но raw SQL остаётся лучшим инструментом для сложных аналитических запросов.
+- `prepare` для повторяющихся queries — выигрыш на hot path.
+- pg connection pool: тот же pgbouncer / Neon pooler, что и для Prisma.
+
+## Security risks
+
+Raw `sql\`\${userInput}\`` без `sql.placeholder` — потенциальный SQL injection. Открытые миграции с DROP/TRUNCATE без явного approval.
+
+## Источники
+
+- [Drizzle Docs](https://orm.drizzle.team/docs/overview) — проверено 2026-05-24.
+- См. [Prisma](Prisma.md), [Migrations](Migrations.md), [PostgreSQL](PostgreSQL.md).
 

@@ -33,7 +33,19 @@ RBAC отвечает “какие действия доступны роли�
 
 Permission matrix tests, object-level negative tests, audit для role/permission changes.
 
+## Edge cases
+
+- Inheritance ролей: явный `roles` граф или плоский — выбирать единый стиль, не миксовать.
+- Time-bound permissions (temporary admin) — TTL и audit на grant/revoke.
+- Impersonation (admin "стать" user) — отдельный actor в audit, ограниченные права.
+- Delegated administration: org-admin не должен повысить себя выше своих прав.
+- Permission caching: invalidation при изменении ролей; иначе пользователь "застрял" в старой роли.
+
+## Security risks
+
+Privilege escalation через mass-assignment в profile update, утечка через шумные error messages (`401 vs 403 vs 404`), отсутствие тестов на downgrade — пользователь сохраняет доступ после понижения роли.
+
 ## Источники
 
-См. [[Authorization|Authorization]], [[../../patterns/security/tenant-isolation|Tenant isolation]].
+См. [Authorization](Authorization.md), [tenant-isolation pattern](../../patterns/security/tenant-isolation.md), [deny-by-default pattern](../../patterns/security/deny-by-default.md).
 

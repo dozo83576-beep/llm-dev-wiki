@@ -1,15 +1,14 @@
 ---
-title: "pgvector"
+title: "pgvector (redirect)"
 category: "ai-tools"
 updated: "2026-05-24"
-status: "active"
-tags: ["pgvector", "postgresql"]
-source_priority: "official-docs"
+status: "redirect"
+tags: ["pgvector", "redirect"]
+source_priority: "internal"
 ---
 
 # pgvector
 
-pgvector выбирай, когда embeddings удобно хранить рядом с PostgreSQL-данными и нагрузка умеренная. Это снижает инфраструктурную сложность.
+Канонический документ переехал в раздел баз данных: [docs/04-databases/pgvector.md](../04-databases/pgvector.md).
 
-Источник: [pgvector GitHub](https://github.com/pgvector/pgvector).
-
+Этот файл оставлен как stub для совместимости с существующими ссылками.

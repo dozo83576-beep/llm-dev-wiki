@@ -25,3 +25,15 @@ Prompt injection — попытка внешнего контента измен
 
 Источник: [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/).
 
+## Когда использовать
+
+Проверяй prompt injection для RAG, browser automation, email/docs ingestion, MCP tools и любых сценариев с untrusted content.
+
+## Когда не использовать
+
+Не считай internal docs полностью trusted, если они могут включать внешние цитаты, issue text, web pages или user-generated content.
+
+## Частые ошибки
+
+Выполнять инструкции из retrieved document, смешивать tool output с system policy, передавать secrets в context, не разделять trusted/untrusted.
+

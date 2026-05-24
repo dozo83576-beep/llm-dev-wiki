@@ -13,3 +13,27 @@ source_priority: "internal"
 
 Запрещенный паттерн: агент получает широкие права, меняет много файлов без проверки и не фиксирует причины решений.
 
+## Когда использовать
+
+Используй agent workflow для разработки, code review, debugging, RAG maintenance, research synthesis и post-project knowledge capture.
+
+## Когда не использовать
+
+Не используй автономного агента для production mutation, billing, DNS, secret rotation или destructive operations без явного подтверждения.
+
+## Production-паттерны
+
+Small scoped task, explicit plan, limited tools, diff review, verification commands, commit hygiene, knowledge capture после завершения.
+
+## Частые ошибки
+
+Слишком широкий prompt, write tools без границ, отсутствие проверки, игнорирование user changes, нет записи success/failure.
+
+## Проверка
+
+Проверь plan, diff, test output, audit logs, отсутствие секретов и обновление relevant wiki knowledge.
+
+## Источники
+
+См. [[Tool-permissions|Tool permissions]], [[Prompt-injection|Prompt injection]], [[../../checklists/ai-agent-review|AI agent review]].
+

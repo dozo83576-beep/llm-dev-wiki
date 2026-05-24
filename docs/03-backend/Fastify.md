@@ -33,5 +33,21 @@ JSON schema validation, plugins для cross-cutting concerns, typed routes, ц�
 
 ## Проверка
 
-Unit tests для services, injection tests для routes, load smoke для hot endpoints.
+Unit tests для services, injection tests для routes (fastify.inject), load smoke для hot endpoints, schema validation tests на edge cases.
+
+## Edge cases
+
+- Plugin encapsulation: scope plugin к prefix через `register(plugin, { prefix: '/v1' })`, не глобально без причины.
+- Декораторы (`fastify.decorate`) не type-safe без явных module-аугментаций — добавить `.d.ts`.
+- Async hooks (preHandler / onRequest) для auth и rate-limit, не middleware-стиль Express.
+- Body limit по умолчанию 1 МБ — увеличивать осознанно, чтобы не открыть DoS.
+
+## Security risks
+
+Отключённая schema validation — невалидированный input уходит дальше. CORS-плагин без origin allowlist. Раскрытие stack trace через дефолтный error handler в production.
+
+## Источники
+
+- [Fastify Docs](https://fastify.dev/docs/latest/) — проверено 2026-05-24.
+- См. [Nodejs](Nodejs.md), [API architecture](API-architecture.md), [Error handling](Error-handling.md).
 

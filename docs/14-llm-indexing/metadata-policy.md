@@ -3,24 +3,64 @@ title: "Metadata policy"
 category: "llm-indexing"
 updated: "2026-05-24"
 status: "active"
-tags: ["metadata", "front-matter"]
+tags: ["metadata", "front-matter", "rag"]
 source_priority: "internal"
 ---
 
 # Metadata policy
 
-Каждый индексируемый документ должен иметь metadata.
+Metadata делает корпус фильтруемым и ранжируемым. Без неё retrieval отдаёт случайный шум; с ней — релевантные документы с понятным происхождением и свежестью.
 
-## Поля
+## Когда использовать
 
-- `title`: человекочитаемое название.
-- `category`: раздел.
-- `updated`: дата проверки.
-- `status`: active, draft, archived.
-- `tags`: ключевые темы.
-- `source_priority`: internal, official-docs, maintainer-repo, secondary.
+- Каждый Markdown-файл, попадающий в RAG-pipeline.
+- Любой документ из `docs/`, `patterns/`, `prompts/`, `checklists/`, `case-studies/`, `lessons-learned/`, `stacks/`.
 
-## Правило
+## Когда не использовать
 
-Документы без metadata индексируются с меньшим приоритетом или исключаются из production retrieval.
+- README, AGENTS.md, llms.txt и другие "корневые" файлы — у них своя структура.
+- Шаблоны (`_template*.md`) — фикстуры, не индексируются.
 
+## Обязательные поля
+
+- **`title`** (string) — человекочитаемое название, отображается в выдаче.
+- **`category`** (string) — основной раздел: `frontend`, `backend`, `database`, `security`, `ai-tools`, `playbooks`, `testing`, `devops`, `process`, `governance`, `llm-indexing`, `pattern`, `prompt`, `checklist`, `case-study`, `lesson`.
+- **`updated`** (YYYY-MM-DD) — дата последней содержательной проверки.
+- **`status`** (`active` | `draft` | `archived` | `redirect`) — управляет включением в production retrieval.
+- **`tags`** (list[string]) — ключевые темы. 2–6 тегов на документ.
+- **`source_priority`** (`official-docs` | `vendor-docs` | `internal` | `community`) — см. [source-priority.md](source-priority.md).
+
+## Опциональные поля
+
+- **`owner`** (string) — ответственный за актуальность (для крупных команд).
+- **`expires_at`** (YYYY-MM-DD) — дата, после которой документ требует обязательного re-review.
+- **`related`** (list[string]) — ссылки на родственные документы.
+- **`sources`** (list[string]) — список внешних источников.
+
+## Правила
+
+- **Документы без metadata** индексируются с пониженным приоритетом или исключаются из production retrieval — настраивается в `tools/build_embeddings.py`.
+- **`status: draft`** не попадает в production index, но виден в Obsidian.
+- **`status: archived`** исключается полностью; история остаётся в git.
+- **`status: redirect`** — короткий stub со ссылкой на канонический документ; индексируется только сама ссылка.
+- **`tags`** не должны дублировать `category` — теги дополняют, не повторяют.
+
+## CI-проверка
+
+- Front matter присутствует и валиден (YAML parser).
+- Все обязательные поля заполнены.
+- `updated` ≤ сегодня.
+- `category` из словаря (no тайпов).
+- `status` из словаря.
+- `tags` — массив строк, не пустой.
+
+## Частые ошибки
+
+- Title повторяет имя файла без улучшения читабельности.
+- Tags = весь словарь — теряется отличительный сигнал.
+- Старый `updated` после фактического обновления — freshness обманывает retrieval.
+- `category: misc` или `category: other` — затрудняет фильтрацию.
+
+## Источники
+
+- См. [Source priority](source-priority.md), [Chunking policy](chunking-policy.md), [Freshness checks](freshness-checks.md), [RAG file search](rag-file-search.md).

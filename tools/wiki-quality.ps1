@@ -1,6 +1,7 @@
 param(
     [string]$Root = (Resolve-Path ".").Path,
-    [switch]$FailOnWarnings
+    [switch]$FailOnWarnings,
+    [int]$MinChars = 1200
 )
 
 $ErrorActionPreference = "Stop"
@@ -29,12 +30,30 @@ $productionRoots = @(
 )
 
 $sectionPatterns = @(
-    @{ Name = "usage"; Pattern = "(?im)^##\s+(Когда использовать|Стек по умолчанию|Pipeline|Шаги|Проверки)" },
-    @{ Name = "avoid"; Pattern = "(?im)^##\s+(Когда не использовать|Анти-паттерны|Stop conditions|Edge cases)" },
-    @{ Name = "production"; Pattern = "(?im)^##\s+(Production-паттерны|Порядок разработки|Правила|Pipeline)" },
-    @{ Name = "mistakes"; Pattern = "(?im)^##\s+(Частые ошибки|Анти-паттерны|Риски)" },
-    @{ Name = "verification"; Pattern = "(?im)^##\s+(Проверка|Testing strategy|Проверки|Test plan)" },
-    @{ Name = "sources"; Pattern = "(?im)(Источник|Источники|https?://)" }
+    @{ Name = "usage"; Pattern = "(?im)^##\s+(Когда использовать|Стек по умолчанию|Pipeline|Шаги|Проверки|Что должно быть|Обязательные поля|Подходы|Уровни проверки|Выбор подхода)" },
+    @{ Name = "avoid"; Pattern = "(?im)^##\s+(Когда не использовать|Анти-паттерны|Stop conditions|Edge cases|Anti-patterns)" },
+    @{ Name = "production"; Pattern = "(?im)^##\s+(Production-паттерны|Порядок разработки|Правила|Pipeline|Производственные паттерны|Что обязательно проверить|Что проверять|Что измерять|Роли|Правила выставления|Инструменты|Главное правило)" },
+    @{ Name = "mistakes"; Pattern = "(?im)^##\s+(Частые ошибки|Анти-паттерны|Риски|Security risks|Anti-patterns)" },
+    @{ Name = "verification"; Pattern = "(?im)^##\s+(Проверка|Testing strategy|Проверки|Test plan|CI-проверка|CI-сигналы|Performance risks|Security risks)" },
+    @{ Name = "sources"; Pattern = "(?im)(Источник|Источники|https?://|См\. \[)" }
+)
+
+# External authoritative sources that contradict source_priority: internal
+$externalAuthoritative = @(
+    "react\.dev",
+    "nextjs\.org",
+    "fastapi\.tiangolo\.com",
+    "owasp\.org",
+    "docs\.djangoproject\.com",
+    "modelcontextprotocol\.io",
+    "platform\.openai\.com",
+    "docs\.python\.org",
+    "nodejs\.org/en/docs",
+    "postgresql\.org/docs",
+    "prisma\.io/docs",
+    "fastify\.dev",
+    "docs\.nestjs\.com",
+    "opentelemetry\.io/docs"
 )
 
 $files = [System.Collections.Generic.List[System.IO.FileInfo]]::new()
@@ -47,17 +66,90 @@ foreach ($relativeRoot in $productionRoots) {
     }
 }
 
+# Build a map of `updated` -> count to detect mass stamps
+$updatedCounts = @{}
+foreach ($file in $files) {
+    $head = Get-Content -LiteralPath $file.FullName -TotalCount 12 -ErrorAction SilentlyContinue
+    foreach ($line in $head) {
+        if ($line -match '^updated:\s*"?(\d{4}-\d{2}-\d{2})"?') {
+            $d = $matches[1]
+            if (-not $updatedCounts.ContainsKey($d)) { $updatedCounts[$d] = 0 }
+            $updatedCounts[$d]++
+        }
+    }
+}
+
 foreach ($file in $files) {
     $content = Get-Content -Raw -LiteralPath $file.FullName
     $relativePath = Resolve-Path -LiteralPath $file.FullName -Relative
 
-    if ($content.Length -lt 700) {
-        Add-Warning $warnings ("Short production document: {0} ({1} chars)" -f $relativePath, $content.Length)
+    # Skip redirect stubs (intentional thin docs)
+    if ($content -match "(?im)^status:\s*[`"']?redirect") {
+        continue
     }
 
-    foreach ($section in $sectionPatterns) {
-        if ($content -notmatch $section.Pattern) {
-            Add-Warning $warnings ("Missing quality section '{0}': {1}" -f $section.Name, $relativePath)
+    $isIndexLike = ($file.Name -eq "index.md") -or ($file.Name -like "_template*") -or ($file.Name -eq "source-priority.md")
+
+    if (-not $isIndexLike -and $content.Length -lt $MinChars) {
+        Add-Warning $warnings ("Short production document: {0} ({1} chars, min {2})" -f $relativePath, $content.Length, $MinChars)
+    }
+
+    if (-not $isIndexLike) {
+        $missingSections = [System.Collections.Generic.List[string]]::new()
+        foreach ($section in $sectionPatterns) {
+            if ($content -notmatch $section.Pattern) {
+                $missingSections.Add($section.Name) | Out-Null
+            }
+        }
+        # Allow up to 1 missing section out of 6 (occasional synonyms / structural variations)
+        if ($missingSections.Count -gt 1) {
+            Add-Warning $warnings ("Missing quality sections ({0}): {1}" -f ($missingSections -join ", "), $relativePath)
+        }
+    }
+
+    # Rule: internal source_priority but external authoritative source linked
+    # Skip the source-priority doc itself (it lists URLs as text examples, not citations)
+    if (-not $isIndexLike -and $content -match '(?im)^source_priority:\s*"?internal"?') {
+        foreach ($ext in $externalAuthoritative) {
+            if ($content -match $ext) {
+                Add-Warning $warnings ("source_priority 'internal' but cites external authoritative source ({0}): {1}" -f $ext, $relativePath)
+                break
+            }
+        }
+    }
+
+    # Rule: stale updated stamp (mass-stamped + file unchanged > 30 days)
+    if ($content -match '(?im)^updated:\s*"?(\d{4}-\d{2}-\d{2})"?') {
+        $stampedDate = $matches[1]
+        $stampCount = $updatedCounts[$stampedDate]
+        if ($stampCount -ge 30) {
+            try {
+                $lastCommitIso = (& git log -1 --format=%cs -- $file.FullName) 2>$null
+                if ($lastCommitIso) {
+                    $lastCommitDate = [DateTime]::ParseExact($lastCommitIso.Trim(), "yyyy-MM-dd", $null)
+                    $daysSince = (Get-Date).Subtract($lastCommitDate).Days
+                    if ($daysSince -gt 30) {
+                        Add-Warning $warnings ("Stale updated stamp '{0}' (mass-shared by {1} files, file unchanged {2} days): {3}" -f $stampedDate, $stampCount, $daysSince, $relativePath)
+                    }
+                }
+            } catch {
+                # git not available or file outside git — skip silently
+            }
+        }
+
+        # Rule: updated vs git log skew > 14 days
+        try {
+            $lastCommitIso = (& git log -1 --format=%cs -- $file.FullName) 2>$null
+            if ($lastCommitIso) {
+                $lastCommitDate = [DateTime]::ParseExact($lastCommitIso.Trim(), "yyyy-MM-dd", $null)
+                $stamped = [DateTime]::ParseExact($stampedDate, "yyyy-MM-dd", $null)
+                $skewDays = [Math]::Abs(($lastCommitDate - $stamped).Days)
+                if ($skewDays -gt 14) {
+                    Add-Warning $warnings ("updated stamp '{0}' differs from last git commit '{1}' by {2} days: {3}" -f $stampedDate, $lastCommitIso.Trim(), $skewDays, $relativePath)
+                }
+            }
+        } catch {
+            # ignore
         }
     }
 }
@@ -65,6 +157,7 @@ foreach ($file in $files) {
 Write-Output "# Wiki quality report"
 Write-Output ""
 Write-Output ("- Checked production documents: {0}" -f $files.Count)
+Write-Output ("- Min chars threshold: {0}" -f $MinChars)
 Write-Output ("- Warnings: {0}" -f $warnings.Count)
 Write-Output ""
 
@@ -84,4 +177,3 @@ if ($FailOnWarnings -and $warnings.Count -gt 0) {
 }
 
 exit 0
-

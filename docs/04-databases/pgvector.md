@@ -35,4 +35,18 @@ pgvector добавляет vector search в PostgreSQL. Это хороший �
 
 Retrieval evals, metadata filter tests, переиндексация sample vault, проверка latency на типовых запросах.
 
-Источник: [pgvector](https://github.com/pgvector/pgvector).
+## Edge cases
+
+- Индексы: IVFFlat — быстро, требует `lists` tuning после roll-в данных; HNSW — точнее, дороже по памяти.
+- Distance op: cosine (`<=>`), inner product (`<#>`), L2 (`<->`) — выбирать под embeddings model.
+- Recreate index после массового insert: накопил данные → отверстие в качестве, нужен `REINDEX`.
+- Embeddings model bump: новая модель = новая колонка / отдельный namespace, не переписывать поверх.
+
+## Security risks
+
+Утечка между tenants через общий vector index без metadata-фильтра; SQL injection в filter clause при динамической сборке запроса; exfiltration через retrieval (модель пересказывает чужие данные).
+
+## Источники
+
+- [pgvector GitHub](https://github.com/pgvector/pgvector) — проверено 2026-05-24.
+- См. [Vector databases](../07-mcp-and-ai-tools/Vector-databases.md), [RAG](../07-mcp-and-ai-tools/RAG.md), [Qdrant](../07-mcp-and-ai-tools/Qdrant.md).
