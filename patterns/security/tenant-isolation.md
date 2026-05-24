@@ -4,6 +4,7 @@ category: "patterns"
 updated: "2026-05-24"
 status: "active"
 tags: ["security", "multi-tenancy", "saas"]
+source_priority: "internal"
 ---
 
 # Tenant isolation
@@ -33,4 +34,3 @@ Tenant isolation предотвращает доступ пользовател�
 Negative tests: user A не читает, не меняет и не экспортирует объекты tenant B.
 
 Источники: [Multi-tenancy](../../docs/04-databases/Multi-tenancy.md), [Security review](../../checklists/security-review.md).
-

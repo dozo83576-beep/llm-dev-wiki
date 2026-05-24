@@ -4,6 +4,7 @@ category: "patterns"
 updated: "2026-05-24"
 status: "active"
 tags: ["backend", "jobs", "retry"]
+source_priority: "internal"
 ---
 
 # Background job retry
@@ -33,4 +34,3 @@ Email, webhooks, imports, AI jobs, billing sync, report generation.
 Integration tests: transient failure succeeds on retry, permanent failure moves to dead-letter, duplicate job safe.
 
 Источники: [Background jobs](../../docs/03-backend/Background-jobs.md).
-

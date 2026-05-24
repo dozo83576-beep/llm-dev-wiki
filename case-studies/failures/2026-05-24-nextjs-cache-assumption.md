@@ -1,10 +1,14 @@
 ---
 title: "Ошибка: неявное предположение о cache в Next.js"
-project_type: "SaaS"
-stack: ["Next.js"]
-severity: "high"
-date: "2026-05-24"
+category: "case-study"
+updated: "2026-05-24"
+status: "active"
 tags: ["nextjs", "cache", "data-fetching"]
+source_priority: "internal"
+date: "2026-05-24"
+project_type: "SaaS"
+severity: "high"
+stack: ["Next.js"]
 ---
 
 # Что пошло не так
@@ -36,4 +40,3 @@ tags: ["nextjs", "cache", "data-fetching"]
 # Связанные чеклисты
 
 [Data fetching](../../docs/02-frontend/Data-fetching.md), [Frontend review](../../checklists/frontend-review.md).
-

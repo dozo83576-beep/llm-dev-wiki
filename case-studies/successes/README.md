@@ -1,3 +1,12 @@
+---
+title: "Success case studies"
+category: "case-study"
+updated: "2026-05-24"
+status: "validated"
+tags: []
+source_priority: "internal"
+---
+
 # Success case studies
 
 В этой папке хранятся проверенные решения, которые можно повторять в будущих проектах.
@@ -16,4 +25,3 @@
 ## Правило
 
 Success case должен объяснять не только “что сделали”, но и “почему это сработало” и “где это не применять”.
-

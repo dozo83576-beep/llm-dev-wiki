@@ -4,6 +4,7 @@ category: "patterns"
 updated: "2026-05-24"
 status: "active"
 tags: ["ai", "rag", "metadata"]
+source_priority: "internal"
 ---
 
 # RAG metadata
@@ -33,4 +34,3 @@ RAG без metadata быстро превращается в поиск по н�
 Evals на retrieval с фильтрами по category/source_priority и проверкой citations.
 
 Источники: [Metadata policy](../../docs/14-llm-indexing/metadata-policy.md), [success case](../../case-studies/successes/2026-05-24-rag-metadata-first.md).
-

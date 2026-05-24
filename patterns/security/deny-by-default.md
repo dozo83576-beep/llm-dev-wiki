@@ -4,6 +4,7 @@ category: "patterns"
 updated: "2026-05-24"
 status: "active"
 tags: ["security", "authorization"]
+source_priority: "internal"
 ---
 
 # Deny by default
@@ -11,4 +12,3 @@ tags: ["security", "authorization"]
 Если право явно не разрешено, действие запрещено. Это базовый принцип authorization, MCP permissions и infrastructure access.
 
 Проверка: есть тесты, что пользователь не может читать или менять чужие объекты.
-

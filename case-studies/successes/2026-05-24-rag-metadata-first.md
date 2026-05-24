@@ -1,10 +1,13 @@
 ---
 title: "Успешное решение: metadata-first RAG"
+category: "case-study"
+updated: "2026-05-24"
+status: "validated"
+tags: ["rag", "metadata", "llm-indexing"]
+source_priority: "internal"
+date: "2026-05-24"
 project_type: "ai-app"
 stack: ["OpenAI API", "pgvector", "Markdown"]
-status: "validated"
-date: "2026-05-24"
-tags: ["rag", "metadata", "llm-indexing"]
 ---
 
 # Контекст
@@ -34,4 +37,3 @@ Wiki audit, sample retrieval queries, evals по stack/security/MCP вопрос
 # Ссылки
 
 [RAG ingestion](../../docs/07-mcp-and-ai-tools/RAG-ingestion.md), [RAG/File Search](../../docs/14-llm-indexing/rag-file-search.md).
-

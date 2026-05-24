@@ -9,7 +9,7 @@ source_priority: "internal"
 
 # Secrets
 
-Секреты не хранятся в Git, Obsidian, промптах, скриншотах и логах. Используй env vars, secret manager платформы, rotation policy и least privilege.
+Секреты не хранятся в Git, Obsidian, wiki, prompt context, issue body, скриншотах и логах. Это включает API keys, токены, cookies, session secrets, private keys и приватные client credentials. Используй env vars, secret manager платформы, rotation policy и least privilege.
 
 Проверка: `.env` в `.gitignore`, пример только в `.env.example`, CI secret scanning, запрет client exposure для server-only ключей.
 
@@ -19,7 +19,7 @@ source_priority: "internal"
 
 ## Когда не использовать
 
-Не храни секреты в Obsidian, Git, issue body, prompt, screenshots, logs или test fixtures.
+Не храни секреты, токены, cookies или приватные credentials в Obsidian, Git, wiki, issue body, prompt context, screenshots, logs или test fixtures.
 
 ## Production-паттерны
 
@@ -36,4 +36,3 @@ Git secret scan, env validation, client bundle review, rotation drill, access re
 ## Источники
 
 См. [Secrets rotation](../08-devops-deploy/Secrets-rotation.md), [GitHub secret scanning](https://docs.github.com/en/code-security/secret-scanning).
-

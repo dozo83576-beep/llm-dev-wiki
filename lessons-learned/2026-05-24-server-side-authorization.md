@@ -1,8 +1,12 @@
 ---
 title: "Урок: authorization живет на сервере"
+category: "lesson"
+updated: "2026-05-24"
+status: "active"
+tags: ["authorization", "security", "backend"]
+source_priority: "internal"
 date: "2026-05-24"
 project_type: "admin"
-tags: ["authorization", "security", "backend"]
 ---
 
 # Вывод
@@ -20,4 +24,3 @@ Frontend может улучшать UX, но не может быть исто�
 # Обновленные документы
 
 [Deny by default](../patterns/security/deny-by-default.md), [Tenant isolation](../patterns/security/tenant-isolation.md), [client-only permission failure](../case-studies/failures/2026-05-24-client-only-permission-check.md).
-

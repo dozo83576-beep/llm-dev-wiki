@@ -4,6 +4,7 @@ category: "patterns"
 updated: "2026-05-24"
 status: "active"
 tags: ["frontend", "forms", "validation"]
+source_priority: "internal"
 ---
 
 # Form validation boundary
@@ -33,4 +34,3 @@ tags: ["frontend", "forms", "validation"]
 Unit tests для schema, integration tests для server validation, E2E для happy/error states.
 
 Источники: [Forms and validation](../../docs/02-frontend/Forms-validation.md).
-

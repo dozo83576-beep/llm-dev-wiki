@@ -1,3 +1,12 @@
+---
+title: "GitHub repositories"
+category: "resource"
+updated: "2026-05-25"
+status: "active"
+tags: ["resources"]
+source_priority: "mixed"
+---
+
 # GitHub repositories
 
 - [vercel/next.js](https://github.com/vercel/next.js) — Next.js framework.
@@ -12,4 +21,3 @@
 - [openai/openai-node](https://github.com/openai/openai-node) — OpenAI Node SDK.
 - [openai/openai-python](https://github.com/openai/openai-python) — OpenAI Python SDK.
 - [openai/evals](https://github.com/openai/evals) — AI evaluation framework.
-

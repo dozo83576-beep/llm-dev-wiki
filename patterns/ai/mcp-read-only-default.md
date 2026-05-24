@@ -4,6 +4,7 @@ category: "patterns"
 updated: "2026-05-24"
 status: "active"
 tags: ["ai", "mcp", "security"]
+source_priority: "internal"
 ---
 
 # MCP read-only default
@@ -33,4 +34,3 @@ Read-only by default, allowlist tools, confirmation gates для mutations, sepa
 MCP security review, negative prompt injection tests, audit log review.
 
 Источники: [MCP security](../../docs/05-auth-security/MCP-security.md), [Tool permissions](../../docs/07-mcp-and-ai-tools/Tool-permissions.md).
-

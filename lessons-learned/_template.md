@@ -1,11 +1,12 @@
 ---
 title: "Lesson: <короткое название>"
 category: "lesson"
+updated: "YYYY-MM-DD"
+status: "active"
+tags: []
+source_priority: "internal"
 date: "YYYY-MM-DD"
 project_type: "saas | landing | marketplace | admin | ai-rag | api | ecommerce | realtime | other"
-tags: []
-status: "active"
-source_priority: "internal"
 ---
 
 # Lesson: <короткое название>

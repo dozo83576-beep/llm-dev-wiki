@@ -236,3 +236,45 @@ questions:
       - docs/05-auth-security/Compliance-baseline.md
       - checklists/release-readiness.md
       - checklists/security-review.md
+
+  - id: q-do-not-store-secrets
+    question: "Что нельзя сохранять в wiki и prompt context: секреты, токены или cookies?"
+    expected_paths:
+      - docs/05-auth-security/Secrets.md
+      - checklists/security-review.md
+      - prompts/update-wiki.md
+
+  - id: q-do-not-client-authz
+    question: "Почему нельзя считать скрытую кнопку полноценной authorization?"
+    expected_paths:
+      - case-studies/failures/2026-05-24-client-only-permission-check.md
+      - lessons-learned/2026-05-24-server-side-authorization.md
+      - docs/05-auth-security/Authorization.md
+
+  - id: q-do-not-copy-docs
+    question: "Почему нельзя копировать чужую документацию или статьи целиком в вики?"
+    expected_paths:
+      - docs/00-start-here/document-standard.md
+      - README.md
+      - llms.txt
+
+  - id: q-redirect-canonical-mcp
+    question: "Где canonical-документ для legacy MCP setup заметок?"
+    expected_paths:
+      - docs/07-mcp-and-ai-tools/Setup-Codex.md
+      - docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md
+      - mcp/setup-codex.md
+
+  - id: q-wiki-metadata-required
+    question: "Какие front matter поля обязательны для документов вики?"
+    expected_paths:
+      - docs/14-llm-indexing/metadata-policy.md
+      - docs/00-start-here/document-standard.md
+      - docs/14-llm-indexing/index.md
+
+  - id: q-rag-negative-stale-docs
+    question: "Как не допустить, чтобы RAG одинаково ранжировал устаревшие и актуальные документы?"
+    expected_paths:
+      - patterns/ai/rag-metadata.md
+      - docs/14-llm-indexing/source-priority.md
+      - docs/14-llm-indexing/freshness-checks.md

@@ -26,7 +26,7 @@ jobs:
         run: |
           $report = ./tools/wiki-quality.ps1
           $report | Tee-Object -FilePath wiki-quality-report.md
-          $report | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Encoding utf8
+          ./tools/write-ci-summary.ps1 -FilePath wiki-quality-report.md
 
       - name: Verify INDEX.md is up to date
         shell: pwsh
@@ -59,13 +59,12 @@ jobs:
       - name: Run offline retrieval unit tests
         shell: bash
         run: |
-          echo "## Offline retrieval unit tests" >> "$GITHUB_STEP_SUMMARY"
           set +e
           python -m pytest tests/tools > pytest-report.txt
           status=$?
           set -e
           cat pytest-report.txt
-          cat pytest-report.txt >> "$GITHUB_STEP_SUMMARY"
+          pwsh ./tools/write-ci-summary.ps1 -Title "Offline retrieval unit tests" -FilePath pytest-report.txt
           exit "$status"
 
       - name: Build offline corpus snapshot
@@ -78,11 +77,10 @@ jobs:
           python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10 --warn-rank 3
           status=$?
           set -e
-          echo "## Offline retrieval evals" >> "$GITHUB_STEP_SUMMARY"
           if [ -f evals-report.md ]; then
-            cat evals-report.md >> "$GITHUB_STEP_SUMMARY"
+            pwsh ./tools/write-ci-summary.ps1 -Title "Offline retrieval evals" -FilePath evals-report.md
           else
-            echo "evals-report.md was not generated." >> "$GITHUB_STEP_SUMMARY"
+            pwsh ./tools/write-ci-summary.ps1 -Title "Offline retrieval evals" -InputText "evals-report.md was not generated."
           fi
           exit "$status"
 
@@ -98,5 +96,6 @@ jobs:
         run: |
           $diff = git diff --exit-code embeddings/manifest.json
           if ($LASTEXITCODE -ne 0) {
-            Write-Warning "embeddings/manifest.json regenerated — commit the update."
+            Write-Error "embeddings/manifest.json is stale. Run 'python tools/build_embeddings.py --mode offline-text' locally and commit."
+            exit 1
           }

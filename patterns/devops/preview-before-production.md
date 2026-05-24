@@ -4,6 +4,7 @@ category: "patterns"
 updated: "2026-05-24"
 status: "active"
 tags: ["deploy", "ci"]
+source_priority: "internal"
 ---
 
 # Preview before production
@@ -11,4 +12,3 @@ tags: ["deploy", "ci"]
 Каждое web-изменение проходит preview deployment или локальный browser smoke перед production.
 
 Проверка: есть ссылка на preview, пройден smoke-сценарий, нет console/network ошибок в критичном пути.
-

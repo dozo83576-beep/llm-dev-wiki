@@ -1,13 +1,14 @@
 ---
 title: "Success: <короткое название>"
 category: "case-study"
+updated: "YYYY-MM-DD"
+status: "active"
+tags: []
+source_priority: "internal"
 case_type: "success"
 date: "YYYY-MM-DD"
 project_type: "saas | landing | marketplace | admin | ai-rag | api | ecommerce | realtime | other"
 stack: []
-tags: []
-status: "active"
-source_priority: "internal"
 ---
 
 # Success: <короткое название>

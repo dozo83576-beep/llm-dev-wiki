@@ -1,6 +1,6 @@
 {
-  "chunk_count": 1570,
-  "corpus_hash": "b14a724210932aaf3e392f50b2d49f208d48bed9b72a5a40007df61f351880b8",
+  "chunk_count": 1566,
+  "corpus_hash": "70e46d57039afc57c1658b307ef964436a056ed3226fb03a563bb7ea617e2c60",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -159,10 +159,6 @@
     "lessons-learned/2026-05-24-cache-policy.md",
     "lessons-learned/2026-05-24-server-side-authorization.md",
     "lessons-learned/2026-05-24-update-monitoring.md",
-    "mcp/recommended-servers.md",
-    "mcp/security-policy.md",
-    "mcp/setup-claude-desktop.md",
-    "mcp/setup-codex.md",
     "patterns/ai/mcp-read-only-default.md",
     "patterns/ai/rag-metadata.md",
     "patterns/api/error-contract.md",
@@ -205,7 +201,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-05-24T19:22:25Z",
+  "generated_at": "2026-05-24T19:50:38Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }

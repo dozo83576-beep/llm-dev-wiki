@@ -205,6 +205,83 @@ function Test-UnfinishedMarkerLine {
     return $true
 }
 
+function Get-FrontMatterMap {
+    param(
+        [string]$Content
+    )
+
+    $frontMatter = @{}
+    if ($Content -notmatch '(?ms)^---\s*\r?\n(.*?)\r?\n---') {
+        return $frontMatter
+    }
+
+    foreach ($line in ($matches[1] -split "\r?\n")) {
+        if ([string]::IsNullOrWhiteSpace($line) -or $line.TrimStart().StartsWith("#")) {
+            continue
+        }
+        if ($line -match '^([A-Za-z_][\w-]*)\s*:\s*(.*?)\s*$') {
+            $frontMatter[$matches[1]] = $matches[2].Trim()
+        }
+    }
+
+    return $frontMatter
+}
+
+function Test-FrontMatter {
+    param(
+        [System.IO.FileInfo[]]$MarkdownFiles,
+        [string]$RootPath,
+        [System.Collections.Generic.List[string]]$Failures
+    )
+
+    $contentRoots = @("docs", "stacks", "patterns", "checklists", "prompts", "case-studies", "lessons-learned", "resources", "mcp")
+    $requiredFields = @("title", "category", "updated", "status", "tags", "source_priority")
+    $allowedStatuses = @("active", "archived", "draft", "redirect", "validated")
+    $allowedSourcePriorities = @("internal", "official-docs", "vendor-docs", "mixed", "community", "external-proposal")
+
+    foreach ($file in $MarkdownFiles) {
+        $relativePath = $file.FullName.Substring($RootPath.Length + 1).Replace("\", "/")
+        $root = ($relativePath -split "/", 2)[0]
+        if ($contentRoots -notcontains $root) {
+            continue
+        }
+
+        $content = Get-Content -Raw -LiteralPath $file.FullName
+        $frontMatter = Get-FrontMatterMap -Content $content
+        if ($frontMatter.Count -eq 0) {
+            Add-Failure $Failures "Missing front matter: $($file.FullName)"
+            continue
+        }
+
+        foreach ($field in $requiredFields) {
+            if (-not $frontMatter.ContainsKey($field) -or [string]::IsNullOrWhiteSpace([string]$frontMatter[$field])) {
+                Add-Failure $Failures ("Missing front matter field '{0}': {1}" -f $field, $file.FullName)
+            }
+        }
+
+        if ($frontMatter.ContainsKey("status")) {
+            $status = ([string]$frontMatter["status"]).Trim(" `"'").ToLowerInvariant()
+            if ($allowedStatuses -notcontains $status) {
+                Add-Failure $Failures ("Unsupported status '{0}': {1}" -f $frontMatter["status"], $file.FullName)
+            }
+            if ($status -eq "redirect") {
+                $body = ($content -replace '(?ms)^---\s*\r?\n.*?\r?\n---\s*', '').Trim()
+                $hasCanonicalLink = $body -match '(?<!\!)\[[^\]]+\]\(([^)]+)\)' -or $body -match '\[\[([^\]]+)\]\]'
+                if (-not $hasCanonicalLink) {
+                    Add-Failure $Failures "Redirect document has no canonical link: $($file.FullName)"
+                }
+            }
+        }
+
+        if ($frontMatter.ContainsKey("source_priority")) {
+            $sourcePriority = ([string]$frontMatter["source_priority"]).Trim(" `"'").ToLowerInvariant()
+            if ($allowedSourcePriorities -notcontains $sourcePriority) {
+                Add-Failure $Failures ("Unsupported source_priority '{0}': {1}" -f $frontMatter["source_priority"], $file.FullName)
+            }
+        }
+    }
+}
+
 $failures = [System.Collections.Generic.List[string]]::new()
 $rootPath = Resolve-Path -LiteralPath $Root
 $markdownFiles = Get-ChildItem -LiteralPath $rootPath -Recurse -File |
@@ -226,20 +303,7 @@ foreach ($match in $unfinishedMatches) {
     }
 }
 
-$frontMatterRoots = @("docs", "stacks", "patterns")
-foreach ($folder in $frontMatterRoots) {
-    $folderPath = Join-Path $rootPath $folder
-    if (Test-Path -LiteralPath $folderPath) {
-        $files = Get-ChildItem -LiteralPath $folderPath -Recurse -File |
-            Where-Object { $_.Extension -in @(".md", ".mdx") }
-        foreach ($file in $files) {
-            $firstLine = Get-Content -LiteralPath $file.FullName -TotalCount 1
-            if ($firstLine -ne "---") {
-                Add-Failure $failures "Missing front matter: $($file.FullName)"
-            }
-        }
-    }
-}
+Test-FrontMatter -MarkdownFiles $markdownFiles -RootPath $rootPath -Failures $failures
 
 $checklistPath = Join-Path $rootPath "checklists"
 if (Test-Path -LiteralPath $checklistPath) {

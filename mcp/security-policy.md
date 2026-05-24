@@ -1,3 +1,12 @@
+---
+title: "MCP security policy"
+category: "mcp"
+updated: "2026-05-25"
+status: "redirect"
+tags: ["mcp", "legacy"]
+source_priority: "internal"
+---
+
 # MCP security policy
 
 Канонический документ: [docs/05-auth-security/MCP-security.md](../docs/05-auth-security/MCP-security.md).

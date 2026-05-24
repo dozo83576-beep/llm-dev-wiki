@@ -1,10 +1,14 @@
 ---
 title: "Ошибка: название"
-project_type: "SaaS"
-stack: []
-severity: "medium"
-date: "2026-05-24"
+category: "case-study"
+updated: "2026-05-24"
+status: "active"
 tags: []
+source_priority: "internal"
+date: "2026-05-24"
+project_type: "SaaS"
+severity: "medium"
+stack: []
 ---
 
 # Что пошло не так
@@ -34,4 +38,3 @@ tags: []
 # Связанные чеклисты
 
 Ссылки на обновленные checklist-файлы.
-

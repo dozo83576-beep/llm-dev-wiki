@@ -1,8 +1,12 @@
 ---
 title: "Урок: cache policy должна быть явной"
+category: "lesson"
+updated: "2026-05-24"
+status: "active"
+tags: ["cache", "nextjs", "data-fetching"]
+source_priority: "internal"
 date: "2026-05-24"
 project_type: "SaaS"
-tags: ["cache", "nextjs", "data-fetching"]
 ---
 
 # Вывод
@@ -20,4 +24,3 @@ Next.js production caching может отличаться от ожиданий
 # Обновленные документы
 
 [Data fetching](../docs/02-frontend/Data-fetching.md), [cache assumption failure](../case-studies/failures/2026-05-24-nextjs-cache-assumption.md).
-

@@ -4,6 +4,7 @@ category: "patterns"
 updated: "2026-05-24"
 status: "active"
 tags: ["api", "errors", "contract"]
+source_priority: "internal"
 ---
 
 # API error contract
@@ -33,4 +34,3 @@ tags: ["api", "errors", "contract"]
 Unit tests для error mapper, integration tests для 400/401/403/404/409/429/500 и snapshot контракта.
 
 Источники: [API error contracts](../../docs/06-api-design/Error-contracts.md), [API review](../../checklists/api-review.md).
-

@@ -10,6 +10,7 @@ from tools.run_offline_retrieval_evals import (
     load_synonyms,
     render_report,
     score_query,
+    validate_questions,
 )
 
 
@@ -114,5 +115,53 @@ def test_render_report_includes_weak_rank_summary_and_best_expected_rank() -> No
     )
 
     assert "- Weak rank warnings: 1" in report
+    assert "- Missing expected paths: 0" in report
+    assert "## Weak queries" in report
+    assert "- q-example: best expected rank 4" in report
     assert "| ID | Pass | Weak | Best expected rank | Expected | Top results |" in report
     assert "| q-example | yes | yes | 4 | docs/example.md | docs/example.md (1.250) |" in report
+
+
+def test_render_report_lists_missing_expected_paths() -> None:
+    report = render_report(
+        rows=[
+            {
+                "id": "q-missing",
+                "passed": False,
+                "weak": False,
+                "best_expected_rank": None,
+                "expected_paths": ["docs/missing.md"],
+                "top_results": [("docs/other.md", 0.5)],
+            }
+        ],
+        top_k=5,
+        min_precision=0.6,
+        precision=0.0,
+        warn_rank=3,
+        weak_count=0,
+    )
+
+    assert "- Missing expected paths: 1" in report
+    assert "## Missing expected paths" in report
+    assert "- q-missing: docs/missing.md" in report
+
+
+def test_validate_questions_rejects_duplicate_ids_empty_questions_and_missing_paths(tmp_path: Path) -> None:
+    existing = tmp_path / "docs" / "ok.md"
+    existing.parent.mkdir()
+    existing.write_text("# OK\n", encoding="utf-8")
+
+    errors = validate_questions(
+        [
+            {"id": "q-one", "question": "Где документ?", "expected_paths": ["docs/ok.md"]},
+            {"id": "q-one", "question": "", "expected_paths": ["docs/missing.md"]},
+            {"id": "", "question": "Без id", "expected_paths": []},
+        ],
+        tmp_path,
+    )
+
+    assert "duplicate question id: q-one" in errors
+    assert "question q-one missing question text" in errors
+    assert "question q-one references missing expected path: docs/missing.md" in errors
+    assert "question 3 missing id" in errors
+    assert "question 3 must define non-empty expected_paths" in errors

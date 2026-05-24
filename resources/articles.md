@@ -1,3 +1,12 @@
+---
+title: "Articles"
+category: "resource"
+updated: "2026-05-25"
+status: "active"
+tags: ["resources"]
+source_priority: "mixed"
+---
+
 # Articles
 
 - [web.dev Core Web Vitals](https://web.dev/articles/vitals) — frontend performance metrics.
@@ -8,4 +17,3 @@
 - [Cloudflare Blog](https://blog.cloudflare.com/) — edge, security, infrastructure.
 
 Помечай blog posts как secondary, если они не являются официальной документацией продукта.
-

@@ -1,3 +1,12 @@
+---
+title: "Official docs"
+category: "resource"
+updated: "2026-05-25"
+status: "active"
+tags: ["resources"]
+source_priority: "mixed"
+---
+
 # Official docs
 
 ## Frontend
@@ -29,4 +38,3 @@
 - [OpenAI Platform](https://platform.openai.com/docs) — API, tools, agents, embeddings.
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/) — web security risks.
 - [OWASP WSTG](https://owasp.org/www-project-web-security-testing-guide/) — security testing guide.
-

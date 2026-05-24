@@ -1,3 +1,12 @@
+---
+title: "Tools"
+category: "resource"
+updated: "2026-05-25"
+status: "active"
+tags: ["resources"]
+source_priority: "mixed"
+---
+
 # Tools
 
 ## Development
@@ -25,4 +34,3 @@
 - [pgvector](https://github.com/pgvector/pgvector) — vector search in PostgreSQL.
 - [LlamaIndex](https://docs.llamaindex.ai/) — RAG framework.
 - [LangChain](https://python.langchain.com/docs/introduction/) — LLM application framework.
-

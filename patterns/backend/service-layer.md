@@ -4,6 +4,7 @@ category: "patterns"
 updated: "2026-05-24"
 status: "active"
 tags: ["backend", "architecture"]
+source_priority: "internal"
 ---
 
 # Service layer
@@ -11,4 +12,3 @@ tags: ["backend", "architecture"]
 Controller отвечает за transport, service — за бизнес-операцию, repository/ORM — за данные. Это снижает связанность и упрощает тесты.
 
 Проверка: бизнес-правила не должны жить в route handler/controller.
-

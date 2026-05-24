@@ -14,10 +14,10 @@ source_priority: "internal"
 ## Сводка
 
 - Всего документов: **208**
-- Активных: **191**
-- Redirect-stubs: **1**
+- Активных: **198**
+- Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **406296** символов
+- Суммарный объём: **409157** символов
 
 ## docs
 
@@ -87,7 +87,7 @@ source_priority: "internal"
 | [docs/05-auth-security/OWASP.md](../docs/05-auth-security/OWASP.md) | OWASP | security | 1221 | 2026-05-24 | active | official-docs |
 | [docs/05-auth-security/Rate-limiting.md](../docs/05-auth-security/Rate-limiting.md) | Rate limiting | security | 1296 | 2026-05-24 | active | mixed |
 | [docs/05-auth-security/RBAC-ABAC.md](../docs/05-auth-security/RBAC-ABAC.md) | RBAC and ABAC | security | 1934 | 2026-05-24 | active | internal |
-| [docs/05-auth-security/Secrets.md](../docs/05-auth-security/Secrets.md) | Secrets | security | 1276 | 2026-05-24 | active | internal |
+| [docs/05-auth-security/Secrets.md](../docs/05-auth-security/Secrets.md) | Secrets | security | 1458 | 2026-05-24 | active | internal |
 | [docs/06-api-design/Error-contracts.md](../docs/06-api-design/Error-contracts.md) | API error contracts | api | 1304 | 2026-05-24 | active | internal |
 | [docs/06-api-design/GraphQL.md](../docs/06-api-design/GraphQL.md) | GraphQL | api | 1236 | 2026-05-24 | active | official-docs |
 | [docs/06-api-design/OpenAPI.md](../docs/06-api-design/OpenAPI.md) | OpenAPI | api | 2007 | 2026-05-24 | active | official-docs |
@@ -166,21 +166,21 @@ source_priority: "internal"
 
 | Файл | Заголовок | Категория | Объём | Updated | Status | Source priority |
 |------|-----------|-----------|-------|---------|--------|-----------------|
-| [patterns/_template.md](../patterns/_template.md) | Pattern: <короткое название> | pattern | 1108 | — | active | internal |
-| [patterns/ai/mcp-read-only-default.md](../patterns/ai/mcp-read-only-default.md) | Pattern: MCP read-only default | patterns | 1019 | 2026-05-24 | active | — |
-| [patterns/ai/rag-metadata.md](../patterns/ai/rag-metadata.md) | Pattern: RAG metadata | patterns | 970 | 2026-05-24 | active | — |
-| [patterns/api/error-contract.md](../patterns/api/error-contract.md) | Pattern: API error contract | patterns | 1148 | 2026-05-24 | active | — |
-| [patterns/backend/background-job-retry.md](../patterns/backend/background-job-retry.md) | Pattern: Background job retry | patterns | 903 | 2026-05-24 | active | — |
-| [patterns/backend/service-layer.md](../patterns/backend/service-layer.md) | Pattern: Service layer | patterns | 356 | 2026-05-24 | active | — |
-| [patterns/backend/webhook-idempotency.md](../patterns/backend/webhook-idempotency.md) | Pattern: Webhook idempotency | patterns | 1054 | 2026-05-24 | active | — |
-| [patterns/database/cursor-pagination.md](../patterns/database/cursor-pagination.md) | Pattern: Cursor pagination | patterns | 951 | 2026-05-24 | active | — |
-| [patterns/database/expand-contract-migration.md](../patterns/database/expand-contract-migration.md) | Pattern: Expand-contract migration | patterns | 1085 | 2026-05-24 | active | — |
-| [patterns/devops/preview-before-production.md](../patterns/devops/preview-before-production.md) | Pattern: Preview before production | patterns | 365 | 2026-05-24 | active | — |
-| [patterns/devops/rollback-first-release.md](../patterns/devops/rollback-first-release.md) | Pattern: Rollback-first release | patterns | 960 | 2026-05-24 | active | — |
-| [patterns/frontend/form-validation-boundary.md](../patterns/frontend/form-validation-boundary.md) | Pattern: Form validation boundary | patterns | 972 | 2026-05-24 | active | — |
-| [patterns/frontend/server-client-boundary.md](../patterns/frontend/server-client-boundary.md) | Pattern: Server/client boundary | patterns | 419 | 2026-05-24 | active | — |
-| [patterns/security/deny-by-default.md](../patterns/security/deny-by-default.md) | Pattern: Deny by default | patterns | 367 | 2026-05-24 | active | — |
-| [patterns/security/tenant-isolation.md](../patterns/security/tenant-isolation.md) | Pattern: Tenant isolation | patterns | 1058 | 2026-05-24 | active | — |
+| [patterns/_template.md](../patterns/_template.md) | Pattern: <короткое название> | pattern | 1142 | YYYY-MM-DD | active | internal |
+| [patterns/ai/mcp-read-only-default.md](../patterns/ai/mcp-read-only-default.md) | Pattern: MCP read-only default | patterns | 1056 | 2026-05-24 | active | internal |
+| [patterns/ai/rag-metadata.md](../patterns/ai/rag-metadata.md) | Pattern: RAG metadata | patterns | 1007 | 2026-05-24 | active | internal |
+| [patterns/api/error-contract.md](../patterns/api/error-contract.md) | Pattern: API error contract | patterns | 1185 | 2026-05-24 | active | internal |
+| [patterns/backend/background-job-retry.md](../patterns/backend/background-job-retry.md) | Pattern: Background job retry | patterns | 940 | 2026-05-24 | active | internal |
+| [patterns/backend/service-layer.md](../patterns/backend/service-layer.md) | Pattern: Service layer | patterns | 393 | 2026-05-24 | active | internal |
+| [patterns/backend/webhook-idempotency.md](../patterns/backend/webhook-idempotency.md) | Pattern: Webhook idempotency | patterns | 1091 | 2026-05-24 | active | internal |
+| [patterns/database/cursor-pagination.md](../patterns/database/cursor-pagination.md) | Pattern: Cursor pagination | patterns | 988 | 2026-05-24 | active | internal |
+| [patterns/database/expand-contract-migration.md](../patterns/database/expand-contract-migration.md) | Pattern: Expand-contract migration | patterns | 1122 | 2026-05-24 | active | internal |
+| [patterns/devops/preview-before-production.md](../patterns/devops/preview-before-production.md) | Pattern: Preview before production | patterns | 402 | 2026-05-24 | active | internal |
+| [patterns/devops/rollback-first-release.md](../patterns/devops/rollback-first-release.md) | Pattern: Rollback-first release | patterns | 997 | 2026-05-24 | active | internal |
+| [patterns/frontend/form-validation-boundary.md](../patterns/frontend/form-validation-boundary.md) | Pattern: Form validation boundary | patterns | 1009 | 2026-05-24 | active | internal |
+| [patterns/frontend/server-client-boundary.md](../patterns/frontend/server-client-boundary.md) | Pattern: Server/client boundary | patterns | 456 | 2026-05-24 | active | internal |
+| [patterns/security/deny-by-default.md](../patterns/security/deny-by-default.md) | Pattern: Deny by default | patterns | 404 | 2026-05-24 | active | internal |
+| [patterns/security/tenant-isolation.md](../patterns/security/tenant-isolation.md) | Pattern: Tenant isolation | patterns | 1095 | 2026-05-24 | active | internal |
 
 ## prompts
 
@@ -237,35 +237,35 @@ source_priority: "internal"
 
 | Файл | Заголовок | Категория | Объём | Updated | Status | Source priority |
 |------|-----------|-----------|-------|---------|--------|-----------------|
-| [case-studies/_template-failure.md](../case-studies/_template-failure.md) | Failure: <короткое название> | case-study | 1382 | — | active | internal |
-| [case-studies/_template-success.md](../case-studies/_template-success.md) | Success: <короткое название> | case-study | 1163 | — | active | internal |
-| [case-studies/failures/_template.md](../case-studies/failures/_template.md) | Ошибка: название | — | 548 | — | — | — |
-| [case-studies/failures/2026-05-24-client-only-permission-check.md](../case-studies/failures/2026-05-24-client-only-permission-check.md) | Ошибка: проверка прав только на клиенте | — | 1056 | — | — | — |
-| [case-studies/failures/2026-05-24-nextjs-cache-assumption.md](../case-studies/failures/2026-05-24-nextjs-cache-assumption.md) | Ошибка: неявное предположение о cache в Next.js | — | 1075 | — | — | — |
-| [case-studies/failures/README.md](../case-studies/failures/README.md) | README | — | 537 | — | — | — |
-| [case-studies/successes/_template.md](../case-studies/successes/_template.md) | Успешное решение: название | — | 657 | — | validated | — |
-| [case-studies/successes/2026-05-24-nextjs-server-client-boundary.md](../case-studies/successes/2026-05-24-nextjs-server-client-boundary.md) | Успешное решение: server/client boundary в Next.js | — | 1056 | — | validated | — |
-| [case-studies/successes/2026-05-24-rag-metadata-first.md](../case-studies/successes/2026-05-24-rag-metadata-first.md) | Успешное решение: metadata-first RAG | — | 1105 | — | validated | — |
-| [case-studies/successes/2026-05-24-webhook-idempotency.md](../case-studies/successes/2026-05-24-webhook-idempotency.md) | Успешное решение: idempotent webhooks | — | 968 | — | validated | — |
-| [case-studies/successes/README.md](../case-studies/successes/README.md) | README | — | 580 | — | — | — |
+| [case-studies/_template-failure.md](../case-studies/_template-failure.md) | Failure: <короткое название> | case-study | 1419 | YYYY-MM-DD | active | internal |
+| [case-studies/_template-success.md](../case-studies/_template-success.md) | Success: <короткое название> | case-study | 1199 | YYYY-MM-DD | active | internal |
+| [case-studies/failures/_template.md](../case-studies/failures/_template.md) | Ошибка: название | case-study | 651 | 2026-05-24 | active | internal |
+| [case-studies/failures/2026-05-24-client-only-permission-check.md](../case-studies/failures/2026-05-24-client-only-permission-check.md) | Ошибка: проверка прав только на клиенте | case-study | 1159 | 2026-05-24 | active | internal |
+| [case-studies/failures/2026-05-24-nextjs-cache-assumption.md](../case-studies/failures/2026-05-24-nextjs-cache-assumption.md) | Ошибка: неявное предположение о cache в Next.js | case-study | 1178 | 2026-05-24 | active | internal |
+| [case-studies/failures/README.md](../case-studies/failures/README.md) | Failure case studies | case-study | 684 | 2026-05-24 | active | internal |
+| [case-studies/successes/_template.md](../case-studies/successes/_template.md) | Успешное решение: название | case-study | 742 | 2026-05-24 | validated | internal |
+| [case-studies/successes/2026-05-24-nextjs-server-client-boundary.md](../case-studies/successes/2026-05-24-nextjs-server-client-boundary.md) | Успешное решение: server/client boundary в Next.js | case-study | 1137 | 2026-05-24 | validated | mixed |
+| [case-studies/successes/2026-05-24-rag-metadata-first.md](../case-studies/successes/2026-05-24-rag-metadata-first.md) | Успешное решение: metadata-first RAG | case-study | 1190 | 2026-05-24 | validated | internal |
+| [case-studies/successes/2026-05-24-webhook-idempotency.md](../case-studies/successes/2026-05-24-webhook-idempotency.md) | Успешное решение: idempotent webhooks | case-study | 1053 | 2026-05-24 | validated | internal |
+| [case-studies/successes/README.md](../case-studies/successes/README.md) | Success case studies | case-study | 730 | 2026-05-24 | validated | internal |
 
 ## lessons-learned
 
 | Файл | Заголовок | Категория | Объём | Updated | Status | Source priority |
 |------|-----------|-----------|-------|---------|--------|-----------------|
-| [lessons-learned/_template.md](../lessons-learned/_template.md) | Lesson: <короткое название> | lesson | 1041 | — | active | internal |
-| [lessons-learned/2026-05-24-cache-policy.md](../lessons-learned/2026-05-24-cache-policy.md) | Урок: cache policy должна быть явной | — | 617 | — | — | — |
-| [lessons-learned/2026-05-24-server-side-authorization.md](../lessons-learned/2026-05-24-server-side-authorization.md) | Урок: authorization живет на сервере | — | 657 | — | — | — |
-| [lessons-learned/2026-05-24-update-monitoring.md](../lessons-learned/2026-05-24-update-monitoring.md) | Урок: обновления технологий должны становиться задачами | — | 598 | — | — | — |
+| [lessons-learned/_template.md](../lessons-learned/_template.md) | Lesson: <короткое название> | lesson | 1075 | YYYY-MM-DD | active | internal |
+| [lessons-learned/2026-05-24-cache-policy.md](../lessons-learned/2026-05-24-cache-policy.md) | Урок: cache policy должна быть явной | lesson | 714 | 2026-05-24 | active | internal |
+| [lessons-learned/2026-05-24-server-side-authorization.md](../lessons-learned/2026-05-24-server-side-authorization.md) | Урок: authorization живет на сервере | lesson | 754 | 2026-05-24 | active | internal |
+| [lessons-learned/2026-05-24-update-monitoring.md](../lessons-learned/2026-05-24-update-monitoring.md) | Урок: обновления технологий должны становиться задачами | lesson | 849 | 2026-05-24 | active | internal |
 
 ## mcp
 
 | Файл | Заголовок | Категория | Объём | Updated | Status | Source priority |
 |------|-----------|-----------|-------|---------|--------|-----------------|
-| [mcp/recommended-servers.md](../mcp/recommended-servers.md) | recommended-servers | — | 161 | — | — | — |
-| [mcp/security-policy.md](../mcp/security-policy.md) | security-policy | — | 540 | — | — | — |
-| [mcp/setup-claude-desktop.md](../mcp/setup-claude-desktop.md) | setup-claude-desktop | — | 165 | — | — | — |
-| [mcp/setup-codex.md](../mcp/setup-codex.md) | setup-codex | — | 138 | — | — | — |
+| [mcp/recommended-servers.md](../mcp/recommended-servers.md) | Recommended MCP servers | mcp | 322 | 2026-05-25 | redirect | internal |
+| [mcp/security-policy.md](../mcp/security-policy.md) | MCP security policy | mcp | 697 | 2026-05-25 | redirect | internal |
+| [mcp/setup-claude-desktop.md](../mcp/setup-claude-desktop.md) | Claude Desktop MCP setup | mcp | 327 | 2026-05-25 | redirect | internal |
+| [mcp/setup-codex.md](../mcp/setup-codex.md) | Codex MCP setup | mcp | 291 | 2026-05-25 | redirect | internal |
 
 
 ## Принципы

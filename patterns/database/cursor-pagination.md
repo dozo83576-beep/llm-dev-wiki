@@ -4,6 +4,7 @@ category: "patterns"
 updated: "2026-05-24"
 status: "active"
 tags: ["database", "pagination", "api"]
+source_priority: "internal"
 ---
 
 # Cursor pagination
@@ -33,4 +34,3 @@ Cursor строится из стабильной сортировки: `created
 Integration tests: первая страница, следующая страница, удаление/добавление элемента между запросами.
 
 Источники: [Pagination, filtering, sorting](../../docs/06-api-design/Pagination-filtering-sorting.md).
-

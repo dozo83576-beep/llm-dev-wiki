@@ -16,7 +16,26 @@ function Add-Warning {
 
 $rootPath = Resolve-Path -LiteralPath $Root
 $warnings = [System.Collections.Generic.List[string]]::new()
-$productionRoots = @(
+$contentRoots = @(
+    "docs/02-frontend",
+    "docs/03-backend",
+    "docs/04-databases",
+    "docs/05-auth-security",
+    "docs/06-api-design",
+    "docs/07-mcp-and-ai-tools",
+    "docs/08-devops-deploy",
+    "docs/09-testing",
+    "docs/13-playbooks",
+    "docs/14-llm-indexing",
+    "checklists",
+    "prompts",
+    "case-studies",
+    "lessons-learned",
+    "resources",
+    "mcp"
+)
+
+$sectionQualityRoots = @(
     "docs/02-frontend",
     "docs/03-backend",
     "docs/04-databases",
@@ -57,7 +76,7 @@ $externalAuthoritative = @(
 )
 
 $files = [System.Collections.Generic.List[System.IO.FileInfo]]::new()
-foreach ($relativeRoot in $productionRoots) {
+foreach ($relativeRoot in $contentRoots) {
     $fullRoot = Join-Path $rootPath $relativeRoot
     if (Test-Path -LiteralPath $fullRoot) {
         Get-ChildItem -LiteralPath $fullRoot -Recurse -File |
@@ -88,13 +107,29 @@ foreach ($file in $files) {
         continue
     }
 
-    $isIndexLike = ($file.Name -eq "index.md") -or ($file.Name -like "_template*") -or ($file.Name -eq "source-priority.md")
+    $normalizedRelative = $relativePath.TrimStart(".", "/", "\").Replace("\", "/")
+    $isIndexLike = ($file.Name -eq "index.md") -or ($file.Name -like "_template*") -or ($file.Name -eq "source-priority.md") -or ($file.Name -eq "README.md")
+    $isSectionQualityDoc = $false
+    foreach ($root in $sectionQualityRoots) {
+        if ($normalizedRelative.StartsWith($root + "/")) {
+            $isSectionQualityDoc = $true
+            break
+        }
+    }
+    $isLegacyOrKnowledgeRoot = $normalizedRelative.StartsWith("mcp/") -or
+        $normalizedRelative.StartsWith("resources/") -or
+        $normalizedRelative.StartsWith("case-studies/") -or
+        $normalizedRelative.StartsWith("lessons-learned/")
 
-    if (-not $isIndexLike -and $content.Length -lt $MinChars) {
+    if (-not $isIndexLike -and $isSectionQualityDoc -and $content.Length -lt $MinChars) {
         Add-Warning $warnings ("Short production document: {0} ({1} chars, min {2})" -f $relativePath, $content.Length, $MinChars)
     }
 
-    if (-not $isIndexLike) {
+    if (-not $isIndexLike -and $isLegacyOrKnowledgeRoot -and $content -notmatch "(?im)^status:\s*[`"']?(redirect|archived)" -and $content.Length -lt 700) {
+        Add-Warning $warnings ("Short legacy/knowledge document should be expanded, redirected, or archived: {0} ({1} chars, min 700)" -f $relativePath, $content.Length)
+    }
+
+    if (-not $isIndexLike -and $isSectionQualityDoc) {
         $missingSections = [System.Collections.Generic.List[string]]::new()
         foreach ($section in $sectionPatterns) {
             if ($content -notmatch $section.Pattern) {

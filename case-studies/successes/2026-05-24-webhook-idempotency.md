@@ -1,10 +1,13 @@
 ---
 title: "Успешное решение: idempotent webhooks"
+category: "case-study"
+updated: "2026-05-24"
+status: "validated"
+tags: ["webhooks", "payments", "backend"]
+source_priority: "internal"
+date: "2026-05-24"
 project_type: "SaaS"
 stack: ["NestJS", "PostgreSQL"]
-status: "validated"
-date: "2026-05-24"
-tags: ["webhooks", "payments", "backend"]
 ---
 
 # Контекст
@@ -34,4 +37,3 @@ Integration tests: valid signature, invalid signature, duplicate event, queue fa
 # Ссылки
 
 [Webhooks](../../docs/03-backend/Webhooks.md), [Payments](../../docs/03-backend/Payments.md).
-

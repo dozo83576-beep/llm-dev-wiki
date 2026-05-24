@@ -4,6 +4,7 @@ category: "patterns"
 updated: "2026-05-24"
 status: "active"
 tags: ["webhooks", "idempotency", "backend"]
+source_priority: "internal"
 ---
 
 # Webhook idempotency
@@ -33,4 +34,3 @@ Payments, billing, CRM, email events, storage notifications, CI/deploy hooks.
 Integration tests: valid signature, invalid signature, duplicate event, out-of-order event.
 
 Источники: [Webhooks](../../docs/03-backend/Webhooks.md), [success case](../../case-studies/successes/2026-05-24-webhook-idempotency.md).
-

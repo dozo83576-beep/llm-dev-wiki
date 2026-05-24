@@ -1,3 +1,12 @@
+---
+title: "Books"
+category: "resource"
+updated: "2026-05-25"
+status: "active"
+tags: ["resources"]
+source_priority: "mixed"
+---
+
 # Books
 
 - [Designing Data-Intensive Applications](https://dataintensive.net/), Martin Kleppmann — advanced, architecture/data systems.

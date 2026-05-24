@@ -1,14 +1,15 @@
 ---
 title: "Failure: <короткое название>"
 category: "case-study"
+updated: "YYYY-MM-DD"
+status: "active"
+tags: []
+source_priority: "internal"
 case_type: "failure"
 date: "YYYY-MM-DD"
 project_type: "saas | landing | marketplace | admin | ai-rag | api | ecommerce | realtime | other"
-stack: []
-tags: []
 severity: "S1 | S2 | S3 | S4"
-status: "active"
-source_priority: "internal"
+stack: []
 ---
 
 # Failure: <короткое название>

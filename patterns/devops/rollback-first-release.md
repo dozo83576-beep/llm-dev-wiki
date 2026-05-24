@@ -4,6 +4,7 @@ category: "patterns"
 updated: "2026-05-24"
 status: "active"
 tags: ["devops", "release", "rollback"]
+source_priority: "internal"
 ---
 
 # Rollback-first release
@@ -33,4 +34,3 @@ tags: ["devops", "release", "rollback"]
 Release readiness checklist, staging rollback smoke, post-release monitoring.
 
 Источники: [Rollback](../../docs/08-devops-deploy/Rollback.md), [Release readiness](../../checklists/release-readiness.md).
-

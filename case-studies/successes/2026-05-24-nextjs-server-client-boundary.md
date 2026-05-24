@@ -1,10 +1,13 @@
 ---
 title: "Успешное решение: server/client boundary в Next.js"
+category: "case-study"
+updated: "2026-05-24"
+status: "validated"
+tags: ["nextjs", "frontend", "performance"]
+source_priority: "mixed"
+date: "2026-05-24"
 project_type: "SaaS"
 stack: ["Next.js", "React", "TypeScript"]
-status: "validated"
-date: "2026-05-24"
-tags: ["nextjs", "frontend", "performance"]
 ---
 
 # Контекст
@@ -34,4 +37,3 @@ Typecheck, production build, Playwright smoke для authenticated route, про
 # Ссылки
 
 [Next.js](../../docs/02-frontend/Nextjs.md), [Next.js App Router](https://nextjs.org/docs/app).
-

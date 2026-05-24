@@ -1,10 +1,14 @@
 ---
 title: "Ошибка: проверка прав только на клиенте"
-project_type: "admin"
-stack: ["React", "API"]
-severity: "critical"
-date: "2026-05-24"
+category: "case-study"
+updated: "2026-05-24"
+status: "active"
 tags: ["authorization", "security", "frontend"]
+source_priority: "internal"
+date: "2026-05-24"
+project_type: "admin"
+severity: "critical"
+stack: ["React", "API"]
 ---
 
 # Что пошло не так
@@ -36,4 +40,3 @@ Authorization была реализована как UI-состояние, а �
 # Связанные чеклисты
 
 [Security review](../../checklists/security-review.md), [Deny by default](../../patterns/security/deny-by-default.md).
-

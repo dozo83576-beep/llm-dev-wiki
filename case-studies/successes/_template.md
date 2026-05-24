@@ -1,10 +1,13 @@
 ---
 title: "Успешное решение: название"
+category: "case-study"
+updated: "2026-05-24"
+status: "validated"
+tags: []
+source_priority: "internal"
+date: "2026-05-24"
 project_type: "SaaS"
 stack: ["Next.js", "PostgreSQL", "Prisma"]
-status: "validated"
-date: "2026-05-24"
-tags: []
 ---
 
 # Контекст
@@ -34,4 +37,3 @@ tags: []
 # Ссылки
 
 Связанные документы вики и внешние источники.
-

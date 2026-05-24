@@ -1,11 +1,12 @@
 ---
 title: "Pattern: <короткое название>"
 category: "pattern"
+updated: "YYYY-MM-DD"
+status: "active"
+tags: []
+source_priority: "internal"
 area: "frontend | backend | database | api | security | devops | ai | other"
 date: "YYYY-MM-DD"
-tags: []
-status: "active"
-source_priority: "internal"
 ---
 
 # Pattern: <короткое название>

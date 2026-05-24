@@ -4,6 +4,7 @@ category: "patterns"
 updated: "2026-05-24"
 status: "active"
 tags: ["database", "migrations", "deploy"]
+source_priority: "internal"
 ---
 
 # Expand-contract migration
@@ -33,4 +34,3 @@ Expand: добавить новую структуру без удаления �
 Staging migration, compatibility tests старого/нового кода, rollback smoke.
 
 Источники: [Migrations](../../docs/04-databases/Migrations.md), [Rollback](../../docs/08-devops-deploy/Rollback.md).
-

@@ -121,7 +121,49 @@ def load_questions(path: Path) -> list[dict]:
         if len(parts) >= 3:
             raw = parts[2]
     data = yaml.safe_load(raw) or {}
-    return data.get("questions") or []
+    questions = data.get("questions") or []
+    if not isinstance(questions, list):
+        raise ValueError("golden Q&A field 'questions' must be a list")
+    return questions
+
+
+def validate_questions(questions: list[dict], root: Path) -> list[str]:
+    errors: list[str] = []
+    seen_ids: set[str] = set()
+
+    for index, item in enumerate(questions, start=1):
+        if not isinstance(item, dict):
+            errors.append(f"question {index} must be an object")
+            continue
+
+        qid = str(item.get("id") or "").strip()
+        question = str(item.get("question") or "").strip()
+        expected_paths = item.get("expected_paths") or []
+
+        if not qid:
+            errors.append(f"question {index} missing id")
+        elif qid in seen_ids:
+            errors.append(f"duplicate question id: {qid}")
+        else:
+            seen_ids.add(qid)
+
+        if not question:
+            errors.append(f"question {qid or index} missing question text")
+
+        if not isinstance(expected_paths, list) or not expected_paths:
+            errors.append(f"question {qid or index} must define non-empty expected_paths")
+            continue
+
+        for raw_path in expected_paths:
+            rel_path = str(raw_path or "").strip()
+            if not rel_path:
+                errors.append(f"question {qid or index} has empty expected path")
+                continue
+            if (root / rel_path).exists():
+                continue
+            errors.append(f"question {qid or index} references missing expected path: {rel_path}")
+
+    return errors
 
 
 def build_index(chunks: list[Chunk]) -> tuple[list[Counter], dict[str, int], float]:
@@ -190,6 +232,8 @@ def find_best_expected_rank(ranked: list[tuple[str, float]], expected_paths: lis
 
 
 def render_report(rows: list[dict], top_k: int, min_precision: float, precision: float, warn_rank: int, weak_count: int) -> str:
+    weak_rows = [row for row in rows if row["weak"]]
+    missing_rows = [row for row in rows if row["best_expected_rank"] is None]
     lines = [
         "# Offline retrieval evals",
         "",
@@ -199,10 +243,31 @@ def render_report(rows: list[dict], top_k: int, min_precision: float, precision:
         f"- Minimum precision: {min_precision:.3f}",
         f"- Weak rank threshold: {warn_rank}",
         f"- Weak rank warnings: {weak_count}",
+        f"- Missing expected paths: {len(missing_rows)}",
         "",
+    ]
+    if weak_rows:
+        lines.extend([
+            "## Weak queries",
+            "",
+        ])
+        for row in weak_rows:
+            lines.append(f"- {row['id']}: best expected rank {row['best_expected_rank']}")
+        lines.append("")
+
+    if missing_rows:
+        lines.extend([
+            "## Missing expected paths",
+            "",
+        ])
+        for row in missing_rows:
+            lines.append(f"- {row['id']}: {', '.join(row['expected_paths'])}")
+        lines.append("")
+
+    lines.extend([
         "| ID | Pass | Weak | Best expected rank | Expected | Top results |",
         "|---|---:|---:|---:|---|---|",
-    ]
+    ])
     for row in rows:
         expected = "<br>".join(row["expected_paths"])
         top = "<br>".join(f"{path} ({score:.3f})" for path, score in row["top_results"])
@@ -246,6 +311,11 @@ def main(argv: list[str]) -> int:
         return 2
     if not questions:
         print("no questions in golden set", file=sys.stderr)
+        return 2
+    question_errors = validate_questions(questions, root)
+    if question_errors:
+        for error in question_errors:
+            print(f"golden Q&A validation error: {error}", file=sys.stderr)
         return 2
 
     docs, doc_freq, avg_len = build_index(chunks)
