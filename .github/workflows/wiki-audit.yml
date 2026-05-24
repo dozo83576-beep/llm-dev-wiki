@@ -57,13 +57,34 @@ jobs:
         run: pip install -r tools/requirements.txt
 
       - name: Run offline retrieval unit tests
-        run: python -m pytest tests/tools
+        shell: bash
+        run: |
+          echo "## Offline retrieval unit tests" >> "$GITHUB_STEP_SUMMARY"
+          set +e
+          python -m pytest tests/tools > pytest-report.txt
+          status=$?
+          set -e
+          cat pytest-report.txt
+          cat pytest-report.txt >> "$GITHUB_STEP_SUMMARY"
+          exit "$status"
 
       - name: Build offline corpus snapshot
         run: python tools/build_embeddings.py --mode offline-text
 
       - name: Run offline retrieval evals
-        run: python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10 --warn-rank 3
+        shell: bash
+        run: |
+          set +e
+          python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10 --warn-rank 3
+          status=$?
+          set -e
+          echo "## Offline retrieval evals" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f evals-report.md ]; then
+            cat evals-report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "evals-report.md was not generated." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          exit "$status"
 
       - name: Upload evals report
         if: always()
