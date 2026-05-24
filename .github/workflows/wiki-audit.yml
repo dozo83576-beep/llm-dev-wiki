@@ -21,3 +21,9 @@ jobs:
         shell: pwsh
         run: ./tools/wiki-audit.ps1
 
+      - name: Run wiki quality report
+        shell: pwsh
+        run: |
+          $report = ./tools/wiki-quality.ps1
+          $report | Tee-Object -FilePath wiki-quality-report.md
+          $report | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Encoding utf8

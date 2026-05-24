@@ -3,7 +3,7 @@
     "name": "Next.js",
     "ecosystem": "npm",
     "package": "next",
-    "currentVersion": "",
+    "currentVersion": "16.2.6",
     "docsUrl": "https://nextjs.org/docs",
     "notes": "Full-stack React framework and App Router baseline."
   },
@@ -11,7 +11,7 @@
     "name": "React",
     "ecosystem": "npm",
     "package": "react",
-    "currentVersion": "",
+    "currentVersion": "19.2.6",
     "docsUrl": "https://react.dev/",
     "notes": "UI runtime used by Next.js and SPA stacks."
   },
@@ -19,7 +19,7 @@
     "name": "TypeScript",
     "ecosystem": "npm",
     "package": "typescript",
-    "currentVersion": "",
+    "currentVersion": "6.0.3",
     "docsUrl": "https://www.typescriptlang.org/docs/",
     "notes": "Type system and compiler for JavaScript projects."
   },
@@ -27,7 +27,7 @@
     "name": "Prisma",
     "ecosystem": "npm",
     "package": "prisma",
-    "currentVersion": "",
+    "currentVersion": "7.8.0",
     "docsUrl": "https://www.prisma.io/docs",
     "notes": "TypeScript ORM and migration tooling."
   },
@@ -35,7 +35,7 @@
     "name": "NestJS",
     "ecosystem": "npm",
     "package": "@nestjs/core",
-    "currentVersion": "",
+    "currentVersion": "11.1.23",
     "docsUrl": "https://docs.nestjs.com/",
     "notes": "Structured TypeScript backend framework."
   },
@@ -43,7 +43,7 @@
     "name": "Tailwind CSS",
     "ecosystem": "npm",
     "package": "tailwindcss",
-    "currentVersion": "",
+    "currentVersion": "4.3.0",
     "docsUrl": "https://tailwindcss.com/docs",
     "notes": "Utility-first CSS framework."
   },
@@ -51,7 +51,7 @@
     "name": "Zod",
     "ecosystem": "npm",
     "package": "zod",
-    "currentVersion": "",
+    "currentVersion": "4.4.3",
     "docsUrl": "https://zod.dev/",
     "notes": "Runtime validation for TypeScript."
   },
@@ -59,7 +59,7 @@
     "name": "FastAPI",
     "ecosystem": "pypi",
     "package": "fastapi",
-    "currentVersion": "",
+    "currentVersion": "0.136.3",
     "docsUrl": "https://fastapi.tiangolo.com/",
     "notes": "Python API framework."
   },
@@ -67,7 +67,7 @@
     "name": "Django",
     "ecosystem": "pypi",
     "package": "django",
-    "currentVersion": "",
+    "currentVersion": "6.0.5",
     "docsUrl": "https://docs.djangoproject.com/",
     "notes": "Python web framework."
   },
@@ -75,7 +75,7 @@
     "name": "SQLAlchemy",
     "ecosystem": "pypi",
     "package": "sqlalchemy",
-    "currentVersion": "",
+    "currentVersion": "2.0.49",
     "docsUrl": "https://docs.sqlalchemy.org/",
     "notes": "Python SQL toolkit and ORM."
   },
@@ -83,7 +83,7 @@
     "name": "OpenAI Python SDK",
     "ecosystem": "pypi",
     "package": "openai",
-    "currentVersion": "",
+    "currentVersion": "2.38.0",
     "docsUrl": "https://platform.openai.com/docs",
     "notes": "OpenAI API client for Python."
   },
@@ -91,7 +91,7 @@
     "name": "Qdrant",
     "ecosystem": "github-releases",
     "repository": "qdrant/qdrant",
-    "currentVersion": "",
+    "currentVersion": "v1.18.1",
     "docsUrl": "https://qdrant.tech/documentation/",
     "notes": "Vector database for RAG and semantic search."
   },
@@ -99,7 +99,7 @@
     "name": "pgvector",
     "ecosystem": "github-releases",
     "repository": "pgvector/pgvector",
-    "currentVersion": "",
+    "currentVersion": "v0.8.2",
     "docsUrl": "https://github.com/pgvector/pgvector",
     "notes": "PostgreSQL vector extension."
   },
@@ -107,7 +107,7 @@
     "name": "Model Context Protocol specification",
     "ecosystem": "github-tags",
     "repository": "modelcontextprotocol/specification",
-    "currentVersion": "",
+    "currentVersion": "2025-11-25",
     "docsUrl": "https://modelcontextprotocol.io/docs",
     "notes": "MCP specification and protocol updates."
   },
@@ -147,4 +147,3 @@
     "notes": "Check OWASP Top 10, WSTG and LLM Top 10 updates manually."
   }
 ]
-

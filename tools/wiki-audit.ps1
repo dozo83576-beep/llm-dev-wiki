@@ -132,6 +132,50 @@ function Test-InternalLinks {
     }
 }
 
+function Test-TechnologyWatchlist {
+    param(
+        [string]$RootPath,
+        [System.Collections.Generic.List[string]]$Failures
+    )
+
+    $watchlistPath = Join-Path $RootPath "resources/technology-watchlist.json"
+    if (-not (Test-Path -LiteralPath $watchlistPath)) {
+        Add-Failure $Failures "Missing technology watchlist: resources/technology-watchlist.json"
+        return
+    }
+
+    try {
+        $entries = Get-Content -Raw -LiteralPath $watchlistPath | ConvertFrom-Json
+    }
+    catch {
+        Add-Failure $Failures "Invalid technology watchlist JSON: $($_.Exception.Message)"
+        return
+    }
+
+    $allowedEcosystems = @("npm", "pypi", "github-releases", "github-tags", "manual")
+    $index = 0
+    foreach ($entry in $entries) {
+        $index++
+        foreach ($field in @("name", "ecosystem", "docsUrl", "notes")) {
+            if (-not $entry.PSObject.Properties.Name.Contains($field) -or [string]::IsNullOrWhiteSpace([string]$entry.$field)) {
+                Add-Failure $Failures ("Watchlist entry {0} missing required field: {1}" -f $index, $field)
+            }
+        }
+
+        if ($entry.ecosystem -and $allowedEcosystems -notcontains $entry.ecosystem) {
+            Add-Failure $Failures ("Watchlist entry {0} has unsupported ecosystem: {1}" -f $index, $entry.ecosystem)
+        }
+
+        if ($entry.ecosystem -in @("npm", "pypi") -and [string]::IsNullOrWhiteSpace([string]$entry.package)) {
+            Add-Failure $Failures ("Watchlist entry {0} requires package for ecosystem {1}" -f $index, $entry.ecosystem)
+        }
+
+        if ($entry.ecosystem -in @("github-releases", "github-tags") -and [string]::IsNullOrWhiteSpace([string]$entry.repository)) {
+            Add-Failure $Failures ("Watchlist entry {0} requires repository for ecosystem {1}" -f $index, $entry.ecosystem)
+        }
+    }
+}
+
 $failures = [System.Collections.Generic.List[string]]::new()
 $rootPath = Resolve-Path -LiteralPath $Root
 $markdownFiles = Get-ChildItem -LiteralPath $rootPath -Recurse -File |
@@ -216,6 +260,7 @@ foreach ($relativePath in $requiredPaths) {
 }
 
 Test-InternalLinks -MarkdownFiles $markdownFiles -RootPath $rootPath -Failures $failures
+Test-TechnologyWatchlist -RootPath $rootPath -Failures $failures
 
 Write-Host "Wiki audit"
 Write-Host "Root: $rootPath"
