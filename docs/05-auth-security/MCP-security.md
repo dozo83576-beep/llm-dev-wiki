@@ -17,3 +17,23 @@ MCP дает агенту доступ к инструментам и данны
 
 Источник: [Model Context Protocol Docs](https://modelcontextprotocol.io/docs).
 
+## Когда использовать
+
+Любой раз, когда LLM получает tools: filesystem, GitHub, browser, database, deploy, billing, email, docs или cloud provider.
+
+## Когда не использовать
+
+Не давай write/deploy/secrets доступ агенту, если задача решается read-only анализом или локальным patch в ограниченной директории.
+
+## Production-паттерны
+
+Read-only by default, scoped filesystem roots, confirmation gates, audit logs, tool allowlist, separate credentials per environment.
+
+## Частые ошибки
+
+Передавать secrets в prompt, давать production DB write, доверять tool output как инструкции, не проверять путь перед записью.
+
+## Проверка
+
+MCP security review, prompt injection evals, dry-run для destructive actions, audit log проверка tool calls.
+

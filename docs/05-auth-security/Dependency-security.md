@@ -15,3 +15,23 @@ source_priority: "official-docs"
 
 Источник: [GitHub Dependabot Docs](https://docs.github.com/en/code-security/dependabot).
 
+## Когда использовать
+
+Всегда для npm, PyPI, Docker images, GitHub Actions, MCP servers и любых third-party SDK.
+
+## Когда не использовать
+
+Не блокируй релиз из-за low-risk dev dependency без exploit path, но документируй решение и срок обновления.
+
+## Production-паттерны
+
+Lockfile committed, Dependabot или аналог включен, package review для новых зависимостей, минимальный dependency surface, pinned CI actions.
+
+## Частые ошибки
+
+Добавить пакет ради одной функции, игнорировать transitive critical vulnerability, использовать unpinned GitHub Action, запускать неизвестный postinstall.
+
+## Проверка
+
+`npm audit`/`pnpm audit`/`pip-audit`, dependency review в PR, GitHub security alerts, SBOM для mature проектов.
+
