@@ -25,7 +25,7 @@ E2E-тесты проверяют критичные пользовательс�
 
 ## Production-паттерны
 
-- **Playwright** или **Cypress** как основные инструменты; Playwright предпочтительнее для multi-browser и parallel.
+- [Playwright](Playwright.md) или **Cypress** как основные инструменты; Playwright предпочтительнее для multi-browser и parallel.
 - Тесты пишутся под user-journey, а не под endpoint.
 - Test data isolation: каждый тест создаёт свои данные, не зависит от seed.
 - Authentication: единоразовый login → reuse storage state, не login в каждом тесте.
@@ -65,6 +65,6 @@ Suite > 30 мин блокирует CI; нестабильные тесты п�
 
 ## Источники
 
-- [Playwright Docs](https://playwright.dev/) — проверено 2026-05-24.
+- [Playwright](Playwright.md), [Playwright Docs](https://playwright.dev/) — проверено 2026-05-24.
 - [Cypress Best Practices](https://docs.cypress.io/guides/references/best-practices) — проверено 2026-05-24.
 - См. [Frontend testing](../02-frontend/Frontend-testing.md), [Test pyramid](Test-pyramid.md), [Visual testing](Visual-testing.md).

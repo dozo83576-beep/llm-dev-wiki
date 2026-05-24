@@ -14,7 +14,7 @@ Data fetching должен иметь явное место: Server Components, 
 ## Когда использовать
 
 - Server Components: initial page data, SEO, sensitive server-side data.
-- TanStack Query: client-side server state, refetch, optimistic updates.
+- [TanStack Query](TanStack-Query.md): client-side server state, refetch, optimistic updates, query invalidation.
 - Route Handlers: external clients, webhooks, BFF endpoints.
 
 ## Когда не использовать
@@ -26,7 +26,7 @@ Data fetching должен иметь явное место: Server Components, 
 
 - У каждого запроса есть cache/revalidate policy.
 - Ошибки API мапятся в понятные UI-состояния.
-- Mutations инвалидируют только нужные queries.
+- Mutations инвалидируют только нужные queries; query keys включают tenant/user/filter scope.
 - Sensitive data не попадает в serialized client props.
 
 ## Проверка
@@ -39,4 +39,4 @@ Data fetching должен иметь явное место: Server Components, 
 
 Дублировать один server state в нескольких stores, делать initial fetch через `useEffect` без причины, не задавать cache policy, смешивать sensitive server data с client props, не инвалидировать данные после mutation.
 
-Источник: [Next.js data fetching](https://nextjs.org/docs/app/building-your-application/data-fetching), [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview).
+Источник: [Next.js data fetching](https://nextjs.org/docs/app/building-your-application/data-fetching), [TanStack Query](TanStack-Query.md).

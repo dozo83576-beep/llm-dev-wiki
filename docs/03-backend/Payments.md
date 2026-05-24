@@ -9,11 +9,11 @@ source_priority: "internal"
 
 # Payments
 
-Payments — high-risk зона. Используй mature provider, не храни card data, проектируй idempotency и webhooks с самого начала.
+Payments — high-risk зона. Используй mature provider вроде [Stripe](Stripe.md), не храни card data, проектируй idempotency и webhooks с самого начала.
 
 ## Production-паттерны
 
-- Provider-hosted checkout, если возможно.
+- Provider-hosted checkout, если возможно; для Stripe см. [Stripe](Stripe.md).
 - Webhook signature verification.
 - Subscription state derived from provider events and local audit.
 - Idempotency keys for create payment/subscription operations.
@@ -39,5 +39,4 @@ Payments — high-risk зона. Используй mature provider, не хра
 
 ## Источники
 
-См. документацию выбранного payment provider, [Webhooks](Webhooks.md), [Secrets](../05-auth-security/Secrets.md).
-
+См. [Stripe](Stripe.md), документацию выбранного payment provider, [Webhooks](Webhooks.md), [Secrets](../05-auth-security/Secrets.md), [Compliance baseline](../05-auth-security/Compliance-baseline.md).

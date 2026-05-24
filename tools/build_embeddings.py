@@ -1,17 +1,16 @@
 """
-Build embeddings snapshot for the wiki corpus.
+Build a corpus snapshot for the wiki.
 
 Walks the configured content roots, parses front matter, chunks by `##` / `###`
-headings, computes sha256 per chunk, optionally embeds via OpenAI
-text-embedding-3-small, and writes:
+headings, computes sha256 per chunk, and writes:
 
-- embeddings/snapshot.jsonl  (one chunk per line; vectors only when OPENAI_API_KEY is set)
+- embeddings/snapshot.jsonl  (one chunk per line; vectors only in openai-embeddings mode)
 - embeddings/manifest.json   (corpus-level hash + counts; always written)
 
 Usage:
     python tools/build_embeddings.py
-    OPENAI_API_KEY=sk-... python tools/build_embeddings.py
-    python tools/build_embeddings.py --root . --model text-embedding-3-small --batch-size 64
+    python tools/build_embeddings.py --mode offline-text
+    OPENAI_API_KEY=sk-... python tools/build_embeddings.py --mode openai-embeddings
 """
 from __future__ import annotations
 
@@ -69,6 +68,8 @@ def _parse_frontmatter_fallback(text: str) -> _FallbackPost:
     return _FallbackPost(meta, body)
 
 EMBED_MODEL_DEFAULT = "text-embedding-3-small"
+RETRIEVAL_MODE_OFFLINE = "offline-text"
+RETRIEVAL_MODE_OPENAI = "openai-embeddings"
 
 CONTENT_ROOTS = [
     "docs",
@@ -240,8 +241,8 @@ def load_cache(cache_path: Path) -> dict[str, list[float]]:
 def embed_chunks(chunks: list[Chunk], model: str, batch_size: int, cache: dict[str, list[float]]) -> None:
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
-        print("OPENAI_API_KEY not set — writing manifest only, no embeddings computed.", file=sys.stderr)
-        return
+        print("OPENAI_API_KEY not set — cannot run openai-embeddings mode.", file=sys.stderr)
+        sys.exit(3)
     try:
         from openai import OpenAI
     except ImportError:
@@ -282,7 +283,7 @@ def write_snapshot(chunks: list[Chunk], out_path: Path) -> None:
             f.write("\n")
 
 
-def write_manifest(chunks: list[Chunk], model: str, out_path: Path, has_vectors: bool) -> None:
+def write_manifest(chunks: list[Chunk], model: str, out_path: Path, retrieval_mode: str, has_vectors: bool) -> None:
     manifest = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "embedding_model": model if has_vectors else None,
@@ -290,6 +291,7 @@ def write_manifest(chunks: list[Chunk], model: str, out_path: Path, has_vectors:
         "chunk_count": len(chunks),
         "files_indexed": sorted({c.path for c in chunks}),
         "has_vectors": has_vectors,
+        "retrieval_mode": retrieval_mode,
     }
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8") as f:
@@ -298,9 +300,10 @@ def write_manifest(chunks: list[Chunk], model: str, out_path: Path, has_vectors:
 
 
 def main(argv: list[str]) -> int:
-    parser = argparse.ArgumentParser(description="Build embeddings snapshot for wiki corpus.")
+    parser = argparse.ArgumentParser(description="Build corpus snapshot for wiki retrieval.")
     parser.add_argument("--root", default=".", help="Repository root.")
     parser.add_argument("--model", default=EMBED_MODEL_DEFAULT, help="Embedding model.")
+    parser.add_argument("--mode", choices=[RETRIEVAL_MODE_OFFLINE, RETRIEVAL_MODE_OPENAI], default=RETRIEVAL_MODE_OFFLINE)
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--snapshot", default="embeddings/snapshot.jsonl")
     parser.add_argument("--manifest", default="embeddings/manifest.json")
@@ -314,15 +317,13 @@ def main(argv: list[str]) -> int:
     chunks = build_chunks(root)
     print(f"Discovered {len(chunks)} chunks across {len({c.path for c in chunks})} files.")
 
-    has_key = bool(os.environ.get("OPENAI_API_KEY"))
-    if has_key:
+    has_vectors = False
+    if args.mode == RETRIEVAL_MODE_OPENAI:
         embed_chunks(chunks, args.model, args.batch_size, cache)
-        write_snapshot(chunks, snapshot_path)
-    else:
-        # Even without key, write snapshot metadata (without vectors) so consumers can still see structure
-        write_snapshot(chunks, snapshot_path)
+        has_vectors = True
 
-    write_manifest(chunks, args.model, manifest_path, has_vectors=has_key)
+    write_snapshot(chunks, snapshot_path)
+    write_manifest(chunks, args.model, manifest_path, retrieval_mode=args.mode, has_vectors=has_vectors)
     print(f"Wrote {snapshot_path.relative_to(root)} and {manifest_path.relative_to(root)}")
     return 0
 

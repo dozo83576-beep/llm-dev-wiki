@@ -176,6 +176,35 @@ function Test-TechnologyWatchlist {
     }
 }
 
+function Test-UnfinishedMarkerLine {
+    param(
+        [string]$Line
+    )
+
+    if ($Line -notmatch '(?i)\b(TODO|TBD|FIXME)\b') {
+        return $false
+    }
+
+    $allowedContexts = @(
+        '(?i)\bNo\b.*`?(TODO|TBD|FIXME)`?',
+        '(?i)\bNever\s+leave\s+`?(TODO|TBD|FIXME)`?',
+        '(?i)Не\s+(пиши|создавать|оставлять)\s+.*`?(TODO|TBD|FIXME)`?',
+        '(?i)без\s+`?(TODO|TBD|FIXME)`?',
+        '(?i)`?(TODO|TBD|FIXME)`?\s*-?only',
+        '(?i)"?(TODO|TBD|FIXME)"?\s+артефакты',
+        '(?i)`?(TODO|TBD|FIXME)`?\s*/\s*`?(TODO|TBD|FIXME)`?',
+        '(?i)\b(TODO|TBD|FIXME)\b.*(запрещ|нельзя|не допуска)'
+    )
+
+    foreach ($pattern in $allowedContexts) {
+        if ($Line -match $pattern) {
+            return $false
+        }
+    }
+
+    return $true
+}
+
 $failures = [System.Collections.Generic.List[string]]::new()
 $rootPath = Resolve-Path -LiteralPath $Root
 $markdownFiles = Get-ChildItem -LiteralPath $rootPath -Recurse -File |
@@ -190,9 +219,11 @@ foreach ($file in $emptyFiles) {
     Add-Failure $failures "Empty Markdown file: $($file.FullName)"
 }
 
-$unfinishedMatches = Select-String -Path ($markdownFiles | ForEach-Object FullName) -Pattern "TODO|TBD" -CaseSensitive:$false -ErrorAction SilentlyContinue
+$unfinishedMatches = Select-String -Path ($markdownFiles | ForEach-Object FullName) -Pattern "\b(TODO|TBD|FIXME)\b" -CaseSensitive:$false -ErrorAction SilentlyContinue
 foreach ($match in $unfinishedMatches) {
-    Add-Failure $failures "Unfinished marker: $($match.Path):$($match.LineNumber)"
+    if (Test-UnfinishedMarkerLine -Line $match.Line) {
+        Add-Failure $failures "Unfinished marker: $($match.Path):$($match.LineNumber)"
+    }
 }
 
 $frontMatterRoots = @("docs", "stacks", "patterns")

@@ -15,6 +15,7 @@ Gated checklist. Каждая строка — критерий, способ п
 
 - [ ] **Broken access control** — IDOR-тест на чужие ID; tenant-boundary fuzz; admin endpoint от non-admin даёт 403 — backend/security owner — block — [Authorization](../docs/05-auth-security/Authorization.md), [OWASP A01](../docs/05-auth-security/OWASP.md).
 - [ ] **Tenant isolation** — данные org A не видны из org B (integration tests на каждом list endpoint) — backend owner — block — [tenant-isolation pattern](../patterns/security/tenant-isolation.md).
+- [ ] **Managed auth boundary** — Clerk/Auth.js/Supabase claims не заменяют backend object-level permission checks — security owner — block — [Authorization](../docs/05-auth-security/Authorization.md), [Clerk](../docs/05-auth-security/Clerk.md), [Auth.js](../docs/05-auth-security/Authjs.md), [Supabase](../docs/03-backend/Supabase.md).
 - [ ] **Deny-by-default** — новые endpoints/queries требуют явного allow, не наследуют доступ — backend owner — block — [deny-by-default pattern](../patterns/security/deny-by-default.md).
 - [ ] **MFA / step-up** для admin / financial / destructive операций — security owner — warn — [Authentication](../docs/05-auth-security/Authentication.md).
 
@@ -45,6 +46,7 @@ Gated checklist. Каждая строка — критерий, способ п
 - [ ] **Rate limiting** включён для login / signup / password-reset / AI-endpoints / expensive search — backend owner — block — [Rate limiting](../docs/05-auth-security/Rate-limiting.md).
 - [ ] **Bot protection** на формах (Turnstile / hCaptcha) если есть public submission — frontend owner — warn.
 - [ ] **Webhook signatures** проверяются до парсинга бизнес-payload — backend owner — block — [webhook-idempotency pattern](../patterns/backend/webhook-idempotency.md).
+- [ ] **Payment/compliance boundary** — card data не хранится, Stripe/webhook state идемпотентен, GDPR/WCAG/PCI gates определены — security owner — block — [Stripe](../docs/03-backend/Stripe.md), [Compliance baseline](../docs/05-auth-security/Compliance-baseline.md).
 
 ## MCP & AI
 

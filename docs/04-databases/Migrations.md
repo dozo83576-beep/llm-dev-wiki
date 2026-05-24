@@ -4,7 +4,7 @@ category: "database"
 updated: "2026-05-24"
 status: "active"
 tags: ["migrations", "database"]
-source_priority: "internal"
+source_priority: "mixed"
 ---
 
 # Database migrations
@@ -36,4 +36,3 @@ Staging dry-run, lock analysis, backup verification, migration rollback plan, ap
 ## Источники
 
 См. [Expand-contract migration](../../patterns/database/expand-contract-migration.md), [PostgreSQL ALTER TABLE](https://www.postgresql.org/docs/current/sql-altertable.html).
-

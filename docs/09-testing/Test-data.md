@@ -57,9 +57,9 @@ PII в репо, утечка через CI artifacts, dump-файлы в Slack 
 - Locale: ru/en/ar/zh данные, RTL текст, эмодзи, surrogates.
 - Time-zones: фиксировать UTC и тестировать конкретные TZ-сценарии.
 - Money: разные валюты, decimal precision, отрицательные значения.
-- IDs из разных систем (Stripe payment_intent, Slack user_id) — фиксированные допустимые форматы.
+- IDs из разных систем ([Stripe](../03-backend/Stripe.md) payment_intent, Slack user_id, Clerk user_id) — фиксированные допустимые форматы.
 
 ## Источники
 
 - [GDPR Test Data Guidance (ICO)](https://ico.org.uk/) — проверено 2026-05-24.
-- См. [Fixtures](Fixtures.md), [Integration testing](Integration-testing.md), [Mocks](Mocks.md), [Secrets](../05-auth-security/Secrets.md).
+- См. [Fixtures](Fixtures.md), [Integration testing](Integration-testing.md), [Mocks](Mocks.md), [Secrets](../05-auth-security/Secrets.md), [Compliance baseline](../05-auth-security/Compliance-baseline.md).

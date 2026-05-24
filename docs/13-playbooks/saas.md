@@ -24,7 +24,9 @@ Multi-tenant продукт: организации, пользователи, �
 
 ## Стек по умолчанию
 
-Next.js + TypeScript + PostgreSQL + Prisma/Drizzle + Auth.js/Supabase/Clerk + Stripe + Playwright + Sentry + Vercel/Render.
+Next.js + TypeScript + PostgreSQL + Prisma/Drizzle + [Auth.js](../05-auth-security/Authjs.md)/[Supabase](../03-backend/Supabase.md)/[Clerk](../05-auth-security/Clerk.md) + [Stripe](../03-backend/Stripe.md) + [Playwright](../09-testing/Playwright.md) + Sentry + Vercel/Render.
+
+Если вопрос звучит как "какой стек по умолчанию для SaaS-приложения с подписками", ответ — этот playbook: Next.js + PostgreSQL + Auth.js/Clerk/Supabase + Stripe subscriptions + Playwright smoke + observability.
 
 ## Порядок разработки
 
@@ -43,7 +45,7 @@ Next.js + TypeScript + PostgreSQL + Prisma/Drizzle + Auth.js/Supabase/Clerk + St
 ## Production-паттерны
 
 - Row-level security или явный `WHERE organization_id = $1` во всех queries.
-- Stripe subscription state — source of truth для access; не "наша таблица перекрывает Stripe".
+- [Stripe](../03-backend/Stripe.md) subscription state — source of truth для access; не "наша таблица перекрывает Stripe".
 - Idempotent webhook handlers, retry-safe.
 - Audit log на каждое state-changing действие.
 - Feature flags для постепенной выкатки фичей по plan / organization.
@@ -79,8 +81,8 @@ Cross-tenant data leak (самый частый и дорогой баг SaaS), 
 - Owner покидает организацию — transfer ownership.
 - Downgrade plan: что с уже созданными ресурсами, превышающими новый лимит.
 - Refund + partial payouts при annual prepay.
-- GDPR / data export / deletion request.
+- GDPR / data export / deletion request — см. [Compliance baseline](../05-auth-security/Compliance-baseline.md).
 
 ## Источники
 
-- См. [Authentication](../05-auth-security/Authentication.md), [Authorization](../05-auth-security/Authorization.md), [Multi-tenancy](../04-databases/Multi-tenancy.md), [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md), [tenant-isolation pattern](../../patterns/security/tenant-isolation.md), [admin-dashboard playbook](admin-dashboard.md).
+- См. [Authentication](../05-auth-security/Authentication.md), [Auth.js](../05-auth-security/Authjs.md), [Clerk](../05-auth-security/Clerk.md), [Supabase](../03-backend/Supabase.md), [Authorization](../05-auth-security/Authorization.md), [Multi-tenancy](../04-databases/Multi-tenancy.md), [Stripe](../03-backend/Stripe.md), [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md), [Compliance baseline](../05-auth-security/Compliance-baseline.md), [tenant-isolation pattern](../../patterns/security/tenant-isolation.md), [admin-dashboard playbook](admin-dashboard.md).

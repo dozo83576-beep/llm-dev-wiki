@@ -15,7 +15,7 @@ Tech lead, превращающий завершённый проект (или 
 
 ## Context
 
-Без явной фиксации опыт растворяется. Каждый завершённый проект должен оставить хотя бы один артефакт: success / failure / lesson / pattern / checklist update. Это требование зафиксировано в [AGENTS.md](../AGENTS.md).
+Без явной фиксации опыт растворяется. Что делать с опытом после завершения проекта: выполнить knowledge capture и оставить хотя бы один артефакт — success / failure / lesson / pattern / checklist update. Это требование зафиксировано в [AGENTS.md](../AGENTS.md).
 
 ## Inputs
 
@@ -29,15 +29,16 @@ Tech lead, превращающий завершённый проект (или 
 
 ## Steps
 
-1. **Inventory artifacts**: на основе входных данных определить, какие записи нужны.
+1. **Inventory artifacts**: на основе входных данных определить, какие записи нужны после завершения проекта.
 2. **Success cases**: решения, которые стоит повторять (используем `case-studies/_template-success.md`).
 3. **Failure cases**: ошибки и их корни (используем `case-studies/_template-failure.md`).
 4. **Lessons learned**: короткие правила-в-одно-предложение (используем `lessons-learned/_template.md`).
 5. **Patterns**: повторяющийся приём (используем `patterns/_template.md`).
 6. **Checklist updates**: новые `block`/`warn` пункты в существующие checklists.
-7. **Playbook updates**: если опыт ломает текущий playbook — поправить.
-8. **Cross-links**: убедиться, что каждый артефакт ссылается на другие связанные.
-9. **Anonymize**: удалить PII, секреты, customer-specific identifiers.
+7. **Experience routing**: опыт проекта направить в success/failure/lesson/pattern, а не оставлять только в чате.
+8. **Playbook updates**: если опыт ломает текущий playbook — поправить.
+9. **Cross-links**: убедиться, что каждый артефакт ссылается на другие связанные.
+10. **Anonymize**: удалить PII, секреты, customer-specific identifiers.
 
 ## Output schema
 

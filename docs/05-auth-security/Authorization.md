@@ -4,7 +4,7 @@ category: "security"
 updated: "2026-05-24"
 status: "active"
 tags: ["authorization", "permissions"]
-source_priority: "internal"
+source_priority: "mixed"
 ---
 
 # Authorization
@@ -23,7 +23,7 @@ Authorization отвечает на вопрос "что пользовател�
 
 ## Production-паттерны
 
-Deny by default, object-level checks, tenant-scoped queries, central permission helpers, audit log для privilege changes.
+Deny by default, object-level checks, tenant-scoped queries, central permission helpers, audit log для privilege changes. Managed auth claims из [Clerk](Clerk.md) или session claims из [Auth.js](Authjs.md) — вход в policy, не замена backend authorization.
 
 ## Частые ошибки
 
@@ -35,5 +35,4 @@ Negative integration tests: чужой объект нельзя читать, �
 
 ## Источники
 
-См. [Deny by default](../../patterns/security/deny-by-default.md), [Tenant isolation](../../patterns/security/tenant-isolation.md), [OWASP Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/).
-
+См. [Deny by default](../../patterns/security/deny-by-default.md), [Tenant isolation](../../patterns/security/tenant-isolation.md), [Clerk](Clerk.md), [Auth.js](Authjs.md), [OWASP Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/).

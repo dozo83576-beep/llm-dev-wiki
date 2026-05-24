@@ -13,7 +13,7 @@ source_priority: "official-docs"
 
 - local state: UI-переключатели, формы, модалки;
 - URL state: фильтры, пагинация, вкладки, shareable состояние;
-- TanStack Query: server state, cache, refetch, mutations;
+- [TanStack Query](TanStack-Query.md): server state, cache, refetch, mutations;
 - Zustand/Jotai: небольшое глобальное client state;
 - Redux Toolkit: сложные приложения с строгим predictable flow.
 
@@ -29,7 +29,7 @@ source_priority: "official-docs"
 
 ## Production-паттерны
 
-Server state — через TanStack Query или framework data fetching. URL state — для shareable filters. Global store — только для cross-cutting UI/session state.
+Server state — через [TanStack Query](TanStack-Query.md) или framework data fetching. URL state — для shareable filters. Global store — только для cross-cutting UI/session state.
 
 ## Частые ошибки
 
@@ -38,4 +38,3 @@ Server state — через TanStack Query или framework data fetching. URL s
 ## Проверка
 
 Unit tests для reducers/selectors, E2E для refresh/deep link, integration tests для query invalidation после mutation.
-

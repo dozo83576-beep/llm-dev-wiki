@@ -24,13 +24,13 @@ source_priority: "internal"
 
 ## Стек по умолчанию
 
-Next.js + commerce backend (свой или Saleor/Medusa/Shopify) + PostgreSQL + Stripe/Adyen + analytics + E2E checkout tests + observability на платёжных webhooks.
+Next.js + commerce backend (свой или Saleor/Medusa/Shopify) + PostgreSQL + [Stripe](../03-backend/Stripe.md)/Adyen + analytics + [Playwright](../09-testing/Playwright.md) checkout tests + observability на платёжных webhooks.
 
 ## Порядок разработки
 
 1. **Catalog**: products, variants (size/color), SKU, inventory, prices с историей.
 2. **Cart**: persistence (cookie/db), tax/shipping расчёт, скидки/промокоды.
-3. **Checkout**: предпочтительно provider-hosted (Stripe Checkout / Payment Element) — меньше PCI scope.
+3. **Checkout**: предпочтительно provider-hosted ([Stripe](../03-backend/Stripe.md) Checkout / Payment Element) — меньше PCI scope.
 4. **Orders**: state machine (`pending → paid → fulfilled → shipped → completed`), события платежа.
 5. **Payments**: webhook идемпотентность, retry policy, reconciliation.
 6. **Fulfillment**: WMS / 3PL интеграция или ручная сборка.
@@ -57,7 +57,7 @@ Next.js + commerce backend (свой или Saleor/Medusa/Shopify) + PostgreSQL 
 
 ## Security risks
 
-PCI / тайные данные карт, account takeover через credential stuffing, coupon abuse (one-per-user обходится через новые аккаунты), price manipulation в API.
+PCI / тайные данные карт, account takeover через credential stuffing, coupon abuse (one-per-user обходится через новые аккаунты), price manipulation в API — см. [Compliance baseline](../05-auth-security/Compliance-baseline.md).
 
 ## Performance risks
 
@@ -81,4 +81,4 @@ Heavy catalog query без индексов, N+1 на список заказо�
 
 ## Источники
 
-- См. [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md), [webhook-idempotency pattern](../../patterns/backend/webhook-idempotency.md), [E2E testing](../09-testing/E2E-testing.md), [SaaS playbook](saas.md).
+- См. [Stripe](../03-backend/Stripe.md), [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md), [webhook-idempotency pattern](../../patterns/backend/webhook-idempotency.md), [Playwright](../09-testing/Playwright.md), [E2E testing](../09-testing/E2E-testing.md), [Compliance baseline](../05-auth-security/Compliance-baseline.md), [SaaS playbook](saas.md).

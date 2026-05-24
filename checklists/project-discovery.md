@@ -31,17 +31,17 @@ Gated checklist для kickoff'а нового проекта. Формат: к�
 
 ## Integrations
 
-- [ ] **Платежи** определены (provider, plan, currency, KYC) — tech lead — block — [Payments](../docs/03-backend/Payments.md).
+- [ ] **Платежи** определены (provider, plan, currency, KYC) — tech lead — block — [Payments](../docs/03-backend/Payments.md), [Stripe](../docs/03-backend/Stripe.md).
 - [ ] **Email / notifications** определены (transactional vs marketing) — tech lead — warn — [Email](../docs/03-backend/Email.md).
 - [ ] **Analytics** и event tracking запланирован — product owner — warn — [Analytics](../docs/02-frontend/Analytics.md).
 - [ ] **AI / external API** — список и квоты — tech lead — warn — [OpenAI API](../docs/07-mcp-and-ai-tools/OpenAI-API.md).
-- [ ] **SSO / identity** требования зафиксированы — security owner — warn — [Authentication](../docs/05-auth-security/Authentication.md).
+- [ ] **SSO / identity** требования зафиксированы; Auth.js vs Clerk/Supabase trade-off выбран — security owner — warn — [Authentication](../docs/05-auth-security/Authentication.md), [Auth.js](../docs/05-auth-security/Authjs.md), [Clerk](../docs/05-auth-security/Clerk.md), [Supabase](../docs/03-backend/Supabase.md).
 
 ## Data & privacy
 
 - [ ] **PII** определена; data retention policy зафиксирована — security owner — block.
 - [ ] **Данные, которые нельзя сохранять** в вики и в logs перечислены — security owner — block.
-- [ ] **Compliance** (GDPR / HIPAA / SOC2 / PCI) — обязательства явны — security owner — block.
+- [ ] **Compliance** (GDPR / HIPAA / SOC2 / PCI / WCAG) — обязательства явны — security owner — block — [Compliance baseline](../docs/05-auth-security/Compliance-baseline.md).
 - [ ] **Backup** и restore требования — devops owner — warn — [Backups](../docs/04-databases/Backups.md).
 
 ## Constraints

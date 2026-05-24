@@ -22,14 +22,14 @@ source_priority: "internal"
 
 ## Основные разделы
 
-- `docs/02-frontend` — React, Next.js, TypeScript, UI, формы, состояние, доступность, производительность.
-- `docs/03-backend` — Node.js, NestJS, FastAPI, Django, фоновые задачи, ошибки, логирование.
+- `docs/02-frontend` — React, Next.js, TypeScript, UI, формы, состояние, TanStack Query, доступность, производительность.
+- `docs/03-backend` — Node.js, NestJS, FastAPI, Django, Supabase, Stripe, фоновые задачи, ошибки, логирование.
 - `docs/04-databases` — PostgreSQL, ORM, миграции, Redis, backup, проектирование данных.
-- `docs/05-auth-security` — auth, RBAC/ABAC, OWASP, секреты, CSP, MCP-security.
+- `docs/05-auth-security` — Auth.js, Clerk, authorization, RBAC/ABAC, OWASP, compliance, секреты, CSP, MCP-security.
 - `docs/06-api-design` — REST, OpenAPI, GraphQL, WebSockets, ошибки, пагинация.
 - `docs/07-mcp-and-ai-tools` — MCP, OpenAI API, RAG, embeddings, vector DB, agents, evaluation.
 - `docs/08-devops-deploy` — Docker, CI/CD, Vercel, Cloudflare, Render, observability.
-- `docs/09-testing` — unit, integration, E2E, contract, load, security testing.
+- `docs/09-testing` — unit, integration, Playwright, E2E, contract, load, security testing.
 - `docs/13-playbooks` — end-to-end инструкции по типам проектов.
 - `docs/14-llm-indexing` — индексация вики для RAG/File Search и LLM-клиентов.
 

@@ -4,7 +4,7 @@ category: "database"
 updated: "2026-05-24"
 status: "active"
 tags: ["schema", "design"]
-source_priority: "internal"
+source_priority: "mixed"
 ---
 
 # Database design
@@ -36,4 +36,3 @@ Schema review, migration review, tests на constraints, permission queries, que
 ## Источники
 
 См. [PostgreSQL Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html), [Multi-tenancy](Multi-tenancy.md).
-

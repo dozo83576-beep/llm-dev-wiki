@@ -47,6 +47,7 @@ Gated checklist для production-релиза. Срабатывает посл�
 ## Security
 
 - [ ] **Security review** пройден — security owner — block — [security-review](security-review.md).
+- [ ] **Compliance-impacting changes** (payments, PII, accessibility, auth) прошли baseline gate — security owner — block — [Compliance baseline](../docs/05-auth-security/Compliance-baseline.md).
 - [ ] **MCP / AI tools** прошли отдельный security review — AI owner — block — [ai-agent-review](ai-agent-review.md).
 
 ## Communication & rollback

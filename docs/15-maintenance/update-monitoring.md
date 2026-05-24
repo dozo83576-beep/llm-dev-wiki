@@ -11,6 +11,22 @@ source_priority: "internal"
 
 Вики отслеживает обновления ключевых библиотек, фреймворков, SDK и платформ через `resources/technology-watchlist.json` и `tools/check-updates.ps1`.
 
+## Offline-first политика
+
+Обязательные проверки вики должны выполняться без внешних LLM API, платных embeddings и секретов. Внешние API допустимы только для явно опциональных режимов, например semantic retrieval benchmark с `OPENAI_API_KEY`.
+
+Минимальный локальный цикл обслуживания:
+
+```bash
+pwsh ./tools/wiki-audit.ps1
+pwsh ./tools/wiki-quality.ps1
+pwsh ./tools/build-index.ps1
+python tools/build_embeddings.py --mode offline-text
+python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10
+```
+
+`embeddings/manifest.json` в обязательном режиме должен фиксировать `retrieval_mode: offline-text` и `has_vectors: false`. Snapshot `embeddings/snapshot.jsonl` локальный и не коммитится.
+
 ## Как работает проверка
 
 1. Скрипт читает watchlist.
@@ -70,3 +86,11 @@ Workflow `.github/workflows/technology-updates.yml` запускается ра�
 4. Обнови `currentVersion` в `resources/technology-watchlist.json`, если хочешь отслеживать следующий drift от этой версии.
 5. Запусти `tools/wiki-audit.ps1` и `tools/check-updates.ps1`.
 6. Закрой issue после коммита обновлений.
+
+## Как закрывать maintenance drift
+
+1. Пройди [wiki maintenance checklist](../../checklists/wiki-maintenance.md).
+2. Если `evals-report.md` показывает слабые вопросы, сначала улучши документы или prompts, а не подгоняй пороги.
+3. Если менялись metadata, пересобери `docs/INDEX.md`.
+4. Если менялся corpus, пересобери `embeddings/manifest.json` через offline-text режим.
+5. Если использовались внешние API, не сохраняй ключи, payload'ы и приватные данные в вики.

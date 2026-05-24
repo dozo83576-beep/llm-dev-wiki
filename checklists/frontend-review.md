@@ -15,7 +15,7 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 
 - [ ] **Server / Client component** выбор обоснован: client только если нужна интерактивность — frontend owner — block — [server-client-boundary pattern](../patterns/frontend/server-client-boundary.md).
 - [ ] **SSR / SSG / ISR** соответствует природе данных — frontend owner — warn — [Nextjs](../docs/02-frontend/Nextjs.md).
-- [ ] **Data fetching** на сервере где возможно; client fetch только для интерактивного UI — frontend owner — warn — [Data fetching](../docs/02-frontend/Data-fetching.md).
+- [ ] **Data fetching** на сервере где возможно; client fetch/TanStack Query только для интерактивного server state — frontend owner — warn — [Data fetching](../docs/02-frontend/Data-fetching.md), [TanStack Query](../docs/02-frontend/TanStack-Query.md).
 
 ## Forms
 
@@ -55,6 +55,6 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 
 ## Tests
 
-- [ ] **Critical user-journey** покрыт Playwright или ручным smoke — QA — block — [E2E testing](../docs/09-testing/E2E-testing.md).
+- [ ] **Critical user-journey** покрыт Playwright или ручным smoke — QA — block — [Playwright](../docs/09-testing/Playwright.md), [E2E testing](../docs/09-testing/E2E-testing.md).
 - [ ] **Component tests** для сложных интерактивных компонентов — frontend owner — warn — [Frontend testing](../docs/02-frontend/Frontend-testing.md).
 - [ ] **Visual regression** для дизайн-системы и hero pages — frontend owner — warn — [Visual testing](../docs/09-testing/Visual-testing.md).

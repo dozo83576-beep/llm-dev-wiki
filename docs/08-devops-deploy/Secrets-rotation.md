@@ -4,7 +4,7 @@ category: "devops"
 updated: "2026-05-24"
 status: "active"
 tags: ["secrets", "rotation", "security"]
-source_priority: "internal"
+source_priority: "mixed"
 ---
 
 # Secrets rotation

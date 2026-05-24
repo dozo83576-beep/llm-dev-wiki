@@ -1,6 +1,6 @@
 {
-  "chunk_count": 1509,
-  "corpus_hash": "29c7f21a09b5c2ab5fba49e5f5e0a6b5557c152559559c4f463581b16c1921ba",
+  "chunk_count": 1569,
+  "corpus_hash": "b109d78354407bc0f0ea6dcd17855f028e646880aa15ae07485385889d720f6f",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -18,6 +18,7 @@
     "checklists/project-discovery.md",
     "checklists/release-readiness.md",
     "checklists/security-review.md",
+    "checklists/wiki-maintenance.md",
     "docs/00-start-here/document-standard.md",
     "docs/00-start-here/overview.md",
     "docs/01-development-process/full-cycle.md",
@@ -37,6 +38,7 @@
     "docs/02-frontend/Shadcn.md",
     "docs/02-frontend/State-management.md",
     "docs/02-frontend/Tailwind.md",
+    "docs/02-frontend/TanStack-Query.md",
     "docs/02-frontend/TypeScript.md",
     "docs/02-frontend/UI-architecture.md",
     "docs/03-backend/API-architecture.md",
@@ -54,6 +56,8 @@
     "docs/03-backend/Nestjs.md",
     "docs/03-backend/Nodejs.md",
     "docs/03-backend/Payments.md",
+    "docs/03-backend/Stripe.md",
+    "docs/03-backend/Supabase.md",
     "docs/03-backend/Webhooks.md",
     "docs/04-databases/Audit-log.md",
     "docs/04-databases/Backups.md",
@@ -69,8 +73,11 @@
     "docs/04-databases/Transactions.md",
     "docs/04-databases/pgvector.md",
     "docs/05-auth-security/Authentication.md",
+    "docs/05-auth-security/Authjs.md",
     "docs/05-auth-security/Authorization.md",
     "docs/05-auth-security/CORS-CSRF-CSP.md",
+    "docs/05-auth-security/Clerk.md",
+    "docs/05-auth-security/Compliance-baseline.md",
     "docs/05-auth-security/Dependency-security.md",
     "docs/05-auth-security/MCP-security.md",
     "docs/05-auth-security/OWASP.md",
@@ -123,6 +130,7 @@
     "docs/09-testing/Integration-testing.md",
     "docs/09-testing/Load-testing.md",
     "docs/09-testing/Mocks.md",
+    "docs/09-testing/Playwright.md",
     "docs/09-testing/Security-testing.md",
     "docs/09-testing/Test-data.md",
     "docs/09-testing/Test-pyramid.md",
@@ -197,6 +205,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-05-24T18:09:17Z",
-  "has_vectors": false
+  "generated_at": "2026-05-24T18:46:24Z",
+  "has_vectors": false,
+  "retrieval_mode": "offline-text"
 }

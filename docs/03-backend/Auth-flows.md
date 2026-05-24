@@ -4,7 +4,7 @@ category: "backend"
 updated: "2026-05-24"
 status: "active"
 tags: ["auth", "backend"]
-source_priority: "internal"
+source_priority: "mixed"
 ---
 
 # Backend auth flows
@@ -13,7 +13,7 @@ Auth flow должен быть спроектирован как набор п�
 
 ## Production-паттерны
 
-- Session/cookie auth для browser apps, OAuth/OIDC для SSO, API keys для machine clients.
+- Session/cookie auth для browser apps, OAuth/OIDC для SSO, API keys для machine clients; [Auth.js](../05-auth-security/Authjs.md) и [Clerk](../05-auth-security/Clerk.md) выбираются по control vs managed trade-off.
 - Password reset tokens одноразовые, с TTL и audit log.
 - Role changes требуют audit log и повторной проверки активных сессий.
 - Admin endpoints имеют отдельные guards и rate limits.
@@ -36,9 +36,8 @@ Auth flow должен быть спроектирован как набор п�
 
 ## Когда не использовать
 
-Не пиши самописную password/session систему, если Auth.js, Supabase Auth, OIDC или managed provider закрывают требования.
+Не пиши самописную password/session систему, если [Auth.js](../05-auth-security/Authjs.md), [Supabase](Supabase.md) Auth, OIDC или managed provider вроде [Clerk](../05-auth-security/Clerk.md) закрывают требования.
 
 ## Источники
 
 См. [Authentication](../05-auth-security/Authentication.md), [Authorization](../05-auth-security/Authorization.md), [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html).
-

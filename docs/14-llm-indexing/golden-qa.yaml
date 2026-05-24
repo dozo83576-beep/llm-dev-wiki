@@ -194,3 +194,45 @@ questions:
       - prompts/post-project-knowledge-capture.md
       - prompts/update-wiki.md
       - AGENTS.md
+
+  - id: q-authjs-vs-clerk
+    question: "Когда выбрать Auth.js, а когда Clerk для SaaS?"
+    expected_paths:
+      - docs/05-auth-security/Authjs.md
+      - docs/05-auth-security/Clerk.md
+      - docs/13-playbooks/saas.md
+
+  - id: q-supabase-rls
+    question: "Как безопасно использовать Supabase RLS для tenant data?"
+    expected_paths:
+      - docs/03-backend/Supabase.md
+      - docs/04-databases/Multi-tenancy.md
+      - patterns/security/tenant-isolation.md
+
+  - id: q-tanstack-invalidation
+    question: "Как инвалидировать TanStack Query cache после mutation?"
+    expected_paths:
+      - docs/02-frontend/TanStack-Query.md
+      - docs/02-frontend/Data-fetching.md
+      - docs/02-frontend/State-management.md
+
+  - id: q-playwright-smoke
+    question: "Какой минимальный Playwright smoke pack нужен перед релизом?"
+    expected_paths:
+      - docs/09-testing/Playwright.md
+      - docs/09-testing/E2E-testing.md
+      - checklists/release-readiness.md
+
+  - id: q-stripe-webhook-idempotency
+    question: "Как сделать Stripe webhook идемпотентным для подписок?"
+    expected_paths:
+      - docs/03-backend/Stripe.md
+      - patterns/backend/webhook-idempotency.md
+      - docs/03-backend/Webhooks.md
+
+  - id: q-compliance-release-gate
+    question: "Какие GDPR PCI WCAG проверки нужны как release gate?"
+    expected_paths:
+      - docs/05-auth-security/Compliance-baseline.md
+      - checklists/release-readiness.md
+      - checklists/security-review.md

@@ -9,14 +9,14 @@ source_priority: "internal"
 
 # LLM indexing
 
-Раздел описывает, как подключить вики к LLM-агенту через RAG, OpenAI File Search или MCP-docs-сервер. Цель — чтобы LLM отвечал по проверенному корпусу с metadata и цитатами, а не по "всему интернету".
+Раздел описывает, как подключить вики к LLM-агенту через RAG, локальный lexical retrieval, OpenAI File Search или MCP-docs-сервер. Цель — чтобы LLM отвечал по проверенному корпусу с metadata и цитатами, а не по "всему интернету".
 
 ## Документы раздела
 
 - [RAG and File Search](rag-file-search.md) — общий pipeline и выбор между OpenAI File Search и self-hosted vector store.
 - [Metadata policy](metadata-policy.md) — обязательные поля front matter.
 - [Chunking policy](chunking-policy.md) — как делить документы на chunk'и.
-- [Source priority](source-priority.md) — таксономия `internal / official-docs / vendor-docs / community` и правила выставления.
+- [Source priority](source-priority.md) — таксономия `internal / mixed / official-docs / vendor-docs / community` и правила выставления.
 - [Freshness checks](freshness-checks.md) — как поддерживать свежесть корпуса.
 - [llms.txt rules](llms-txt-rules.md) — что и как писать в `llms.txt`.
 - [golden-qa.yaml](golden-qa.yaml) — набор golden questions для retrieval evaluation (после Stage 3).
@@ -27,11 +27,32 @@ source_priority: "internal"
 2. **Parse front matter**: достаём title, category, tags, updated, source_priority, status.
 3. **Filter**: пропускаем `status: archived` и пустые/redirect-документы.
 4. **Chunk**: по `##` / `###` с метаданными (см. [chunking-policy](chunking-policy.md)).
-5. **Embed**: модель версионируется, snapshot фиксируется в `embeddings/manifest.json`.
-6. **Index**: pgvector / Qdrant / OpenAI File Search.
-7. **Retrieve**: top-K с фильтрами по metadata.
-8. **Generate**: ответ с обязательными citations.
-9. **Eval**: golden Q&A проверяет precision@5 / recall@5.
+5. **Snapshot**: corpus snapshot фиксирует chunk'и и `embeddings/manifest.json`.
+6. **Offline eval**: `tools/run_offline_retrieval_evals.py` проверяет golden Q&A без внешних API.
+7. **Optional embeddings**: `tools/build_embeddings.py --mode openai-embeddings` используется только при явном ключе и необходимости semantic retrieval.
+8. **Index**: локальный lexical retrieval, pgvector / Qdrant / OpenAI File Search.
+9. **Retrieve**: top-K с фильтрами по metadata.
+10. **Generate**: ответ с обязательными citations.
+
+## Offline-first режим
+
+Обязательный CI не зависит от OpenAI API, внешних embeddings или сетевых retrieval-сервисов. Базовый режим:
+
+```bash
+python tools/build_embeddings.py --mode offline-text
+python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10
+```
+
+В `embeddings/manifest.json` для этого режима должны быть `retrieval_mode: offline-text`, `has_vectors: false`, `embedding_model: null`. Это нормальное состояние для локальной разработки и CI.
+
+OpenAI embeddings остаются optional enhanced mode:
+
+```bash
+OPENAI_API_KEY=... python tools/build_embeddings.py --mode openai-embeddings
+python tools/run_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10
+```
+
+Такой режим не является обязательным quality gate и не должен блокировать работу без ключей.
 
 ## Главное правило
 
@@ -42,6 +63,7 @@ LLM должна видеть не "весь интернет", а curated knowl
 - Индексировать всё подряд без фильтрации по `status` — старые документы перетягивают retrieval.
 - Игнорировать metadata — невозможно фильтровать "только security" или "только vendor".
 - Считать "поиск работает" доказательством корректности — нужен golden eval set.
+- Делать внешний embeddings API обязательным для CI — вики должна проверяться offline-first.
 - Скрывать citations — пользователь не может проверить ответ.
 
 ## Источники

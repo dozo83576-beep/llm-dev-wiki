@@ -24,7 +24,7 @@ source_priority: "internal"
 
 ## Стек по умолчанию
 
-Next.js + NestJS / FastAPI + PostgreSQL + Redis + search (Meilisearch / Algolia / Elastic) + payments provider с Connect / split-payments (Stripe Connect / Adyen MarketPay) + moderation workflow.
+Next.js + NestJS / FastAPI + PostgreSQL + Redis + search (Meilisearch / Algolia / Elastic) + payments provider с Connect / split-payments ([Stripe](../03-backend/Stripe.md) Connect / Adyen MarketPay) + moderation workflow.
 
 ## Порядок разработки
 
@@ -41,7 +41,7 @@ Next.js + NestJS / FastAPI + PostgreSQL + Redis + search (Meilisearch / Algolia 
 
 ## Production-паттерны
 
-- KYC / KYB интеграция в onboarding продавцов (Stripe Identity / собственный).
+- KYC / KYB интеграция в onboarding продавцов (Stripe Identity / собственный) и compliance baseline до запуска.
 - Payouts отделены от orders — отдельный schedule, retries, audit.
 - Webhooks идемпотентны и хранят raw payload для аудита.
 - Fraud-engine на signups / listings / orders (rules + score).
@@ -82,4 +82,4 @@ Search без индексов / неверная стратегия пагин�
 
 ## Источники
 
-- См. [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md), [webhook-idempotency pattern](../../patterns/backend/webhook-idempotency.md), [Multi-tenancy](../04-databases/Multi-tenancy.md), [Authorization](../05-auth-security/Authorization.md), [tenant-isolation pattern](../../patterns/security/tenant-isolation.md), [E2E testing](../09-testing/E2E-testing.md).
+- См. [Stripe](../03-backend/Stripe.md), [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md), [webhook-idempotency pattern](../../patterns/backend/webhook-idempotency.md), [Multi-tenancy](../04-databases/Multi-tenancy.md), [Authorization](../05-auth-security/Authorization.md), [Compliance baseline](../05-auth-security/Compliance-baseline.md), [tenant-isolation pattern](../../patterns/security/tenant-isolation.md), [Playwright](../09-testing/Playwright.md), [E2E testing](../09-testing/E2E-testing.md).

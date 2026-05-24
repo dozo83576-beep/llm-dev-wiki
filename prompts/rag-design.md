@@ -15,7 +15,9 @@ Senior AI Engineer, проектирующий RAG (retrieval-augmented generati
 
 ## Context
 
-Нужен chat / search / Q&A с цитированием по собственной базе знаний. Решение должно покрыть весь pipeline (ingestion → retrieval → generation → evals), а не только "выбрать модель embeddings".
+Нужен chat / search / Q&A с цитированием по собственной базе знаний. Решение должно покрыть весь RAG-pipeline для wiki (source curation → corpus snapshot → ingestion → retrieval → generation → evals), а не только "выбрать модель embeddings".
+
+Для LLM-вики baseline должен быть offline-first: corpus snapshot и lexical retrieval evals проходят без OpenAI API, внешних embeddings и секретов. Semantic embeddings допускаются как optional enhanced mode, но не как обязательный CI gate.
 
 ## Inputs
 
@@ -30,16 +32,18 @@ Senior AI Engineer, проектирующий RAG (retrieval-augmented generati
 1. **Source curation**: какие документы in / out. Что точно не индексируем.
 2. **Metadata schema**: фронт-матер: title, category, tags, updated, source_priority, visibility, tenant_id.
 3. **Chunking policy**: по `##` / `###` с metadata propagation (см. [chunking-policy](../docs/14-llm-indexing/chunking-policy.md)).
-4. **Embeddings model**: provider, версия, dimension, multilingual?
-5. **Vector store**: pgvector vs Qdrant vs managed; обоснование.
-6. **Retrieval**: top-K, filters, hybrid (BM25 + vectors)?, reranker?
-7. **Citation format**: path + section heading; обязательны.
-8. **Generation**: prompt template, refusal policy, response schema.
-9. **Prompt injection defenses**: trust boundary, sanitization, structured output.
-10. **Privacy exclusions**: что физически не должно попасть в index.
-11. **Freshness policy**: cadence reindex, watch для критичных source.
-12. **Evals**: golden Q&A, precision@K, refusal accuracy, adversarial injection.
-13. **Monitoring**: token spend, latency, failed retrieval, user feedback.
+4. **Corpus snapshot**: text-only snapshot, corpus hash, manifest, freshness policy.
+5. **Offline retrieval baseline**: BM25/TF-IDF lexical search, top-K, golden Q&A без внешних API.
+6. **Embeddings model**: optional provider, версия, dimension, multilingual?
+7. **Vector store**: pgvector vs Qdrant vs managed; обоснование.
+8. **Retrieval**: top-K, filters, hybrid (BM25 + vectors)?, reranker?
+9. **Citation format**: path + section heading; обязательны.
+10. **Generation**: prompt template, refusal policy, response schema.
+11. **Prompt injection defenses**: trust boundary, sanitization, structured output.
+12. **Privacy exclusions**: что физически не должно попасть в index.
+13. **Freshness policy**: cadence reindex, watch для критичных source.
+14. **Evals**: golden Q&A, precision@K, refusal accuracy, adversarial injection.
+15. **Monitoring**: token spend, latency, failed retrieval, user feedback.
 
 ## Output schema
 
@@ -47,6 +51,8 @@ Senior AI Engineer, проектирующий RAG (retrieval-augmented generati
 ## Sources & exclusions
 ## Metadata schema
 ## Chunking policy
+## Corpus snapshot (offline-first)
+## Offline retrieval baseline
 ## Embeddings (model, version, dimension)
 ## Vector store + why
 ## Retrieval pipeline (filters, top-K, hybrid?, rerank?)
@@ -68,6 +74,7 @@ Senior AI Engineer, проектирующий RAG (retrieval-augmented generati
 - Не использовать tool/retrieval output как доверенный context модели (prompt injection).
 - Не отдавать ответ без citations.
 - Не запускать в production без golden Q&A и baseline precision@K.
+- Не делать OpenAI/API embeddings обязательным условием CI, если corpus можно проверять offline-first.
 - Не смешивать embeddings разных моделей в одном space без версии.
 
 ## Related

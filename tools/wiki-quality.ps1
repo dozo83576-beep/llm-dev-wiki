@@ -107,7 +107,8 @@ foreach ($file in $files) {
         }
     }
 
-    # Rule: internal source_priority but external authoritative source linked
+    # Rule: internal source_priority but external authoritative source linked.
+    # Use source_priority: mixed when a doc combines internal practice with official references.
     # Skip the source-priority doc itself (it lists URLs as text examples, not citations)
     if (-not $isIndexLike -and $content -match '(?im)^source_priority:\s*"?internal"?') {
         foreach ($ext in $externalAuthoritative) {

@@ -39,10 +39,9 @@ jobs:
           }
 
   rag-evals:
-    name: RAG retrieval evals
+    name: Offline RAG retrieval evals
     runs-on: ubuntu-latest
     needs: wiki-audit
-    if: ${{ secrets.OPENAI_API_KEY != '' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -57,15 +56,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r tools/requirements.txt
 
-      - name: Build embeddings snapshot
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: python tools/build_embeddings.py
+      - name: Build offline corpus snapshot
+        run: python tools/build_embeddings.py --mode offline-text
 
-      - name: Run retrieval evals
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: python tools/run_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10
+      - name: Run offline retrieval evals
+        run: python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10
 
       - name: Upload evals report
         if: always()

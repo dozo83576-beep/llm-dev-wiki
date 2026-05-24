@@ -13,26 +13,26 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **200**
-- Активных: **183**
+- Всего документов: **208**
+- Активных: **191**
 - Redirect-stubs: **1**
 - Archived: **0**
-- Суммарный объём: **378688** символов
+- Суммарный объём: **404981** символов
 
 ## docs
 
 | Файл | Заголовок | Категория | Объём | Updated | Status | Source priority |
 |------|-----------|-----------|-------|---------|--------|-----------------|
 | [docs/00-start-here/document-standard.md](../docs/00-start-here/document-standard.md) | Стандарт production-документа | governance | 1433 | 2026-05-24 | active | internal |
-| [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2119 | 2026-05-24 | active | internal |
+| [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2202 | 2026-05-24 | active | internal |
 | [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 1260 | 2026-05-24 | active | internal |
 | [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 2276 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Accessibility.md](../docs/02-frontend/Accessibility.md) | Accessibility | frontend | 1432 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Analytics.md](../docs/02-frontend/Analytics.md) | Analytics | frontend | 1330 | 2026-05-24 | active | internal |
-| [docs/02-frontend/Data-fetching.md](../docs/02-frontend/Data-fetching.md) | Frontend data fetching | frontend | 1550 | 2026-05-24 | active | official-docs |
+| [docs/02-frontend/Data-fetching.md](../docs/02-frontend/Data-fetching.md) | Frontend data fetching | frontend | 1591 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Design-systems.md](../docs/02-frontend/Design-systems.md) | Design systems | frontend | 1308 | 2026-05-24 | active | internal |
 | [docs/02-frontend/Forms-validation.md](../docs/02-frontend/Forms-validation.md) | Forms and validation | frontend | 1393 | 2026-05-24 | active | official-docs |
-| [docs/02-frontend/Frontend-testing.md](../docs/02-frontend/Frontend-testing.md) | Frontend testing | frontend | 1314 | 2026-05-24 | active | official-docs |
+| [docs/02-frontend/Frontend-testing.md](../docs/02-frontend/Frontend-testing.md) | Frontend testing | frontend | 1375 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/I18n.md](../docs/02-frontend/I18n.md) | Internationalization | frontend | 1289 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Nextjs.md](../docs/02-frontend/Nextjs.md) | Next.js | frontend | 1669 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Performance.md](../docs/02-frontend/Performance.md) | Frontend performance | frontend | 1453 | 2026-05-24 | active | official-docs |
@@ -40,12 +40,13 @@ source_priority: "internal"
 | [docs/02-frontend/Routing.md](../docs/02-frontend/Routing.md) | Frontend routing | frontend | 1550 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/SEO.md](../docs/02-frontend/SEO.md) | SEO for web apps | frontend | 1425 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Shadcn.md](../docs/02-frontend/Shadcn.md) | shadcn/ui | frontend | 1332 | 2026-05-24 | active | official-docs |
-| [docs/02-frontend/State-management.md](../docs/02-frontend/State-management.md) | State management | frontend | 1498 | 2026-05-24 | active | official-docs |
+| [docs/02-frontend/State-management.md](../docs/02-frontend/State-management.md) | State management | frontend | 1539 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Tailwind.md](../docs/02-frontend/Tailwind.md) | Tailwind CSS | frontend | 1362 | 2026-05-24 | active | official-docs |
+| [docs/02-frontend/TanStack-Query.md](../docs/02-frontend/TanStack-Query.md) | TanStack Query | frontend | 2340 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/TypeScript.md](../docs/02-frontend/TypeScript.md) | TypeScript | frontend | 1287 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/UI-architecture.md](../docs/02-frontend/UI-architecture.md) | UI architecture | frontend | 1373 | 2026-05-24 | active | internal |
 | [docs/03-backend/API-architecture.md](../docs/03-backend/API-architecture.md) | Backend API architecture | backend | 1528 | 2026-05-24 | active | internal |
-| [docs/03-backend/Auth-flows.md](../docs/03-backend/Auth-flows.md) | Backend auth flows | backend | 1476 | 2026-05-24 | active | internal |
+| [docs/03-backend/Auth-flows.md](../docs/03-backend/Auth-flows.md) | Backend auth flows | backend | 1689 | 2026-05-24 | active | mixed |
 | [docs/03-backend/Background-jobs.md](../docs/03-backend/Background-jobs.md) | Background jobs | backend | 1249 | 2026-05-24 | active | official-docs |
 | [docs/03-backend/Caching.md](../docs/03-backend/Caching.md) | Backend caching | backend | 1771 | 2026-05-24 | active | internal |
 | [docs/03-backend/Cron.md](../docs/03-backend/Cron.md) | Cron and scheduled jobs | backend | 1811 | 2026-05-24 | active | internal |
@@ -58,13 +59,15 @@ source_priority: "internal"
 | [docs/03-backend/Logging.md](../docs/03-backend/Logging.md) | Logging | backend | 1294 | 2026-05-24 | active | internal |
 | [docs/03-backend/Nestjs.md](../docs/03-backend/Nestjs.md) | NestJS | backend | 1260 | 2026-05-24 | active | official-docs |
 | [docs/03-backend/Nodejs.md](../docs/03-backend/Nodejs.md) | Node.js | backend | 1237 | 2026-05-24 | active | official-docs |
-| [docs/03-backend/Payments.md](../docs/03-backend/Payments.md) | Payments | backend | 1243 | 2026-05-24 | active | internal |
-| [docs/03-backend/Webhooks.md](../docs/03-backend/Webhooks.md) | Webhooks | backend | 1856 | 2026-05-24 | active | internal |
+| [docs/03-backend/Payments.md](../docs/03-backend/Payments.md) | Payments | backend | 1392 | 2026-05-24 | active | internal |
+| [docs/03-backend/Stripe.md](../docs/03-backend/Stripe.md) | Stripe | backend | 2390 | 2026-05-24 | active | vendor-docs |
+| [docs/03-backend/Supabase.md](../docs/03-backend/Supabase.md) | Supabase | backend | 2392 | 2026-05-24 | active | vendor-docs |
+| [docs/03-backend/Webhooks.md](../docs/03-backend/Webhooks.md) | Webhooks | backend | 1938 | 2026-05-24 | active | internal |
 | [docs/04-databases/Audit-log.md](../docs/04-databases/Audit-log.md) | Audit log | database | 1204 | 2026-05-24 | active | internal |
-| [docs/04-databases/Backups.md](../docs/04-databases/Backups.md) | Backups | database | 1309 | 2026-05-24 | active | internal |
-| [docs/04-databases/Database-design.md](../docs/04-databases/Database-design.md) | Database design | database | 1318 | 2026-05-24 | active | internal |
+| [docs/04-databases/Backups.md](../docs/04-databases/Backups.md) | Backups | database | 1305 | 2026-05-24 | active | mixed |
+| [docs/04-databases/Database-design.md](../docs/04-databases/Database-design.md) | Database design | database | 1314 | 2026-05-24 | active | mixed |
 | [docs/04-databases/Drizzle.md](../docs/04-databases/Drizzle.md) | Drizzle ORM | database | 1857 | 2026-05-24 | active | official-docs |
-| [docs/04-databases/Migrations.md](../docs/04-databases/Migrations.md) | Database migrations | database | 1371 | 2026-05-24 | active | internal |
+| [docs/04-databases/Migrations.md](../docs/04-databases/Migrations.md) | Database migrations | database | 1367 | 2026-05-24 | active | mixed |
 | [docs/04-databases/Multi-tenancy.md](../docs/04-databases/Multi-tenancy.md) | Multi-tenancy | database | 1345 | 2026-05-24 | active | internal |
 | [docs/04-databases/pgvector.md](../docs/04-databases/pgvector.md) | pgvector | database | 2020 | 2026-05-24 | active | official-docs |
 | [docs/04-databases/PostgreSQL.md](../docs/04-databases/PostgreSQL.md) | PostgreSQL | database | 1305 | 2026-05-24 | active | official-docs |
@@ -73,13 +76,16 @@ source_priority: "internal"
 | [docs/04-databases/Redis.md](../docs/04-databases/Redis.md) | Redis | database | 1962 | 2026-05-24 | active | official-docs |
 | [docs/04-databases/SQLAlchemy.md](../docs/04-databases/SQLAlchemy.md) | SQLAlchemy | database | 1979 | 2026-05-24 | active | official-docs |
 | [docs/04-databases/Transactions.md](../docs/04-databases/Transactions.md) | Transactions | database | 2099 | 2026-05-24 | active | official-docs |
-| [docs/05-auth-security/Authentication.md](../docs/05-auth-security/Authentication.md) | Authentication | security | 1447 | 2026-05-24 | active | official-docs |
-| [docs/05-auth-security/Authorization.md](../docs/05-auth-security/Authorization.md) | Authorization | security | 1355 | 2026-05-24 | active | internal |
+| [docs/05-auth-security/Authentication.md](../docs/05-auth-security/Authentication.md) | Authentication | security | 1548 | 2026-05-24 | active | official-docs |
+| [docs/05-auth-security/Authjs.md](../docs/05-auth-security/Authjs.md) | Auth.js | security | 2471 | 2026-05-24 | active | official-docs |
+| [docs/05-auth-security/Authorization.md](../docs/05-auth-security/Authorization.md) | Authorization | security | 1526 | 2026-05-24 | active | mixed |
+| [docs/05-auth-security/Clerk.md](../docs/05-auth-security/Clerk.md) | Clerk | security | 2378 | 2026-05-24 | active | vendor-docs |
+| [docs/05-auth-security/Compliance-baseline.md](../docs/05-auth-security/Compliance-baseline.md) | Compliance baseline | security | 2307 | 2026-05-24 | active | mixed |
 | [docs/05-auth-security/CORS-CSRF-CSP.md](../docs/05-auth-security/CORS-CSRF-CSP.md) | CORS, CSRF, CSP | security | 1376 | 2026-05-24 | active | official-docs |
 | [docs/05-auth-security/Dependency-security.md](../docs/05-auth-security/Dependency-security.md) | Dependency security | security | 1276 | 2026-05-24 | active | official-docs |
 | [docs/05-auth-security/MCP-security.md](../docs/05-auth-security/MCP-security.md) | MCP security | security | 1435 | 2026-05-24 | active | official-docs |
 | [docs/05-auth-security/OWASP.md](../docs/05-auth-security/OWASP.md) | OWASP | security | 1221 | 2026-05-24 | active | official-docs |
-| [docs/05-auth-security/Rate-limiting.md](../docs/05-auth-security/Rate-limiting.md) | Rate limiting | security | 1300 | 2026-05-24 | active | internal |
+| [docs/05-auth-security/Rate-limiting.md](../docs/05-auth-security/Rate-limiting.md) | Rate limiting | security | 1296 | 2026-05-24 | active | mixed |
 | [docs/05-auth-security/RBAC-ABAC.md](../docs/05-auth-security/RBAC-ABAC.md) | RBAC and ABAC | security | 1934 | 2026-05-24 | active | internal |
 | [docs/05-auth-security/Secrets.md](../docs/05-auth-security/Secrets.md) | Secrets | security | 1276 | 2026-05-24 | active | internal |
 | [docs/06-api-design/Error-contracts.md](../docs/06-api-design/Error-contracts.md) | API error contracts | api | 1304 | 2026-05-24 | active | internal |
@@ -113,24 +119,25 @@ source_priority: "internal"
 | [docs/08-devops-deploy/Docker.md](../docs/08-devops-deploy/Docker.md) | Docker | devops | 2740 | 2026-05-24 | active | official-docs |
 | [docs/08-devops-deploy/Environment-variables.md](../docs/08-devops-deploy/Environment-variables.md) | Environment variables | devops | 2850 | 2026-05-24 | active | internal |
 | [docs/08-devops-deploy/GitHub-actions.md](../docs/08-devops-deploy/GitHub-actions.md) | GitHub Actions | devops | 2941 | 2026-05-24 | active | official-docs |
-| [docs/08-devops-deploy/Incident-workflow.md](../docs/08-devops-deploy/Incident-workflow.md) | Incident workflow | devops | 3379 | 2026-05-24 | active | internal |
+| [docs/08-devops-deploy/Incident-workflow.md](../docs/08-devops-deploy/Incident-workflow.md) | Incident workflow | devops | 3621 | 2026-05-24 | active | internal |
 | [docs/08-devops-deploy/Observability.md](../docs/08-devops-deploy/Observability.md) | Observability | devops | 3010 | 2026-05-24 | active | internal |
 | [docs/08-devops-deploy/OpenTelemetry.md](../docs/08-devops-deploy/OpenTelemetry.md) | OpenTelemetry | devops | 2945 | 2026-05-24 | active | official-docs |
 | [docs/08-devops-deploy/Release-flow.md](../docs/08-devops-deploy/Release-flow.md) | Release flow | devops | 3463 | 2026-05-24 | active | internal |
 | [docs/08-devops-deploy/Render.md](../docs/08-devops-deploy/Render.md) | Render | devops | 2460 | 2026-05-24 | active | vendor-docs |
 | [docs/08-devops-deploy/Rollback.md](../docs/08-devops-deploy/Rollback.md) | Rollback | devops | 3174 | 2026-05-24 | active | internal |
-| [docs/08-devops-deploy/Secrets-rotation.md](../docs/08-devops-deploy/Secrets-rotation.md) | Secrets rotation | devops | 3456 | 2026-05-24 | active | internal |
+| [docs/08-devops-deploy/Secrets-rotation.md](../docs/08-devops-deploy/Secrets-rotation.md) | Secrets rotation | devops | 3453 | 2026-05-24 | active | mixed |
 | [docs/08-devops-deploy/Sentry.md](../docs/08-devops-deploy/Sentry.md) | Sentry | devops | 2613 | 2026-05-24 | active | vendor-docs |
 | [docs/08-devops-deploy/Vercel.md](../docs/08-devops-deploy/Vercel.md) | Vercel | devops | 2797 | 2026-05-24 | active | vendor-docs |
 | [docs/09-testing/Accessibility-testing.md](../docs/09-testing/Accessibility-testing.md) | Accessibility testing | testing | 3257 | 2026-05-24 | active | official-docs |
 | [docs/09-testing/Contract-testing.md](../docs/09-testing/Contract-testing.md) | Contract testing | testing | 2785 | 2026-05-24 | active | internal |
-| [docs/09-testing/E2E-testing.md](../docs/09-testing/E2E-testing.md) | E2E testing | testing | 2760 | 2026-05-24 | active | official-docs |
+| [docs/09-testing/E2E-testing.md](../docs/09-testing/E2E-testing.md) | E2E testing | testing | 2802 | 2026-05-24 | active | official-docs |
 | [docs/09-testing/Fixtures.md](../docs/09-testing/Fixtures.md) | Fixtures | testing | 2789 | 2026-05-24 | active | internal |
 | [docs/09-testing/Integration-testing.md](../docs/09-testing/Integration-testing.md) | Integration testing | testing | 2741 | 2026-05-24 | active | internal |
 | [docs/09-testing/Load-testing.md](../docs/09-testing/Load-testing.md) | Load testing | testing | 2913 | 2026-05-24 | active | official-docs |
 | [docs/09-testing/Mocks.md](../docs/09-testing/Mocks.md) | Mocks | testing | 2838 | 2026-05-24 | active | internal |
+| [docs/09-testing/Playwright.md](../docs/09-testing/Playwright.md) | Playwright | testing | 2071 | 2026-05-24 | active | official-docs |
 | [docs/09-testing/Security-testing.md](../docs/09-testing/Security-testing.md) | Security testing | testing | 3399 | 2026-05-24 | active | official-docs |
-| [docs/09-testing/Test-data.md](../docs/09-testing/Test-data.md) | Test data | testing | 2567 | 2026-05-24 | active | internal |
+| [docs/09-testing/Test-data.md](../docs/09-testing/Test-data.md) | Test data | testing | 2676 | 2026-05-24 | active | internal |
 | [docs/09-testing/Test-pyramid.md](../docs/09-testing/Test-pyramid.md) | Test pyramid | testing | 3188 | 2026-05-24 | active | internal |
 | [docs/09-testing/Unit-testing.md](../docs/09-testing/Unit-testing.md) | Unit testing | testing | 2776 | 2026-05-24 | active | internal |
 | [docs/09-testing/Visual-testing.md](../docs/09-testing/Visual-testing.md) | Visual testing | testing | 2673 | 2026-05-24 | active | internal |
@@ -140,20 +147,20 @@ source_priority: "internal"
 | [docs/13-playbooks/admin-dashboard.md](../docs/13-playbooks/admin-dashboard.md) | Playbook: Admin dashboard | playbooks | 3134 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/ai-rag-app.md](../docs/13-playbooks/ai-rag-app.md) | Playbook: AI/RAG app | playbooks | 3922 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/api-only-backend.md](../docs/13-playbooks/api-only-backend.md) | Playbook: API-only backend | playbooks | 3403 | 2026-05-24 | active | internal |
-| [docs/13-playbooks/ecommerce.md](../docs/13-playbooks/ecommerce.md) | Playbook: E-commerce | playbooks | 3638 | 2026-05-24 | active | internal |
+| [docs/13-playbooks/ecommerce.md](../docs/13-playbooks/ecommerce.md) | Playbook: E-commerce | playbooks | 3947 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/index.md](../docs/13-playbooks/index.md) | Project playbooks | playbooks | 2967 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/landing.md](../docs/13-playbooks/landing.md) | Playbook: Landing | playbooks | 3398 | 2026-05-24 | active | internal |
-| [docs/13-playbooks/marketplace.md](../docs/13-playbooks/marketplace.md) | Playbook: Marketplace | playbooks | 4128 | 2026-05-24 | active | internal |
+| [docs/13-playbooks/marketplace.md](../docs/13-playbooks/marketplace.md) | Playbook: Marketplace | playbooks | 4333 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/real-time-app.md](../docs/13-playbooks/real-time-app.md) | Playbook: Real-time app | playbooks | 3863 | 2026-05-24 | active | internal |
-| [docs/13-playbooks/saas.md](../docs/13-playbooks/saas.md) | Playbook: SaaS | playbooks | 4179 | 2026-05-24 | active | internal |
+| [docs/13-playbooks/saas.md](../docs/13-playbooks/saas.md) | Playbook: SaaS | playbooks | 4864 | 2026-05-24 | active | internal |
 | [docs/14-llm-indexing/chunking-policy.md](../docs/14-llm-indexing/chunking-policy.md) | Chunking policy | llm-indexing | 3086 | 2026-05-24 | active | internal |
 | [docs/14-llm-indexing/freshness-checks.md](../docs/14-llm-indexing/freshness-checks.md) | Freshness checks | llm-indexing | 2929 | 2026-05-24 | active | internal |
-| [docs/14-llm-indexing/index.md](../docs/14-llm-indexing/index.md) | LLM indexing | llm-indexing | 2631 | 2026-05-24 | active | internal |
+| [docs/14-llm-indexing/index.md](../docs/14-llm-indexing/index.md) | LLM indexing | llm-indexing | 3772 | 2026-05-24 | active | internal |
 | [docs/14-llm-indexing/llms-txt-rules.md](../docs/14-llm-indexing/llms-txt-rules.md) | llms.txt rules | llm-indexing | 2215 | 2026-05-24 | active | community |
 | [docs/14-llm-indexing/metadata-policy.md](../docs/14-llm-indexing/metadata-policy.md) | Metadata policy | llm-indexing | 2929 | 2026-05-24 | active | internal |
 | [docs/14-llm-indexing/rag-file-search.md](../docs/14-llm-indexing/rag-file-search.md) | RAG and File Search | llm-indexing | 3832 | 2026-05-24 | active | official-docs |
-| [docs/14-llm-indexing/source-priority.md](../docs/14-llm-indexing/source-priority.md) | Source priority | llm-indexing | 2417 | 2026-05-24 | active | internal |
-| [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 2851 | 2026-05-24 | active | internal |
+| [docs/14-llm-indexing/source-priority.md](../docs/14-llm-indexing/source-priority.md) | Source priority | llm-indexing | 2750 | 2026-05-24 | active | internal |
+| [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 4033 | 2026-05-24 | active | internal |
 
 ## patterns
 
@@ -194,11 +201,11 @@ source_priority: "internal"
 | [prompts/implement-frontend.md](../prompts/implement-frontend.md) | Prompt: implement frontend | prompt | 2559 | 2026-05-24 | active | internal |
 | [prompts/implementation-plan.md](../prompts/implementation-plan.md) | Prompt: implementation plan | prompt | 2484 | 2026-05-24 | active | internal |
 | [prompts/mcp-security-review.md](../prompts/mcp-security-review.md) | Prompt: MCP security review | prompt | 2800 | 2026-05-24 | active | internal |
-| [prompts/post-project-knowledge-capture.md](../prompts/post-project-knowledge-capture.md) | Prompt: post-project knowledge capture | prompt | 2658 | 2026-05-24 | active | internal |
-| [prompts/rag-design.md](../prompts/rag-design.md) | Prompt: RAG design | prompt | 3195 | 2026-05-24 | active | internal |
+| [prompts/post-project-knowledge-capture.md](../prompts/post-project-knowledge-capture.md) | Prompt: post-project knowledge capture | prompt | 2842 | 2026-05-24 | active | internal |
+| [prompts/rag-design.md](../prompts/rag-design.md) | Prompt: RAG design | prompt | 3846 | 2026-05-24 | active | internal |
 | [prompts/refactor.md](../prompts/refactor.md) | Prompt: refactor | prompt | 1980 | 2026-05-24 | active | internal |
 | [prompts/security-review.md](../prompts/security-review.md) | Prompt: security review | prompt | 2285 | 2026-05-24 | active | internal |
-| [prompts/update-wiki.md](../prompts/update-wiki.md) | Prompt: update wiki | prompt | 2282 | 2026-05-24 | active | internal |
+| [prompts/update-wiki.md](../prompts/update-wiki.md) | Prompt: update wiki | prompt | 2501 | 2026-05-24 | active | internal |
 | [prompts/write-tests.md](../prompts/write-tests.md) | Prompt: write tests | prompt | 2252 | 2026-05-24 | active | internal |
 
 ## checklists
@@ -209,10 +216,11 @@ source_priority: "internal"
 | [checklists/api-review.md](../checklists/api-review.md) | API review checklist | checklist | 3872 | 2026-05-24 | active | internal |
 | [checklists/backend-review.md](../checklists/backend-review.md) | Backend review checklist | checklist | 3761 | 2026-05-24 | active | internal |
 | [checklists/database-review.md](../checklists/database-review.md) | Database review checklist | checklist | 3498 | 2026-05-24 | active | internal |
-| [checklists/frontend-review.md](../checklists/frontend-review.md) | Frontend review checklist | checklist | 3621 | 2026-05-24 | active | internal |
-| [checklists/project-discovery.md](../checklists/project-discovery.md) | Project discovery checklist | checklist | 3323 | 2026-05-24 | active | internal |
-| [checklists/release-readiness.md](../checklists/release-readiness.md) | Release readiness checklist | checklist | 4061 | 2026-05-24 | active | internal |
-| [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 4816 | 2026-05-24 | active | internal |
+| [checklists/frontend-review.md](../checklists/frontend-review.md) | Frontend review checklist | checklist | 3751 | 2026-05-24 | active | internal |
+| [checklists/project-discovery.md](../checklists/project-discovery.md) | Project discovery checklist | checklist | 3622 | 2026-05-24 | active | internal |
+| [checklists/release-readiness.md](../checklists/release-readiness.md) | Release readiness checklist | checklist | 4257 | 2026-05-24 | active | internal |
+| [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 5421 | 2026-05-24 | active | internal |
+| [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 2489 | 2026-05-24 | active | internal |
 
 ## stacks
 

@@ -9,7 +9,7 @@ source_priority: "official-docs"
 
 # Frontend testing
 
-Минимум: unit-тесты для чистой логики, component tests для сложных компонентов, Playwright E2E для критических пользовательских путей.
+Минимум: unit-тесты для чистой логики, component tests для сложных компонентов, [Playwright](../09-testing/Playwright.md) E2E для критических пользовательских путей.
 
 Проверяй не implementation details, а поведение: видимый текст, role, navigation, network outcome, persisted data.
 
@@ -33,5 +33,4 @@ source_priority: "official-docs"
 
 ## Проверка
 
-CI запускает unit/component tests и Playwright smoke. Перед release проверь auth, forms, navigation, permission denied и responsive viewports.
-
+CI запускает unit/component tests и [Playwright smoke](../09-testing/Playwright.md). Перед release проверь auth, forms, navigation, permission denied и responsive viewports.

@@ -4,7 +4,7 @@ category: "security"
 updated: "2026-05-24"
 status: "active"
 tags: ["rate-limit", "abuse"]
-source_priority: "internal"
+source_priority: "mixed"
 ---
 
 # Rate limiting
@@ -36,4 +36,3 @@ Integration tests на 429, load smoke, bypass tests для authenticated/anonym
 ## Источники
 
 См. [OWASP Rate Limiting](https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html), [API error contracts](../06-api-design/Error-contracts.md).
-

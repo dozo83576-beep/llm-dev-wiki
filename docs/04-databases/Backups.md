@@ -4,7 +4,7 @@ category: "database"
 updated: "2026-05-24"
 status: "active"
 tags: ["backup", "restore"]
-source_priority: "internal"
+source_priority: "mixed"
 ---
 
 # Backups
@@ -36,4 +36,3 @@ Backup считается существующим только после ус�
 ## Источники
 
 См. [PostgreSQL Backup and Restore](https://www.postgresql.org/docs/current/backup.html), [Rollback](../08-devops-deploy/Rollback.md).
-

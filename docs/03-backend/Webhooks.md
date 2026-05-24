@@ -31,7 +31,7 @@ Webhook endpoint должен быть идемпотентным, провер�
 
 ## Когда использовать
 
-Используй webhooks для provider-driven событий: payments, auth providers, storage, CI/CD, email, CRM.
+Используй webhooks для provider-driven событий: payments ([Stripe](Stripe.md)), auth providers ([Clerk](../05-auth-security/Clerk.md)), storage, CI/CD, email, CRM.
 
 ## Когда не использовать
 
@@ -51,5 +51,4 @@ Webhook endpoint должен быть идемпотентным, провер�
 
 ## Источники
 
-См. [Webhook idempotency](../../patterns/backend/webhook-idempotency.md), [Background jobs](Background-jobs.md), [Payments](Payments.md).
-
+См. [Webhook idempotency](../../patterns/backend/webhook-idempotency.md), [Background jobs](Background-jobs.md), [Payments](Payments.md), [Stripe](Stripe.md).
