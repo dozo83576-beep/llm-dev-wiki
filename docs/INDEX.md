@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-05-24"
+updated: "2026-05-25"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **191**
 - Redirect-stubs: **1**
 - Archived: **0**
-- Суммарный объём: **404981** символов
+- Суммарный объём: **406296** символов
 
 ## docs
 
@@ -155,12 +155,12 @@ source_priority: "internal"
 | [docs/13-playbooks/saas.md](../docs/13-playbooks/saas.md) | Playbook: SaaS | playbooks | 4864 | 2026-05-24 | active | internal |
 | [docs/14-llm-indexing/chunking-policy.md](../docs/14-llm-indexing/chunking-policy.md) | Chunking policy | llm-indexing | 3086 | 2026-05-24 | active | internal |
 | [docs/14-llm-indexing/freshness-checks.md](../docs/14-llm-indexing/freshness-checks.md) | Freshness checks | llm-indexing | 2929 | 2026-05-24 | active | internal |
-| [docs/14-llm-indexing/index.md](../docs/14-llm-indexing/index.md) | LLM indexing | llm-indexing | 3772 | 2026-05-24 | active | internal |
+| [docs/14-llm-indexing/index.md](../docs/14-llm-indexing/index.md) | LLM indexing | llm-indexing | 4780 | 2026-05-25 | active | internal |
 | [docs/14-llm-indexing/llms-txt-rules.md](../docs/14-llm-indexing/llms-txt-rules.md) | llms.txt rules | llm-indexing | 2215 | 2026-05-24 | active | community |
 | [docs/14-llm-indexing/metadata-policy.md](../docs/14-llm-indexing/metadata-policy.md) | Metadata policy | llm-indexing | 2929 | 2026-05-24 | active | internal |
 | [docs/14-llm-indexing/rag-file-search.md](../docs/14-llm-indexing/rag-file-search.md) | RAG and File Search | llm-indexing | 3832 | 2026-05-24 | active | official-docs |
 | [docs/14-llm-indexing/source-priority.md](../docs/14-llm-indexing/source-priority.md) | Source priority | llm-indexing | 2750 | 2026-05-24 | active | internal |
-| [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 4033 | 2026-05-24 | active | internal |
+| [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 4144 | 2026-05-25 | active | internal |
 
 ## patterns
 
@@ -220,7 +220,7 @@ source_priority: "internal"
 | [checklists/project-discovery.md](../checklists/project-discovery.md) | Project discovery checklist | checklist | 3622 | 2026-05-24 | active | internal |
 | [checklists/release-readiness.md](../checklists/release-readiness.md) | Release readiness checklist | checklist | 4257 | 2026-05-24 | active | internal |
 | [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 5421 | 2026-05-24 | active | internal |
-| [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 2489 | 2026-05-24 | active | internal |
+| [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 2685 | 2026-05-25 | active | internal |
 
 ## stacks
 

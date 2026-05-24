@@ -1,7 +1,7 @@
 ---
 title: "Мониторинг обновлений технологий"
 category: "maintenance"
-updated: "2026-05-24"
+updated: "2026-05-25"
 status: "active"
 tags: ["maintenance", "updates", "automation"]
 source_priority: "internal"
@@ -22,7 +22,7 @@ pwsh ./tools/wiki-audit.ps1
 pwsh ./tools/wiki-quality.ps1
 pwsh ./tools/build-index.ps1
 python tools/build_embeddings.py --mode offline-text
-python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10
+python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10 --warn-rank 3
 ```
 
 `embeddings/manifest.json` в обязательном режиме должен фиксировать `retrieval_mode: offline-text` и `has_vectors: false`. Snapshot `embeddings/snapshot.jsonl` локальный и не коммитится.
@@ -90,7 +90,7 @@ Workflow `.github/workflows/technology-updates.yml` запускается ра�
 ## Как закрывать maintenance drift
 
 1. Пройди [wiki maintenance checklist](../../checklists/wiki-maintenance.md).
-2. Если `evals-report.md` показывает слабые вопросы, сначала улучши документы или prompts, а не подгоняй пороги.
+2. Если `evals-report.md` показывает `Weak rank warnings > 0` или `Best expected rank > 3`, сначала улучши документы, metadata, prompts или `docs/14-llm-indexing/retrieval-synonyms.yaml`, а не подгоняй пороги.
 3. Если менялись metadata, пересобери `docs/INDEX.md`.
 4. Если менялся corpus, пересобери `embeddings/manifest.json` через offline-text режим.
 5. Если использовались внешние API, не сохраняй ключи, payload'ы и приватные данные в вики.

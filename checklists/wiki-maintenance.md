@@ -1,7 +1,7 @@
 ---
 title: "Wiki maintenance checklist"
 category: "checklist"
-updated: "2026-05-24"
+updated: "2026-05-25"
 status: "active"
 tags: ["wiki", "maintenance", "rag", "offline"]
 source_priority: "internal"
@@ -28,8 +28,9 @@ Gated checklist для регулярного обслуживания вики.
 
 - [ ] **Corpus snapshot** пересобран без внешних API - maintainer - block - `python tools/build_embeddings.py --mode offline-text`.
 - [ ] **Manifest** содержит `retrieval_mode: offline-text` и `has_vectors: false` для обязательного CI - maintainer - block.
-- [ ] **Golden Q&A** проходит локально - maintainer - block - `python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10`.
-- [ ] **Weak retrieval cases** из `evals-report.md` превращены в улучшения документов, prompts или golden Q&A - maintainer - warn.
+- [ ] **Golden Q&A** проходит локально - maintainer - block - `python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10 --warn-rank 3`.
+- [ ] **Best expected rank** для ключевых golden questions не хуже `3` или weak cases разобраны вручную - maintainer - warn - `evals-report.md`.
+- [ ] **Weak retrieval cases** из `evals-report.md` превращены в улучшения документов, metadata, prompts, `retrieval-synonyms.yaml` или golden Q&A - maintainer - warn.
 
 ## Freshness
 

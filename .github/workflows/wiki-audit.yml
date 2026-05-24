@@ -56,11 +56,14 @@ jobs:
       - name: Install dependencies
         run: pip install -r tools/requirements.txt
 
+      - name: Run offline retrieval unit tests
+        run: python -m pytest tests/tools
+
       - name: Build offline corpus snapshot
         run: python tools/build_embeddings.py --mode offline-text
 
       - name: Run offline retrieval evals
-        run: python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10
+        run: python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10 --warn-rank 3
 
       - name: Upload evals report
         if: always()

@@ -1,0 +1,83 @@
+---
+title: "Retrieval synonyms"
+category: "llm-indexing"
+updated: "2026-05-25"
+status: "active"
+tags: ["retrieval", "evals", "synonyms"]
+source_priority: "internal"
+---
+# Синонимы для offline retrieval evals.
+# Ключи нормализуются тем же tokenizer'ом, что и вопросы.
+
+synonyms:
+  версионировать:
+    - versioning
+    - version
+    - versions
+  версионирование:
+    - versioning
+    - version
+    - versions
+  версии:
+    - versioning
+    - version
+    - versions
+  опытом:
+    - knowledge
+    - capture
+    - post
+    - project
+    - lessons
+    - learned
+    - case
+    - studies
+    - wiki
+  опыт:
+    - knowledge
+    - capture
+    - post
+    - project
+    - lessons
+    - learned
+    - case
+    - studies
+    - wiki
+  завершения:
+    - post
+    - project
+    - retrospective
+    - lessons
+    - learned
+  завершении:
+    - post
+    - project
+    - retrospective
+    - lessons
+    - learned
+  проекта:
+    - project
+  двусторонний:
+    - двух
+    - трехсторонняя
+    - marketplace
+    - multi-side
+  продавцами:
+    - продавцы
+    - sellers
+    - seller
+    - payouts
+  покупателями:
+    - покупатели
+    - buyers
+    - buyer
+  мокать:
+    - mocks
+    - mock
+    - stubs
+    - sandbox
+    - external
+    - boundary
+  реальную:
+    - real
+    - database
+    - sandbox
