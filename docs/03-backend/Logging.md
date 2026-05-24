@@ -35,5 +35,5 @@ Integration smoke: запрос создает log с request id, error path с�
 
 ## Источники
 
-См. [[../08-devops-deploy/Observability|Observability]], [[../05-auth-security/Secrets|Secrets]].
+См. [Observability](../08-devops-deploy/Observability.md), [Secrets](../05-auth-security/Secrets.md).
 

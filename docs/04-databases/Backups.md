@@ -35,5 +35,5 @@ Backup считается существующим только после ус�
 
 ## Источники
 
-См. [PostgreSQL Backup and Restore](https://www.postgresql.org/docs/current/backup.html), [[../08-devops-deploy/Rollback|Rollback]].
+См. [PostgreSQL Backup and Restore](https://www.postgresql.org/docs/current/backup.html), [Rollback](../08-devops-deploy/Rollback.md).
 

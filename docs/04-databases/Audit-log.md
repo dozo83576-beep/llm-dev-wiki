@@ -36,5 +36,5 @@ Audit log фиксирует критичные действия: auth, role cha
 
 ## Источники
 
-См. [[../05-auth-security/Authorization|Authorization]], [[../../patterns/security/tenant-isolation|Tenant isolation]].
+См. [Authorization](../05-auth-security/Authorization.md), [Tenant isolation](../../patterns/security/tenant-isolation.md).
 

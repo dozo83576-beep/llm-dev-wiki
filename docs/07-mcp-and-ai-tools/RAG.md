@@ -35,5 +35,5 @@ Golden question set, retrieval precision checks, citation checks, stale document
 
 ## Источники
 
-См. [[RAG-ingestion|RAG ingestion]], [[../14-llm-indexing/rag-file-search|RAG/File Search]].
+См. [RAG ingestion](RAG-ingestion.md), [RAG/File Search](../14-llm-indexing/rag-file-search.md).
 

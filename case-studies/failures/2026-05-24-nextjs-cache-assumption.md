@@ -35,5 +35,5 @@ tags: ["nextjs", "cache", "data-fetching"]
 
 # Связанные чеклисты
 
-[[../../docs/02-frontend/Data-fetching|Data fetching]], [[../../checklists/frontend-review|Frontend review]].
+[Data fetching](../../docs/02-frontend/Data-fetching.md), [Frontend review](../../checklists/frontend-review.md).
 

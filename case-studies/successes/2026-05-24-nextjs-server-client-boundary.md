@@ -21,7 +21,7 @@ SaaS-dashboard требовал SEO для публичных страниц и 
 
 # Кодовые и архитектурные паттерны
 
-Повторять паттерн [[../../patterns/frontend/server-client-boundary|server/client boundary]].
+Повторять паттерн [server/client boundary](../../patterns/frontend/server-client-boundary.md).
 
 # Ограничения
 
@@ -33,5 +33,5 @@ Typecheck, production build, Playwright smoke для authenticated route, про
 
 # Ссылки
 
-[[../../docs/02-frontend/Nextjs|Next.js]], [Next.js App Router](https://nextjs.org/docs/app).
+[Next.js](../../docs/02-frontend/Nextjs.md), [Next.js App Router](https://nextjs.org/docs/app).
 

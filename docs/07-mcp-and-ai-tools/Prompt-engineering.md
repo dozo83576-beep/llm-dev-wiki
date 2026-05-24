@@ -35,5 +35,5 @@ Prompt evals, regression examples, adversarial cases, review output against acce
 
 ## Источники
 
-См. [[Evaluation|Evaluation]], [[Prompt-injection|Prompt injection]], [[../../prompts/create-new-project|create project prompt]].
+См. [Evaluation](Evaluation.md), [Prompt injection](Prompt-injection.md), [create project prompt](../../prompts/create-new-project.md).
 

@@ -17,11 +17,12 @@ source_priority: "internal"
 
 ## Как пользоваться
 
-1. Начинай с [[docs/00-start-here/overview|карты вики]].
-2. Для нового проекта открой [[docs/01-development-process/stack-selection|выбор стека]] и [[checklists/project-discovery|discovery-чеклист]].
-3. Для реализации используй разделы `docs/02-frontend`, `docs/03-backend`, `docs/04-databases`, `docs/06-api-design`.
-4. Перед выпуском проходи [[checklists/security-review|security review]] и [[checklists/release-readiness|release readiness]].
-5. После проекта фиксируй удачные решения в `case-studies/successes`, ошибки в `case-studies/failures`, короткие выводы в `lessons-learned`.
+1. Полный список документов и их статус: [docs/INDEX.md](docs/INDEX.md) (генерируется через `tools/build-index.ps1`).
+2. Навигация по разделам: [карта вики](docs/00-start-here/overview.md).
+3. Для нового проекта открой [выбор стека](docs/01-development-process/stack-selection.md) и [discovery-чеклист](checklists/project-discovery.md).
+4. Для реализации используй разделы `docs/02-frontend`, `docs/03-backend`, `docs/04-databases`, `docs/06-api-design`.
+5. Перед выпуском проходи [security review](checklists/security-review.md) и [release readiness](checklists/release-readiness.md).
+6. После проекта фиксируй удачные решения в [case-studies/successes](case-studies/successes), ошибки в [case-studies/failures](case-studies/failures), короткие выводы в [lessons-learned](lessons-learned).
 
 ## Принципы качества
 

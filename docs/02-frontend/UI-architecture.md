@@ -40,5 +40,5 @@ UI-архитектура определяет, где живут компоне
 
 ## Источники
 
-См. [[React|React]], [[Nextjs|Next.js]], [[Design-systems|Design systems]].
+См. [React](React.md), [Next.js](Nextjs.md), [Design systems](Design-systems.md).
 

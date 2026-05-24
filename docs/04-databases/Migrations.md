@@ -35,5 +35,5 @@ Staging dry-run, lock analysis, backup verification, migration rollback plan, ap
 
 ## Источники
 
-См. [[../../patterns/database/expand-contract-migration|Expand-contract migration]], [PostgreSQL ALTER TABLE](https://www.postgresql.org/docs/current/sql-altertable.html).
+См. [Expand-contract migration](../../patterns/database/expand-contract-migration.md), [PostgreSQL ALTER TABLE](https://www.postgresql.org/docs/current/sql-altertable.html).
 

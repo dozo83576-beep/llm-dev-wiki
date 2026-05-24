@@ -40,5 +40,5 @@ Auth flow должен быть спроектирован как набор п�
 
 ## Источники
 
-См. [[../05-auth-security/Authentication|Authentication]], [[../05-auth-security/Authorization|Authorization]], [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html).
+См. [Authentication](../05-auth-security/Authentication.md), [Authorization](../05-auth-security/Authorization.md), [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html).
 

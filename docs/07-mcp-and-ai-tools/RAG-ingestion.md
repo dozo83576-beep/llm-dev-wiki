@@ -42,5 +42,5 @@ Dry-run ingestion, count chunks per document, retrieval evals, secret scan, fres
 
 ## Источники
 
-См. [[../14-llm-indexing/chunking-policy|Chunking policy]], [[../14-llm-indexing/metadata-policy|Metadata policy]].
+См. [Chunking policy](../14-llm-indexing/chunking-policy.md), [Metadata policy](../14-llm-indexing/metadata-policy.md).
 

@@ -35,5 +35,5 @@ Contract tests для 400/401/403/404/409/429/500, snapshot response shape, fron
 
 ## Источники
 
-См. [[../../patterns/api/error-contract|API error contract]], [[../03-backend/Error-handling|Error handling]].
+См. [API error contract](../../patterns/api/error-contract.md), [Error handling](../03-backend/Error-handling.md).
 

@@ -35,5 +35,5 @@ Unit tests для mapper, integration tests для типовых error classes,
 
 ## Источники
 
-См. [[../06-api-design/Error-contracts|API error contracts]], [[Logging|Logging]].
+См. [API error contracts](../06-api-design/Error-contracts.md), [Logging](Logging.md).
 

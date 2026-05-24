@@ -35,5 +35,5 @@ Contract tests, negative auth tests, idempotency retry tests, OpenAPI validation
 
 ## Источники
 
-См. [[OpenAPI|OpenAPI]], [[Error-contracts|Error contracts]], [MDN HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP).
+См. [OpenAPI](OpenAPI.md), [Error contracts](Error-contracts.md), [MDN HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP).
 

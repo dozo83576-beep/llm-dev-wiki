@@ -41,5 +41,5 @@ Design system нужен, когда интерфейс должен масшт�
 
 ## Источники
 
-См. [[Shadcn|shadcn/ui]], [[Accessibility|Accessibility]] и [W3C Design Tokens Community Group](https://www.w3.org/community/design-tokens/).
+См. [shadcn/ui](Shadcn.md), [Accessibility](Accessibility.md) и [W3C Design Tokens Community Group](https://www.w3.org/community/design-tokens/).
 

@@ -32,5 +32,5 @@ tags: ["devops", "release", "rollback"]
 
 Release readiness checklist, staging rollback smoke, post-release monitoring.
 
-Источники: [[../../docs/08-devops-deploy/Rollback|Rollback]], [[../../checklists/release-readiness|Release readiness]].
+Источники: [Rollback](../../docs/08-devops-deploy/Rollback.md), [Release readiness](../../checklists/release-readiness.md).
 

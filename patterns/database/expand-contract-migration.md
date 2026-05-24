@@ -32,5 +32,5 @@ Expand: добавить новую структуру без удаления �
 
 Staging migration, compatibility tests старого/нового кода, rollback smoke.
 
-Источники: [[../../docs/04-databases/Migrations|Migrations]], [[../../docs/08-devops-deploy/Rollback|Rollback]].
+Источники: [Migrations](../../docs/04-databases/Migrations.md), [Rollback](../../docs/08-devops-deploy/Rollback.md).
 

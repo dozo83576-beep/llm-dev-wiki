@@ -35,5 +35,5 @@ Authorization была реализована как UI-состояние, а �
 
 # Связанные чеклисты
 
-[[../../checklists/security-review|Security review]], [[../../patterns/security/deny-by-default|Deny by default]].
+[Security review](../../checklists/security-review.md), [Deny by default](../../patterns/security/deny-by-default.md).
 

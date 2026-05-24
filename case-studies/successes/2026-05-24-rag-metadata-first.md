@@ -21,7 +21,7 @@ LLM-вики должна отвечать по инженерным докум�
 
 # Кодовые и архитектурные паттерны
 
-Использовать [[../../docs/14-llm-indexing/metadata-policy|metadata policy]] и [[../../docs/14-llm-indexing/chunking-policy|chunking policy]].
+Использовать [metadata policy](../../docs/14-llm-indexing/metadata-policy.md) и [chunking policy](../../docs/14-llm-indexing/chunking-policy.md).
 
 # Ограничения
 
@@ -33,5 +33,5 @@ Wiki audit, sample retrieval queries, evals по stack/security/MCP вопрос
 
 # Ссылки
 
-[[../../docs/07-mcp-and-ai-tools/RAG-ingestion|RAG ingestion]], [[../../docs/14-llm-indexing/rag-file-search|RAG/File Search]].
+[RAG ingestion](../../docs/07-mcp-and-ai-tools/RAG-ingestion.md), [RAG/File Search](../../docs/14-llm-indexing/rag-file-search.md).
 

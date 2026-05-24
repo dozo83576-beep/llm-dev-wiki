@@ -41,5 +41,5 @@ Negative tests на read/write/delete/export между tenants, query review, �
 
 ## Источники
 
-См. [[../../patterns/security/tenant-isolation|Tenant isolation]], [[../05-auth-security/Authorization|Authorization]].
+См. [Tenant isolation](../../patterns/security/tenant-isolation.md), [Authorization](../05-auth-security/Authorization.md).
 

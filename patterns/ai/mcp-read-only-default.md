@@ -32,5 +32,5 @@ Read-only by default, allowlist tools, confirmation gates для mutations, sepa
 
 MCP security review, negative prompt injection tests, audit log review.
 
-Источники: [[../../docs/05-auth-security/MCP-security|MCP security]], [[../../docs/07-mcp-and-ai-tools/Tool-permissions|Tool permissions]].
+Источники: [MCP security](../../docs/05-auth-security/MCP-security.md), [Tool permissions](../../docs/07-mcp-and-ai-tools/Tool-permissions.md).
 

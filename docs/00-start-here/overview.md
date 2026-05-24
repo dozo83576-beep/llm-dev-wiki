@@ -9,14 +9,16 @@ source_priority: "internal"
 
 # Карта LLM-вики
 
+Полный список документов с metadata: [INDEX.md](../INDEX.md) (генерируется через `tools/build-index.ps1`).
+
 ## Быстрый маршрут для нового проекта
 
-1. [[../01-development-process/full-cycle|Полный цикл разработки]]
-2. [[../01-development-process/stack-selection|Выбор стека]]
-3. [[../../checklists/project-discovery|Project discovery]]
-4. [[../../prompts/create-new-project|Промпт создания проекта]]
-5. [[../../checklists/security-review|Security review]]
-6. [[../../checklists/release-readiness|Release readiness]]
+1. [Полный цикл разработки](../01-development-process/full-cycle.md)
+2. [Выбор стека](../01-development-process/stack-selection.md)
+3. [Project discovery](../../checklists/project-discovery.md)
+4. [Промпт создания проекта](../../prompts/create-new-project.md)
+5. [Security review](../../checklists/security-review.md)
+6. [Release readiness](../../checklists/release-readiness.md)
 
 ## Основные разделы
 

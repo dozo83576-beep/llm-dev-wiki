@@ -43,5 +43,5 @@ Permission matrix, audit logs, dry-run destructive commands, review enabled tool
 
 ## Источники
 
-См. [[../../patterns/ai/mcp-read-only-default|MCP read-only default]], [[Prompt-injection|Prompt injection]].
+См. [MCP read-only default](../../patterns/ai/mcp-read-only-default.md), [Prompt injection](Prompt-injection.md).
 

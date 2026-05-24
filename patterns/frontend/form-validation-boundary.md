@@ -32,5 +32,5 @@ tags: ["frontend", "forms", "validation"]
 
 Unit tests для schema, integration tests для server validation, E2E для happy/error states.
 
-Источники: [[../../docs/02-frontend/Forms-validation|Forms and validation]].
+Источники: [Forms and validation](../../docs/02-frontend/Forms-validation.md).
 

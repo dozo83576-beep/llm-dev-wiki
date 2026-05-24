@@ -32,5 +32,5 @@ Cursor строится из стабильной сортировки: `created
 
 Integration tests: первая страница, следующая страница, удаление/добавление элемента между запросами.
 
-Источники: [[../../docs/06-api-design/Pagination-filtering-sorting|Pagination, filtering, sorting]].
+Источники: [Pagination, filtering, sorting](../../docs/06-api-design/Pagination-filtering-sorting.md).
 

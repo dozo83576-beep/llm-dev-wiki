@@ -4,12 +4,14 @@
 
 ## Core docs
 
+- [Full index](docs/INDEX.md)
 - [Overview](docs/00-start-here/overview.md)
 - [Document standard](docs/00-start-here/document-standard.md)
 - [Full cycle](docs/01-development-process/full-cycle.md)
 - [Stack selection](docs/01-development-process/stack-selection.md)
 - [Project playbooks](docs/13-playbooks/index.md)
 - [LLM indexing](docs/14-llm-indexing/index.md)
+- [Source priority taxonomy](docs/14-llm-indexing/source-priority.md)
 
 ## Rules
 

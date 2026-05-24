@@ -39,5 +39,5 @@ Payments — high-risk зона. Используй mature provider, не хра
 
 ## Источники
 
-См. документацию выбранного payment provider, [[Webhooks|Webhooks]], [[../05-auth-security/Secrets|Secrets]].
+См. документацию выбранного payment provider, [Webhooks](Webhooks.md), [Secrets](../05-auth-security/Secrets.md).
 

@@ -19,5 +19,5 @@ Next.js production caching может отличаться от ожиданий
 
 # Обновленные документы
 
-[[../docs/02-frontend/Data-fetching|Data fetching]], [[../case-studies/failures/2026-05-24-nextjs-cache-assumption|cache assumption failure]].
+[Data fetching](../docs/02-frontend/Data-fetching.md), [cache assumption failure](../case-studies/failures/2026-05-24-nextjs-cache-assumption.md).
 

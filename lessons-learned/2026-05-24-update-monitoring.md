@@ -19,5 +19,5 @@ Weekly update workflow создает или обновляет один GitHub 
 
 # Обновленные документы
 
-[[../docs/15-maintenance/update-monitoring|Мониторинг обновлений технологий]].
+[Мониторинг обновлений технологий](../docs/15-maintenance/update-monitoring.md).
 

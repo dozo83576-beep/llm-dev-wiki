@@ -42,5 +42,5 @@ MCP inventory review, permission review, dry-run для write tools, secret expo
 
 ## Источники
 
-См. [[MCP-overview|MCP overview]], [[Tool-permissions|Tool permissions]], [[../05-auth-security/MCP-security|MCP security]].
+См. [MCP overview](MCP-overview.md), [Tool permissions](Tool-permissions.md), [MCP security](../05-auth-security/MCP-security.md).
 

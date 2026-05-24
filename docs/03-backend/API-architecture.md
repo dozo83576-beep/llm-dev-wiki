@@ -35,5 +35,5 @@ Unit tests для services, integration tests для API+DB, negative permission
 
 ## Источники
 
-См. [[Error-handling|Error handling]], [[../06-api-design/Error-contracts|API error contracts]], [[../../patterns/backend/service-layer|Service layer]].
+См. [Error handling](Error-handling.md), [API error contracts](../06-api-design/Error-contracts.md), [Service layer](../../patterns/backend/service-layer.md).
 

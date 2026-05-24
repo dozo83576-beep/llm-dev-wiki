@@ -32,5 +32,5 @@ Payments, billing, CRM, email events, storage notifications, CI/deploy hooks.
 
 Integration tests: valid signature, invalid signature, duplicate event, out-of-order event.
 
-Источники: [[../../docs/03-backend/Webhooks|Webhooks]], [[../../case-studies/successes/2026-05-24-webhook-idempotency|success case]].
+Источники: [Webhooks](../../docs/03-backend/Webhooks.md), [success case](../../case-studies/successes/2026-05-24-webhook-idempotency.md).
 

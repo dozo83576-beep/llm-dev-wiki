@@ -32,5 +32,5 @@ Tenant isolation предотвращает доступ пользовател�
 
 Negative tests: user A не читает, не меняет и не экспортирует объекты tenant B.
 
-Источники: [[../../docs/04-databases/Multi-tenancy|Multi-tenancy]], [[../../checklists/security-review|Security review]].
+Источники: [Multi-tenancy](../../docs/04-databases/Multi-tenancy.md), [Security review](../../checklists/security-review.md).
 

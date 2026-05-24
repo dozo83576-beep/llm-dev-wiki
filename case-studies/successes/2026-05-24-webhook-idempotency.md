@@ -33,5 +33,5 @@ Integration tests: valid signature, invalid signature, duplicate event, queue fa
 
 # Ссылки
 
-[[../../docs/03-backend/Webhooks|Webhooks]], [[../../docs/03-backend/Payments|Payments]].
+[Webhooks](../../docs/03-backend/Webhooks.md), [Payments](../../docs/03-backend/Payments.md).
 

@@ -35,5 +35,5 @@ Git secret scan, env validation, client bundle review, rotation drill, access re
 
 ## Источники
 
-См. [[../08-devops-deploy/Secrets-rotation|Secrets rotation]], [GitHub secret scanning](https://docs.github.com/en/code-security/secret-scanning).
+См. [Secrets rotation](../08-devops-deploy/Secrets-rotation.md), [GitHub secret scanning](https://docs.github.com/en/code-security/secret-scanning).
 

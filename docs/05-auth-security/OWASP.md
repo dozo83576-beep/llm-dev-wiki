@@ -11,7 +11,7 @@ source_priority: "official-docs"
 
 Минимум для web-проектов: broken access control, cryptographic failures, injection, insecure design, security misconfiguration, vulnerable components, auth failures, integrity failures, logging failures, SSRF.
 
-Каждый релиз должен проходить [[../../checklists/security-review|security review]].
+Каждый релиз должен проходить [security review](../../checklists/security-review.md).
 
 Источник: [OWASP Top 10](https://owasp.org/www-project-top-ten/).
 

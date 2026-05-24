@@ -47,5 +47,5 @@ Memory должна быть маленькой, проверенной, дат�
 
 ## Источники
 
-См. [[../../lessons-learned/_template|lessons template]], [[Agent-workflows|Agent workflows]].
+См. [lessons template](../../lessons-learned/_template.md), [Agent workflows](Agent-workflows.md).
 

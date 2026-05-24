@@ -35,5 +35,5 @@ Integration tests на 429, load smoke, bypass tests для authenticated/anonym
 
 ## Источники
 
-См. [OWASP Rate Limiting](https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html), [[../06-api-design/Error-contracts|API error contracts]].
+См. [OWASP Rate Limiting](https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html), [API error contracts](../06-api-design/Error-contracts.md).
 

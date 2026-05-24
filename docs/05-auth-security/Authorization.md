@@ -35,5 +35,5 @@ Negative integration tests: чужой объект нельзя читать, �
 
 ## Источники
 
-См. [[../../patterns/security/deny-by-default|Deny by default]], [[../../patterns/security/tenant-isolation|Tenant isolation]], [OWASP Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/).
+См. [Deny by default](../../patterns/security/deny-by-default.md), [Tenant isolation](../../patterns/security/tenant-isolation.md), [OWASP Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/).
 

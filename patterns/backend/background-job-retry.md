@@ -32,5 +32,5 @@ Email, webhooks, imports, AI jobs, billing sync, report generation.
 
 Integration tests: transient failure succeeds on retry, permanent failure moves to dead-letter, duplicate job safe.
 
-Источники: [[../../docs/03-backend/Background-jobs|Background jobs]].
+Источники: [Background jobs](../../docs/03-backend/Background-jobs.md).
 

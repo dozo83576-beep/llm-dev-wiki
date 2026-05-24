@@ -35,5 +35,5 @@ Integration tests для first/next page, invalid filters, max limit, cursor sta
 
 ## Источники
 
-См. [[../../patterns/database/cursor-pagination|Cursor pagination]], [[../04-databases/Query-optimization|Query optimization]].
+См. [Cursor pagination](../../patterns/database/cursor-pagination.md), [Query optimization](../04-databases/Query-optimization.md).
 

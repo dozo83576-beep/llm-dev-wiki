@@ -19,5 +19,5 @@ Frontend может улучшать UX, но не может быть исто�
 
 # Обновленные документы
 
-[[../patterns/security/deny-by-default|Deny by default]], [[../patterns/security/tenant-isolation|Tenant isolation]], [[../case-studies/failures/2026-05-24-client-only-permission-check|client-only permission failure]].
+[Deny by default](../patterns/security/deny-by-default.md), [Tenant isolation](../patterns/security/tenant-isolation.md), [client-only permission failure](../case-studies/failures/2026-05-24-client-only-permission-check.md).
 

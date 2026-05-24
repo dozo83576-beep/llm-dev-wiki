@@ -11,9 +11,9 @@ source_priority: "internal"
 
 Основные шаблоны находятся в:
 
-- [[../../case-studies/successes/_template|success case template]]
-- [[../../case-studies/failures/_template|failure case template]]
-- [[../../lessons-learned/_template|lesson learned template]]
+- [success case template](../../case-studies/successes/_template.md)
+- [failure case template](../../case-studies/failures/_template.md)
+- [lesson learned template](../../lessons-learned/_template.md)
 
 Используй эти шаблоны после каждого проекта или значимого этапа, чтобы сохранять применимые знания и предотвращать повторение ошибок.
 

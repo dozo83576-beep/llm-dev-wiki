@@ -32,5 +32,5 @@ RAG без metadata быстро превращается в поиск по н�
 
 Evals на retrieval с фильтрами по category/source_priority и проверкой citations.
 
-Источники: [[../../docs/14-llm-indexing/metadata-policy|Metadata policy]], [[../../case-studies/successes/2026-05-24-rag-metadata-first|success case]].
+Источники: [Metadata policy](../../docs/14-llm-indexing/metadata-policy.md), [success case](../../case-studies/successes/2026-05-24-rag-metadata-first.md).
 

@@ -35,5 +35,5 @@ Schema review, migration review, tests на constraints, permission queries, que
 
 ## Источники
 
-См. [PostgreSQL Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html), [[Multi-tenancy|Multi-tenancy]].
+См. [PostgreSQL Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html), [Multi-tenancy](Multi-tenancy.md).
 

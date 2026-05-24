@@ -38,5 +38,5 @@ Analytics отвечает на вопрос, что пользователи д
 
 ## Источники
 
-См. privacy и consent требования выбранного analytics provider, а также [[../05-auth-security/Secrets|Secrets]] и [[../02-frontend/Performance|Performance]].
+См. privacy и consent требования выбранного analytics provider, а также [Secrets](../05-auth-security/Secrets.md) и [Performance](Performance.md).
 
