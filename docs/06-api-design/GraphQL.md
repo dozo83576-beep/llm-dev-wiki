@@ -15,3 +15,23 @@ GraphQL выбирай, когда клиентам нужны гибкие вы
 
 Источник: [GraphQL Docs](https://graphql.org/learn/).
 
+## Когда использовать
+
+Выбирай GraphQL, если есть несколько клиентов с разными требованиями к выборке данных, сложный graph domain или потребность в strong schema для frontend teams.
+
+## Когда не использовать
+
+Не выбирай GraphQL для простого CRUD/API-only backend без реальной проблемы overfetch/underfetch. REST + OpenAPI будет проще.
+
+## Production-паттерны
+
+Schema-first или строго типизированный code-first, DataLoader для N+1, query depth/cost limits, persisted queries, field/object-level authorization.
+
+## Частые ошибки
+
+Authorization только на resolver верхнего уровня, N+1 queries, неограниченная query complexity, отсутствие schema version/deprecation policy.
+
+## Проверка
+
+Resolver unit tests, integration tests для permissions, query cost tests, schema breaking-change checks.
+
