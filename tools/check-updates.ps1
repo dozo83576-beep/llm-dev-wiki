@@ -24,6 +24,9 @@ function Get-GitHubLatestRelease {
         "Accept" = "application/vnd.github+json"
         "User-Agent" = "llm-dev-wiki-update-check"
     }
+    if (-not [string]::IsNullOrWhiteSpace($env:GITHUB_TOKEN)) {
+        $headers["Authorization"] = "Bearer $env:GITHUB_TOKEN"
+    }
     try {
         $response = Invoke-RestMethod -Uri "https://api.github.com/repos/$Repository/releases/latest" -Headers $headers
         return $response.tag_name
@@ -38,6 +41,9 @@ function Get-GitHubLatestTag {
     $headers = @{
         "Accept" = "application/vnd.github+json"
         "User-Agent" = "llm-dev-wiki-update-check"
+    }
+    if (-not [string]::IsNullOrWhiteSpace($env:GITHUB_TOKEN)) {
+        $headers["Authorization"] = "Bearer $env:GITHUB_TOKEN"
     }
     $response = Invoke-RestMethod -Uri "https://api.github.com/repos/$Repository/tags?per_page=1" -Headers $headers
     if ($response.Count -eq 0) {
@@ -88,9 +94,15 @@ foreach ($entry in $entries) {
         }
     }
     catch {
-        $latestVersion = "error"
-        $status = "check-failed"
-        $errorCount++
+        if (-not [string]::IsNullOrWhiteSpace($currentVersion)) {
+            $latestVersion = $currentVersion
+            $status = "check-unavailable"
+        }
+        else {
+            $latestVersion = "error"
+            $status = "check-failed"
+            $errorCount++
+        }
     }
 
     $packageOrRepo = if ($entry.package) { $entry.package } elseif ($entry.repository) { $entry.repository } else { "manual" }
