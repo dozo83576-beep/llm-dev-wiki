@@ -1,0 +1,23 @@
+name: Wiki audit
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  wiki-audit:
+    name: Run wiki audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run wiki audit
+        shell: pwsh
+        run: ./tools/wiki-audit.ps1
+
