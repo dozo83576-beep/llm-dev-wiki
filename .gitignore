@@ -11,3 +11,13 @@ build/
 .env.*
 !.env.example
 
+# Embeddings snapshot — vectors are heavy, regenerated from the corpus.
+# manifest.json is committed (freshness signal); snapshot.jsonl is local-only.
+embeddings/snapshot.jsonl
+evals-report.md
+
+# Python tooling
+__pycache__/
+*.pyc
+.venv/
+

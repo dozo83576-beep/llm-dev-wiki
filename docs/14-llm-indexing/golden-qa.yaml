@@ -1,0 +1,196 @@
+---
+title: "Golden Q&A"
+category: "llm-indexing"
+updated: "2026-05-24"
+status: "active"
+tags: ["evals", "rag", "golden"]
+source_priority: "internal"
+---
+# Golden Q&A для оценки retrieval-quality.
+# Каждый вопрос ожидает, что хотя бы один из expected_paths окажется в top-K.
+# Используется tools/run_evals.py против embeddings/snapshot.jsonl.
+
+questions:
+  - id: q-stack-saas
+    question: "Какой стек по умолчанию для SaaS-приложения с подписками?"
+    expected_paths:
+      - docs/13-playbooks/saas.md
+      - docs/01-development-process/stack-selection.md
+
+  - id: q-stack-rag
+    question: "Какой playbook использовать для AI/RAG-приложения с собственной базой знаний?"
+    expected_paths:
+      - docs/13-playbooks/ai-rag-app.md
+      - docs/07-mcp-and-ai-tools/RAG.md
+
+  - id: q-stack-marketplace
+    question: "Двусторонний маркетплейс с продавцами и покупателями — какой playbook?"
+    expected_paths:
+      - docs/13-playbooks/marketplace.md
+
+  - id: q-stack-landing
+    question: "Маркетинговый landing с формами и аналитикой — какой стек?"
+    expected_paths:
+      - docs/13-playbooks/landing.md
+
+  - id: q-security-broken-access
+    question: "Как проверять broken access control перед релизом?"
+    expected_paths:
+      - checklists/security-review.md
+      - docs/05-auth-security/Authorization.md
+
+  - id: q-security-secrets
+    question: "Где хранить секреты и как их ротировать без downtime?"
+    expected_paths:
+      - docs/05-auth-security/Secrets.md
+      - docs/08-devops-deploy/Secrets-rotation.md
+
+  - id: q-security-rate-limit
+    question: "Какие endpoints обязательно покрывать rate limiting?"
+    expected_paths:
+      - docs/05-auth-security/Rate-limiting.md
+      - checklists/security-review.md
+
+  - id: q-mcp-permissions
+    question: "Как выдавать минимальные права MCP-инструментам агенту?"
+    expected_paths:
+      - docs/05-auth-security/MCP-security.md
+      - docs/07-mcp-and-ai-tools/Tool-permissions.md
+      - patterns/ai/mcp-read-only-default.md
+
+  - id: q-prompt-injection
+    question: "Как защититься от prompt injection в LLM-приложении?"
+    expected_paths:
+      - docs/07-mcp-and-ai-tools/Prompt-injection.md
+
+  - id: q-rag-design
+    question: "Как спроектировать RAG-pipeline для wiki?"
+    expected_paths:
+      - prompts/rag-design.md
+      - docs/14-llm-indexing/rag-file-search.md
+      - docs/07-mcp-and-ai-tools/RAG.md
+
+  - id: q-vector-db
+    question: "Когда выбирать pgvector, а когда Qdrant?"
+    expected_paths:
+      - docs/07-mcp-and-ai-tools/Vector-databases.md
+      - docs/04-databases/pgvector.md
+      - docs/07-mcp-and-ai-tools/Qdrant.md
+
+  - id: q-chunking
+    question: "Какая chunking policy в этой вики?"
+    expected_paths:
+      - docs/14-llm-indexing/chunking-policy.md
+
+  - id: q-migrations-zero-downtime
+    question: "Как делать миграцию большой таблицы без downtime?"
+    expected_paths:
+      - docs/04-databases/Migrations.md
+      - patterns/database/expand-contract-migration.md
+
+  - id: q-migrations-rollback
+    question: "Можно ли откатить миграцию, добавляющую NOT NULL колонку?"
+    expected_paths:
+      - docs/04-databases/Migrations.md
+      - docs/08-devops-deploy/Rollback.md
+
+  - id: q-webhook-idempotency
+    question: "Как сделать webhook receiver идемпотентным?"
+    expected_paths:
+      - patterns/backend/webhook-idempotency.md
+      - docs/03-backend/Webhooks.md
+
+  - id: q-payments
+    question: "Как обработать failed payment без двойного списания?"
+    expected_paths:
+      - docs/03-backend/Payments.md
+
+  - id: q-observability
+    question: "Минимальный стек observability для production?"
+    expected_paths:
+      - docs/08-devops-deploy/Observability.md
+      - docs/08-devops-deploy/OpenTelemetry.md
+
+  - id: q-incident
+    question: "Что делать в первые 10 минут после production-инцидента?"
+    expected_paths:
+      - docs/08-devops-deploy/Incident-workflow.md
+
+  - id: q-release-flow
+    question: "Какие шаги обязательны перед production deploy?"
+    expected_paths:
+      - docs/08-devops-deploy/Release-flow.md
+      - checklists/release-readiness.md
+
+  - id: q-rollback
+    question: "Как готовиться к rollback заранее?"
+    expected_paths:
+      - docs/08-devops-deploy/Rollback.md
+      - patterns/devops/rollback-first-release.md
+
+  - id: q-tenant-isolation
+    question: "Как обеспечить tenant isolation в multi-tenant SaaS?"
+    expected_paths:
+      - docs/04-databases/Multi-tenancy.md
+      - patterns/security/tenant-isolation.md
+
+  - id: q-rbac-vs-abac
+    question: "Когда выбирать RBAC, а когда ABAC?"
+    expected_paths:
+      - docs/05-auth-security/RBAC-ABAC.md
+
+  - id: q-pagination
+    question: "Когда нужна cursor pagination вместо offset?"
+    expected_paths:
+      - docs/06-api-design/Pagination-filtering-sorting.md
+      - patterns/database/cursor-pagination.md
+
+  - id: q-api-versioning
+    question: "Когда версионировать API, и как это делать?"
+    expected_paths:
+      - docs/06-api-design/Versioning.md
+
+  - id: q-error-contract
+    question: "Какой формат error response рекомендован?"
+    expected_paths:
+      - docs/06-api-design/Error-contracts.md
+      - patterns/api/error-contract.md
+
+  - id: q-server-client-boundary
+    question: "Как решить, делать ли компонент server или client в Next.js?"
+    expected_paths:
+      - docs/02-frontend/Nextjs.md
+      - patterns/frontend/server-client-boundary.md
+
+  - id: q-form-validation
+    question: "Как организовать валидацию формы на клиенте и сервере?"
+    expected_paths:
+      - patterns/frontend/form-validation-boundary.md
+      - docs/02-frontend/Forms-validation.md
+
+  - id: q-test-pyramid
+    question: "Какое соотношение unit / integration / E2E тестов рекомендовано?"
+    expected_paths:
+      - docs/09-testing/Test-pyramid.md
+
+  - id: q-e2e-tests
+    question: "Какие user-journey покрывать E2E тестами?"
+    expected_paths:
+      - docs/09-testing/E2E-testing.md
+
+  - id: q-mocks
+    question: "Когда мокать, а когда использовать sandbox / реальную БД?"
+    expected_paths:
+      - docs/09-testing/Mocks.md
+
+  - id: q-source-priority
+    question: "Что означают значения internal / official-docs / vendor-docs в source_priority?"
+    expected_paths:
+      - docs/14-llm-indexing/source-priority.md
+
+  - id: q-knowledge-capture
+    question: "Что делать с опытом после завершения проекта?"
+    expected_paths:
+      - prompts/post-project-knowledge-capture.md
+      - prompts/update-wiki.md
+      - AGENTS.md

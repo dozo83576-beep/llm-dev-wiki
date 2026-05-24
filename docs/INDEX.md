@@ -17,14 +17,14 @@ source_priority: "internal"
 - Активных: **183**
 - Redirect-stubs: **1**
 - Archived: **0**
-- Суммарный объём: **378580** символов
+- Суммарный объём: **378688** символов
 
 ## docs
 
 | Файл | Заголовок | Категория | Объём | Updated | Status | Source priority |
 |------|-----------|-----------|-------|---------|--------|-----------------|
 | [docs/00-start-here/document-standard.md](../docs/00-start-here/document-standard.md) | Стандарт production-документа | governance | 1433 | 2026-05-24 | active | internal |
-| [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2011 | 2026-05-24 | active | internal |
+| [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2119 | 2026-05-24 | active | internal |
 | [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 1260 | 2026-05-24 | active | internal |
 | [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 2276 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Accessibility.md](../docs/02-frontend/Accessibility.md) | Accessibility | frontend | 1432 | 2026-05-24 | active | official-docs |
