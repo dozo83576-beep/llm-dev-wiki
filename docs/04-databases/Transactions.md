@@ -26,3 +26,14 @@ Transaction boundary должен соответствовать бизнес-о
 
 Источник: [PostgreSQL Transactions](https://www.postgresql.org/docs/current/tutorial-transactions.html).
 
+## Когда использовать
+
+Используй transactions для операций, где несколько изменений должны быть атомарными: orders, payments, role changes, inventory, audit.
+
+## Когда не использовать
+
+Не держи транзакцию открытой вокруг внешнего HTTP API, AI request, file upload или долгого job.
+
+## Проверка
+
+Integration tests на partial failure, concurrent mutation, unique constraint race и rollback side effects.

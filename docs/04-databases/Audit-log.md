@@ -22,3 +22,19 @@ Audit log фиксирует критичные действия: auth, role cha
 - Integration tests: critical action creates audit record.
 - Negative tests: audit не содержит secret fields.
 
+## Когда использовать
+
+Используй audit log для auth, role changes, billing, destructive actions, exports, admin/support access и compliance-sensitive операций.
+
+## Когда не использовать
+
+Не используй audit log как обычный application log или analytics. Он должен фиксировать значимые действия, а не каждый read-запрос.
+
+## Частые ошибки
+
+Хранить секреты в audit payload, не фиксировать actor/target, разрешать редактирование audit rows, не логировать failed sensitive attempts.
+
+## Источники
+
+См. [[../05-auth-security/Authorization|Authorization]], [[../../patterns/security/tenant-isolation|Tenant isolation]].
+

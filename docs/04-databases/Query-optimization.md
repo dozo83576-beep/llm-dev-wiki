@@ -24,5 +24,16 @@ source_priority: "official-docs"
 - Offset pagination на больших таблицах.
 - Сортировка по неиндексированному полю в hot endpoint.
 
-Источник: [PostgreSQL EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html).
+## Когда использовать
 
+Оптимизируй, когда есть slow query, высокий CPU/IO, timeout, рост latency, дорогой report или плохой query plan.
+
+## Когда не использовать
+
+Не оптимизируй заранее редкие admin queries, если нет production signal или понятного performance budget.
+
+## Проверка
+
+Сравни `EXPLAIN ANALYZE` до/после, проверь cardinality, index usage, p95 latency и отсутствие regressions для соседних запросов.
+
+Источник: [PostgreSQL EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html).

@@ -15,3 +15,23 @@ Prisma подходит для TypeScript-проектов, где важны т
 
 Источник: [Prisma ORM Docs](https://www.prisma.io/docs/orm).
 
+## Когда использовать
+
+Выбирай Prisma для TypeScript-проектов, где важны schema workflow, generated client, migrations и быстрый developer experience.
+
+## Когда не использовать
+
+Не выбирай Prisma, если команда хочет писать почти весь SQL вручную или нужна тонкая оптимизация query layer на каждом endpoint.
+
+## Production-паттерны
+
+Schema ревьюится как контракт, migrations проходят staging, transactions используются для use cases, raw SQL изолируется и тестируется.
+
+## Частые ошибки
+
+Не замечать N+1, делать destructive migration без review, использовать generated types вместо runtime validation на API boundary.
+
+## Проверка
+
+Integration tests с тестовой БД, migration deploy dry-run, query logs для hot paths, negative tests на constraints.
+
