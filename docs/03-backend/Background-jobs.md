@@ -15,3 +15,23 @@ source_priority: "official-docs"
 
 Источники: [BullMQ Docs](https://docs.bullmq.io/), [Celery Docs](https://docs.celeryq.dev/).
 
+## Когда использовать
+
+Используй jobs для email, imports, reports, AI tasks, media processing, webhook retry, billing sync и всего, что дольше нормального HTTP request.
+
+## Когда не использовать
+
+Не выноси простую синхронную операцию в queue, если это усложняет consistency без выигрыша по latency или надежности.
+
+## Production-паттерны
+
+Job должен быть идемпотентным, иметь retry policy, timeout, dead-letter handling, structured logs и metrics. Для batch jobs нужны checkpoints.
+
+## Частые ошибки
+
+Infinite retry, отсутствие idempotency, потеря ошибок в worker logs, отсутствие visibility для stuck jobs.
+
+## Проверка
+
+Integration tests: success, transient failure retry, permanent failure, duplicate job, dead-letter path.
+

@@ -29,3 +29,15 @@ File upload — security boundary. Любой файл считается нед
 - Negative tests: чужой файл, слишком большой файл, неверный тип.
 - E2E: upload, preview/download, delete.
 
+## Когда использовать
+
+Используй upload flow для avatars, documents, imports, media, attachments и user-generated content.
+
+## Когда не использовать
+
+Не принимай файл через backend memory buffer, если ожидаются крупные файлы или высокая конкуренция. Direct-to-storage безопаснее и масштабируемее.
+
+## Источники
+
+См. security guidance выбранного storage provider и [[../05-auth-security/Secrets|Secrets]].
+

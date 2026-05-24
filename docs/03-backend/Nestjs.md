@@ -15,3 +15,23 @@ NestJS выбирай для сложного TypeScript backend. Архитек
 
 Источник: [NestJS Docs](https://docs.nestjs.com/).
 
+## Когда использовать
+
+Выбирай NestJS для сложного TypeScript backend: modules, DI, guards, interceptors, queues, jobs, webhooks и enterprise API.
+
+## Когда не использовать
+
+Не выбирай NestJS для маленького serverless endpoint или простого BFF, где Fastify/Next.js Route Handler проще.
+
+## Production-паттерны
+
+Modules по bounded context, controllers тонкие, services содержат use cases, guards проверяют auth/authz, filters нормализуют errors, interceptors добавляют cross-cutting behavior.
+
+## Частые ошибки
+
+God module, business logic в controllers, circular dependencies, DTO как domain model, отсутствие transaction boundary.
+
+## Проверка
+
+Unit tests для providers, e2e tests через testing module, permission tests для guards, integration tests с DB.
+

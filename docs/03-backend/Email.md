@@ -25,3 +25,19 @@ Email нужен для auth, transactional notifications, billing, lifecycle и
 - Integration test с sandbox provider.
 - Проверка SPF/DKIM/DMARC перед production.
 
+## Когда использовать
+
+Используй email для transactional сообщений: auth, invites, receipts, alerts, lifecycle. Marketing email требует отдельного consent и unsubscribe.
+
+## Когда не использовать
+
+Не используй email как единственный канал для критичных real-time уведомлений, если задержка недопустима.
+
+## Частые ошибки
+
+Отправлять email в HTTP request без queue, не обрабатывать bounce/complaint, смешивать transactional и marketing, логировать персональный payload.
+
+## Источники
+
+См. документацию выбранного provider и [[../05-auth-security/Secrets|Secrets]].
+

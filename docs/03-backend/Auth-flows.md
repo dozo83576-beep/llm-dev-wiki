@@ -30,3 +30,15 @@ Auth flow должен быть спроектирован как набор п�
 - Negative tests: user не может получить чужую сессию или повысить роль.
 - Security tests на brute force и reset abuse.
 
+## Когда использовать
+
+Используй auth flows для любого продукта с аккаунтами, организациями, платным доступом, админками или персональными данными.
+
+## Когда не использовать
+
+Не пиши самописную password/session систему, если Auth.js, Supabase Auth, OIDC или managed provider закрывают требования.
+
+## Источники
+
+См. [[../05-auth-security/Authentication|Authentication]], [[../05-auth-security/Authorization|Authorization]], [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html).
+

@@ -30,3 +30,15 @@ Cache нужен для снижения latency и нагрузки, но до�
 - Integration tests на invalidation после mutation.
 - Load test для дорогих endpoints.
 
+## Когда использовать
+
+Используй cache для read-heavy endpoints, дорогих вычислений, reference data, rate limits и внешних API с высокой latency.
+
+## Когда не использовать
+
+Не кэшируй данные, где stale result нарушает безопасность, платежи, права доступа или юридически значимые решения.
+
+## Источники
+
+См. [[../04-databases/Redis|Redis]], [[../02-frontend/Data-fetching|Data fetching]].
+

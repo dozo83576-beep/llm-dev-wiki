@@ -29,3 +29,15 @@ Payments — high-risk зона. Используй mature provider, не хра
 - E2E: successful checkout, failed payment, cancel, refund, subscription renewal.
 - Integration: duplicate webhook, out-of-order webhook.
 
+## Когда использовать
+
+Используй payments flow для SaaS subscriptions, checkout, marketplace payouts, invoices и paid feature access.
+
+## Когда не использовать
+
+Не реализуй card handling самостоятельно. Используй provider-hosted checkout или compliant provider primitives.
+
+## Источники
+
+См. документацию выбранного payment provider, [[Webhooks|Webhooks]], [[../05-auth-security/Secrets|Secrets]].
+

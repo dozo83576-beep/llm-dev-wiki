@@ -15,3 +15,23 @@ FastAPI выбирай для Python API, AI-интеграций, typed validat
 
 Источник: [FastAPI Docs](https://fastapi.tiangolo.com/).
 
+## Когда использовать
+
+Выбирай FastAPI для Python API, AI/ML integrations, typed OpenAPI, async endpoints и data-heavy backend.
+
+## Когда не использовать
+
+Не выбирай FastAPI только из-за моды, если проекту нужен Django admin или команда сильнее в TypeScript/NestJS.
+
+## Production-паттерны
+
+Pydantic schemas на границе, dependency injection для auth/db/services, SQLAlchemy sessions с явным lifecycle, Alembic migrations, structured errors.
+
+## Частые ошибки
+
+DB session leak, blocking CPU work в async endpoint, business logic в route functions, отсутствие auth dependencies на protected routes.
+
+## Проверка
+
+pytest для services, TestClient/httpx integration tests, OpenAPI contract checks, permission negative tests.
+

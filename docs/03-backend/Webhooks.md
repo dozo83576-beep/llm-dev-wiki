@@ -29,3 +29,15 @@ Webhook endpoint должен быть идемпотентным, провер�
 - Integration tests: valid signature, invalid signature, duplicate event.
 - Replay test: повтор события не меняет состояние второй раз.
 
+## Когда использовать
+
+Используй webhooks для provider-driven событий: payments, auth providers, storage, CI/CD, email, CRM.
+
+## Когда не использовать
+
+Не используй webhook как замену синхронному API, если вызывающая сторона ожидает немедленный результат операции.
+
+## Источники
+
+См. [[../../patterns/backend/webhook-idempotency|Webhook idempotency]], [[Background-jobs|Background jobs]].
+
