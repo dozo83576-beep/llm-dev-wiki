@@ -1,7 +1,7 @@
 ---
 title: "Next.js"
 category: "frontend"
-updated: "2026-05-24"
+updated: "2026-06-04"
 status: "active"
 tags: ["nextjs", "fullstack"]
 source_priority: "official-docs"
@@ -9,7 +9,7 @@ source_priority: "official-docs"
 
 # Next.js
 
-Используй Next.js для full-stack React, SEO, Server Components, API route handlers, layouts и production deploy на Vercel. Не выбирай Next.js, если нужен чистый API без UI или команда не готова к server/client boundary.
+Используй Next.js для full-stack React, SEO, Server Components, API route handlers, layouts и production deploy на Vercel. Актуальный baseline смотри в [Next.js Fullstack](../../stacks/nextjs-fullstack.md). Не выбирай Next.js, если нужен чистый API без UI или команда не готова к server/client boundary.
 
 Правила: данные по умолчанию получать на сервере, интерактивность изолировать в Client Components, external API оформлять Route Handlers, формы валидировать на серверной границе.
 
@@ -27,7 +27,7 @@ source_priority: "official-docs"
 
 ## Production-паттерны
 
-Server Components по умолчанию, Client Components только для интерактивности. Route Handlers для внешних API/webhooks. Metadata, image optimization, cache policy и env validation обязательны.
+Server Components по умолчанию, Client Components только для интерактивности. Route Handlers для внешних API/webhooks. Metadata, image optimization, cache policy и env validation обязательны. Для публичных страниц заранее фиксируй rendering strategy: static, dynamic, ISR, tag revalidation или no-store.
 
 ## Частые ошибки
 
@@ -37,3 +37,7 @@ Server Components по умолчанию, Client Components только для
 
 `next build`, typecheck, Playwright smoke, проверка protected routes, проверка metadata публичных страниц и отсутствие server-only env в client code.
 
+## Источники
+
+- [Next.js Docs](https://nextjs.org/docs)
+- См. [Next.js Fullstack](../../stacks/nextjs-fullstack.md), [Frontend blueprints](Frontend-blueprints.md), [Data fetching](Data-fetching.md), [Vercel](../08-devops-deploy/Vercel.md).

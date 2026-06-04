@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$Root = (Resolve-Path ".").Path,
     [switch]$FailOnWarnings,
     [int]$MinChars = 1200
@@ -88,7 +88,7 @@ foreach ($relativeRoot in $contentRoots) {
 # Build a map of `updated` -> count to detect mass stamps
 $updatedCounts = @{}
 foreach ($file in $files) {
-    $head = Get-Content -LiteralPath $file.FullName -TotalCount 12 -ErrorAction SilentlyContinue
+    $head = Get-Content -LiteralPath $file.FullName -Encoding UTF8 -TotalCount 12 -ErrorAction SilentlyContinue
     foreach ($line in $head) {
         if ($line -match '^updated:\s*"?(\d{4}-\d{2}-\d{2})"?') {
             $d = $matches[1]
@@ -99,7 +99,7 @@ foreach ($file in $files) {
 }
 
 foreach ($file in $files) {
-    $content = Get-Content -Raw -LiteralPath $file.FullName
+    $content = Get-Content -Raw -Encoding UTF8 -LiteralPath $file.FullName
     $relativePath = Resolve-Path -LiteralPath $file.FullName -Relative
 
     # Skip redirect stubs (intentional thin docs)
@@ -132,8 +132,8 @@ foreach ($file in $files) {
     if (-not $isIndexLike -and $isSectionQualityDoc) {
         $missingSections = [System.Collections.Generic.List[string]]::new()
         foreach ($section in $sectionPatterns) {
-            if ($content -notmatch $section.Pattern) {
-                $missingSections.Add($section.Name) | Out-Null
+            if ($content -notmatch $section["Pattern"]) {
+                $missingSections.Add($section["Name"]) | Out-Null
             }
         }
         # Allow up to 1 missing section out of 6 (occasional synonyms / structural variations)

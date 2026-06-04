@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$Root = (Resolve-Path ".").Path,
     [string]$Output = "docs/INDEX.md"
 )
@@ -27,7 +27,7 @@ foreach ($cr in $contentRoots) {
         $relPath = ($_.FullName.Substring($rootPath.Path.Length + 1) -replace '\\', '/')
         # Skip the INDEX file itself to keep build-index idempotent
         if ($relPath -eq ($Output -replace '\\', '/')) { return }
-        $content = Get-Content -Raw -LiteralPath $_.FullName -ErrorAction SilentlyContinue
+        $content = Get-Content -Raw -Encoding UTF8 -LiteralPath $_.FullName -ErrorAction SilentlyContinue
         if (-not $content) { return }
 
         $title = ""

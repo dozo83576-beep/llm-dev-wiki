@@ -1,7 +1,7 @@
 ---
 title: "Playbook: SaaS"
 category: "playbooks"
-updated: "2026-05-24"
+updated: "2026-06-04"
 status: "active"
 tags: ["saas", "multi-tenant", "billing"]
 source_priority: "internal"
@@ -24,7 +24,7 @@ Multi-tenant продукт: организации, пользователи, �
 
 ## Стек по умолчанию
 
-Next.js + TypeScript + PostgreSQL + Prisma/Drizzle + [Auth.js](../05-auth-security/Authjs.md)/[Supabase](../03-backend/Supabase.md)/[Clerk](../05-auth-security/Clerk.md) + [Stripe](../03-backend/Stripe.md) + [Playwright](../09-testing/Playwright.md) + Sentry + Vercel/Render.
+[Next.js Fullstack](../../stacks/nextjs-fullstack.md) + TypeScript + PostgreSQL + Prisma/Drizzle + [Auth.js](../05-auth-security/Authjs.md)/[Supabase](../03-backend/Supabase.md)/[Clerk](../05-auth-security/Clerk.md) + [Stripe](../03-backend/Stripe.md) + [Playwright](../09-testing/Playwright.md) + Sentry + Vercel/Render.
 
 Если вопрос звучит как "какой стек по умолчанию для SaaS-приложения с подписками", ответ — этот playbook: Next.js + PostgreSQL + Auth.js/Clerk/Supabase + Stripe subscriptions + Playwright smoke + observability.
 
@@ -85,4 +85,4 @@ Cross-tenant data leak (самый частый и дорогой баг SaaS), 
 
 ## Источники
 
-- См. [Authentication](../05-auth-security/Authentication.md), [Auth.js](../05-auth-security/Authjs.md), [Clerk](../05-auth-security/Clerk.md), [Supabase](../03-backend/Supabase.md), [Authorization](../05-auth-security/Authorization.md), [Multi-tenancy](../04-databases/Multi-tenancy.md), [Stripe](../03-backend/Stripe.md), [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md), [Compliance baseline](../05-auth-security/Compliance-baseline.md), [tenant-isolation pattern](../../patterns/security/tenant-isolation.md), [admin-dashboard playbook](admin-dashboard.md).
+- См. [Next.js Fullstack](../../stacks/nextjs-fullstack.md), [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [Authentication](../05-auth-security/Authentication.md), [Auth.js](../05-auth-security/Authjs.md), [Clerk](../05-auth-security/Clerk.md), [Supabase](../03-backend/Supabase.md), [Authorization](../05-auth-security/Authorization.md), [Multi-tenancy](../04-databases/Multi-tenancy.md), [Stripe](../03-backend/Stripe.md), [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md), [Compliance baseline](../05-auth-security/Compliance-baseline.md), [tenant-isolation pattern](../../patterns/security/tenant-isolation.md), [admin-dashboard playbook](admin-dashboard.md).

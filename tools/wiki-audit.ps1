@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$Root = (Resolve-Path ".").Path
 )
 
@@ -94,7 +94,7 @@ function Test-InternalLinks {
     foreach ($file in $MarkdownFiles) {
         $inCodeBlock = $false
         $lineNumber = 0
-        foreach ($line in Get-Content -LiteralPath $file.FullName) {
+        foreach ($line in Get-Content -LiteralPath $file.FullName -Encoding UTF8) {
             $lineNumber++
             if ($line.TrimStart().StartsWith('```')) {
                 $inCodeBlock = -not $inCodeBlock
@@ -145,7 +145,7 @@ function Test-TechnologyWatchlist {
     }
 
     try {
-        $entries = Get-Content -Raw -LiteralPath $watchlistPath | ConvertFrom-Json
+        $entries = Get-Content -Raw -Encoding UTF8 -LiteralPath $watchlistPath | ConvertFrom-Json
     }
     catch {
         Add-Failure $Failures "Invalid technology watchlist JSON: $($_.Exception.Message)"
@@ -246,7 +246,7 @@ function Test-FrontMatter {
             continue
         }
 
-        $content = Get-Content -Raw -LiteralPath $file.FullName
+        $content = Get-Content -Raw -Encoding UTF8 -LiteralPath $file.FullName
         $frontMatter = Get-FrontMatterMap -Content $content
         if ($frontMatter.Count -eq 0) {
             Add-Failure $Failures "Missing front matter: $($file.FullName)"
@@ -296,7 +296,7 @@ foreach ($file in $emptyFiles) {
     Add-Failure $failures "Empty Markdown file: $($file.FullName)"
 }
 
-$unfinishedMatches = Select-String -Path ($markdownFiles | ForEach-Object FullName) -Pattern "\b(TODO|TBD|FIXME)\b" -CaseSensitive:$false -ErrorAction SilentlyContinue
+$unfinishedMatches = Select-String -Path ($markdownFiles | ForEach-Object FullName) -Encoding UTF8 -Pattern "\b(TODO|TBD|FIXME)\b" -CaseSensitive:$false -ErrorAction SilentlyContinue
 foreach ($match in $unfinishedMatches) {
     if (Test-UnfinishedMarkerLine -Line $match.Line) {
         Add-Failure $failures "Unfinished marker: $($match.Path):$($match.LineNumber)"
@@ -309,7 +309,7 @@ $checklistPath = Join-Path $rootPath "checklists"
 if (Test-Path -LiteralPath $checklistPath) {
     $checklists = Get-ChildItem -LiteralPath $checklistPath -File -Filter *.md
     foreach ($file in $checklists) {
-        $hasCheckbox = Select-String -LiteralPath $file.FullName -Pattern "^- \[[ xX]\]" -Quiet
+        $hasCheckbox = Select-String -LiteralPath $file.FullName -Encoding UTF8 -Pattern "^- \[[ xX]\]" -Quiet
         if (-not $hasCheckbox) {
             Add-Failure $failures "Checklist has no checkbox items: $($file.FullName)"
         }
@@ -323,7 +323,7 @@ $resourcePath = Join-Path $rootPath "resources"
 if (Test-Path -LiteralPath $resourcePath) {
     $resources = Get-ChildItem -LiteralPath $resourcePath -File -Filter *.md
     foreach ($file in $resources) {
-        $hasLink = Select-String -LiteralPath $file.FullName -Pattern "https?://" -Quiet
+        $hasLink = Select-String -LiteralPath $file.FullName -Encoding UTF8 -Pattern "https?://" -Quiet
         if (-not $hasLink) {
             Add-Failure $failures "Resource file has no external links: $($file.FullName)"
         }

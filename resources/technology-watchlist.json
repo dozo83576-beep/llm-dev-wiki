@@ -3,7 +3,7 @@
     "name": "Next.js",
     "ecosystem": "npm",
     "package": "next",
-    "currentVersion": "16.2.6",
+    "currentVersion": "16.2.7",
     "docsUrl": "https://nextjs.org/docs",
     "notes": "Full-stack React framework and App Router baseline."
   },
@@ -11,7 +11,7 @@
     "name": "React",
     "ecosystem": "npm",
     "package": "react",
-    "currentVersion": "19.2.6",
+    "currentVersion": "19.2.7",
     "docsUrl": "https://react.dev/",
     "notes": "UI runtime used by Next.js and SPA stacks."
   },
@@ -35,7 +35,7 @@
     "name": "NestJS",
     "ecosystem": "npm",
     "package": "@nestjs/core",
-    "currentVersion": "11.1.23",
+    "currentVersion": "11.1.24",
     "docsUrl": "https://docs.nestjs.com/",
     "notes": "Structured TypeScript backend framework."
   },
@@ -67,7 +67,7 @@
     "name": "Django",
     "ecosystem": "pypi",
     "package": "django",
-    "currentVersion": "6.0.5",
+    "currentVersion": "6.0.6",
     "docsUrl": "https://docs.djangoproject.com/",
     "notes": "Python web framework."
   },
@@ -75,7 +75,7 @@
     "name": "SQLAlchemy",
     "ecosystem": "pypi",
     "package": "sqlalchemy",
-    "currentVersion": "2.0.49",
+    "currentVersion": "2.0.50",
     "docsUrl": "https://docs.sqlalchemy.org/",
     "notes": "Python SQL toolkit and ORM."
   },

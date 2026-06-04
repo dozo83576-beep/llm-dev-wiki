@@ -1,7 +1,7 @@
 ---
 title: "Secrets"
 category: "security"
-updated: "2026-05-24"
+updated: "2026-05-27"
 status: "active"
 tags: ["secrets", "env"]
 source_priority: "internal"
@@ -25,14 +25,16 @@ source_priority: "internal"
 
 Secret manager или platform env vars, separate secrets per environment, rotation plan, least privilege, `.env.example` без значений.
 
+Bot tokens для Telegram/Slack lead notifications считаются server-only secrets: endpoint читает их из env vars, а клиент отправляет заявку только на свой backend route.
+
 ## Частые ошибки
 
-Префиксовать server secret как public env, логировать Authorization header, коммитить `.env`, переиспользовать production secret в dev.
+Префиксовать server secret как public env, логировать Authorization header, коммитить `.env`, переиспользовать production secret в dev, отдавать Telegram Bot Token в client bundle.
 
 ## Проверка
 
-Git secret scan, env validation, client bundle review, rotation drill, access review.
+Git secret scan, env validation, client bundle review, rotation drill, access review. Для serverless forms проверь, что `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` и аналоги доступны только backend runtime.
 
 ## Источники
 
-См. [Secrets rotation](../08-devops-deploy/Secrets-rotation.md), [GitHub secret scanning](https://docs.github.com/en/code-security/secret-scanning).
+См. [Secrets rotation](../08-devops-deploy/Secrets-rotation.md), [GitHub secret scanning](https://docs.github.com/en/code-security/secret-scanning), [Telegram lead notification](../../patterns/backend/telegram-lead-notification.md).
