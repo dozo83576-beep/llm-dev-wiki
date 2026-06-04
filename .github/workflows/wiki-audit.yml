@@ -10,38 +10,9 @@ permissions:
   contents: read
 
 jobs:
-  wiki-audit:
-    name: Run wiki audit
+  wiki-ci:
+    name: Run wiki CI
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Run wiki audit
-        shell: pwsh
-        run: ./tools/wiki-audit.ps1
-
-      - name: Run wiki quality report
-        shell: pwsh
-        run: |
-          $report = ./tools/wiki-quality.ps1
-          $report | Tee-Object -FilePath wiki-quality-report.md
-          ./tools/write-ci-summary.ps1 -FilePath wiki-quality-report.md
-
-      - name: Verify INDEX.md is up to date
-        shell: pwsh
-        run: |
-          ./tools/build-index.ps1
-          $diff = git diff --exit-code docs/INDEX.md
-          if ($LASTEXITCODE -ne 0) {
-            Write-Error "docs/INDEX.md is stale. Run 'pwsh ./tools/build-index.ps1' locally and commit."
-            exit 1
-          }
-
-  rag-evals:
-    name: Offline RAG retrieval evals
-    runs-on: ubuntu-latest
-    needs: wiki-audit
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -56,33 +27,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r tools/requirements.txt
 
-      - name: Run offline retrieval unit tests
-        shell: bash
-        run: |
-          set +e
-          python -m pytest tests/tools > pytest-report.txt
-          status=$?
-          set -e
-          cat pytest-report.txt
-          pwsh ./tools/write-ci-summary.ps1 -Title "Offline retrieval unit tests" -FilePath pytest-report.txt
-          exit "$status"
-
-      - name: Build offline corpus snapshot
-        run: python tools/build_embeddings.py --mode offline-text
-
-      - name: Run offline retrieval evals
-        shell: bash
-        run: |
-          set +e
-          python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10 --warn-rank 3
-          status=$?
-          set -e
-          if [ -f evals-report.md ]; then
-            pwsh ./tools/write-ci-summary.ps1 -Title "Offline retrieval evals" -FilePath evals-report.md
-          else
-            pwsh ./tools/write-ci-summary.ps1 -Title "Offline retrieval evals" -InputText "evals-report.md was not generated."
-          fi
-          exit "$status"
+      - name: Run local wiki CI
+        shell: pwsh
+        run: ./tools/ci-local.ps1 -IncludeToolTests -WriteGithubSummary
 
       - name: Upload evals report
         if: always()
@@ -90,12 +37,3 @@ jobs:
         with:
           name: evals-report
           path: evals-report.md
-
-      - name: Verify manifest committed
-        shell: pwsh
-        run: |
-          $diff = git diff --exit-code embeddings/manifest.json
-          if ($LASTEXITCODE -ne 0) {
-            Write-Error "embeddings/manifest.json is stale. Run 'python tools/build_embeddings.py --mode offline-text' locally and commit."
-            exit 1
-          }

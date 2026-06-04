@@ -23,12 +23,15 @@ $rows = [System.Collections.Generic.List[object]]::new()
 foreach ($cr in $contentRoots) {
     $full = Join-Path $rootPath $cr
     if (-not (Test-Path -LiteralPath $full)) { continue }
-    Get-ChildItem -LiteralPath $full -Recurse -File -Filter "*.md" | Sort-Object FullName | ForEach-Object {
-        $relPath = ($_.FullName.Substring($rootPath.Path.Length + 1) -replace '\\', '/')
+    $filePaths = [string[]]@(Get-ChildItem -LiteralPath $full -Recurse -File -Filter "*.md" | ForEach-Object { $_.FullName })
+    [Array]::Sort($filePaths, [StringComparer]::Ordinal)
+
+    foreach ($filePath in $filePaths) {
+        $relPath = ($filePath.Substring($rootPath.Path.Length + 1) -replace '\\', '/')
         # Skip the INDEX file itself to keep build-index idempotent
-        if ($relPath -eq ($Output -replace '\\', '/')) { return }
-        $content = Get-Content -Raw -Encoding UTF8 -LiteralPath $_.FullName -ErrorAction SilentlyContinue
-        if (-not $content) { return }
+        if ($relPath -eq ($Output -replace '\\', '/')) { continue }
+        $content = Get-Content -Raw -Encoding UTF8 -LiteralPath $filePath -ErrorAction SilentlyContinue
+        if (-not $content) { continue }
 
         $title = ""
         $category = ""
@@ -46,7 +49,7 @@ foreach ($cr in $contentRoots) {
         }
 
         if (-not $title) {
-            $title = [System.IO.Path]::GetFileNameWithoutExtension($_.Name)
+            $title = [System.IO.Path]::GetFileNameWithoutExtension([System.IO.Path]::GetFileName($filePath))
         }
 
         $chars = $content.Length
