@@ -33,10 +33,12 @@ Design system нужен, когда интерфейс должен масшт�
 - Media rules описывают image crop, focal point, alt text, poster для video, lazy/eager loading и допустимый page weight.
 - Interaction states обязательны: hover, focus-visible, active, disabled, loading, destructive, selected, empty и error.
 - Pricing, checkout, CTA и lead form sections имеют отдельные layout recipes, потому что они критичны для conversion и ошибок оплаты.
+- Для сложных компонентов используй component-driven development: states сначала в stories, затем интеграция в routes.
 
 ## Проверка
 
 - Visual smoke для основных экранов.
+- Storybook/локальная states page покрывает default, loading, empty, error, disabled, long text, mobile и dark/light.
 - Contrast и keyboard navigation.
 - Нет карточек внутри карточек и неконтролируемого overflow текста.
 - 360px, 768px, 1280px и wide desktop viewport без overlap, clipped labels и непредсказуемого wrapping.
@@ -50,4 +52,4 @@ Design system нужен, когда интерфейс должен масшт�
 
 ## Источники
 
-См. [shadcn/ui](Shadcn.md), [Accessibility](Accessibility.md), [UI architecture](UI-architecture.md), [Frontend blueprints](Frontend-blueprints.md), [semantic text tokens](../../patterns/frontend/semantic-theme-text-tokens.md) и [W3C Design Tokens Community Group](https://www.w3.org/community/design-tokens/).
+См. [shadcn/ui](Shadcn.md), [Accessibility](Accessibility.md), [Styling systems](Styling-systems.md), [Component-driven development](Component-driven-development.md), [UI architecture](UI-architecture.md), [Frontend blueprints](Frontend-blueprints.md), [semantic text tokens](../../patterns/frontend/semantic-theme-text-tokens.md) и [W3C Design Tokens Community Group](https://www.w3.org/community/design-tokens/).

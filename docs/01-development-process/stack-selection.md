@@ -21,6 +21,10 @@ source_priority: "official-docs"
 | Контентный сайт | Astro/Next.js + CMS | CMS | CMS/PostgreSQL | CMS auth | Vercel/Cloudflare | visual smoke, SEO | Если нужен real-time app |
 | E-commerce | Next.js | Commerce backend/NestJS | PostgreSQL | Customer auth | Vercel + backend host | checkout E2E | Если платежные и налоговые требования не проработаны |
 | Real-time | Next.js/React | NestJS/Fastify + WebSocket | PostgreSQL + Redis | JWT/OIDC | Fly/Render | load + E2E | Если real-time не является ключевой ценностью |
+| React full-stack alternative | TanStack Start | Server functions / отдельный API | PostgreSQL/managed DB | Auth provider | Vercel/Netlify/Cloudflare | route + mutation tests | Если Next.js уже является командным стандартом |
+| Vue/Svelte продукт | Nuxt или SvelteKit | Framework server routes или API | PostgreSQL/CMS | OIDC/provider | Vercel/Netlify/Cloudflare | SSR/forms/E2E | Если команда и SDK завязаны на React |
+| Edge-first app | Vite/React или static frontend | Hono on Cloudflare Workers | D1/KV/R2/external DB | JWT/OIDC | Cloudflare Workers | Worker smoke + contract | Если backend требует Node-only APIs или long-running jobs |
+| Hypermedia CRUD | Server-rendered HTML + htmx | Django/Laravel/FastAPI/NestJS templates | Existing DB | Server session | Any server host | form + fragment tests | Если нужен rich offline/client-heavy UI |
 
 Базовый выбор по умолчанию: [Next.js Fullstack](../../stacks/nextjs-fullstack.md) + TypeScript + PostgreSQL + Prisma/Drizzle + Auth.js/Clerk/Supabase. Отклоняйся от него только при конкретной причине.
 
@@ -29,6 +33,10 @@ source_priority: "official-docs"
 - Если страница публичная и должна привлекать трафик, сначала проверь [SEO](../02-frontend/SEO.md), [Performance](../02-frontend/Performance.md) и rendering strategy.
 - Если приложение живёт после логина и API уже отделён, смотри [React SPA + API](../../stacks/react-spa-api.md), [Vite + React](../02-frontend/Vite-React.md) и [React Router](../02-frontend/React-Router.md).
 - Если сайт контентный или маркетинговый, смотри [Astro](../02-frontend/Astro.md), [CMS content](../02-frontend/CMS-content.md) и [landing playbook](../13-playbooks/landing.md).
+- Если нужен React full-stack без Next.js default model, смотри [TanStack Start](../02-frontend/TanStack-Start.md).
+- Если нужен edge-first runtime, смотри [Cloudflare Workers full-stack](../08-devops-deploy/Cloudflare-Workers-fullstack.md), [Hono](../03-backend/Hono.md) и [Runtime selection](runtime-selection.md).
+- Если команда не на React, сравни [Nuxt](../02-frontend/Nuxt.md) и [SvelteKit](../02-frontend/SvelteKit.md) по ecosystem fit.
+- Если UI в основном CRUD/forms/tables, проверь [htmx](../02-frontend/HTMX.md) до выбора SPA.
 - Если есть платежи, роли, tenant isolation или персональные данные, stack choice нельзя закрывать без security review.
 
 ## Проверка
@@ -40,4 +48,4 @@ source_priority: "official-docs"
 - [Next.js Docs](https://nextjs.org/docs)
 - [React Docs](https://react.dev/)
 - [Astro Docs](https://docs.astro.build/)
-- См. [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [project discovery](../../checklists/project-discovery.md), [release readiness](../../checklists/release-readiness.md).
+- См. [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [Runtime selection](runtime-selection.md), [project discovery](../../checklists/project-discovery.md), [release readiness](../../checklists/release-readiness.md).

@@ -1,7 +1,7 @@
 ---
 title: "Playbook: API-only backend"
 category: "playbooks"
-updated: "2026-05-24"
+updated: "2026-06-04"
 status: "active"
 tags: ["api", "backend", "rest", "openapi"]
 source_priority: "internal"
@@ -24,7 +24,7 @@ Backend без собственного frontend: обслуживает mobile,
 
 ## Стек по умолчанию
 
-NestJS / FastAPI / Fastify + PostgreSQL + OpenAPI/GraphQL schema + integration tests + observability (logs/metrics/traces).
+NestJS / FastAPI / Fastify + PostgreSQL + OpenAPI/GraphQL schema + integration tests + observability (logs/metrics/traces). Для lightweight edge/BFF API см. [Hono](../03-backend/Hono.md) и [Cloudflare Workers full-stack](../08-devops-deploy/Cloudflare-Workers-fullstack.md).
 
 ## Порядок разработки
 
@@ -78,4 +78,4 @@ N+1 в ORM, отсутствие индексов под фильтры, тяж�
 
 ## Источники
 
-- См. [API architecture](../03-backend/API-architecture.md), [REST](../06-api-design/REST.md), [OpenAPI](../06-api-design/OpenAPI.md), [Error contracts](../06-api-design/Error-contracts.md), [Versioning](../06-api-design/Versioning.md), [error-contract pattern](../../patterns/api/error-contract.md), [api-review checklist](../../checklists/api-review.md).
+- См. [Hono](../03-backend/Hono.md), [Cloudflare Workers full-stack](../08-devops-deploy/Cloudflare-Workers-fullstack.md), [API architecture](../03-backend/API-architecture.md), [REST](../06-api-design/REST.md), [OpenAPI](../06-api-design/OpenAPI.md), [Error contracts](../06-api-design/Error-contracts.md), [Versioning](../06-api-design/Versioning.md), [error-contract pattern](../../patterns/api/error-contract.md), [api-review checklist](../../checklists/api-review.md).

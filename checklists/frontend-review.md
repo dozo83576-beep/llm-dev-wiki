@@ -14,6 +14,7 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 ## Rendering strategy
 
 - [ ] **Frontend blueprint** выбран до реализации: Next.js fullstack / Astro / Vite SPA / content site — frontend owner — block — [Frontend blueprints](../docs/02-frontend/Frontend-blueprints.md).
+- [ ] **Alternative stack** рассмотрен, если default Next.js/React не подходит: TanStack Start, Nuxt, SvelteKit, htmx, Cloudflare Workers — frontend owner — warn — [Stack selection](../docs/01-development-process/stack-selection.md).
 - [ ] **Server / Client component** выбор обоснован: client только если нужна интерактивность — frontend owner — block — [server-client-boundary pattern](../patterns/frontend/server-client-boundary.md).
 - [ ] **SSR / SSG / ISR** соответствует природе данных — frontend owner — warn — [Nextjs](../docs/02-frontend/Nextjs.md).
 - [ ] **Data fetching** на сервере где возможно; client fetch/TanStack Query только для интерактивного server state — frontend owner — warn — [Data fetching](../docs/02-frontend/Data-fetching.md), [TanStack Query](../docs/02-frontend/TanStack-Query.md).
@@ -41,6 +42,7 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 - [ ] **Mobile-first** проверен на 360px width — frontend owner — block.
 - [ ] **Text overflow** не ломает layout — frontend owner — block.
 - [ ] **Visual hierarchy** соответствует типу экрана: hero, dashboard, table, form, pricing и checkout не используют один масштаб типографики — design owner — warn — [Design systems](../docs/02-frontend/Design-systems.md).
+- [ ] **Styling system** выбран и зафиксирован: Tailwind, CSS Modules, Panda CSS или tokens-first CSS — design owner — warn — [Styling systems](../docs/02-frontend/Styling-systems.md).
 - [ ] **Stable dimensions** заданы для cards, media, toolbar, counters, tables and icon buttons; hover/loading labels не двигают layout — frontend owner — warn — [UI architecture](../docs/02-frontend/UI-architecture.md).
 - [ ] **Dark / light theme** (если есть) — оба покрыты; текстовые токены не протекают между светлыми и темными поверхностями — frontend owner — warn — [semantic text tokens](../patterns/frontend/semantic-theme-text-tokens.md).
 - [ ] **Long content** (длинные имена, многоязычные строки) не выходит за контейнеры — frontend owner — warn.
@@ -76,3 +78,4 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 - [ ] **Component tests** для сложных интерактивных компонентов — frontend owner — warn — [Frontend testing](../docs/02-frontend/Frontend-testing.md).
 - [ ] **Visual regression** для дизайн-системы и hero pages — frontend owner — warn — [Visual testing](../docs/09-testing/Visual-testing.md).
 - [ ] **Responsive screenshots** сохранены или проверены для 360px / 768px / desktop на критичных routes — QA — warn — [Visual testing](../docs/09-testing/Visual-testing.md).
+- [ ] **Story/component states** есть для reusable widgets: default/loading/error/empty/long text/mobile — frontend owner — warn — [Component-driven development](../docs/02-frontend/Component-driven-development.md).

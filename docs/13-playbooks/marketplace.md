@@ -1,7 +1,7 @@
 ---
 title: "Playbook: Marketplace"
 category: "playbooks"
-updated: "2026-05-24"
+updated: "2026-06-04"
 status: "active"
 tags: ["marketplace", "payments", "moderation", "trust-safety"]
 source_priority: "internal"
@@ -24,7 +24,7 @@ source_priority: "internal"
 
 ## Стек по умолчанию
 
-Next.js + NestJS / FastAPI + PostgreSQL + Redis + search (Meilisearch / Algolia / Elastic) + payments provider с Connect / split-payments ([Stripe](../03-backend/Stripe.md) Connect / Adyen MarketPay) + moderation workflow.
+Next.js + NestJS / FastAPI + PostgreSQL + Redis + search (Meilisearch / Algolia / Elastic) + payments provider с Connect / split-payments ([Stripe](../03-backend/Stripe.md) Connect / Adyen MarketPay) + moderation workflow. Для выбора commerce backend см. [headless commerce](headless-commerce.md).
 
 ## Порядок разработки
 
@@ -82,4 +82,4 @@ Search без индексов / неверная стратегия пагин�
 
 ## Источники
 
-- См. [Stripe](../03-backend/Stripe.md), [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md), [webhook-idempotency pattern](../../patterns/backend/webhook-idempotency.md), [Multi-tenancy](../04-databases/Multi-tenancy.md), [Authorization](../05-auth-security/Authorization.md), [Compliance baseline](../05-auth-security/Compliance-baseline.md), [tenant-isolation pattern](../../patterns/security/tenant-isolation.md), [Playwright](../09-testing/Playwright.md), [E2E testing](../09-testing/E2E-testing.md).
+- См. [Headless commerce](headless-commerce.md), [Stripe](../03-backend/Stripe.md), [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md), [webhook-idempotency pattern](../../patterns/backend/webhook-idempotency.md), [Multi-tenancy](../04-databases/Multi-tenancy.md), [Authorization](../05-auth-security/Authorization.md), [Compliance baseline](../05-auth-security/Compliance-baseline.md), [tenant-isolation pattern](../../patterns/security/tenant-isolation.md), [Playwright](../09-testing/Playwright.md), [E2E testing](../09-testing/E2E-testing.md).

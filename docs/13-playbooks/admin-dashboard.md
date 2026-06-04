@@ -1,7 +1,7 @@
 ---
 title: "Playbook: Admin dashboard"
 category: "playbooks"
-updated: "2026-05-24"
+updated: "2026-06-04"
 status: "active"
 tags: ["admin", "dashboard", "rbac", "audit"]
 source_priority: "internal"
@@ -23,7 +23,7 @@ Internal-tool для операторов, support, finance, moderators. Цел�
 
 ## Стек по умолчанию
 
-Next.js/React + typed API + RBAC + audit log + dense tables/forms/charts + Playwright smoke.
+Next.js/React + typed API + RBAC + audit log + dense tables/forms/charts + Playwright smoke. Для CRUD-heavy internal tools проверь [htmx](../02-frontend/HTMX.md) как более простой server-rendered вариант.
 
 ## Порядок разработки
 
@@ -71,4 +71,4 @@ Next.js/React + typed API + RBAC + audit log + dense tables/forms/charts + Playw
 
 ## Источники
 
-- См. [Authorization](../05-auth-security/Authorization.md), [RBAC/ABAC](../05-auth-security/RBAC-ABAC.md), [Audit log](../04-databases/Audit-log.md), [deny-by-default pattern](../../patterns/security/deny-by-default.md).
+- См. [htmx](../02-frontend/HTMX.md), [Authorization](../05-auth-security/Authorization.md), [RBAC/ABAC](../05-auth-security/RBAC-ABAC.md), [Audit log](../04-databases/Audit-log.md), [deny-by-default pattern](../../patterns/security/deny-by-default.md).

@@ -26,6 +26,8 @@ source_priority: "internal"
 
 [Next.js Fullstack](../../stacks/nextjs-fullstack.md) storefront + commerce backend (свой или Saleor/Medusa/Shopify) + PostgreSQL + [Stripe](../03-backend/Stripe.md)/Adyen + analytics + [Playwright](../09-testing/Playwright.md) checkout tests + observability на платёжных webhooks.
 
+Если выбор commerce backend неочевиден, сначала открой [headless commerce](headless-commerce.md): simple checkout, custom commerce, marketplace and subscription mixes имеют разные риски.
+
 ## Порядок разработки
 
 1. **Catalog**: products, variants (size/color), SKU, inventory, prices с историей.
@@ -81,4 +83,4 @@ Heavy catalog query без индексов, N+1 на список заказо�
 
 ## Источники
 
-- См. [Next.js Fullstack](../../stacks/nextjs-fullstack.md), [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [SEO](../02-frontend/SEO.md), [Performance](../02-frontend/Performance.md), [Stripe](../03-backend/Stripe.md), [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md), [webhook-idempotency pattern](../../patterns/backend/webhook-idempotency.md), [Playwright](../09-testing/Playwright.md), [E2E testing](../09-testing/E2E-testing.md), [Compliance baseline](../05-auth-security/Compliance-baseline.md), [SaaS playbook](saas.md).
+- См. [Headless commerce](headless-commerce.md), [Next.js Fullstack](../../stacks/nextjs-fullstack.md), [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [SEO](../02-frontend/SEO.md), [Performance](../02-frontend/Performance.md), [Stripe](../03-backend/Stripe.md), [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md), [webhook-idempotency pattern](../../patterns/backend/webhook-idempotency.md), [Playwright](../09-testing/Playwright.md), [E2E testing](../09-testing/E2E-testing.md), [Compliance baseline](../05-auth-security/Compliance-baseline.md), [SaaS playbook](saas.md).

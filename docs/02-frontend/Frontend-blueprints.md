@@ -27,6 +27,11 @@ Blueprint фиксирует минимальный production-контур са
 - **Landing/content**: Astro или Next static, минимальный JS, CMS/content schema, SEO metadata, form endpoint, Lighthouse gates.
 - **SaaS/dashboard**: Next.js fullstack, server-side auth, tenant boundary, typed env, form validation, Playwright protected routes.
 - **React SPA + API**: Vite, React Router, TanStack Query, OpenAPI contract, CORS/cookie tests, static hosting.
+- **React full-stack alternative**: TanStack Start, route tree, server functions, Query-first invalidation, adapter/runtime check.
+- **Vue/Svelte**: Nuxt или SvelteKit, adapter/rendering strategy, framework-native forms/data, ecosystem fit.
+- **Edge-first**: Vite/React/static frontend + Cloudflare Workers + Hono, bindings, runtime limits, preview Worker smoke.
+- **Hypermedia CRUD**: htmx + server-rendered fragments, CSRF, form validation, full-page fallback.
+- **CMS/editorial**: Payload/headless CMS, preview auth, media pipeline, redirects, SEO fields and revalidation.
 - **E-commerce**: Next.js storefront, server-side price/tax, provider-hosted checkout, webhook idempotency, inventory race tests.
 - **Admin dashboard**: dense layout, tables, filters in URL, permission denied states, audit log and destructive action confirmation.
 
@@ -43,4 +48,4 @@ Blueprint фиксирует минимальный production-контур са
 
 ## Источники
 
-- См. [Stack selection](../01-development-process/stack-selection.md), [Astro](Astro.md), [Vite + React](Vite-React.md), [React Router](React-Router.md), [Next.js](Nextjs.md), [UI architecture](UI-architecture.md), [Design systems](Design-systems.md).
+- См. [Stack selection](../01-development-process/stack-selection.md), [Runtime selection](../01-development-process/runtime-selection.md), [Astro](Astro.md), [TanStack Start](TanStack-Start.md), [Vite + React](Vite-React.md), [React Router](React-Router.md), [Nuxt](Nuxt.md), [SvelteKit](SvelteKit.md), [htmx](HTMX.md), [Payload CMS](Payload-CMS.md), [Next.js](Nextjs.md), [UI architecture](UI-architecture.md), [Design systems](Design-systems.md).

@@ -56,6 +56,116 @@
     "notes": "Runtime validation for TypeScript."
   },
   {
+    "name": "TanStack Start",
+    "ecosystem": "npm",
+    "package": "@tanstack/react-start",
+    "currentVersion": "1.168.20",
+    "docsUrl": "https://tanstack.com/start/latest/docs/framework/react/overview",
+    "notes": "React full-stack framework alternative with Router and Query-first patterns."
+  },
+  {
+    "name": "Hono",
+    "ecosystem": "npm",
+    "package": "hono",
+    "currentVersion": "4.12.23",
+    "docsUrl": "https://www.honojs.com/docs/",
+    "notes": "Lightweight Web Standards framework for edge/serverless APIs."
+  },
+  {
+    "name": "SvelteKit",
+    "ecosystem": "npm",
+    "package": "@sveltejs/kit",
+    "currentVersion": "2.63.0",
+    "docsUrl": "https://svelte.dev/docs/kit",
+    "notes": "Svelte full-stack framework with SSR, routing, form actions and adapters."
+  },
+  {
+    "name": "Nuxt",
+    "ecosystem": "npm",
+    "package": "nuxt",
+    "currentVersion": "4.4.7",
+    "docsUrl": "https://nuxt.com/docs/getting-started",
+    "notes": "Vue meta-framework for SSR, SSG, server routes and content sites."
+  },
+  {
+    "name": "htmx",
+    "ecosystem": "npm",
+    "package": "htmx.org",
+    "currentVersion": "2.0.10",
+    "docsUrl": "https://htmx.org/docs/",
+    "notes": "Hypermedia-first frontend library for HTML fragments and progressive enhancement."
+  },
+  {
+    "name": "Payload CMS",
+    "ecosystem": "npm",
+    "package": "payload",
+    "currentVersion": "3.85.0",
+    "docsUrl": "https://payloadcms.com/docs/getting-started/concepts",
+    "notes": "Code-first TypeScript CMS for Next.js and content sites."
+  },
+  {
+    "name": "Medusa",
+    "ecosystem": "npm",
+    "package": "@medusajs/medusa",
+    "currentVersion": "2.15.5",
+    "docsUrl": "https://docs.medusajs.com/learn",
+    "notes": "Composable commerce platform for custom ecommerce backends."
+  },
+  {
+    "name": "Saleor",
+    "ecosystem": "manual",
+    "currentVersion": "",
+    "docsUrl": "https://docs.saleor.io/docs/3.x/",
+    "notes": "GraphQL-first commerce platform; review manually because deployment/API versions are product-specific."
+  },
+  {
+    "name": "Storybook",
+    "ecosystem": "npm",
+    "package": "storybook",
+    "currentVersion": "10.4.2",
+    "docsUrl": "https://storybook.js.org/docs/writing-tests",
+    "notes": "Component-driven development and UI testing toolchain."
+  },
+  {
+    "name": "Qwik",
+    "ecosystem": "npm",
+    "package": "@builder.io/qwik",
+    "currentVersion": "1.20.0",
+    "docsUrl": "https://qwik.dev/docs/",
+    "notes": "Resumability-focused frontend framework for performance-sensitive sites."
+  },
+  {
+    "name": "Fresh",
+    "ecosystem": "manual",
+    "currentVersion": "",
+    "docsUrl": "https://fresh.deno.dev/docs/introduction",
+    "notes": "Deno full-stack framework with SSR and islands; review manually with Deno/Fresh release notes."
+  },
+  {
+    "name": "Bun",
+    "ecosystem": "npm",
+    "package": "bun",
+    "currentVersion": "1.3.14",
+    "docsUrl": "https://bun.com/docs",
+    "notes": "JavaScript runtime, package manager, bundler and test runner."
+  },
+  {
+    "name": "Panda CSS",
+    "ecosystem": "npm",
+    "package": "@pandacss/dev",
+    "currentVersion": "1.11.2",
+    "docsUrl": "https://panda-css.com/docs/overview/getting-started",
+    "notes": "Build-time type-safe CSS-in-JS and design-token system."
+  },
+  {
+    "name": "Vercel AI SDK",
+    "ecosystem": "npm",
+    "package": "ai",
+    "currentVersion": "6.0.196",
+    "docsUrl": "https://vercel.com/ai-sdk",
+    "notes": "TypeScript SDK for streaming AI UIs and provider-agnostic model integrations."
+  },
+  {
     "name": "FastAPI",
     "ecosystem": "pypi",
     "package": "fastapi",

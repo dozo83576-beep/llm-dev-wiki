@@ -1,7 +1,7 @@
 ---
 title: "Cloudflare"
 category: "devops"
-updated: "2026-05-24"
+updated: "2026-06-04"
 status: "active"
 tags: ["cloudflare", "edge", "dns", "cdn"]
 source_priority: "vendor-docs"
@@ -16,6 +16,7 @@ Cloudflare закрывает несколько слоёв инфраструк
 - Перед сайтом нужен managed CDN с WAF и DDoS-защитой "из коробки".
 - Глобальный edge-runtime (Workers/Pages) даёт ощутимый latency-выигрыш и подходит под use case.
 - Нужен managed DNS с быстрой пропагацией и API-управлением.
+- Нужно собрать lightweight full-stack на Workers: static assets + Worker API + bindings.
 
 ## Когда не использовать
 
@@ -63,4 +64,4 @@ Mis-configured WAF bypass, утечка origin IP (нужен Argo Tunnel или
 
 - [Cloudflare Developers](https://developers.cloudflare.com/) — проверено 2026-05-24.
 - [Cloudflare Workers Docs](https://developers.cloudflare.com/workers/) — проверено 2026-05-24.
-- См. [Release flow](Release-flow.md), [Rollback](Rollback.md), [CORS-CSRF-CSP](../05-auth-security/CORS-CSRF-CSP.md).
+- См. [Cloudflare Workers full-stack](Cloudflare-Workers-fullstack.md), [Hono](../03-backend/Hono.md), [Release flow](Release-flow.md), [Rollback](Rollback.md), [CORS-CSRF-CSP](../05-auth-security/CORS-CSRF-CSP.md).

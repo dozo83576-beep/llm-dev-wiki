@@ -1,7 +1,7 @@
 ---
 title: "Tailwind CSS"
 category: "frontend"
-updated: "2026-05-24"
+updated: "2026-06-04"
 status: "active"
 tags: ["tailwind", "css"]
 source_priority: "official-docs"
@@ -13,7 +13,7 @@ source_priority: "official-docs"
 
 Правила: компоненты выделять при повторении, не плодить произвольные значения без причины, хранить цвета и радиусы в теме, проверять мобильные размеры.
 
-Источник: [Tailwind CSS Docs](https://tailwindcss.com/docs).
+Источник: [Tailwind CSS Docs](https://tailwindcss.com/docs). Для сравнения с CSS Modules, Panda CSS и token-first systems см. [Styling systems](Styling-systems.md).
 
 ## Когда использовать
 
@@ -35,3 +35,7 @@ source_priority: "official-docs"
 
 Visual review, responsive smoke, contrast, отсутствие overflow текста, отсутствие one-off palette drift.
 
+## Источники
+
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- См. [Styling systems](Styling-systems.md), [Design systems](Design-systems.md).

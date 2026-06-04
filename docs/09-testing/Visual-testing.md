@@ -1,7 +1,7 @@
 ---
 title: "Visual testing"
 category: "testing"
-updated: "2026-05-24"
+updated: "2026-06-04"
 status: "active"
 tags: ["visual", "ui", "regression"]
 source_priority: "internal"
@@ -54,6 +54,7 @@ Visual regression testing ловит то, что не видят unit/integrati
 ## Testing strategy
 
 - Storybook stories покрывают каждое состояние компонента (default, hover, error, loading, empty).
+- Component-driven development задаёт state matrix before implementation: long text, dark/light, mobile, disabled and destructive states.
 - Critical pages (home, pricing, checkout) — отдельный visual job.
 - Diff review обязателен в PR — нельзя auto-approve.
 
@@ -68,4 +69,4 @@ Visual regression testing ловит то, что не видят unit/integrati
 
 - [Storybook + Chromatic](https://www.chromatic.com/docs/) — проверено 2026-05-24.
 - [Playwright Screenshots](https://playwright.dev/docs/screenshots) — проверено 2026-05-24.
-- См. [Frontend testing](../02-frontend/Frontend-testing.md), [E2E testing](E2E-testing.md), [Design systems](../02-frontend/Design-systems.md).
+- См. [Component-driven development](../02-frontend/Component-driven-development.md), [Frontend testing](../02-frontend/Frontend-testing.md), [E2E testing](E2E-testing.md), [Design systems](../02-frontend/Design-systems.md).

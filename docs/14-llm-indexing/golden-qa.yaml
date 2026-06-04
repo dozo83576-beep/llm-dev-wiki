@@ -1,14 +1,14 @@
 ---
 title: "Golden Q&A"
 category: "llm-indexing"
-updated: "2026-05-24"
+updated: "2026-06-04"
 status: "active"
 tags: ["evals", "rag", "golden"]
 source_priority: "internal"
 ---
 # Golden Q&A для оценки retrieval-quality.
 # Каждый вопрос ожидает, что хотя бы один из expected_paths окажется в top-K.
-# Используется tools/run_evals.py против embeddings/snapshot.jsonl.
+# Используется tools/run_offline_retrieval_evals.py против embeddings/snapshot.jsonl.
 
 questions:
   - id: q-stack-saas
@@ -278,3 +278,55 @@ questions:
       - patterns/ai/rag-metadata.md
       - docs/14-llm-indexing/source-priority.md
       - docs/14-llm-indexing/freshness-checks.md
+
+  - id: q-tanstack-start-alternative
+    question: "Что выбрать вместо Next.js для React full-stack с TanStack Query?"
+    expected_paths:
+      - docs/02-frontend/TanStack-Start.md
+      - docs/01-development-process/stack-selection.md
+      - docs/02-frontend/Frontend-blueprints.md
+
+  - id: q-cloudflare-hono-edge
+    question: "Как собрать edge-first сайт на Cloudflare Workers и Hono?"
+    expected_paths:
+      - docs/08-devops-deploy/Cloudflare-Workers-fullstack.md
+      - docs/03-backend/Hono.md
+      - docs/08-devops-deploy/Cloudflare.md
+
+  - id: q-sveltekit-nuxt-choice
+    question: "Когда выбрать SvelteKit или Nuxt вместо React?"
+    expected_paths:
+      - docs/02-frontend/SvelteKit.md
+      - docs/02-frontend/Nuxt.md
+      - docs/01-development-process/stack-selection.md
+
+  - id: q-htmx-vs-spa
+    question: "Когда htmx лучше SPA?"
+    expected_paths:
+      - docs/02-frontend/HTMX.md
+      - docs/13-playbooks/admin-dashboard.md
+
+  - id: q-cms-choice
+    question: "Как выбрать CMS для контентного сайта?"
+    expected_paths:
+      - docs/02-frontend/CMS-content.md
+      - docs/02-frontend/Payload-CMS.md
+
+  - id: q-commerce-backend-choice
+    question: "Как выбрать commerce backend: Medusa, Saleor, Shopify или Stripe Checkout?"
+    expected_paths:
+      - docs/13-playbooks/headless-commerce.md
+      - docs/13-playbooks/ecommerce.md
+
+  - id: q-storybook-design-system
+    question: "Как тестировать дизайн-систему через Storybook?"
+    expected_paths:
+      - docs/02-frontend/Component-driven-development.md
+      - docs/09-testing/Visual-testing.md
+      - docs/02-frontend/Design-systems.md
+
+  - id: q-ai-ui-streaming
+    question: "Как проектировать streaming AI UI?"
+    expected_paths:
+      - docs/02-frontend/AI-UI-streaming.md
+      - docs/13-playbooks/ai-rag-app.md

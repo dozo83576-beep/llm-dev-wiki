@@ -1,7 +1,7 @@
 ---
 title: "Playbook: AI/RAG app"
 category: "playbooks"
-updated: "2026-05-24"
+updated: "2026-06-04"
 status: "active"
 tags: ["ai", "rag", "mcp", "llm"]
 source_priority: "internal"
@@ -25,7 +25,7 @@ LLM-приложение, которое отвечает на пользова�
 
 ## Стек по умолчанию
 
-Next.js + OpenAI API (или совместимый) + PostgreSQL/pgvector или Qdrant + ingestion pipeline + retrieval с citations + evals + tool permission policy + observability на token spend и retrieval quality.
+Next.js + OpenAI API (или совместимый) + PostgreSQL/pgvector или Qdrant + ingestion pipeline + retrieval с citations + evals + tool permission policy + observability на token spend и retrieval quality. Для chat/agent UX см. [AI UI streaming](../02-frontend/AI-UI-streaming.md).
 
 ## Порядок разработки
 
@@ -80,4 +80,4 @@ Prompt injection через документы корпуса, tool poisoning, e
 
 ## Источники
 
-- См. [RAG](../07-mcp-and-ai-tools/RAG.md), [RAG ingestion](../07-mcp-and-ai-tools/RAG-ingestion.md), [Prompt injection](../07-mcp-and-ai-tools/Prompt-injection.md), [Tool permissions](../07-mcp-and-ai-tools/Tool-permissions.md), [Evaluation](../07-mcp-and-ai-tools/Evaluation.md), [Agent workflows](../07-mcp-and-ai-tools/Agent-workflows.md), [ai-agent-review checklist](../../checklists/ai-agent-review.md).
+- См. [AI UI streaming](../02-frontend/AI-UI-streaming.md), [RAG](../07-mcp-and-ai-tools/RAG.md), [RAG ingestion](../07-mcp-and-ai-tools/RAG-ingestion.md), [Prompt injection](../07-mcp-and-ai-tools/Prompt-injection.md), [Tool permissions](../07-mcp-and-ai-tools/Tool-permissions.md), [Evaluation](../07-mcp-and-ai-tools/Evaluation.md), [Agent workflows](../07-mcp-and-ai-tools/Agent-workflows.md), [ai-agent-review checklist](../../checklists/ai-agent-review.md).
