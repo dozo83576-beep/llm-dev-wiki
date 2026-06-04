@@ -122,3 +122,71 @@ Nested body.
     assert manifest["files_indexed"] == ["docs/guide.md"]
     assert manifest["has_vectors"] is False
     assert manifest["retrieval_mode"] == "offline-text"
+
+
+def test_write_manifest_preserves_generated_at_when_content_is_unchanged(tmp_path: Path) -> None:
+    write_doc(
+        tmp_path / "docs" / "guide.md",
+        """---
+title: "Guide"
+status: "active"
+---
+
+# Guide
+
+Stable content.
+""",
+    )
+    chunks = build_chunks(tmp_path)
+    manifest_path = tmp_path / "embeddings" / "manifest.json"
+
+    write_manifest(chunks, "text-embedding-3-small", manifest_path, "offline-text", False)
+    first_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    first_manifest["generated_at"] = "2000-01-01T00:00:00Z"
+    manifest_path.write_text(json.dumps(first_manifest, ensure_ascii=False), encoding="utf-8")
+
+    write_manifest(chunks, "text-embedding-3-small", manifest_path, "offline-text", False)
+
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assert manifest["generated_at"] == "2000-01-01T00:00:00Z"
+    assert manifest["corpus_hash"] == first_manifest["corpus_hash"]
+
+
+def test_write_manifest_refreshes_generated_at_when_content_changes(tmp_path: Path) -> None:
+    doc_path = tmp_path / "docs" / "guide.md"
+    write_doc(
+        doc_path,
+        """---
+title: "Guide"
+status: "active"
+---
+
+# Guide
+
+Original content.
+""",
+    )
+    manifest_path = tmp_path / "embeddings" / "manifest.json"
+
+    write_manifest(build_chunks(tmp_path), "text-embedding-3-small", manifest_path, "offline-text", False)
+    first_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    first_manifest["generated_at"] = "2000-01-01T00:00:00Z"
+    manifest_path.write_text(json.dumps(first_manifest, ensure_ascii=False), encoding="utf-8")
+
+    write_doc(
+        doc_path,
+        """---
+title: "Guide"
+status: "active"
+---
+
+# Guide
+
+Changed content.
+""",
+    )
+    write_manifest(build_chunks(tmp_path), "text-embedding-3-small", manifest_path, "offline-text", False)
+
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assert manifest["generated_at"] != "2000-01-01T00:00:00Z"
+    assert manifest["corpus_hash"] != first_manifest["corpus_hash"]

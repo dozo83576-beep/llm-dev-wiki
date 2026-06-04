@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **224**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **511012** символов
+- Суммарный объём: **511391** символов
 
 ## docs
 
@@ -181,8 +181,8 @@ source_priority: "internal"
 | [docs/14-llm-indexing/rag-file-search.md](../docs/14-llm-indexing/rag-file-search.md) | RAG and File Search | llm-indexing | 3832 | 2026-05-24 | active | official-docs |
 | [docs/14-llm-indexing/source-priority.md](../docs/14-llm-indexing/source-priority.md) | Source priority | llm-indexing | 2750 | 2026-05-24 | active | internal |
 | [docs/15-maintenance/retro-process.md](../docs/15-maintenance/retro-process.md) | Retro-процесс после инцидентов и провальных релизов | maintenance | 3792 | 2026-05-25 | active | internal |
-| [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 4144 | 2026-05-25 | active | internal |
-| [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 4854 | 2026-05-25 | active | internal |
+| [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 4216 | 2026-06-04 | active | internal |
+| [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 5161 | 2026-06-04 | active | internal |
 
 ## patterns
 

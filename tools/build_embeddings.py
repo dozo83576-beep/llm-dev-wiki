@@ -283,6 +283,30 @@ def write_snapshot(chunks: list[Chunk], out_path: Path) -> None:
             f.write("\n")
 
 
+def _load_existing_manifest(path: Path) -> dict | None:
+    if not path.exists():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    if not isinstance(data, dict):
+        return None
+    return data
+
+
+def _manifest_content_matches(existing: dict, candidate: dict) -> bool:
+    stable_keys = (
+        "embedding_model",
+        "corpus_hash",
+        "chunk_count",
+        "files_indexed",
+        "has_vectors",
+        "retrieval_mode",
+    )
+    return all(existing.get(key) == candidate.get(key) for key in stable_keys)
+
+
 def write_manifest(chunks: list[Chunk], model: str, out_path: Path, retrieval_mode: str, has_vectors: bool) -> None:
     manifest = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -293,6 +317,12 @@ def write_manifest(chunks: list[Chunk], model: str, out_path: Path, retrieval_mo
         "has_vectors": has_vectors,
         "retrieval_mode": retrieval_mode,
     }
+    existing = _load_existing_manifest(out_path)
+    if existing and _manifest_content_matches(existing, manifest):
+        generated_at = existing.get("generated_at")
+        if isinstance(generated_at, str) and generated_at:
+            manifest["generated_at"] = generated_at
+
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2, sort_keys=True)

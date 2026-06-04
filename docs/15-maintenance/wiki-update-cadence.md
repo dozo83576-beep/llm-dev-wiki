@@ -1,7 +1,7 @@
 ---
 title: "Периодичность обновления вики"
 category: "maintenance"
-updated: "2026-05-25"
+updated: "2026-06-04"
 status: "active"
 tags: ["maintenance", "cadence", "corpus", "index"]
 source_priority: "internal"
@@ -29,8 +29,8 @@ source_priority: "internal"
 
 1. Прогнать `prompts/post-project-knowledge-capture.md` → заполнить case-study + lessons.
 2. Если обнаружен новый паттерн — создать `patterns/<area>/<name>.md` по шаблону.
-3. Запустить `pwsh tools/build-index.ps1` — пересобрать `docs/INDEX.md`.
-4. Закоммитить и запушить → CI прогонит `wiki-audit.ps1`, `wiki-quality.ps1`, offline retrieval evals.
+3. Запустить `pwsh tools/ci-local.ps1` — локально проверить audit, quality, INDEX, offline corpus и retrieval evals.
+4. Закоммитить и запушить → CI повторит обязательные проверки.
 
 ### Событийные триггеры
 
@@ -62,6 +62,9 @@ source_priority: "internal"
 **Ручные команды:**
 
 ```powershell
+# Полный локальный CI-equivalent перед push
+pwsh tools/ci-local.ps1
+
 # Пересобрать INDEX
 pwsh tools/build-index.ps1
 
@@ -71,11 +74,12 @@ pwsh tools/wiki-quality.ps1
 # Полный audit
 pwsh tools/wiki-audit.ps1
 
-# Offline retrieval evals (без API ключа)
-python tools/run_offline_retrieval_evals.py
+# Offline corpus + retrieval evals (без API ключа)
+python tools/build_embeddings.py --mode offline-text
+python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10 --warn-rank 3
 
-# Embeddings + semantic evals (нужен OPENAI_API_KEY)
-python tools/build_embeddings.py
+# Semantic embeddings + evals (нужен OPENAI_API_KEY)
+python tools/build_embeddings.py --mode openai-embeddings
 python tools/run_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10
 ```
 
@@ -85,18 +89,18 @@ python tools/run_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10
 - **Добавить документ, не обновив INDEX** — CI упадёт при следующем пуше.
 - **Пропустить `post-project-knowledge-capture` после проекта** — опыт теряется, вики не растёт.
 - **Обновить технологию в doc, но не обновить ссылки из playbooks** — ссылки ведут на устаревшую информацию.
-- **Embeddings snapshot устарел** — `manifest.json` покажет старый `corpus_hash`; перегенерировать.
+- **Offline snapshot устарел** — `manifest.json` покажет старый `corpus_hash`; запустить `pwsh tools/ci-local.ps1` и закоммитить обновлённый manifest.
 
 ## Проверка
 
 - `git diff --stat docs/INDEX.md` пустой после `build-index.ps1` → INDEX актуален.
 - `wiki-quality.ps1` без warnings по freshness → все обновлённые файлы имеют корректный `updated`.
 - `run_offline_retrieval_evals.py` возвращает `precision@5 ≥ 0.60` → корпус не деградировал.
-- `embeddings/manifest.json` содержит свежий `corpus_hash` → snapshot пересобран после изменений.
+- `embeddings/manifest.json` содержит свежий `corpus_hash` → offline snapshot пересобран после изменений.
 
 ## Edge cases
 
-- Если `build_embeddings.py` падает (нет API ключа) — manifest обновляется без векторов, offline evals работают через BM25.
+- Если `build_embeddings.py --mode offline-text` падает — это tooling/runtime проблема, а не отсутствие API ключа; offline evals не требуют секретов.
 - Если precision@5 упал после добавления новых документов — нужны дополнительные golden Q&A вопросы, покрывающие новый контент.
 - Если CI падает на INDEX — кто-то добавил doc без запуска `build-index.ps1` локально; запустить и закоммитить обновлённый INDEX.
 
