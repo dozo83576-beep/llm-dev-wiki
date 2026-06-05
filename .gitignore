@@ -15,9 +15,12 @@ build/
 # manifest.json is committed (freshness signal); snapshot.jsonl is local-only.
 embeddings/snapshot.jsonl
 evals-report.md
+pytest-report.txt
+technology-update-report.md
+wiki-quality-report.md
+.tmp-github-summary.md
 
 # Python tooling
 __pycache__/
 *.pyc
 .venv/
-

@@ -284,8 +284,18 @@ function Test-FrontMatter {
 
 $failures = [System.Collections.Generic.List[string]]::new()
 $rootPath = Resolve-Path -LiteralPath $Root
+$generatedMarkdownReports = @(
+    "evals-report.md",
+    "pytest-report.txt",
+    "technology-update-report.md",
+    "wiki-quality-report.md",
+    ".tmp-github-summary.md"
+)
 $markdownFiles = Get-ChildItem -LiteralPath $rootPath -Recurse -File |
-    Where-Object { $_.Extension -in @(".md", ".mdx") }
+    Where-Object {
+        $_.Extension -in @(".md", ".mdx") -and
+        $generatedMarkdownReports -notcontains ($_.FullName.Substring($rootPath.Path.Length + 1) -replace "\\", "/")
+    }
 
 if ($markdownFiles.Count -eq 0) {
     Add-Failure $failures "No Markdown files found."

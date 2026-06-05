@@ -3,7 +3,8 @@ param(
     [switch]$SkipGeneratedDiffCheck,
     [switch]$IncludeUpdateCheck,
     [switch]$IncludeToolTests,
-    [switch]$WriteGithubSummary
+    [switch]$WriteGithubSummary,
+    [switch]$UpdateCheckOnly
 )
 
 $ErrorActionPreference = "Stop"
@@ -115,9 +116,46 @@ function Invoke-OfflineRetrievalEvals {
     }
 }
 
+function Invoke-TechnologyUpdateCheck {
+    Write-Host ""
+    Write-Host "==> Technology update report"
+    $global:LASTEXITCODE = 0
+    try {
+        & ./tools/check-updates.ps1 *>&1 | Tee-Object -FilePath technology-update-report.md
+        Write-StepSummary -Title "Technology update report" -FilePath "technology-update-report.md"
+    }
+    catch {
+        $message = "Technology update check failed, but freshness reports are non-blocking: $_"
+        $fallbackReport = @(
+            "# Technology update report",
+            "",
+            "- Checked at: $((Get-Date).ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss 'UTC'"))",
+            "- Entries: 0",
+            "- Updates found: 0",
+            "- Check failures: 1",
+            "",
+            $message
+        )
+        $fallbackReport | Tee-Object -FilePath technology-update-report.md
+        Write-StepSummary -Title "Technology update report" -FilePath "technology-update-report.md"
+        Write-Warning $message
+    }
+}
+
 $rootPath = Resolve-Path -LiteralPath $Root
 Push-Location $rootPath
 try {
+    if ($UpdateCheckOnly) {
+        if (-not $IncludeUpdateCheck) {
+            throw "-UpdateCheckOnly requires -IncludeUpdateCheck."
+        }
+
+        Invoke-TechnologyUpdateCheck
+        Write-Host ""
+        Write-Host "Technology freshness check completed."
+        exit 0
+    }
+
     Invoke-Step "Wiki audit" {
         & ./tools/wiki-audit.ps1
     }
@@ -147,14 +185,7 @@ try {
     Invoke-OfflineRetrievalEvals
 
     if ($IncludeUpdateCheck) {
-        Write-Host ""
-        Write-Host "==> Technology update report"
-        try {
-            & ./tools/check-updates.ps1
-        }
-        catch {
-            Write-Warning "Technology update check failed, but local CI remains non-blocking for freshness reports: $_"
-        }
+        Invoke-TechnologyUpdateCheck
     }
 
     Write-Host ""

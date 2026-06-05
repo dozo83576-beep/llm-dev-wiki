@@ -1,7 +1,7 @@
 ---
 title: "Мониторинг обновлений технологий"
 category: "maintenance"
-updated: "2026-06-04"
+updated: "2026-06-05"
 status: "active"
 tags: ["maintenance", "updates", "automation"]
 source_priority: "internal"
@@ -19,6 +19,12 @@ source_priority: "internal"
 
 ```powershell
 pwsh ./tools/ci-local.ps1
+```
+
+Полный локальный цикл с non-blocking freshness report:
+
+```powershell
+pwsh ./tools/ci-local.ps1 -IncludeUpdateCheck
 ```
 
 Ручной fallback для диагностики:
@@ -80,7 +86,7 @@ python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-
 
 ## GitHub Actions
 
-Workflow `.github/workflows/technology-updates.yml` запускается раз в неделю и вручную через GitHub UI. Результат пишется в GitHub Actions summary.
+Workflow `.github/workflows/technology-updates.yml` запускается раз в неделю и вручную через GitHub UI. Он вызывает `pwsh ./tools/ci-local.ps1 -UpdateCheckOnly -IncludeUpdateCheck -WriteGithubSummary`, пишет `technology-update-report.md` и добавляет отчет в GitHub Actions summary.
 
 Если отчет содержит `Updates found > 0` или `Check failures > 0`, workflow создает или обновляет один открытый GitHub Issue с заголовком `Technology updates require wiki review`. Это предотвращает дубли задач и оставляет ревизию знаний ручным, осознанным шагом.
 
@@ -90,7 +96,7 @@ Workflow `.github/workflows/technology-updates.yml` запускается ра�
 2. Обнови профильные документы в `docs/`, `stacks/`, `patterns` или `resources`.
 3. Если изменение существенно для будущих проектов, добавь `lessons-learned` или `case-studies`.
 4. Обнови `currentVersion` в `resources/technology-watchlist.json`, если хочешь отслеживать следующий drift от этой версии.
-5. Запусти `tools/wiki-audit.ps1` и `tools/check-updates.ps1`.
+5. Запусти `pwsh tools/ci-local.ps1 -IncludeUpdateCheck`.
 6. Закрой issue после коммита обновлений.
 
 ## Как закрывать maintenance drift
