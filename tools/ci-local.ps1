@@ -179,6 +179,10 @@ try {
         & ./tools/wiki-audit.ps1
     }
 
+    Invoke-Step "Verify workflows" {
+        & ./tools/verify-workflows.ps1
+    }
+
     Invoke-WikiQuality
 
     if ($IncludeToolTests) {

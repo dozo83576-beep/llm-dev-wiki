@@ -55,6 +55,7 @@ source_priority: "internal"
 
 **Автоматические проверки при каждом пуше (CI):**
 - `wiki-audit.ps1` — структура разделов, front matter, битые ссылки.
+- `verify-workflows.ps1` — статические инварианты GitHub Actions: wiki CI идёт через `ci-local.ps1`, scheduled freshness остаётся non-blocking.
 - `wiki-quality.ps1` — минимальный объём (1200 chars), наличие секций, freshness skew, stale stamp.
 - `build-index.ps1` — INDEX.md актуален, иначе CI падает.
 - `run_offline_retrieval_evals.py` — BM25-поиск по golden Q&A без OPENAI ключа.

@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **224**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **512176** символов
+- Суммарный объём: **512320** символов
 
 ## docs
 
@@ -182,7 +182,7 @@ source_priority: "internal"
 | [docs/14-llm-indexing/source-priority.md](../docs/14-llm-indexing/source-priority.md) | Source priority | llm-indexing | 2750 | 2026-05-24 | active | internal |
 | [docs/15-maintenance/retro-process.md](../docs/15-maintenance/retro-process.md) | Retro-процесс после инцидентов и провальных релизов | maintenance | 3792 | 2026-05-25 | active | internal |
 | [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 5001 | 2026-06-05 | active | internal |
-| [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 5161 | 2026-06-04 | active | internal |
+| [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 5305 | 2026-06-04 | active | internal |
 
 ## patterns
 
