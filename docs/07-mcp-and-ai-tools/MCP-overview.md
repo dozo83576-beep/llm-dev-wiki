@@ -1,7 +1,7 @@
 ---
 title: "MCP overview"
 category: "ai-tools"
-updated: "2026-05-24"
+updated: "2026-06-06"
 status: "active"
 tags: ["mcp", "agents"]
 source_priority: "official-docs"
@@ -11,7 +11,9 @@ source_priority: "official-docs"
 
 Model Context Protocol стандартизирует подключение LLM-клиентов к инструментам, ресурсам и данным. Для разработки сайтов MCP полезен для GitHub, файлов, документации, браузера, БД, cloud provider и issue trackers.
 
-Источник: [MCP Docs](https://modelcontextprotocol.io/docs).
+Источник: [MCP Docs](https://modelcontextprotocol.io/docs) и [MCP specification repository](https://github.com/modelcontextprotocol/modelcontextprotocol).
+
+Версия `2026-07-28-RC` — release candidate / draft spec. Она отслеживается в watchlist как freshness-сигнал, но не должна автоматически менять production MCP policy без сверки stable docs, client compatibility и security guidance.
 
 ## Когда использовать
 
@@ -47,6 +49,6 @@ Prompt injection через tool output, tool poisoning (MCP-сервер ком
 
 ## Источники
 
-- [Model Context Protocol Docs](https://modelcontextprotocol.io/docs) — проверено 2026-05-24.
+- [Model Context Protocol Docs](https://modelcontextprotocol.io/docs) — refreshed 2026-06-06.
+- [MCP 2026-07-28-RC release](https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28-RC) — RC/draft checked 2026-06-06.
 - См. [Tool permissions](Tool-permissions.md), [MCP security](../05-auth-security/MCP-security.md), [Recommended MCP servers](Recommended-MCP-servers.md), [Setup Claude Desktop](Setup-Claude-Desktop.md), [Setup Codex](Setup-Codex.md).
-

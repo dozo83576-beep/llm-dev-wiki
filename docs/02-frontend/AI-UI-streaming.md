@@ -1,7 +1,7 @@
 ---
 title: "AI UI streaming"
 category: "frontend"
-updated: "2026-06-04"
+updated: "2026-06-06"
 status: "active"
 tags: ["ai", "streaming", "chat", "frontend"]
 source_priority: "mixed"
@@ -59,6 +59,6 @@ User navigates away mid-stream, duplicate submit, model emits invalid JSON, cita
 
 ## Источники
 
-- [Vercel AI SDK](https://vercel.com/ai-sdk)
-- [OpenAI Platform Docs](https://platform.openai.com/docs)
+- [Vercel AI SDK](https://vercel.com/ai-sdk) — refreshed against `ai` 6.0.197 on 2026-06-06.
+- [OpenAI Platform Docs](https://platform.openai.com/docs) — refreshed 2026-06-06.
 - См. [AI/RAG app playbook](../13-playbooks/ai-rag-app.md), [OpenAI API](../07-mcp-and-ai-tools/OpenAI-API.md), [Evaluation](../07-mcp-and-ai-tools/Evaluation.md), [Prompt injection](../07-mcp-and-ai-tools/Prompt-injection.md).

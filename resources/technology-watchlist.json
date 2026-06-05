@@ -161,7 +161,7 @@
     "name": "Vercel AI SDK",
     "ecosystem": "npm",
     "package": "ai",
-    "currentVersion": "6.0.196",
+    "currentVersion": "6.0.197",
     "docsUrl": "https://vercel.com/ai-sdk",
     "notes": "TypeScript SDK for streaming AI UIs and provider-agnostic model integrations."
   },
@@ -193,7 +193,7 @@
     "name": "OpenAI Python SDK",
     "ecosystem": "pypi",
     "package": "openai",
-    "currentVersion": "2.38.0",
+    "currentVersion": "2.41.0",
     "docsUrl": "https://platform.openai.com/docs",
     "notes": "OpenAI API client for Python."
   },
@@ -201,7 +201,7 @@
     "name": "Qdrant",
     "ecosystem": "github-releases",
     "repository": "qdrant/qdrant",
-    "currentVersion": "v1.18.1",
+    "currentVersion": "v1.18.2",
     "docsUrl": "https://qdrant.tech/documentation/",
     "notes": "Vector database for RAG and semantic search."
   },
@@ -217,9 +217,9 @@
     "name": "Model Context Protocol specification",
     "ecosystem": "github-tags",
     "repository": "modelcontextprotocol/specification",
-    "currentVersion": "2025-11-25",
+    "currentVersion": "2026-07-28-RC",
     "docsUrl": "https://modelcontextprotocol.io/docs",
-    "notes": "MCP specification and protocol updates."
+    "notes": "MCP specification and protocol updates; 2026-07-28-RC is a release-candidate/draft spec and production guidance still requires stable-docs review."
   },
   {
     "name": "PostgreSQL",
