@@ -1,7 +1,7 @@
 ---
 title: "Мониторинг обновлений технологий"
 category: "maintenance"
-updated: "2026-06-05"
+updated: "2026-06-06"
 status: "active"
 tags: ["maintenance", "updates", "automation"]
 source_priority: "internal"
@@ -50,6 +50,10 @@ python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-
 
 Скрипт не меняет файлы, не коммитит изменения и не обновляет `updated` автоматически. Он только печатает Markdown-отчет.
 
+По умолчанию watchlist считает production drift только по stable версиям. Если registry или GitHub tag возвращает prerelease (`rc`, `alpha`, `beta`, `preview`, `canary`, `nightly` и похожие), `tools/check-updates.ps1` ставит статус `prerelease-ignored` и не увеличивает `Updates found`.
+
+Исключение задается явно через `"versionPolicy": "allow-prerelease"`. Используй его только для осознанного мониторинга draft/RC стандартов, где prerelease важен как freshness-сигнал, но не становится production baseline автоматически. Пример: MCP RC отслеживается, но production policy меняется только после проверки stable docs, client compatibility и security guidance.
+
 ## Как добавить технологию
 
 Добавь объект в `resources/technology-watchlist.json`:
@@ -66,6 +70,8 @@ python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-
 ```
 
 Поддерживаемые значения `ecosystem`: `npm`, `pypi`, `github-releases`, `github-tags`, `manual`.
+
+`versionPolicy` опционален. Поддерживаемые значения: `stable` и `allow-prerelease`. Если поле отсутствует, используется `stable`.
 
 ## Когда обновлять документы
 

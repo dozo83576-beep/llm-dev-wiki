@@ -218,6 +218,7 @@
     "ecosystem": "github-tags",
     "repository": "modelcontextprotocol/specification",
     "currentVersion": "2026-07-28-RC",
+    "versionPolicy": "allow-prerelease",
     "docsUrl": "https://modelcontextprotocol.io/docs",
     "notes": "MCP specification and protocol updates; 2026-07-28-RC is a release-candidate/draft spec and production guidance still requires stable-docs review."
   },

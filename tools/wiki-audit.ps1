@@ -153,6 +153,7 @@ function Test-TechnologyWatchlist {
     }
 
     $allowedEcosystems = @("npm", "pypi", "github-releases", "github-tags", "manual")
+    $allowedVersionPolicies = @("stable", "allow-prerelease")
     $index = 0
     foreach ($entry in $entries) {
         $index++
@@ -164,6 +165,13 @@ function Test-TechnologyWatchlist {
 
         if ($entry.ecosystem -and $allowedEcosystems -notcontains $entry.ecosystem) {
             Add-Failure $Failures ("Watchlist entry {0} has unsupported ecosystem: {1}" -f $index, $entry.ecosystem)
+        }
+
+        if ($entry.PSObject.Properties.Name.Contains("versionPolicy") -and -not [string]::IsNullOrWhiteSpace([string]$entry.versionPolicy)) {
+            $versionPolicy = ([string]$entry.versionPolicy).Trim()
+            if ($allowedVersionPolicies -notcontains $versionPolicy) {
+                Add-Failure $Failures ("Watchlist entry {0} has unsupported versionPolicy: {1}" -f $index, $entry.versionPolicy)
+            }
         }
 
         if ($entry.ecosystem -in @("npm", "pypi") -and [string]::IsNullOrWhiteSpace([string]$entry.package)) {

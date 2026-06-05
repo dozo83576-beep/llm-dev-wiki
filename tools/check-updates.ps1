@@ -55,6 +55,11 @@ function Get-GitHubLatestTag {
 function Get-EntryVersion {
     param($Entry)
 
+    $fixtureVersion = Get-FixtureVersion -Entry $Entry
+    if ($null -ne $fixtureVersion) {
+        return $fixtureVersion
+    }
+
     switch ($Entry.ecosystem) {
         "npm" { return Get-NpmVersion -PackageName $Entry.package }
         "pypi" { return Get-PyPiVersion -PackageName $Entry.package }
@@ -63,6 +68,43 @@ function Get-EntryVersion {
         "manual" { return "manual-check" }
         default { throw "Unsupported ecosystem: $($Entry.ecosystem)" }
     }
+}
+
+function Get-FixtureVersion {
+    param($Entry)
+
+    if ([string]::IsNullOrWhiteSpace($env:LLM_DEV_WIKI_UPDATE_FIXTURES_JSON)) {
+        return $null
+    }
+
+    $fixtures = $env:LLM_DEV_WIKI_UPDATE_FIXTURES_JSON | ConvertFrom-Json
+    $packageOrRepo = if ($Entry.package) { [string]$Entry.package } elseif ($Entry.repository) { [string]$Entry.repository } else { "" }
+    $key = "$($Entry.ecosystem):$packageOrRepo"
+    if ($fixtures.PSObject.Properties.Name.Contains($key)) {
+        return [string]$fixtures.$key
+    }
+
+    return $null
+}
+
+function Test-PrereleaseVersion {
+    param([string]$Version)
+
+    if ([string]::IsNullOrWhiteSpace($Version)) {
+        return $false
+    }
+
+    return $Version -match '(?i)(^|[.\-+_])(?:rc|alpha|beta|preview|pre|canary|dev|nightly|snapshot)(?:[.\-+_0-9]|$)'
+}
+
+function Get-VersionPolicy {
+    param($Entry)
+
+    if (-not $Entry.PSObject.Properties.Name.Contains("versionPolicy") -or [string]::IsNullOrWhiteSpace([string]$Entry.versionPolicy)) {
+        return "stable"
+    }
+
+    return ([string]$Entry.versionPolicy).Trim()
 }
 
 $rootPath = Resolve-Path -LiteralPath $Root
@@ -85,8 +127,12 @@ foreach ($entry in $entries) {
 
     try {
         $latestVersion = Get-EntryVersion -Entry $entry
+        $versionPolicy = Get-VersionPolicy -Entry $entry
         if ($entry.ecosystem -eq "manual") {
             $status = "manual"
+        }
+        elseif ($versionPolicy -ne "allow-prerelease" -and (Test-PrereleaseVersion -Version $latestVersion)) {
+            $status = "prerelease-ignored"
         }
         elseif (-not [string]::IsNullOrWhiteSpace($currentVersion) -and $currentVersion -ne $latestVersion) {
             $status = "update-available"
