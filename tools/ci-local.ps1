@@ -61,18 +61,37 @@ function Write-StepSummary {
 
 function Invoke-ToolTests {
     Write-Host ""
-    Write-Host "==> Offline retrieval unit tests"
+    Write-Host "==> Tool unit tests"
     $global:LASTEXITCODE = 0
     if ($WriteGithubSummary) {
-        & python -m pytest tests/tools *>&1 | Tee-Object -FilePath pytest-report.txt
+        $report = [System.Collections.Generic.List[string]]::new()
+        $report.Add("## Python tool tests") | Out-Null
+        $pythonOutput = & python -m pytest tests/tools *>&1
+        $pythonStatus = $LASTEXITCODE
+        $pythonOutput | ForEach-Object { $report.Add([string]$_) | Out-Null }
+        $report.Add("") | Out-Null
+        $report.Add("## Node tool tests") | Out-Null
+        $nodeOutput = & node --test tests/tools/test_technology_update_issue.js *>&1
+        $nodeStatus = $LASTEXITCODE
+        $nodeOutput | ForEach-Object { $report.Add([string]$_) | Out-Null }
+        $report | Tee-Object -FilePath tool-tests-report.txt
+        Write-StepSummary -Title "Tool unit tests" -FilePath "tool-tests-report.txt"
+        if ($pythonStatus -ne 0) {
+            throw "Step failed: Python tool unit tests"
+        }
+        if ($nodeStatus -ne 0) {
+            throw "Step failed: Node tool unit tests"
+        }
     }
     else {
         & python -m pytest tests/tools
-    }
-    $status = $LASTEXITCODE
-    Write-StepSummary -Title "Offline retrieval unit tests" -FilePath "pytest-report.txt"
-    if ($status -ne 0) {
-        throw "Step failed: Offline retrieval unit tests"
+        if ($LASTEXITCODE -ne 0) {
+            throw "Step failed: Python tool unit tests"
+        }
+        & node --test tests/tools/test_technology_update_issue.js
+        if ($LASTEXITCODE -ne 0) {
+            throw "Step failed: Node tool unit tests"
+        }
     }
 }
 

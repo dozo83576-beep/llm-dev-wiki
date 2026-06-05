@@ -287,6 +287,7 @@ $rootPath = Resolve-Path -LiteralPath $Root
 $generatedMarkdownReports = @(
     "evals-report.md",
     "pytest-report.txt",
+    "tool-tests-report.txt",
     "technology-update-report.md",
     "wiki-quality-report.md",
     ".tmp-github-summary.md"

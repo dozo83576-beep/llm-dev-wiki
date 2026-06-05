@@ -96,6 +96,8 @@ Freshness monitoring не является блокирующим gate для pu
 
 Это предотвращает дубли задач и оставляет ревизию знаний ручным, осознанным шагом.
 
+Issue lifecycle покрыт Node unit tests и входит в `pwsh tools/ci-local.ps1 -IncludeToolTests`.
+
 ## Как закрывать issue обновлений
 
 1. Открой issue и сравни отчет с официальной документацией.

@@ -23,83 +23,11 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: ./tools/ci-local.ps1 -UpdateCheckOnly -IncludeUpdateCheck -WriteGithubSummary
 
-      - name: Create or update review issue
+      - name: Manage review issue
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
+            const { handleTechnologyUpdateIssue } = require('./tools/technology-update-issue.js');
             const report = fs.readFileSync('technology-update-report.md', 'utf8');
-            const updates = Number((report.match(/Updates found:\s*(\d+)/) || [])[1] || 0);
-            const failures = Number((report.match(/Check failures:\s*(\d+)/) || [])[1] || 0);
-
-            const title = 'Technology updates require wiki review';
-            const marker = '<!-- technology-update-monitor -->';
-            const { owner, repo } = context.repo;
-            const existing = await github.rest.issues.listForRepo({
-              owner,
-              repo,
-              state: 'open',
-              per_page: 100
-            });
-
-            const issue = existing.data.find((item) =>
-              item.title === title && item.body && item.body.includes(marker)
-            );
-
-            if (updates === 0 && failures === 0) {
-              if (!issue) {
-                core.info('No technology updates or check failures found. No issue needed.');
-                return;
-              }
-
-              const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
-              await github.rest.issues.createComment({
-                owner,
-                repo,
-                issue_number: issue.number,
-                body: `Technology update monitor is clean in workflow run: ${runUrl}`
-              });
-              await github.rest.issues.update({
-                owner,
-                repo,
-                issue_number: issue.number,
-                state: 'closed',
-                state_reason: 'completed'
-              });
-              core.info(`Closed issue #${issue.number}`);
-              return;
-            }
-
-            const body = `${marker}
-            # Technology updates require wiki review
-
-            The scheduled technology monitor found items that need human review.
-
-            ${report}
-
-            ## Required action
-
-            - Review the changed technologies against official documentation.
-            - Update affected wiki pages and front matter dates.
-            - Record major findings in \`lessons-learned\`, \`case-studies/successes\`, or \`case-studies/failures\`.
-
-            Workflow run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}
-            `;
-
-            if (issue) {
-              await github.rest.issues.update({
-                owner,
-                repo,
-                issue_number: issue.number,
-                body
-              });
-              core.info(`Updated issue #${issue.number}`);
-            } else {
-              const created = await github.rest.issues.create({
-                owner,
-                repo,
-                title,
-                body
-              });
-              core.info(`Created issue #${created.data.number}`);
-            }
+            await handleTechnologyUpdateIssue({ github, context, core, report });
