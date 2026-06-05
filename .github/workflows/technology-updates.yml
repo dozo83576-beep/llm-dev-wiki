@@ -32,13 +32,44 @@ jobs:
             const updates = Number((report.match(/Updates found:\s*(\d+)/) || [])[1] || 0);
             const failures = Number((report.match(/Check failures:\s*(\d+)/) || [])[1] || 0);
 
+            const title = 'Technology updates require wiki review';
+            const marker = '<!-- technology-update-monitor -->';
+            const { owner, repo } = context.repo;
+            const existing = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'open',
+              per_page: 100
+            });
+
+            const issue = existing.data.find((item) =>
+              item.title === title && item.body && item.body.includes(marker)
+            );
+
             if (updates === 0 && failures === 0) {
-              core.info('No technology updates or check failures found. No issue needed.');
+              if (!issue) {
+                core.info('No technology updates or check failures found. No issue needed.');
+                return;
+              }
+
+              const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: issue.number,
+                body: `Technology update monitor is clean in workflow run: ${runUrl}`
+              });
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: issue.number,
+                state: 'closed',
+                state_reason: 'completed'
+              });
+              core.info(`Closed issue #${issue.number}`);
               return;
             }
 
-            const title = 'Technology updates require wiki review';
-            const marker = '<!-- technology-update-monitor -->';
             const body = `${marker}
             # Technology updates require wiki review
 
@@ -54,18 +85,6 @@ jobs:
 
             Workflow run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}
             `;
-
-            const { owner, repo } = context.repo;
-            const existing = await github.rest.issues.listForRepo({
-              owner,
-              repo,
-              state: 'open',
-              per_page: 100
-            });
-
-            const issue = existing.data.find((item) =>
-              item.title === title && item.body && item.body.includes(marker)
-            );
 
             if (issue) {
               await github.rest.issues.update({

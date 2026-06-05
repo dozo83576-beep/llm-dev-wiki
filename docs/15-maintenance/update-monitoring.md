@@ -88,7 +88,13 @@ python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-
 
 Workflow `.github/workflows/technology-updates.yml` запускается раз в неделю и вручную через GitHub UI. Он вызывает `pwsh ./tools/ci-local.ps1 -UpdateCheckOnly -IncludeUpdateCheck -WriteGithubSummary`, пишет `technology-update-report.md` и добавляет отчет в GitHub Actions summary.
 
-Если отчет содержит `Updates found > 0` или `Check failures > 0`, workflow создает или обновляет один открытый GitHub Issue с заголовком `Technology updates require wiki review`. Это предотвращает дубли задач и оставляет ревизию знаний ручным, осознанным шагом.
+Freshness monitoring не является блокирующим gate для push/PR. Он управляет lifecycle одного review issue:
+
+- если отчет содержит `Updates found > 0` или `Check failures > 0`, workflow создает или обновляет один открытый GitHub Issue с заголовком `Technology updates require wiki review`;
+- если отчет чистый (`Updates found: 0` и `Check failures: 0`) и такой issue открыт, workflow добавляет комментарий со ссылкой на run и закрывает issue как `completed`;
+- если отчет чистый и открытого issue нет, workflow ничего не создает.
+
+Это предотвращает дубли задач и оставляет ревизию знаний ручным, осознанным шагом.
 
 ## Как закрывать issue обновлений
 
@@ -97,7 +103,7 @@ Workflow `.github/workflows/technology-updates.yml` запускается ра�
 3. Если изменение существенно для будущих проектов, добавь `lessons-learned` или `case-studies`.
 4. Обнови `currentVersion` в `resources/technology-watchlist.json`, если хочешь отслеживать следующий drift от этой версии.
 5. Запусти `pwsh tools/ci-local.ps1 -IncludeUpdateCheck`.
-6. Закрой issue после коммита обновлений.
+6. Закрой issue вручную после коммита обновлений или дождись следующего clean scheduled run, который закроет issue автоматически.
 
 ## Как закрывать maintenance drift
 
