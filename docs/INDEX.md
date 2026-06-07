@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **229**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **537821** символов
+- Суммарный объём: **539051** символов
 
 ## docs
 
@@ -130,7 +130,7 @@ source_priority: "internal"
 | [docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md](../docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md) | Claude Desktop MCP setup | ai-tools | 2864 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Setup-Codex.md](../docs/07-mcp-and-ai-tools/Setup-Codex.md) | Codex MCP setup | ai-tools | 2587 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Tool-permissions.md](../docs/07-mcp-and-ai-tools/Tool-permissions.md) | Tool permissions | ai-tools | 1392 | 2026-05-24 | active | internal |
-| [docs/07-mcp-and-ai-tools/User-preference-memory.md](../docs/07-mcp-and-ai-tools/User-preference-memory.md) | User preference memory | ai-tools | 3637 | 2026-06-07 | active | internal |
+| [docs/07-mcp-and-ai-tools/User-preference-memory.md](../docs/07-mcp-and-ai-tools/User-preference-memory.md) | User preference memory | ai-tools | 4347 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Vector-databases.md](../docs/07-mcp-and-ai-tools/Vector-databases.md) | Vector databases | ai-tools | 1904 | 2026-05-24 | active | internal |
 | [docs/07-mcp-and-ai-tools/llms-txt.md](../docs/07-mcp-and-ai-tools/llms-txt.md) | llms.txt | ai-tools | 1231 | 2026-05-24 | active | external-proposal |
 | [docs/07-mcp-and-ai-tools/pgvector.md](../docs/07-mcp-and-ai-tools/pgvector.md) | pgvector (redirect) | ai-tools | 358 | 2026-05-24 | redirect | internal |
@@ -185,7 +185,7 @@ source_priority: "internal"
 | [docs/14-llm-indexing/source-priority.md](../docs/14-llm-indexing/source-priority.md) | Source priority | llm-indexing | 2750 | 2026-05-24 | active | internal |
 | [docs/15-maintenance/retro-process.md](../docs/15-maintenance/retro-process.md) | Retro-процесс после инцидентов и провальных релизов | maintenance | 4000 | 2026-06-07 | active | internal |
 | [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 6158 | 2026-06-07 | active | internal |
-| [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 5305 | 2026-06-04 | active | internal |
+| [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 5545 | 2026-06-07 | active | internal |
 
 ## patterns
 
@@ -233,7 +233,7 @@ source_priority: "internal"
 | [prompts/rag-design.md](../prompts/rag-design.md) | Prompt: RAG design | prompt | 3846 | 2026-05-24 | active | internal |
 | [prompts/refactor.md](../prompts/refactor.md) | Prompt: refactor | prompt | 1980 | 2026-05-24 | active | internal |
 | [prompts/security-review.md](../prompts/security-review.md) | Prompt: security review | prompt | 2285 | 2026-05-24 | active | internal |
-| [prompts/update-user-preferences.md](../prompts/update-user-preferences.md) | Prompt: update user preferences | prompt | 2508 | 2026-06-07 | active | internal |
+| [prompts/update-user-preferences.md](../prompts/update-user-preferences.md) | Prompt: update user preferences | prompt | 2788 | 2026-06-07 | active | internal |
 | [prompts/update-wiki.md](../prompts/update-wiki.md) | Prompt: update wiki | prompt | 2501 | 2026-05-24 | active | internal |
 | [prompts/write-tests.md](../prompts/write-tests.md) | Prompt: write tests | prompt | 2252 | 2026-05-24 | active | internal |
 

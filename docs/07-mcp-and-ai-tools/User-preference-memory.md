@@ -29,6 +29,8 @@ User preference memory хранит локальные предпочтения 
 
 В wiki можно хранить только процесс, шаблоны и sanitized lessons без личных референсов. Если preference превращается в общий production-паттерн, его нужно обезличить и оформить как `patterns/`, `lessons-learned/` или checklist update.
 
+Обновление preference-файла делай через `tools/update-local-preferences.ps1`: сначала dry-run, затем явный `-Apply`. Ручное редактирование допустимо только для review, потому что скрипт выполняет базовый scan на secrets, PII и приватные payload markers.
+
 ## Priority order
 
 1. Project-local `AGENTS.md`.
@@ -56,6 +58,18 @@ User preference memory хранит локальные предпочтения 
 - Перед выбором стека проверь preference defaults, затем [site architecture decision router](../01-development-process/site-architecture-decision-router.md) и [stack selection](../01-development-process/stack-selection.md).
 - Если пользователь одобрил решение в конце задачи, запусти [update user preferences](../../prompts/update-user-preferences.md) и спроси, стоит ли сохранить preference.
 - Любая запись должна иметь область применимости и evidence. Без evidence это заметка, а не правило.
+- Команда сохранения должна быть dry-run first:
+
+```powershell
+pwsh D:\Work\llm-dev-wiki\tools\update-local-preferences.ps1 `
+  -Title "Premium landing typography" `
+  -Scope "frontend" `
+  -Preference "Prefer expressive display font paired with readable body font." `
+  -Avoid "Avoid generic AI purple gradients." `
+  -Evidence "Approved by user after landing page review." `
+  -ReviewAfter "2026-12-31" `
+  -DryRun
+```
 
 ## Частые ошибки
 
@@ -66,6 +80,7 @@ User preference memory хранит локальные предпочтения 
 - Preference file существует только локально.
 - Нет секретов, PII, credentials, cookies, закрытого кода и customer payloads.
 - Каждая запись имеет scope, evidence и review condition.
+- Dry-run просмотрен до `-Apply`.
 - При генерации сайта preference не ломает accessibility, performance, security и responsive QA.
 
 ## Источники

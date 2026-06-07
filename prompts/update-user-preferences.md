@@ -31,8 +31,9 @@ Tech lead, решающий, нужно ли сохранить пользова
 2. **Classify scope**: определить, где preference применим и где его нельзя применять.
 3. **Sanitize**: удалить секреты, PII, customer payloads, private URLs, cookies, tokens и закрытые коммерческие детали.
 4. **Check conflicts**: preference не должен противоречить security, accessibility, performance, project-local rules и official docs.
-5. **Write local entry**: предложить запись для `D:\Work\AGENT-PREFERENCES.local.md` в стандартном формате.
-6. **No wiki leak**: не копировать личные референсы в GitHub-wiki. В wiki можно добавить только обезличенный pattern, если он полезен всем проектам.
+5. **Dry-run local entry**: сформировать команду `tools/update-local-preferences.ps1 -DryRun` и показать proposed entry.
+6. **Apply only after approval**: запускать `-Apply` только после явного подтверждения пользователя.
+7. **No wiki leak**: не копировать личные референсы в GitHub-wiki. В wiki можно добавить только обезличенный pattern, если он полезен всем проектам.
 
 ## Output schema
 
@@ -50,6 +51,7 @@ Proposed local entry:
 - Links: ...
 
 Wiki artifact needed: yes | no
+Dry-run command: pwsh D:\Work\llm-dev-wiki\tools\update-local-preferences.ps1 ...
 ```
 
 ## Refusal rules
@@ -58,6 +60,7 @@ Wiki artifact needed: yes | no
 - Не сохранять secrets, PII, private code, credentials, cookies, tokens, customer payloads.
 - Не превращать стиль в обязательное правило для всех проектов без scope.
 - Не использовать preference как замену свежей официальной документации.
+- Не обходить dry-run scan ручной записью, если есть возможность запустить updater.
 
 ## Related
 
