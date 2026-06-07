@@ -1,6 +1,6 @@
 {
-  "chunk_count": 1849,
-  "corpus_hash": "25fe408ff8a30f3f7cb0a281e83416cf348edd5ba66247bc531007df5b091c9e",
+  "chunk_count": 1869,
+  "corpus_hash": "c9a19779aba9509082b1669a1bd74682756155623f8411a098e2d3f95d76ce15",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -127,6 +127,7 @@
     "docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md",
     "docs/07-mcp-and-ai-tools/Setup-Codex.md",
     "docs/07-mcp-and-ai-tools/Tool-permissions.md",
+    "docs/07-mcp-and-ai-tools/User-preference-memory.md",
     "docs/07-mcp-and-ai-tools/Vector-databases.md",
     "docs/07-mcp-and-ai-tools/llms-txt.md",
     "docs/08-devops-deploy/CI-templates.md",
@@ -222,6 +223,7 @@
     "prompts/rag-design.md",
     "prompts/refactor.md",
     "prompts/security-review.md",
+    "prompts/update-user-preferences.md",
     "prompts/update-wiki.md",
     "prompts/write-tests.md",
     "stacks/django-postgres.md",
@@ -231,7 +233,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-06-07T17:39:17Z",
+  "generated_at": "2026-06-07T17:52:17Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }

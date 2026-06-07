@@ -1,7 +1,7 @@
 ---
 title: "Design systems"
 category: "frontend"
-updated: "2026-06-04"
+updated: "2026-06-07"
 status: "active"
 tags: ["design-system", "ui"]
 source_priority: "internal"
@@ -10,6 +10,8 @@ source_priority: "internal"
 # Design systems
 
 Design system нужен, когда интерфейс должен масштабироваться без визуального распада: tokens, typography, spacing, states, components, accessibility, media rules и responsive behavior.
+
+Если задача просит “в моём стиле”, “как в моих референсах” или “используй любимые шрифты”, сначала проверь local preference memory (`D:\Work\AGENT-PREFERENCES.local.md`), затем применяй этот документ. Preference не отменяет accessibility, performance, responsive QA и project-local design constraints.
 
 ## Когда использовать
 
@@ -25,6 +27,7 @@ Design system нужен, когда интерфейс должен масшт�
 ## Production-паттерны
 
 - Design tokens: color, spacing, typography, radius, shadow.
+- Пользовательские preferences превращаются в tokens/recipes только после проверки scope, contrast, responsive behavior и evidence.
 - Компоненты имеют variants и states.
 - Accessibility встроена в primitives.
 - Документируй, где использовать каждый компонент.
@@ -48,8 +51,8 @@ Design system нужен, когда интерфейс должен масшт�
 
 ## Частые ошибки
 
-Создать набор компонентов без tokens, менять primitives под конкретную страницу, использовать разные spacing шкалы, не документировать destructive/loading/disabled states, делать hero/card/panel с одинаковой типографикой, использовать изображения без размеров и focal point.
+Создать набор компонентов без tokens, менять primitives под конкретную страницу, использовать разные spacing шкалы, не документировать destructive/loading/disabled states, делать hero/card/panel с одинаковой типографикой, использовать изображения без размеров и focal point, копировать личные референсы в публичную wiki.
 
 ## Источники
 
-См. [shadcn/ui](Shadcn.md), [Accessibility](Accessibility.md), [Styling systems](Styling-systems.md), [Component-driven development](Component-driven-development.md), [UI architecture](UI-architecture.md), [Frontend blueprints](Frontend-blueprints.md), [semantic text tokens](../../patterns/frontend/semantic-theme-text-tokens.md) и [W3C Design Tokens Community Group](https://www.w3.org/community/design-tokens/).
+См. [shadcn/ui](Shadcn.md), [Accessibility](Accessibility.md), [Styling systems](Styling-systems.md), [Component-driven development](Component-driven-development.md), [UI architecture](UI-architecture.md), [Frontend blueprints](Frontend-blueprints.md), [User preference memory](../07-mcp-and-ai-tools/User-preference-memory.md), [semantic text tokens](../../patterns/frontend/semantic-theme-text-tokens.md) и [W3C Design Tokens Community Group](https://www.w3.org/community/design-tokens/).

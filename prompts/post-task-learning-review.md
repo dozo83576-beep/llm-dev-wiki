@@ -32,7 +32,7 @@ Tech lead, решающий, должен ли опыт завершенной �
 
 1. **Classify significance**: определить, был ли новый стек, риск, failure, reusable pattern, unusual trade-off или hard-won fix.
 2. **Check evidence**: не фиксировать вывод без команд, diff, тестов, источников или явного user feedback.
-3. **Route artifact**: выбрать `success`, `failure`, `lesson`, `pattern`, `checklist update`, `golden Q&A` или `no artifact needed`.
+3. **Route artifact**: выбрать `success`, `failure`, `lesson`, `pattern`, `checklist update`, `golden Q&A`, `local preference update` или `no artifact needed`.
 4. **Deduplicate**: найти существующие lessons/patterns/case studies и обновить их вместо создания дубля.
 5. **Sanitize**: удалить секреты, PII, приватный код, customer payloads и коммерческие закрытые детали.
 6. **Link back**: каждый новый artifact должен ссылаться на релевантные docs, checklists, playbooks или related cases.
@@ -54,6 +54,7 @@ Evidence: commands/tests/sources/user feedback
 - patterns/...: ...
 - checklists/...: ...
 - docs/14-llm-indexing/golden-qa.yaml: ...
+- D:\Work\AGENT-PREFERENCES.local.md: только если пользователь явно одобрил preference или попросил запомнить
 
 ## No artifact rationale
 Use only when the task produced no reusable knowledge.
@@ -65,10 +66,13 @@ Use only when the task produced no reusable knowledge.
 - Не сохранять секреты, PII, приватный payload или закрытый код.
 - Не создавать пустые artifacts ради формальности.
 - Не считать отсутствие инцидента success case, если не было нового повторяемого приема.
+- Не сохранять личные preference entries в GitHub-wiki; используй local preference memory.
 
 ## Related
 
 - [Agent self-improvement loop](../docs/07-mcp-and-ai-tools/Agent-self-improvement.md)
+- [User preference memory](../docs/07-mcp-and-ai-tools/User-preference-memory.md)
+- [update user preferences](update-user-preferences.md)
 - [post-project knowledge capture](post-project-knowledge-capture.md)
 - [update wiki](update-wiki.md)
 - [wiki maintenance checklist](../checklists/wiki-maintenance.md)

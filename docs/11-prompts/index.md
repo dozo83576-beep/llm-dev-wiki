@@ -29,6 +29,7 @@ source_priority: "internal"
 - security review;
 - deploy;
 - обновление вики;
+- update user preferences;
 - post-project knowledge capture;
 - post-task learning review.
 

@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **238**
-- Активных: **227**
+- Всего документов: **240**
+- Активных: **229**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **529839** символов
+- Суммарный объём: **537821** символов
 
 ## docs
 
@@ -36,7 +36,7 @@ source_priority: "internal"
 | [docs/02-frontend/CMS-content.md](../docs/02-frontend/CMS-content.md) | CMS and content sites | frontend | 2648 | 2026-06-04 | active | mixed |
 | [docs/02-frontend/Component-driven-development.md](../docs/02-frontend/Component-driven-development.md) | Component-driven development | frontend | 2818 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/Data-fetching.md](../docs/02-frontend/Data-fetching.md) | Frontend data fetching | frontend | 1591 | 2026-05-24 | active | official-docs |
-| [docs/02-frontend/Design-systems.md](../docs/02-frontend/Design-systems.md) | Design systems | frontend | 2971 | 2026-06-04 | active | internal |
+| [docs/02-frontend/Design-systems.md](../docs/02-frontend/Design-systems.md) | Design systems | frontend | 3528 | 2026-06-07 | active | internal |
 | [docs/02-frontend/Forms-validation.md](../docs/02-frontend/Forms-validation.md) | Forms and validation | frontend | 1927 | 2026-05-27 | active | official-docs |
 | [docs/02-frontend/Fresh.md](../docs/02-frontend/Fresh.md) | Fresh | frontend | 2363 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/Frontend-blueprints.md](../docs/02-frontend/Frontend-blueprints.md) | Frontend blueprints | frontend | 3536 | 2026-06-07 | active | internal |
@@ -114,7 +114,7 @@ source_priority: "internal"
 | [docs/06-api-design/REST.md](../docs/06-api-design/REST.md) | REST API | api | 1288 | 2026-05-24 | active | internal |
 | [docs/06-api-design/Versioning.md](../docs/06-api-design/Versioning.md) | API versioning | api | 1927 | 2026-05-24 | active | internal |
 | [docs/06-api-design/WebSockets.md](../docs/06-api-design/WebSockets.md) | WebSockets | api | 1268 | 2026-05-24 | active | official-docs |
-| [docs/07-mcp-and-ai-tools/Agent-memory.md](../docs/07-mcp-and-ai-tools/Agent-memory.md) | Agent memory | ai-tools | 1922 | 2026-06-07 | active | internal |
+| [docs/07-mcp-and-ai-tools/Agent-memory.md](../docs/07-mcp-and-ai-tools/Agent-memory.md) | Agent memory | ai-tools | 2809 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Agent-self-improvement.md](../docs/07-mcp-and-ai-tools/Agent-self-improvement.md) | Agent self-improvement loop | ai-tools | 3456 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Agent-workflows.md](../docs/07-mcp-and-ai-tools/Agent-workflows.md) | Agent workflows | ai-tools | 1676 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Embeddings.md](../docs/07-mcp-and-ai-tools/Embeddings.md) | Embeddings | ai-tools | 2140 | 2026-05-24 | active | official-docs |
@@ -130,6 +130,7 @@ source_priority: "internal"
 | [docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md](../docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md) | Claude Desktop MCP setup | ai-tools | 2864 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Setup-Codex.md](../docs/07-mcp-and-ai-tools/Setup-Codex.md) | Codex MCP setup | ai-tools | 2587 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Tool-permissions.md](../docs/07-mcp-and-ai-tools/Tool-permissions.md) | Tool permissions | ai-tools | 1392 | 2026-05-24 | active | internal |
+| [docs/07-mcp-and-ai-tools/User-preference-memory.md](../docs/07-mcp-and-ai-tools/User-preference-memory.md) | User preference memory | ai-tools | 3637 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Vector-databases.md](../docs/07-mcp-and-ai-tools/Vector-databases.md) | Vector databases | ai-tools | 1904 | 2026-05-24 | active | internal |
 | [docs/07-mcp-and-ai-tools/llms-txt.md](../docs/07-mcp-and-ai-tools/llms-txt.md) | llms.txt | ai-tools | 1231 | 2026-05-24 | active | external-proposal |
 | [docs/07-mcp-and-ai-tools/pgvector.md](../docs/07-mcp-and-ai-tools/pgvector.md) | pgvector (redirect) | ai-tools | 358 | 2026-05-24 | redirect | internal |
@@ -163,7 +164,7 @@ source_priority: "internal"
 | [docs/09-testing/Unit-testing.md](../docs/09-testing/Unit-testing.md) | Unit testing | testing | 2776 | 2026-05-24 | active | internal |
 | [docs/09-testing/Visual-testing.md](../docs/09-testing/Visual-testing.md) | Visual testing | testing | 2891 | 2026-06-04 | active | internal |
 | [docs/10-templates/index.md](../docs/10-templates/index.md) | Templates | templates | 534 | 2026-05-24 | active | internal |
-| [docs/11-prompts/index.md](../docs/11-prompts/index.md) | Prompts | prompts | 715 | 2026-06-07 | active | internal |
+| [docs/11-prompts/index.md](../docs/11-prompts/index.md) | Prompts | prompts | 742 | 2026-06-07 | active | internal |
 | [docs/12-resources/index.md](../docs/12-resources/index.md) | Resources | resources | 604 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/admin-dashboard.md](../docs/13-playbooks/admin-dashboard.md) | Playbook: Admin dashboard | playbooks | 3278 | 2026-06-04 | active | internal |
 | [docs/13-playbooks/ai-rag-app.md](../docs/13-playbooks/ai-rag-app.md) | Playbook: AI/RAG app | playbooks | 4052 | 2026-06-04 | active | internal |
@@ -228,10 +229,11 @@ source_priority: "internal"
 | [prompts/implementation-plan.md](../prompts/implementation-plan.md) | Prompt: implementation plan | prompt | 2484 | 2026-05-24 | active | internal |
 | [prompts/mcp-security-review.md](../prompts/mcp-security-review.md) | Prompt: MCP security review | prompt | 2800 | 2026-05-24 | active | internal |
 | [prompts/post-project-knowledge-capture.md](../prompts/post-project-knowledge-capture.md) | Prompt: post-project knowledge capture | prompt | 2842 | 2026-05-24 | active | internal |
-| [prompts/post-task-learning-review.md](../prompts/post-task-learning-review.md) | Prompt: post-task learning review | prompt | 2980 | 2026-06-07 | active | internal |
+| [prompts/post-task-learning-review.md](../prompts/post-task-learning-review.md) | Prompt: post-task learning review | prompt | 3346 | 2026-06-07 | active | internal |
 | [prompts/rag-design.md](../prompts/rag-design.md) | Prompt: RAG design | prompt | 3846 | 2026-05-24 | active | internal |
 | [prompts/refactor.md](../prompts/refactor.md) | Prompt: refactor | prompt | 1980 | 2026-05-24 | active | internal |
 | [prompts/security-review.md](../prompts/security-review.md) | Prompt: security review | prompt | 2285 | 2026-05-24 | active | internal |
+| [prompts/update-user-preferences.md](../prompts/update-user-preferences.md) | Prompt: update user preferences | prompt | 2508 | 2026-06-07 | active | internal |
 | [prompts/update-wiki.md](../prompts/update-wiki.md) | Prompt: update wiki | prompt | 2501 | 2026-05-24 | active | internal |
 | [prompts/write-tests.md](../prompts/write-tests.md) | Prompt: write tests | prompt | 2252 | 2026-05-24 | active | internal |
 
