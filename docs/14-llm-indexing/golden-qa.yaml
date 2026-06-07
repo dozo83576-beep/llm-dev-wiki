@@ -330,3 +330,31 @@ questions:
     expected_paths:
       - docs/02-frontend/AI-UI-streaming.md
       - docs/13-playbooks/ai-rag-app.md
+
+  - id: q-agent-use-wiki-before-task
+    question: "Как агент должен использовать wiki перед началом задачи?"
+    expected_paths:
+      - docs/07-mcp-and-ai-tools/Agent-self-improvement.md
+      - docs/07-mcp-and-ai-tools/Agent-workflows.md
+      - AGENTS.md
+
+  - id: q-agent-post-task-learning
+    question: "Что делать с опытом после завершения значимой задачи?"
+    expected_paths:
+      - prompts/post-task-learning-review.md
+      - docs/07-mcp-and-ai-tools/Agent-self-improvement.md
+      - prompts/post-project-knowledge-capture.md
+
+  - id: q-agent-memory-privacy
+    question: "Что нельзя сохранять в agent memory или wiki?"
+    expected_paths:
+      - docs/07-mcp-and-ai-tools/Agent-memory.md
+      - docs/07-mcp-and-ai-tools/Agent-self-improvement.md
+      - docs/05-auth-security/Secrets.md
+
+  - id: q-failure-to-lesson
+    question: "Как превратить неудачную задачу в lesson learned?"
+    expected_paths:
+      - prompts/post-task-learning-review.md
+      - docs/15-maintenance/retro-process.md
+      - case-studies/failures/README.md

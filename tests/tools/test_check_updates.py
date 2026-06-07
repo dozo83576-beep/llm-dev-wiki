@@ -66,6 +66,30 @@ def test_stable_policy_ignores_prerelease_latest(tmp_path: Path) -> None:
     assert "| Example | npm | example | 1.0.0 | 2.0.0-rc.1 | prerelease-ignored |" in result.stdout
 
 
+def test_stable_policy_ignores_github_tag_like_rc(tmp_path: Path) -> None:
+    result = check_updates(
+        tmp_path,
+        [
+            {
+                "name": "Example",
+                "ecosystem": "github-tags",
+                "repository": "example/specification",
+                "currentVersion": "2026-06-01",
+                "docsUrl": "https://example.com/docs",
+                "notes": "Fixture entry for GitHub tag update checker tests.",
+            }
+        ],
+        {"github-tags:example/specification": "2026-07-28-RC"},
+    )
+
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "- Updates found: 0" in result.stdout
+    assert (
+        "| Example | github-tags | example/specification | 2026-06-01 | 2026-07-28-RC | prerelease-ignored |"
+        in result.stdout
+    )
+
+
 def test_allow_prerelease_counts_prerelease_update(tmp_path: Path) -> None:
     result = check_updates(
         tmp_path,

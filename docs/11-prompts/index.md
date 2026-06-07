@@ -1,7 +1,7 @@
 ---
 title: "Prompts"
 category: "prompts"
-updated: "2026-05-24"
+updated: "2026-06-07"
 status: "active"
 tags: ["prompts", "agents"]
 source_priority: "internal"
@@ -28,7 +28,8 @@ source_priority: "internal"
 - refactoring;
 - security review;
 - deploy;
-- обновление вики.
-- post-project knowledge capture.
+- обновление вики;
+- post-project knowledge capture;
+- post-task learning review.
 
 Перед использованием промпта добавь конкретный контекст проекта: стек, версии, окружение, ограничения и критерии приемки.

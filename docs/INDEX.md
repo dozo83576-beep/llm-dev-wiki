@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-06-06"
+updated: "2026-06-07"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **235**
-- Активных: **224**
+- Всего документов: **237**
+- Активных: **226**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **513970** символов
+- Суммарный объём: **521877** символов
 
 ## docs
 
@@ -113,8 +113,9 @@ source_priority: "internal"
 | [docs/06-api-design/REST.md](../docs/06-api-design/REST.md) | REST API | api | 1288 | 2026-05-24 | active | internal |
 | [docs/06-api-design/Versioning.md](../docs/06-api-design/Versioning.md) | API versioning | api | 1927 | 2026-05-24 | active | internal |
 | [docs/06-api-design/WebSockets.md](../docs/06-api-design/WebSockets.md) | WebSockets | api | 1268 | 2026-05-24 | active | official-docs |
-| [docs/07-mcp-and-ai-tools/Agent-memory.md](../docs/07-mcp-and-ai-tools/Agent-memory.md) | Agent memory | ai-tools | 1462 | 2026-05-24 | active | internal |
-| [docs/07-mcp-and-ai-tools/Agent-workflows.md](../docs/07-mcp-and-ai-tools/Agent-workflows.md) | Agent workflows | ai-tools | 1332 | 2026-05-24 | active | internal |
+| [docs/07-mcp-and-ai-tools/Agent-memory.md](../docs/07-mcp-and-ai-tools/Agent-memory.md) | Agent memory | ai-tools | 1922 | 2026-06-07 | active | internal |
+| [docs/07-mcp-and-ai-tools/Agent-self-improvement.md](../docs/07-mcp-and-ai-tools/Agent-self-improvement.md) | Agent self-improvement loop | ai-tools | 3456 | 2026-06-07 | active | internal |
+| [docs/07-mcp-and-ai-tools/Agent-workflows.md](../docs/07-mcp-and-ai-tools/Agent-workflows.md) | Agent workflows | ai-tools | 1676 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Embeddings.md](../docs/07-mcp-and-ai-tools/Embeddings.md) | Embeddings | ai-tools | 2140 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Evaluation.md](../docs/07-mcp-and-ai-tools/Evaluation.md) | AI evaluation | ai-tools | 2075 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/MCP-overview.md](../docs/07-mcp-and-ai-tools/MCP-overview.md) | MCP overview | ai-tools | 2655 | 2026-06-06 | active | official-docs |
@@ -161,7 +162,7 @@ source_priority: "internal"
 | [docs/09-testing/Unit-testing.md](../docs/09-testing/Unit-testing.md) | Unit testing | testing | 2776 | 2026-05-24 | active | internal |
 | [docs/09-testing/Visual-testing.md](../docs/09-testing/Visual-testing.md) | Visual testing | testing | 2891 | 2026-06-04 | active | internal |
 | [docs/10-templates/index.md](../docs/10-templates/index.md) | Templates | templates | 534 | 2026-05-24 | active | internal |
-| [docs/11-prompts/index.md](../docs/11-prompts/index.md) | Prompts | prompts | 686 | 2026-05-24 | active | internal |
+| [docs/11-prompts/index.md](../docs/11-prompts/index.md) | Prompts | prompts | 715 | 2026-06-07 | active | internal |
 | [docs/12-resources/index.md](../docs/12-resources/index.md) | Resources | resources | 604 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/admin-dashboard.md](../docs/13-playbooks/admin-dashboard.md) | Playbook: Admin dashboard | playbooks | 3278 | 2026-06-04 | active | internal |
 | [docs/13-playbooks/ai-rag-app.md](../docs/13-playbooks/ai-rag-app.md) | Playbook: AI/RAG app | playbooks | 4052 | 2026-06-04 | active | internal |
@@ -180,7 +181,7 @@ source_priority: "internal"
 | [docs/14-llm-indexing/metadata-policy.md](../docs/14-llm-indexing/metadata-policy.md) | Metadata policy | llm-indexing | 2929 | 2026-05-24 | active | internal |
 | [docs/14-llm-indexing/rag-file-search.md](../docs/14-llm-indexing/rag-file-search.md) | RAG and File Search | llm-indexing | 3832 | 2026-05-24 | active | official-docs |
 | [docs/14-llm-indexing/source-priority.md](../docs/14-llm-indexing/source-priority.md) | Source priority | llm-indexing | 2750 | 2026-05-24 | active | internal |
-| [docs/15-maintenance/retro-process.md](../docs/15-maintenance/retro-process.md) | Retro-процесс после инцидентов и провальных релизов | maintenance | 3792 | 2026-05-25 | active | internal |
+| [docs/15-maintenance/retro-process.md](../docs/15-maintenance/retro-process.md) | Retro-процесс после инцидентов и провальных релизов | maintenance | 4000 | 2026-06-07 | active | internal |
 | [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 5793 | 2026-06-06 | active | internal |
 | [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 5305 | 2026-06-04 | active | internal |
 
@@ -226,6 +227,7 @@ source_priority: "internal"
 | [prompts/implementation-plan.md](../prompts/implementation-plan.md) | Prompt: implementation plan | prompt | 2484 | 2026-05-24 | active | internal |
 | [prompts/mcp-security-review.md](../prompts/mcp-security-review.md) | Prompt: MCP security review | prompt | 2800 | 2026-05-24 | active | internal |
 | [prompts/post-project-knowledge-capture.md](../prompts/post-project-knowledge-capture.md) | Prompt: post-project knowledge capture | prompt | 2842 | 2026-05-24 | active | internal |
+| [prompts/post-task-learning-review.md](../prompts/post-task-learning-review.md) | Prompt: post-task learning review | prompt | 2980 | 2026-06-07 | active | internal |
 | [prompts/rag-design.md](../prompts/rag-design.md) | Prompt: RAG design | prompt | 3846 | 2026-05-24 | active | internal |
 | [prompts/refactor.md](../prompts/refactor.md) | Prompt: refactor | prompt | 1980 | 2026-05-24 | active | internal |
 | [prompts/security-review.md](../prompts/security-review.md) | Prompt: security review | prompt | 2285 | 2026-05-24 | active | internal |
@@ -236,7 +238,7 @@ source_priority: "internal"
 
 | Файл | Заголовок | Категория | Объём | Updated | Status | Source priority |
 |------|-----------|-----------|-------|---------|--------|-----------------|
-| [checklists/ai-agent-review.md](../checklists/ai-agent-review.md) | AI agent review checklist | checklist | 3300 | 2026-05-24 | active | internal |
+| [checklists/ai-agent-review.md](../checklists/ai-agent-review.md) | AI agent review checklist | checklist | 3501 | 2026-06-07 | active | internal |
 | [checklists/api-review.md](../checklists/api-review.md) | API review checklist | checklist | 3872 | 2026-05-24 | active | internal |
 | [checklists/backend-review.md](../checklists/backend-review.md) | Backend review checklist | checklist | 3761 | 2026-05-24 | active | internal |
 | [checklists/database-review.md](../checklists/database-review.md) | Database review checklist | checklist | 3498 | 2026-05-24 | active | internal |
@@ -244,7 +246,7 @@ source_priority: "internal"
 | [checklists/project-discovery.md](../checklists/project-discovery.md) | Project discovery checklist | checklist | 3622 | 2026-05-24 | active | internal |
 | [checklists/release-readiness.md](../checklists/release-readiness.md) | Release readiness checklist | checklist | 4257 | 2026-05-24 | active | internal |
 | [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 5421 | 2026-05-24 | active | internal |
-| [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 2685 | 2026-05-25 | active | internal |
+| [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 2914 | 2026-06-07 | active | internal |
 
 ## stacks
 

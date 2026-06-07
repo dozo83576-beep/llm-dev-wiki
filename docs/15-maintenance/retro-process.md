@@ -1,7 +1,7 @@
 ---
 title: "Retro-процесс после инцидентов и провальных релизов"
 category: "maintenance"
-updated: "2026-05-25"
+updated: "2026-06-07"
 status: "active"
 tags: ["maintenance", "retro", "incident", "process"]
 source_priority: "internal"
@@ -10,6 +10,8 @@ source_priority: "internal"
 # Retro-процесс после инцидентов и провальных релизов
 
 Структурированный разбор причин инцидента или неудачного релиза. Цель — извлечь action items, а не найти виноватых. Результат retro всегда попадает в `case-studies/failures/` и `lessons-learned/`.
+
+Используй этот процесс, когда нужно превратить неудачную задачу в lesson learned: сначала доказанный failure case, затем короткое правило, checklist update и retrieval coverage для будущих похожих запросов.
 
 ## Когда использовать
 

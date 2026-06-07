@@ -1,7 +1,7 @@
 ---
 title: "AI agent review checklist"
 category: "checklist"
-updated: "2026-05-24"
+updated: "2026-06-07"
 status: "active"
 tags: ["ai", "mcp", "agent", "security"]
 source_priority: "internal"
@@ -48,6 +48,7 @@ Gated checklist для запуска нового AI-агента (LLM с ин�
 
 - [ ] **Успешные приёмы** сохранены в [case-studies/successes](../case-studies/successes) или [patterns](../patterns) — tech lead — warn.
 - [ ] **Ошибки** сохранены в [case-studies/failures](../case-studies/failures) с правилом предотвращения — tech lead — block.
+- [ ] **Learning review** выполнен: новый опыт сохранён или явно указано `no artifact needed` — tech lead — warn — [Agent self-improvement loop](../docs/07-mcp-and-ai-tools/Agent-self-improvement.md).
 - [ ] **MCP / agent config** в репо как код, ревьюится через PR — AI owner — warn — [Setup Claude Desktop](../docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md), [Setup Codex](../docs/07-mcp-and-ai-tools/Setup-Codex.md).
 
 ## Evals

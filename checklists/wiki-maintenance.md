@@ -1,7 +1,7 @@
 ---
 title: "Wiki maintenance checklist"
 category: "checklist"
-updated: "2026-05-25"
+updated: "2026-06-07"
 status: "active"
 tags: ["wiki", "maintenance", "rag", "offline"]
 source_priority: "internal"
@@ -43,3 +43,4 @@ Gated checklist для регулярного обслуживания вики.
 - [ ] **Успешные решения** сохранены в `case-studies/successes` или `patterns` - tech lead - warn.
 - [ ] **Ошибки** сохранены в `case-studies/failures` и связаны с чеклистами - tech lead - block.
 - [ ] **Повторяемые выводы** добавлены в `lessons-learned` без секретов, PII и приватного кода - tech lead - block.
+- [ ] **Learning review** по значимым задачам завершён: artifact создан/обновлен или указана причина `no artifact needed` - tech lead - warn - [Agent self-improvement loop](../docs/07-mcp-and-ai-tools/Agent-self-improvement.md).
