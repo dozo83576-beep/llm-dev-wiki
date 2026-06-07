@@ -1,7 +1,7 @@
 ---
 title: "Golden Q&A"
 category: "llm-indexing"
-updated: "2026-06-04"
+updated: "2026-06-07"
 status: "active"
 tags: ["evals", "rag", "golden"]
 source_priority: "internal"
@@ -16,6 +16,34 @@ questions:
     expected_paths:
       - docs/13-playbooks/saas.md
       - docs/01-development-process/stack-selection.md
+
+  - id: q-site-architecture-saas-request
+    question: "По запросу 'хочу сайт для SaaS с подписками' как выбрать архитектуру и стек?"
+    expected_paths:
+      - docs/01-development-process/site-architecture-decision-router.md
+      - docs/13-playbooks/saas.md
+      - docs/01-development-process/stack-selection.md
+
+  - id: q-site-architecture-landing-request
+    question: "Как выбрать стек для лендинга с SEO и формой заявки?"
+    expected_paths:
+      - docs/01-development-process/site-architecture-decision-router.md
+      - docs/13-playbooks/landing.md
+      - docs/02-frontend/Frontend-blueprints.md
+
+  - id: q-site-architecture-low-confidence
+    question: "Когда агент не должен сам выбирать стек сайта и обязан задать вопросы?"
+    expected_paths:
+      - docs/01-development-process/site-architecture-decision-router.md
+      - prompts/choose-stack.md
+      - checklists/project-discovery.md
+
+  - id: q-site-architecture-router-doc
+    question: "Какой документ маршрутизирует сырой запрос пользователя в stack и playbook?"
+    expected_paths:
+      - docs/01-development-process/site-architecture-decision-router.md
+      - docs/01-development-process/stack-selection.md
+      - prompts/create-new-project.md
 
   - id: q-stack-rag
     question: "Какой playbook использовать для AI/RAG-приложения с собственной базой знаний?"

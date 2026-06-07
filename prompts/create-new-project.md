@@ -1,7 +1,7 @@
 ---
 title: "Prompt: create new project"
 category: "prompt"
-updated: "2026-05-24"
+updated: "2026-06-07"
 status: "active"
 tags: ["project", "kickoff", "architecture"]
 source_priority: "internal"
@@ -27,15 +27,16 @@ source_priority: "internal"
 
 ## Steps
 
-1. **Clarify**: задай только недостающие вопросы из [project-discovery checklist](../checklists/project-discovery.md): тип, аудитория, роли, страницы, интеграции, сроки, hosting, auth, БД, бюджет, AI-функции, acceptance criteria. Один вопрос — один блок.
-2. **Choose playbook**: выбери playbook из [docs/13-playbooks](../docs/13-playbooks/index.md) или объяви, что это микс из N playbooks.
-3. **Stack**: сравни 2–3 варианта стека по [stack-selection](../docs/01-development-process/stack-selection.md), выбери один с аргументацией.
-4. **Architecture**: компоненты, границы ответственности, data flow, API, БД, auth, deploy.
-5. **Phased plan**: разбей реализацию на 3–6 проверяемых этапов с acceptance.
-6. **Security risks**: top-5 рисков и mitigations.
-7. **Test plan**: unit / integration / E2E / contract / security по test-pyramid.
-8. **Edge cases**: ≥ 5 пунктов.
-9. **Knowledge capture**: какие документы вики обновить после проекта.
+1. **Route raw request**: сначала применить [site architecture decision router](../docs/01-development-process/site-architecture-decision-router.md) и выставить confidence.
+2. **Clarify**: задай только недостающие вопросы из [project-discovery checklist](../checklists/project-discovery.md): тип, аудитория, роли, страницы, интеграции, сроки, hosting, auth, БД, бюджет, AI-функции, acceptance criteria. Один вопрос — один блок.
+3. **Choose playbook**: выбери playbook из [docs/13-playbooks](../docs/13-playbooks/index.md) или объяви, что это микс из N playbooks.
+4. **Stack**: сравни 2–3 варианта стека по [stack-selection](../docs/01-development-process/stack-selection.md), выбери один с аргументацией.
+5. **Architecture**: компоненты, границы ответственности, data flow, API, БД, auth, deploy.
+6. **Phased plan**: разбей реализацию на 3–6 проверяемых этапов с acceptance.
+7. **Security risks**: top-5 рисков и mitigations.
+8. **Test plan**: unit / integration / E2E / contract / security по test-pyramid.
+9. **Edge cases**: ≥ 5 пунктов.
+10. **Knowledge capture**: какие документы вики обновить после проекта.
 
 ## Output schema
 
@@ -68,4 +69,5 @@ source_priority: "internal"
 - [discovery-interview prompt](discovery-interview.md)
 - [implementation-plan prompt](implementation-plan.md)
 - [choose-stack prompt](choose-stack.md)
+- [site architecture decision router](../docs/01-development-process/site-architecture-decision-router.md)
 - [docs/13-playbooks/index.md](../docs/13-playbooks/index.md)

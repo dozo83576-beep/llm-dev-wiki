@@ -1,7 +1,7 @@
 ---
 title: "Выбор стека"
 category: "process"
-updated: "2026-06-04"
+updated: "2026-06-07"
 status: "active"
 tags: ["stack", "architecture"]
 source_priority: "official-docs"
@@ -28,6 +28,10 @@ source_priority: "official-docs"
 
 Базовый выбор по умолчанию: [Next.js Fullstack](../../stacks/nextjs-fullstack.md) + TypeScript + PostgreSQL + Prisma/Drizzle + Auth.js/Clerk/Supabase. Отклоняйся от него только при конкретной причине.
 
+## Автономный выбор по запросу
+
+Если пользователь описывает сайт свободным текстом, сначала пропусти запрос через [site architecture decision router](site-architecture-decision-router.md). Wiki может рекомендовать стек только при `high` или `medium` confidence: тип продукта, SEO/auth/data constraints и hosting должны быть понятны. При `low` confidence не выбирай стек "из головы" — задай до 3 вопросов, которые сильнее всего меняют архитектуру.
+
 ## Правила выбора
 
 - Если страница публичная и должна привлекать трафик, сначала проверь [SEO](../02-frontend/SEO.md), [Performance](../02-frontend/Performance.md) и rendering strategy.
@@ -48,4 +52,4 @@ source_priority: "official-docs"
 - [Next.js Docs](https://nextjs.org/docs)
 - [React Docs](https://react.dev/)
 - [Astro Docs](https://docs.astro.build/)
-- См. [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [Runtime selection](runtime-selection.md), [project discovery](../../checklists/project-discovery.md), [release readiness](../../checklists/release-readiness.md).
+- См. [Site architecture decision router](site-architecture-decision-router.md), [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [Runtime selection](runtime-selection.md), [project discovery](../../checklists/project-discovery.md), [release readiness](../../checklists/release-readiness.md).

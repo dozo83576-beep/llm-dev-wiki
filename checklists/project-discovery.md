@@ -1,7 +1,7 @@
 ---
 title: "Project discovery checklist"
 category: "checklist"
-updated: "2026-05-24"
+updated: "2026-06-07"
 status: "active"
 tags: ["discovery", "kickoff"]
 source_priority: "internal"
@@ -16,6 +16,7 @@ Gated checklist для kickoff'а нового проекта. Формат: к�
 - [ ] **Цель проекта** сформулирована одним предложением (problem → outcome) — product owner — block.
 - [ ] **Out of scope** явно зафиксирован — product owner — block.
 - [ ] **Success metrics** определены и измеримы — product owner — block.
+- [ ] **Сырой запрос классифицирован** через [site architecture decision router](../docs/01-development-process/site-architecture-decision-router.md): confidence выставлен, assumptions и blockers названы — tech lead — block.
 - [ ] **Тип проекта** выбран из [matrix стеков](../docs/01-development-process/stack-selection.md) → playbook назначен — tech lead — block — [playbooks](../docs/13-playbooks/index.md).
 
 ## Users & roles

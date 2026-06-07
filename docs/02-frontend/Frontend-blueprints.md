@@ -1,7 +1,7 @@
 ---
 title: "Frontend blueprints"
 category: "frontend"
-updated: "2026-06-04"
+updated: "2026-06-07"
 status: "active"
 tags: ["frontend", "blueprint", "site", "production"]
 source_priority: "internal"
@@ -10,6 +10,8 @@ source_priority: "internal"
 # Frontend blueprints
 
 Blueprint фиксирует минимальный production-контур сайта до генерации кода: стек, rendering strategy, routes, data boundaries, visual system, states, tests и deploy gates.
+
+Перед blueprint сначала используй [site architecture decision router](../01-development-process/site-architecture-decision-router.md), если вход — сырой пользовательский запрос. Blueprint начинается только после выбора route/playbook или после фиксации вопросов, которые блокируют stack choice.
 
 ## Когда использовать
 
@@ -48,4 +50,4 @@ Blueprint фиксирует минимальный production-контур са
 
 ## Источники
 
-- См. [Stack selection](../01-development-process/stack-selection.md), [Runtime selection](../01-development-process/runtime-selection.md), [Astro](Astro.md), [TanStack Start](TanStack-Start.md), [Vite + React](Vite-React.md), [React Router](React-Router.md), [Nuxt](Nuxt.md), [SvelteKit](SvelteKit.md), [htmx](HTMX.md), [Payload CMS](Payload-CMS.md), [Next.js](Nextjs.md), [UI architecture](UI-architecture.md), [Design systems](Design-systems.md).
+- См. [Site architecture decision router](../01-development-process/site-architecture-decision-router.md), [Stack selection](../01-development-process/stack-selection.md), [Runtime selection](../01-development-process/runtime-selection.md), [Astro](Astro.md), [TanStack Start](TanStack-Start.md), [Vite + React](Vite-React.md), [React Router](React-Router.md), [Nuxt](Nuxt.md), [SvelteKit](SvelteKit.md), [htmx](HTMX.md), [Payload CMS](Payload-CMS.md), [Next.js](Nextjs.md), [UI architecture](UI-architecture.md), [Design systems](Design-systems.md).

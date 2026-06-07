@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **237**
-- Активных: **226**
+- Всего документов: **238**
+- Активных: **227**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **522664** символов
+- Суммарный объём: **529839** символов
 
 ## docs
 
@@ -27,7 +27,8 @@ source_priority: "internal"
 | [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2202 | 2026-05-24 | active | internal |
 | [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 1260 | 2026-05-24 | active | internal |
 | [docs/01-development-process/runtime-selection.md](../docs/01-development-process/runtime-selection.md) | Runtime selection | process | 2374 | 2026-06-04 | active | mixed |
-| [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 5081 | 2026-06-04 | active | official-docs |
+| [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 5095 | 2026-06-07 | active | internal |
+| [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 5604 | 2026-06-07 | active | official-docs |
 | [docs/02-frontend/AI-UI-streaming.md](../docs/02-frontend/AI-UI-streaming.md) | AI UI streaming | frontend | 2997 | 2026-06-06 | active | mixed |
 | [docs/02-frontend/Accessibility.md](../docs/02-frontend/Accessibility.md) | Accessibility | frontend | 1928 | 2026-05-27 | active | official-docs |
 | [docs/02-frontend/Analytics.md](../docs/02-frontend/Analytics.md) | Analytics | frontend | 1330 | 2026-05-24 | active | internal |
@@ -38,7 +39,7 @@ source_priority: "internal"
 | [docs/02-frontend/Design-systems.md](../docs/02-frontend/Design-systems.md) | Design systems | frontend | 2971 | 2026-06-04 | active | internal |
 | [docs/02-frontend/Forms-validation.md](../docs/02-frontend/Forms-validation.md) | Forms and validation | frontend | 1927 | 2026-05-27 | active | official-docs |
 | [docs/02-frontend/Fresh.md](../docs/02-frontend/Fresh.md) | Fresh | frontend | 2363 | 2026-06-04 | active | official-docs |
-| [docs/02-frontend/Frontend-blueprints.md](../docs/02-frontend/Frontend-blueprints.md) | Frontend blueprints | frontend | 3139 | 2026-06-04 | active | internal |
+| [docs/02-frontend/Frontend-blueprints.md](../docs/02-frontend/Frontend-blueprints.md) | Frontend blueprints | frontend | 3536 | 2026-06-07 | active | internal |
 | [docs/02-frontend/Frontend-testing.md](../docs/02-frontend/Frontend-testing.md) | Frontend testing | frontend | 1888 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/HTMX.md](../docs/02-frontend/HTMX.md) | htmx | frontend | 2927 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/I18n.md](../docs/02-frontend/I18n.md) | Internationalization | frontend | 1289 | 2026-05-24 | active | official-docs |
@@ -212,9 +213,9 @@ source_priority: "internal"
 | Файл | Заголовок | Категория | Объём | Updated | Status | Source priority |
 |------|-----------|-----------|-------|---------|--------|-----------------|
 | [prompts/backend-audit.md](../prompts/backend-audit.md) | Prompt: backend audit | prompt | 2389 | 2026-05-24 | active | internal |
-| [prompts/choose-stack.md](../prompts/choose-stack.md) | Prompt: choose stack | prompt | 2070 | 2026-05-24 | active | internal |
+| [prompts/choose-stack.md](../prompts/choose-stack.md) | Prompt: choose stack | prompt | 2724 | 2026-06-07 | active | internal |
 | [prompts/code-review.md](../prompts/code-review.md) | Prompt: code review | prompt | 1880 | 2026-05-24 | active | internal |
-| [prompts/create-new-project.md](../prompts/create-new-project.md) | Prompt: create new project | prompt | 2936 | 2026-05-24 | active | internal |
+| [prompts/create-new-project.md](../prompts/create-new-project.md) | Prompt: create new project | prompt | 3217 | 2026-06-07 | active | internal |
 | [prompts/database-migration-review.md](../prompts/database-migration-review.md) | Prompt: database migration review | prompt | 2826 | 2026-05-24 | active | internal |
 | [prompts/debug-issue.md](../prompts/debug-issue.md) | Prompt: debug issue | prompt | 2260 | 2026-05-24 | active | internal |
 | [prompts/deploy.md](../prompts/deploy.md) | Prompt: deploy | prompt | 2460 | 2026-05-24 | active | internal |
@@ -243,7 +244,7 @@ source_priority: "internal"
 | [checklists/backend-review.md](../checklists/backend-review.md) | Backend review checklist | checklist | 3761 | 2026-05-24 | active | internal |
 | [checklists/database-review.md](../checklists/database-review.md) | Database review checklist | checklist | 3498 | 2026-05-24 | active | internal |
 | [checklists/frontend-review.md](../checklists/frontend-review.md) | Frontend review checklist | checklist | 7653 | 2026-06-04 | active | internal |
-| [checklists/project-discovery.md](../checklists/project-discovery.md) | Project discovery checklist | checklist | 3622 | 2026-05-24 | active | internal |
+| [checklists/project-discovery.md](../checklists/project-discovery.md) | Project discovery checklist | checklist | 3847 | 2026-06-07 | active | internal |
 | [checklists/release-readiness.md](../checklists/release-readiness.md) | Release readiness checklist | checklist | 4257 | 2026-05-24 | active | internal |
 | [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 5421 | 2026-05-24 | active | internal |
 | [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 2914 | 2026-06-07 | active | internal |
