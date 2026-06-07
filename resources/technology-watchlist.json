@@ -59,7 +59,7 @@
     "name": "TanStack Start",
     "ecosystem": "npm",
     "package": "@tanstack/react-start",
-    "currentVersion": "1.168.20",
+    "currentVersion": "1.168.25",
     "docsUrl": "https://tanstack.com/start/latest/docs/framework/react/overview",
     "notes": "React full-stack framework alternative with Router and Query-first patterns."
   },
@@ -153,7 +153,7 @@
     "name": "Panda CSS",
     "ecosystem": "npm",
     "package": "@pandacss/dev",
-    "currentVersion": "1.11.2",
+    "currentVersion": "1.11.3",
     "docsUrl": "https://panda-css.com/docs/overview/getting-started",
     "notes": "Build-time type-safe CSS-in-JS and design-token system."
   },

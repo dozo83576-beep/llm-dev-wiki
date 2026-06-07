@@ -1,6 +1,7 @@
 param(
     [string]$Root = (Resolve-Path ".").Path,
-    [switch]$FailOnUpdates
+    [switch]$FailOnUpdates,
+    [switch]$UseFixtureVersions
 )
 
 $ErrorActionPreference = "Stop"
@@ -55,9 +56,14 @@ function Get-GitHubLatestTag {
 function Get-EntryVersion {
     param($Entry)
 
-    $fixtureVersion = Get-FixtureVersion -Entry $Entry
-    if ($null -ne $fixtureVersion) {
-        return $fixtureVersion
+    if ($UseFixtureVersions) {
+        $fixtureVersion = Get-FixtureVersion -Entry $Entry
+        if ($null -ne $fixtureVersion) {
+            if ($fixtureVersion -eq "__ERROR__") {
+                throw "Fixture forced update check failure for $($Entry.name)"
+            }
+            return $fixtureVersion
+        }
     }
 
     switch ($Entry.ecosystem) {
@@ -143,6 +149,7 @@ foreach ($entry in $entries) {
         if (-not [string]::IsNullOrWhiteSpace($currentVersion)) {
             $latestVersion = $currentVersion
             $status = "check-unavailable"
+            $errorCount++
         }
         else {
             $latestVersion = "error"

@@ -1,7 +1,7 @@
 ---
 title: "Styling systems"
 category: "frontend"
-updated: "2026-06-04"
+updated: "2026-06-07"
 status: "active"
 tags: ["css", "tailwind", "panda", "design-system"]
 source_priority: "mixed"
@@ -10,6 +10,8 @@ source_priority: "mixed"
 # Styling systems
 
 Styling system decides how tokens, layout, variants, responsive behavior and component states are expressed. It should support design quality, not just fast class writing.
+
+Freshness note: Panda CSS watchlist refreshed to `@pandacss/dev` `1.11.3` on 2026-06-07. Guidance remains focused on build-time type-safe tokens/recipes and static atomic CSS.
 
 ## Когда использовать
 
@@ -56,5 +58,5 @@ Theming, localization, high contrast mode, reduced motion, print styles, user-ge
 ## Источники
 
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
-- [Panda CSS Docs](https://panda-css.com/docs/overview/getting-started)
+- [Panda CSS Docs](https://panda-css.com/docs/overview/getting-started) — refreshed 2026-06-07.
 - См. [Tailwind](Tailwind.md), [Design systems](Design-systems.md), [Component-driven development](Component-driven-development.md), [Frontend review checklist](../../checklists/frontend-review.md).

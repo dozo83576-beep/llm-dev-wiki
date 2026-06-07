@@ -32,13 +32,22 @@ def write_watchlist(root: Path, entries: list[dict[str, str]]) -> None:
     )
 
 
-def check_updates(root: Path, entries: list[dict[str, str]], latest: dict[str, str]) -> subprocess.CompletedProcess[str]:
+def check_updates(
+    root: Path,
+    entries: list[dict[str, str]],
+    latest: dict[str, str],
+    *,
+    use_fixtures: bool = True,
+) -> subprocess.CompletedProcess[str]:
     write_watchlist(root, entries)
     env = {
         **dict(__import__("os").environ),
         "LLM_DEV_WIKI_UPDATE_FIXTURES_JSON": json.dumps(latest),
     }
-    return run_pwsh(CHECK_UPDATES, "-Root", str(root), env=env)
+    args = ["-Root", str(root)]
+    if use_fixtures:
+        args.append("-UseFixtureVersions")
+    return run_pwsh(CHECK_UPDATES, *args, env=env)
 
 
 def base_entry(**overrides: str) -> dict[str, str]:
@@ -112,6 +121,31 @@ def test_stable_latest_counts_update(tmp_path: Path) -> None:
     assert result.returncode == 0, result.stdout + result.stderr
     assert "- Updates found: 1" in result.stdout
     assert "| Example | npm | example | 1.0.0 | 1.0.1 | update-available |" in result.stdout
+
+
+def test_fixture_versions_are_ignored_without_explicit_flag(tmp_path: Path) -> None:
+    result = check_updates(
+        tmp_path,
+        [base_entry(ecosystem="manual", currentVersion="")],
+        {"manual:example": "fixture-version"},
+        use_fixtures=False,
+    )
+
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "| Example | manual | example |  | manual-check | manual |" in result.stdout
+
+
+def test_check_unavailable_counts_as_check_failure(tmp_path: Path) -> None:
+    result = check_updates(
+        tmp_path,
+        [base_entry()],
+        {"npm:example": "__ERROR__"},
+    )
+
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "- Updates found: 0" in result.stdout
+    assert "- Check failures: 1" in result.stdout
+    assert "| Example | npm | example | 1.0.0 | 1.0.0 | check-unavailable |" in result.stdout
 
 
 def write_minimal_audit_fixture(root: Path, watchlist_entry: dict[str, str]) -> None:

@@ -1,7 +1,7 @@
 ---
 title: "Мониторинг обновлений технологий"
 category: "maintenance"
-updated: "2026-06-06"
+updated: "2026-06-07"
 status: "active"
 tags: ["maintenance", "updates", "automation"]
 source_priority: "internal"
@@ -53,6 +53,10 @@ python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-
 По умолчанию watchlist считает production drift только по stable версиям. Если registry или GitHub tag возвращает prerelease (`rc`, `alpha`, `beta`, `preview`, `canary`, `nightly` и похожие), `tools/check-updates.ps1` ставит статус `prerelease-ignored` и не увеличивает `Updates found`.
 
 Исключение задается явно через `"versionPolicy": "allow-prerelease"`. Используй его только для осознанного мониторинга draft/RC стандартов, где prerelease важен как freshness-сигнал, но не становится production baseline автоматически. Пример: MCP RC отслеживается, но production policy меняется только после проверки stable docs, client compatibility и security guidance.
+
+Если внешний источник недоступен, статус `check-unavailable` считается `Check failures`. Scheduled workflow должен создать или обновить review issue, даже если в watchlist уже есть `currentVersion`.
+
+Fixture режим для тестов включается только явным параметром `-UseFixtureVersions`; переменная `LLM_DEV_WIKI_UPDATE_FIXTURES_JSON` без этого параметра игнорируется.
 
 ## Как добавить технологию
 

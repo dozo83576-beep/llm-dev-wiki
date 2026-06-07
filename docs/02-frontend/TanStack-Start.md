@@ -1,7 +1,7 @@
 ---
 title: "TanStack Start"
 category: "frontend"
-updated: "2026-06-04"
+updated: "2026-06-07"
 status: "active"
 tags: ["tanstack", "react", "fullstack", "ssr"]
 source_priority: "official-docs"
@@ -12,6 +12,8 @@ source_priority: "official-docs"
 TanStack Start — React full-stack framework для команд, которым нужен SSR/streaming/server functions и официальный Query-first data flow без Next.js App Router как default boundary.
 
 Если вопрос звучит как "что выбрать вместо Next.js для React full-stack с TanStack Query", начни с этого документа: TanStack Start является первым кандидатом, а Next.js остаётся default, если команда уже приняла App Router/RSC/cache модель.
+
+Freshness note: watchlist refreshed to `@tanstack/react-start` `1.168.25` on 2026-06-07. Official docs still mark TanStack Start as Release Candidate; this is not a stable v1 production baseline.
 
 ## Когда использовать
 
@@ -60,6 +62,6 @@ Multi-tenant query bleed, stale optimistic update после failed mutation, de
 
 ## Источники
 
-- [TanStack Start React Docs](https://tanstack.com/start/latest/docs/framework/react/overview)
+- [TanStack Start React Docs](https://tanstack.com/start/latest/docs/framework/react/overview) — refreshed 2026-06-07.
 - [TanStack Start vs Next.js](https://tanstack.dev/start/latest/docs/framework/react/start-vs-nextjs)
 - См. [Frontend blueprints](Frontend-blueprints.md), [TanStack Query](TanStack-Query.md), [React SPA + API](../../stacks/react-spa-api.md), [Stack selection](../01-development-process/stack-selection.md).
