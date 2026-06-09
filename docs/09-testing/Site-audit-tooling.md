@@ -41,6 +41,16 @@ pwsh tools/site-audit.ps1 -Url https://staging.example.com -LighthouseMinPerform
 
 Отчёты пишутся в `site-audit-report.md`, `site-audit-report.json`, `lighthouse-*.html` и `lighthouse-*.json`. Эти файлы local-only и не коммитятся.
 
+## Как подключить в проект
+
+Для проектов в `D:\Work` добавь handoff command в README, project-local docs или `package.json` script:
+
+```powershell
+pwsh D:\Work\llm-dev-wiki\tools\site-audit.ps1 -Url http://localhost:3000
+```
+
+Готовый snippet для npm scripts и CI/manual smoke см. в [site audit project command](../10-templates/site-audit-project-command.md). Для CI без браузера используй `-SkipLighthouse -FailOnMedium`; полный Lighthouse лучше запускать на локальном/staging handoff.
+
 ## Что проверяет
 
 - `Content-Security-Policy`.

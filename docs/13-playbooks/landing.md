@@ -1,7 +1,7 @@
 ---
 title: "Playbook: Landing"
 category: "playbooks"
-updated: "2026-05-27"
+updated: "2026-06-10"
 status: "active"
 tags: ["landing", "seo", "conversion", "marketing"]
 source_priority: "internal"
@@ -24,7 +24,7 @@ source_priority: "internal"
 
 ## Стек по умолчанию
 
-[Astro](../02-frontend/Astro.md) (или Next.js статика) + Tailwind + forms endpoint (Resend / собственный) + analytics (Plausible/Umami) + SEO metadata + Lighthouse checks + image optimization. Для сайта с десятками страниц добавь [CMS content](../02-frontend/CMS-content.md).
+[Astro](../02-frontend/Astro.md) (или Next.js статика) + Tailwind + forms endpoint (Resend / собственный) + analytics (Plausible/Umami) + SEO metadata + Lighthouse checks + image optimization. Для сайта с десятками страниц добавь [CMS content](../02-frontend/CMS-content.md); для editor-owned marketing проверь [WordPress](../02-frontend/WordPress.md) или [Webflow](../02-frontend/Webflow.md).
 
 ## Порядок разработки
 
@@ -82,4 +82,4 @@ Hero-видео без poster, неоптимизированные images (Mb �
 
 ## Источники
 
-- См. [Astro](../02-frontend/Astro.md), [CMS content](../02-frontend/CMS-content.md), [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [Performance](../02-frontend/Performance.md), [SEO](../02-frontend/SEO.md), [Forms validation](../02-frontend/Forms-validation.md), [Analytics](../02-frontend/Analytics.md), [semantic theme text tokens](../../patterns/frontend/semantic-theme-text-tokens.md), [telegram lead notification](../../patterns/backend/telegram-lead-notification.md).
+- См. [Astro](../02-frontend/Astro.md), [Eleventy](../02-frontend/Eleventy.md), [Hugo](../02-frontend/Hugo.md), [CMS content](../02-frontend/CMS-content.md), [WordPress](../02-frontend/WordPress.md), [Webflow](../02-frontend/Webflow.md), [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [Performance](../02-frontend/Performance.md), [SEO](../02-frontend/SEO.md), [Forms validation](../02-frontend/Forms-validation.md), [Analytics](../02-frontend/Analytics.md), [semantic theme text tokens](../../patterns/frontend/semantic-theme-text-tokens.md), [telegram lead notification](../../patterns/backend/telegram-lead-notification.md).

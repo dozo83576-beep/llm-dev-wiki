@@ -1,7 +1,7 @@
 ---
 title: "Playbook: Headless commerce"
 category: "playbooks"
-updated: "2026-06-04"
+updated: "2026-06-10"
 status: "active"
 tags: ["commerce", "ecommerce", "headless", "checkout"]
 source_priority: "mixed"
@@ -26,7 +26,7 @@ Headless commerce отделяет storefront, catalog, checkout, payments, fulf
 ## Production-паттерны
 
 - **Stripe Checkout / Embedded Checkout**: simple one-off/subscription, low PCI scope, limited UI customization.
-- **Shopify Hydrogen**: Shopify operations + custom React storefront; Shopify remains source of truth.
+- **Shopify Hydrogen**: Shopify operations + custom React Router storefront; Shopify remains source of truth.
 - **Medusa**: custom commerce modules/workflows when team owns backend logic.
 - **Saleor**: GraphQL commerce API for custom storefront/marketplace needs.
 - Provider event is source of truth for payment state; local order state follows webhook/reconciliation.
@@ -60,4 +60,4 @@ Multi-currency rounding, partial refunds, subscription plus one-off cart, split 
 - [Medusa Docs](https://docs.medusajs.com/learn)
 - [Saleor Docs](https://docs.saleor.io/docs/3.x/)
 - [Stripe Checkout](https://docs.stripe.com/payments/checkout)
-- См. [E-commerce](ecommerce.md), [Marketplace](marketplace.md), [Stripe](../03-backend/Stripe.md), [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md).
+- См. [Shopify Hydrogen](shopify-hydrogen.md), [E-commerce](ecommerce.md), [Marketplace](marketplace.md), [Stripe](../03-backend/Stripe.md), [Payments](../03-backend/Payments.md), [Webhooks](../03-backend/Webhooks.md).

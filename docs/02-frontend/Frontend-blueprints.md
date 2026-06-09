@@ -1,7 +1,7 @@
 ---
 title: "Frontend blueprints"
 category: "frontend"
-updated: "2026-06-07"
+updated: "2026-06-10"
 status: "active"
 tags: ["frontend", "blueprint", "site", "production"]
 source_priority: "internal"
@@ -34,7 +34,12 @@ Blueprint фиксирует минимальный production-контур са
 - **Edge-first**: Vite/React/static frontend + Cloudflare Workers + Hono, bindings, runtime limits, preview Worker smoke.
 - **Hypermedia CRUD**: htmx + server-rendered fragments, CSRF, form validation, full-page fallback.
 - **CMS/editorial**: Payload/headless CMS, preview auth, media pipeline, redirects, SEO fields and revalidation.
+- **WordPress/editorial**: WordPress theme/headless mode, plugin allowlist, roles, preview, REST/API exposure, cache purge.
+- **Visual builder**: Webflow marketing boundary, CMS collections, forms/analytics consent, no custom product logic.
+- **Static docs/blog**: Astro/Eleventy/Hugo, content model, links, sitemap, redirects, no unnecessary client JS.
 - **E-commerce**: Next.js storefront, server-side price/tax, provider-hosted checkout, webhook idempotency, inventory race tests.
+- **Shopify-first commerce**: Shopify Hydrogen, Storefront API, Shopify checkout boundary, product/cart route tests.
+- **Enterprise Angular**: Angular SSR only when Angular is already a platform standard; hydration and browser API checks required.
 - **Admin dashboard**: dense layout, tables, filters in URL, permission denied states, audit log and destructive action confirmation.
 
 ## Частые ошибки
@@ -50,4 +55,4 @@ Blueprint фиксирует минимальный production-контур са
 
 ## Источники
 
-- См. [Site architecture decision router](../01-development-process/site-architecture-decision-router.md), [Stack selection](../01-development-process/stack-selection.md), [Runtime selection](../01-development-process/runtime-selection.md), [Astro](Astro.md), [TanStack Start](TanStack-Start.md), [Vite + React](Vite-React.md), [React Router](React-Router.md), [Nuxt](Nuxt.md), [SvelteKit](SvelteKit.md), [htmx](HTMX.md), [Payload CMS](Payload-CMS.md), [Next.js](Nextjs.md), [UI architecture](UI-architecture.md), [Design systems](Design-systems.md).
+- См. [Site architecture decision router](../01-development-process/site-architecture-decision-router.md), [Stack selection](../01-development-process/stack-selection.md), [Runtime selection](../01-development-process/runtime-selection.md), [Astro](Astro.md), [TanStack Start](TanStack-Start.md), [Vite + React](Vite-React.md), [React Router](React-Router.md), [Nuxt](Nuxt.md), [SvelteKit](SvelteKit.md), [htmx](HTMX.md), [Payload CMS](Payload-CMS.md), [WordPress](WordPress.md), [Strapi](Strapi.md), [Sanity](Sanity.md), [Directus](Directus.md), [Webflow](Webflow.md), [Eleventy](Eleventy.md), [Hugo](Hugo.md), [Shopify Hydrogen](../13-playbooks/shopify-hydrogen.md), [Next.js](Nextjs.md), [UI architecture](UI-architecture.md), [Design systems](Design-systems.md).

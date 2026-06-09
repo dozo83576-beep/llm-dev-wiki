@@ -1,7 +1,7 @@
 ---
 title: "Release readiness checklist"
 category: "checklist"
-updated: "2026-05-24"
+updated: "2026-06-10"
 status: "active"
 tags: ["release", "deploy", "release-gate"]
 source_priority: "internal"
@@ -35,6 +35,7 @@ Gated checklist для production-релиза. Срабатывает посл�
 
 - [ ] **Preview / staging deploy** зелёный и доступен — devops owner — block.
 - [ ] **Smoke E2E** на preview пройдены (login, key write, key read) — QA — block — [E2E testing](../docs/09-testing/E2E-testing.md).
+- [ ] **Site audit smoke** пройден для public web routes: `pwsh tools/site-audit.ps1 -Url <preview-url>` или documented exception — frontend/devops — warn — [Site audit tooling](../docs/09-testing/Site-audit-tooling.md).
 - [ ] **Critical user-journey** проверен вручную stakeholder'ом — product owner — warn.
 
 ## Observability & alerts

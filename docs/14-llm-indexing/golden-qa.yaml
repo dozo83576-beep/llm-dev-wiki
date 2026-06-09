@@ -414,3 +414,70 @@ questions:
       - prompts/post-task-learning-review.md
       - docs/15-maintenance/retro-process.md
       - case-studies/failures/README.md
+
+  - id: q-wordpress-vs-next-astro
+    question: "Когда выбрать WordPress вместо Next.js или Astro?"
+    expected_paths:
+      - docs/02-frontend/WordPress.md
+      - docs/02-frontend/CMS-content.md
+      - docs/01-development-process/stack-selection.md
+
+  - id: q-headless-wordpress
+    question: "Когда headless WordPress оправдан для современного сайта?"
+    expected_paths:
+      - docs/02-frontend/WordPress.md
+      - docs/02-frontend/CMS-content.md
+      - docs/01-development-process/site-architecture-decision-router.md
+
+  - id: q-react-router-framework-vs-next
+    question: "React Router Framework или Next.js: что выбрать?"
+    expected_paths:
+      - docs/02-frontend/React-Router.md
+      - docs/02-frontend/Nextjs.md
+      - docs/01-development-process/stack-selection.md
+
+  - id: q-shopify-hydrogen-choice
+    question: "Когда Shopify Hydrogen лучше generic Next.js commerce storefront?"
+    expected_paths:
+      - docs/13-playbooks/shopify-hydrogen.md
+      - docs/13-playbooks/headless-commerce.md
+      - docs/13-playbooks/ecommerce.md
+
+  - id: q-cms-payload-strapi-sanity-directus-wordpress
+    question: "Как выбрать CMS: Payload, Strapi, Sanity, Directus или WordPress?"
+    expected_paths:
+      - docs/02-frontend/CMS-content.md
+      - docs/02-frontend/Payload-CMS.md
+      - docs/02-frontend/Strapi.md
+      - docs/02-frontend/Sanity.md
+      - docs/02-frontend/Directus.md
+      - docs/02-frontend/WordPress.md
+
+  - id: q-laravel-livewire-vs-spa
+    question: "Когда Laravel Livewire лучше SPA?"
+    expected_paths:
+      - docs/02-frontend/Laravel-Livewire.md
+      - docs/02-frontend/HTMX.md
+      - docs/01-development-process/stack-selection.md
+
+  - id: q-webflow-choice
+    question: "Когда выбрать Webflow для сайта?"
+    expected_paths:
+      - docs/02-frontend/Webflow.md
+      - docs/13-playbooks/landing.md
+      - docs/02-frontend/CMS-content.md
+
+  - id: q-eleventy-hugo-astro-static
+    question: "Eleventy, Hugo или Astro: что выбрать для статического сайта?"
+    expected_paths:
+      - docs/02-frontend/Eleventy.md
+      - docs/02-frontend/Hugo.md
+      - docs/02-frontend/Astro.md
+      - docs/01-development-process/stack-selection.md
+
+  - id: q-site-audit-handoff-command
+    question: "Как подключить site audit перед handoff сайта?"
+    expected_paths:
+      - docs/09-testing/Site-audit-tooling.md
+      - docs/10-templates/site-audit-project-command.md
+      - prompts/create-new-project.md

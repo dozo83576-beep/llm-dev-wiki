@@ -1,7 +1,7 @@
 ---
 title: "Site architecture decision router"
 category: "process"
-updated: "2026-06-07"
+updated: "2026-06-10"
 status: "active"
 tags: ["architecture", "stack", "site", "decision"]
 source_priority: "internal"
@@ -40,9 +40,13 @@ Router превращает сырой запрос пользователя в 
 |---|---|---|---|
 | Маркетинговый лендинг, SEO, форма заявки | [landing](../13-playbooks/landing.md) | Astro или Next.js static + serverless form | Неясны CMS, локали, аналитика, form delivery |
 | Контентный сайт, редакторы, публикации | [CMS content](../02-frontend/CMS-content.md) | Astro/Next.js + headless CMS/Payload | Неясны preview, media, roles, redirects |
+| Существующий WordPress/editorial workflow | [WordPress](../02-frontend/WordPress.md) | WordPress theme или headless WordPress + Astro/Next | Неясны plugin policy, roles, cache, preview |
+| Marketing team хочет visual builder | [Webflow](../02-frontend/Webflow.md) | Webflow CMS + forms/API boundary | Неясны custom logic, vendor lock-in, scripts |
+| Static docs/blog без app state | [Eleventy](../02-frontend/Eleventy.md) / [Hugo](../02-frontend/Hugo.md) / [Astro](../02-frontend/Astro.md) | Static generator + CDN | Неясны редакторы, search, redirects |
 | SaaS, подписки, личный кабинет | [saas](../13-playbooks/saas.md) | Next.js fullstack + PostgreSQL + Auth + Stripe | Неясны tenancy, roles, billing model, compliance |
 | Админка или internal CRUD | [admin dashboard](../13-playbooks/admin-dashboard.md) | React SPA + API или Next.js | Неясны existing API, SSO, permissions, audit log |
 | E-commerce или checkout | [e-commerce](../13-playbooks/ecommerce.md) + [headless commerce](../13-playbooks/headless-commerce.md) | Next.js storefront + commerce/payment backend | Неясны catalog, tax, inventory, refunds, marketplace |
+| Shopify-first custom storefront | [Shopify Hydrogen](../13-playbooks/shopify-hydrogen.md) | Hydrogen + Shopify Storefront API + Shopify checkout | Неясны Shopify source of truth, checkout constraints |
 | Edge-first, low latency, Cloudflare | [Cloudflare Workers full-stack](../08-devops-deploy/Cloudflare-Workers-fullstack.md) | Vite/React + Workers + Hono | Нужны Node-only APIs, long jobs, relational transactions |
 | Rich app после логина с отдельным API | [React SPA + API](../../stacks/react-spa-api.md) | Vite + React Router + TanStack Query | Неясны SEO, cookie/CORS policy, auth owner |
 | React full-stack без Next.js | [TanStack Start](../02-frontend/TanStack-Start.md) | TanStack Start + Query-first data flow | Команда не готова к RC/maturity risk |
@@ -65,6 +69,7 @@ Router превращает сырой запрос пользователя в 
 ## Что нельзя делать
 
 - Выбирать Next.js, React SPA или Cloudflare только потому, что это familiar default.
+- Выбирать WordPress/Webflow только потому, что редакторам удобно, если есть custom product logic.
 - Считать "сайт" достаточным требованием для выбора БД, auth, платежей или hosting.
 - Игнорировать compliance, PII, платежи, roles и tenant boundaries.
 - Превращать low confidence в длинный implementation plan вместо коротких уточняющих вопросов.

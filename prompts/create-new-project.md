@@ -1,7 +1,7 @@
 ---
 title: "Prompt: create new project"
 category: "prompt"
-updated: "2026-06-07"
+updated: "2026-06-10"
 status: "active"
 tags: ["project", "kickoff", "architecture"]
 source_priority: "internal"
@@ -35,8 +35,9 @@ source_priority: "internal"
 6. **Phased plan**: разбей реализацию на 3–6 проверяемых этапов с acceptance.
 7. **Security risks**: top-5 рисков и mitigations.
 8. **Test plan**: unit / integration / E2E / contract / security по test-pyramid.
-9. **Edge cases**: ≥ 5 пунктов.
-10. **Knowledge capture**: какие документы вики обновить после проекта.
+9. **Site handoff audit**: для сайтов добавь команду `pwsh D:\Work\llm-dev-wiki\tools\site-audit.ps1 -Url <dev-or-staging-url>` и ключевые routes.
+10. **Edge cases**: ≥ 5 пунктов.
+11. **Knowledge capture**: какие документы вики обновить после проекта.
 
 ## Output schema
 
@@ -48,8 +49,9 @@ source_priority: "internal"
 5. План по этапам (этап → acceptance)
 6. Security risks (top-5)
 7. Test plan
-8. Edge cases
-9. Knowledge capture targets
+8. Site audit command
+9. Edge cases
+10. Knowledge capture targets
 ```
 
 ## Refusal rules
@@ -71,3 +73,4 @@ source_priority: "internal"
 - [choose-stack prompt](choose-stack.md)
 - [site architecture decision router](../docs/01-development-process/site-architecture-decision-router.md)
 - [docs/13-playbooks/index.md](../docs/13-playbooks/index.md)
+- [site audit project command](../docs/10-templates/site-audit-project-command.md)

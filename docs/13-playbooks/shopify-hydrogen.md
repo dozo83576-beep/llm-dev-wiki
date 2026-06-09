@@ -1,0 +1,51 @@
+---
+title: "Playbook: Shopify Hydrogen"
+category: "playbooks"
+updated: "2026-06-10"
+status: "active"
+tags: ["shopify", "hydrogen", "commerce", "react-router"]
+source_priority: "official-docs"
+---
+
+# Playbook: Shopify Hydrogen
+
+Shopify Hydrogen — Shopify-first custom storefront stack. Он built on React Router and Storefront API, а Shopify остаётся source of truth для catalog, cart, checkout and commerce operations.
+
+## Когда использовать
+
+- Бизнес уже на Shopify и хочет custom React storefront.
+- Нужны Shopify catalog, inventory, discounts, checkout, markets and operations.
+- Команда хочет больше контроля над UX, чем theme storefront, но не хочет строить commerce backend.
+- Checkout должен оставаться в Shopify boundary.
+
+## Когда не использовать
+
+- Commerce backend не Shopify или нужен marketplace/split-payments вне Shopify model.
+- Требуется generic storefront, который должен легко сменить commerce provider.
+- Команда не готова к Shopify platform constraints and API limits.
+- Один товар/subscription проще закрыть Stripe Checkout.
+
+## Production-паттерны
+
+- Shopify — source of truth; local cache/search только производные данные.
+- React Router routes проектируются вокруг product, collection, cart, account and content routes.
+- Storefront API tokens and customer data не попадают в client beyond intended public scope.
+- Price, inventory, discounts and checkout state берутся с server/provider boundary.
+- Preview/staging uses non-production store or protected environment.
+
+## Частые ошибки
+
+- Строить custom checkout вместо Shopify checkout без compliance plan.
+- Кешировать price/inventory без invalidation.
+- Смешивать CMS/product content без ownership.
+- Считать Hydrogen универсальной заменой Next.js e-commerce.
+
+## Проверка
+
+Проверь product/collection pages, cart mutations, checkout redirect, discount edge cases, inventory changes, localization/markets, SEO metadata, analytics and site audit.
+
+## Источники
+
+- [Shopify Hydrogen Docs](https://shopify.dev/docs/api/hydrogen/latest)
+- [Hydrogen React](https://shopify.dev/docs/api/hydrogen-react/latest)
+- См. [Headless commerce](headless-commerce.md), [E-commerce](ecommerce.md), [React Router](../02-frontend/React-Router.md), [Payments](../03-backend/Payments.md).

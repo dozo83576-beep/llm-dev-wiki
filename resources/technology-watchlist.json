@@ -166,6 +166,107 @@
     "notes": "TypeScript SDK for streaming AI UIs and provider-agnostic model integrations."
   },
   {
+    "name": "WordPress",
+    "ecosystem": "manual",
+    "currentVersion": "",
+    "docsUrl": "https://developer.wordpress.org/",
+    "notes": "CMS, block themes, REST API and security/plugin lifecycle; review manually because hosting/core/plugin versions are deployment-specific."
+  },
+  {
+    "name": "React Router",
+    "ecosystem": "npm",
+    "package": "react-router",
+    "currentVersion": "7.17.0",
+    "docsUrl": "https://reactrouter.com/",
+    "notes": "React routing and framework mode successor path for Remix-style apps."
+  },
+  {
+    "name": "Shopify Hydrogen",
+    "ecosystem": "npm",
+    "package": "@shopify/hydrogen",
+    "currentVersion": "2026.4.3",
+    "docsUrl": "https://shopify.dev/docs/api/hydrogen/latest",
+    "notes": "Shopify-first custom React storefront stack built on React Router and Storefront API."
+  },
+  {
+    "name": "Strapi",
+    "ecosystem": "npm",
+    "package": "@strapi/strapi",
+    "currentVersion": "5.47.1",
+    "docsUrl": "https://docs.strapi.io/",
+    "notes": "Self-hosted headless CMS with content APIs and admin UI."
+  },
+  {
+    "name": "Sanity",
+    "ecosystem": "npm",
+    "package": "sanity",
+    "currentVersion": "5.30.0",
+    "docsUrl": "https://www.sanity.io/docs",
+    "notes": "Hosted structured content platform with Studio and visual editing."
+  },
+  {
+    "name": "Directus",
+    "ecosystem": "npm",
+    "package": "directus",
+    "currentVersion": "11.17.4",
+    "docsUrl": "https://directus.com/docs/",
+    "notes": "SQL-first headless CMS/data platform with REST and GraphQL APIs."
+  },
+  {
+    "name": "Laravel Livewire",
+    "ecosystem": "manual",
+    "currentVersion": "",
+    "docsUrl": "https://livewire.laravel.com/",
+    "notes": "Laravel full-stack UI framework; review manually with Laravel and Livewire release notes."
+  },
+  {
+    "name": "Webflow",
+    "ecosystem": "manual",
+    "currentVersion": "",
+    "docsUrl": "https://developers.webflow.com/",
+    "notes": "Visual builder, CMS and developer platform; platform changes require manual review."
+  },
+  {
+    "name": "Eleventy",
+    "ecosystem": "npm",
+    "package": "@11ty/eleventy",
+    "currentVersion": "3.1.6",
+    "docsUrl": "https://www.11ty.dev/docs/",
+    "notes": "Static site generator for docs, blogs and content sites."
+  },
+  {
+    "name": "Hugo",
+    "ecosystem": "github-releases",
+    "repository": "gohugoio/hugo",
+    "currentVersion": "v0.163.0",
+    "docsUrl": "https://gohugo.io/documentation/",
+    "notes": "Go-based static site generator for large content and documentation sites."
+  },
+  {
+    "name": "Vike",
+    "ecosystem": "npm",
+    "package": "vike",
+    "currentVersion": "0.4.259",
+    "docsUrl": "https://vike.dev/",
+    "notes": "Vite-based SSR/SSG meta-framework for React, Vue and other UI runtimes."
+  },
+  {
+    "name": "SolidStart",
+    "ecosystem": "npm",
+    "package": "@solidjs/start",
+    "currentVersion": "1.3.2",
+    "docsUrl": "https://start.solidjs.com/",
+    "notes": "SolidJS full-stack framework with SSR and deployment adapters."
+  },
+  {
+    "name": "Angular",
+    "ecosystem": "npm",
+    "package": "@angular/core",
+    "currentVersion": "22.0.0",
+    "docsUrl": "https://angular.dev/",
+    "notes": "Enterprise frontend framework; monitor SSR, hydration and platform releases."
+  },
+  {
     "name": "FastAPI",
     "ecosystem": "pypi",
     "package": "fastapi",
