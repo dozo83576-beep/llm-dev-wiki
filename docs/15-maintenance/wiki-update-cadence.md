@@ -1,7 +1,7 @@
 ---
 title: "Периодичность обновления вики"
 category: "maintenance"
-updated: "2026-06-07"
+updated: "2026-06-10"
 status: "active"
 tags: ["maintenance", "cadence", "corpus", "index"]
 source_priority: "internal"
@@ -84,7 +84,7 @@ python tools/build_embeddings.py --mode openai-embeddings
 python tools/run_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10
 ```
 
-Local-only изменения в `D:\Work\AGENT-PREFERENCES.local.md` не требуют wiki commit и не должны попадать в GitHub. Для них используй `pwsh tools/update-local-preferences.ps1 -DryRun`, затем `-Apply` только после подтверждения пользователя.
+Local-only изменения в `D:\Work\AGENT-PREFERENCES.local.md` не требуют wiki commit и не должны попадать в GitHub. Для них используй `pwsh tools/update-local-preferences.ps1 -DryRun`, затем `-Apply` только после подтверждения пользователя. Проверка существующего local preference file также не требует commit: `pwsh tools/scan-local-preferences.ps1 -PreferenceFile D:\Work\AGENT-PREFERENCES.local.md`.
 
 ## Частые ошибки
 

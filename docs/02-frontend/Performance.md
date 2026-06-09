@@ -1,7 +1,7 @@
 ---
 title: "Frontend performance"
 category: "frontend"
-updated: "2026-06-04"
+updated: "2026-06-10"
 status: "active"
 tags: ["performance", "frontend"]
 source_priority: "official-docs"
@@ -40,10 +40,10 @@ Performance budget нужен для всех публичных страниц,
 
 ## Проверка
 
-Lighthouse/WebPageTest для публичных страниц, bundle analyzer при росте bundle, Playwright smoke на slow network для ключевых flows. Проверяй at least mobile 360px, throttled network, first viewport screenshot, page weight, JS transferred, image weight и long tasks.
+Lighthouse/WebPageTest для публичных страниц, bundle analyzer при росте bundle, Playwright smoke на slow network для ключевых flows. Перед handoff можно запустить `pwsh tools/site-audit.ps1 -Url <url>`: он сохранит Lighthouse HTML/JSON и проверит базовые headers. Проверяй at least mobile 360px, throttled network, first viewport screenshot, page weight, JS transferred, image weight и long tasks.
 
 ## Источники
 
 - [web.dev Core Web Vitals](https://web.dev/articles/vitals)
 - [Next.js Image Optimization](https://nextjs.org/docs/app/building-your-application/optimizing/images)
-- См. [Astro](Astro.md), [Frontend blueprints](Frontend-blueprints.md), [Visual testing](../09-testing/Visual-testing.md).
+- См. [Astro](Astro.md), [Frontend blueprints](Frontend-blueprints.md), [Visual testing](../09-testing/Visual-testing.md), [Site audit tooling](../09-testing/Site-audit-tooling.md).

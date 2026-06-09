@@ -1,6 +1,6 @@
 {
-  "chunk_count": 1889,
-  "corpus_hash": "1792ebbc09c9ba367a211aac17fbdb70a03baf7119b9841987c1df591c7be6d7",
+  "chunk_count": 1899,
+  "corpus_hash": "be0857ea1e9424e0b3f8dbf6dd1521d5277c1909a295fea75b026a4364507d23",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -156,6 +156,7 @@
     "docs/09-testing/Mocks.md",
     "docs/09-testing/Playwright.md",
     "docs/09-testing/Security-testing.md",
+    "docs/09-testing/Site-audit-tooling.md",
     "docs/09-testing/Test-data.md",
     "docs/09-testing/Test-pyramid.md",
     "docs/09-testing/Unit-testing.md",
@@ -235,7 +236,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-06-09T22:17:03Z",
+  "generated_at": "2026-06-09T22:35:02Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }

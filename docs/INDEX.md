@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **242**
-- Активных: **231**
+- Всего документов: **243**
+- Активных: **232**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **549866** символов
+- Суммарный объём: **554892** символов
 
 ## docs
 
@@ -47,7 +47,7 @@ source_priority: "internal"
 | [docs/02-frontend/Nextjs.md](../docs/02-frontend/Nextjs.md) | Next.js | frontend | 2105 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/Nuxt.md](../docs/02-frontend/Nuxt.md) | Nuxt | frontend | 2708 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Payload-CMS.md](../docs/02-frontend/Payload-CMS.md) | Payload CMS | frontend | 2874 | 2026-06-10 | active | vendor-docs |
-| [docs/02-frontend/Performance.md](../docs/02-frontend/Performance.md) | Frontend performance | frontend | 2627 | 2026-06-04 | active | official-docs |
+| [docs/02-frontend/Performance.md](../docs/02-frontend/Performance.md) | Frontend performance | frontend | 2817 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Qwik.md](../docs/02-frontend/Qwik.md) | Qwik | frontend | 2446 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/React-Router.md](../docs/02-frontend/React-Router.md) | React Router | frontend | 1999 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/React.md](../docs/02-frontend/React.md) | React | frontend | 1636 | 2026-05-24 | active | official-docs |
@@ -159,7 +159,8 @@ source_priority: "internal"
 | [docs/09-testing/Load-testing.md](../docs/09-testing/Load-testing.md) | Load testing | testing | 2913 | 2026-05-24 | active | official-docs |
 | [docs/09-testing/Mocks.md](../docs/09-testing/Mocks.md) | Mocks | testing | 2838 | 2026-05-24 | active | internal |
 | [docs/09-testing/Playwright.md](../docs/09-testing/Playwright.md) | Playwright | testing | 2071 | 2026-05-24 | active | official-docs |
-| [docs/09-testing/Security-testing.md](../docs/09-testing/Security-testing.md) | Security testing | testing | 3399 | 2026-05-24 | active | official-docs |
+| [docs/09-testing/Security-testing.md](../docs/09-testing/Security-testing.md) | Security testing | testing | 3660 | 2026-06-10 | active | official-docs |
+| [docs/09-testing/Site-audit-tooling.md](../docs/09-testing/Site-audit-tooling.md) | Site audit tooling | testing | 3901 | 2026-06-10 | active | internal |
 | [docs/09-testing/Test-data.md](../docs/09-testing/Test-data.md) | Test data | testing | 2676 | 2026-05-24 | active | internal |
 | [docs/09-testing/Test-pyramid.md](../docs/09-testing/Test-pyramid.md) | Test pyramid | testing | 3188 | 2026-05-24 | active | internal |
 | [docs/09-testing/Unit-testing.md](../docs/09-testing/Unit-testing.md) | Unit testing | testing | 2776 | 2026-05-24 | active | internal |
@@ -186,7 +187,7 @@ source_priority: "internal"
 | [docs/14-llm-indexing/source-priority.md](../docs/14-llm-indexing/source-priority.md) | Source priority | llm-indexing | 2750 | 2026-05-24 | active | internal |
 | [docs/15-maintenance/retro-process.md](../docs/15-maintenance/retro-process.md) | Retro-процесс после инцидентов и провальных релизов | maintenance | 4000 | 2026-06-07 | active | internal |
 | [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 6158 | 2026-06-07 | active | internal |
-| [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 5545 | 2026-06-07 | active | internal |
+| [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 5707 | 2026-06-10 | active | internal |
 
 ## patterns
 
@@ -247,10 +248,10 @@ source_priority: "internal"
 | [checklists/api-review.md](../checklists/api-review.md) | API review checklist | checklist | 3872 | 2026-05-24 | active | internal |
 | [checklists/backend-review.md](../checklists/backend-review.md) | Backend review checklist | checklist | 3761 | 2026-05-24 | active | internal |
 | [checklists/database-review.md](../checklists/database-review.md) | Database review checklist | checklist | 3498 | 2026-05-24 | active | internal |
-| [checklists/frontend-review.md](../checklists/frontend-review.md) | Frontend review checklist | checklist | 7653 | 2026-06-04 | active | internal |
+| [checklists/frontend-review.md](../checklists/frontend-review.md) | Frontend review checklist | checklist | 8037 | 2026-06-10 | active | internal |
 | [checklists/project-discovery.md](../checklists/project-discovery.md) | Project discovery checklist | checklist | 3847 | 2026-06-07 | active | internal |
 | [checklists/release-readiness.md](../checklists/release-readiness.md) | Release readiness checklist | checklist | 4257 | 2026-05-24 | active | internal |
-| [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 5421 | 2026-05-24 | active | internal |
+| [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 5549 | 2026-06-10 | active | internal |
 | [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 2914 | 2026-06-07 | active | internal |
 
 ## stacks

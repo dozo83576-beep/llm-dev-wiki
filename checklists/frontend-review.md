@@ -1,7 +1,7 @@
 ---
 title: "Frontend review checklist"
 category: "checklist"
-updated: "2026-06-04"
+updated: "2026-06-10"
 status: "active"
 tags: ["frontend", "review", "react"]
 source_priority: "internal"
@@ -53,6 +53,7 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 
 - [ ] **LCP < 2.5s, CLS < 0.1, INP < 200ms** на критичных страницах (Lighthouse) — frontend owner — block — [Performance](../docs/02-frontend/Performance.md).
 - [ ] **Landing/content baseline**: Lighthouse performance ≥ 90, a11y ≥ 95, SEO ≥ 95 — frontend owner — block — [Astro](../docs/02-frontend/Astro.md), [SEO](../docs/02-frontend/SEO.md).
+- [ ] **Site audit smoke** выполнен для staging/dev URL: `pwsh tools/site-audit.ps1 -Url <url>` — frontend owner — warn — [Site audit tooling](../docs/09-testing/Site-audit-tooling.md).
 - [ ] **Bundle size** не вырос без причины (CI gate на bytes) — frontend owner — warn.
 - [ ] **Images optimized** (WebP/AVIF, `<Image>`/`<picture>`) — frontend owner — warn.
 - [ ] **Heavy libraries** оправданы (нет moment.js / lodash целиком) — frontend owner — warn.
@@ -70,6 +71,7 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 - [ ] **Нет секретов** в client bundle (`NEXT_PUBLIC_*` без credentials) — security owner — block — [Secrets](../docs/05-auth-security/Secrets.md).
 - [ ] **User input** sanitized перед рендером (XSS-protection) — frontend owner — block.
 - [ ] **CSP** совместим с используемыми ресурсами — frontend owner — warn — [CORS-CSRF-CSP](../docs/05-auth-security/CORS-CSRF-CSP.md).
+- [ ] **Security headers smoke** выполнен минимум с `pwsh tools/site-audit.ps1 -Url <url> -SkipLighthouse` — frontend/devops — warn — [Site audit tooling](../docs/09-testing/Site-audit-tooling.md).
 - [ ] **External links** имеют `rel="noopener noreferrer"` для `target="_blank"` — frontend owner — warn.
 
 ## Tests

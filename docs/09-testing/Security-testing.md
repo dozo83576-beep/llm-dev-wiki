@@ -1,7 +1,7 @@
 ---
 title: "Security testing"
 category: "testing"
-updated: "2026-05-24"
+updated: "2026-06-10"
 status: "active"
 tags: ["security-tests", "owasp"]
 source_priority: "official-docs"
@@ -28,6 +28,7 @@ Security testing проверяет, что приложение защищен�
 - **SAST** (static analysis): semgrep, CodeQL, GitHub Advanced Security.
 - **SCA** (dependency scan): Dependabot, Snyk, OWASP Dependency-Check.
 - **DAST** (running-app scan): OWASP ZAP, Burp.
+- **Lightweight site smoke**: `pwsh tools/site-audit.ps1 -Url <url> -SkipLighthouse` для headers/CORS перед handoff.
 - **Secrets scanning**: gitleaks, TruffleHog, GitHub Secret Scanning.
 - **Container scan**: Trivy, Grype.
 - **Manual pen-test** на критичные релизы.
@@ -67,6 +68,7 @@ DoS на собственное production через нагрузочный sec
 ## Testing strategy
 
 - SAST + SCA + secrets scan на каждый PR.
+- `pwsh tools/site-audit.ps1 -Url <staging-url>` для release smoke: security headers + Lighthouse.
 - DAST против staging еженедельно.
 - Manual security review перед major release.
 - Regression tests на каждый закрытый security-finding.
@@ -81,4 +83,4 @@ DoS на собственное production через нагрузочный sec
 
 - [OWASP WSTG](https://owasp.org/www-project-web-security-testing-guide/) — проверено 2026-05-24.
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/) — проверено 2026-05-24.
-- См. [OWASP](../05-auth-security/OWASP.md), [Authentication](../05-auth-security/Authentication.md), [Authorization](../05-auth-security/Authorization.md), [Prompt injection](../07-mcp-and-ai-tools/Prompt-injection.md), [security-review checklist](../../checklists/security-review.md).
+- См. [Site audit tooling](Site-audit-tooling.md), [OWASP](../05-auth-security/OWASP.md), [Authentication](../05-auth-security/Authentication.md), [Authorization](../05-auth-security/Authorization.md), [Prompt injection](../07-mcp-and-ai-tools/Prompt-injection.md), [security-review checklist](../../checklists/security-review.md).

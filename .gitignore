@@ -20,6 +20,10 @@ tool-tests-report.txt
 technology-update-report.md
 wiki-quality-report.md
 .tmp-github-summary.md
+site-audit-report.md
+site-audit-report.json
+lighthouse-*.html
+lighthouse-*.json
 
 # Python tooling
 __pycache__/
