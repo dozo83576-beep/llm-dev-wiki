@@ -11,6 +11,8 @@ source_priority: "internal"
 
 Router превращает сырой запрос пользователя в проверяемое решение по архитектуре сайта. Он не заменяет discovery: если данных мало или есть high-risk область, агент обязан задать вопросы, а не угадывать стек.
 
+Executable smoke для этой policy: `pwsh tools/site-stack-router.ps1 -Request "<raw request>"`. Скрипт rule-based, не использует LLM/API и нужен как preflight перед `create-new-project` или `choose-stack`.
+
 ## Когда использовать
 
 - Пользователь просит "создать сайт", "сделать SaaS", "собрать лендинг", "нужна админка" или описывает продукт свободным текстом.
@@ -77,6 +79,7 @@ Router превращает сырой запрос пользователя в 
 ## Источники
 
 - [Stack selection](stack-selection.md)
+- [Site stack router tool](site-stack-router-tool.md)
 - [Frontend blueprints](../02-frontend/Frontend-blueprints.md)
 - [Project discovery checklist](../../checklists/project-discovery.md)
 - [Create new project prompt](../../prompts/create-new-project.md)

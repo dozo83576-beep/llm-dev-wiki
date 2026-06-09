@@ -1,7 +1,7 @@
 ---
 title: "Prompt: choose stack"
 category: "prompt"
-updated: "2026-06-07"
+updated: "2026-06-10"
 status: "active"
 tags: ["stack", "architecture"]
 source_priority: "internal"
@@ -27,7 +27,7 @@ Senior Principal Engineer, выбирающий стек по требовани
 
 ## Steps
 
-1. **Raw request mode**: если есть только `{{raw_request}}`, извлеки сигналы через [site architecture decision router](../docs/01-development-process/site-architecture-decision-router.md). Не выдумывай неизвестные business, security, compliance или platform constraints.
+1. **Raw request mode**: если есть только `{{raw_request}}`, сначала запусти `pwsh tools/site-stack-router.ps1 -Request "{{raw_request}}"` или извлеки сигналы через [site architecture decision router](../docs/01-development-process/site-architecture-decision-router.md). Не выдумывай неизвестные business, security, compliance или platform constraints.
 2. **Set confidence**: `high`, `medium` или `low`. При `low` не выбирай стек; задай до 3 вопросов.
 3. **Compare alternatives**: сравни минимум 3 варианта стека по матрице stack-selection.
 4. **Score** по критериям: SEO, real-time, AI, auth, data scale, team fit, hosting, time-to-market.
@@ -58,5 +58,6 @@ Senior Principal Engineer, выбирающий стек по требовани
 
 - [stack-selection](../docs/01-development-process/stack-selection.md)
 - [site architecture decision router](../docs/01-development-process/site-architecture-decision-router.md)
+- [site stack router tool](../docs/01-development-process/site-stack-router-tool.md)
 - [stacks/](../stacks)
 - [playbooks](../docs/13-playbooks/index.md)

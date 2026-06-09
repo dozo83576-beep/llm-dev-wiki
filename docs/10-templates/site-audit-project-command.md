@@ -11,6 +11,16 @@ source_priority: "internal"
 
 Шаблон подключения lightweight site audit в проекты из `D:\Work`. Команда не меняет сайт: она читает URL, проверяет headers and Lighthouse, пишет local-only reports.
 
+## Stack router preflight
+
+Перед созданием проекта проверь сырой запрос:
+
+```powershell
+pwsh D:\Work\llm-dev-wiki\tools\site-stack-router.ps1 -Request "Хочу SaaS с подписками" -OutputJson
+```
+
+Если confidence `low` или `blocker`, не начинай генерацию проекта: сначала задай вопросы из `openQuestions`.
+
 ## PowerShell handoff
 
 ```powershell

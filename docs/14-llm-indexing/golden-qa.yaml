@@ -481,3 +481,24 @@ questions:
       - docs/09-testing/Site-audit-tooling.md
       - docs/10-templates/site-audit-project-command.md
       - prompts/create-new-project.md
+
+  - id: q-site-stack-router-raw-request
+    question: "Как автоматически определить стек сайта по сырому запросу?"
+    expected_paths:
+      - docs/01-development-process/site-stack-router-tool.md
+      - docs/01-development-process/site-architecture-decision-router.md
+      - prompts/choose-stack.md
+
+  - id: q-site-stack-router-low-confidence
+    question: "Что делать, если запрос 'сделай сайт' слишком общий?"
+    expected_paths:
+      - docs/01-development-process/site-stack-router-tool.md
+      - docs/01-development-process/site-architecture-decision-router.md
+      - checklists/project-discovery.md
+
+  - id: q-create-project-preflight-router
+    question: "Какой preflight запускать перед create-new-project?"
+    expected_paths:
+      - docs/01-development-process/site-stack-router-tool.md
+      - prompts/create-new-project.md
+      - docs/10-templates/site-audit-project-command.md

@@ -3,7 +3,7 @@
     "name": "Next.js",
     "ecosystem": "npm",
     "package": "next",
-    "currentVersion": "16.2.7",
+    "currentVersion": "16.2.9",
     "docsUrl": "https://nextjs.org/docs",
     "notes": "Full-stack React framework and App Router baseline."
   },

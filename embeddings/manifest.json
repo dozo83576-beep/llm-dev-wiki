@@ -1,6 +1,6 @@
 {
-  "chunk_count": 1989,
-  "corpus_hash": "ca4a8dda45aaebdd9d510e5a5dc933136c437b60ab719da8f46ed418fc8b9029",
+  "chunk_count": 1999,
+  "corpus_hash": "d80a6bc580c151a620cf2bcc8b22193a1ef22bf621cbcfb3585e8041af211a82",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -26,6 +26,7 @@
     "docs/01-development-process/full-cycle.md",
     "docs/01-development-process/runtime-selection.md",
     "docs/01-development-process/site-architecture-decision-router.md",
+    "docs/01-development-process/site-stack-router-tool.md",
     "docs/01-development-process/stack-selection.md",
     "docs/02-frontend/AI-UI-streaming.md",
     "docs/02-frontend/Accessibility.md",
@@ -249,7 +250,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-06-09T22:55:19Z",
+  "generated_at": "2026-06-09T23:08:47Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }

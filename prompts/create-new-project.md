@@ -27,7 +27,7 @@ source_priority: "internal"
 
 ## Steps
 
-1. **Route raw request**: сначала применить [site architecture decision router](../docs/01-development-process/site-architecture-decision-router.md) и выставить confidence.
+1. **Route raw request**: сначала запустить `pwsh tools/site-stack-router.ps1 -Request "{{product_idea}}"` или применить [site architecture decision router](../docs/01-development-process/site-architecture-decision-router.md) и выставить confidence.
 2. **Clarify**: задай только недостающие вопросы из [project-discovery checklist](../checklists/project-discovery.md): тип, аудитория, роли, страницы, интеграции, сроки, hosting, auth, БД, бюджет, AI-функции, acceptance criteria. Один вопрос — один блок.
 3. **Choose playbook**: выбери playbook из [docs/13-playbooks](../docs/13-playbooks/index.md) или объяви, что это микс из N playbooks.
 4. **Stack**: сравни 2–3 варианта стека по [stack-selection](../docs/01-development-process/stack-selection.md), выбери один с аргументацией.
@@ -72,5 +72,6 @@ source_priority: "internal"
 - [implementation-plan prompt](implementation-plan.md)
 - [choose-stack prompt](choose-stack.md)
 - [site architecture decision router](../docs/01-development-process/site-architecture-decision-router.md)
+- [site stack router tool](../docs/01-development-process/site-stack-router-tool.md)
 - [docs/13-playbooks/index.md](../docs/13-playbooks/index.md)
 - [site audit project command](../docs/10-templates/site-audit-project-command.md)
