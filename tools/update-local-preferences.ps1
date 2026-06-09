@@ -7,11 +7,13 @@ param(
     [string]$Evidence,
     [string]$ReviewAfter,
     [string[]]$Links = @(),
+    [switch]$AllowCustomPath,
     [switch]$DryRun,
     [switch]$Apply
 )
 
 $ErrorActionPreference = "Stop"
+$DefaultPreferenceFile = "D:\Work\AGENT-PREFERENCES.local.md"
 
 function Fail {
     param([string]$Message)
@@ -38,7 +40,14 @@ function Test-UnsafePreferenceText {
     }
 
     $patterns = @(
+        @{ Name = "openai-key"; Pattern = '(?i)\bsk-(proj-)?[a-z0-9_-]{20,}\b' },
+        @{ Name = "github-token"; Pattern = '\bgh[opusr]_[A-Za-z0-9_]{20,}\b' },
+        @{ Name = "jwt"; Pattern = '\b[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\b' },
+        @{ Name = "slack-token"; Pattern = '(?i)\bxox[baprs]-[A-Za-z0-9-]{20,}\b' },
+        @{ Name = "telegram-token"; Pattern = '\b\d{6,12}:[A-Za-z0-9_-]{25,}\b' },
+        @{ Name = "presigned-url"; Pattern = '(?i)\b(X-Amz-Signature|AWSAccessKeyId|signature|sig)=\S+' },
         @{ Name = "token"; Pattern = '(?i)\b(access[_-]?token|refresh[_-]?token|api[_-]?key|secret[_-]?key|bearer\s+[a-z0-9._~+\/=-]{12,})\b' },
+        @{ Name = "high-entropy-secret"; Pattern = '(?i)\b(token|key|secret|credential)\b\s*[:=]?\s*[A-Za-z0-9._~+\/=-]{24,}' },
         @{ Name = "private-key"; Pattern = '-----BEGIN (RSA |OPENSSH |EC |DSA |)?PRIVATE KEY-----' },
         @{ Name = "cookie"; Pattern = '(?i)\b(cookie|sessionid|connect\.sid|csrf[_-]?token)\s*[:=]' },
         @{ Name = "credential"; Pattern = '(?i)\b(password|passwd|pwd|credential|credentials)\s*[:=]' },
@@ -61,6 +70,12 @@ Assert-Required -Name "Scope" -Value $Scope
 Assert-Required -Name "Preference" -Value $Preference
 Assert-Required -Name "Evidence" -Value $Evidence
 Assert-Required -Name "ReviewAfter" -Value $ReviewAfter
+
+$defaultFullPath = [System.IO.Path]::GetFullPath($DefaultPreferenceFile)
+$preferenceFullPath = [System.IO.Path]::GetFullPath($PreferenceFile)
+if (-not $AllowCustomPath -and $preferenceFullPath -ne $defaultFullPath) {
+    Fail "Custom PreferenceFile requires -AllowCustomPath. Default allowed path: $DefaultPreferenceFile"
+}
 
 if ($Apply -and $DryRun) {
     Fail "Use either -DryRun or -Apply, not both."

@@ -1,6 +1,6 @@
 {
-  "chunk_count": 1869,
-  "corpus_hash": "964edada2961a218c4a4cb8670e68b1726b4dde20c97c80a8c4a7e20c0804cce",
+  "chunk_count": 1889,
+  "corpus_hash": "1792ebbc09c9ba367a211aac17fbdb70a03baf7119b9841987c1df591c7be6d7",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -22,6 +22,7 @@
     "checklists/wiki-maintenance.md",
     "docs/00-start-here/document-standard.md",
     "docs/00-start-here/overview.md",
+    "docs/00-start-here/skill-system.md",
     "docs/01-development-process/full-cycle.md",
     "docs/01-development-process/runtime-selection.md",
     "docs/01-development-process/site-architecture-decision-router.md",
@@ -198,6 +199,7 @@
     "patterns/database/expand-contract-migration.md",
     "patterns/devops/preview-before-production.md",
     "patterns/devops/rollback-first-release.md",
+    "patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md",
     "patterns/frontend/form-validation-boundary.md",
     "patterns/frontend/semantic-theme-text-tokens.md",
     "patterns/frontend/server-client-boundary.md",
@@ -233,7 +235,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-06-07T18:08:35Z",
+  "generated_at": "2026-06-09T22:17:03Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }

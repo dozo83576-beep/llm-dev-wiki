@@ -35,7 +35,7 @@
     "name": "NestJS",
     "ecosystem": "npm",
     "package": "@nestjs/core",
-    "currentVersion": "11.1.24",
+    "currentVersion": "11.1.26",
     "docsUrl": "https://docs.nestjs.com/",
     "notes": "Structured TypeScript backend framework."
   },
@@ -67,7 +67,7 @@
     "name": "Hono",
     "ecosystem": "npm",
     "package": "hono",
-    "currentVersion": "4.12.23",
+    "currentVersion": "4.12.25",
     "docsUrl": "https://www.honojs.com/docs/",
     "notes": "Lightweight Web Standards framework for edge/serverless APIs."
   },
@@ -75,7 +75,7 @@
     "name": "SvelteKit",
     "ecosystem": "npm",
     "package": "@sveltejs/kit",
-    "currentVersion": "2.63.0",
+    "currentVersion": "2.64.0",
     "docsUrl": "https://svelte.dev/docs/kit",
     "notes": "Svelte full-stack framework with SSR, routing, form actions and adapters."
   },
@@ -83,7 +83,7 @@
     "name": "Nuxt",
     "ecosystem": "npm",
     "package": "nuxt",
-    "currentVersion": "4.4.7",
+    "currentVersion": "4.4.8",
     "docsUrl": "https://nuxt.com/docs/getting-started",
     "notes": "Vue meta-framework for SSR, SSG, server routes and content sites."
   },
@@ -99,7 +99,7 @@
     "name": "Payload CMS",
     "ecosystem": "npm",
     "package": "payload",
-    "currentVersion": "3.85.0",
+    "currentVersion": "3.85.1",
     "docsUrl": "https://payloadcms.com/docs/getting-started/concepts",
     "notes": "Code-first TypeScript CMS for Next.js and content sites."
   },
@@ -122,7 +122,7 @@
     "name": "Storybook",
     "ecosystem": "npm",
     "package": "storybook",
-    "currentVersion": "10.4.2",
+    "currentVersion": "10.4.3",
     "docsUrl": "https://storybook.js.org/docs/writing-tests",
     "notes": "Component-driven development and UI testing toolchain."
   },
@@ -161,7 +161,7 @@
     "name": "Vercel AI SDK",
     "ecosystem": "npm",
     "package": "ai",
-    "currentVersion": "6.0.197",
+    "currentVersion": "6.0.199",
     "docsUrl": "https://vercel.com/ai-sdk",
     "notes": "TypeScript SDK for streaming AI UIs and provider-agnostic model integrations."
   },

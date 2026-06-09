@@ -1,7 +1,7 @@
 ---
 title: "Component-driven development"
 category: "frontend"
-updated: "2026-06-04"
+updated: "2026-06-10"
 status: "active"
 tags: ["storybook", "components", "visual-testing", "design-system"]
 source_priority: "official-docs"
@@ -57,6 +57,6 @@ Theming, localization, long content, reduced motion, high contrast mode, async r
 
 ## Источники
 
-- [Storybook UI testing](https://storybook.js.org/docs/writing-tests)
+- [Storybook UI testing](https://storybook.js.org/docs/writing-tests) — watchlist refreshed to `storybook` 10.4.3 on 2026-06-10.
 - [Storybook component testing](https://storybook.js.org/docs/8/writing-tests/component-testing)
 - См. [Design systems](Design-systems.md), [Frontend testing](Frontend-testing.md), [Visual testing](../09-testing/Visual-testing.md), [Frontend review checklist](../../checklists/frontend-review.md).

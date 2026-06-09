@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 from tools.run_offline_retrieval_evals import (
@@ -7,11 +8,15 @@ from tools.run_offline_retrieval_evals import (
     build_index,
     expand_query_tokens,
     find_best_expected_rank,
+    load_questions,
     load_synonyms,
     render_report,
     score_query,
     validate_questions,
 )
+
+
+ROOT = Path(__file__).resolve().parents[2]
 
 
 def test_load_synonyms_ignores_front_matter_and_normalizes_values(tmp_path: Path) -> None:
@@ -165,3 +170,20 @@ def test_validate_questions_rejects_duplicate_ids_empty_questions_and_missing_pa
     assert "question q-one references missing expected path: docs/missing.md" in errors
     assert "question 3 missing id" in errors
     assert "question 3 must define non-empty expected_paths" in errors
+
+
+def test_golden_expected_paths_are_indexed_in_offline_manifest() -> None:
+    questions = load_questions(ROOT / "docs/14-llm-indexing/golden-qa.yaml")
+    manifest = json.loads((ROOT / "embeddings/manifest.json").read_text(encoding="utf-8"))
+    indexed_paths = set(manifest.get("files_indexed") or [])
+
+    missing = sorted(
+        {
+            expected_path
+            for question in questions
+            for expected_path in question.get("expected_paths", [])
+            if expected_path not in indexed_paths
+        }
+    )
+
+    assert missing == []

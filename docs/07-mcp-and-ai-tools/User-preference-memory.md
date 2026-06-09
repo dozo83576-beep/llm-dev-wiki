@@ -1,7 +1,7 @@
 ---
 title: "User preference memory"
 category: "ai-tools"
-updated: "2026-06-07"
+updated: "2026-06-10"
 status: "active"
 tags: ["agents", "memory", "preferences", "privacy"]
 source_priority: "internal"
@@ -29,7 +29,7 @@ User preference memory хранит локальные предпочтения 
 
 В wiki можно хранить только процесс, шаблоны и sanitized lessons без личных референсов. Если preference превращается в общий production-паттерн, его нужно обезличить и оформить как `patterns/`, `lessons-learned/` или checklist update.
 
-Обновление preference-файла делай через `tools/update-local-preferences.ps1`: сначала dry-run, затем явный `-Apply`. Ручное редактирование допустимо только для review, потому что скрипт выполняет базовый scan на secrets, PII и приватные payload markers.
+Обновление preference-файла делай через `tools/update-local-preferences.ps1`: сначала dry-run, затем явный `-Apply`. Ручное редактирование допустимо только для review, потому что скрипт выполняет baseline scan на secrets, PII и приватные payload markers. Это защитный guard, а не замена полноценному secret scanner.
 
 ## Priority order
 

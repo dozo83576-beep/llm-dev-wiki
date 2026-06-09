@@ -1,7 +1,7 @@
 ---
 title: "LLM Dev Wiki"
 category: "start"
-updated: "2026-05-24"
+updated: "2026-06-10"
 status: "active"
 tags: ["llm", "frontend", "backend", "wiki", "obsidian"]
 source_priority: "internal"
@@ -23,6 +23,10 @@ source_priority: "internal"
 4. Для реализации используй разделы `docs/02-frontend`, `docs/03-backend`, `docs/04-databases`, `docs/06-api-design`.
 5. Перед выпуском проходи [security review](checklists/security-review.md) и [release readiness](checklists/release-readiness.md).
 6. После проекта фиксируй удачные решения в [case-studies/successes](case-studies/successes), ошибки в [case-studies/failures](case-studies/failures), короткие выводы в [lessons-learned](lessons-learned).
+
+## Система скиллов (Claude Code + Codex)
+
+Сквозную сборку сайтов ведут вызываемые скиллы: оркестратор `build-modern-site`, фазовые `site-*` (discovery, stack, architecture, design, frontend, backend, review, deploy) и controlled learning loop `capture-learnings`. Скиллы — тонкие роутеры в эту вики; они не обучаются автономно и не меняют веса модели, а помогают сохранять подтверждённые знания в wiki/preferences после evidence или явного approval. Описание: [docs/00-start-here/skill-system.md](docs/00-start-here/skill-system.md).
 
 ## Принципы качества
 

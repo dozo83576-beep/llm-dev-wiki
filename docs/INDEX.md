@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-06-07"
+updated: "2026-06-10"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **240**
-- Активных: **229**
+- Всего документов: **242**
+- Активных: **231**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **539051** символов
+- Суммарный объём: **549866** символов
 
 ## docs
 
@@ -25,16 +25,17 @@ source_priority: "internal"
 |------|-----------|-----------|-------|---------|--------|-----------------|
 | [docs/00-start-here/document-standard.md](../docs/00-start-here/document-standard.md) | Стандарт production-документа | governance | 1433 | 2026-05-24 | active | internal |
 | [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2202 | 2026-05-24 | active | internal |
+| [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 6403 | 2026-06-10 | active | internal |
 | [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 1260 | 2026-05-24 | active | internal |
 | [docs/01-development-process/runtime-selection.md](../docs/01-development-process/runtime-selection.md) | Runtime selection | process | 2374 | 2026-06-04 | active | mixed |
 | [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 5095 | 2026-06-07 | active | internal |
 | [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 5604 | 2026-06-07 | active | official-docs |
-| [docs/02-frontend/AI-UI-streaming.md](../docs/02-frontend/AI-UI-streaming.md) | AI UI streaming | frontend | 2997 | 2026-06-06 | active | mixed |
+| [docs/02-frontend/AI-UI-streaming.md](../docs/02-frontend/AI-UI-streaming.md) | AI UI streaming | frontend | 2997 | 2026-06-10 | active | mixed |
 | [docs/02-frontend/Accessibility.md](../docs/02-frontend/Accessibility.md) | Accessibility | frontend | 1928 | 2026-05-27 | active | official-docs |
 | [docs/02-frontend/Analytics.md](../docs/02-frontend/Analytics.md) | Analytics | frontend | 1330 | 2026-05-24 | active | internal |
 | [docs/02-frontend/Astro.md](../docs/02-frontend/Astro.md) | Astro | frontend | 2221 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/CMS-content.md](../docs/02-frontend/CMS-content.md) | CMS and content sites | frontend | 2648 | 2026-06-04 | active | mixed |
-| [docs/02-frontend/Component-driven-development.md](../docs/02-frontend/Component-driven-development.md) | Component-driven development | frontend | 2818 | 2026-06-04 | active | official-docs |
+| [docs/02-frontend/Component-driven-development.md](../docs/02-frontend/Component-driven-development.md) | Component-driven development | frontend | 2877 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Data-fetching.md](../docs/02-frontend/Data-fetching.md) | Frontend data fetching | frontend | 1591 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Design-systems.md](../docs/02-frontend/Design-systems.md) | Design systems | frontend | 3528 | 2026-06-07 | active | internal |
 | [docs/02-frontend/Forms-validation.md](../docs/02-frontend/Forms-validation.md) | Forms and validation | frontend | 1927 | 2026-05-27 | active | official-docs |
@@ -44,8 +45,8 @@ source_priority: "internal"
 | [docs/02-frontend/HTMX.md](../docs/02-frontend/HTMX.md) | htmx | frontend | 2927 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/I18n.md](../docs/02-frontend/I18n.md) | Internationalization | frontend | 1289 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Nextjs.md](../docs/02-frontend/Nextjs.md) | Next.js | frontend | 2105 | 2026-06-04 | active | official-docs |
-| [docs/02-frontend/Nuxt.md](../docs/02-frontend/Nuxt.md) | Nuxt | frontend | 2655 | 2026-06-04 | active | official-docs |
-| [docs/02-frontend/Payload-CMS.md](../docs/02-frontend/Payload-CMS.md) | Payload CMS | frontend | 2817 | 2026-06-04 | active | vendor-docs |
+| [docs/02-frontend/Nuxt.md](../docs/02-frontend/Nuxt.md) | Nuxt | frontend | 2708 | 2026-06-10 | active | official-docs |
+| [docs/02-frontend/Payload-CMS.md](../docs/02-frontend/Payload-CMS.md) | Payload CMS | frontend | 2874 | 2026-06-10 | active | vendor-docs |
 | [docs/02-frontend/Performance.md](../docs/02-frontend/Performance.md) | Frontend performance | frontend | 2627 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/Qwik.md](../docs/02-frontend/Qwik.md) | Qwik | frontend | 2446 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/React-Router.md](../docs/02-frontend/React-Router.md) | React Router | frontend | 1999 | 2026-06-04 | active | official-docs |
@@ -55,7 +56,7 @@ source_priority: "internal"
 | [docs/02-frontend/Shadcn.md](../docs/02-frontend/Shadcn.md) | shadcn/ui | frontend | 1332 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/State-management.md](../docs/02-frontend/State-management.md) | State management | frontend | 1539 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Styling-systems.md](../docs/02-frontend/Styling-systems.md) | Styling systems | frontend | 2797 | 2026-06-07 | active | mixed |
-| [docs/02-frontend/SvelteKit.md](../docs/02-frontend/SvelteKit.md) | SvelteKit | frontend | 2736 | 2026-06-04 | active | official-docs |
+| [docs/02-frontend/SvelteKit.md](../docs/02-frontend/SvelteKit.md) | SvelteKit | frontend | 2799 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Tailwind.md](../docs/02-frontend/Tailwind.md) | Tailwind CSS | frontend | 1614 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/TanStack-Query.md](../docs/02-frontend/TanStack-Query.md) | TanStack Query | frontend | 2340 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/TanStack-Start.md](../docs/02-frontend/TanStack-Start.md) | TanStack Start | frontend | 3700 | 2026-06-07 | active | official-docs |
@@ -74,9 +75,9 @@ source_priority: "internal"
 | [docs/03-backend/FastAPI.md](../docs/03-backend/FastAPI.md) | FastAPI | backend | 1969 | 2026-05-24 | active | official-docs |
 | [docs/03-backend/Fastify.md](../docs/03-backend/Fastify.md) | Fastify | backend | 1919 | 2026-05-24 | active | official-docs |
 | [docs/03-backend/File-uploads.md](../docs/03-backend/File-uploads.md) | File uploads | backend | 1773 | 2026-05-24 | active | internal |
-| [docs/03-backend/Hono.md](../docs/03-backend/Hono.md) | Hono | backend | 2784 | 2026-06-04 | active | official-docs |
+| [docs/03-backend/Hono.md](../docs/03-backend/Hono.md) | Hono | backend | 2839 | 2026-06-10 | active | official-docs |
 | [docs/03-backend/Logging.md](../docs/03-backend/Logging.md) | Logging | backend | 1294 | 2026-05-24 | active | internal |
-| [docs/03-backend/Nestjs.md](../docs/03-backend/Nestjs.md) | NestJS | backend | 1260 | 2026-05-24 | active | official-docs |
+| [docs/03-backend/Nestjs.md](../docs/03-backend/Nestjs.md) | NestJS | backend | 1321 | 2026-06-10 | active | official-docs |
 | [docs/03-backend/Nodejs.md](../docs/03-backend/Nodejs.md) | Node.js | backend | 1237 | 2026-05-24 | active | official-docs |
 | [docs/03-backend/Payments.md](../docs/03-backend/Payments.md) | Payments | backend | 1392 | 2026-05-24 | active | internal |
 | [docs/03-backend/Stripe.md](../docs/03-backend/Stripe.md) | Stripe | backend | 2390 | 2026-05-24 | active | vendor-docs |
@@ -130,7 +131,7 @@ source_priority: "internal"
 | [docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md](../docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md) | Claude Desktop MCP setup | ai-tools | 2864 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Setup-Codex.md](../docs/07-mcp-and-ai-tools/Setup-Codex.md) | Codex MCP setup | ai-tools | 2587 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Tool-permissions.md](../docs/07-mcp-and-ai-tools/Tool-permissions.md) | Tool permissions | ai-tools | 1392 | 2026-05-24 | active | internal |
-| [docs/07-mcp-and-ai-tools/User-preference-memory.md](../docs/07-mcp-and-ai-tools/User-preference-memory.md) | User preference memory | ai-tools | 4347 | 2026-06-07 | active | internal |
+| [docs/07-mcp-and-ai-tools/User-preference-memory.md](../docs/07-mcp-and-ai-tools/User-preference-memory.md) | User preference memory | ai-tools | 4409 | 2026-06-10 | active | internal |
 | [docs/07-mcp-and-ai-tools/Vector-databases.md](../docs/07-mcp-and-ai-tools/Vector-databases.md) | Vector databases | ai-tools | 1904 | 2026-05-24 | active | internal |
 | [docs/07-mcp-and-ai-tools/llms-txt.md](../docs/07-mcp-and-ai-tools/llms-txt.md) | llms.txt | ai-tools | 1231 | 2026-05-24 | active | external-proposal |
 | [docs/07-mcp-and-ai-tools/pgvector.md](../docs/07-mcp-and-ai-tools/pgvector.md) | pgvector (redirect) | ai-tools | 358 | 2026-05-24 | redirect | internal |
@@ -203,6 +204,7 @@ source_priority: "internal"
 | [patterns/database/expand-contract-migration.md](../patterns/database/expand-contract-migration.md) | Pattern: Expand-contract migration | patterns | 1122 | 2026-05-24 | active | internal |
 | [patterns/devops/preview-before-production.md](../patterns/devops/preview-before-production.md) | Pattern: Preview before production | patterns | 402 | 2026-05-24 | active | internal |
 | [patterns/devops/rollback-first-release.md](../patterns/devops/rollback-first-release.md) | Pattern: Rollback-first release | patterns | 997 | 2026-05-24 | active | internal |
+| [patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md](../patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md) | Pattern: Fixed overlays vs backdrop-filter containing block | patterns | 4002 | 2026-06-08 | active | internal |
 | [patterns/frontend/form-validation-boundary.md](../patterns/frontend/form-validation-boundary.md) | Pattern: Form validation boundary | patterns | 1009 | 2026-05-24 | active | internal |
 | [patterns/frontend/semantic-theme-text-tokens.md](../patterns/frontend/semantic-theme-text-tokens.md) | Pattern: Semantic theme text tokens | patterns | 2980 | 2026-05-27 | active | internal |
 | [patterns/frontend/server-client-boundary.md](../patterns/frontend/server-client-boundary.md) | Pattern: Server/client boundary | patterns | 456 | 2026-05-24 | active | internal |

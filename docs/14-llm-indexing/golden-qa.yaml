@@ -221,7 +221,7 @@ questions:
     expected_paths:
       - prompts/post-project-knowledge-capture.md
       - prompts/update-wiki.md
-      - AGENTS.md
+      - docs/07-mcp-and-ai-tools/Agent-self-improvement.md
 
   - id: q-authjs-vs-clerk
     question: "Когда выбрать Auth.js, а когда Clerk для SaaS?"
@@ -283,15 +283,15 @@ questions:
     question: "Почему нельзя копировать чужую документацию или статьи целиком в вики?"
     expected_paths:
       - docs/00-start-here/document-standard.md
-      - README.md
-      - llms.txt
+      - docs/14-llm-indexing/source-priority.md
+      - prompts/update-wiki.md
 
   - id: q-redirect-canonical-mcp
     question: "Где canonical-документ для legacy MCP setup заметок?"
     expected_paths:
       - docs/07-mcp-and-ai-tools/Setup-Codex.md
       - docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md
-      - mcp/setup-codex.md
+      - docs/07-mcp-and-ai-tools/MCP-overview.md
 
   - id: q-wiki-metadata-required
     question: "Какие front matter поля обязательны для документов вики?"
@@ -364,7 +364,7 @@ questions:
     expected_paths:
       - docs/07-mcp-and-ai-tools/Agent-self-improvement.md
       - docs/07-mcp-and-ai-tools/Agent-workflows.md
-      - AGENTS.md
+      - prompts/post-task-learning-review.md
 
   - id: q-agent-post-task-learning
     question: "Что делать с опытом после завершения значимой задачи?"
@@ -406,7 +406,7 @@ questions:
     expected_paths:
       - docs/07-mcp-and-ai-tools/User-preference-memory.md
       - prompts/update-user-preferences.md
-      - tools/update-local-preferences.ps1
+      - docs/07-mcp-and-ai-tools/Agent-memory.md
 
   - id: q-failure-to-lesson
     question: "Как превратить неудачную задачу в lesson learned?"

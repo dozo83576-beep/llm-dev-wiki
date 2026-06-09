@@ -6,6 +6,7 @@
 
 - [Full index](docs/INDEX.md)
 - [Overview](docs/00-start-here/overview.md)
+- [Skill system (Claude Code + Codex)](docs/00-start-here/skill-system.md)
 - [Document standard](docs/00-start-here/document-standard.md)
 - [Full cycle](docs/01-development-process/full-cycle.md)
 - [Stack selection](docs/01-development-process/stack-selection.md)

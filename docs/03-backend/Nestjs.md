@@ -1,7 +1,7 @@
 ---
 title: "NestJS"
 category: "backend"
-updated: "2026-05-24"
+updated: "2026-06-10"
 status: "active"
 tags: ["nestjs", "architecture"]
 source_priority: "official-docs"
@@ -13,7 +13,7 @@ NestJS выбирай для сложного TypeScript backend. Архитек
 
 Частые ошибки: бизнес-логика в controllers, отсутствие transaction boundary, смешивание transport DTO и domain model, неявные зависимости между модулями.
 
-Источник: [NestJS Docs](https://docs.nestjs.com/).
+Источник: [NestJS Docs](https://docs.nestjs.com/) — watchlist refreshed to `@nestjs/core` 11.1.26 on 2026-06-10.
 
 ## Когда использовать
 
@@ -34,4 +34,3 @@ God module, business logic в controllers, circular dependencies, DTO как dom
 ## Проверка
 
 Unit tests для providers, e2e tests через testing module, permission tests для guards, integration tests с DB.
-
