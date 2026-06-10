@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **257**
-- Активных: **246**
+- Всего документов: **258**
+- Активных: **247**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **591160** символов
+- Суммарный объём: **593957** символов
 
 ## docs
 
@@ -27,9 +27,10 @@ source_priority: "internal"
 | [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2202 | 2026-05-24 | active | internal |
 | [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 6403 | 2026-06-10 | active | internal |
 | [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 1260 | 2026-05-24 | active | internal |
+| [docs/01-development-process/new-site-preflight-tool.md](../docs/01-development-process/new-site-preflight-tool.md) | New site preflight tool | process | 2243 | 2026-06-10 | active | internal |
 | [docs/01-development-process/runtime-selection.md](../docs/01-development-process/runtime-selection.md) | Runtime selection | process | 2374 | 2026-06-04 | active | mixed |
 | [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 6215 | 2026-06-10 | active | internal |
-| [docs/01-development-process/site-stack-router-tool.md](../docs/01-development-process/site-stack-router-tool.md) | Site stack router tool | process | 3069 | 2026-06-10 | active | internal |
+| [docs/01-development-process/site-stack-router-tool.md](../docs/01-development-process/site-stack-router-tool.md) | Site stack router tool | process | 3235 | 2026-06-10 | active | internal |
 | [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 7368 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/AI-UI-streaming.md](../docs/02-frontend/AI-UI-streaming.md) | AI UI streaming | frontend | 2997 | 2026-06-10 | active | mixed |
 | [docs/02-frontend/Accessibility.md](../docs/02-frontend/Accessibility.md) | Accessibility | frontend | 1928 | 2026-05-27 | active | official-docs |
@@ -178,7 +179,7 @@ source_priority: "internal"
 | [docs/09-testing/Unit-testing.md](../docs/09-testing/Unit-testing.md) | Unit testing | testing | 2776 | 2026-05-24 | active | internal |
 | [docs/09-testing/Visual-testing.md](../docs/09-testing/Visual-testing.md) | Visual testing | testing | 2891 | 2026-06-04 | active | internal |
 | [docs/10-templates/index.md](../docs/10-templates/index.md) | Templates | templates | 595 | 2026-06-10 | active | internal |
-| [docs/10-templates/site-audit-project-command.md](../docs/10-templates/site-audit-project-command.md) | Site audit project command | templates | 1768 | 2026-06-10 | active | internal |
+| [docs/10-templates/site-audit-project-command.md](../docs/10-templates/site-audit-project-command.md) | Site audit project command | templates | 1830 | 2026-06-10 | active | internal |
 | [docs/11-prompts/index.md](../docs/11-prompts/index.md) | Prompts | prompts | 742 | 2026-06-07 | active | internal |
 | [docs/12-resources/index.md](../docs/12-resources/index.md) | Resources | resources | 604 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/admin-dashboard.md](../docs/13-playbooks/admin-dashboard.md) | Playbook: Admin dashboard | playbooks | 3278 | 2026-06-04 | active | internal |
@@ -231,9 +232,9 @@ source_priority: "internal"
 | Файл | Заголовок | Категория | Объём | Updated | Status | Source priority |
 |------|-----------|-----------|-------|---------|--------|-----------------|
 | [prompts/backend-audit.md](../prompts/backend-audit.md) | Prompt: backend audit | prompt | 2389 | 2026-05-24 | active | internal |
-| [prompts/choose-stack.md](../prompts/choose-stack.md) | Prompt: choose stack | prompt | 2891 | 2026-06-10 | active | internal |
+| [prompts/choose-stack.md](../prompts/choose-stack.md) | Prompt: choose stack | prompt | 3069 | 2026-06-10 | active | internal |
 | [prompts/code-review.md](../prompts/code-review.md) | Prompt: code review | prompt | 1880 | 2026-05-24 | active | internal |
-| [prompts/create-new-project.md](../prompts/create-new-project.md) | Prompt: create new project | prompt | 3633 | 2026-06-10 | active | internal |
+| [prompts/create-new-project.md](../prompts/create-new-project.md) | Prompt: create new project | prompt | 3781 | 2026-06-10 | active | internal |
 | [prompts/database-migration-review.md](../prompts/database-migration-review.md) | Prompt: database migration review | prompt | 2826 | 2026-05-24 | active | internal |
 | [prompts/debug-issue.md](../prompts/debug-issue.md) | Prompt: debug issue | prompt | 2260 | 2026-05-24 | active | internal |
 | [prompts/deploy.md](../prompts/deploy.md) | Prompt: deploy | prompt | 2460 | 2026-05-24 | active | internal |

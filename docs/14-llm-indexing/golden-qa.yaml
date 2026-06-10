@@ -499,6 +499,21 @@ questions:
   - id: q-create-project-preflight-router
     question: "Какой preflight запускать перед create-new-project?"
     expected_paths:
+      - docs/01-development-process/new-site-preflight-tool.md
       - docs/01-development-process/site-stack-router-tool.md
       - prompts/create-new-project.md
       - docs/10-templates/site-audit-project-command.md
+
+  - id: q-new-site-preflight-command
+    question: "Как запустить единый preflight перед созданием сайта?"
+    expected_paths:
+      - docs/01-development-process/new-site-preflight-tool.md
+      - prompts/create-new-project.md
+      - docs/01-development-process/site-stack-router-tool.md
+
+  - id: q-new-site-preflight-audit-command
+    question: "Как получить команду site audit после выбора стека сайта?"
+    expected_paths:
+      - docs/01-development-process/new-site-preflight-tool.md
+      - docs/10-templates/site-audit-project-command.md
+      - docs/09-testing/Site-audit-tooling.md

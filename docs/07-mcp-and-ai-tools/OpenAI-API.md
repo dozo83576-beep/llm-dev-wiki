@@ -13,7 +13,7 @@ source_priority: "official-docs"
 
 Правила: не передавать секреты в prompt, логировать request id и usage, ограничивать tool permissions, делать evals для AI-функций.
 
-Источник: [OpenAI Platform Docs](https://platform.openai.com/docs) и [OpenAI Python SDK on PyPI](https://pypi.org/project/openai/) — refreshed against `openai` 2.41.0 on 2026-06-06.
+Источник: [OpenAI Platform Docs](https://platform.openai.com/docs) и [OpenAI Python SDK on PyPI](https://pypi.org/project/openai/) — refreshed against `openai` 2.41.1 on 2026-06-10.
 
 ## Когда использовать
 

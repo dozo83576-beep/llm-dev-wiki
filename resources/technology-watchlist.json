@@ -192,7 +192,7 @@
     "name": "Strapi",
     "ecosystem": "npm",
     "package": "@strapi/strapi",
-    "currentVersion": "5.47.1",
+    "currentVersion": "5.48.0",
     "docsUrl": "https://docs.strapi.io/",
     "notes": "Self-hosted headless CMS with content APIs and admin UI."
   },
@@ -200,7 +200,7 @@
     "name": "Sanity",
     "ecosystem": "npm",
     "package": "sanity",
-    "currentVersion": "5.30.0",
+    "currentVersion": "5.31.0",
     "docsUrl": "https://www.sanity.io/docs",
     "notes": "Hosted structured content platform with Studio and visual editing."
   },
@@ -294,7 +294,7 @@
     "name": "OpenAI Python SDK",
     "ecosystem": "pypi",
     "package": "openai",
-    "currentVersion": "2.41.0",
+    "currentVersion": "2.41.1",
     "docsUrl": "https://platform.openai.com/docs",
     "notes": "OpenAI API client for Python."
   },

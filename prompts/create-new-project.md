@@ -27,7 +27,7 @@ source_priority: "internal"
 
 ## Steps
 
-1. **Route raw request**: сначала запустить `pwsh tools/site-stack-router.ps1 -Request "{{product_idea}}"` или применить [site architecture decision router](../docs/01-development-process/site-architecture-decision-router.md) и выставить confidence.
+1. **Preflight raw request**: сначала запустить `pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "{{product_idea}}"` или применить [site architecture decision router](../docs/01-development-process/site-architecture-decision-router.md) и выставить confidence.
 2. **Clarify**: задай только недостающие вопросы из [project-discovery checklist](../checklists/project-discovery.md): тип, аудитория, роли, страницы, интеграции, сроки, hosting, auth, БД, бюджет, AI-функции, acceptance criteria. Один вопрос — один блок.
 3. **Choose playbook**: выбери playbook из [docs/13-playbooks](../docs/13-playbooks/index.md) или объяви, что это микс из N playbooks.
 4. **Stack**: сравни 2–3 варианта стека по [stack-selection](../docs/01-development-process/stack-selection.md), выбери один с аргументацией.
@@ -35,7 +35,7 @@ source_priority: "internal"
 6. **Phased plan**: разбей реализацию на 3–6 проверяемых этапов с acceptance.
 7. **Security risks**: top-5 рисков и mitigations.
 8. **Test plan**: unit / integration / E2E / contract / security по test-pyramid.
-9. **Site handoff audit**: для сайтов добавь команду `pwsh D:\Work\llm-dev-wiki\tools\site-audit.ps1 -Url <dev-or-staging-url>` и ключевые routes.
+9. **Site handoff audit**: для сайтов возьми `siteAuditCommand` из preflight или добавь `pwsh D:\Work\llm-dev-wiki\tools\site-audit.ps1 -Url <dev-or-staging-url>` и ключевые routes.
 10. **Edge cases**: ≥ 5 пунктов.
 11. **Knowledge capture**: какие документы вики обновить после проекта.
 
@@ -72,6 +72,7 @@ source_priority: "internal"
 - [implementation-plan prompt](implementation-plan.md)
 - [choose-stack prompt](choose-stack.md)
 - [site architecture decision router](../docs/01-development-process/site-architecture-decision-router.md)
+- [new site preflight tool](../docs/01-development-process/new-site-preflight-tool.md)
 - [site stack router tool](../docs/01-development-process/site-stack-router-tool.md)
 - [docs/13-playbooks/index.md](../docs/13-playbooks/index.md)
 - [site audit project command](../docs/10-templates/site-audit-project-command.md)

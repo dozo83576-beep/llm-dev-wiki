@@ -9,7 +9,7 @@ source_priority: "internal"
 
 # Site stack router tool
 
-`tools/site-stack-router.ps1` — локальный deterministic preflight для выбора архитектуры сайта по сырому запросу. Он не использует LLM/API и не заменяет discovery; его задача — быстро поймать low confidence, high-risk blockers and obvious stack routes.
+`tools/site-stack-router.ps1` — локальный deterministic preflight для выбора архитектуры сайта по сырому запросу. Он не использует LLM/API и не заменяет discovery; его задача — быстро поймать low confidence, high-risk blockers and obvious stack routes. Для нового сайта удобнее начинать с [new site preflight tool](new-site-preflight-tool.md), который вызывает router и сразу печатает handoff-команду `site-audit.ps1`.
 
 ## Когда использовать
 
