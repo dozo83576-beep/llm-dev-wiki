@@ -13,6 +13,7 @@ source_priority: "internal"
 
 ## Когда использовать
 
+- Когда пользователь пишет `Я хочу создать сайт <описание сайта>`: текст после фразы считается raw request для preflight.
 - Перед `prompts/create-new-project.md` для любого raw request про сайт.
 - Перед scaffold, чтобы не выбрать стек при `low` или `blocker`.
 - Перед handoff, чтобы зафиксировать site audit command для dev/staging URL.
@@ -22,6 +23,7 @@ source_priority: "internal"
 
 ```powershell
 pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "Хочу SaaS с подписками"
+pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "<описание сайта после фразы 'Я хочу создать сайт'>"
 pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "Нужен лендинг с SEO и формой" -Url http://localhost:3000 -Routes /pricing,/contact
 pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "Сделай сайт" -FailOnLowConfidence
 ```

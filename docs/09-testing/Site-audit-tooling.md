@@ -9,7 +9,7 @@ source_priority: "internal"
 
 # Site audit tooling
 
-`tools/site-audit.ps1` — lightweight release smoke для сайта по URL. Он проверяет базовые security headers, CORS-risk и Lighthouse scores без изменения сайта.
+`tools/site-audit.ps1` — lightweight release smoke для сайта по URL. Он проверяет базовые security headers, CORS-risk и Lighthouse scores без изменения сайта. Lighthouse запускается через pinned package `lighthouse@13.4.0`, чтобы результаты были воспроизводимее; обновлять pin нужно отдельным review.
 
 ## Когда использовать
 

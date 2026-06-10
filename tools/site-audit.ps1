@@ -14,6 +14,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+$LighthousePackage = "lighthouse@13.4.0"
 
 function New-Finding {
     param(
@@ -110,7 +111,7 @@ function Invoke-LighthouseAudit {
     $jsonPath = Join-Path $OutDir "lighthouse-$Slug.json"
     $htmlPath = Join-Path $OutDir "lighthouse-$Slug.html"
     $outputBase = Join-Path $OutDir "lighthouse-$Slug"
-    & npx --yes lighthouse $TargetUrl --output=json --output=html "--output-path=$outputBase" --chrome-flags="--headless=new" --quiet
+    & npx --yes $LighthousePackage $TargetUrl --output=json --output=html "--output-path=$outputBase" --chrome-flags="--headless=new" --quiet
     if ($LASTEXITCODE -ne 0) {
         throw "Lighthouse failed for $TargetUrl"
     }

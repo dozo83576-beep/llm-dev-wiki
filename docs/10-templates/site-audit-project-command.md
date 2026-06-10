@@ -9,7 +9,7 @@ source_priority: "internal"
 
 # Site audit project command
 
-Шаблон подключения lightweight site audit в проекты из `D:\Work`. Команда не меняет сайт: она читает URL, проверяет headers and Lighthouse, пишет local-only reports.
+Шаблон подключения lightweight site audit в проекты из `D:\Work`. Команда не меняет сайт: она читает URL, проверяет headers and Lighthouse, пишет local-only reports. Lighthouse закреплён как `lighthouse@13.4.0`; обновление версии делать отдельным review.
 
 ## New site preflight
 
@@ -35,6 +35,8 @@ pwsh D:\Work\llm-dev-wiki\tools\site-audit.ps1 -Url http://localhost:3000 -SkipL
 
 ## package.json script
 
+Для новых JS/TS сайтов добавляй этот script при scaffold:
+
 ```json
 {
   "scripts": {
@@ -44,6 +46,7 @@ pwsh D:\Work\llm-dev-wiki\tools\site-audit.ps1 -Url http://localhost:3000 -SkipL
 ```
 
 Если порт меняется, не hardcode production URL. Передай URL через project-local wrapper или README команду.
+Если у проекта нет `package.json`, добавь эквивалентную команду в README или Makefile.
 
 ## Release/handoff rule
 

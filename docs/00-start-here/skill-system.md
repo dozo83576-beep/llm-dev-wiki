@@ -46,6 +46,10 @@ local preferences > wiki defaults.
 
 Оркестратор `build-modern-site` ведёт по фазам и подключает фазовые скиллы:
 
+Trigger-фраза для обоих рантаймов: если пользователь пишет `Я хочу создать сайт <описание сайта>`,
+агент трактует текст после фразы как raw request и первым шагом запускает
+`pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "<описание сайта>"`.
+
 | Скилл | Фаза | Куда маршрутизирует |
 | --- | --- | --- |
 | `build-modern-site` | Оркестрация | [create-new-project](../../prompts/create-new-project.md), [full-cycle](../01-development-process/full-cycle.md), [playbooks](../13-playbooks/index.md) |

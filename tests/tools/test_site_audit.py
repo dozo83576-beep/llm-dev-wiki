@@ -48,6 +48,13 @@ def read_report(output_dir):
     return json.loads((output_dir / "site-audit-report.json").read_text(encoding="utf-8-sig"))
 
 
+def test_lighthouse_package_is_pinned():
+    source = SCRIPT.read_text(encoding="utf-8")
+
+    assert '$LighthousePackage = "lighthouse@13.4.0"' in source
+    assert "npx --yes lighthouse " not in source
+
+
 def test_missing_headers_create_medium_findings_and_reports(tmp_path):
     output_dir = tmp_path / "audit"
     with mock_site({}) as url:

@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **247**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **593957** символов
+- Суммарный объём: **595176** символов
 
 ## docs
 
@@ -25,9 +25,9 @@ source_priority: "internal"
 |------|-----------|-----------|-------|---------|--------|-----------------|
 | [docs/00-start-here/document-standard.md](../docs/00-start-here/document-standard.md) | Стандарт production-документа | governance | 1433 | 2026-05-24 | active | internal |
 | [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2202 | 2026-05-24 | active | internal |
-| [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 6403 | 2026-06-10 | active | internal |
+| [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 6663 | 2026-06-10 | active | internal |
 | [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 1260 | 2026-05-24 | active | internal |
-| [docs/01-development-process/new-site-preflight-tool.md](../docs/01-development-process/new-site-preflight-tool.md) | New site preflight tool | process | 2243 | 2026-06-10 | active | internal |
+| [docs/01-development-process/new-site-preflight-tool.md](../docs/01-development-process/new-site-preflight-tool.md) | New site preflight tool | process | 2482 | 2026-06-10 | active | internal |
 | [docs/01-development-process/runtime-selection.md](../docs/01-development-process/runtime-selection.md) | Runtime selection | process | 2374 | 2026-06-04 | active | mixed |
 | [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 6215 | 2026-06-10 | active | internal |
 | [docs/01-development-process/site-stack-router-tool.md](../docs/01-development-process/site-stack-router-tool.md) | Site stack router tool | process | 3235 | 2026-06-10 | active | internal |
@@ -173,13 +173,13 @@ source_priority: "internal"
 | [docs/09-testing/Mocks.md](../docs/09-testing/Mocks.md) | Mocks | testing | 2838 | 2026-05-24 | active | internal |
 | [docs/09-testing/Playwright.md](../docs/09-testing/Playwright.md) | Playwright | testing | 2071 | 2026-05-24 | active | official-docs |
 | [docs/09-testing/Security-testing.md](../docs/09-testing/Security-testing.md) | Security testing | testing | 3660 | 2026-06-10 | active | official-docs |
-| [docs/09-testing/Site-audit-tooling.md](../docs/09-testing/Site-audit-tooling.md) | Site audit tooling | testing | 4388 | 2026-06-10 | active | internal |
+| [docs/09-testing/Site-audit-tooling.md](../docs/09-testing/Site-audit-tooling.md) | Site audit tooling | testing | 4530 | 2026-06-10 | active | internal |
 | [docs/09-testing/Test-data.md](../docs/09-testing/Test-data.md) | Test data | testing | 2676 | 2026-05-24 | active | internal |
 | [docs/09-testing/Test-pyramid.md](../docs/09-testing/Test-pyramid.md) | Test pyramid | testing | 3188 | 2026-05-24 | active | internal |
 | [docs/09-testing/Unit-testing.md](../docs/09-testing/Unit-testing.md) | Unit testing | testing | 2776 | 2026-05-24 | active | internal |
 | [docs/09-testing/Visual-testing.md](../docs/09-testing/Visual-testing.md) | Visual testing | testing | 2891 | 2026-06-04 | active | internal |
 | [docs/10-templates/index.md](../docs/10-templates/index.md) | Templates | templates | 595 | 2026-06-10 | active | internal |
-| [docs/10-templates/site-audit-project-command.md](../docs/10-templates/site-audit-project-command.md) | Site audit project command | templates | 1830 | 2026-06-10 | active | internal |
+| [docs/10-templates/site-audit-project-command.md](../docs/10-templates/site-audit-project-command.md) | Site audit project command | templates | 2065 | 2026-06-10 | active | internal |
 | [docs/11-prompts/index.md](../docs/11-prompts/index.md) | Prompts | prompts | 742 | 2026-06-07 | active | internal |
 | [docs/12-resources/index.md](../docs/12-resources/index.md) | Resources | resources | 604 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/admin-dashboard.md](../docs/13-playbooks/admin-dashboard.md) | Playbook: Admin dashboard | playbooks | 3278 | 2026-06-04 | active | internal |
@@ -234,7 +234,7 @@ source_priority: "internal"
 | [prompts/backend-audit.md](../prompts/backend-audit.md) | Prompt: backend audit | prompt | 2389 | 2026-05-24 | active | internal |
 | [prompts/choose-stack.md](../prompts/choose-stack.md) | Prompt: choose stack | prompt | 3069 | 2026-06-10 | active | internal |
 | [prompts/code-review.md](../prompts/code-review.md) | Prompt: code review | prompt | 1880 | 2026-05-24 | active | internal |
-| [prompts/create-new-project.md](../prompts/create-new-project.md) | Prompt: create new project | prompt | 3781 | 2026-06-10 | active | internal |
+| [prompts/create-new-project.md](../prompts/create-new-project.md) | Prompt: create new project | prompt | 4124 | 2026-06-10 | active | internal |
 | [prompts/database-migration-review.md](../prompts/database-migration-review.md) | Prompt: database migration review | prompt | 2826 | 2026-05-24 | active | internal |
 | [prompts/debug-issue.md](../prompts/debug-issue.md) | Prompt: debug issue | prompt | 2260 | 2026-05-24 | active | internal |
 | [prompts/deploy.md](../prompts/deploy.md) | Prompt: deploy | prompt | 2460 | 2026-05-24 | active | internal |

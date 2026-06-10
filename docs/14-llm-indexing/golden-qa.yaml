@@ -517,3 +517,17 @@ questions:
       - docs/01-development-process/new-site-preflight-tool.md
       - docs/10-templates/site-audit-project-command.md
       - docs/09-testing/Site-audit-tooling.md
+
+  - id: q-site-trigger-phrase
+    question: "Что делать, если пользователь пишет 'Я хочу создать сайт' с описанием сайта?"
+    expected_paths:
+      - docs/01-development-process/new-site-preflight-tool.md
+      - docs/00-start-here/skill-system.md
+      - prompts/create-new-project.md
+
+  - id: q-site-audit-package-json-script
+    question: "Какой audit:site script добавлять в package.json нового сайта?"
+    expected_paths:
+      - docs/10-templates/site-audit-project-command.md
+      - prompts/create-new-project.md
+      - docs/09-testing/Site-audit-tooling.md
