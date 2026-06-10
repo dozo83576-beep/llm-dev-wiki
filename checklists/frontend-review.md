@@ -47,7 +47,7 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 - [ ] **Dark / light theme** (если есть) — оба покрыты; текстовые токены не протекают между светлыми и темными поверхностями — frontend owner — warn — [semantic text tokens](../patterns/frontend/semantic-theme-text-tokens.md).
 - [ ] **Long content** (длинные имена, многоязычные строки) не выходит за контейнеры — frontend owner — warn.
 - [ ] **Fold control**: секция-первый-экран (hero + нижняя полоса) не оставляет следующую секцию выглядывающей узкой полосой над сгибом — frontend owner — warn — [full-height first screen](../patterns/frontend/full-height-first-screen.md).
-- [ ] **Reduced motion**: декоративные CSS/JS-анимации (hero, counters, parallax) отключаются при `prefers-reduced-motion`; счётчики имеют fallback на финальное значение — frontend owner — warn — [scroll count-up](../patterns/frontend/scroll-count-up.md).
+- [ ] **Reduced motion**: декоративные CSS/JS-анимации (hero, counters, parallax) отключаются при `prefers-reduced-motion`; счётчики имеют fallback на финальное значение — frontend owner — warn — [static auto-service case study](../case-studies/successes/2026-06-11-turboservice-static-autoservice.md).
 - [ ] **Media strategy** есть для hero/product/content images: dimensions, alt, focal point, WebP/AVIF, mobile crop, video poster — frontend owner — warn — [Performance](../docs/02-frontend/Performance.md).
 - [ ] **Critical sections** проверены отдельно: hero, CTA, pricing, checkout, FAQ, lead form, empty dashboard — product + frontend — warn — [Frontend blueprints](../docs/02-frontend/Frontend-blueprints.md).
 

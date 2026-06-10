@@ -72,5 +72,4 @@ Headless-рендерер ждёт состояния idle перед снимк
 ## Ссылки
 
 - Связанный кейс: [Статический сайт автосервиса ТУРБОСЕРВИС](../case-studies/successes/2026-06-11-turboservice-static-autoservice.md)
-- Связанные паттерны: [scroll-count-up](../patterns/frontend/scroll-count-up.md),
-  [full-height-first-screen](../patterns/frontend/full-height-first-screen.md)
+- Связанный паттерн: [full-height-first-screen](../patterns/frontend/full-height-first-screen.md)

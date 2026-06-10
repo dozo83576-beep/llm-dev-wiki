@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2006,
-  "corpus_hash": "0b01d02c6e24bb0c412dbe463aca5c083463121a0b38cc4bb29ac9bee1fa7ea2",
+  "chunk_count": 2036,
+  "corpus_hash": "725b73a86ec7b70852f97bf789871504bfd009a25f5eb10e64daec72aa6159f2",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -10,6 +10,7 @@
     "case-studies/successes/2026-05-24-rag-metadata-first.md",
     "case-studies/successes/2026-05-24-webhook-idempotency.md",
     "case-studies/successes/2026-05-27-tvoi-hit-static-landing.md",
+    "case-studies/successes/2026-06-11-turboservice-static-autoservice.md",
     "case-studies/successes/README.md",
     "checklists/ai-agent-review.md",
     "checklists/api-review.md",
@@ -204,6 +205,7 @@
     "lessons-learned/2026-05-24-update-monitoring.md",
     "lessons-learned/2026-05-27-light-section-text-contrast.md",
     "lessons-learned/2026-05-27-telegram-lead-form-boundary.md",
+    "lessons-learned/2026-06-11-headless-preview-verification.md",
     "patterns/ai/mcp-read-only-default.md",
     "patterns/ai/rag-metadata.md",
     "patterns/api/error-contract.md",
@@ -217,6 +219,8 @@
     "patterns/devops/rollback-first-release.md",
     "patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md",
     "patterns/frontend/form-validation-boundary.md",
+    "patterns/frontend/full-height-first-screen.md",
+    "patterns/frontend/localstorage-mini-crm.md",
     "patterns/frontend/semantic-theme-text-tokens.md",
     "patterns/frontend/server-client-boundary.md",
     "patterns/security/deny-by-default.md",
@@ -251,7 +255,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-06-10T16:50:24Z",
+  "generated_at": "2026-06-10T21:45:16Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }

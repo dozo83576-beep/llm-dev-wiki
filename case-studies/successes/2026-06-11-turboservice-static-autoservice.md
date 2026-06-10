@@ -61,10 +61,13 @@ stack: ["HTML", "CSS", "JavaScript", "LocalStorage", "Python http.server"]
   полоса, следующая секция не выглядывает над сгибом; высоту задаёт контент, а не `min-height`.
 - [LocalStorage mini-CRM](../../patterns/frontend/localstorage-mini-crm.md): клиентский CRUD без бэкенда
   для MVP с единым ключ-контрактом и cross-tab sync.
-- [Scroll-triggered count-up](../../patterns/frontend/scroll-count-up.md): счётчики на IO с обязательным
-  reduced-motion fallback; число и единицы — разные узлы.
 - [Semantic theme text tokens](../../patterns/frontend/semantic-theme-text-tokens.md): текст на
   тёмном/светлом — разными токенами; Hero фиксированно-тёмный в обеих темах.
+- **Count-up статистики на `IntersectionObserver`** (приём, без отдельного паттерна): зеркалит
+  scroll-reveal — на первом пересечении запускает rAF-анимацию числа и `unobserve`. Два правила:
+  (1) **обязательный fallback** на финальное значение при `prefers-reduced-motion` или отсутствии
+  `IntersectionObserver` (иначе число застрянет на `0` — особенно в headless-превью); (2) число и
+  единицы («+», «года») — **разные DOM-узлы**, иначе текст «прыгает» по ширине на каждом кадре.
 
 # Ограничения
 
@@ -92,7 +95,6 @@ stack: ["HTML", "CSS", "JavaScript", "LocalStorage", "Python http.server"]
 - [Lesson: Верификация статики в headless-превью](../../lessons-learned/2026-06-11-headless-preview-verification.md)
 - [Pattern: Full-height first screen](../../patterns/frontend/full-height-first-screen.md)
 - [Pattern: LocalStorage mini-CRM](../../patterns/frontend/localstorage-mini-crm.md)
-- [Pattern: Scroll-triggered count-up](../../patterns/frontend/scroll-count-up.md)
 - [Pattern: Semantic theme text tokens](../../patterns/frontend/semantic-theme-text-tokens.md)
 - [Похожий кейс: статический лендинг ТВОЙ ХИТ](./2026-05-27-tvoi-hit-static-landing.md)
 - [Frontend review checklist](../../checklists/frontend-review.md)
