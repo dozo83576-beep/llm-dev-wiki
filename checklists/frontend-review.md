@@ -1,7 +1,7 @@
 ---
 title: "Frontend review checklist"
 category: "checklist"
-updated: "2026-06-10"
+updated: "2026-06-11"
 status: "active"
 tags: ["frontend", "review", "react"]
 source_priority: "internal"
@@ -46,6 +46,8 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 - [ ] **Stable dimensions** заданы для cards, media, toolbar, counters, tables and icon buttons; hover/loading labels не двигают layout — frontend owner — warn — [UI architecture](../docs/02-frontend/UI-architecture.md).
 - [ ] **Dark / light theme** (если есть) — оба покрыты; текстовые токены не протекают между светлыми и темными поверхностями — frontend owner — warn — [semantic text tokens](../patterns/frontend/semantic-theme-text-tokens.md).
 - [ ] **Long content** (длинные имена, многоязычные строки) не выходит за контейнеры — frontend owner — warn.
+- [ ] **Fold control**: секция-первый-экран (hero + нижняя полоса) не оставляет следующую секцию выглядывающей узкой полосой над сгибом — frontend owner — warn — [full-height first screen](../patterns/frontend/full-height-first-screen.md).
+- [ ] **Reduced motion**: декоративные CSS/JS-анимации (hero, counters, parallax) отключаются при `prefers-reduced-motion`; счётчики имеют fallback на финальное значение — frontend owner — warn — [scroll count-up](../patterns/frontend/scroll-count-up.md).
 - [ ] **Media strategy** есть для hero/product/content images: dimensions, alt, focal point, WebP/AVIF, mobile crop, video poster — frontend owner — warn — [Performance](../docs/02-frontend/Performance.md).
 - [ ] **Critical sections** проверены отдельно: hero, CTA, pricing, checkout, FAQ, lead form, empty dashboard — product + frontend — warn — [Frontend blueprints](../docs/02-frontend/Frontend-blueprints.md).
 
@@ -80,4 +82,5 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 - [ ] **Component tests** для сложных интерактивных компонентов — frontend owner — warn — [Frontend testing](../docs/02-frontend/Frontend-testing.md).
 - [ ] **Visual regression** для дизайн-системы и hero pages — frontend owner — warn — [Visual testing](../docs/09-testing/Visual-testing.md).
 - [ ] **Responsive screenshots** сохранены или проверены для 360px / 768px / desktop на критичных routes — QA — warn — [Visual testing](../docs/09-testing/Visual-testing.md).
+- [ ] **Headless/sandbox preview**: при бесконечных CSS-анимациях верифицировать DOM-метриками (`getBoundingClientRect`/computed styles), а не скриншотами; форсировать reveal-состояния и cache-bust CSS/HTML — QA — warn — [headless preview verification](../lessons-learned/2026-06-11-headless-preview-verification.md).
 - [ ] **Story/component states** есть для reusable widgets: default/loading/error/empty/long text/mobile — frontend owner — warn — [Component-driven development](../docs/02-frontend/Component-driven-development.md).
