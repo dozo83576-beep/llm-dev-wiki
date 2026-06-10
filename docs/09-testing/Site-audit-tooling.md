@@ -1,7 +1,7 @@
 ---
 title: "Site audit tooling"
 category: "testing"
-updated: "2026-06-10"
+updated: "2026-06-11"
 status: "active"
 tags: ["site-audit", "security-headers", "lighthouse", "performance"]
 source_priority: "internal"
@@ -69,6 +69,10 @@ pwsh D:\Work\llm-dev-wiki\tools\site-audit.ps1 -Url http://localhost:3000
 
 Default thresholds: performance `90`, accessibility `95`, SEO `95`, best-practices `90`.
 
+## Troubleshooting
+
+- На Windows полный Lighthouse smoke может падать с `EPERM, Permission denied: ... lighthouse.<id>` в `chrome-launcher.destroyTmp` при cleanup временного профиля. Это tooling/environment blocker: повтори `pwsh tools/site-audit.ps1 -Url <url> -SkipLighthouse -FailOnMedium`, зафиксируй результат headers smoke и перенеси полный Lighthouse на staging, CI или другую среду.
+
 ## Production-паттерны
 
 - Запускать на staging или локальном preview URL перед handoff.
@@ -84,6 +88,7 @@ Default thresholds: performance `90`, accessibility `95`, SEO `95`, best-practic
 - Игнорировать CSP warning, потому что "сайт работает": CSP ломается чаще всего после добавления analytics/chat/checkout scripts.
 - Проверять только home page, хотя реальные риски живут в checkout, auth, dashboard и form routes.
 - Коммитить generated audit reports в репозиторий.
+- Считать Windows `chrome-launcher` cleanup failure успешным Lighthouse audit: это documented exception, полный Lighthouse всё равно нужен перед production.
 
 ## Проверка
 

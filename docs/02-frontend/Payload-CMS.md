@@ -1,7 +1,7 @@
 ---
 title: "Payload CMS"
 category: "frontend"
-updated: "2026-06-10"
+updated: "2026-06-11"
 status: "active"
 tags: ["payload", "cms", "nextjs", "content"]
 source_priority: "vendor-docs"
@@ -31,6 +31,7 @@ Payload CMS — code-first TypeScript CMS для контентных сайто
 
 - Collections проектируются как domain schema: slug, status, SEO, locale, author, updated, access rules.
 - Globals используют для navigation, footer, site settings, legal links.
+- Для MVP content site полезно разделять Payload schema, public fallback content и seed: публичный frontend можно smoke-проверить без `DATABASE_URL`, а CMS-админка и production content включаются после подключения Postgres.
 - Draft preview закрыт auth, noindex and separate preview cache.
 - Media collection требует alt text, focal point, dimensions, license/source.
 - Hooks валидируют publish readiness and trigger revalidation/webhooks.
@@ -41,6 +42,7 @@ Payload CMS — code-first TypeScript CMS для контентных сайто
 - Не описать access control до запуска admin.
 - Кешировать preview как public pages.
 - Использовать CMS как dumping ground для product state.
+- Смешивать fallback content и CMS как два равноправных source of truth после запуска; после подключения CMS нужно определить ownership и синхронизацию.
 
 ## Security risks
 
@@ -52,7 +54,7 @@ N+1 relations, oversized rich text payloads, неоптимизированны�
 
 ## Testing strategy
 
-Проверяй collection access rules, draft/publish/unpublish, slug collision, media validation, preview route auth, revalidation webhook and SEO metadata generation.
+Проверяй collection access rules, draft/publish/unpublish, slug collision, media validation, preview route auth, revalidation webhook and SEO metadata generation. Для раннего MVP smoke допустимо проверять public routes на fallback content без базы, но отдельным gate остаются CMS admin, seed and database-backed content flow.
 
 ## Edge cases
 

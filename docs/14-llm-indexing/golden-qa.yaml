@@ -482,6 +482,12 @@ questions:
       - docs/10-templates/site-audit-project-command.md
       - prompts/create-new-project.md
 
+  - id: q-site-audit-lighthouse-windows-eperm
+    question: "Что делать, если site-audit Lighthouse на Windows падает с EPERM в chrome-launcher?"
+    expected_paths:
+      - docs/09-testing/Site-audit-tooling.md
+      - lessons-learned/2026-06-11-lighthouse-windows-eperm.md
+
   - id: q-site-stack-router-raw-request
     question: "Как автоматически определить стек сайта по сырому запросу?"
     expected_paths:

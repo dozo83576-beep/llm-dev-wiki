@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **262**
-- Активных: **250**
+- Всего документов: **264**
+- Активных: **251**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **613663** символов
+- Суммарный объём: **620523** символов
 
 ## docs
 
@@ -53,7 +53,7 @@ source_priority: "internal"
 | [docs/02-frontend/Laravel-Livewire.md](../docs/02-frontend/Laravel-Livewire.md) | Laravel Livewire | frontend | 2015 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Nextjs.md](../docs/02-frontend/Nextjs.md) | Next.js | frontend | 2105 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/Nuxt.md](../docs/02-frontend/Nuxt.md) | Nuxt | frontend | 2708 | 2026-06-10 | active | official-docs |
-| [docs/02-frontend/Payload-CMS.md](../docs/02-frontend/Payload-CMS.md) | Payload CMS | frontend | 2874 | 2026-06-10 | active | vendor-docs |
+| [docs/02-frontend/Payload-CMS.md](../docs/02-frontend/Payload-CMS.md) | Payload CMS | frontend | 3414 | 2026-06-11 | active | vendor-docs |
 | [docs/02-frontend/Performance.md](../docs/02-frontend/Performance.md) | Frontend performance | frontend | 2817 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Qwik.md](../docs/02-frontend/Qwik.md) | Qwik | frontend | 2446 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/React-Router.md](../docs/02-frontend/React-Router.md) | React Router | frontend | 2874 | 2026-06-10 | active | official-docs |
@@ -173,7 +173,7 @@ source_priority: "internal"
 | [docs/09-testing/Mocks.md](../docs/09-testing/Mocks.md) | Mocks | testing | 2838 | 2026-05-24 | active | internal |
 | [docs/09-testing/Playwright.md](../docs/09-testing/Playwright.md) | Playwright | testing | 2071 | 2026-05-24 | active | official-docs |
 | [docs/09-testing/Security-testing.md](../docs/09-testing/Security-testing.md) | Security testing | testing | 3660 | 2026-06-10 | active | official-docs |
-| [docs/09-testing/Site-audit-tooling.md](../docs/09-testing/Site-audit-tooling.md) | Site audit tooling | testing | 4530 | 2026-06-10 | active | internal |
+| [docs/09-testing/Site-audit-tooling.md](../docs/09-testing/Site-audit-tooling.md) | Site audit tooling | testing | 5079 | 2026-06-11 | active | internal |
 | [docs/09-testing/Test-data.md](../docs/09-testing/Test-data.md) | Test data | testing | 2676 | 2026-05-24 | active | internal |
 | [docs/09-testing/Test-pyramid.md](../docs/09-testing/Test-pyramid.md) | Test pyramid | testing | 3188 | 2026-05-24 | active | internal |
 | [docs/09-testing/Unit-testing.md](../docs/09-testing/Unit-testing.md) | Unit testing | testing | 2776 | 2026-05-24 | active | internal |
@@ -296,6 +296,7 @@ source_priority: "internal"
 | [case-studies/successes/2026-05-24-rag-metadata-first.md](../case-studies/successes/2026-05-24-rag-metadata-first.md) | Успешное решение: metadata-first RAG | case-study | 1190 | 2026-05-24 | validated | internal |
 | [case-studies/successes/2026-05-24-webhook-idempotency.md](../case-studies/successes/2026-05-24-webhook-idempotency.md) | Успешное решение: idempotent webhooks | case-study | 1053 | 2026-05-24 | validated | internal |
 | [case-studies/successes/2026-05-27-tvoi-hit-static-landing.md](../case-studies/successes/2026-05-27-tvoi-hit-static-landing.md) | Успешное решение: статический лендинг ТВОЙ ХИТ | case-study | 4114 | 2026-05-27 | validated | internal |
+| [case-studies/successes/2026-06-11-accounting-legal-cms.md](../case-studies/successes/2026-06-11-accounting-legal-cms.md) | Успешное решение: CMS-сайт бухгалтерских и юридических услуг | case-study | 3425 | 2026-06-11 | validated | internal |
 | [case-studies/successes/2026-06-11-turboservice-static-autoservice.md](../case-studies/successes/2026-06-11-turboservice-static-autoservice.md) | Успешное решение: статический сайт автосервиса ТУРБОСЕРВИС | case-study | 6187 | 2026-06-11 | validated | internal |
 | [case-studies/successes/README.md](../case-studies/successes/README.md) | Success case studies | case-study | 730 | 2026-05-24 | validated | internal |
 | [case-studies/successes/_template.md](../case-studies/successes/_template.md) | Успешное решение: название | case-study | 742 | 2026-05-24 | validated | internal |
@@ -310,6 +311,7 @@ source_priority: "internal"
 | [lessons-learned/2026-05-27-light-section-text-contrast.md](../lessons-learned/2026-05-27-light-section-text-contrast.md) | Урок: контраст текста в светлых секциях | lesson | 2244 | 2026-05-27 | active | internal |
 | [lessons-learned/2026-05-27-telegram-lead-form-boundary.md](../lessons-learned/2026-05-27-telegram-lead-form-boundary.md) | Урок: Telegram lead form требует серверной границы | lesson | 2212 | 2026-05-27 | active | internal |
 | [lessons-learned/2026-06-11-headless-preview-verification.md](../lessons-learned/2026-06-11-headless-preview-verification.md) | Lesson: Верификация статики в headless/sandbox-превью | lesson | 3901 | 2026-06-11 | active | internal |
+| [lessons-learned/2026-06-11-lighthouse-windows-eperm.md](../lessons-learned/2026-06-11-lighthouse-windows-eperm.md) | Lesson: Lighthouse EPERM на Windows при site-audit | lesson | 2346 | 2026-06-11 | active | internal |
 | [lessons-learned/_template.md](../lessons-learned/_template.md) | Lesson: <короткое название> | lesson | 1075 | YYYY-MM-DD | active | internal |
 
 ## mcp

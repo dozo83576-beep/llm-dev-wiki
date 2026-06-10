@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2036,
-  "corpus_hash": "725b73a86ec7b70852f97bf789871504bfd009a25f5eb10e64daec72aa6159f2",
+  "chunk_count": 2047,
+  "corpus_hash": "cb8d3c4abd662eb09a38b029530d1b6cfe8a4d879b49c54e9bf428f278f578a5",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -10,6 +10,7 @@
     "case-studies/successes/2026-05-24-rag-metadata-first.md",
     "case-studies/successes/2026-05-24-webhook-idempotency.md",
     "case-studies/successes/2026-05-27-tvoi-hit-static-landing.md",
+    "case-studies/successes/2026-06-11-accounting-legal-cms.md",
     "case-studies/successes/2026-06-11-turboservice-static-autoservice.md",
     "case-studies/successes/README.md",
     "checklists/ai-agent-review.md",
@@ -206,6 +207,7 @@
     "lessons-learned/2026-05-27-light-section-text-contrast.md",
     "lessons-learned/2026-05-27-telegram-lead-form-boundary.md",
     "lessons-learned/2026-06-11-headless-preview-verification.md",
+    "lessons-learned/2026-06-11-lighthouse-windows-eperm.md",
     "patterns/ai/mcp-read-only-default.md",
     "patterns/ai/rag-metadata.md",
     "patterns/api/error-contract.md",
@@ -255,7 +257,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-06-10T21:45:16Z",
+  "generated_at": "2026-06-10T21:59:24Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }
