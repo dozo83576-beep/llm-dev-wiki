@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-06-11"
+updated: "2026-06-14"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **264**
-- Активных: **251**
+- Всего документов: **268**
+- Активных: **254**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **620523** символов
+- Суммарный объём: **640618** символов
 
 ## docs
 
@@ -37,7 +37,7 @@ source_priority: "internal"
 | [docs/02-frontend/Analytics.md](../docs/02-frontend/Analytics.md) | Analytics | frontend | 1330 | 2026-05-24 | active | internal |
 | [docs/02-frontend/Angular-SSR.md](../docs/02-frontend/Angular-SSR.md) | Angular SSR | frontend | 1898 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Astro.md](../docs/02-frontend/Astro.md) | Astro | frontend | 2221 | 2026-06-04 | active | official-docs |
-| [docs/02-frontend/CMS-content.md](../docs/02-frontend/CMS-content.md) | CMS and content sites | frontend | 3270 | 2026-06-10 | active | mixed |
+| [docs/02-frontend/CMS-content.md](../docs/02-frontend/CMS-content.md) | CMS and content sites | frontend | 3467 | 2026-06-10 | active | mixed |
 | [docs/02-frontend/Component-driven-development.md](../docs/02-frontend/Component-driven-development.md) | Component-driven development | frontend | 2877 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Data-fetching.md](../docs/02-frontend/Data-fetching.md) | Frontend data fetching | frontend | 1591 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Design-systems.md](../docs/02-frontend/Design-systems.md) | Design systems | frontend | 3528 | 2026-06-07 | active | internal |
@@ -163,7 +163,7 @@ source_priority: "internal"
 | [docs/08-devops-deploy/Rollback.md](../docs/08-devops-deploy/Rollback.md) | Rollback | devops | 3174 | 2026-05-24 | active | internal |
 | [docs/08-devops-deploy/Secrets-rotation.md](../docs/08-devops-deploy/Secrets-rotation.md) | Secrets rotation | devops | 3453 | 2026-05-24 | active | mixed |
 | [docs/08-devops-deploy/Sentry.md](../docs/08-devops-deploy/Sentry.md) | Sentry | devops | 2613 | 2026-05-24 | active | vendor-docs |
-| [docs/08-devops-deploy/Vercel.md](../docs/08-devops-deploy/Vercel.md) | Vercel | devops | 2797 | 2026-05-24 | active | vendor-docs |
+| [docs/08-devops-deploy/Vercel.md](../docs/08-devops-deploy/Vercel.md) | Vercel | devops | 3811 | 2026-06-13 | active | vendor-docs |
 | [docs/09-testing/Accessibility-testing.md](../docs/09-testing/Accessibility-testing.md) | Accessibility testing | testing | 3257 | 2026-05-24 | active | official-docs |
 | [docs/09-testing/Contract-testing.md](../docs/09-testing/Contract-testing.md) | Contract testing | testing | 2785 | 2026-05-24 | active | internal |
 | [docs/09-testing/E2E-testing.md](../docs/09-testing/E2E-testing.md) | E2E testing | testing | 2802 | 2026-05-24 | active | official-docs |
@@ -226,6 +226,8 @@ source_priority: "internal"
 | [patterns/frontend/localstorage-mini-crm.md](../patterns/frontend/localstorage-mini-crm.md) | Pattern: LocalStorage mini-CRM (клиентский CRUD без бэкенда) | pattern | 3891 | 2026-06-11 | active | internal |
 | [patterns/frontend/semantic-theme-text-tokens.md](../patterns/frontend/semantic-theme-text-tokens.md) | Pattern: Semantic theme text tokens | patterns | 2980 | 2026-05-27 | active | internal |
 | [patterns/frontend/server-client-boundary.md](../patterns/frontend/server-client-boundary.md) | Pattern: Server/client boundary | patterns | 456 | 2026-05-24 | active | internal |
+| [patterns/frontend/static-site-dev-only-cms-flag.md](../patterns/frontend/static-site-dev-only-cms-flag.md) | Pattern: Static site + dev-only CMS behind build flag | pattern | 5235 | 2026-06-12 | active | internal |
+| [patterns/frontend/third-party-booking-widget.md](../patterns/frontend/third-party-booking-widget.md) | Pattern: Third-party booking widget (попап записи) | pattern | 4127 | 2026-06-13 | active | internal |
 | [patterns/security/deny-by-default.md](../patterns/security/deny-by-default.md) | Pattern: Deny by default | patterns | 404 | 2026-05-24 | active | internal |
 | [patterns/security/tenant-isolation.md](../patterns/security/tenant-isolation.md) | Pattern: Tenant isolation | patterns | 1095 | 2026-05-24 | active | internal |
 
@@ -266,7 +268,7 @@ source_priority: "internal"
 | [checklists/backend-review.md](../checklists/backend-review.md) | Backend review checklist | checklist | 3761 | 2026-05-24 | active | internal |
 | [checklists/database-review.md](../checklists/database-review.md) | Database review checklist | checklist | 3498 | 2026-05-24 | active | internal |
 | [checklists/frontend-review.md](../checklists/frontend-review.md) | Frontend review checklist | checklist | 8898 | 2026-06-11 | active | internal |
-| [checklists/project-discovery.md](../checklists/project-discovery.md) | Project discovery checklist | checklist | 3847 | 2026-06-07 | active | internal |
+| [checklists/project-discovery.md](../checklists/project-discovery.md) | Project discovery checklist | checklist | 4242 | 2026-06-13 | active | internal |
 | [checklists/release-readiness.md](../checklists/release-readiness.md) | Release readiness checklist | checklist | 4478 | 2026-06-10 | active | internal |
 | [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 5549 | 2026-06-10 | active | internal |
 | [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 2914 | 2026-06-07 | active | internal |
@@ -298,6 +300,7 @@ source_priority: "internal"
 | [case-studies/successes/2026-05-27-tvoi-hit-static-landing.md](../case-studies/successes/2026-05-27-tvoi-hit-static-landing.md) | Успешное решение: статический лендинг ТВОЙ ХИТ | case-study | 4114 | 2026-05-27 | validated | internal |
 | [case-studies/successes/2026-06-11-accounting-legal-cms.md](../case-studies/successes/2026-06-11-accounting-legal-cms.md) | Успешное решение: CMS-сайт бухгалтерских и юридических услуг | case-study | 3425 | 2026-06-11 | validated | internal |
 | [case-studies/successes/2026-06-11-turboservice-static-autoservice.md](../case-studies/successes/2026-06-11-turboservice-static-autoservice.md) | Успешное решение: статический сайт автосервиса ТУРБОСЕРВИС | case-study | 6187 | 2026-06-11 | validated | internal |
+| [case-studies/successes/2026-06-13-sport-psy-static-site.md](../case-studies/successes/2026-06-13-sport-psy-static-site.md) | Успешное решение: статический сайт детского спортивного психолога (sport-psy) | case-study | 5430 | 2026-06-13 | validated | internal |
 | [case-studies/successes/README.md](../case-studies/successes/README.md) | Success case studies | case-study | 730 | 2026-05-24 | validated | internal |
 | [case-studies/successes/_template.md](../case-studies/successes/_template.md) | Успешное решение: название | case-study | 742 | 2026-05-24 | validated | internal |
 
@@ -310,8 +313,9 @@ source_priority: "internal"
 | [lessons-learned/2026-05-24-update-monitoring.md](../lessons-learned/2026-05-24-update-monitoring.md) | Урок: обновления технологий должны становиться задачами | lesson | 849 | 2026-05-24 | active | internal |
 | [lessons-learned/2026-05-27-light-section-text-contrast.md](../lessons-learned/2026-05-27-light-section-text-contrast.md) | Урок: контраст текста в светлых секциях | lesson | 2244 | 2026-05-27 | active | internal |
 | [lessons-learned/2026-05-27-telegram-lead-form-boundary.md](../lessons-learned/2026-05-27-telegram-lead-form-boundary.md) | Урок: Telegram lead form требует серверной границы | lesson | 2212 | 2026-05-27 | active | internal |
-| [lessons-learned/2026-06-11-headless-preview-verification.md](../lessons-learned/2026-06-11-headless-preview-verification.md) | Lesson: Верификация статики в headless/sandbox-превью | lesson | 3901 | 2026-06-11 | active | internal |
+| [lessons-learned/2026-06-11-headless-preview-verification.md](../lessons-learned/2026-06-11-headless-preview-verification.md) | Lesson: Верификация статики в headless/sandbox-превью | lesson | 4506 | 2026-06-13 | active | internal |
 | [lessons-learned/2026-06-11-lighthouse-windows-eperm.md](../lessons-learned/2026-06-11-lighthouse-windows-eperm.md) | Lesson: Lighthouse EPERM на Windows при site-audit | lesson | 2346 | 2026-06-11 | active | internal |
+| [lessons-learned/2026-06-13-region-accessible-third-party-embeds.md](../lessons-learned/2026-06-13-region-accessible-third-party-embeds.md) | Урок: сторонние эмбеды должны быть доступны в регионе аудитории | lesson | 3092 | 2026-06-13 | active | internal |
 | [lessons-learned/_template.md](../lessons-learned/_template.md) | Lesson: <короткое название> | lesson | 1075 | YYYY-MM-DD | active | internal |
 
 ## mcp

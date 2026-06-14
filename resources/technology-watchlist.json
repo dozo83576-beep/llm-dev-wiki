@@ -357,5 +357,12 @@
     "currentVersion": "",
     "docsUrl": "https://owasp.org/www-project-top-ten/",
     "notes": "Check OWASP Top 10, WSTG and LLM Top 10 updates manually."
+  },
+  {
+    "name": "DIKIDI",
+    "ecosystem": "manual",
+    "currentVersion": "",
+    "docsUrl": "https://dikidi.ru/",
+    "notes": "Российский сервис онлайн-записи (booking) с попап-виджетом (widget_record/widget2.min.js); доступен из РФ — альтернатива Calendly для РФ-аудитории. Версии/код виджета привязаны к аккаунту, ревью вручную."
   }
 ]

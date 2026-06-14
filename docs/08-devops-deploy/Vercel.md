@@ -1,9 +1,9 @@
 ---
 title: "Vercel"
 category: "devops"
-updated: "2026-05-24"
+updated: "2026-06-13"
 status: "active"
-tags: ["vercel", "nextjs", "hosting"]
+tags: ["vercel", "nextjs", "astro", "static", "hosting"]
 source_priority: "vendor-docs"
 ---
 
@@ -30,6 +30,21 @@ Vercel — основной hosting для Next.js: preview deployments на к�
 - Edge functions для лёгких задач (auth-cookie, geo-routing); тяжёлая логика — в node runtime.
 - ISR/On-demand revalidation вместо ручных deploy для изменения контента.
 - Аналитика и Real Experience Score включены, alert на регрессию p75 LCP.
+
+## Статический сайт / SSG + функции `/api`
+
+Vercel — не только Next.js. Для статического Astro/SSG-сайта **адаптер не нужен**: пресет фреймворка
+собирает `astro build` → `dist`, и Vercel отдаёт статику с CDN. Единичную серверную логику (приём
+заявки, вебхук) кладут в корневой каталог **`/api`** — это нативные Vercel-функции, которые собираются
+независимо от фреймворка.
+
+- Node-функция: `export default async function handler(req, res) { … }`; тело JSON уже распарсено в
+  `req.body`; секреты — из `process.env` (заданы в Project Settings, не в `NEXT_PUBLIC_*`/`PUBLIC_*`).
+- IP клиента — из заголовка `x-forwarded-for`.
+- Локальный прогон функции — `npx vercel dev` (берёт `.env`); без env — держи dry-run, чтобы не падать.
+- Так сайт остаётся чисто статическим (лучший SEO/perf), а серверная граница ограничена одним
+  каталогом. Перенос с Cloudflare Pages: функции из `functions/` (сигнатура `onRequestPost(context)`,
+  `context.env`) переписываются в `/api` (`(req,res)`, `process.env`).
 
 ## Частые ошибки
 

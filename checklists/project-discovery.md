@@ -1,7 +1,7 @@
 ---
 title: "Project discovery checklist"
 category: "checklist"
-updated: "2026-06-07"
+updated: "2026-06-13"
 status: "active"
 tags: ["discovery", "kickoff"]
 source_priority: "internal"
@@ -37,6 +37,7 @@ Gated checklist для kickoff'а нового проекта. Формат: к�
 - [ ] **Analytics** и event tracking запланирован — product owner — warn — [Analytics](../docs/02-frontend/Analytics.md).
 - [ ] **AI / external API** — список и квоты — tech lead — warn — [OpenAI API](../docs/07-mcp-and-ai-tools/OpenAI-API.md).
 - [ ] **SSO / identity** требования зафиксированы; Auth.js vs Clerk/Supabase trade-off выбран — security owner — warn — [Authentication](../docs/05-auth-security/Authentication.md), [Auth.js](../docs/05-auth-security/Authjs.md), [Clerk](../docs/05-auth-security/Clerk.md), [Supabase](../docs/03-backend/Supabase.md).
+- [ ] **Региональная доступность** сторонних сервисов/эмбедов (запись, платежи, чат, карты, шрифты, капча, аналитика) проверена для региона аудитории — клиентские эмбеды грузятся в браузере посетителя и могут быть заблокированы (напр. Calendly в РФ) — tech lead — block — [Урок: региональная доступность сторонних эмбедов](../lessons-learned/2026-06-13-region-accessible-third-party-embeds.md).
 
 ## Data & privacy
 

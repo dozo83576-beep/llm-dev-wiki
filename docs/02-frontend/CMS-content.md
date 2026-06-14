@@ -58,3 +58,4 @@ Content site — это не просто страницы с текстом. Pr
 - [Astro Content Collections](https://docs.astro.build/en/guides/content-collections/)
 - [Next.js CMS examples](https://nextjs.org/docs)
 - См. [Payload CMS](Payload-CMS.md), [WordPress](WordPress.md), [Strapi](Strapi.md), [Sanity](Sanity.md), [Directus](Directus.md), [Webflow](Webflow.md), [SEO](SEO.md), [Astro](Astro.md), [Performance](Performance.md), [I18n](I18n.md).
+- Паттерн: [Static site + dev-only CMS behind build flag](../../patterns/frontend/static-site-dev-only-cms-flag.md) — как держать Keystatic/Tina для редактирования, не ломая статический prerender.
