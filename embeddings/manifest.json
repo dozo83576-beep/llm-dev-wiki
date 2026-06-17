@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2047,
-  "corpus_hash": "cb8d3c4abd662eb09a38b029530d1b6cfe8a4d879b49c54e9bf428f278f578a5",
+  "chunk_count": 2083,
+  "corpus_hash": "3e6c15302d18fec39cb73edadd2e21a8ca84b456191a1e8ffaa3a55b665908e2",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -12,6 +12,7 @@
     "case-studies/successes/2026-05-27-tvoi-hit-static-landing.md",
     "case-studies/successes/2026-06-11-accounting-legal-cms.md",
     "case-studies/successes/2026-06-11-turboservice-static-autoservice.md",
+    "case-studies/successes/2026-06-13-sport-psy-static-site.md",
     "case-studies/successes/README.md",
     "checklists/ai-agent-review.md",
     "checklists/api-review.md",
@@ -25,6 +26,7 @@
     "docs/00-start-here/document-standard.md",
     "docs/00-start-here/overview.md",
     "docs/00-start-here/skill-system.md",
+    "docs/01-development-process/competitive-analysis.md",
     "docs/01-development-process/full-cycle.md",
     "docs/01-development-process/new-site-preflight-tool.md",
     "docs/01-development-process/runtime-selection.md",
@@ -208,6 +210,7 @@
     "lessons-learned/2026-05-27-telegram-lead-form-boundary.md",
     "lessons-learned/2026-06-11-headless-preview-verification.md",
     "lessons-learned/2026-06-11-lighthouse-windows-eperm.md",
+    "lessons-learned/2026-06-13-region-accessible-third-party-embeds.md",
     "patterns/ai/mcp-read-only-default.md",
     "patterns/ai/rag-metadata.md",
     "patterns/api/error-contract.md",
@@ -225,6 +228,8 @@
     "patterns/frontend/localstorage-mini-crm.md",
     "patterns/frontend/semantic-theme-text-tokens.md",
     "patterns/frontend/server-client-boundary.md",
+    "patterns/frontend/static-site-dev-only-cms-flag.md",
+    "patterns/frontend/third-party-booking-widget.md",
     "patterns/security/deny-by-default.md",
     "patterns/security/tenant-isolation.md",
     "prompts/backend-audit.md",
@@ -257,7 +262,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-06-10T21:59:24Z",
+  "generated_at": "2026-06-17T15:30:41Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }

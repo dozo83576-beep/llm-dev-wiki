@@ -54,6 +54,7 @@ Trigger-фраза для обоих рантаймов: если пользов
 | --- | --- | --- |
 | `build-modern-site` | Оркестрация | [create-new-project](../../prompts/create-new-project.md), [full-cycle](../01-development-process/full-cycle.md), [playbooks](../13-playbooks/index.md) |
 | `site-discovery` | Требования | [project-discovery](../../checklists/project-discovery.md) |
+| `site-competitive-analysis` | Анализ конкурентов | [competitive-analysis](../01-development-process/competitive-analysis.md) + `tools/site-audit.ps1` + WebSearch/WebFetch |
 | `site-stack` | Выбор стека | [stack-selection](../01-development-process/stack-selection.md), [decision router](../01-development-process/site-architecture-decision-router.md) |
 | `site-architecture` | Архитектура | design-architecture, implementation-plan, design-database |
 | `site-content` | Контент | [CMS-content](../02-frontend/CMS-content.md), [Payload-CMS](../02-frontend/Payload-CMS.md), [I18n](../02-frontend/I18n.md), [Compliance-baseline](../05-auth-security/Compliance-baseline.md) |
