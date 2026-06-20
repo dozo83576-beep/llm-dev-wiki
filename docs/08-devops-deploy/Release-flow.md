@@ -1,7 +1,7 @@
 ---
 title: "Release flow"
 category: "devops"
-updated: "2026-05-24"
+updated: "2026-06-19"
 status: "active"
 tags: ["release", "deploy", "cd"]
 source_priority: "internal"
@@ -31,7 +31,8 @@ Release flow должен быть скучным, повторяемым и п�
 6. **Release readiness checklist** — [checklists/release-readiness.md](../../checklists/release-readiness.md) пройден.
 7. **Production deploy** — выполняется в окно, заранее объявлено в Slack.
 8. **Monitoring window** — 30–60 мин активного наблюдения за метриками и логами.
-9. **Knowledge capture** — если был incident или нестандартное решение → запись в `lessons-learned` / `case-studies`.
+9. **Client handoff** — сгенерирован `handoff.md`, доступы переданы безопасно, письменная приемка получена.
+10. **Knowledge capture** — если был incident или нестандартное решение → запись в `lessons-learned` / `case-studies`.
 
 ## Stop conditions
 
@@ -42,14 +43,17 @@ Release flow должен быть скучным, повторяемым и п�
 - Critical security finding (open OWASP issue, утечка credentials).
 - Vendor / dependency outage блокирует smoke-тест.
 - Open S1/S2 incident в продакшене.
+- Передача заказчику требует секреты в plain text файле вместо password manager или приглашений в сервисы.
 
 ## Production-паттерны
 
 - Trunk-based: короткие feature branches, мердж в main несколько раз в день.
 - Continuous Deployment с feature flags для контроля видимости.
 - Database migrations отдельным шагом от code release (expand → migrate → contract).
+- Для VPS Node-сайтов default: отдельный deploy-пользователь, PM2 от этого пользователя, Nginx reverse proxy, `.env.production` вне архива; root только для первичной настройки и ограниченного sudo.
 - Canary / progressive rollout для критичных изменений.
 - Roll-forward по умолчанию, rollback как safety net.
+- Для клиентских сайтов после production monitoring генерировать `handoff.md` через [site handoff template](../10-templates/handoff.md).
 
 ## Частые ошибки
 
@@ -57,6 +61,7 @@ Release flow должен быть скучным, повторяемым и п�
 - Friday-deploy без on-call покрытия в выходные.
 - Применить миграцию и сразу выкатить новый код — нет окна для проверки.
 - Не объявлять релиз в чат — другие команды не знают, на чём смотреть отказы.
+- Запускать Node/PM2 от root на VPS и хранить runtime secrets в process manager config.
 
 ## Security risks
 
@@ -78,4 +83,4 @@ Release flow должен быть скучным, повторяемым и п�
 ## Источники
 
 - [Google SRE — Release Engineering](https://sre.google/sre-book/release-engineering/) — проверено 2026-05-24.
-- См. [Rollback](Rollback.md), [Migrations](../04-databases/Migrations.md), [release-readiness checklist](../../checklists/release-readiness.md).
+- См. [Rollback](Rollback.md), [Migrations](../04-databases/Migrations.md), [release-readiness checklist](../../checklists/release-readiness.md), [non-root VPS Node deploy](../../patterns/devops/non-root-vps-node-pm2-nginx-deploy.md).

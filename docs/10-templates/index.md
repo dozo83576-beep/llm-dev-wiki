@@ -1,9 +1,9 @@
 ---
 title: "Templates"
 category: "templates"
-updated: "2026-06-10"
+updated: "2026-06-19"
 status: "active"
-tags: ["templates", "case-studies"]
+tags: ["templates", "case-studies", "handoff"]
 source_priority: "internal"
 ---
 
@@ -15,5 +15,6 @@ source_priority: "internal"
 - [failure case template](../../case-studies/failures/_template.md)
 - [lesson learned template](../../lessons-learned/_template.md)
 - [site audit project command](site-audit-project-command.md)
+- [site handoff template](handoff.md)
 
 Используй эти шаблоны после каждого проекта или значимого этапа, чтобы сохранять применимые знания и предотвращать повторение ошибок.

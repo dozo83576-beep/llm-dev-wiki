@@ -11,6 +11,8 @@ source_priority: "internal"
 
 `tools/new-site-preflight.ps1` — единая offline-команда перед созданием сайта. Она запускает rule-based stack router, возвращает confidence, docs to read и готовую команду `site-audit.ps1` для handoff. Скрипт не использует LLM/API, не ходит в сеть, не запускает Lighthouse и не меняет проект.
 
+Это **канонический источник** триггер-фразы raw request: скиллы (`build-modern-site`, `site-stack`) её не переопределяют, а ссылаются сюда.
+
 ## Когда использовать
 
 - Когда пользователь пишет `Я хочу создать сайт <описание сайта>`: текст после фразы считается raw request для preflight.

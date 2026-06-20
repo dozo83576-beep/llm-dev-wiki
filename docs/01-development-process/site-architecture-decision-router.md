@@ -41,6 +41,7 @@ Executable smoke для этой policy: `pwsh tools/site-stack-router.ps1 -Requ
 | Сигнал запроса | Primary route | Default stack | Когда спросить до выбора |
 |---|---|---|---|
 | Маркетинговый лендинг, SEO, форма заявки | [landing](../13-playbooks/landing.md) | Astro или Next.js static + serverless form | Неясны CMS, локали, аналитика, form delivery |
+| Портфолио услуг, кейсы, форма заявки, VPS | [landing](../13-playbooks/landing.md) + [portfolio screenshot gallery](../../patterns/frontend/portfolio-case-screenshot-gallery.md) + [non-root VPS deploy](../../patterns/devops/non-root-vps-node-pm2-nginx-deploy.md) | Astro Node + server form + PM2/Nginx под non-root пользователем | Неясны публичные кейсы, канал заявки, домен/VPS |
 | Контентный сайт, редакторы, публикации | [CMS content](../02-frontend/CMS-content.md) | Astro/Next.js + headless CMS/Payload | Неясны preview, media, roles, redirects |
 | Существующий WordPress/editorial workflow | [WordPress](../02-frontend/WordPress.md) | WordPress theme или headless WordPress + Astro/Next | Неясны plugin policy, roles, cache, preview |
 | Marketing team хочет visual builder | [Webflow](../02-frontend/Webflow.md) | Webflow CMS + forms/API boundary | Неясны custom logic, vendor lock-in, scripts |

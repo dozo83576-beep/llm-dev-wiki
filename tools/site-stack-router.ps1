@@ -112,6 +112,14 @@ $rules = @(
         -RejectedAlternatives @('Astro: недостаточен для app-after-login.', 'React SPA + API: хорош при уже существующем API, но хуже как default full-stack start.', 'WordPress/Webflow: не подходят для custom SaaS domain.') `
         -AcceptanceGates @('Auth/authorization tests.', 'Billing/webhook idempotency tests if payments exist.', 'Playwright protected-route smoke and site audit.') `
         -Priority 50),
+    (New-Rule -Id "service-portfolio" -Route "Service portfolio / lead generation" -Stack "Astro Node + server form + non-root VPS deploy when server endpoint is needed" `
+        -Patterns @('портфолио', 'кейсы', 'услуг', 'заявк', 'лид', 'lead', 'форма', 'vps', 'депло') `
+        -WikiLinks @('docs/13-playbooks/landing.md', 'docs/02-frontend/Astro.md', 'checklists/frontend-review.md', 'docs/08-devops-deploy/Release-flow.md', 'patterns/frontend/portfolio-case-screenshot-gallery.md', 'patterns/devops/non-root-vps-node-pm2-nginx-deploy.md') `
+        -Assumptions @('Сайт публичный, продаёт услуги и собирает заявки через форму.', 'Кейсы показываются как реальные или демо-работы без выдуманных метрик.') `
+        -OpenQuestions @('Нужен ли серверный endpoint формы или достаточно внешней формы?', 'Есть ли домен/VPS или деплой идёт на managed platform?', 'Какие кейсы и скриншоты можно показывать публично?') `
+        -RejectedAlternatives @('Next.js fullstack: лишний, если нет app-after-login и сложного backend.', 'Root VPS deploy: не default, потому что повышает риск при обычных обновлениях сайта.', 'Фейковые метрики кейсов: недопустимы без аналитики.') `
+        -AcceptanceGates @('Preview/full-page screenshots and lightbox smoke.', 'Form happy/error/dry-run or Telegram delivery smoke.', 'Non-root PM2 deploy, Nginx check and env preservation on VPS.') `
+        -Priority 50),
     (New-Rule -Id "landing" -Route "Landing" -Stack "Astro или Next.js static + serverless form" `
         -Patterns @('landing', 'лендинг', 'маркетинг', 'seo', 'форма', 'lead', 'лид', 'waitlist', 'pre.?launch', 'промо') `
         -WikiLinks @('docs/13-playbooks/landing.md', 'docs/02-frontend/Astro.md', 'docs/09-testing/Site-audit-tooling.md') `

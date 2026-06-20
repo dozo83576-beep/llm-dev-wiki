@@ -1,9 +1,9 @@
 ---
 title: "Release readiness checklist"
 category: "checklist"
-updated: "2026-06-10"
+updated: "2026-06-19"
 status: "active"
-tags: ["release", "deploy", "release-gate"]
+tags: ["release", "deploy", "release-gate", "handoff"]
 source_priority: "internal"
 ---
 
@@ -29,6 +29,7 @@ Gated checklist для production-релиза. Срабатывает посл�
 
 - [ ] **Environment variables** настроены для target environment; `.env.example` совпадает — devops owner — block — [Environment variables](../docs/08-devops-deploy/Environment-variables.md).
 - [ ] **Secrets** загружены в secret manager и проверены smoke-проверкой — devops owner — block — [Secrets rotation](../docs/08-devops-deploy/Secrets-rotation.md).
+- [ ] **VPS Node deploy не под root**: PM2 запущен от отдельного пользователя, `.env.production` не входит в архив и не перетирается deploy-скриптом — devops owner — block — [non-root VPS Node deploy](../patterns/devops/non-root-vps-node-pm2-nginx-deploy.md).
 - [ ] **Feature flags** настроены: новые фичи выключены по умолчанию — product owner — warn.
 
 ## Preview & smoke
@@ -36,7 +37,7 @@ Gated checklist для production-релиза. Срабатывает посл�
 - [ ] **Preview / staging deploy** зелёный и доступен — devops owner — block.
 - [ ] **Smoke E2E** на preview пройдены (login, key write, key read) — QA — block — [E2E testing](../docs/09-testing/E2E-testing.md).
 - [ ] **Site audit smoke** пройден для public web routes: `pwsh tools/site-audit.ps1 -Url <preview-url>` или documented exception — frontend/devops — warn — [Site audit tooling](../docs/09-testing/Site-audit-tooling.md).
-- [ ] **Critical user-journey** проверен вручную stakeholder'ом — product owner — warn.
+- [ ] **Critical user-journey** проверен вручную stakeholder'ом; UAT и client sign-off пройдены — product owner — block — [qa-acceptance](qa-acceptance.md).
 
 ## Observability & alerts
 
@@ -49,6 +50,7 @@ Gated checklist для production-релиза. Срабатывает посл�
 
 - [ ] **Security review** пройден — security owner — block — [security-review](security-review.md).
 - [ ] **Compliance-impacting changes** (payments, PII, accessibility, auth) прошли baseline gate — security owner — block — [Compliance baseline](../docs/05-auth-security/Compliance-baseline.md).
+- [ ] **Legal/152-ФЗ** (для РФ-аудитории): политика конфиденциальности, согласие, локализация ПДн, ИИ-юр-тексты проверены человеком — project owner — block — [legal-compliance](legal-compliance.md).
 - [ ] **MCP / AI tools** прошли отдельный security review — AI owner — block — [ai-agent-review](ai-agent-review.md).
 
 ## Communication & rollback
@@ -57,6 +59,7 @@ Gated checklist для production-релиза. Срабатывает посл�
 - [ ] **Rollback план** определён: команды отката, owner решения, max acceptable downtime — devops owner — block — [Rollback](../docs/08-devops-deploy/Rollback.md).
 - [ ] **On-call покрытие** на ближайшие 4–8 часов после деплоя — SRE — block.
 - [ ] **Customer comms** подготовлены, если изменения публичны (UI / breaking change) — product owner — warn.
+- [ ] **Client handoff** подготовлен через фазу `site-handoff`: `handoff.md` содержит production-ссылки, версию релиза, безопасную передачу доступов и условия поддержки — project owner — warn — [handoff template](../docs/10-templates/handoff.md).
 
 ## Knowledge capture
 

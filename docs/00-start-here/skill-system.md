@@ -17,7 +17,7 @@ controlled learning loop: фиксирует одобренные предпоч
 
 ## Назначение
 
-- Дать единый сквозной маршрут «идея → деплой → фиксация знаний» с проверяемыми этапами.
+- Дать единый сквозной маршрут «идея → деплой → передача клиенту → фиксация знаний» с проверяемыми этапами.
 - Подключать в каждой фазе профильные документы вики, а не выбирать решения «из головы».
 - Замкнуть управляемую петлю накопления знаний: одобренные предпочтения и дизайн-решения сохранять,
   чтобы следующий проект стартовал с накопленного контекста.
@@ -64,6 +64,7 @@ Trigger-фраза для обоих рантаймов: если пользов
 | `site-seo` | SEO | [SEO](../02-frontend/SEO.md), [Performance](../02-frontend/Performance.md), [Analytics](../02-frontend/Analytics.md), [Accessibility](../02-frontend/Accessibility.md) |
 | `site-review` | Ревью | review-чеклисты + code-review/security-review |
 | `site-deploy` | Деплой | deploy + devops-доки + release-readiness |
+| `site-handoff` | Передача клиенту | [handoff template](../10-templates/handoff.md) + `tools/new-handoff.ps1` + [maintenance](../15-maintenance/retro-process.md) |
 | `capture-learnings` | Learning review | [post-task-learning-review](../../prompts/post-task-learning-review.md) |
 
 ## Петля накопления знаний

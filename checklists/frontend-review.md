@@ -82,5 +82,6 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 - [ ] **Component tests** для сложных интерактивных компонентов — frontend owner — warn — [Frontend testing](../docs/02-frontend/Frontend-testing.md).
 - [ ] **Visual regression** для дизайн-системы и hero pages — frontend owner — warn — [Visual testing](../docs/09-testing/Visual-testing.md).
 - [ ] **Responsive screenshots** сохранены или проверены для 360px / 768px / desktop на критичных routes — QA — warn — [Visual testing](../docs/09-testing/Visual-testing.md).
+- [ ] **Portfolio case screenshots**: preview и full-page изображения разделены, пустые хвосты/чёрные поля обрезаны, lightbox проверен на desktop/mobile без horizontal scroll — QA + frontend owner — warn — [portfolio case screenshot gallery](../patterns/frontend/portfolio-case-screenshot-gallery.md).
 - [ ] **Headless/sandbox preview**: при бесконечных CSS-анимациях верифицировать DOM-метриками (`getBoundingClientRect`/computed styles), а не скриншотами; форсировать reveal-состояния и cache-bust CSS/HTML — QA — warn — [headless preview verification](../lessons-learned/2026-06-11-headless-preview-verification.md).
 - [ ] **Story/component states** есть для reusable widgets: default/loading/error/empty/long text/mobile — frontend owner — warn — [Component-driven development](../docs/02-frontend/Component-driven-development.md).

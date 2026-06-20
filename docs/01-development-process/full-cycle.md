@@ -20,7 +20,11 @@ source_priority: "internal"
 9. Тестирование: unit, integration, E2E, contract, security, load по рискам.
 10. Security review: OWASP, секреты, authz, CORS/CSRF/CSP, dependency scan.
 11. Деплой: environment variables, migrations, rollback, monitoring, alerts.
-12. Knowledge capture: success/failure кейсы, lessons learned, обновленные чеклисты.
+12. Передача клиенту: post-deploy smoke, handoff.md, безопасная передача доступов, инструкции, письменное подтверждение приёмки, условия поддержки.
+13. Пост-релиз: мониторинг и ретро через 30–90 дней (см. docs/15-maintenance).
+14. Knowledge capture: success/failure кейсы, lessons learned, обновленные чеклисты.
+
+Acceptance (UAT и client sign-off) проходит в фазе ревью до релиза по чеклисту [qa-acceptance](../../checklists/qa-acceptance.md).
 
 Результат каждого этапа должен быть проверяемым: документ, тест, diff, скриншот, лог, метрика или ссылка на deploy.
 

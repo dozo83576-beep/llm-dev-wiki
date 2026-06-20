@@ -16,6 +16,7 @@ source_priority: "internal"
 - Запуск нового продукта / waitlist / pre-launch.
 - Отдельный канал под рекламную кампанию.
 - Описание SaaS-продукта рядом с приложением (`/` лендинг, `/app` продукт).
+- Портфолио услуг / lead-generation portfolio: показать реальные демо-кейсы, собрать заявку и дать понятный канал связи.
 
 ## Когда не использовать
 
@@ -31,13 +32,22 @@ source_priority: "internal"
 1. **Offer**: кому продаём, какую проблему решаем, какой главный CTA.
 2. **Content outline**: hero, social proof, features, objections, FAQ, finally CTA.
 3. **Copy first**: пишем тексты, потом дизайн — а не наоборот.
-4. **SEO**: title, description, OG tags, structured data (Product/Article/FAQ), правильный canonical.
-5. **UI**: responsive, mobile-first, fast first viewport (LCP < 2s), semantic text tokens для светлых и темных секций.
-6. **Forms**: zod / pydantic валидация, honeypot + (опционально) Turnstile/hCaptcha, double opt-in для email, storage в CRM/Sheets/Notion или MVP-уведомление в Telegram/Slack через serverless endpoint.
-7. **Analytics**: page view, scroll depth, CTA click, form submit, conversion funnel.
-8. **Visual/a11y smoke**: после переноса дизайна на реальные секции проверить FAQ, формы, карточки с фото и CTA на computed color + contrast ratio.
-9. **Performance**: image optimization (WebP/AVIF), font-display swap, минимальный JS.
-10. **A/B test plan** (опционально): один тест за раз, понятная метрика.
+4. **Design direction**: перебить дефолтный house style модели (кремовый/serif), записать `DESIGN-DIRECTION.md` по [design-direction-brief](../../prompts/design-direction-brief.md), показать 3–4 направления (`фон hex / акцент hex / шрифт`) и дождаться выбора до UI. Приёмы — [anti-ai-slop design](../../patterns/frontend/anti-ai-slop-design.md).
+5. **SEO**: title, description, OG tags, structured data (Product/Article/FAQ), правильный canonical.
+6. **UI**: responsive, mobile-first, fast first viewport (LCP < 2s), semantic text tokens для светлых и темных секций.
+7. **Forms**: zod / pydantic валидация, honeypot + (опционально) Turnstile/hCaptcha, double opt-in для email, storage в CRM/Sheets/Notion или MVP-уведомление в Telegram/Slack через serverless endpoint.
+8. **Analytics**: page view, scroll depth, CTA click, form submit, conversion funnel.
+9. **Visual/a11y smoke**: после переноса дизайна на реальные секции проверить FAQ, формы, карточки с фото и CTA на computed color + contrast ratio.
+10. **Performance**: image optimization (WebP/AVIF), font-display swap, минимальный JS.
+11. **A/B test plan** (опционально): один тест за раз, понятная метрика.
+
+### Вариант: портфолио услуг
+
+- Показывать только реальные демо-проекты или разрешённые кейсы; не выдумывать клиентов, отзывы, конверсию и заявки.
+- Данные кейсов держать в простом data/content слое; CMS добавлять только при реальном редакторском workflow.
+- Для галереи кейсов использовать отдельные preview/fullImage: компактные превью не должны быть full-page полотнами, lightbox открывает отдельный полный скриншот.
+- Для формы заявки хранить токены уведомлений только в server env; если env нет, endpoint должен иметь dry-run/fallback и понятное сообщение.
+- Для VPS Node deploy по умолчанию использовать non-root пользователя, PM2, Nginx reverse proxy и `.env.production` вне архива.
 
 ## Production-паттерны
 
@@ -48,14 +58,24 @@ source_priority: "internal"
 - Для Telegram/Slack MVP токены хранятся только в server env vars; endpoint повторно валидирует payload, экранирует сообщение и имеет fallback для пользователя.
 - 404 / 500 пользовательские страницы, не дефолт vercel'а.
 
+### Конверсионные микро-принципы
+
+- H1 не длиннее 7 слов, оффер понятен с первого взгляда — сайты «глядят», не читают.
+- Один экран = одна мысль. Главная ошибка — высокая плотность текста.
+- «Don't make me think»: green=good / red=bad, без нагрузки на критическое мышление.
+- Баланс контента 70% польза / 20% кейсы / 10% продажа; дефицит + дедлайн у CTA.
+- Честность данных: только реальные кейсы/цифры/отзывы; нет — явные плейсхолдеры, не выдумка.
+
 ## Анти-паттерны
 
 - Hero без реального продукта/демо — клиент не понимает, что покупает.
+- Портфолио с фейковыми коммерческими метриками — юридический и репутационный риск.
 - Тяжёлый React-фреймворк ради одного аккордеона.
 - Не проверять mobile first viewport — > 60% трафика обычно мобильный.
 - Form без spam protection — лиды забиваются ботами.
 - Отправлять лид напрямую из браузера в Telegram/Slack — токен утечет в client bundle.
 - Динамические скрипты-аналитики, блокирующие первый рендер.
+- Дефолтный «AI-вид»: кремовый фон + serif, layout «hero + 3 карточки», эмодзи вместо иконок, длинное/среднее тире в копии.
 
 ## Security risks
 
@@ -82,4 +102,4 @@ Hero-видео без poster, неоптимизированные images (Mb �
 
 ## Источники
 
-- См. [Astro](../02-frontend/Astro.md), [Eleventy](../02-frontend/Eleventy.md), [Hugo](../02-frontend/Hugo.md), [CMS content](../02-frontend/CMS-content.md), [WordPress](../02-frontend/WordPress.md), [Webflow](../02-frontend/Webflow.md), [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [Performance](../02-frontend/Performance.md), [SEO](../02-frontend/SEO.md), [Forms validation](../02-frontend/Forms-validation.md), [Analytics](../02-frontend/Analytics.md), [semantic theme text tokens](../../patterns/frontend/semantic-theme-text-tokens.md), [telegram lead notification](../../patterns/backend/telegram-lead-notification.md).
+- См. [Astro](../02-frontend/Astro.md), [Eleventy](../02-frontend/Eleventy.md), [Hugo](../02-frontend/Hugo.md), [CMS content](../02-frontend/CMS-content.md), [WordPress](../02-frontend/WordPress.md), [Webflow](../02-frontend/Webflow.md), [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [Performance](../02-frontend/Performance.md), [SEO](../02-frontend/SEO.md), [Forms validation](../02-frontend/Forms-validation.md), [Analytics](../02-frontend/Analytics.md), [semantic theme text tokens](../../patterns/frontend/semantic-theme-text-tokens.md), [telegram lead notification](../../patterns/backend/telegram-lead-notification.md), [portfolio case screenshot gallery](../../patterns/frontend/portfolio-case-screenshot-gallery.md), [non-root VPS Node deploy](../../patterns/devops/non-root-vps-node-pm2-nginx-deploy.md), [anti-ai-slop design](../../patterns/frontend/anti-ai-slop-design.md), [cyrillic / self-host fonts](../../patterns/frontend/cyrillic-self-host-fonts.md), [Premium-components](../02-frontend/Premium-components.md), [design-direction-brief](../../prompts/design-direction-brief.md).
