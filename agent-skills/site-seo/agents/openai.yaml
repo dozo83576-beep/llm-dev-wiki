@@ -1,0 +1,7 @@
+interface:
+  display_name: "Site SEO"
+  short_description: "Техническое SEO и Core Web Vitals"
+  default_prompt: "Use $site-seo to set up metadata, sitemap, structured data, and Core Web Vitals."
+
+policy:
+  allow_implicit_invocation: false

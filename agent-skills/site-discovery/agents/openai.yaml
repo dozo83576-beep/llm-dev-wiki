@@ -1,0 +1,7 @@
+interface:
+  display_name: "Site Discovery"
+  short_description: "Требования и критерии приёмки нового сайта"
+  default_prompt: "Use $site-discovery to capture requirements and acceptance criteria for a new site."
+
+policy:
+  allow_implicit_invocation: false

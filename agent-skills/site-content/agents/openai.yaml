@@ -1,0 +1,7 @@
+interface:
+  display_name: "Site Content"
+  short_description: "Контент-модель, копирайтинг, i18n, CMS"
+  default_prompt: "Use $site-content to design the content model, copy, i18n, and legal pages."
+
+policy:
+  allow_implicit_invocation: false

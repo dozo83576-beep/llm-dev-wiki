@@ -1,0 +1,7 @@
+interface:
+  display_name: "Site Architecture"
+  short_description: "Архитектура, модель данных и план этапов"
+  default_prompt: "Use $site-architecture to design components, data model, and a phased plan."
+
+policy:
+  allow_implicit_invocation: false

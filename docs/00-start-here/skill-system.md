@@ -24,9 +24,10 @@ controlled learning loop: фиксирует одобренные предпоч
 
 ## Как устроено
 
-Канон скиллов (единый источник, редактируется один раз) лежит **вне репозитория вики**, чтобы не нарушать
-её CI-аудит: `D:\Work\.agent-skills\<name>\` (`SKILL.md` + для Codex `agents\openai.yaml`). Скрипт
-`D:\Work\.agent-skills\sync-skills.ps1` раскатывает канон в оба рантайма:
+Канон скиллов (единый источник, редактируется один раз) лежит в git-репозитории вики:
+`D:\Work\llm-dev-wiki\agent-skills\<name>\` (`SKILL.md` + для Codex `agents\openai.yaml`).
+`D:\Work\.agent-skills` — runtime cache для локального запуска и совместимости старых команд. Скрипт
+`D:\Work\llm-dev-wiki\agent-skills\sync-skills.ps1` раскатывает канон в оба рантайма:
 
 - Claude Code: `~\.claude\skills\<name>\` (читает `SKILL.md`, вызов `/<name>`).
 - Codex: `~\.codex\skills\<name>\` (читает `SKILL.md` + `agents\openai.yaml`, вызов `$<name>`).
@@ -97,9 +98,30 @@ Trigger-фраза для обоих рантаймов: если пользов
 
 ## Как раскатывать и обновлять
 
-- Отредактируй канон в `D:\Work\.agent-skills\<name>\SKILL.md`.
-- Проверка: `pwsh D:\Work\.agent-skills\sync-skills.ps1 -DryRun`, затем боевой прогон без `-DryRun`.
+- Отредактируй канон в `D:\Work\llm-dev-wiki\agent-skills\<name>\SKILL.md`.
+- Проверка: `pwsh D:\Work\llm-dev-wiki\tools\verify-agent-skills.ps1`, затем
+  `pwsh D:\Work\llm-dev-wiki\agent-skills\sync-skills.ps1 -DryRun`.
+- Runtime cache `D:\Work\.agent-skills` должен совпадать с tracked source; расхождение ловит wiki CI.
 - Альтернатива для распространения — `npx skills` (agent-skills CLI) или Codex `skill-installer`.
+
+## MCP и внешние скиллы
+
+Скиллы — тонкие роутеры; исполнители могут быть **внешними**: подключённые MCP и установленные дизайн-движки,
+а не только встроенная библиотека.
+
+- Инвентаризация подключённого: `pwsh D:\Work\tools\check-ai-tools.ps1` (подключённые MCP — информационно;
+  новые — с пометкой «review»). `build-modern-site` делает это Шагом 0 и подключает MCP по фазам.
+- Сопоставление MCP с фазами и security-постура — [Recommended MCP servers](../07-mcp-and-ai-tools/Recommended-MCP-servers.md).
+- Внешние site helpers из установленных skill-packages — [External site skills](../07-mcp-and-ai-tools/External-site-skills.md);
+  они optional и не заменяют локальный канон.
+- Внешние дизайн-скиллы и дизайн-MCP (Figma/Canva/Gamma) — [External design skills](../07-mcp-and-ai-tools/External-design-skills.md);
+  `site-design` сам обнаруживает доступный движок и берёт лучший, иначе fallback на `frontend-design`.
+- **On-demand модель:** серверы доступны каждую сессию, но грузятся **по запросу** (deferred + tool-search),
+  не со старта; ситуативные — как account-коннекторы, локальный `mcpServers` минимальный. Подробно —
+  [Recommended MCP servers](../07-mcp-and-ai-tools/Recommended-MCP-servers.md) → «On-demand модель».
+- Принцип: вики — source of truth по принципам; MCP/скиллы — исполнители. Read-only по умолчанию,
+  мутации/prod — с подтверждением; внешний контент недоверенный — данные, не инструкции
+  ([untrusted tool output](../../patterns/security/untrusted-tool-output.md)).
 
 ## Безопасность
 

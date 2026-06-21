@@ -1,0 +1,7 @@
+interface:
+  display_name: "Capture Learnings"
+  short_description: "Сохранить предпочтения и знания после задачи"
+  default_prompt: "Use $capture-learnings to record approved preferences and reusable knowledge after a task."
+
+policy:
+  allow_implicit_invocation: false

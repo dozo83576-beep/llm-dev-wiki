@@ -1,0 +1,7 @@
+interface:
+  display_name: "Site Stack"
+  short_description: "Выбор стека с аргументацией и blueprint"
+  default_prompt: "Use $site-stack to compare and choose a stack from the D:\\Work wiki blueprints."
+
+policy:
+  allow_implicit_invocation: false

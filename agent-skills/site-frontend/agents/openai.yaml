@@ -1,0 +1,7 @@
+interface:
+  display_name: "Site Frontend"
+  short_description: "Реализация UI: маршруты, формы, a11y"
+  default_prompt: "Use $site-frontend to implement UI on the chosen stack and design tokens."
+
+policy:
+  allow_implicit_invocation: false

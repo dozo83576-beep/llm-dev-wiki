@@ -1,0 +1,7 @@
+interface:
+  display_name: "Build Modern Site"
+  short_description: "Оркестратор сборки сайта от идеи до деплоя"
+  default_prompt: "Use $build-modern-site to plan and build a new website end to end with the D:\\Work wiki."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Site Design"
+  short_description: "Современная дизайн-система и токены UI"
+  default_prompt: "Use $site-design to craft a modern design system layered with my saved preferences."
+
+policy:
+  allow_implicit_invocation: false

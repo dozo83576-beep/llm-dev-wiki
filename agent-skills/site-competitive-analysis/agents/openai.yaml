@@ -1,0 +1,7 @@
+interface:
+  display_name: "Site Competitive Analysis"
+  short_description: "Анализ конкурентов и адаптированный план"
+  default_prompt: "Use $site-competitive-analysis to study top competitor sites and produce an adapted site plan."
+
+policy:
+  allow_implicit_invocation: false
