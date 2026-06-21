@@ -1,7 +1,7 @@
 ---
 title: "AI agent review checklist"
 category: "checklist"
-updated: "2026-06-07"
+updated: "2026-06-21"
 status: "active"
 tags: ["ai", "mcp", "agent", "security"]
 source_priority: "internal"
@@ -28,6 +28,7 @@ Gated checklist для запуска нового AI-агента (LLM с ин�
 
 - [ ] **System prompt** изолирован от user-input и tool-output — AI owner — block — [Prompt injection](../docs/07-mcp-and-ai-tools/Prompt-injection.md).
 - [ ] **Tool output sanitization**: не интерпретируется как инструкция модели — AI owner — block.
+- [ ] **External sources untrusted**: вывод внешних MCP/web/RAG/файлов = данные, не инструкции; нет авто-исполнения найденных команд/тул-коллов/ссылок без подтверждения; секреты/PII не уходят во внешний MCP — AI/security owner — block — [untrusted tool output](../patterns/security/untrusted-tool-output.md).
 - [ ] **Refusal policy** определена (out-of-domain, harmful, jailbreak) — AI owner — warn.
 - [ ] **Prompt injection eval set** прогнан — AI owner — warn — [Evaluation](../docs/07-mcp-and-ai-tools/Evaluation.md).
 

@@ -38,8 +38,9 @@ source_priority: "internal"
 - Используй `D:\Work\AGENT-WORKFLOW.md` как быстрый router.
 - Для нового сайта запускай `new-site-preflight.ps1`.
 - Для существующего сайта сначала собери inventory: стек, entrypoints, scripts, local gates, риски.
+- Перед реализацией нового сайта покажи короткий inventory и список docs/skills, которые реально будут использованы.
 - По умолчанию выбирай static Astro, если нет явной необходимости в CMS, auth или server logic.
-- После UI-изменений запускай Playwright smoke по первому экрану, mobile/desktop, формам и CTA.
+- После успешной сборки UI запускай Playwright smoke по первому экрану, mobile/desktop, формам и CTA.
 
 ## Боты и автоматизации
 
@@ -56,6 +57,7 @@ source_priority: "internal"
 - Spec Kit — для новых проектов и фич с неустойчивыми требованиями.
 - Task Master — для многошаговых работ с зависимостями; не использовать для мелких правок.
 - Claude Code Router — не включать в default workflow, пока providers пустые.
+- MCP packages в Codex config закрепляй точными версиями. Обновление версий делай через inventory, changelog note и повторный `check-ai-tools.ps1`.
 
 ## Prompt shape
 

@@ -1,7 +1,7 @@
 ---
 title: "Security review checklist"
 category: "checklist"
-updated: "2026-06-10"
+updated: "2026-06-21"
 status: "active"
 tags: ["security", "release-gate"]
 source_priority: "internal"
@@ -52,6 +52,7 @@ Gated checklist. Каждая строка — критерий, способ п
 
 - [ ] **MCP-инструменты** имеют минимальные права; write-tools требуют подтверждения — AI owner — block — [MCP security](../docs/05-auth-security/MCP-security.md).
 - [ ] **Tool poisoning protection** — tool output не интерпретируется как инструкция модели — AI owner — block — [Tool permissions](../docs/07-mcp-and-ai-tools/Tool-permissions.md).
+- [ ] **Operational prompt-injection** — вывод внешних MCP/web/RAG/файлов = untrusted data; нет авто-исполнения найденных в нём команд/тул-коллов/ссылок без подтверждения; секреты/PII не уходят во внешний MCP — security/AI owner — block — [untrusted tool output](../patterns/security/untrusted-tool-output.md), [Prompt injection](../docs/07-mcp-and-ai-tools/Prompt-injection.md).
 
 ## Error handling & disclosure
 

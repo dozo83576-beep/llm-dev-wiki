@@ -21,3 +21,12 @@ source_priority: "mixed"
 - [openai/openai-node](https://github.com/openai/openai-node) — OpenAI Node SDK.
 - [openai/openai-python](https://github.com/openai/openai-python) — OpenAI Python SDK.
 - [openai/evals](https://github.com/openai/evals) — AI evaluation framework.
+
+## Дизайн-скиллы для AI-агентов (anti-slop / motion)
+
+Сторонние скиллы, на принципах которых построены наши дизайн-доки. Конспекты — в вики
+(single source); сами репозитории — внешняя зависимость, обновляются upstream.
+
+- [emilkowalski/skill](https://github.com/emilkowalski/skill) — Emil Kowalski (Sonner/Vaul), motion/анимации. Установка: `npx skills add emilkowalski/skill`. Конспект → [docs/02-frontend/Motion.md](../docs/02-frontend/Motion.md). Проверено 2026-06-20.
+- [pbakaus/impeccable](https://github.com/pbakaus/impeccable) — anti-slop дизайн + словарь команд (polish/audit/critique/distill). Принципы вынесены в [patterns/frontend/anti-ai-slop-design.md](../patterns/frontend/anti-ai-slop-design.md) и site-design. Проверено 2026-06-20.
+- [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) — анти-повторяемость, «дёшево vs дорого». Принципы вынесены в [anti-ai-slop-design.md](../patterns/frontend/anti-ai-slop-design.md). Проверено 2026-06-20.

@@ -69,6 +69,8 @@ source_priority: "community"
 ## Источники
 
 - [Anti-AI-slop design](../../patterns/frontend/anti-ai-slop-design.md)
+- [Typography-fonts](Typography-fonts.md), [Color-palettes](Color-palettes.md), [Layout archetypes](../../patterns/frontend/layout-archetypes.md)
+- [design-inspiration (галереи)](../../resources/design-inspiration.md)
 - [Playbook: Landing](../13-playbooks/landing.md)
 - [Shadcn](Shadcn.md), [Performance](Performance.md), [Accessibility](Accessibility.md)
 - react-bits: https://github.com/DavidHDev/react-bits

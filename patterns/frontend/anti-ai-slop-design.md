@@ -1,7 +1,7 @@
 ---
 title: "Pattern: Anti-AI-slop design"
 category: "patterns"
-updated: "2026-06-19"
+updated: "2026-06-20"
 status: "active"
 tags: ["frontend", "design", "anti-ai-slop", "landing"]
 source_priority: "internal"
@@ -50,7 +50,7 @@ date: "2026-06-19"
 
 ### 3. Анимации, но со вкусом
 
-counter-up на цифрах, reveal-stagger (элементы по очереди), hover-lift, spotlight за курсором в hero, marquee, вращающиеся badge-кружки. Держи motion-бюджет и уважай `prefers-reduced-motion` (см. [Accessibility](../../docs/02-frontend/Accessibility.md)).
+counter-up на цифрах, reveal-stagger (элементы по очереди), hover-lift, spotlight за курсором в hero, marquee, вращающиеся badge-кружки. Анимация оправдывает себя функцией и частотой показа, а не «это красиво»; держи motion-бюджет и уважай `prefers-reduced-motion`. Полные правила (длительности < 300ms, `ease-out`, только `transform`/`opacity`) — в [Motion](../../docs/02-frontend/Motion.md) и [Pattern: Purposeful motion](purposeful-motion.md).
 
 ### 4. Не дефолтный layout
 
@@ -59,6 +59,27 @@ counter-up на цифрах, reveal-stagger (элементы по очеред
 ### 5. Цвет текста по поверхностям
 
 Не один глобальный `--text`. Используй токены по поверхности, иначе светлый текст наследуется на светлую секцию. Полное правило — в [semantic-theme-text-tokens](semantic-theme-text-tokens.md).
+
+### 6. Анти-повторяемость (не сходиться к одному шаблону)
+
+Модель сходится к одной и той же связке от генерации к генерации (один hero, один шрифт, один layout). Чтобы перебить это, **выбор делается явно ДО кода**, а не «как выйдет»:
+
+- Зафиксируй оси вариативности и выбери по одному значению на проект: hero-архитектура (split / центрированный / asymmetric / типографический / с медиа сбоку), типографический стек (например, grotesque + serif vs condensed-дисплей + гротеск-боди vs моно-акцент), плотность сетки и ритм отступов, характер motion.
+- Не переиспользуй ту же связку, что в прошлом проекте/секции — сверься с уже сделанным (`case-studies/`) и выбери другую ось.
+- «Дёшево vs дорого»: дорого читается через тугую типографику (плотный tracking у крупных заголовков), осмысленный спейсинг и проработанные состояния; дёшево — равномерная серость, дефолтные радиусы, центрированный текст везде.
+
+Это дисциплина выбора, а не рандом ради рандома: каждый вариант всё равно проходит остальные правила паттерна.
+
+### 7. Расширенный стоп-лист «AI-вида»
+
+Конкретные паттерны, которые мгновенно выдают генерацию — не использовать:
+
+- Карточки в карточках (cards-in-cards), вложенные бордеры/тени без смысла.
+- Квадрат-плитка с иконкой над каждым заголовком секции (icon-tile above every heading).
+- Серый текст на цветном/тёмном фоне (gray-on-color) — проваленный контраст и «дешёвый» вид.
+- «Inter для всего» (или Roboto/Arial/system) как единственный шрифт без дисплей-пары.
+- Purple→blue (фиолетово-синий) градиент на белом — самый узнаваемый дефолт модели.
+- Эмодзи как иконки фич/кнопок; центрированный текст во всех секциях подряд.
 
 ## Частые ошибки
 
@@ -92,6 +113,8 @@ counter-up на цифрах, reveal-stagger (элементы по очеред
 ## Источники
 
 - [Pattern: Semantic theme text tokens](semantic-theme-text-tokens.md)
+- [Pattern: Purposeful motion](purposeful-motion.md)
+- [Motion / UI-анимации](../../docs/02-frontend/Motion.md)
 - [Pattern: Cyrillic / self-host fonts](cyrillic-self-host-fonts.md)
 - [Premium-components](../../docs/02-frontend/Premium-components.md)
 - [Prompt: design-direction-brief](../../prompts/design-direction-brief.md)
