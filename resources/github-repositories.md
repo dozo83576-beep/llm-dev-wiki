@@ -1,7 +1,7 @@
 ---
 title: "GitHub repositories"
 category: "resource"
-updated: "2026-05-25"
+updated: "2026-06-21"
 status: "active"
 tags: ["resources"]
 source_priority: "mixed"
