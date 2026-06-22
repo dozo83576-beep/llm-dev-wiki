@@ -34,3 +34,5 @@ Structured outputs, tool allowlist, request ids, usage/cost logging, evals, retr
 ## Проверка
 
 Evals, integration tests с mocked API, budget alerts, refusal/security probes, schema validation для structured output.
+
+Для сайтов с AI-консультантом используй [AI chat widget](AI-chat-widget.md): prompt и lead handoff проектируются отдельно, а provider key остаётся только на backend/serverless boundary.

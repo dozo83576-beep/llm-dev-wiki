@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2384,
-  "corpus_hash": "02d8f72e81a7e6f1e6447a33c6ea469fca238a7019c2c184ebdbd09403554712",
+  "chunk_count": 2402,
+  "corpus_hash": "6d9bc7c3b931b9a47f4716f1f350b5e8accf5aa5787a2169cca8c071b59d8681",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -142,6 +142,7 @@
     "docs/06-api-design/REST.md",
     "docs/06-api-design/Versioning.md",
     "docs/06-api-design/WebSockets.md",
+    "docs/07-mcp-and-ai-tools/AI-chat-widget.md",
     "docs/07-mcp-and-ai-tools/Agent-memory.md",
     "docs/07-mcp-and-ai-tools/Agent-self-improvement.md",
     "docs/07-mcp-and-ai-tools/Agent-workflows.md",
@@ -261,6 +262,7 @@
     "patterns/security/tenant-isolation.md",
     "patterns/security/untrusted-tool-output.md",
     "prompts/backend-audit.md",
+    "prompts/chat-widget-system-prompt.md",
     "prompts/choose-stack.md",
     "prompts/code-review.md",
     "prompts/create-new-project.md",
@@ -291,7 +293,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-06-22T15:04:13Z",
+  "generated_at": "2026-06-22T17:27:54Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }

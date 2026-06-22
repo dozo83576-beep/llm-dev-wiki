@@ -1,7 +1,7 @@
 ---
 title: "Playbook: Landing"
 category: "playbooks"
-updated: "2026-06-10"
+updated: "2026-06-22"
 status: "active"
 tags: ["landing", "seo", "conversion", "marketing"]
 source_priority: "internal"
@@ -33,13 +33,14 @@ source_priority: "internal"
 2. **Content outline**: hero, social proof, features, objections, FAQ, finally CTA.
 3. **Copy first**: пишем тексты, потом дизайн — а не наоборот.
 4. **Design direction**: перебить дефолтный house style модели (кремовый/serif), записать `DESIGN-DIRECTION.md` по [design-direction-brief](../../prompts/design-direction-brief.md), показать 3–4 направления (`фон hex / акцент hex / шрифт`) и дождаться выбора до UI. Приёмы — [anti-ai-slop design](../../patterns/frontend/anti-ai-slop-design.md).
-5. **SEO**: title, description, OG tags, structured data (Product/Article/FAQ), правильный canonical.
-6. **UI**: responsive, mobile-first, fast first viewport (LCP < 2s), semantic text tokens для светлых и темных секций.
-7. **Forms**: zod / pydantic валидация, honeypot + (опционально) Turnstile/hCaptcha, double opt-in для email, storage в CRM/Sheets/Notion или MVP-уведомление в Telegram/Slack через serverless endpoint.
-8. **Analytics**: page view, scroll depth, CTA click, form submit, conversion funnel.
-9. **Visual/a11y smoke**: после переноса дизайна на реальные секции проверить FAQ, формы, карточки с фото и CTA на computed color + contrast ratio.
-10. **Performance**: image optimization (WebP/AVIF), font-display swap, минимальный JS.
-11. **A/B test plan** (опционально): один тест за раз, понятная метрика.
+5. **Competitor outliers**: перед UI быстро сравнить 3–5 сильных и 3–5 слабых сайтов ниши. Зафиксировать, что берём из лидеров и какие анти-паттерны избегаем.
+6. **SEO**: title, description, OG tags, structured data (Product/Article/FAQ), правильный canonical.
+7. **UI**: responsive, mobile-first, fast first viewport (LCP < 2s), semantic text tokens для светлых и темных секций.
+8. **Forms / chat widget**: zod / pydantic валидация, honeypot + (опционально) Turnstile/hCaptcha, double opt-in для email, storage в CRM/Sheets/Notion или MVP-уведомление в Telegram/Slack через serverless endpoint. Если нужен AI-консультант, проектируй его по [AI chat widget](../07-mcp-and-ai-tools/AI-chat-widget.md) и держи provider key только на backend.
+9. **Analytics**: page view, scroll depth, CTA click, form submit, conversion funnel.
+10. **Visual/a11y smoke**: после переноса дизайна на реальные секции проверить FAQ, формы, карточки с фото и CTA на computed color + contrast ratio.
+11. **Performance**: image optimization (WebP/AVIF), font-display swap, минимальный JS.
+12. **A/B test plan** (опционально): один тест за раз, понятная метрика.
 
 ### Вариант: портфолио услуг
 
@@ -62,6 +63,7 @@ source_priority: "internal"
 
 - H1 не длиннее 7 слов, оффер понятен с первого взгляда — сайты «глядят», не читают.
 - Один экран = одна мысль. Главная ошибка — высокая плотность текста.
+- Trust/proof должен появиться до первого серьёзного сомнения: логотипы, цифры, демо, лицензии, реальные кейсы или явные плейсхолдеры.
 - «Don't make me think»: green=good / red=bad, без нагрузки на критическое мышление.
 - Баланс контента 70% польза / 20% кейсы / 10% продажа; дефицит + дедлайн у CTA.
 - Честность данных: только реальные кейсы/цифры/отзывы; нет — явные плейсхолдеры, не выдумка.
@@ -76,14 +78,15 @@ source_priority: "internal"
 - Отправлять лид напрямую из браузера в Telegram/Slack — токен утечет в client bundle.
 - Динамические скрипты-аналитики, блокирующие первый рендер.
 - Дефолтный «AI-вид»: кремовый фон + serif, layout «hero + 3 карточки», эмодзи вместо иконок, длинное/среднее тире в копии.
+- AI-чат-виджет без границ: выдумывает цены, обещает результат, собирает ПДн без consent или светит API key во frontend.
 
 ## Security risks
 
-Form-spam → email/Telegram overflow, утечка лидов через открытый Google Sheet, XSS/HTML injection из пользовательского input в уведомлении, CSRF на form endpoint, экспонированный admin endpoint в том же домене.
+Form-spam → email/Telegram overflow, утечка лидов через открытый Google Sheet, XSS/HTML injection из пользовательского input в уведомлении, CSRF на form endpoint, экспонированный admin endpoint в том же домене. Для AI-виджетов добавляются prompt injection, утечка PII в логи, hallucinated claims и exposed provider key.
 
 ## Performance risks
 
-Hero-видео без poster, неоптимизированные images (Mb на page weight), сторонние chat-widgets / GTM добавляют 500ms+ к TTI.
+Hero-видео без poster, неоптимизированные images (Mb на page weight), сторонние chat-widgets / GTM добавляют 500ms+ к TTI. Если hero-video нужен как вау-эффект, используй короткий muted loop с poster, lazy policy и fallback для reduced data/motion.
 
 ## Testing strategy
 
@@ -102,4 +105,4 @@ Hero-видео без poster, неоптимизированные images (Mb �
 
 ## Источники
 
-- См. [Astro](../02-frontend/Astro.md), [Eleventy](../02-frontend/Eleventy.md), [Hugo](../02-frontend/Hugo.md), [CMS content](../02-frontend/CMS-content.md), [WordPress](../02-frontend/WordPress.md), [Webflow](../02-frontend/Webflow.md), [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [Performance](../02-frontend/Performance.md), [SEO](../02-frontend/SEO.md), [Forms validation](../02-frontend/Forms-validation.md), [Analytics](../02-frontend/Analytics.md), [semantic theme text tokens](../../patterns/frontend/semantic-theme-text-tokens.md), [telegram lead notification](../../patterns/backend/telegram-lead-notification.md), [portfolio case screenshot gallery](../../patterns/frontend/portfolio-case-screenshot-gallery.md), [non-root VPS Node deploy](../../patterns/devops/non-root-vps-node-pm2-nginx-deploy.md), [anti-ai-slop design](../../patterns/frontend/anti-ai-slop-design.md), [cyrillic / self-host fonts](../../patterns/frontend/cyrillic-self-host-fonts.md), [Premium-components](../02-frontend/Premium-components.md), [design-direction-brief](../../prompts/design-direction-brief.md).
+- См. [Astro](../02-frontend/Astro.md), [Eleventy](../02-frontend/Eleventy.md), [Hugo](../02-frontend/Hugo.md), [CMS content](../02-frontend/CMS-content.md), [WordPress](../02-frontend/WordPress.md), [Webflow](../02-frontend/Webflow.md), [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [Performance](../02-frontend/Performance.md), [SEO](../02-frontend/SEO.md), [Forms validation](../02-frontend/Forms-validation.md), [Analytics](../02-frontend/Analytics.md), [AI chat widget](../07-mcp-and-ai-tools/AI-chat-widget.md), [semantic theme text tokens](../../patterns/frontend/semantic-theme-text-tokens.md), [telegram lead notification](../../patterns/backend/telegram-lead-notification.md), [portfolio case screenshot gallery](../../patterns/frontend/portfolio-case-screenshot-gallery.md), [non-root VPS Node deploy](../../patterns/devops/non-root-vps-node-pm2-nginx-deploy.md), [anti-ai-slop design](../../patterns/frontend/anti-ai-slop-design.md), [cyrillic / self-host fonts](../../patterns/frontend/cyrillic-self-host-fonts.md), [Premium-components](../02-frontend/Premium-components.md), [design-direction-brief](../../prompts/design-direction-brief.md).

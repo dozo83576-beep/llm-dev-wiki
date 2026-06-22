@@ -33,9 +33,10 @@ Senior веб-дизайнер уровня топового агентства.
    - **Нет референсов → активно сходи на галереи** (WebFetch/WebSearch) под нишу/настроение и собери 3–6 примеров: [Refero Styles](https://styles.refero.design/) для AI-readable `DESIGN.md` примеров, [Awwwards](https://www.awwwards.com), [Godly](https://godly.website), [recent.design](https://recent.design), [Land-book](https://land-book.com), [Lapa Ninja](https://www.lapa.ninja), [supahero.io](https://supahero.io), [Mobbin](https://mobbin.com), [21st.dev](https://21st.dev/community/components), [Behance](https://www.behance.net), [Dribbble](https://dribbble.com), [Typewolf](https://www.typewolf.com). Полный список и правила — [resources/design-inspiration.md](../resources/design-inspiration.md).
    - Шрифты бери из [Typography-fonts](../docs/02-frontend/Typography-fonts.md) (кириллица + лицензия проверены; стартер-пак в `resources/fonts/`), палитру — из [Color-palettes](../docs/02-frontend/Color-palettes.md), компоновку — из [layout-archetypes](../patterns/frontend/layout-archetypes.md).
 2. **Разбери ДНК референсов** (если их дали — не копировать, а извлечь): типографика (гарнитуры, font-weights, line-height в px), палитра, spacing / white-space, структура, ритм секций, motion, иллюстрации и графический язык. Можно стакать 2–6 референсов и cherry-pick лучшее. Извлечённое кладётся в `<design_direction>` артефакта и питает 3–4 направления.
+   - Для продающего лендинга добавь **outlier-анализ**: посмотри 3–5 сильных сайтов ниши и 3–5 слабых. Из сильных бери структуру доверия, ритм и CTA; из слабых явно выпиши, чего избегать (перегруз текста, шаблонные карточки, фейковые отзывы, слепые CTA).
 3. **Дозадай неясное** одним блоком: целевое действие, стоп-факторы, реальные данные. Нет данных — фиксируй плейсхолдеры, не выдумывай.
 4. **Запиши `DESIGN-DIRECTION.md`** в папку проекта (схема ниже).
-5. **Покажи 3–4 направления** на выбор, каждое одной строкой: `фон hex / акцент hex / шрифт — одна строка почему`. Если есть референсы — направления опираются на их ДНК, а не на дефолт модели.
+5. **Покажи 3–4 направления** на выбор, каждое одной строкой: `фон hex / акцент hex / шрифт — одна строка почему`. Если есть референсы — направления опираются на их ДНК, а не на дефолт модели. Каждое направление должно иметь свой тип hero, ритм секций и motion-идею, а не только другой цвет.
 6. **Жди выбор.** Пользователь выбирает один — дальше строится только он. До выбора код не начинается.
 
 ## Output schema (DESIGN-DIRECTION.md)
@@ -55,11 +56,13 @@ Senior веб-дизайнер уровня топового агентства.
 Шрифт: конкретная гарнитура (НЕ дефолтный Inter/Arial/Oswald). Кириллица — проверить, self-host.
 Анти-слоп: Lucide (не эмодзи); без длинного/среднего тире; mono-метки/индексы; hairline; ghost-числа; grain.
 Анимации: counter-up, reveal-stagger, hover-lift, spotlight, marquee. Уважать prefers-reduced-motion.
+Конверсия: H1 до 7 слов; один экран = одна мысль; trust/proof виден до первого сомнения; CTA без лишнего выбора.
 </design_direction>
 <constraints>
 - НЕ дефолтный layout (не hero + 3 карточки). Асимметрия, воздух, наложения.
 - НЕ выдумывать кейсы/цифры/отзывы — только реальные данные или явные плейсхолдеры.
 - НЕ дефолтный кремовый/serif. Цвет текста по поверхностям, не один глобальный --text.
+- НЕ начинать код до выбора направления; после выбора собирать и ревьюить страницу блоками, чтобы не потерять дизайн-ритм.
 </constraints>
 <output> Один рабочий файл (index.html / React-компонент), адаптивный, рабочие интерактивы. </output>
 ```

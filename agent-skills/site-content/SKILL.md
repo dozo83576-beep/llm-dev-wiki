@@ -28,6 +28,9 @@ description: >-
   `D:\Work\llm-dev-wiki\docs\05-auth-security\Privacy-policy-and-consent.md` и
   `D:\Work\llm-dev-wiki\docs\05-auth-security\RU-152fz-and-ai-data-handling.md` — политики, cookie-consent, согласия, 152-ФЗ и локализация ПДн.
 - `D:\Work\llm-dev-wiki\docs\02-frontend\Content-migration.md` — инвентаризация и перенос реального контента.
+- `D:\Work\llm-dev-wiki\docs\07-mcp-and-ai-tools\AI-chat-widget.md` и
+  `D:\Work\llm-dev-wiki\prompts\chat-widget-system-prompt.md` — если сайт включает AI-консультанта,
+  чат-виджет, lead qualification или sales assistant.
 - `D:\Work\llm-dev-wiki\patterns\frontend\semantic-theme-text-tokens.md` — читаемость текста на поверхностях.
 - `D:\Work\llm-dev-wiki\docs\07-mcp-and-ai-tools\External-site-skills.md` — optional helpers
   `content-strategy`, `copywriting`, `copy-editing`, `brand-guidelines`, если они установлены.
@@ -40,6 +43,8 @@ description: >-
    кейсы и юридические формулировки не выдумывать и не публиковать без подтверждения.
 3.5. Для service/portfolio сайта обязательны: FAQ, блок «что нужно от клиента/что прислать для оценки»,
    честные proof-блоки без выдуманных метрик, и объяснение пользы решений в кейсах.
+3.6. Если нужен AI chat widget, сначала собрать проверенные факты, CTA, tone, forbidden claims и handoff rules.
+   Prompt писать по `chat-widget-system-prompt.md`; provider key только backend-side, не во frontend.
 4. i18n-готовность: вынос строк, форматы дат/чисел/валют, hreflang (синхронно с `site-seo`).
 5. Юридический контент: privacy/terms, cookie-consent, формы согласия — без сбора лишних данных.
 
@@ -47,6 +52,7 @@ description: >-
 - Есть контент-модель и карта страниц; строки готовы к i18n (не захардкожены).
 - Реальный контент перенесён или стоят явные плейсхолдеры; нет lorem ipsum; старые URL → 301 при переносе.
 - Для service/portfolio сайта есть FAQ, блок подготовки заявки и proof-блоки без фейковых отзывов/конверсий.
+- Для AI chat widget есть refusal rules, few-shot examples, lead handoff и запрет на выдуманные цены/обещания.
 - Юридические страницы и consent присутствуют там, где собираются персональные данные/cookies; объём решает product/legal owner по `Privacy-policy-and-consent.md`.
 - Текст читается на всех поверхностях (см. предпочтение по токенам текста).
 - Проверяет: self-check агента + подтверждение контента заказчиком (тексты/медиа — внешний вход).

@@ -14,6 +14,7 @@ AI UI streaming covers chat, generation, tool calls, partial responses, cancella
 ## Когда использовать
 
 - Product has chat, content generation, agent workflows, RAG answers or streaming assistants.
+- Landing or product site has an AI chat widget; use [AI chat widget](../07-mcp-and-ai-tools/AI-chat-widget.md) for prompt, lead handoff and safety boundaries.
 - Responses can take seconds and users need progress, cancellation and retry.
 - Tool calls, citations, attachments or structured outputs are visible in UI.
 - Cost, latency and safety need product-level observability.
@@ -61,4 +62,4 @@ User navigates away mid-stream, duplicate submit, model emits invalid JSON, cita
 
 - [Vercel AI SDK](https://vercel.com/ai-sdk) — refreshed against `ai` 6.0.208 on 2026-06-22.
 - [OpenAI Platform Docs](https://platform.openai.com/docs) — refreshed 2026-06-06.
-- См. [AI/RAG app playbook](../13-playbooks/ai-rag-app.md), [OpenAI API](../07-mcp-and-ai-tools/OpenAI-API.md), [Evaluation](../07-mcp-and-ai-tools/Evaluation.md), [Prompt injection](../07-mcp-and-ai-tools/Prompt-injection.md).
+- См. [AI/RAG app playbook](../13-playbooks/ai-rag-app.md), [AI chat widget](../07-mcp-and-ai-tools/AI-chat-widget.md), [OpenAI API](../07-mcp-and-ai-tools/OpenAI-API.md), [Evaluation](../07-mcp-and-ai-tools/Evaluation.md), [Prompt injection](../07-mcp-and-ai-tools/Prompt-injection.md).

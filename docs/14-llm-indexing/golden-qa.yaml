@@ -551,3 +551,31 @@ questions:
       - prompts/design-direction-brief.md
       - docs/02-frontend/Design-systems.md
       - docs/02-frontend/Typography-fonts.md
+
+  - id: q-chat-widget-prompt
+    question: "Как подготовить промпт для AI чат-виджета на лендинге?"
+    expected_paths:
+      - docs/07-mcp-and-ai-tools/AI-chat-widget.md
+      - prompts/chat-widget-system-prompt.md
+      - docs/13-playbooks/landing.md
+
+  - id: q-chat-widget-inputs
+    question: "Какие данные нужны для продающего AI-ассистента на сайте?"
+    expected_paths:
+      - docs/07-mcp-and-ai-tools/AI-chat-widget.md
+      - prompts/chat-widget-system-prompt.md
+      - docs/13-playbooks/landing.md
+
+  - id: q-chat-widget-api-key-boundary
+    question: "Почему API key чат-виджета нельзя держать на фронте?"
+    expected_paths:
+      - docs/07-mcp-and-ai-tools/AI-chat-widget.md
+      - docs/07-mcp-and-ai-tools/OpenAI-API.md
+      - docs/02-frontend/AI-UI-streaming.md
+
+  - id: q-landing-anti-ai-slop
+    question: "Как не сделать скучный AI-slop лендинг?"
+    expected_paths:
+      - patterns/frontend/anti-ai-slop-design.md
+      - prompts/design-direction-brief.md
+      - docs/13-playbooks/landing.md
