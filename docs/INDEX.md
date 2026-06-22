@@ -33,7 +33,7 @@ source_priority: "internal"
 | [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 6597 | 2026-06-10 | active | internal |
 | [docs/01-development-process/site-stack-router-tool.md](../docs/01-development-process/site-stack-router-tool.md) | Site stack router tool | process | 3235 | 2026-06-10 | active | internal |
 | [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 7368 | 2026-06-10 | active | official-docs |
-| [docs/02-frontend/AI-UI-streaming.md](../docs/02-frontend/AI-UI-streaming.md) | AI UI streaming | frontend | 2997 | 2026-06-10 | active | mixed |
+| [docs/02-frontend/AI-UI-streaming.md](../docs/02-frontend/AI-UI-streaming.md) | AI UI streaming | frontend | 2997 | 2026-06-22 | active | mixed |
 | [docs/02-frontend/Accessibility.md](../docs/02-frontend/Accessibility.md) | Accessibility | frontend | 1928 | 2026-05-27 | active | official-docs |
 | [docs/02-frontend/Analytics.md](../docs/02-frontend/Analytics.md) | Analytics | frontend | 1330 | 2026-05-24 | active | internal |
 | [docs/02-frontend/Angular-SSR.md](../docs/02-frontend/Angular-SSR.md) | Angular SSR | frontend | 1898 | 2026-06-10 | active | official-docs |
@@ -71,10 +71,10 @@ source_priority: "internal"
 | [docs/02-frontend/State-management.md](../docs/02-frontend/State-management.md) | State management | frontend | 1539 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Strapi.md](../docs/02-frontend/Strapi.md) | Strapi | frontend | 2079 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Styling-systems.md](../docs/02-frontend/Styling-systems.md) | Styling systems | frontend | 2797 | 2026-06-07 | active | mixed |
-| [docs/02-frontend/SvelteKit.md](../docs/02-frontend/SvelteKit.md) | SvelteKit | frontend | 2799 | 2026-06-10 | active | official-docs |
+| [docs/02-frontend/SvelteKit.md](../docs/02-frontend/SvelteKit.md) | SvelteKit | frontend | 2799 | 2026-06-22 | active | official-docs |
 | [docs/02-frontend/Tailwind.md](../docs/02-frontend/Tailwind.md) | Tailwind CSS | frontend | 1614 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/TanStack-Query.md](../docs/02-frontend/TanStack-Query.md) | TanStack Query | frontend | 2340 | 2026-05-24 | active | official-docs |
-| [docs/02-frontend/TanStack-Start.md](../docs/02-frontend/TanStack-Start.md) | TanStack Start | frontend | 3700 | 2026-06-07 | active | official-docs |
+| [docs/02-frontend/TanStack-Start.md](../docs/02-frontend/TanStack-Start.md) | TanStack Start | frontend | 3700 | 2026-06-22 | active | official-docs |
 | [docs/02-frontend/TypeScript.md](../docs/02-frontend/TypeScript.md) | TypeScript | frontend | 1287 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Typography-fonts.md](../docs/02-frontend/Typography-fonts.md) | Типографика и библиотека шрифтов | frontend | 8156 | 2026-06-20 | active | mixed |
 | [docs/02-frontend/UI-architecture.md](../docs/02-frontend/UI-architecture.md) | UI architecture | frontend | 2384 | 2026-06-04 | active | internal |
@@ -94,9 +94,9 @@ source_priority: "internal"
 | [docs/03-backend/FastAPI.md](../docs/03-backend/FastAPI.md) | FastAPI | backend | 1969 | 2026-05-24 | active | official-docs |
 | [docs/03-backend/Fastify.md](../docs/03-backend/Fastify.md) | Fastify | backend | 1919 | 2026-05-24 | active | official-docs |
 | [docs/03-backend/File-uploads.md](../docs/03-backend/File-uploads.md) | File uploads | backend | 1773 | 2026-05-24 | active | internal |
-| [docs/03-backend/Hono.md](../docs/03-backend/Hono.md) | Hono | backend | 2839 | 2026-06-10 | active | official-docs |
+| [docs/03-backend/Hono.md](../docs/03-backend/Hono.md) | Hono | backend | 2839 | 2026-06-22 | active | official-docs |
 | [docs/03-backend/Logging.md](../docs/03-backend/Logging.md) | Logging | backend | 1294 | 2026-05-24 | active | internal |
-| [docs/03-backend/Nestjs.md](../docs/03-backend/Nestjs.md) | NestJS | backend | 1321 | 2026-06-10 | active | official-docs |
+| [docs/03-backend/Nestjs.md](../docs/03-backend/Nestjs.md) | NestJS | backend | 1321 | 2026-06-22 | active | official-docs |
 | [docs/03-backend/Nodejs.md](../docs/03-backend/Nodejs.md) | Node.js | backend | 1237 | 2026-05-24 | active | official-docs |
 | [docs/03-backend/Payments.md](../docs/03-backend/Payments.md) | Payments | backend | 1392 | 2026-05-24 | active | internal |
 | [docs/03-backend/Stripe.md](../docs/03-backend/Stripe.md) | Stripe | backend | 2390 | 2026-05-24 | active | vendor-docs |
@@ -144,7 +144,7 @@ source_priority: "internal"
 | [docs/07-mcp-and-ai-tools/External-design-skills.md](../docs/07-mcp-and-ai-tools/External-design-skills.md) | External design skills & design MCP | ai-tools | 4424 | 2026-06-21 | active | internal |
 | [docs/07-mcp-and-ai-tools/External-site-skills.md](../docs/07-mcp-and-ai-tools/External-site-skills.md) | External site skills | ai-tools | 4136 | 2026-06-21 | active | internal |
 | [docs/07-mcp-and-ai-tools/MCP-overview.md](../docs/07-mcp-and-ai-tools/MCP-overview.md) | MCP overview | ai-tools | 2655 | 2026-06-06 | active | official-docs |
-| [docs/07-mcp-and-ai-tools/OpenAI-API.md](../docs/07-mcp-and-ai-tools/OpenAI-API.md) | OpenAI API | ai-tools | 1413 | 2026-06-06 | active | official-docs |
+| [docs/07-mcp-and-ai-tools/OpenAI-API.md](../docs/07-mcp-and-ai-tools/OpenAI-API.md) | OpenAI API | ai-tools | 1413 | 2026-06-22 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Prompt-engineering.md](../docs/07-mcp-and-ai-tools/Prompt-engineering.md) | Prompt engineering | ai-tools | 1328 | 2026-05-24 | active | internal |
 | [docs/07-mcp-and-ai-tools/Prompt-injection.md](../docs/07-mcp-and-ai-tools/Prompt-injection.md) | Prompt injection | ai-tools | 1964 | 2026-06-21 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Qdrant.md](../docs/07-mcp-and-ai-tools/Qdrant.md) | Qdrant | ai-tools | 2107 | 2026-06-06 | active | official-docs |

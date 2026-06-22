@@ -1,7 +1,7 @@
 ---
 title: "NestJS"
 category: "backend"
-updated: "2026-06-10"
+updated: "2026-06-22"
 status: "active"
 tags: ["nestjs", "architecture"]
 source_priority: "official-docs"
@@ -13,7 +13,7 @@ NestJS выбирай для сложного TypeScript backend. Архитек
 
 Частые ошибки: бизнес-логика в controllers, отсутствие transaction boundary, смешивание transport DTO и domain model, неявные зависимости между модулями.
 
-Источник: [NestJS Docs](https://docs.nestjs.com/) — watchlist refreshed to `@nestjs/core` 11.1.26 on 2026-06-10.
+Источник: [NestJS Docs](https://docs.nestjs.com/) — watchlist refreshed to `@nestjs/core` 11.1.27 on 2026-06-22.
 
 ## Когда использовать
 

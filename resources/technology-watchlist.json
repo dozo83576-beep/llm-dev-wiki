@@ -35,7 +35,7 @@
     "name": "NestJS",
     "ecosystem": "npm",
     "package": "@nestjs/core",
-    "currentVersion": "11.1.26",
+    "currentVersion": "11.1.27",
     "docsUrl": "https://docs.nestjs.com/",
     "notes": "Structured TypeScript backend framework."
   },
@@ -43,7 +43,7 @@
     "name": "Tailwind CSS",
     "ecosystem": "npm",
     "package": "tailwindcss",
-    "currentVersion": "4.3.0",
+    "currentVersion": "4.3.1",
     "docsUrl": "https://tailwindcss.com/docs",
     "notes": "Utility-first CSS framework."
   },
@@ -59,7 +59,7 @@
     "name": "TanStack Start",
     "ecosystem": "npm",
     "package": "@tanstack/react-start",
-    "currentVersion": "1.168.25",
+    "currentVersion": "1.168.26",
     "docsUrl": "https://tanstack.com/start/latest/docs/framework/react/overview",
     "notes": "React full-stack framework alternative with Router and Query-first patterns."
   },
@@ -67,7 +67,7 @@
     "name": "Hono",
     "ecosystem": "npm",
     "package": "hono",
-    "currentVersion": "4.12.25",
+    "currentVersion": "4.12.26",
     "docsUrl": "https://www.honojs.com/docs/",
     "notes": "Lightweight Web Standards framework for edge/serverless APIs."
   },
@@ -75,7 +75,7 @@
     "name": "SvelteKit",
     "ecosystem": "npm",
     "package": "@sveltejs/kit",
-    "currentVersion": "2.64.0",
+    "currentVersion": "2.66.0",
     "docsUrl": "https://svelte.dev/docs/kit",
     "notes": "Svelte full-stack framework with SSR, routing, form actions and adapters."
   },
@@ -107,7 +107,7 @@
     "name": "Medusa",
     "ecosystem": "npm",
     "package": "@medusajs/medusa",
-    "currentVersion": "2.15.5",
+    "currentVersion": "2.16.0",
     "docsUrl": "https://docs.medusajs.com/learn",
     "notes": "Composable commerce platform for custom ecommerce backends."
   },
@@ -122,7 +122,7 @@
     "name": "Storybook",
     "ecosystem": "npm",
     "package": "storybook",
-    "currentVersion": "10.4.3",
+    "currentVersion": "10.4.6",
     "docsUrl": "https://storybook.js.org/docs/writing-tests",
     "notes": "Component-driven development and UI testing toolchain."
   },
@@ -161,7 +161,7 @@
     "name": "Vercel AI SDK",
     "ecosystem": "npm",
     "package": "ai",
-    "currentVersion": "6.0.199",
+    "currentVersion": "6.0.208",
     "docsUrl": "https://vercel.com/ai-sdk",
     "notes": "TypeScript SDK for streaming AI UIs and provider-agnostic model integrations."
   },
@@ -176,7 +176,7 @@
     "name": "React Router",
     "ecosystem": "npm",
     "package": "react-router",
-    "currentVersion": "7.17.0",
+    "currentVersion": "8.0.1",
     "docsUrl": "https://reactrouter.com/",
     "notes": "React routing and framework mode successor path for Remix-style apps."
   },
@@ -184,7 +184,7 @@
     "name": "Shopify Hydrogen",
     "ecosystem": "npm",
     "package": "@shopify/hydrogen",
-    "currentVersion": "2026.4.3",
+    "currentVersion": "2026.4.4",
     "docsUrl": "https://shopify.dev/docs/api/hydrogen/latest",
     "notes": "Shopify-first custom React storefront stack built on React Router and Storefront API."
   },
@@ -192,7 +192,7 @@
     "name": "Strapi",
     "ecosystem": "npm",
     "package": "@strapi/strapi",
-    "currentVersion": "5.48.0",
+    "currentVersion": "5.48.1",
     "docsUrl": "https://docs.strapi.io/",
     "notes": "Self-hosted headless CMS with content APIs and admin UI."
   },
@@ -200,7 +200,7 @@
     "name": "Sanity",
     "ecosystem": "npm",
     "package": "sanity",
-    "currentVersion": "5.31.0",
+    "currentVersion": "6.1.0",
     "docsUrl": "https://www.sanity.io/docs",
     "notes": "Hosted structured content platform with Studio and visual editing."
   },
@@ -208,7 +208,7 @@
     "name": "Directus",
     "ecosystem": "npm",
     "package": "directus",
-    "currentVersion": "11.17.4",
+    "currentVersion": "12.0.2",
     "docsUrl": "https://directus.com/docs/",
     "notes": "SQL-first headless CMS/data platform with REST and GraphQL APIs."
   },
@@ -238,7 +238,7 @@
     "name": "Hugo",
     "ecosystem": "github-releases",
     "repository": "gohugoio/hugo",
-    "currentVersion": "v0.163.0",
+    "currentVersion": "v0.163.3",
     "docsUrl": "https://gohugo.io/documentation/",
     "notes": "Go-based static site generator for large content and documentation sites."
   },
@@ -262,7 +262,7 @@
     "name": "Angular",
     "ecosystem": "npm",
     "package": "@angular/core",
-    "currentVersion": "22.0.0",
+    "currentVersion": "22.0.2",
     "docsUrl": "https://angular.dev/",
     "notes": "Enterprise frontend framework; monitor SSR, hydration and platform releases."
   },
@@ -270,7 +270,7 @@
     "name": "FastAPI",
     "ecosystem": "pypi",
     "package": "fastapi",
-    "currentVersion": "0.136.3",
+    "currentVersion": "0.138.0",
     "docsUrl": "https://fastapi.tiangolo.com/",
     "notes": "Python API framework."
   },
@@ -286,7 +286,7 @@
     "name": "SQLAlchemy",
     "ecosystem": "pypi",
     "package": "sqlalchemy",
-    "currentVersion": "2.0.50",
+    "currentVersion": "2.0.51",
     "docsUrl": "https://docs.sqlalchemy.org/",
     "notes": "Python SQL toolkit and ORM."
   },
@@ -294,7 +294,7 @@
     "name": "OpenAI Python SDK",
     "ecosystem": "pypi",
     "package": "openai",
-    "currentVersion": "2.41.1",
+    "currentVersion": "2.43.0",
     "docsUrl": "https://platform.openai.com/docs",
     "notes": "OpenAI API client for Python."
   },
@@ -310,7 +310,7 @@
     "name": "pgvector",
     "ecosystem": "github-releases",
     "repository": "pgvector/pgvector",
-    "currentVersion": "v0.8.2",
+    "currentVersion": "v0.8.3",
     "docsUrl": "https://github.com/pgvector/pgvector",
     "notes": "PostgreSQL vector extension."
   },
