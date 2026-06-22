@@ -42,7 +42,7 @@ description: >-
 - Анимации: `D:\Work\llm-dev-wiki\docs\02-frontend\Motion.md` (длительности, easing, reduced-motion, performance).
 - Шрифты/цвет/компоновка: `D:\Work\llm-dev-wiki\docs\02-frontend\Typography-fonts.md` (каталог + кириллица + лицензии + стартер-пак `resources\fonts\`),
   `Color-palettes.md`, `patterns\frontend\layout-archetypes.md`.
-- Референс-галереи: `D:\Work\llm-dev-wiki\resources\design-inspiration.md` (Awwwards/Godly/Land-book/Mobbin/21st.dev и т.д.).
+- Референс-галереи: `D:\Work\llm-dev-wiki\resources\design-inspiration.md` (Refero Styles/Awwwards/Godly/Land-book/Mobbin/21st.dev и т.д.).
 - Для лендингов/продающих страниц: `D:\Work\llm-dev-wiki\docs\02-frontend\Premium-components.md`,
   `D:\Work\llm-dev-wiki\prompts\design-direction-brief.md`.
 
@@ -51,7 +51,9 @@ description: >-
 1.5. Перебить дефолтный house style модели (кремовый ~`#F4F1EA` / serif / терракот): задать **конкретные** значения
    `фон hex / акцент hex / шрифт`, а не общие фразы. Сначала спросить про референсы. **Нет референсов — активно
    сходить (WebFetch/WebSearch) на галереи из `resources/design-inspiration.md`** под нишу и извлечь ДНК (не копируя
-   вёрстку). Шрифт брать из `Typography-fonts.md` (кириллица + лицензия проверены), палитру — из `Color-palettes.md`,
+   вёрстку): типографику, палитру, spacing, motion, иллюстрации и графический язык. Для лендингов сначала проверь
+   Refero Styles (`https://styles.refero.design/`) как источник AI-readable `DESIGN.md` примеров, чтобы не скатиться
+   в скучный статичный hero/cards без визуальной причины. Шрифт брать из `Typography-fonts.md` (кириллица + лицензия проверены), палитру — из `Color-palettes.md`,
    компоновку — из `layout-archetypes.md`. Для лендингов записать артефакт `DESIGN-DIRECTION.md`
    по `prompts/design-direction-brief.md` и **показать 1 из 3–4 направлений на выбор до реализации**.
 1.6. Для продающего сайта/портфолио `DESIGN-DIRECTION.md` обязателен даже если проект уже начат: без него не продолжать

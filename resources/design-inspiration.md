@@ -1,7 +1,7 @@
 ---
 title: "Design inspiration / референс-галереи"
 category: "resource"
-updated: "2026-06-20"
+updated: "2026-06-22"
 status: "active"
 tags: ["resources", "design", "inspiration", "references"]
 source_priority: "mixed"
@@ -18,13 +18,17 @@ source_priority: "mixed"
 
 1. Нет референсов у пользователя → по нише/настроению брифа открой 1–3 галереи ниже (WebFetch/WebSearch),
    собери 3–6 примеров.
-2. Извлеки ДНК каждого: гарнитуры и веса, line-height, палитра, spacing/воздух, hero-архетип, ритм секций.
+2. Извлеки ДНК каждого: гарнитуры и веса, line-height, палитра, spacing/воздух, hero-архетип, ритм секций,
+   motion, иллюстрации и графический язык.
 3. Сложи извлечённое в `<design_direction>` артефакта и предложи 3–4 направления (см.
    [design-direction-brief](../prompts/design-direction-brief.md)).
 4. Сверь шрифты с каталогом и кириллицей; платный шрифт референса → free-лукалайк.
 
 ## Craft / visual (award-уровень)
 
+- [Refero Styles](https://styles.refero.design/) — AI-readable `DESIGN.md` примеры из продуктовых сайтов:
+  цвета, типографика, spacing, компоненты, motion/illustration/graphic DNA для Codex/Claude/v0. Используй как
+  источник направления, не как шаблон для копирования.
 - [Awwwards](https://www.awwwards.com) — эталон award-сайтов; судят дизайн, юзабилити, креатив.
 - [Godly](https://godly.website) — тугая курация, силён по motion (главный дифференциатор 2026).
 - [recent.design](https://recent.design) — свежие отобранные сайты.

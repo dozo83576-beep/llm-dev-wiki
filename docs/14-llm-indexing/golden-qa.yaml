@@ -537,3 +537,17 @@ questions:
       - docs/10-templates/site-audit-project-command.md
       - prompts/create-new-project.md
       - docs/09-testing/Site-audit-tooling.md
+
+  - id: q-design-inspiration-refero-styles
+    question: "Где искать AI-readable DESIGN.md референсы для живого лендинга?"
+    expected_paths:
+      - prompts/design-direction-brief.md
+      - docs/02-frontend/Design-systems.md
+      - docs/02-frontend/Premium-components.md
+
+  - id: q-design-refero-no-copying
+    question: "Как использовать Refero Styles без копирования чужого дизайна?"
+    expected_paths:
+      - prompts/design-direction-brief.md
+      - docs/02-frontend/Design-systems.md
+      - docs/02-frontend/Typography-fonts.md

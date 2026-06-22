@@ -1,7 +1,7 @@
 ---
 title: "Prompt: design direction brief"
 category: "prompt"
-updated: "2026-06-19"
+updated: "2026-06-22"
 status: "active"
 tags: ["design", "landing", "brief", "anti-ai-slop"]
 source_priority: "internal"
@@ -30,9 +30,9 @@ Senior веб-дизайнер уровня топового агентства.
 ## Steps
 
 1. **Спроси про референсы (явно).** «Есть ли референсы? Кинь 1–3 скрина сайтов, которые нравятся — возьму оттуда шрифты, цвета, визуал и ритм. Нет — сам подберу под нишу.» Это опционально для пользователя, но спросить нужно всегда.
-   - **Нет референсов → активно сходи на галереи** (WebFetch/WebSearch) под нишу/настроение и собери 3–6 примеров: [Awwwards](https://www.awwwards.com), [Godly](https://godly.website), [recent.design](https://recent.design), [Land-book](https://land-book.com), [Lapa Ninja](https://www.lapa.ninja), [supahero.io](https://supahero.io), [Mobbin](https://mobbin.com), [21st.dev](https://21st.dev/community/components), [Behance](https://www.behance.net), [Dribbble](https://dribbble.com), [Typewolf](https://www.typewolf.com). Полный список и правила — [resources/design-inspiration.md](../resources/design-inspiration.md).
+   - **Нет референсов → активно сходи на галереи** (WebFetch/WebSearch) под нишу/настроение и собери 3–6 примеров: [Refero Styles](https://styles.refero.design/) для AI-readable `DESIGN.md` примеров, [Awwwards](https://www.awwwards.com), [Godly](https://godly.website), [recent.design](https://recent.design), [Land-book](https://land-book.com), [Lapa Ninja](https://www.lapa.ninja), [supahero.io](https://supahero.io), [Mobbin](https://mobbin.com), [21st.dev](https://21st.dev/community/components), [Behance](https://www.behance.net), [Dribbble](https://dribbble.com), [Typewolf](https://www.typewolf.com). Полный список и правила — [resources/design-inspiration.md](../resources/design-inspiration.md).
    - Шрифты бери из [Typography-fonts](../docs/02-frontend/Typography-fonts.md) (кириллица + лицензия проверены; стартер-пак в `resources/fonts/`), палитру — из [Color-palettes](../docs/02-frontend/Color-palettes.md), компоновку — из [layout-archetypes](../patterns/frontend/layout-archetypes.md).
-2. **Разбери ДНК референсов** (если их дали — не копировать, а извлечь): типографика (гарнитуры, font-weights, line-height в px), палитра, spacing / white-space, структура и ритм секций. Можно стакать 2–6 референсов и cherry-pick лучшее. Извлечённое кладётся в `<design_direction>` артефакта и питает 3–4 направления.
+2. **Разбери ДНК референсов** (если их дали — не копировать, а извлечь): типографика (гарнитуры, font-weights, line-height в px), палитра, spacing / white-space, структура, ритм секций, motion, иллюстрации и графический язык. Можно стакать 2–6 референсов и cherry-pick лучшее. Извлечённое кладётся в `<design_direction>` артефакта и питает 3–4 направления.
 3. **Дозадай неясное** одним блоком: целевое действие, стоп-факторы, реальные данные. Нет данных — фиксируй плейсхолдеры, не выдумывай.
 4. **Запиши `DESIGN-DIRECTION.md`** в папку проекта (схема ниже).
 5. **Покажи 3–4 направления** на выбор, каждое одной строкой: `фон hex / акцент hex / шрифт — одна строка почему`. Если есть референсы — направления опираются на их ДНК, а не на дефолт модели.

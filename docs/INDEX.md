@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-06-21"
+updated: "2026-06-22"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **297**
-- Активных: **282**
+- Всего документов: **298**
+- Активных: **283**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **764153** символов
+- Суммарный объём: **766304** символов
 
 ## docs
 
@@ -43,7 +43,7 @@ source_priority: "internal"
 | [docs/02-frontend/Component-driven-development.md](../docs/02-frontend/Component-driven-development.md) | Component-driven development | frontend | 2877 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Content-migration.md](../docs/02-frontend/Content-migration.md) | Content migration | frontend | 3311 | 2026-06-19 | active | internal |
 | [docs/02-frontend/Data-fetching.md](../docs/02-frontend/Data-fetching.md) | Frontend data fetching | frontend | 1591 | 2026-05-24 | active | official-docs |
-| [docs/02-frontend/Design-systems.md](../docs/02-frontend/Design-systems.md) | Design systems | frontend | 3528 | 2026-06-07 | active | internal |
+| [docs/02-frontend/Design-systems.md](../docs/02-frontend/Design-systems.md) | Design systems | frontend | 3739 | 2026-06-22 | active | internal |
 | [docs/02-frontend/Directus.md](../docs/02-frontend/Directus.md) | Directus | frontend | 2074 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Eleventy.md](../docs/02-frontend/Eleventy.md) | Eleventy | frontend | 1758 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Forms-validation.md](../docs/02-frontend/Forms-validation.md) | Forms and validation | frontend | 1927 | 2026-05-27 | active | official-docs |
@@ -264,7 +264,7 @@ source_priority: "internal"
 | [prompts/deploy.md](../prompts/deploy.md) | Prompt: deploy | prompt | 2460 | 2026-05-24 | active | internal |
 | [prompts/design-architecture.md](../prompts/design-architecture.md) | Prompt: design architecture | prompt | 2672 | 2026-05-24 | active | internal |
 | [prompts/design-database.md](../prompts/design-database.md) | Prompt: design database | prompt | 2569 | 2026-05-24 | active | internal |
-| [prompts/design-direction-brief.md](../prompts/design-direction-brief.md) | Prompt: design direction brief | prompt | 5942 | 2026-06-19 | active | internal |
+| [prompts/design-direction-brief.md](../prompts/design-direction-brief.md) | Prompt: design direction brief | prompt | 6066 | 2026-06-22 | active | internal |
 | [prompts/discovery-interview.md](../prompts/discovery-interview.md) | Prompt: discovery interview | prompt | 2711 | 2026-05-24 | active | internal |
 | [prompts/frontend-audit.md](../prompts/frontend-audit.md) | Prompt: frontend audit | prompt | 2281 | 2026-05-24 | active | internal |
 | [prompts/implement-backend.md](../prompts/implement-backend.md) | Prompt: implement backend | prompt | 2473 | 2026-05-24 | active | internal |
@@ -345,6 +345,7 @@ source_priority: "internal"
 | [lessons-learned/2026-06-13-region-accessible-third-party-embeds.md](../lessons-learned/2026-06-13-region-accessible-third-party-embeds.md) | Урок: сторонние эмбеды должны быть доступны в регионе аудитории | lesson | 3092 | 2026-06-13 | active | internal |
 | [lessons-learned/2026-06-20-claude-code-mcp-windows-cli-args.md](../lessons-learned/2026-06-20-claude-code-mcp-windows-cli-args.md) | Claude Code MCP on Windows: npx flags and router package names | lessons-learned | 1311 | 2026-06-20 | active | internal |
 | [lessons-learned/2026-06-20-portfolio-screenshots-and-cache.md](../lessons-learned/2026-06-20-portfolio-screenshots-and-cache.md) | Lesson: скриншоты портфолио требуют двух слоёв и cache policy | lesson | 2018 | 2026-06-20 | active | internal |
+| [lessons-learned/2026-06-21-wordpress-windows-local-smoke.md](../lessons-learned/2026-06-21-wordpress-windows-local-smoke.md) | WordPress local smoke on Windows | lesson | 1816 | 2026-06-21 | active | internal |
 | [lessons-learned/_template.md](../lessons-learned/_template.md) | Lesson: <короткое название> | lesson | 1075 | YYYY-MM-DD | active | internal |
 
 ## mcp

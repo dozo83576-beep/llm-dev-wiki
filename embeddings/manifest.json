@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2378,
-  "corpus_hash": "678f7db43c321412bb8f136cefcd150c38e949a823bb592b1aa60cdb15a28405",
+  "chunk_count": 2384,
+  "corpus_hash": "8f7b61e7ef8ab01d5b3512510fa31b04a71ab86243ce2c04f9b3214a34dfb3b0",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -230,6 +230,7 @@
     "lessons-learned/2026-06-13-region-accessible-third-party-embeds.md",
     "lessons-learned/2026-06-20-claude-code-mcp-windows-cli-args.md",
     "lessons-learned/2026-06-20-portfolio-screenshots-and-cache.md",
+    "lessons-learned/2026-06-21-wordpress-windows-local-smoke.md",
     "patterns/ai/mcp-read-only-default.md",
     "patterns/ai/rag-metadata.md",
     "patterns/api/error-contract.md",
@@ -290,7 +291,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-06-21T17:30:17Z",
+  "generated_at": "2026-06-22T14:48:33Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }

@@ -1,7 +1,7 @@
 ---
 title: "Design systems"
 category: "frontend"
-updated: "2026-06-07"
+updated: "2026-06-22"
 status: "active"
 tags: ["design-system", "ui"]
 source_priority: "internal"
@@ -11,7 +11,7 @@ source_priority: "internal"
 
 Design system нужен, когда интерфейс должен масштабироваться без визуального распада: tokens, typography, spacing, states, components, accessibility, media rules и responsive behavior.
 
-Если задача просит “в моём стиле”, “как в моих референсах” или “используй любимые шрифты”, сначала проверь local preference memory (`D:\Work\AGENT-PREFERENCES.local.md`), затем применяй этот документ. Preference не отменяет accessibility, performance, responsive QA и project-local design constraints.
+Если задача просит “в моём стиле”, “как в моих референсах” или “используй любимые шрифты”, сначала проверь local preference memory (`D:\Work\AGENT-PREFERENCES.local.md`), затем применяй этот документ. Для лендингов и визуального направления используй [design inspiration](../../resources/design-inspiration.md), включая Refero Styles, чтобы извлечь motion/illustration/graphic DNA без копирования чужого бренда. Preference не отменяет accessibility, performance, responsive QA и project-local design constraints.
 
 ## Когда использовать
 
