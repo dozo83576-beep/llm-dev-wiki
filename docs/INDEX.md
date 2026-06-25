@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-06-22"
+updated: "2026-06-25"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **300**
-- Активных: **285**
+- Всего документов: **303**
+- Активных: **288**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **776199** символов
+- Суммарный объём: **785271** символов
 
 ## docs
 
@@ -228,15 +228,16 @@ source_priority: "internal"
 | [patterns/backend/background-job-retry.md](../patterns/backend/background-job-retry.md) | Pattern: Background job retry | patterns | 940 | 2026-05-24 | active | internal |
 | [patterns/backend/privacy-friendly-lead-analytics.md](../patterns/backend/privacy-friendly-lead-analytics.md) | Pattern: Privacy-friendly lead analytics | pattern | 1537 | 2026-06-20 | active | internal |
 | [patterns/backend/service-layer.md](../patterns/backend/service-layer.md) | Pattern: Service layer | patterns | 393 | 2026-05-24 | active | internal |
-| [patterns/backend/telegram-lead-notification.md](../patterns/backend/telegram-lead-notification.md) | Pattern: Telegram lead notification | patterns | 3925 | 2026-05-27 | active | internal |
+| [patterns/backend/telegram-lead-notification.md](../patterns/backend/telegram-lead-notification.md) | Pattern: Telegram lead notification | patterns | 4903 | 2026-05-27 | active | internal |
 | [patterns/backend/webhook-idempotency.md](../patterns/backend/webhook-idempotency.md) | Pattern: Webhook idempotency | patterns | 1091 | 2026-05-24 | active | internal |
 | [patterns/database/cursor-pagination.md](../patterns/database/cursor-pagination.md) | Pattern: Cursor pagination | patterns | 988 | 2026-05-24 | active | internal |
 | [patterns/database/expand-contract-migration.md](../patterns/database/expand-contract-migration.md) | Pattern: Expand-contract migration | patterns | 1122 | 2026-05-24 | active | internal |
 | [patterns/devops/non-root-vps-node-pm2-nginx-deploy.md](../patterns/devops/non-root-vps-node-pm2-nginx-deploy.md) | Pattern: Non-root VPS Node + PM2 + Nginx deploy | pattern | 3042 | 2026-06-20 | active | internal |
 | [patterns/devops/preview-before-production.md](../patterns/devops/preview-before-production.md) | Pattern: Preview before production | patterns | 402 | 2026-05-24 | active | internal |
 | [patterns/devops/rollback-first-release.md](../patterns/devops/rollback-first-release.md) | Pattern: Rollback-first release | patterns | 997 | 2026-05-24 | active | internal |
+| [patterns/frontend/ambient-sound-toggle.md](../patterns/frontend/ambient-sound-toggle.md) | Pattern: Тумблер ambient-звука (опциональный, real audio) | patterns | 2383 | 2026-06-23 | active | internal |
 | [patterns/frontend/anti-ai-slop-design.md](../patterns/frontend/anti-ai-slop-design.md) | Pattern: Anti-AI-slop design | patterns | 8129 | 2026-06-22 | active | internal |
-| [patterns/frontend/cyrillic-self-host-fonts.md](../patterns/frontend/cyrillic-self-host-fonts.md) | Pattern: Cyrillic / self-host fonts | patterns | 3351 | 2026-06-19 | active | internal |
+| [patterns/frontend/cyrillic-self-host-fonts.md](../patterns/frontend/cyrillic-self-host-fonts.md) | Pattern: Cyrillic / self-host fonts | patterns | 3927 | 2026-06-19 | active | internal |
 | [patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md](../patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md) | Pattern: Fixed overlays vs backdrop-filter containing block | patterns | 4002 | 2026-06-08 | active | internal |
 | [patterns/frontend/form-validation-boundary.md](../patterns/frontend/form-validation-boundary.md) | Pattern: Form validation boundary | patterns | 1009 | 2026-05-24 | active | internal |
 | [patterns/frontend/full-height-first-screen.md](../patterns/frontend/full-height-first-screen.md) | Pattern: Full-height first screen (контроль сгиба) | pattern | 3647 | 2026-06-11 | active | internal |
@@ -247,6 +248,7 @@ source_priority: "internal"
 | [patterns/frontend/semantic-theme-text-tokens.md](../patterns/frontend/semantic-theme-text-tokens.md) | Pattern: Semantic theme text tokens | patterns | 2980 | 2026-05-27 | active | internal |
 | [patterns/frontend/server-client-boundary.md](../patterns/frontend/server-client-boundary.md) | Pattern: Server/client boundary | patterns | 456 | 2026-05-24 | active | internal |
 | [patterns/frontend/static-site-dev-only-cms-flag.md](../patterns/frontend/static-site-dev-only-cms-flag.md) | Pattern: Static site + dev-only CMS behind build flag | pattern | 5235 | 2026-06-12 | active | internal |
+| [patterns/frontend/stock-photo-id-verification.md](../patterns/frontend/stock-photo-id-verification.md) | Pattern: Проверка stock-фото (не доверять ID по памяти) | patterns | 2574 | 2026-06-23 | active | internal |
 | [patterns/frontend/third-party-booking-widget.md](../patterns/frontend/third-party-booking-widget.md) | Pattern: Third-party booking widget (попап записи) | pattern | 4127 | 2026-06-13 | active | internal |
 | [patterns/security/deny-by-default.md](../patterns/security/deny-by-default.md) | Pattern: Deny by default | patterns | 404 | 2026-05-24 | active | internal |
 | [patterns/security/tenant-isolation.md](../patterns/security/tenant-isolation.md) | Pattern: Tenant isolation | patterns | 1095 | 2026-05-24 | active | internal |
@@ -348,6 +350,7 @@ source_priority: "internal"
 | [lessons-learned/2026-06-20-claude-code-mcp-windows-cli-args.md](../lessons-learned/2026-06-20-claude-code-mcp-windows-cli-args.md) | Claude Code MCP on Windows: npx flags and router package names | lessons-learned | 1311 | 2026-06-20 | active | internal |
 | [lessons-learned/2026-06-20-portfolio-screenshots-and-cache.md](../lessons-learned/2026-06-20-portfolio-screenshots-and-cache.md) | Lesson: скриншоты портфолио требуют двух слоёв и cache policy | lesson | 2018 | 2026-06-20 | active | internal |
 | [lessons-learned/2026-06-21-wordpress-windows-local-smoke.md](../lessons-learned/2026-06-21-wordpress-windows-local-smoke.md) | WordPress local smoke on Windows | lesson | 1816 | 2026-06-21 | active | internal |
+| [lessons-learned/2026-06-23-astro7-tailwind4-vite-plugin.md](../lessons-learned/2026-06-23-astro7-tailwind4-vite-plugin.md) | Lesson: Astro 7 + Tailwind v4 — vite-плагин, не postcss | lesson | 2561 | 2026-06-23 | active | internal |
 | [lessons-learned/_template.md](../lessons-learned/_template.md) | Lesson: <короткое название> | lesson | 1075 | YYYY-MM-DD | active | internal |
 
 ## mcp

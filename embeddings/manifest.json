@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2402,
-  "corpus_hash": "6d9bc7c3b931b9a47f4716f1f350b5e8accf5aa5787a2169cca8c071b59d8681",
+  "chunk_count": 2426,
+  "corpus_hash": "e6008e637b483ff17b4d99d58d00ed83a813a06a69584d332df26b9a927bc359",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -232,6 +232,7 @@
     "lessons-learned/2026-06-20-claude-code-mcp-windows-cli-args.md",
     "lessons-learned/2026-06-20-portfolio-screenshots-and-cache.md",
     "lessons-learned/2026-06-21-wordpress-windows-local-smoke.md",
+    "lessons-learned/2026-06-23-astro7-tailwind4-vite-plugin.md",
     "patterns/ai/mcp-read-only-default.md",
     "patterns/ai/rag-metadata.md",
     "patterns/api/error-contract.md",
@@ -245,6 +246,7 @@
     "patterns/devops/non-root-vps-node-pm2-nginx-deploy.md",
     "patterns/devops/preview-before-production.md",
     "patterns/devops/rollback-first-release.md",
+    "patterns/frontend/ambient-sound-toggle.md",
     "patterns/frontend/anti-ai-slop-design.md",
     "patterns/frontend/cyrillic-self-host-fonts.md",
     "patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md",
@@ -257,6 +259,7 @@
     "patterns/frontend/semantic-theme-text-tokens.md",
     "patterns/frontend/server-client-boundary.md",
     "patterns/frontend/static-site-dev-only-cms-flag.md",
+    "patterns/frontend/stock-photo-id-verification.md",
     "patterns/frontend/third-party-booking-widget.md",
     "patterns/security/deny-by-default.md",
     "patterns/security/tenant-isolation.md",
@@ -293,7 +296,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-06-22T17:27:54Z",
+  "generated_at": "2026-06-25T16:16:11Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }
