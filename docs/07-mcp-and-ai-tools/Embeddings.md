@@ -2,6 +2,7 @@
 title: "Embeddings"
 category: "ai-tools"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["embeddings", "search"]
 source_priority: "official-docs"

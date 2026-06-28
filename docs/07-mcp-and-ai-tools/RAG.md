@@ -2,6 +2,7 @@
 title: "RAG"
 category: "ai-tools"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["rag", "knowledge-base"]
 source_priority: "internal"

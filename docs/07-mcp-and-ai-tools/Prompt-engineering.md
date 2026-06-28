@@ -2,6 +2,7 @@
 title: "Prompt engineering"
 category: "ai-tools"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["prompting", "agents"]
 source_priority: "internal"

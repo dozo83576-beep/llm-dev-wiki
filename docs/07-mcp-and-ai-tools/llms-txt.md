@@ -2,6 +2,7 @@
 title: "llms.txt"
 category: "ai-tools"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["llms.txt", "indexing"]
 source_priority: "external-proposal"
