@@ -93,7 +93,8 @@ description: >-
    `qa-acceptance` + release-readiness). Для лендингов с экранными секциями проверяй не только
    viewport screenshots, но и DOM-метрики (`getBoundingClientRect`, `scrollHeight/clientHeight`,
    видимость последнего интерактивного элемента), особенно для hero, catalog, calculator, FAQ,
-   forms и fixed CTA/quiz.
+   forms и fixed CTA/quiz. Для lead-generation landing с каталогом/калькулятором используй шаблон
+   `docs/09-testing/Lead-landing-playwright-smoke.md` как базу smoke-проверки.
 13. **Деплой.** Подключи скилл `site-deploy` (env vars, миграции, rollback, monitoring). После деплоя
    зафиксируй GitHub URL, production/staging URL и post-deploy smoke; если проект деплоится через
    Vercel/GitHub, убедись, что репозиторий запушен до production deploy.

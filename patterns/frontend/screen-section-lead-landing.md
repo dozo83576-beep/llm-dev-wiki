@@ -68,6 +68,7 @@ section[id] {
 - Для каталога делать разные layouts: общий режим может быть плотной витриной, выбранная категория должна растягивать 1-2 карточки без пустого grid-фона.
 - Квиз-воронка должна синхронизироваться с основным расчетом/формой, а не быть отдельным тупиком.
 - Все финансовые расчеты помечать как предварительные и не как публичную оферту.
+- Для повторяемой проверки использовать [Lead landing Playwright smoke](../../docs/09-testing/Lead-landing-playwright-smoke.md) и адаптировать селекторы под проект.
 
 ## Частые ошибки
 
@@ -86,4 +87,4 @@ section[id] {
 ## Источники
 
 - Внутренний кейс: [FERROLEASE URAL B2B leasing landing](../../case-studies/successes/2026-06-29-ferrolease-ural-b2b-leasing-landing.md).
-- Связано: [Full-height first screen](full-height-first-screen.md), [Landing playbook](../../docs/13-playbooks/landing.md), [Frontend review checklist](../../checklists/frontend-review.md).
+- Связано: [Full-height first screen](full-height-first-screen.md), [Landing playbook](../../docs/13-playbooks/landing.md), [Lead landing Playwright smoke](../../docs/09-testing/Lead-landing-playwright-smoke.md), [Frontend review checklist](../../checklists/frontend-review.md).

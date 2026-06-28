@@ -84,6 +84,7 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 
 - [ ] **Critical user-journey** покрыт Playwright или ручным smoke — QA — block — [Playwright](../docs/09-testing/Playwright.md), [E2E testing](../docs/09-testing/E2E-testing.md).
 - [ ] **DOM-metric smoke**: для screen-fit задач проверены `getBoundingClientRect`, `scrollHeight/clientHeight` и видимость последнего интерактивного элемента, а не только скриншот — QA — warn — [screen-section lead landing](../patterns/frontend/screen-section-lead-landing.md).
+- [ ] **Lead landing smoke**: для лендинга с каталогом/калькулятором адаптирован smoke-шаблон hero, catalog, calculator, FAQ, contacts и floating CTA — QA — warn — [Lead landing Playwright smoke](../docs/09-testing/Lead-landing-playwright-smoke.md).
 - [ ] **Component tests** для сложных интерактивных компонентов — frontend owner — warn — [Frontend testing](../docs/02-frontend/Frontend-testing.md).
 - [ ] **Visual regression** для дизайн-системы и hero pages — frontend owner — warn — [Visual testing](../docs/09-testing/Visual-testing.md).
 - [ ] **Responsive screenshots** сохранены или проверены для 360px / 768px / desktop на критичных routes — QA — warn — [Visual testing](../docs/09-testing/Visual-testing.md).
