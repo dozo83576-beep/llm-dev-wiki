@@ -2,6 +2,7 @@
 title: "Multi-tenancy"
 category: "database"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["multi-tenancy", "saas"]
 source_priority: "internal"

@@ -2,6 +2,7 @@
 title: "Drizzle ORM"
 category: "database"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["drizzle", "orm"]
 source_priority: "official-docs"

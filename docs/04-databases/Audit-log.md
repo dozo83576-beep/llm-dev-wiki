@@ -2,6 +2,7 @@
 title: "Audit log"
 category: "database"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["audit", "compliance"]
 source_priority: "internal"

@@ -2,6 +2,7 @@
 title: "Transactions"
 category: "database"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["transactions", "postgresql"]
 source_priority: "official-docs"

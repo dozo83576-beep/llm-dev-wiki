@@ -2,6 +2,7 @@
 title: "Database migrations"
 category: "database"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["migrations", "database"]
 source_priority: "mixed"
