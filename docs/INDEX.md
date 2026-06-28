@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **303**
-- Активных: **288**
+- Всего документов: **304**
+- Активных: **289**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **787222** символов
+- Суммарный объём: **788238** символов
 
 ## docs
 
@@ -351,6 +351,7 @@ source_priority: "internal"
 | [lessons-learned/2026-06-20-portfolio-screenshots-and-cache.md](../lessons-learned/2026-06-20-portfolio-screenshots-and-cache.md) | Lesson: скриншоты портфолио требуют двух слоёв и cache policy | lesson | 2018 | 2026-06-20 | active | internal |
 | [lessons-learned/2026-06-21-wordpress-windows-local-smoke.md](../lessons-learned/2026-06-21-wordpress-windows-local-smoke.md) | WordPress local smoke on Windows | lesson | 1816 | 2026-06-21 | active | internal |
 | [lessons-learned/2026-06-23-astro7-tailwind4-vite-plugin.md](../lessons-learned/2026-06-23-astro7-tailwind4-vite-plugin.md) | Lesson: Astro 7 + Tailwind v4 — vite-плагин, не postcss | lesson | 2561 | 2026-06-23 | active | internal |
+| [lessons-learned/2026-06-25-astro7-vercel-adapter.md](../lessons-learned/2026-06-25-astro7-vercel-adapter.md) | Astro 7 + Vercel adapter: import path and audit | lesson | 1016 | 2026-06-25 | active | internal |
 | [lessons-learned/_template.md](../lessons-learned/_template.md) | Lesson: <короткое название> | lesson | 1027 | YYYY-MM-DD | active | internal |
 
 ## mcp
