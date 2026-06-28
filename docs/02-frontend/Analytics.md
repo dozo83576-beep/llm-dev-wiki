@@ -2,6 +2,7 @@
 title: "Analytics"
 category: "frontend"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["analytics", "product"]
 source_priority: "internal"

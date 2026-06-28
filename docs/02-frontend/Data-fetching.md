@@ -2,6 +2,7 @@
 title: "Frontend data fetching"
 category: "frontend"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["data-fetching", "nextjs", "server-state"]
 source_priority: "official-docs"
