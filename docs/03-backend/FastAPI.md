@@ -1,7 +1,7 @@
 ---
 title: "FastAPI"
 category: "backend"
-updated: "2026-05-24"
+updated: "2026-06-22"
 status: "active"
 tags: ["fastapi", "python"]
 source_priority: "official-docs"
@@ -13,7 +13,7 @@ FastAPI выбирай для Python API, AI-интеграций, typed validat
 
 Правила: dependency injection для сервисов, Pydantic schemas на границе API, SQLAlchemy/Alembic для данных, background jobs для долгих операций.
 
-Источник: [FastAPI Docs](https://fastapi.tiangolo.com/).
+Источник: [FastAPI Docs](https://fastapi.tiangolo.com/). Freshness note: FastAPI 0.138.0 adds `app.frontend()` / `router.frontend()` helpers for serving built frontend assets; API-service guidance stays the same.
 
 ## Когда использовать
 
@@ -48,6 +48,5 @@ CORS slip с `allow_origins=["*"]`, утечка stack trace в JSON-ответ�
 
 ## Источники
 
-- [FastAPI Docs](https://fastapi.tiangolo.com/) — проверено 2026-05-24.
+- [FastAPI Docs](https://fastapi.tiangolo.com/) — refreshed against FastAPI 0.138.0 on 2026-06-22.
 - См. [Nodejs](Nodejs.md), [Background jobs](Background-jobs.md), [Error handling](Error-handling.md).
-

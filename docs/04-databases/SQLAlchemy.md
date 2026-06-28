@@ -1,7 +1,7 @@
 ---
 title: "SQLAlchemy"
 category: "database"
-updated: "2026-05-24"
+updated: "2026-06-22"
 status: "active"
 tags: ["sqlalchemy", "python"]
 source_priority: "official-docs"
@@ -13,7 +13,7 @@ SQLAlchemy используй для Python backend с FastAPI/Django-adjacent �
 
 Правила: Alembic для миграций, explicit sessions, transaction boundary в service layer, тесты на критичные запросы.
 
-Источник: [SQLAlchemy Docs](https://docs.sqlalchemy.org/).
+Источник: [SQLAlchemy Docs](https://docs.sqlalchemy.org/). Freshness note: SQLAlchemy 2.0.51 includes ORM/engine/SQL/PostgreSQL fixes; session, transaction and migration guidance unchanged.
 
 ## Когда использовать
 
@@ -48,6 +48,5 @@ Mass-assignment через `**kwargs` без allowlist, raw SQL через `text
 
 ## Источники
 
-- [SQLAlchemy Docs](https://docs.sqlalchemy.org/) — проверено 2026-05-24.
+- [SQLAlchemy Docs](https://docs.sqlalchemy.org/) — refreshed against SQLAlchemy 2.0.51 on 2026-06-22.
 - См. [PostgreSQL](PostgreSQL.md), [Migrations](Migrations.md), [Transactions](Transactions.md), [FastAPI](../03-backend/FastAPI.md).
-

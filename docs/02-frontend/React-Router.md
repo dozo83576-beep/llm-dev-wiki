@@ -1,7 +1,7 @@
 ---
 title: "React Router"
 category: "frontend"
-updated: "2026-06-10"
+updated: "2026-06-22"
 status: "active"
 tags: ["react-router", "routing", "spa"]
 source_priority: "official-docs"
@@ -9,7 +9,9 @@ source_priority: "official-docs"
 
 # React Router
 
-React Router — routing baseline для React SPA и framework-mode проектов, где URL, nested layouts, loaders/actions и navigation states должны быть явными. В v7 он также закрывает Remix-style framework mode: SSR, pre-rendering, streaming, loaders/actions and route typegen.
+React Router — routing baseline для React SPA и framework-mode проектов, где URL, nested layouts, loaders/actions и navigation states должны быть явными. В v8 он продолжает Remix-style framework mode: SSR, pre-rendering, streaming, loaders/actions and route typegen.
+
+Freshness note: `react-router` 8.0.1 требует Node 22.22+, React 19.2.7+ and Vite 7+ для framework mode. Upgrade с v7 проверяй как migration: если v8 future flags уже были включены, API surface близок; иначе проверь `react-router-dom` imports, `meta` `data` fields and middleware context.
 
 ## Когда использовать
 
@@ -50,7 +52,7 @@ React Router — routing baseline для React SPA и framework-mode проек�
 
 ## Источники
 
-- [React Router Docs](https://reactrouter.com/)
+- [React Router Docs](https://reactrouter.com/) — refreshed against `react-router` 8.0.1 on 2026-06-22.
 - [React Router modes](https://reactrouter.com/start/modes)
 - [Upgrading from Remix](https://reactrouter.com/upgrading/remix)
 - См. [Routing](Routing.md), [Vite + React](Vite-React.md), [Frontend testing](Frontend-testing.md), [Shopify Hydrogen](../13-playbooks/shopify-hydrogen.md), [Authorization](../05-auth-security/Authorization.md).

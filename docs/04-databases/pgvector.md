@@ -1,7 +1,7 @@
 ---
 title: "pgvector"
 category: "database"
-updated: "2026-05-24"
+updated: "2026-06-22"
 status: "active"
 tags: ["pgvector", "rag", "postgresql"]
 source_priority: "official-docs"
@@ -10,6 +10,8 @@ source_priority: "official-docs"
 # pgvector
 
 pgvector добавляет vector search в PostgreSQL. Это хороший первый выбор, если knowledge base небольшая или хочется избежать отдельной vector DB.
+
+Freshness note: pgvector v0.8.3 is a version bump release; index, distance operator and embedding namespace guidance remains unchanged.
 
 ## Когда использовать
 
@@ -48,5 +50,5 @@ Retrieval evals, metadata filter tests, переиндексация sample vaul
 
 ## Источники
 
-- [pgvector GitHub](https://github.com/pgvector/pgvector) — проверено 2026-05-24.
+- [pgvector GitHub](https://github.com/pgvector/pgvector) — refreshed against pgvector v0.8.3 on 2026-06-22.
 - См. [Vector databases](../07-mcp-and-ai-tools/Vector-databases.md), [RAG](../07-mcp-and-ai-tools/RAG.md), [Qdrant](../07-mcp-and-ai-tools/Qdrant.md).

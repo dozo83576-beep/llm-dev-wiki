@@ -50,10 +50,10 @@ Frontend / backend / БД / hosting / интеграции — кратко.
 
 ## Что обновили в вики
 
-- [pattern: ...](../patterns/...)
-- [checklist: ...](../checklists/...)
-- [playbook: ...](../docs/13-playbooks/...)
-- [doc: ...](../docs/...)
+- pattern: ...
+- checklist: ...
+- playbook: ...
+- doc: ...
 
 ## Ссылки
 

@@ -37,8 +37,8 @@ project_type: "saas | landing | marketplace | admin | ai-rag | api | ecommerce |
 
 ## Обновлённые документы
 
-- [path/to/doc.md](../docs/...) — что именно изменено.
-- [path/to/checklist.md](../checklists/...) — какой пункт добавлен.
+- path/to/doc.md — что именно изменено.
+- path/to/checklist.md — какой пункт добавлен.
 
 ## Ссылки
 
