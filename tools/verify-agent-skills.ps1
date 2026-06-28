@@ -23,7 +23,7 @@ function Get-RelativeFileHashMap {
     Get-ChildItem -LiteralPath $root -Recurse -File |
         Where-Object { $_.FullName -notmatch '\\logs\\' } |
         ForEach-Object {
-            $relative = $_.FullName.Substring($root.Length).TrimStart('\')
+            $relative = $_.FullName.Substring($root.Length).TrimStart([char[]]@("\", "/")).Replace("/", "\")
             $map[$relative] = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash
         }
     return $map

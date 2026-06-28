@@ -68,6 +68,22 @@ async function sendToTelegram(lead) {
 
 Добавь rate limit или Turnstile/hCaptcha при росте spam, логируй только технические ошибки без полного payload, держи резервный канал связи в UI, проверяй env vars на preview и production отдельно. Если лиды становятся критичными, дублируй их в CRM, таблицу или очередь.
 
+### Astro + Vercel: рантайм-env и платформо-нейтральный endpoint
+
+- **Читай секреты из `process.env`, не из `import.meta.env`.** В Astro приватные
+  (не `PUBLIC_`) переменные через `import.meta.env` подставляются на build-time;
+  в serverless-рантайме (Vercel/Cloudflare) их там может не быть → форма молча
+  уйдёт в вечный dry-run даже при заданных токенах. Безопасно:
+  `process.env.TELEGRAM_BOT_TOKEN ?? import.meta.env.TELEGRAM_BOT_TOKEN`
+  (фолбэк сохраняет локальный `astro dev` с `.env`).
+- **Держи endpoint платформо-нейтральным** (стандартные `Request`/`Response`,
+  `export const prerender = false`). Тогда смена адаптера `@astrojs/node` →
+  `@astrojs/vercel` (`npx astro add vercel`) при `output: 'static'` собирает
+  именно этот роут как serverless-функцию без правок его кода (hybrid).
+- Токены задаются в env платформы (Vercel → Project → Settings → Environment
+  Variables, scope Production); включение доставки = добавить env + redeploy,
+  без передеплоя кода.
+
 ## Частые ошибки
 
 - Отправлять Telegram Bot Token в клиентский JavaScript.

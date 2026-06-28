@@ -1,7 +1,7 @@
 ---
 title: "Angular SSR"
 category: "frontend"
-updated: "2026-06-10"
+updated: "2026-06-22"
 status: "active"
 tags: ["angular", "ssr", "enterprise", "hydration"]
 source_priority: "official-docs"
@@ -10,6 +10,8 @@ source_priority: "official-docs"
 # Angular SSR
 
 Angular SSR/hydration — enterprise frontend option для команд, где Angular уже является платформенным стандартом и нужны server-rendered pages, SEO or faster first paint.
+
+Freshness note: Angular 22.0.2 includes SSR-adjacent HTTP transfer cache fixes for uncacheable and credentialed fetch requests; keep SSR smoke tests around cookies, auth and cache boundaries.
 
 ## Когда использовать
 
@@ -46,6 +48,6 @@ Angular SSR/hydration — enterprise frontend option для команд, где
 
 ## Источники
 
-- [Angular SSR](https://angular.dev/guide/ssr)
+- [Angular SSR](https://angular.dev/guide/ssr) — refreshed against Angular 22.0.2 on 2026-06-22.
 - [Angular Hydration](https://angular.dev/guide/hydration)
 - См. [Performance](Performance.md), [SEO](SEO.md), [Frontend blueprints](Frontend-blueprints.md).

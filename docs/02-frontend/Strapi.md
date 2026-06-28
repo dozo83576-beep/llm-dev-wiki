@@ -1,7 +1,7 @@
 ---
 title: "Strapi"
 category: "frontend"
-updated: "2026-06-10"
+updated: "2026-06-22"
 status: "active"
 tags: ["cms", "strapi", "headless", "content"]
 source_priority: "official-docs"
@@ -10,6 +10,8 @@ source_priority: "official-docs"
 # Strapi
 
 Strapi — self-hosted headless CMS для команд, которым нужен быстрый content API, редакторская админка, RBAC и контроль над backend deployment.
+
+Freshness note: Strapi 5.48.1 adds gated OpenAPI endpoint access and a paginated upload files endpoint, plus admin/content-manager fixes. Keep API exposure and media permissions in the review checklist.
 
 ## Когда использовать
 
@@ -46,6 +48,6 @@ Strapi — self-hosted headless CMS для команд, которым нуже
 
 ## Источники
 
-- [Strapi Docs](https://docs.strapi.io/)
+- [Strapi Docs](https://docs.strapi.io/) — refreshed against Strapi 5.48.1 on 2026-06-22.
 - [Strapi Next.js integration](https://strapi.io/integrations/nextjs-cms)
 - См. [CMS content](CMS-content.md), [Next.js](Nextjs.md), [Astro](Astro.md), [Security testing](../09-testing/Security-testing.md).

@@ -1,7 +1,7 @@
 ---
 title: "Sanity"
 category: "frontend"
-updated: "2026-06-10"
+updated: "2026-06-22"
 status: "active"
 tags: ["cms", "sanity", "visual-editing", "content"]
 source_priority: "official-docs"
@@ -10,6 +10,8 @@ source_priority: "official-docs"
 # Sanity
 
 Sanity — hosted content platform для structured content, editorial workflow, visual editing and live preview. Сильнее всего подходит, когда редакторский опыт важен не меньше frontend code.
+
+Freshness note: Sanity Studio 6.1.0 is an improvements/bugfix release; version actions and Studio timing telemetry changed, but content-model and preview guidance remains unchanged.
 
 ## Когда использовать
 
@@ -46,7 +48,7 @@ Sanity — hosted content platform для structured content, editorial workflow
 
 ## Источники
 
-- [Sanity Docs](https://www.sanity.io/docs)
+- [Sanity Docs](https://www.sanity.io/docs) — refreshed against Sanity Studio 6.1.0 on 2026-06-22.
 - [Sanity Visual Editing](https://www.sanity.io/docs/visual-editing/introduction-to-visual-editing)
 - [Visual Editing with Next.js App Router](https://www.sanity.io/docs/visual-editing/visual-editing-with-next-js-app-router)
 - См. [CMS content](CMS-content.md), [SEO](SEO.md), [Frontend blueprints](Frontend-blueprints.md).

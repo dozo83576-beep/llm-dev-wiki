@@ -1,7 +1,7 @@
 ---
 title: "Playbook: Shopify Hydrogen"
 category: "playbooks"
-updated: "2026-06-10"
+updated: "2026-06-22"
 status: "active"
 tags: ["shopify", "hydrogen", "commerce", "react-router"]
 source_priority: "official-docs"
@@ -10,6 +10,8 @@ source_priority: "official-docs"
 # Playbook: Shopify Hydrogen
 
 Shopify Hydrogen — Shopify-first custom storefront stack. Он built on React Router and Storefront API, а Shopify остаётся source of truth для catalog, cart, checkout and commerce operations.
+
+Freshness note: Hydrogen 2026.4.4 is a patch release; the 2026.4 line updated Storefront API and Customer Account API to 2026-04, made the Storefront API proxy mandatory and enabled backend consent mode. Custom storefronts must review proxy, consent and cart/metafield edge cases before upgrade.
 
 ## Когда использовать
 
@@ -46,6 +48,6 @@ Shopify Hydrogen — Shopify-first custom storefront stack. Он built on React 
 
 ## Источники
 
-- [Shopify Hydrogen Docs](https://shopify.dev/docs/api/hydrogen/latest)
+- [Shopify Hydrogen Docs](https://shopify.dev/docs/api/hydrogen/latest) — refreshed against `@shopify/hydrogen` 2026.4.4 on 2026-06-22.
 - [Hydrogen React](https://shopify.dev/docs/api/hydrogen-react/latest)
 - См. [Headless commerce](headless-commerce.md), [E-commerce](ecommerce.md), [React Router](../02-frontend/React-Router.md), [Payments](../03-backend/Payments.md).
