@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-06-28"
+updated: "2026-06-29"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **304**
-- Активных: **289**
+- Всего документов: **306**
+- Активных: **290**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **788238** символов
+- Суммарный объём: **798049** символов
 
 ## docs
 
@@ -201,7 +201,7 @@ source_priority: "internal"
 | [docs/13-playbooks/ecommerce.md](../docs/13-playbooks/ecommerce.md) | Playbook: E-commerce | playbooks | 4558 | 2026-06-10 | active | internal |
 | [docs/13-playbooks/headless-commerce.md](../docs/13-playbooks/headless-commerce.md) | Playbook: Headless commerce | playbooks | 2967 | 2026-06-10 | active | mixed |
 | [docs/13-playbooks/index.md](../docs/13-playbooks/index.md) | Project playbooks | playbooks | 2967 | 2026-05-24 | active | internal |
-| [docs/13-playbooks/landing.md](../docs/13-playbooks/landing.md) | Playbook: Landing | playbooks | 7975 | 2026-06-22 | active | internal |
+| [docs/13-playbooks/landing.md](../docs/13-playbooks/landing.md) | Playbook: Landing | playbooks | 9188 | 2026-06-22 | active | internal |
 | [docs/13-playbooks/marketplace.md](../docs/13-playbooks/marketplace.md) | Playbook: Marketplace | playbooks | 4451 | 2026-06-04 | active | internal |
 | [docs/13-playbooks/real-time-app.md](../docs/13-playbooks/real-time-app.md) | Playbook: Real-time app | playbooks | 3863 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/saas.md](../docs/13-playbooks/saas.md) | Playbook: SaaS | playbooks | 5027 | 2026-06-04 | active | internal |
@@ -245,6 +245,7 @@ source_priority: "internal"
 | [patterns/frontend/localstorage-mini-crm.md](../patterns/frontend/localstorage-mini-crm.md) | Pattern: LocalStorage mini-CRM (клиентский CRUD без бэкенда) | pattern | 3891 | 2026-06-11 | active | internal |
 | [patterns/frontend/portfolio-case-screenshot-gallery.md](../patterns/frontend/portfolio-case-screenshot-gallery.md) | Pattern: Portfolio case screenshot gallery | pattern | 2798 | 2026-06-20 | active | internal |
 | [patterns/frontend/purposeful-motion.md](../patterns/frontend/purposeful-motion.md) | Pattern: Purposeful motion | pattern | 4215 | 2026-06-20 | active | internal |
+| [patterns/frontend/screen-section-lead-landing.md](../patterns/frontend/screen-section-lead-landing.md) | Pattern: Screen-section lead landing | pattern | 3766 | 2026-06-29 | active | internal |
 | [patterns/frontend/semantic-theme-text-tokens.md](../patterns/frontend/semantic-theme-text-tokens.md) | Pattern: Semantic theme text tokens | patterns | 2980 | 2026-05-27 | active | internal |
 | [patterns/frontend/server-client-boundary.md](../patterns/frontend/server-client-boundary.md) | Pattern: Server/client boundary | patterns | 446 | 2026-05-24 | active | internal |
 | [patterns/frontend/static-site-dev-only-cms-flag.md](../patterns/frontend/static-site-dev-only-cms-flag.md) | Pattern: Static site + dev-only CMS behind build flag | pattern | 5235 | 2026-06-12 | active | internal |
@@ -294,7 +295,7 @@ source_priority: "internal"
 | [checklists/backend-review.md](../checklists/backend-review.md) | Backend review checklist | checklist | 3761 | 2026-05-24 | active | internal |
 | [checklists/backup-restore-drill.md](../checklists/backup-restore-drill.md) | Backup and restore drill checklist | checklist | 1604 | 2026-06-19 | active | internal |
 | [checklists/database-review.md](../checklists/database-review.md) | Database review checklist | checklist | 3498 | 2026-05-24 | active | internal |
-| [checklists/frontend-review.md](../checklists/frontend-review.md) | Frontend review checklist | checklist | 9200 | 2026-06-11 | active | internal |
+| [checklists/frontend-review.md](../checklists/frontend-review.md) | Frontend review checklist | checklist | 10604 | 2026-06-11 | active | internal |
 | [checklists/infrastructure-readiness.md](../checklists/infrastructure-readiness.md) | Infrastructure readiness checklist | checklist | 1966 | 2026-06-19 | active | internal |
 | [checklists/legal-compliance.md](../checklists/legal-compliance.md) | Legal compliance checklist (RU / 152-FZ) | checklist | 2491 | 2026-06-19 | active | internal |
 | [checklists/project-discovery.md](../checklists/project-discovery.md) | Project discovery checklist | checklist | 4242 | 2026-06-13 | active | internal |
@@ -332,6 +333,7 @@ source_priority: "internal"
 | [case-studies/successes/2026-06-11-turboservice-static-autoservice.md](../case-studies/successes/2026-06-11-turboservice-static-autoservice.md) | Успешное решение: статический сайт автосервиса ТУРБОСЕРВИС | case-study | 6187 | 2026-06-11 | validated | internal |
 | [case-studies/successes/2026-06-13-sport-psy-static-site.md](../case-studies/successes/2026-06-13-sport-psy-static-site.md) | Успешное решение: статический сайт детского спортивного психолога (sport-psy) | case-study | 5430 | 2026-06-13 | validated | internal |
 | [case-studies/successes/2026-06-20-zayavki-site-portfolio.md](../case-studies/successes/2026-06-20-zayavki-site-portfolio.md) | Успешное решение: портфолио услуг Заявки.Site | case-study | 3322 | 2026-06-20 | validated | internal |
+| [case-studies/successes/2026-06-29-ferrolease-ural-b2b-leasing-landing.md](../case-studies/successes/2026-06-29-ferrolease-ural-b2b-leasing-landing.md) | Успешное решение: B2B leasing landing с каталогом, калькулятором и Vercel deploy | case-study | 3428 | 2026-06-29 | validated | internal |
 | [case-studies/successes/README.md](../case-studies/successes/README.md) | Success case studies | case-study | 720 | 2026-05-24 | validated | internal |
 | [case-studies/successes/_template.md](../case-studies/successes/_template.md) | Успешное решение: название | case-study | 729 | 2026-05-24 | validated | internal |
 

@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2430,
-  "corpus_hash": "d7aedcc1787b10bf087c91e776a424a2fa6a2d1778ad1c3c9a11a5d1441d7e23",
+  "chunk_count": 2442,
+  "corpus_hash": "a1dd8c42b1679426616110729751c6e18e56243c76712dc91c6245a8c85a2a48",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -14,6 +14,7 @@
     "case-studies/successes/2026-06-11-turboservice-static-autoservice.md",
     "case-studies/successes/2026-06-13-sport-psy-static-site.md",
     "case-studies/successes/2026-06-20-zayavki-site-portfolio.md",
+    "case-studies/successes/2026-06-29-ferrolease-ural-b2b-leasing-landing.md",
     "case-studies/successes/README.md",
     "checklists/ai-agent-review.md",
     "checklists/analytics-verification.md",
@@ -257,6 +258,7 @@
     "patterns/frontend/localstorage-mini-crm.md",
     "patterns/frontend/portfolio-case-screenshot-gallery.md",
     "patterns/frontend/purposeful-motion.md",
+    "patterns/frontend/screen-section-lead-landing.md",
     "patterns/frontend/semantic-theme-text-tokens.md",
     "patterns/frontend/server-client-boundary.md",
     "patterns/frontend/static-site-dev-only-cms-flag.md",
@@ -297,7 +299,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-06-28T09:06:58Z",
+  "generated_at": "2026-06-28T19:55:27Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }

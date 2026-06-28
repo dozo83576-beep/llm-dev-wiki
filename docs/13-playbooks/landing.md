@@ -50,6 +50,15 @@ source_priority: "internal"
 - Для формы заявки хранить токены уведомлений только в server env; если env нет, endpoint должен иметь dry-run/fallback и понятное сообщение.
 - Для VPS Node deploy по умолчанию использовать non-root пользователя, PM2, Nginx reverse proxy и `.env.production` вне архива.
 
+### Вариант: lead-generation с каталогом и калькулятором
+
+- Если пользователь дал или в ходе проекта был создан visual reference, сохранить его в проекте и использовать как проверяемый source of truth для first viewport, карточек, CTA, секционного ритма, типографики и mobile.
+- Для каталогов, калькуляторов и FAQ применять [screen-section lead landing](../../patterns/frontend/screen-section-lead-landing.md): один смысловой блок на экран, а длинный контент — через bounded viewport и внутреннюю прокрутку.
+- Финансовые цифры, платежи, предложения и налоговые оценки всегда маркировать как предварительный расчет, не публичную оферту.
+- Если нет подтвержденных клиентских историй, не писать "реальные кейсы"; вместо этого использовать "готовые предложения" или "сценарии" из фактических моделей/услуг каталога.
+- Квиз-воронка должна вести в основной расчет или форму и передавать выбранные параметры, а не жить отдельной веткой без продолжения.
+- Фото карточек должны соответствовать названию позиции; если фото не хватает, использовать легальный источник/локальную генерацию и фиксировать attribution или `photo-sourcing`.
+
 ## Production-паттерны
 
 - Статика по умолчанию (SSG), серверный код только для form submit.
@@ -105,4 +114,4 @@ Hero-видео без poster, неоптимизированные images (Mb �
 
 ## Источники
 
-- См. [Astro](../02-frontend/Astro.md), [Eleventy](../02-frontend/Eleventy.md), [Hugo](../02-frontend/Hugo.md), [CMS content](../02-frontend/CMS-content.md), [WordPress](../02-frontend/WordPress.md), [Webflow](../02-frontend/Webflow.md), [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [Performance](../02-frontend/Performance.md), [SEO](../02-frontend/SEO.md), [Forms validation](../02-frontend/Forms-validation.md), [Analytics](../02-frontend/Analytics.md), [AI chat widget](../07-mcp-and-ai-tools/AI-chat-widget.md), [semantic theme text tokens](../../patterns/frontend/semantic-theme-text-tokens.md), [telegram lead notification](../../patterns/backend/telegram-lead-notification.md), [portfolio case screenshot gallery](../../patterns/frontend/portfolio-case-screenshot-gallery.md), [non-root VPS Node deploy](../../patterns/devops/non-root-vps-node-pm2-nginx-deploy.md), [anti-ai-slop design](../../patterns/frontend/anti-ai-slop-design.md), [cyrillic / self-host fonts](../../patterns/frontend/cyrillic-self-host-fonts.md), [Premium-components](../02-frontend/Premium-components.md), [design-direction-brief](../../prompts/design-direction-brief.md).
+- См. [Astro](../02-frontend/Astro.md), [Eleventy](../02-frontend/Eleventy.md), [Hugo](../02-frontend/Hugo.md), [CMS content](../02-frontend/CMS-content.md), [WordPress](../02-frontend/WordPress.md), [Webflow](../02-frontend/Webflow.md), [Frontend blueprints](../02-frontend/Frontend-blueprints.md), [Performance](../02-frontend/Performance.md), [SEO](../02-frontend/SEO.md), [Forms validation](../02-frontend/Forms-validation.md), [Analytics](../02-frontend/Analytics.md), [AI chat widget](../07-mcp-and-ai-tools/AI-chat-widget.md), [semantic theme text tokens](../../patterns/frontend/semantic-theme-text-tokens.md), [telegram lead notification](../../patterns/backend/telegram-lead-notification.md), [portfolio case screenshot gallery](../../patterns/frontend/portfolio-case-screenshot-gallery.md), [screen-section lead landing](../../patterns/frontend/screen-section-lead-landing.md), [non-root VPS Node deploy](../../patterns/devops/non-root-vps-node-pm2-nginx-deploy.md), [anti-ai-slop design](../../patterns/frontend/anti-ai-slop-design.md), [cyrillic / self-host fonts](../../patterns/frontend/cyrillic-self-host-fonts.md), [Premium-components](../02-frontend/Premium-components.md), [design-direction-brief](../../prompts/design-direction-brief.md).

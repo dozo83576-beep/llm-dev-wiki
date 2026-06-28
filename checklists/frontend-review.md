@@ -47,6 +47,10 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 - [ ] **Dark / light theme** (если есть) — оба покрыты; текстовые токены не протекают между светлыми и темными поверхностями — frontend owner — warn — [semantic text tokens](../patterns/frontend/semantic-theme-text-tokens.md).
 - [ ] **Long content** (длинные имена, многоязычные строки) не выходит за контейнеры — frontend owner — warn.
 - [ ] **Fold control**: секция-первый-экран (hero + нижняя полоса) не оставляет следующую секцию выглядывающей узкой полосой над сгибом — frontend owner — warn — [full-height first screen](../patterns/frontend/full-height-first-screen.md).
+- [ ] **Screen-section fit**: критичные lead-generation блоки (`hero`, `calculator`, `FAQ`, `contacts`) проверены на desktop viewport; длинные блоки используют bounded internal scroll, а не растягивают страницу — frontend + QA — warn — [screen-section lead landing](../patterns/frontend/screen-section-lead-landing.md).
+- [ ] **Floating CTA / quiz**: fixed-виджет не перекрывает форму, CTA, последний чекбокс или важный disclaimer на desktop/mobile — frontend + QA — warn — [screen-section lead landing](../patterns/frontend/screen-section-lead-landing.md).
+- [ ] **Catalog category layout**: общий каталог и выбранная категория имеют отдельные layouts; при 1-2 карточках нет пустых grid-зон, серых хвостов и несоответствующих фото — frontend + content owner — warn — [screen-section lead landing](../patterns/frontend/screen-section-lead-landing.md).
+- [ ] **Static map / stock images**: карта, stock/static images и generated assets не содержат случайных служебных плашек; alt/text соответствует реальному изображению — content + QA — warn — [stock photo verification](../patterns/frontend/stock-photo-id-verification.md).
 - [ ] **Reduced motion**: декоративные CSS/JS-анимации (hero, counters, parallax) отключаются при `prefers-reduced-motion`; счётчики имеют fallback на финальное значение — frontend owner — warn — [static auto-service case study](../case-studies/successes/2026-06-11-turboservice-static-autoservice.md).
 - [ ] **Media strategy** есть для hero/product/content images: dimensions, alt, focal point, WebP/AVIF, mobile crop, video poster — frontend owner — warn — [Performance](../docs/02-frontend/Performance.md).
 - [ ] **Critical sections** проверены отдельно: hero, CTA, pricing, checkout, FAQ, lead form, empty dashboard — product + frontend — warn — [Frontend blueprints](../docs/02-frontend/Frontend-blueprints.md).
@@ -79,6 +83,7 @@ Gated checklist для frontend-фичи или UI-страницы. Форма�
 ## Tests
 
 - [ ] **Critical user-journey** покрыт Playwright или ручным smoke — QA — block — [Playwright](../docs/09-testing/Playwright.md), [E2E testing](../docs/09-testing/E2E-testing.md).
+- [ ] **DOM-metric smoke**: для screen-fit задач проверены `getBoundingClientRect`, `scrollHeight/clientHeight` и видимость последнего интерактивного элемента, а не только скриншот — QA — warn — [screen-section lead landing](../patterns/frontend/screen-section-lead-landing.md).
 - [ ] **Component tests** для сложных интерактивных компонентов — frontend owner — warn — [Frontend testing](../docs/02-frontend/Frontend-testing.md).
 - [ ] **Visual regression** для дизайн-системы и hero pages — frontend owner — warn — [Visual testing](../docs/09-testing/Visual-testing.md).
 - [ ] **Responsive screenshots** сохранены или проверены для 360px / 768px / desktop на критичных routes — QA — warn — [Visual testing](../docs/09-testing/Visual-testing.md).

@@ -82,19 +82,28 @@ description: >-
 8. **Контент.** Подключи скилл `site-content`: контент-модель, карта страниц, копирайтинг, i18n,
    юридические/consent-страницы (информирует дизайн, frontend и SEO).
 9. **Дизайн.** Подключи скилл `site-design` для современного визуального уровня (frontend-design +
-   дизайн-слой предпочтений).
+   дизайн-слой предпочтений). Если пользователь дал или в процессе был создан визуальный референс,
+   сохрани его в проекте как проверяемый артефакт и сверяй по нему first viewport, карточки, CTA,
+   секционный ритм, типографику и mobile до финала.
 10. **Реализация.** Подключи `site-frontend` и `site-backend` по этапам плана. Рабочий код без незавершённых маркеров,
    логирование, обработка ошибок, unit-тесты и edge cases.
 11. **SEO и производительность.** Подключи скилл `site-seo`: метаданные, sitemap/robots, structured data,
    Core Web Vitals и performance budgets.
 12. **Ревью.** Подключи скилл `site-review` (frontend/backend/api/database/security + UAT/приёмка через
-   `qa-acceptance` + release-readiness).
-13. **Деплой.** Подключи скилл `site-deploy` (env vars, миграции, rollback, monitoring).
+   `qa-acceptance` + release-readiness). Для лендингов с экранными секциями проверяй не только
+   viewport screenshots, но и DOM-метрики (`getBoundingClientRect`, `scrollHeight/clientHeight`,
+   видимость последнего интерактивного элемента), особенно для hero, catalog, calculator, FAQ,
+   forms и fixed CTA/quiz.
+13. **Деплой.** Подключи скилл `site-deploy` (env vars, миграции, rollback, monitoring). После деплоя
+   зафиксируй GitHub URL, production/staging URL и post-deploy smoke; если проект деплоится через
+   Vercel/GitHub, убедись, что репозиторий запушен до production deploy.
 14. **Передача клиенту.** Подключи скилл `site-handoff`: post-deploy smoke, `handoff.md` через
    `new-handoff.ps1`, безопасная передача доступов, инструкции/обучение, письменное подтверждение приёмки,
    условия гарантийной поддержки.
 15. **Пост-релиз (опц.).** Через 30–90 дней — review по `docs/15-maintenance/` (мониторинг, ретро, обновления).
 16. **Фиксация знаний.** Подключи скилл `capture-learnings`, чтобы замкнуть цикл накопления знаний.
+   Для проектов, где появились reusable design/frontend/deploy решения, обнови wiki patterns,
+   playbooks, checklists или case studies и запусти wiki CI.
 
 ## Quality gate
 - Каждый этап даёт проверяемый результат: документ, тест, diff, скриншот, лог, метрика или ссылка на deploy.
