@@ -2,6 +2,7 @@
 title: "Observability"
 category: "devops"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["observability", "monitoring", "telemetry"]
 source_priority: "internal"

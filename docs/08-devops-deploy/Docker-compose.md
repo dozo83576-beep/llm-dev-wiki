@@ -2,6 +2,7 @@
 title: "Docker Compose"
 category: "devops"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["docker-compose", "local-dev"]
 source_priority: "official-docs"

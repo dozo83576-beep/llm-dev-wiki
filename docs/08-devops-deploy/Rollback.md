@@ -2,6 +2,7 @@
 title: "Rollback"
 category: "devops"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["rollback", "incident", "deploy"]
 source_priority: "internal"

@@ -2,6 +2,7 @@
 title: "Render"
 category: "devops"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["render", "hosting", "backend"]
 source_priority: "vendor-docs"

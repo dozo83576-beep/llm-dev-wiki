@@ -2,6 +2,7 @@
 title: "Environment variables"
 category: "devops"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["env", "config", "secrets"]
 source_priority: "internal"

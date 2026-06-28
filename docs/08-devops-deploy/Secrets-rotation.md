@@ -2,6 +2,7 @@
 title: "Secrets rotation"
 category: "devops"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["secrets", "rotation", "security"]
 source_priority: "mixed"
