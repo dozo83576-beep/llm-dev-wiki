@@ -2,6 +2,7 @@
 title: "Prompt: frontend audit"
 category: "prompt"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["frontend", "audit", "review"]
 source_priority: "internal"

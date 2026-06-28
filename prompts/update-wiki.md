@@ -2,6 +2,7 @@
 title: "Prompt: update wiki"
 category: "prompt"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["wiki", "knowledge-capture"]
 source_priority: "internal"

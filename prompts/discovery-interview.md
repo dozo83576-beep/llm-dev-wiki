@@ -2,6 +2,7 @@
 title: "Prompt: discovery interview"
 category: "prompt"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["discovery", "kickoff", "spec"]
 source_priority: "internal"

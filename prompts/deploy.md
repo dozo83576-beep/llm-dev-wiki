@@ -2,6 +2,7 @@
 title: "Prompt: deploy"
 category: "prompt"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["deploy", "release"]
 source_priority: "internal"

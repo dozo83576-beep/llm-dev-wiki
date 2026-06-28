@@ -2,6 +2,7 @@
 title: "Prompt: security review"
 category: "prompt"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["security", "review"]
 source_priority: "internal"

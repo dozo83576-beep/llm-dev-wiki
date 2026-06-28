@@ -2,6 +2,7 @@
 title: "Prompt: design architecture"
 category: "prompt"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["architecture", "design"]
 source_priority: "internal"

@@ -2,6 +2,7 @@
 title: "Prompt: MCP security review"
 category: "prompt"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["mcp", "ai", "security"]
 source_priority: "internal"
