@@ -2,6 +2,7 @@
 title: "CORS, CSRF, CSP"
 category: "security"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["cors", "csrf", "csp"]
 source_priority: "official-docs"

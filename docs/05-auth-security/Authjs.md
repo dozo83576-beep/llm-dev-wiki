@@ -2,6 +2,7 @@
 title: "Auth.js"
 category: "security"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["auth", "authjs", "nextjs", "session"]
 source_priority: "official-docs"

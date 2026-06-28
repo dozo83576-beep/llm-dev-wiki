@@ -2,6 +2,7 @@
 title: "RBAC and ABAC"
 category: "security"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["rbac", "abac"]
 source_priority: "internal"

@@ -2,6 +2,7 @@
 title: "Clerk"
 category: "security"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["auth", "clerk", "b2b", "organizations"]
 source_priority: "vendor-docs"
