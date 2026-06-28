@@ -67,7 +67,7 @@
     "name": "Hono",
     "ecosystem": "npm",
     "package": "hono",
-    "currentVersion": "4.12.26",
+    "currentVersion": "4.12.27",
     "docsUrl": "https://www.honojs.com/docs/",
     "notes": "Lightweight Web Standards framework for edge/serverless APIs."
   },
@@ -75,7 +75,7 @@
     "name": "SvelteKit",
     "ecosystem": "npm",
     "package": "@sveltejs/kit",
-    "currentVersion": "2.66.0",
+    "currentVersion": "2.68.0",
     "docsUrl": "https://svelte.dev/docs/kit",
     "notes": "Svelte full-stack framework with SSR, routing, form actions and adapters."
   },
@@ -107,7 +107,7 @@
     "name": "Medusa",
     "ecosystem": "npm",
     "package": "@medusajs/medusa",
-    "currentVersion": "2.16.0",
+    "currentVersion": "2.17.1",
     "docsUrl": "https://docs.medusajs.com/learn",
     "notes": "Composable commerce platform for custom ecommerce backends."
   },
@@ -153,7 +153,7 @@
     "name": "Panda CSS",
     "ecosystem": "npm",
     "package": "@pandacss/dev",
-    "currentVersion": "1.11.3",
+    "currentVersion": "1.11.4",
     "docsUrl": "https://panda-css.com/docs/overview/getting-started",
     "notes": "Build-time type-safe CSS-in-JS and design-token system."
   },
@@ -192,7 +192,7 @@
     "name": "Strapi",
     "ecosystem": "npm",
     "package": "@strapi/strapi",
-    "currentVersion": "5.48.1",
+    "currentVersion": "5.49.0",
     "docsUrl": "https://docs.strapi.io/",
     "notes": "Self-hosted headless CMS with content APIs and admin UI."
   },
@@ -200,7 +200,7 @@
     "name": "Sanity",
     "ecosystem": "npm",
     "package": "sanity",
-    "currentVersion": "6.1.0",
+    "currentVersion": "6.2.0",
     "docsUrl": "https://www.sanity.io/docs",
     "notes": "Hosted structured content platform with Studio and visual editing."
   },
@@ -246,7 +246,7 @@
     "name": "Vike",
     "ecosystem": "npm",
     "package": "vike",
-    "currentVersion": "0.4.259",
+    "currentVersion": "0.4.260",
     "docsUrl": "https://vike.dev/",
     "notes": "Vite-based SSR/SSG meta-framework for React, Vue and other UI runtimes."
   },
@@ -262,7 +262,7 @@
     "name": "Angular",
     "ecosystem": "npm",
     "package": "@angular/core",
-    "currentVersion": "22.0.2",
+    "currentVersion": "22.0.4",
     "docsUrl": "https://angular.dev/",
     "notes": "Enterprise frontend framework; monitor SSR, hydration and platform releases."
   },
@@ -270,7 +270,7 @@
     "name": "FastAPI",
     "ecosystem": "pypi",
     "package": "fastapi",
-    "currentVersion": "0.138.0",
+    "currentVersion": "0.138.1",
     "docsUrl": "https://fastapi.tiangolo.com/",
     "notes": "Python API framework."
   },
@@ -294,7 +294,7 @@
     "name": "OpenAI Python SDK",
     "ecosystem": "pypi",
     "package": "openai",
-    "currentVersion": "2.43.0",
+    "currentVersion": "2.44.0",
     "docsUrl": "https://platform.openai.com/docs",
     "notes": "OpenAI API client for Python."
   },
