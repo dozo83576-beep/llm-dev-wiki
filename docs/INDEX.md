@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **291**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **804355** символов
+- Суммарный объём: **805856** символов
 
 ## docs
 
@@ -181,7 +181,7 @@ source_priority: "internal"
 | [docs/09-testing/E2E-testing.md](../docs/09-testing/E2E-testing.md) | E2E testing | testing | 2802 | 2026-05-24 | active | official-docs |
 | [docs/09-testing/Fixtures.md](../docs/09-testing/Fixtures.md) | Fixtures | testing | 2789 | 2026-05-24 | active | internal |
 | [docs/09-testing/Integration-testing.md](../docs/09-testing/Integration-testing.md) | Integration testing | testing | 2741 | 2026-05-24 | active | internal |
-| [docs/09-testing/Lead-landing-playwright-smoke.md](../docs/09-testing/Lead-landing-playwright-smoke.md) | Lead landing Playwright smoke | testing | 5518 | 2026-06-29 | active | internal |
+| [docs/09-testing/Lead-landing-playwright-smoke.md](../docs/09-testing/Lead-landing-playwright-smoke.md) | Lead landing Playwright smoke | testing | 6977 | 2026-06-29 | active | internal |
 | [docs/09-testing/Load-testing.md](../docs/09-testing/Load-testing.md) | Load testing | testing | 2913 | 2026-05-24 | active | official-docs |
 | [docs/09-testing/Mocks.md](../docs/09-testing/Mocks.md) | Mocks | testing | 2838 | 2026-05-24 | active | internal |
 | [docs/09-testing/Playwright.md](../docs/09-testing/Playwright.md) | Playwright | testing | 2071 | 2026-05-24 | active | official-docs |
@@ -202,7 +202,7 @@ source_priority: "internal"
 | [docs/13-playbooks/ecommerce.md](../docs/13-playbooks/ecommerce.md) | Playbook: E-commerce | playbooks | 4558 | 2026-06-10 | active | internal |
 | [docs/13-playbooks/headless-commerce.md](../docs/13-playbooks/headless-commerce.md) | Playbook: Headless commerce | playbooks | 2967 | 2026-06-10 | active | mixed |
 | [docs/13-playbooks/index.md](../docs/13-playbooks/index.md) | Project playbooks | playbooks | 2967 | 2026-05-24 | active | internal |
-| [docs/13-playbooks/landing.md](../docs/13-playbooks/landing.md) | Playbook: Landing | playbooks | 9472 | 2026-06-22 | active | internal |
+| [docs/13-playbooks/landing.md](../docs/13-playbooks/landing.md) | Playbook: Landing | playbooks | 9514 | 2026-06-22 | active | internal |
 | [docs/13-playbooks/marketplace.md](../docs/13-playbooks/marketplace.md) | Playbook: Marketplace | playbooks | 4451 | 2026-06-04 | active | internal |
 | [docs/13-playbooks/real-time-app.md](../docs/13-playbooks/real-time-app.md) | Playbook: Real-time app | playbooks | 3863 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/saas.md](../docs/13-playbooks/saas.md) | Playbook: SaaS | playbooks | 5027 | 2026-06-04 | active | internal |

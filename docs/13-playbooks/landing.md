@@ -58,7 +58,7 @@ source_priority: "internal"
 - Если нет подтвержденных клиентских историй, не писать "реальные кейсы"; вместо этого использовать "готовые предложения" или "сценарии" из фактических моделей/услуг каталога.
 - Квиз-воронка должна вести в основной расчет или форму и передавать выбранные параметры, а не жить отдельной веткой без продолжения.
 - Фото карточек должны соответствовать названию позиции; если фото не хватает, использовать легальный источник/локальную генерацию и фиксировать attribution или `photo-sourcing`.
-- Для acceptance добавить [Lead landing Playwright smoke](../09-testing/Lead-landing-playwright-smoke.md): viewport screenshots плюс DOM-метрики для hero, catalog, calculator, FAQ, contacts и fixed CTA.
+- Для acceptance добавить [Lead landing Playwright smoke](../09-testing/Lead-landing-playwright-smoke.md): `pwsh tools/add-lead-landing-smoke.ps1 -ProjectRoot <project>` плюс DOM-метрики для hero, catalog, calculator, FAQ, contacts и fixed CTA.
 
 ## Production-паттерны
 

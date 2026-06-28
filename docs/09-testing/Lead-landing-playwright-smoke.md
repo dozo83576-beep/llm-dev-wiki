@@ -18,9 +18,24 @@ source_priority: "internal"
 - Есть длинные блоки: каталог, калькулятор, FAQ, контакты.
 - Визуальный reference нужно проверять не только скриншотом, но и DOM-метриками.
 
+## Когда не использовать
+
+- Простая статическая страница без fixed UI, каталога, калькулятора и экранных ограничений.
+- Проект уже покрыт более точным E2E-smoke с теми же viewport и overlap-проверками.
+
+## Быстрая установка
+
+Из корня `llm-dev-wiki`:
+
+```powershell
+pwsh tools/add-lead-landing-smoke.ps1 -ProjectRoot D:\Work\my-site
+```
+
+Скрипт создаст `tests/lead-landing.smoke.spec.ts` и не перезапишет существующий файл без `-Force`.
+
 ## Минимальный spec
 
-Скопируй в проект как `tests/lead-landing.smoke.spec.ts` и адаптируй селекторы под реальные `id` секций.
+Если скрипт недоступен, скопируй в проект как `tests/lead-landing.smoke.spec.ts` и адаптируй селекторы под реальные `id` секций.
 
 ```ts
 import { expect, test } from "@playwright/test";
@@ -133,6 +148,24 @@ test.describe("lead landing viewport smoke", () => {
 - Категории каталога с 1-2 карточками растягивают карточки, а не оставляют пустой фон.
 - Floating CTA/quiz не перекрывает форму, нижние controls и disclaimer.
 - Mobile first viewport показывает H1 и главный CTA без наложений.
+
+## Production-паттерны
+
+- Запускать smoke после dev-server или staging deploy, а не только на статическом HTML, если проект использует Next.js routing.
+- Сохранять screenshots только для спорных визуальных состояний; DOM-метрики должны быть главным gate для "поместилось в экран".
+- Добавлять `scroll-margin-top` на якорные секции до проверки `/#calculator`, `/#faq`, `/#contacts`.
+
+## Частые ошибки
+
+- Запустить тест без адаптации селекторов и получить ложный красный результат.
+- Проверять только wide desktop и пропустить viewport `1183x920`, где чаще всплывает обрезка.
+- Оставить floating CTA поверх последнего input/checkbox и считать блок видимым по скриншоту.
+
+## Проверка
+
+- `pwsh tools/add-lead-landing-smoke.ps1 -ProjectRoot <project>` создает spec и не перезаписывает файл без `-Force`.
+- `npx playwright test tests/lead-landing.smoke.spec.ts` проходит на локальном dev URL после адаптации селекторов.
+- При fixed header переходы на hash routes открывают секции без перекрытия шапкой.
 
 ## Источники
 
