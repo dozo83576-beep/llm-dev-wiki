@@ -52,7 +52,7 @@ foreach ($cr in $contentRoots) {
             $title = [System.IO.Path]::GetFileNameWithoutExtension([System.IO.Path]::GetFileName($filePath))
         }
 
-        $chars = $content.Length
+        $chars = ($content -replace "`r`n", "`n").Length
 
         $rows.Add([pscustomobject]@{
             Path = $relPath
@@ -133,7 +133,7 @@ foreach ($cr in $contentRoots) {
 [void]$sb.AppendLine("- Источник правды — front matter в каждом документе.")
 [void]$sb.AppendLine('- CI проверяет идемпотентность: запуск `tools/build-index.ps1` не должен давать diff между запусками.')
 
-# Write file with UTF-8 (no BOM) and CRLF
-[System.IO.File]::WriteAllText($outPath, $sb.ToString(), [System.Text.UTF8Encoding]::new($false))
+# Write file with UTF-8 (no BOM) and LF for cross-platform generated diffs.
+[System.IO.File]::WriteAllText($outPath, ($sb.ToString() -replace "`r`n", "`n"), [System.Text.UTF8Encoding]::new($false))
 
 Write-Output ("Wrote {0} ({1} docs, {2} chars)" -f $Output, $totalDocs, $totalChars)
