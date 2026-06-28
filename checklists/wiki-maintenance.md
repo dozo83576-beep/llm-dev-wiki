@@ -1,7 +1,8 @@
 ---
 title: "Wiki maintenance checklist"
 category: "checklist"
-updated: "2026-06-07"
+updated: "2026-06-29"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["wiki", "maintenance", "rag", "offline"]
 source_priority: "internal"
@@ -36,7 +37,7 @@ Gated checklist для регулярного обслуживания вики.
 
 - [ ] **Technology watchlist** проверен - maintainer - warn - `pwsh ./tools/check-updates.ps1`.
 - [ ] **Manual entries** сверены с официальными источниками перед изменением рекомендаций - maintainer - warn.
-- [ ] **Stale docs** с массовым `updated` пересмотрены при существенных изменениях технологий - maintainer - warn.
+- [ ] **Stale docs** с массовым `updated` перечитаны; на актуальных проставлен `reviewed: <date>` (гасит stale-stamp честно, без подделки `updated`), при дрейфе — правка + бамп `updated` - maintainer - warn - [freshness-checks](../docs/14-llm-indexing/freshness-checks.md).
 
 ## Knowledge capture
 

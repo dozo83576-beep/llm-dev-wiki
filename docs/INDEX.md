@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **293**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **819550** символов
+- Суммарный объём: **821218** символов
 
 ## docs
 
@@ -207,16 +207,16 @@ source_priority: "internal"
 | [docs/13-playbooks/real-time-app.md](../docs/13-playbooks/real-time-app.md) | Playbook: Real-time app | playbooks | 3863 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/saas.md](../docs/13-playbooks/saas.md) | Playbook: SaaS | playbooks | 5027 | 2026-06-04 | active | internal |
 | [docs/13-playbooks/shopify-hydrogen.md](../docs/13-playbooks/shopify-hydrogen.md) | Playbook: Shopify Hydrogen | playbooks | 2605 | 2026-06-22 | active | official-docs |
-| [docs/14-llm-indexing/chunking-policy.md](../docs/14-llm-indexing/chunking-policy.md) | Chunking policy | llm-indexing | 3086 | 2026-05-24 | active | internal |
-| [docs/14-llm-indexing/freshness-checks.md](../docs/14-llm-indexing/freshness-checks.md) | Freshness checks | llm-indexing | 2929 | 2026-05-24 | active | internal |
+| [docs/14-llm-indexing/chunking-policy.md](../docs/14-llm-indexing/chunking-policy.md) | Chunking policy | llm-indexing | 3109 | 2026-05-24 | active | internal |
+| [docs/14-llm-indexing/freshness-checks.md](../docs/14-llm-indexing/freshness-checks.md) | Freshness checks | llm-indexing | 3598 | 2026-06-29 | active | internal |
 | [docs/14-llm-indexing/index.md](../docs/14-llm-indexing/index.md) | LLM indexing | llm-indexing | 4780 | 2026-05-25 | active | internal |
-| [docs/14-llm-indexing/llms-txt-rules.md](../docs/14-llm-indexing/llms-txt-rules.md) | llms.txt rules | llm-indexing | 2215 | 2026-05-24 | active | community |
-| [docs/14-llm-indexing/metadata-policy.md](../docs/14-llm-indexing/metadata-policy.md) | Metadata policy | llm-indexing | 2929 | 2026-05-24 | active | internal |
-| [docs/14-llm-indexing/rag-file-search.md](../docs/14-llm-indexing/rag-file-search.md) | RAG and File Search | llm-indexing | 3832 | 2026-05-24 | active | official-docs |
+| [docs/14-llm-indexing/llms-txt-rules.md](../docs/14-llm-indexing/llms-txt-rules.md) | llms.txt rules | llm-indexing | 2238 | 2026-05-24 | active | community |
+| [docs/14-llm-indexing/metadata-policy.md](../docs/14-llm-indexing/metadata-policy.md) | Metadata policy | llm-indexing | 3280 | 2026-06-29 | active | internal |
+| [docs/14-llm-indexing/rag-file-search.md](../docs/14-llm-indexing/rag-file-search.md) | RAG and File Search | llm-indexing | 3855 | 2026-05-24 | active | official-docs |
 | [docs/14-llm-indexing/source-priority.md](../docs/14-llm-indexing/source-priority.md) | Source priority | llm-indexing | 2750 | 2026-05-24 | active | internal |
 | [docs/15-maintenance/retro-process.md](../docs/15-maintenance/retro-process.md) | Retro-процесс после инцидентов и провальных релизов | maintenance | 4000 | 2026-06-07 | active | internal |
 | [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 6158 | 2026-06-07 | active | internal |
-| [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 5707 | 2026-06-10 | active | internal |
+| [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 6104 | 2026-06-29 | active | internal |
 
 ## patterns
 
@@ -304,7 +304,7 @@ source_priority: "internal"
 | [checklists/qa-acceptance.md](../checklists/qa-acceptance.md) | QA / UAT acceptance checklist | checklist | 2817 | 2026-06-19 | active | internal |
 | [checklists/release-readiness.md](../checklists/release-readiness.md) | Release readiness checklist | checklist | 5264 | 2026-06-19 | active | internal |
 | [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 5929 | 2026-06-21 | active | internal |
-| [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 2914 | 2026-06-07 | active | internal |
+| [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 3096 | 2026-06-29 | active | internal |
 
 ## stacks
 

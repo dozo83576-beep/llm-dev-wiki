@@ -2,6 +2,7 @@
 title: "Chunking policy"
 category: "llm-indexing"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["chunking", "rag", "indexing"]
 source_priority: "internal"

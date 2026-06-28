@@ -1,7 +1,8 @@
 ---
 title: "Freshness checks"
 category: "llm-indexing"
-updated: "2026-05-24"
+updated: "2026-06-29"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["freshness", "maintenance", "rag"]
 source_priority: "internal"
@@ -28,13 +29,14 @@ Freshness отвечает на вопрос "насколько содержи�
 - **Security / MCP / Auth**: проверять перед каждым большим проектом и при появлении новых major CVE / advisory.
 - **Vendor docs** (Vercel, Stripe, Cloudflare): проверять раз в 6 месяцев, плюс при изменении продукта на стороне vendor.
 - **Internal practices**: обновлять по факту нового опыта; помечать `updated` только при содержательном изменении, а не при rename.
+- **`updated` vs `reviewed`**: `updated` — дата последнего **содержательного изменения**; `reviewed` (опц., `YYYY-MM-DD`) — дата последней **проверки, что контент всё ещё актуален**. Living-документ, перечитанный и подтверждённый без правок, получает `reviewed: <today>` — это честно гасит stale-stamp warning, не подделывая `updated`. Массовый бамп `updated` без правок по-прежнему запрещён.
 - **Archived**: status переводится в `archived` для устаревшего материала с явной причиной в front matter.
 - **Источники в коммитах**: обновление внешнего источника фиксируется в git commit message ("update sentry docs link, refresh after v8 release").
 
 ## CI-сигналы
 
-- **Stale stamp**: если `updated` совпадает у ≥ 30 файлов и при этом файл не менялся последние 30 дней — warning.
-- **Updated vs git log**: если `updated` в front matter старше последнего реального коммита по файлу больше чем на 14 дней — warning.
+- **Stale stamp**: если `updated` совпадает у ≥ 30 файлов и при этом `max(последний коммит, reviewed)` старше 30 дней — warning. Записи-артефакты (`case-studies/`, `lessons-learned/`) и `index`/`_template`/`README` исключены (у них старый `updated` корректен).
+- **Updated vs git log**: если `max(updated, reviewed)` в front matter старше последнего реального коммита по файлу больше чем на 14 дней — warning. (Сравнение против `reviewed` не даёт ложный skew, когда коммит лишь проставил `reviewed`.)
 - **External link rot**: периодический workflow проверяет, что внешние URL отдают 2xx.
 - **Source priority drift**: документ помечен `internal`, но опирается на внешние источники — сигнал к ревизии (см. [source-priority.md](source-priority.md)).
 

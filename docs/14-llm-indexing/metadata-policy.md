@@ -1,7 +1,8 @@
 ---
 title: "Metadata policy"
 category: "llm-indexing"
-updated: "2026-05-24"
+updated: "2026-06-29"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["metadata", "front-matter", "rag"]
 source_priority: "internal"
@@ -25,13 +26,14 @@ Metadata делает корпус фильтруемым и ранжируем�
 
 - **`title`** (string) — человекочитаемое название, отображается в выдаче.
 - **`category`** (string) — основной раздел: `frontend`, `backend`, `database`, `security`, `ai-tools`, `playbooks`, `testing`, `devops`, `process`, `governance`, `llm-indexing`, `pattern`, `prompt`, `checklist`, `case-study`, `lesson`.
-- **`updated`** (YYYY-MM-DD) — дата последней содержательной проверки.
+- **`updated`** (YYYY-MM-DD) — дата последнего **содержательного изменения** контента.
 - **`status`** (`active` | `draft` | `archived` | `redirect`) — управляет включением в production retrieval.
 - **`tags`** (list[string]) — ключевые темы. 2–6 тегов на документ.
 - **`source_priority`** (`official-docs` | `vendor-docs` | `internal` | `community`) — см. [source-priority.md](source-priority.md).
 
 ## Опциональные поля
 
+- **`reviewed`** (YYYY-MM-DD) — дата последней **проверки, что контент всё ещё актуален** (без правок). Living-документ, перечитанный и подтверждённый, получает `reviewed: <today>` — это честно гасит stale-stamp warning в `wiki-quality.ps1`, не подделывая `updated`. См. [freshness-checks](freshness-checks.md).
 - **`owner`** (string) — ответственный за актуальность (для крупных команд).
 - **`expires_at`** (YYYY-MM-DD) — дата, после которой документ требует обязательного re-review.
 - **`related`** (list[string]) — ссылки на родственные документы.

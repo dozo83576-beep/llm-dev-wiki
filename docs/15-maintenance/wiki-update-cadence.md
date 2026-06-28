@@ -1,7 +1,8 @@
 ---
 title: "Периодичность обновления вики"
 category: "maintenance"
-updated: "2026-06-10"
+updated: "2026-06-29"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["maintenance", "cadence", "corpus", "index"]
 source_priority: "internal"
@@ -21,7 +22,7 @@ source_priority: "internal"
 
 ## Когда не использовать
 
-- Обновлять `updated` в front matter без реального изменения контента — это ломает freshness-правило в `wiki-quality.ps1`.
+- Обновлять `updated` в front matter без реального изменения контента — это ломает freshness-правило в `wiki-quality.ps1`. Для подтверждения «перечитал, всё ещё актуально» без правок ставь `reviewed: <date>`, а не трогай `updated` (см. [freshness-checks](../14-llm-indexing/freshness-checks.md)).
 
 ## Триггеры обновления
 
@@ -44,8 +45,8 @@ source_priority: "internal"
 
 ### Квартальный review (раз в ~3 месяца)
 
-1. `pwsh tools/wiki-quality.ps1` — проверить warnings по freshness (skew > 14 дней).
-2. Просмотреть `docs/INDEX.md` — найти документы с `updated` старше 6 месяцев и пересмотреть.
+1. `pwsh tools/wiki-quality.ps1` — проверить warnings по freshness (stale stamp / skew > 14 дней).
+2. Просмотреть `docs/INDEX.md` — найти документы с `updated` старше 6 месяцев и пересмотреть. На каждом перечитанном и подтверждённом living-документе проставить `reviewed: <today>` (правки контента — с честным бампом `updated`). Гасит stale-stamp warning без подделки `updated`.
 3. Проверить внешние ссылки (особенно `official-docs` разделы) на актуальность.
 4. Обновить `docs/14-llm-indexing/golden-qa.yaml` новыми вопросами по накопленному опыту.
 5. Пересобрать embeddings: `python tools/build_embeddings.py` (нужен `OPENAI_API_KEY`).

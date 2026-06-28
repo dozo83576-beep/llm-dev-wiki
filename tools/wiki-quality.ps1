@@ -154,18 +154,34 @@ foreach ($file in $files) {
         }
     }
 
-    # Rule: stale updated stamp (mass-stamped + file unchanged > 30 days)
-    if ($content -match '(?im)^updated:\s*"?(\d{4}-\d{2}-\d{2})"?') {
+    # Point-in-time record artifacts (case-studies, lessons-learned) carry a date in their
+    # filename and legitimately keep an old `updated` stamp — exclude from freshness rules.
+    # index/_template/README/source-priority are already covered by $isIndexLike.
+    $isRecordArtifact = $normalizedRelative.StartsWith("case-studies/") -or $normalizedRelative.StartsWith("lessons-learned/")
+
+    # Freshness rules: `updated` = content last changed; `reviewed` = last verified still-current.
+    # Setting `reviewed: <today>` clears a stale-stamp warning honestly, without faking `updated`.
+    if (-not $isIndexLike -and -not $isRecordArtifact -and $content -match '(?im)^updated:\s*"?(\d{4}-\d{2}-\d{2})"?') {
         $stampedDate = $matches[1]
         $stampCount = $updatedCounts[$stampedDate]
+
+        $reviewedDate = $null
+        if ($content -match '(?im)^reviewed:\s*"?(\d{4}-\d{2}-\d{2})"?') {
+            try { $reviewedDate = [DateTime]::ParseExact($matches[1], "yyyy-MM-dd", $null) } catch { $reviewedDate = $null }
+        }
+
+        # Rule: stale updated stamp (mass-stamped + not reviewed/changed > 30 days)
         if ($stampCount -ge 30) {
             try {
                 $lastCommitIso = (& git log -1 --format=%cs -- $file.FullName) 2>$null
                 if ($lastCommitIso) {
                     $lastCommitDate = [DateTime]::ParseExact($lastCommitIso.Trim(), "yyyy-MM-dd", $null)
-                    $daysSince = (Get-Date).Subtract($lastCommitDate).Days
+                    # Freshness = latest of (content change in git, explicit review)
+                    $freshnessDate = $lastCommitDate
+                    if ($reviewedDate -and $reviewedDate -gt $freshnessDate) { $freshnessDate = $reviewedDate }
+                    $daysSince = (Get-Date).Subtract($freshnessDate).Days
                     if ($daysSince -gt 30) {
-                        Add-Warning $warnings ("Stale updated stamp '{0}' (mass-shared by {1} files, file unchanged {2} days): {3}" -f $stampedDate, $stampCount, $daysSince, $relativePath)
+                        Add-Warning $warnings ("Stale updated stamp '{0}' (mass-shared by {1} files, not reviewed/changed {2} days): {3}" -f $stampedDate, $stampCount, $daysSince, $relativePath)
                     }
                 }
             } catch {
@@ -173,15 +189,18 @@ foreach ($file in $files) {
             }
         }
 
-        # Rule: updated vs git log skew > 14 days
+        # Rule: updated/reviewed stamp vs git log skew > 14 days.
+        # Compare against the LATER of updated/reviewed so a `reviewed`-only commit (git date moves
+        # forward, `updated` intentionally stays) does not trip a false skew warning.
         try {
             $lastCommitIso = (& git log -1 --format=%cs -- $file.FullName) 2>$null
             if ($lastCommitIso) {
                 $lastCommitDate = [DateTime]::ParseExact($lastCommitIso.Trim(), "yyyy-MM-dd", $null)
                 $stamped = [DateTime]::ParseExact($stampedDate, "yyyy-MM-dd", $null)
+                if ($reviewedDate -and $reviewedDate -gt $stamped) { $stamped = $reviewedDate }
                 $skewDays = [Math]::Abs(($lastCommitDate - $stamped).Days)
                 if ($skewDays -gt 14) {
-                    Add-Warning $warnings ("updated stamp '{0}' differs from last git commit '{1}' by {2} days: {3}" -f $stampedDate, $lastCommitIso.Trim(), $skewDays, $relativePath)
+                    Add-Warning $warnings ("updated/reviewed stamp differs from last git commit '{0}' by {1} days: {2}" -f $lastCommitIso.Trim(), $skewDays, $relativePath)
                 }
             }
         } catch {

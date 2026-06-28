@@ -2,6 +2,7 @@
 title: "RAG and File Search"
 category: "llm-indexing"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["rag", "file-search", "openai", "indexing"]
 source_priority: "official-docs"
