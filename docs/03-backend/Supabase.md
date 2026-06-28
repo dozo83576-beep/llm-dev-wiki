@@ -2,6 +2,7 @@
 title: "Supabase"
 category: "backend"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["supabase", "postgres", "auth", "rls", "realtime"]
 source_priority: "vendor-docs"

@@ -2,6 +2,7 @@
 title: "Background jobs"
 category: "backend"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["jobs", "queues"]
 source_priority: "official-docs"

@@ -2,6 +2,7 @@
 title: "Backend caching"
 category: "backend"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["cache", "performance"]
 source_priority: "internal"

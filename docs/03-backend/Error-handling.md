@@ -2,6 +2,7 @@
 title: "Error handling"
 category: "backend"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["errors", "api"]
 source_priority: "internal"

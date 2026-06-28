@@ -2,6 +2,7 @@
 title: "Email"
 category: "backend"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["email", "notifications"]
 source_priority: "internal"

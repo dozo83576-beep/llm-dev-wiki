@@ -2,6 +2,7 @@
 title: "Backend API architecture"
 category: "backend"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["api", "architecture"]
 source_priority: "internal"

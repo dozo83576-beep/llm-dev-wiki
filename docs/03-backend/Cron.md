@@ -2,6 +2,7 @@
 title: "Cron and scheduled jobs"
 category: "backend"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["cron", "scheduler"]
 source_priority: "internal"
