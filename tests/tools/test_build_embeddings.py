@@ -122,6 +122,7 @@ Nested body.
     assert manifest["files_indexed"] == ["docs/guide.md"]
     assert manifest["has_vectors"] is False
     assert manifest["retrieval_mode"] == "offline-text"
+    assert b"\r\n" not in manifest_path.read_bytes()
 
 
 def test_write_manifest_preserves_generated_at_when_content_is_unchanged(tmp_path: Path) -> None:

@@ -324,7 +324,7 @@ def write_manifest(chunks: list[Chunk], model: str, out_path: Path, retrieval_mo
             manifest["generated_at"] = generated_at
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    with out_path.open("w", encoding="utf-8") as f:
+    with out_path.open("w", encoding="utf-8", newline="\n") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2, sort_keys=True)
         f.write("\n")
 
