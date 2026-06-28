@@ -2,6 +2,7 @@
 title: "OpenAPI"
 category: "api"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["openapi", "contract"]
 source_priority: "official-docs"

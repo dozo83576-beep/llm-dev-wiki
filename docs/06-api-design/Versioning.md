@@ -2,6 +2,7 @@
 title: "API versioning"
 category: "api"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["versioning", "api"]
 source_priority: "internal"

@@ -2,6 +2,7 @@
 title: "GraphQL"
 category: "api"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["graphql", "api"]
 source_priority: "official-docs"
