@@ -1,9 +1,9 @@
 ---
 title: "Pattern: Проверка stock-фото (не доверять ID по памяти)"
 category: "patterns"
-updated: "2026-06-23"
+updated: "2026-06-29"
 status: "active"
-tags: ["frontend", "images", "unsplash", "content", "verification"]
+tags: ["frontend", "images", "unsplash", "pexels", "playwright", "content", "verification"]
 source_priority: "internal"
 area: "frontend"
 date: "2026-06-23"
@@ -48,6 +48,23 @@ ID вида `photo-1516280440614-...` непрозрачны: по строке 
    «ребёнок». Подгоняй копию/alt под то, что видно, а не наоборот.
 4. **HTTP 200 ≠ верный кадр.** `naturalWidth > 0` подтверждает загрузку, не
    содержание. Только визуальная проверка/скриншот валидирует смысл.
+5. **Alt ненадёжен по внешности/этничности.** Подпись на странице stock-сервиса
+   («brunette», «portrait») часто не отражает реальную внешность — на практике alt
+   «brunette» вёл на восточноазиатскую модель. Если есть требование к внешности
+   моделей (напр. европейская/славянская под RU-аудиторию) — **Read каждого
+   портрета глазами** перед установкой, alt-у не верить.
+6. **Реальные URL — из живого поиска через браузер.** На Pexels удобно вытащить
+   прямые `images.pexels.com/photos/...` скрейпом DOM в Playwright (не только WebFetch):
+   ```js
+   // browser_evaluate на странице поиска: собрать кандидаты с alt
+   [...document.querySelectorAll('img')]
+     .map(i => ({src:(i.src||'').split('?')[0], alt:i.alt.slice(0,70)}))
+     .filter(o => o.src.includes('images.pexels.com/photos/'));
+   ```
+7. **Lazy-картинки — форсить `eager` для скрин-проверки.** Element-screenshot
+   off-screen секции **не отрисовывает** `loading="lazy"` картинки вне вьюпорта
+   (выходит чёрный блок). Перед визуальной проверкой: `img.loading='eager'` (и
+   переустановить `src`) либо проскроллить в реальный вьюпорт; иначе проверишь пустоту.
 
 ## Частые ошибки
 
@@ -60,4 +77,5 @@ ID вида `photo-1516280440614-...` непрозрачны: по строке 
 
 - [Pattern: portfolio case screenshot gallery](portfolio-case-screenshot-gallery.md)
 - [Lesson: headless preview verification](../../lessons-learned/2026-06-11-headless-preview-verification.md)
+- [Case: LUMA premium beauty animated landing](../../case-studies/successes/2026-06-29-luma-premium-beauty-animated-landing.md)
 - [resources/design-inspiration.md](../../resources/design-inspiration.md)

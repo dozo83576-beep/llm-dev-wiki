@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **307**
-- Активных: **291**
+- Всего документов: **310**
+- Активных: **293**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **805856** символов
+- Суммарный объём: **819550** символов
 
 ## docs
 
@@ -238,10 +238,11 @@ source_priority: "internal"
 | [patterns/devops/rollback-first-release.md](../patterns/devops/rollback-first-release.md) | Pattern: Rollback-first release | patterns | 987 | 2026-05-24 | active | internal |
 | [patterns/frontend/ambient-sound-toggle.md](../patterns/frontend/ambient-sound-toggle.md) | Pattern: Тумблер ambient-звука (опциональный, real audio) | patterns | 2383 | 2026-06-23 | active | internal |
 | [patterns/frontend/anti-ai-slop-design.md](../patterns/frontend/anti-ai-slop-design.md) | Pattern: Anti-AI-slop design | patterns | 8129 | 2026-06-22 | active | internal |
+| [patterns/frontend/astro-react-island-animated-hero.md](../patterns/frontend/astro-react-island-animated-hero.md) | Pattern: Анимированный hero как React-остров в Astro | pattern | 4351 | 2026-06-29 | active | internal |
 | [patterns/frontend/cyrillic-self-host-fonts.md](../patterns/frontend/cyrillic-self-host-fonts.md) | Pattern: Cyrillic / self-host fonts | patterns | 3927 | 2026-06-19 | active | internal |
 | [patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md](../patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md) | Pattern: Fixed overlays vs backdrop-filter containing block | patterns | 4002 | 2026-06-08 | active | internal |
 | [patterns/frontend/form-validation-boundary.md](../patterns/frontend/form-validation-boundary.md) | Pattern: Form validation boundary | patterns | 999 | 2026-05-24 | active | internal |
-| [patterns/frontend/full-height-first-screen.md](../patterns/frontend/full-height-first-screen.md) | Pattern: Full-height first screen (контроль сгиба) | pattern | 3647 | 2026-06-11 | active | internal |
+| [patterns/frontend/full-height-first-screen.md](../patterns/frontend/full-height-first-screen.md) | Pattern: Full-height first screen (контроль сгиба) | pattern | 4560 | 2026-06-29 | active | internal |
 | [patterns/frontend/layout-archetypes.md](../patterns/frontend/layout-archetypes.md) | Pattern: Layout archetypes | pattern | 4355 | 2026-06-20 | active | internal |
 | [patterns/frontend/localstorage-mini-crm.md](../patterns/frontend/localstorage-mini-crm.md) | Pattern: LocalStorage mini-CRM (клиентский CRUD без бэкенда) | pattern | 3891 | 2026-06-11 | active | internal |
 | [patterns/frontend/portfolio-case-screenshot-gallery.md](../patterns/frontend/portfolio-case-screenshot-gallery.md) | Pattern: Portfolio case screenshot gallery | pattern | 2798 | 2026-06-20 | active | internal |
@@ -250,7 +251,7 @@ source_priority: "internal"
 | [patterns/frontend/semantic-theme-text-tokens.md](../patterns/frontend/semantic-theme-text-tokens.md) | Pattern: Semantic theme text tokens | patterns | 2980 | 2026-05-27 | active | internal |
 | [patterns/frontend/server-client-boundary.md](../patterns/frontend/server-client-boundary.md) | Pattern: Server/client boundary | patterns | 446 | 2026-05-24 | active | internal |
 | [patterns/frontend/static-site-dev-only-cms-flag.md](../patterns/frontend/static-site-dev-only-cms-flag.md) | Pattern: Static site + dev-only CMS behind build flag | pattern | 5235 | 2026-06-12 | active | internal |
-| [patterns/frontend/stock-photo-id-verification.md](../patterns/frontend/stock-photo-id-verification.md) | Pattern: Проверка stock-фото (не доверять ID по памяти) | patterns | 2574 | 2026-06-23 | active | internal |
+| [patterns/frontend/stock-photo-id-verification.md](../patterns/frontend/stock-photo-id-verification.md) | Pattern: Проверка stock-фото (не доверять ID по памяти) | patterns | 3857 | 2026-06-29 | active | internal |
 | [patterns/frontend/third-party-booking-widget.md](../patterns/frontend/third-party-booking-widget.md) | Pattern: Third-party booking widget (попап записи) | pattern | 4127 | 2026-06-13 | active | internal |
 | [patterns/security/deny-by-default.md](../patterns/security/deny-by-default.md) | Pattern: Deny by default | patterns | 394 | 2026-05-24 | active | internal |
 | [patterns/security/tenant-isolation.md](../patterns/security/tenant-isolation.md) | Pattern: Tenant isolation | patterns | 1085 | 2026-05-24 | active | internal |
@@ -335,6 +336,7 @@ source_priority: "internal"
 | [case-studies/successes/2026-06-13-sport-psy-static-site.md](../case-studies/successes/2026-06-13-sport-psy-static-site.md) | Успешное решение: статический сайт детского спортивного психолога (sport-psy) | case-study | 5430 | 2026-06-13 | validated | internal |
 | [case-studies/successes/2026-06-20-zayavki-site-portfolio.md](../case-studies/successes/2026-06-20-zayavki-site-portfolio.md) | Успешное решение: портфолио услуг Заявки.Site | case-study | 3322 | 2026-06-20 | validated | internal |
 | [case-studies/successes/2026-06-29-ferrolease-ural-b2b-leasing-landing.md](../case-studies/successes/2026-06-29-ferrolease-ural-b2b-leasing-landing.md) | Успешное решение: B2B leasing landing с каталогом, калькулятором и Vercel deploy | case-study | 3428 | 2026-06-29 | validated | internal |
+| [case-studies/successes/2026-06-29-luma-premium-beauty-animated-landing.md](../case-studies/successes/2026-06-29-luma-premium-beauty-animated-landing.md) | Премиальный анимированный одностраничник салона красоты (LUMA) | case-study | 4696 | 2026-06-29 | validated | internal |
 | [case-studies/successes/README.md](../case-studies/successes/README.md) | Success case studies | case-study | 720 | 2026-05-24 | validated | internal |
 | [case-studies/successes/_template.md](../case-studies/successes/_template.md) | Успешное решение: название | case-study | 729 | 2026-05-24 | validated | internal |
 
@@ -355,6 +357,7 @@ source_priority: "internal"
 | [lessons-learned/2026-06-21-wordpress-windows-local-smoke.md](../lessons-learned/2026-06-21-wordpress-windows-local-smoke.md) | WordPress local smoke on Windows | lesson | 1816 | 2026-06-21 | active | internal |
 | [lessons-learned/2026-06-23-astro7-tailwind4-vite-plugin.md](../lessons-learned/2026-06-23-astro7-tailwind4-vite-plugin.md) | Lesson: Astro 7 + Tailwind v4 — vite-плагин, не postcss | lesson | 2561 | 2026-06-23 | active | internal |
 | [lessons-learned/2026-06-25-astro7-vercel-adapter.md](../lessons-learned/2026-06-25-astro7-vercel-adapter.md) | Astro 7 + Vercel adapter: import path and audit | lesson | 1016 | 2026-06-25 | active | internal |
+| [lessons-learned/2026-06-29-astro7-vercel-static-no-adapter.md](../lessons-learned/2026-06-29-astro7-vercel-static-no-adapter.md) | Astro 7 → Vercel статикой: без адаптера, деплой через GitHub-import | lesson | 2451 | 2026-06-29 | active | internal |
 | [lessons-learned/_template.md](../lessons-learned/_template.md) | Lesson: <короткое название> | lesson | 1027 | YYYY-MM-DD | active | internal |
 
 ## mcp
