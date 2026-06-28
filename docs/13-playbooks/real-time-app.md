@@ -2,6 +2,7 @@
 title: "Playbook: Real-time app"
 category: "playbooks"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["realtime", "websocket", "sse", "presence"]
 source_priority: "internal"

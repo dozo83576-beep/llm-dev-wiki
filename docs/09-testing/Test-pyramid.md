@@ -2,6 +2,7 @@
 title: "Test pyramid"
 category: "testing"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["test-strategy", "testing"]
 source_priority: "internal"

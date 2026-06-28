@@ -2,6 +2,7 @@
 title: "Integration testing"
 category: "testing"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["integration-tests", "api", "database"]
 source_priority: "internal"

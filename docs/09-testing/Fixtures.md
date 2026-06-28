@@ -2,6 +2,7 @@
 title: "Fixtures"
 category: "testing"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["fixtures", "test-data", "factories"]
 source_priority: "internal"

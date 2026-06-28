@@ -2,6 +2,7 @@
 title: "Accessibility testing"
 category: "testing"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["a11y", "testing", "wcag"]
 source_priority: "official-docs"

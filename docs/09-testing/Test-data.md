@@ -2,6 +2,7 @@
 title: "Test data"
 category: "testing"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["test-data", "fixtures", "synthetic"]
 source_priority: "internal"

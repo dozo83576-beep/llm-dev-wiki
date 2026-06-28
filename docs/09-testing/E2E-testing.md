@@ -2,6 +2,7 @@
 title: "E2E testing"
 category: "testing"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["e2e", "playwright"]
 source_priority: "official-docs"

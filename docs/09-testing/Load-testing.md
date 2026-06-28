@@ -2,6 +2,7 @@
 title: "Load testing"
 category: "testing"
 updated: "2026-05-24"
+reviewed: "2026-06-29"
 status: "active"
 tags: ["load-tests", "performance", "k6"]
 source_priority: "official-docs"
