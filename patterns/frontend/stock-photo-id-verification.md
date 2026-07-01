@@ -1,7 +1,7 @@
 ---
 title: "Pattern: Проверка stock-фото (не доверять ID по памяти)"
 category: "patterns"
-updated: "2026-06-29"
+updated: "2026-07-02"
 status: "active"
 tags: ["frontend", "images", "unsplash", "pexels", "playwright", "content", "verification"]
 source_priority: "internal"
@@ -65,6 +65,24 @@ ID вида `photo-1516280440614-...` непрозрачны: по строке 
    off-screen секции **не отрисовывает** `loading="lazy"` картинки вне вьюпорта
    (выходит чёрный блок). Перед визуальной проверкой: `img.loading='eager'` (и
    переустановить `src`) либо проскроллить в реальный вьюпорт; иначе проверишь пустоту.
+8. **Экономь вызовы при подборе многих фото (N ≥ ~5).** Не бери `browser_snapshot`/полноразмерный
+   `browser_take_screenshot` со страницы результатов поиска — это десятки KB текста или лишний
+   рендер на каждую итерацию. Дешёвый цикл на одно фото: (a) `browser_evaluate` по
+   `img[src*="images.pexels.com/photos"]` → src+alt всех миниатюр одним вызовом; (b) один
+   `browser_navigate` + один `browser_take_screenshot` только на кандидата, которого уже почти
+   выбрал (не на всю выдачу); (c) если не подходит — вернуться к (b) с другим кандидатом по alt-тексту,
+   не пересобирать выдачу заново; (d) скачивание — сразу `Invoke-WebRequest`/`curl` по CDN-URL
+   (`https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1600`,
+   для новых ID URL содержит ещё и slug-сегмент — брать его из `img.src` на странице кандидата, не
+   гадать), а не через UI-кнопку "Free download". Это делегируемая-неудобная задача: субагент без
+   этого явного workflow в брифе легко уходит в `browser_snapshot`/screenshot на каждой итерации и
+   может не долететь до скачивания вообще — см.
+   [Lesson: субагент-фото-сорсинг без результата](../../lessons-learned/2026-07-02-subagent-photo-sourcing-tool-call-explosion.md).
+9. **Кроп/поза тоже часть проверки, не только тон кожи.** Отклоняй кандидата, если: лицо закрыто
+   руками/инструментом настолько, что черты не видно; кроп настолько тесный, что видна только часть
+   рта/носа/щеки без глаз; заголовок/alt намекает на неуместную для клиентского сайта откровенность
+   (например «topless») — такие правь без раздумий, даже не открывая скриншот, если заголовок уже
+   достаточно ясен.
 
 ## Частые ошибки
 
@@ -72,10 +90,13 @@ ID вида `photo-1516280440614-...` непрозрачны: по строке 
 - Считать зелёную сборку доказательством корректности фото.
 - Оставить alt от задумки, когда найденное фото показывает другое.
 - Брать с референс-сайтов кадры без проверки лицензии (бери free: Unsplash/Pexels).
+- Гонять `browser_snapshot`/screenshot по каждому кандидату в выдаче вместо одного `evaluate` +
+  точечного скриншота на финалисте — на 8-10+ фото это стоит как отдельная задача сама по себе.
 
 ## Связано
 
 - [Pattern: portfolio case screenshot gallery](portfolio-case-screenshot-gallery.md)
 - [Lesson: headless preview verification](../../lessons-learned/2026-06-11-headless-preview-verification.md)
+- [Lesson: субагент-фото-сорсинг без результата](../../lessons-learned/2026-07-02-subagent-photo-sourcing-tool-call-explosion.md)
 - [Case: LUMA premium beauty animated landing](../../case-studies/successes/2026-06-29-luma-premium-beauty-animated-landing.md)
 - [resources/design-inspiration.md](../../resources/design-inspiration.md)
