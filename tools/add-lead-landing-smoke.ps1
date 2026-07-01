@@ -65,8 +65,8 @@ test.describe("lead landing viewport smoke", () => {
     await page.goto("/#calculator");
 
     await expect(page.locator("#calculator")).toBeVisible();
-    await expectVisibleInViewport(page, "#calculator button, #calculator [role='button']");
-    await expect(page.locator("#calculator").getByText(/предварительн/i)).toBeVisible();
+    await expectVisibleInViewport(page, "#calculator a:has-text('Получить график платежей'), #calculator button:has-text('Получить график платежей')");
+    await expect(page.locator("#calculator").getByText(/Расчет предварительный и не является публичной офертой/i)).toBeVisible();
   });
 
   test("FAQ uses bounded scroll instead of stretching page", async ({ page }) => {
@@ -81,7 +81,7 @@ test.describe("lead landing viewport smoke", () => {
     await page.setViewportSize(wide);
     await page.goto("/#equipment");
 
-    await page.getByRole("button", { name: /экскаваторы|самосвалы|автокраны/i }).first().click();
+    await page.locator("#equipment .filter", { hasText: "Экскаваторы-погрузчики" }).click();
     const cards = page.locator("#equipment article");
     await expect(cards).toHaveCount(2);
     await expect(cards.first().locator("img")).toBeVisible();

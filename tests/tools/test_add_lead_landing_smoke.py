@@ -29,6 +29,9 @@ def test_add_lead_landing_smoke_creates_default_spec(tmp_path: Path) -> None:
     assert "lead landing viewport smoke" in content
     assert "#calculator" in content
     assert "getBoundingClientRect" in content
+    assert "Получить график платежей" in content
+    assert "Расчет предварительный и не является публичной офертой" in content
+    assert 'hasText: "Экскаваторы-погрузчики"' in content
 
 
 def test_add_lead_landing_smoke_does_not_overwrite_without_force(tmp_path: Path) -> None:

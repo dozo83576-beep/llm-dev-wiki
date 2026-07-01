@@ -30,6 +30,7 @@ def test_add_layout_consistency_smoke_creates_default_spec(tmp_path: Path) -> No
     assert "scrollWidth" in content
     assert "getBoundingClientRect" in content
     assert "content gutters are consistent" in content
+    assert "footer .mx-auto" not in content
 
 
 def test_add_layout_consistency_smoke_does_not_overwrite_without_force(tmp_path: Path) -> None:

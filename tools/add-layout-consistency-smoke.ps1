@@ -41,7 +41,6 @@ const sectionSelectors = [
 
 const contentSelector = [
   "header .mx-auto",
-  "footer .mx-auto",
   "section > .mx-auto",
   "#hero .mx-auto",
 ].join(", ");
