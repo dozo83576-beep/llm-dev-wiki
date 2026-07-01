@@ -29,9 +29,10 @@ source_priority: "internal"
 
 ```powershell
 pwsh tools/add-lead-landing-smoke.ps1 -ProjectRoot D:\Work\my-site
+pwsh tools/add-layout-consistency-smoke.ps1 -ProjectRoot D:\Work\my-site
 ```
 
-Скрипт создаст `tests/lead-landing.smoke.spec.ts` и не перезапишет существующий файл без `-Force`.
+Скрипты создадут `tests/lead-landing.smoke.spec.ts` и `tests/layout-consistency.smoke.spec.ts`; существующие файлы не перезаписываются без `-Force`.
 
 ## Минимальный spec
 
@@ -148,6 +149,7 @@ test.describe("lead landing viewport smoke", () => {
 - Категории каталога с 1-2 карточками растягивают карточки, а не оставляют пустой фон.
 - Floating CTA/quiz не перекрывает форму, нижние controls и disclaimer.
 - Mobile first viewport показывает H1 и главный CTA без наложений.
+- Layout consistency smoke проверяет отсутствие horizontal overflow и единые боковые gutters у content containers.
 
 ## Production-паттерны
 
@@ -164,7 +166,9 @@ test.describe("lead landing viewport smoke", () => {
 ## Проверка
 
 - `pwsh tools/add-lead-landing-smoke.ps1 -ProjectRoot <project>` создает spec и не перезаписывает файл без `-Force`.
+- `pwsh tools/add-layout-consistency-smoke.ps1 -ProjectRoot <project>` создает spec проверки ширины и отступов.
 - `npx playwright test tests/lead-landing.smoke.spec.ts` проходит на локальном dev URL после адаптации селекторов.
+- `npx playwright test tests/layout-consistency.smoke.spec.ts` проходит без horizontal overflow и gutter-разброса.
 - При fixed header переходы на hash routes открывают секции без перекрытия шапкой.
 
 ## Источники

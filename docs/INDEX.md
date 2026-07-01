@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-06-29"
+updated: "2026-07-01"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **293**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **823771** символов
+- Суммарный объём: **824508** символов
 
 ## docs
 
@@ -181,7 +181,7 @@ source_priority: "internal"
 | [docs/09-testing/E2E-testing.md](../docs/09-testing/E2E-testing.md) | E2E testing | testing | 2825 | 2026-05-24 | active | official-docs |
 | [docs/09-testing/Fixtures.md](../docs/09-testing/Fixtures.md) | Fixtures | testing | 2812 | 2026-05-24 | active | internal |
 | [docs/09-testing/Integration-testing.md](../docs/09-testing/Integration-testing.md) | Integration testing | testing | 2764 | 2026-05-24 | active | internal |
-| [docs/09-testing/Lead-landing-playwright-smoke.md](../docs/09-testing/Lead-landing-playwright-smoke.md) | Lead landing Playwright smoke | testing | 6977 | 2026-06-29 | active | internal |
+| [docs/09-testing/Lead-landing-playwright-smoke.md](../docs/09-testing/Lead-landing-playwright-smoke.md) | Lead landing Playwright smoke | testing | 7442 | 2026-06-29 | active | internal |
 | [docs/09-testing/Load-testing.md](../docs/09-testing/Load-testing.md) | Load testing | testing | 2936 | 2026-05-24 | active | official-docs |
 | [docs/09-testing/Mocks.md](../docs/09-testing/Mocks.md) | Mocks | testing | 2861 | 2026-05-24 | active | internal |
 | [docs/09-testing/Playwright.md](../docs/09-testing/Playwright.md) | Playwright | testing | 2094 | 2026-05-24 | active | official-docs |
@@ -202,7 +202,7 @@ source_priority: "internal"
 | [docs/13-playbooks/ecommerce.md](../docs/13-playbooks/ecommerce.md) | Playbook: E-commerce | playbooks | 4558 | 2026-06-10 | active | internal |
 | [docs/13-playbooks/headless-commerce.md](../docs/13-playbooks/headless-commerce.md) | Playbook: Headless commerce | playbooks | 2967 | 2026-06-10 | active | mixed |
 | [docs/13-playbooks/index.md](../docs/13-playbooks/index.md) | Project playbooks | playbooks | 2967 | 2026-05-24 | active | internal |
-| [docs/13-playbooks/landing.md](../docs/13-playbooks/landing.md) | Playbook: Landing | playbooks | 9514 | 2026-06-22 | active | internal |
+| [docs/13-playbooks/landing.md](../docs/13-playbooks/landing.md) | Playbook: Landing | playbooks | 9533 | 2026-06-22 | active | internal |
 | [docs/13-playbooks/marketplace.md](../docs/13-playbooks/marketplace.md) | Playbook: Marketplace | playbooks | 4451 | 2026-06-04 | active | internal |
 | [docs/13-playbooks/real-time-app.md](../docs/13-playbooks/real-time-app.md) | Playbook: Real-time app | playbooks | 3886 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/saas.md](../docs/13-playbooks/saas.md) | Playbook: SaaS | playbooks | 5027 | 2026-06-04 | active | internal |
@@ -297,7 +297,7 @@ source_priority: "internal"
 | [checklists/backend-review.md](../checklists/backend-review.md) | Backend review checklist | checklist | 3784 | 2026-05-24 | active | internal |
 | [checklists/backup-restore-drill.md](../checklists/backup-restore-drill.md) | Backup and restore drill checklist | checklist | 1604 | 2026-06-19 | active | internal |
 | [checklists/database-review.md](../checklists/database-review.md) | Database review checklist | checklist | 3521 | 2026-05-24 | active | internal |
-| [checklists/frontend-review.md](../checklists/frontend-review.md) | Frontend review checklist | checklist | 10877 | 2026-06-11 | active | internal |
+| [checklists/frontend-review.md](../checklists/frontend-review.md) | Frontend review checklist | checklist | 11130 | 2026-06-11 | active | internal |
 | [checklists/infrastructure-readiness.md](../checklists/infrastructure-readiness.md) | Infrastructure readiness checklist | checklist | 1966 | 2026-06-19 | active | internal |
 | [checklists/legal-compliance.md](../checklists/legal-compliance.md) | Legal compliance checklist (RU / 152-FZ) | checklist | 2491 | 2026-06-19 | active | internal |
 | [checklists/project-discovery.md](../checklists/project-discovery.md) | Project discovery checklist | checklist | 4242 | 2026-06-13 | active | internal |

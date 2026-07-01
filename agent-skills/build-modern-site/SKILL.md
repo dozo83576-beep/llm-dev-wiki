@@ -94,7 +94,7 @@ description: >-
    viewport screenshots, но и DOM-метрики (`getBoundingClientRect`, `scrollHeight/clientHeight`,
    видимость последнего интерактивного элемента), особенно для hero, catalog, calculator, FAQ,
    forms и fixed CTA/quiz. Для lead-generation landing с каталогом/калькулятором добавь smoke через
-   `pwsh D:\Work\llm-dev-wiki\tools\add-lead-landing-smoke.ps1 -ProjectRoot <project>` и адаптируй селекторы.
+   `add-lead-landing-smoke.ps1` и `add-layout-consistency-smoke.ps1`, затем адаптируй селекторы.
 13. **Деплой.** Подключи скилл `site-deploy` (env vars, миграции, rollback, monitoring). После деплоя
    зафиксируй GitHub URL, production/staging URL и post-deploy smoke; если проект деплоится через
    Vercel/GitHub, убедись, что репозиторий запушен до production deploy.
