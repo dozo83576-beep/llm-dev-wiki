@@ -13,6 +13,10 @@
 #>
 $ErrorActionPreference = 'SilentlyContinue'
 
+# Claude Code читает stdout хука как UTF-8, а PowerShell по умолчанию пишет в OEM
+# (cp866 на русской Windows) — без этой строки кириллица в reason приходит кракозябрами.
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+
 $throttleMinutes = 30
 $marker = Join-Path $env:TEMP 'agent-capture-reminder.marker'
 $now = Get-Date
