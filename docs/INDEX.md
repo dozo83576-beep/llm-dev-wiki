@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-07-01"
+updated: "2026-07-04"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **310**
-- Активных: **293**
+- Всего документов: **317**
+- Активных: **300**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **824508** символов
+- Суммарный объём: **865274** символов
 
 ## docs
 
@@ -26,13 +26,13 @@ source_priority: "internal"
 | [docs/00-start-here/document-standard.md](../docs/00-start-here/document-standard.md) | Стандарт production-документа | governance | 1433 | 2026-05-24 | active | internal |
 | [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2202 | 2026-05-24 | active | internal |
 | [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 8759 | 2026-06-10 | active | internal |
-| [docs/01-development-process/competitive-analysis.md](../docs/01-development-process/competitive-analysis.md) | Конкурентный анализ и адаптация под бриф | process | 4589 | 2026-06-08 | active | internal |
-| [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 1619 | 2026-05-24 | active | internal |
+| [docs/01-development-process/competitive-analysis.md](../docs/01-development-process/competitive-analysis.md) | Конкурентный анализ и адаптация под бриф | process | 5611 | 2026-06-08 | active | internal |
+| [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 3704 | 2026-07-01 | active | internal |
 | [docs/01-development-process/new-site-preflight-tool.md](../docs/01-development-process/new-site-preflight-tool.md) | New site preflight tool | process | 2623 | 2026-06-10 | active | internal |
 | [docs/01-development-process/runtime-selection.md](../docs/01-development-process/runtime-selection.md) | Runtime selection | process | 2374 | 2026-06-04 | active | mixed |
-| [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 6597 | 2026-06-10 | active | internal |
+| [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 8056 | 2026-06-10 | active | internal |
 | [docs/01-development-process/site-stack-router-tool.md](../docs/01-development-process/site-stack-router-tool.md) | Site stack router tool | process | 3235 | 2026-06-10 | active | internal |
-| [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 7368 | 2026-06-10 | active | official-docs |
+| [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 7865 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/AI-UI-streaming.md](../docs/02-frontend/AI-UI-streaming.md) | AI UI streaming | frontend | 3217 | 2026-06-22 | active | mixed |
 | [docs/02-frontend/Accessibility.md](../docs/02-frontend/Accessibility.md) | Accessibility | frontend | 1928 | 2026-05-27 | active | official-docs |
 | [docs/02-frontend/Analytics.md](../docs/02-frontend/Analytics.md) | Analytics | frontend | 1353 | 2026-05-24 | active | internal |
@@ -81,10 +81,10 @@ source_priority: "internal"
 | [docs/02-frontend/Vike.md](../docs/02-frontend/Vike.md) | Vike | frontend | 1844 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Vite-React.md](../docs/02-frontend/Vite-React.md) | Vite + React | frontend | 2108 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/Webflow.md](../docs/02-frontend/Webflow.md) | Webflow | frontend | 2083 | 2026-06-10 | active | official-docs |
-| [docs/02-frontend/WordPress.md](../docs/02-frontend/WordPress.md) | WordPress | frontend | 2728 | 2026-06-10 | active | official-docs |
+| [docs/02-frontend/WordPress.md](../docs/02-frontend/WordPress.md) | WordPress | frontend | 3015 | 2026-06-10 | active | official-docs |
 | [docs/03-backend/API-architecture.md](../docs/03-backend/API-architecture.md) | Backend API architecture | backend | 1551 | 2026-05-24 | active | internal |
 | [docs/03-backend/Auth-flows.md](../docs/03-backend/Auth-flows.md) | Backend auth flows | backend | 1712 | 2026-05-24 | active | mixed |
-| [docs/03-backend/Background-jobs.md](../docs/03-backend/Background-jobs.md) | Background jobs | backend | 1272 | 2026-05-24 | active | official-docs |
+| [docs/03-backend/Background-jobs.md](../docs/03-backend/Background-jobs.md) | Background jobs | backend | 1811 | 2026-05-24 | active | official-docs |
 | [docs/03-backend/Bun.md](../docs/03-backend/Bun.md) | Bun | backend | 2568 | 2026-06-04 | active | official-docs |
 | [docs/03-backend/Caching.md](../docs/03-backend/Caching.md) | Backend caching | backend | 1794 | 2026-05-24 | active | internal |
 | [docs/03-backend/Cron.md](../docs/03-backend/Cron.md) | Cron and scheduled jobs | backend | 1834 | 2026-05-24 | active | internal |
@@ -102,6 +102,7 @@ source_priority: "internal"
 | [docs/03-backend/Stripe.md](../docs/03-backend/Stripe.md) | Stripe | backend | 2413 | 2026-05-24 | active | vendor-docs |
 | [docs/03-backend/Supabase.md](../docs/03-backend/Supabase.md) | Supabase | backend | 2415 | 2026-05-24 | active | vendor-docs |
 | [docs/03-backend/Webhooks.md](../docs/03-backend/Webhooks.md) | Webhooks | backend | 1961 | 2026-05-24 | active | internal |
+| [docs/03-backend/WordPress-WooCommerce-backend.md](../docs/03-backend/WordPress-WooCommerce-backend.md) | WordPress + WooCommerce backend | backend | 5274 | 2026-07-02 | active | internal |
 | [docs/04-databases/Audit-log.md](../docs/04-databases/Audit-log.md) | Audit log | database | 1227 | 2026-05-24 | active | internal |
 | [docs/04-databases/Backups.md](../docs/04-databases/Backups.md) | Backups | database | 1328 | 2026-05-24 | active | mixed |
 | [docs/04-databases/Database-design.md](../docs/04-databases/Database-design.md) | Database design | database | 1337 | 2026-05-24 | active | mixed |
@@ -231,9 +232,11 @@ source_priority: "internal"
 | [patterns/backend/service-layer.md](../patterns/backend/service-layer.md) | Pattern: Service layer | patterns | 383 | 2026-05-24 | active | internal |
 | [patterns/backend/telegram-lead-notification.md](../patterns/backend/telegram-lead-notification.md) | Pattern: Telegram lead notification | patterns | 4903 | 2026-05-27 | active | internal |
 | [patterns/backend/webhook-idempotency.md](../patterns/backend/webhook-idempotency.md) | Pattern: Webhook idempotency | patterns | 1081 | 2026-05-24 | active | internal |
+| [patterns/backend/woocommerce-marketplace-order-split.md](../patterns/backend/woocommerce-marketplace-order-split.md) | Pattern: WooCommerce marketplace order split (суб-заказы) | patterns | 3147 | 2026-07-02 | active | internal |
 | [patterns/database/cursor-pagination.md](../patterns/database/cursor-pagination.md) | Pattern: Cursor pagination | patterns | 978 | 2026-05-24 | active | internal |
 | [patterns/database/expand-contract-migration.md](../patterns/database/expand-contract-migration.md) | Pattern: Expand-contract migration | patterns | 1112 | 2026-05-24 | active | internal |
 | [patterns/devops/non-root-vps-node-pm2-nginx-deploy.md](../patterns/devops/non-root-vps-node-pm2-nginx-deploy.md) | Pattern: Non-root VPS Node + PM2 + Nginx deploy | pattern | 3042 | 2026-06-20 | active | internal |
+| [patterns/devops/php-fpm-nginx-vps-deploy.md](../patterns/devops/php-fpm-nginx-vps-deploy.md) | Pattern: PHP-FPM + Nginx + MySQL non-root VPS deploy | patterns | 3363 | 2026-07-02 | active | internal |
 | [patterns/devops/preview-before-production.md](../patterns/devops/preview-before-production.md) | Pattern: Preview before production | patterns | 392 | 2026-05-24 | active | internal |
 | [patterns/devops/rollback-first-release.md](../patterns/devops/rollback-first-release.md) | Pattern: Rollback-first release | patterns | 987 | 2026-05-24 | active | internal |
 | [patterns/frontend/ambient-sound-toggle.md](../patterns/frontend/ambient-sound-toggle.md) | Pattern: Тумблер ambient-звука (опциональный, real audio) | patterns | 2383 | 2026-06-23 | active | internal |
@@ -243,15 +246,16 @@ source_priority: "internal"
 | [patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md](../patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md) | Pattern: Fixed overlays vs backdrop-filter containing block | patterns | 4002 | 2026-06-08 | active | internal |
 | [patterns/frontend/form-validation-boundary.md](../patterns/frontend/form-validation-boundary.md) | Pattern: Form validation boundary | patterns | 999 | 2026-05-24 | active | internal |
 | [patterns/frontend/full-height-first-screen.md](../patterns/frontend/full-height-first-screen.md) | Pattern: Full-height first screen (контроль сгиба) | pattern | 4560 | 2026-06-29 | active | internal |
-| [patterns/frontend/layout-archetypes.md](../patterns/frontend/layout-archetypes.md) | Pattern: Layout archetypes | pattern | 4355 | 2026-06-20 | active | internal |
+| [patterns/frontend/layout-archetypes.md](../patterns/frontend/layout-archetypes.md) | Pattern: Layout archetypes | pattern | 5760 | 2026-07-02 | active | internal |
 | [patterns/frontend/localstorage-mini-crm.md](../patterns/frontend/localstorage-mini-crm.md) | Pattern: LocalStorage mini-CRM (клиентский CRUD без бэкенда) | pattern | 3891 | 2026-06-11 | active | internal |
+| [patterns/frontend/photo-header-text-panel-card.md](../patterns/frontend/photo-header-text-panel-card.md) | Pattern: Photo-header + text-panel card (гибридная карточка) | pattern | 5766 | 2026-07-02 | active | internal |
 | [patterns/frontend/portfolio-case-screenshot-gallery.md](../patterns/frontend/portfolio-case-screenshot-gallery.md) | Pattern: Portfolio case screenshot gallery | pattern | 2798 | 2026-06-20 | active | internal |
 | [patterns/frontend/purposeful-motion.md](../patterns/frontend/purposeful-motion.md) | Pattern: Purposeful motion | pattern | 4215 | 2026-06-20 | active | internal |
 | [patterns/frontend/screen-section-lead-landing.md](../patterns/frontend/screen-section-lead-landing.md) | Pattern: Screen-section lead landing | pattern | 4020 | 2026-06-29 | active | internal |
 | [patterns/frontend/semantic-theme-text-tokens.md](../patterns/frontend/semantic-theme-text-tokens.md) | Pattern: Semantic theme text tokens | patterns | 2980 | 2026-05-27 | active | internal |
 | [patterns/frontend/server-client-boundary.md](../patterns/frontend/server-client-boundary.md) | Pattern: Server/client boundary | patterns | 446 | 2026-05-24 | active | internal |
 | [patterns/frontend/static-site-dev-only-cms-flag.md](../patterns/frontend/static-site-dev-only-cms-flag.md) | Pattern: Static site + dev-only CMS behind build flag | pattern | 5235 | 2026-06-12 | active | internal |
-| [patterns/frontend/stock-photo-id-verification.md](../patterns/frontend/stock-photo-id-verification.md) | Pattern: Проверка stock-фото (не доверять ID по памяти) | patterns | 3857 | 2026-06-29 | active | internal |
+| [patterns/frontend/stock-photo-id-verification.md](../patterns/frontend/stock-photo-id-verification.md) | Pattern: Проверка stock-фото (не доверять ID по памяти) | patterns | 5831 | 2026-07-02 | active | internal |
 | [patterns/frontend/third-party-booking-widget.md](../patterns/frontend/third-party-booking-widget.md) | Pattern: Third-party booking widget (попап записи) | pattern | 4127 | 2026-06-13 | active | internal |
 | [patterns/security/deny-by-default.md](../patterns/security/deny-by-default.md) | Pattern: Deny by default | patterns | 394 | 2026-05-24 | active | internal |
 | [patterns/security/tenant-isolation.md](../patterns/security/tenant-isolation.md) | Pattern: Tenant isolation | patterns | 1085 | 2026-05-24 | active | internal |
@@ -303,7 +307,7 @@ source_priority: "internal"
 | [checklists/project-discovery.md](../checklists/project-discovery.md) | Project discovery checklist | checklist | 4242 | 2026-06-13 | active | internal |
 | [checklists/qa-acceptance.md](../checklists/qa-acceptance.md) | QA / UAT acceptance checklist | checklist | 2817 | 2026-06-19 | active | internal |
 | [checklists/release-readiness.md](../checklists/release-readiness.md) | Release readiness checklist | checklist | 5264 | 2026-06-19 | active | internal |
-| [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 5929 | 2026-06-21 | active | internal |
+| [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 6230 | 2026-07-01 | active | internal |
 | [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 3096 | 2026-06-29 | active | internal |
 
 ## stacks
@@ -337,6 +341,7 @@ source_priority: "internal"
 | [case-studies/successes/2026-06-20-zayavki-site-portfolio.md](../case-studies/successes/2026-06-20-zayavki-site-portfolio.md) | Успешное решение: портфолио услуг Заявки.Site | case-study | 3322 | 2026-06-20 | validated | internal |
 | [case-studies/successes/2026-06-29-ferrolease-ural-b2b-leasing-landing.md](../case-studies/successes/2026-06-29-ferrolease-ural-b2b-leasing-landing.md) | Успешное решение: B2B leasing landing с каталогом, калькулятором и Vercel deploy | case-study | 3428 | 2026-06-29 | validated | internal |
 | [case-studies/successes/2026-06-29-luma-premium-beauty-animated-landing.md](../case-studies/successes/2026-06-29-luma-premium-beauty-animated-landing.md) | Премиальный анимированный одностраничник салона красоты (LUMA) | case-study | 4696 | 2026-06-29 | validated | internal |
+| [case-studies/successes/2026-07-02-local-market-woo-woocommerce-marketplace.md](../case-studies/successes/2026-07-02-local-market-woo-woocommerce-marketplace.md) | local-market-woo: маркетплейс на WooCommerce с кастомным mu-plugin | case-study | 3406 | 2026-07-02 | active | internal |
 | [case-studies/successes/README.md](../case-studies/successes/README.md) | Success case studies | case-study | 720 | 2026-05-24 | validated | internal |
 | [case-studies/successes/_template.md](../case-studies/successes/_template.md) | Успешное решение: название | case-study | 729 | 2026-05-24 | validated | internal |
 
@@ -354,10 +359,12 @@ source_priority: "internal"
 | [lessons-learned/2026-06-13-region-accessible-third-party-embeds.md](../lessons-learned/2026-06-13-region-accessible-third-party-embeds.md) | Урок: сторонние эмбеды должны быть доступны в регионе аудитории | lesson | 3092 | 2026-06-13 | active | internal |
 | [lessons-learned/2026-06-20-claude-code-mcp-windows-cli-args.md](../lessons-learned/2026-06-20-claude-code-mcp-windows-cli-args.md) | Claude Code MCP on Windows: npx flags and router package names | lessons-learned | 1311 | 2026-06-20 | active | internal |
 | [lessons-learned/2026-06-20-portfolio-screenshots-and-cache.md](../lessons-learned/2026-06-20-portfolio-screenshots-and-cache.md) | Lesson: скриншоты портфолио требуют двух слоёв и cache policy | lesson | 2018 | 2026-06-20 | active | internal |
-| [lessons-learned/2026-06-21-wordpress-windows-local-smoke.md](../lessons-learned/2026-06-21-wordpress-windows-local-smoke.md) | WordPress local smoke on Windows | lesson | 1816 | 2026-06-21 | active | internal |
+| [lessons-learned/2026-06-21-wordpress-windows-local-smoke.md](../lessons-learned/2026-06-21-wordpress-windows-local-smoke.md) | WordPress local smoke on Windows | lesson | 3509 | 2026-07-02 | active | internal |
 | [lessons-learned/2026-06-23-astro7-tailwind4-vite-plugin.md](../lessons-learned/2026-06-23-astro7-tailwind4-vite-plugin.md) | Lesson: Astro 7 + Tailwind v4 — vite-плагин, не postcss | lesson | 2561 | 2026-06-23 | active | internal |
 | [lessons-learned/2026-06-25-astro7-vercel-adapter.md](../lessons-learned/2026-06-25-astro7-vercel-adapter.md) | Astro 7 + Vercel adapter: import path and audit | lesson | 1016 | 2026-06-25 | active | internal |
 | [lessons-learned/2026-06-29-astro7-vercel-static-no-adapter.md](../lessons-learned/2026-06-29-astro7-vercel-static-no-adapter.md) | Astro 7 → Vercel статикой: без адаптера, деплой через GitHub-import | lesson | 2451 | 2026-06-29 | active | internal |
+| [lessons-learned/2026-07-02-build-modern-site-plan-mode-bypass.md](../lessons-learned/2026-07-02-build-modern-site-plan-mode-bypass.md) | Plan-режим обходит оркестратор build-modern-site | lesson | 3047 | 2026-07-02 | active | internal |
+| [lessons-learned/2026-07-02-subagent-photo-sourcing-tool-call-explosion.md](../lessons-learned/2026-07-02-subagent-photo-sourcing-tool-call-explosion.md) | Lesson: делегирование фото-сорсинга субагенту — взрыв tool calls без результата | lesson | 5501 | 2026-07-02 | active | internal |
 | [lessons-learned/_template.md](../lessons-learned/_template.md) | Lesson: <короткое название> | lesson | 1027 | YYYY-MM-DD | active | internal |
 
 ## mcp

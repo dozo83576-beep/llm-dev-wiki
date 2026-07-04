@@ -14,7 +14,9 @@ source_priority: "official-docs"
 
 Требования: idempotency key, retry policy, dead-letter handling, structured logs, metrics, visibility для операторов.
 
-Источники: [BullMQ Docs](https://docs.bullmq.io/), [Celery Docs](https://docs.celeryq.dev/).
+Выбор движка по стеку: Node — BullMQ; Python — Celery/arq; **WordPress/WooCommerce — Action Scheduler** (идёт в составе WooCommerce: персистентная очередь в таблицах `wp_actionscheduler_*`, retry, admin-UI в Tools → Scheduled Actions; `as_enqueue_async_action` для событийных задач, `as_schedule_recurring_action` для периодических). Не путать с голым WP-Cron — он без персистентности, ретраев и visibility. Подробнее: [WordPress + WooCommerce backend](WordPress-WooCommerce-backend.md).
+
+Источники: [BullMQ Docs](https://docs.bullmq.io/), [Celery Docs](https://docs.celeryq.dev/), [Action Scheduler](https://actionscheduler.org/).
 
 ## Когда использовать
 

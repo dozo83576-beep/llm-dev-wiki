@@ -49,12 +49,23 @@ Executable smoke для этой policy: `pwsh tools/site-stack-router.ps1 -Requ
 | SaaS, подписки, личный кабинет | [saas](../13-playbooks/saas.md) | Next.js fullstack + PostgreSQL + Auth + Stripe | Неясны tenancy, roles, billing model, compliance |
 | Админка или internal CRUD | [admin dashboard](../13-playbooks/admin-dashboard.md) | React SPA + API или Next.js | Неясны existing API, SSO, permissions, audit log |
 | E-commerce или checkout | [e-commerce](../13-playbooks/ecommerce.md) + [headless commerce](../13-playbooks/headless-commerce.md) | Next.js storefront + commerce/payment backend | Неясны catalog, tax, inventory, refunds, marketplace |
+| Маркетплейс (несколько продавцов, комиссия, выплаты) | [marketplace](../13-playbooks/marketplace.md) | Next.js + NestJS/FastAPI + PostgreSQL + Redis + split-payments | Неясны модель выплат, модерация, KYC, изоляция продавцов |
+| Маркетплейс/магазин на зафиксированном WordPress | [WordPress+WooCommerce backend](../03-backend/WordPress-WooCommerce-backend.md) + [marketplace](../13-playbooks/marketplace.md) + [order-split pattern](../../patterns/backend/woocommerce-marketplace-order-split.md) | WordPress + WooCommerce + custom mu-plugin; React SPA кабинет при кастомном REST | Неясны один/несколько продавцов, эквайринг vs ручной экспорт, managed WP vs VPS |
 | Shopify-first custom storefront | [Shopify Hydrogen](../13-playbooks/shopify-hydrogen.md) | Hydrogen + Shopify Storefront API + Shopify checkout | Неясны Shopify source of truth, checkout constraints |
 | Edge-first, low latency, Cloudflare | [Cloudflare Workers full-stack](../08-devops-deploy/Cloudflare-Workers-fullstack.md) | Vite/React + Workers + Hono | Нужны Node-only APIs, long jobs, relational transactions |
 | Rich app после логина с отдельным API | [React SPA + API](../../stacks/react-spa-api.md) | Vite + React Router + TanStack Query | Неясны SEO, cookie/CORS policy, auth owner |
 | React full-stack без Next.js | [TanStack Start](../02-frontend/TanStack-Start.md) | TanStack Start + Query-first data flow | Команда не готова к RC/maturity risk |
 | Vue/Svelte команда | [Nuxt](../02-frontend/Nuxt.md) или [SvelteKit](../02-frontend/SvelteKit.md) | Framework-native SSR/forms/data | SDK/design system завязаны на React |
 | CRUD/forms/tables без rich client | [htmx](../02-frontend/HTMX.md) | Server-rendered HTML + htmx fragments | Нужен offline, complex canvas, heavy client state |
+
+## Стек зафиксирован клиентом
+
+Если клиент/бриф явно фиксирует стек, противоречащий дефолтам вики (например, «маркетплейс на WooCommerce» при JS-дефолте для маркетплейсов):
+
+1. Не пересматривать выбор клиента — это входное ограничение, а не открытый вопрос.
+2. Взять ближайший по типу продукта playbook и адаптировать его архитектурные концепции (роли, стейт-машины, модель данных) под зафиксированный стек — концепции переносимы, реализация нет.
+3. Явно задокументировать в architecture-решении: чем зафиксированный стек хуже/лучше дефолта и какие риски приняты (пример: суб-заказы как проекция единого платежа вместо сплит-платежей).
+4. Если для стека нет профильного дока/паттерна в вики — это gap: реализация становится источником нового паттерна, зафиксировать через `/capture-learnings`.
 
 ## Output contract
 

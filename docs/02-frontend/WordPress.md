@@ -11,6 +11,8 @@ source_priority: "official-docs"
 
 WordPress — production reality для редакторских сайтов, корпоративного marketing, newsroom, SEO-контента и legacy-платформ. Выбирай его как CMS/workflow decision, а не как default для custom SaaS.
 
+Если WordPress используется как **commerce/marketplace backend** (WooCommerce, кастомные REST-эндпоинты, mu-plugins, Action Scheduler, SPA-кабинеты) — см. [WordPress + WooCommerce backend](../03-backend/WordPress-WooCommerce-backend.md); этот документ покрывает editorial/CMS-сценарии.
+
 ## Когда использовать
 
 - Редакторы уже работают в WordPress, есть обученная команда и контентный процесс.

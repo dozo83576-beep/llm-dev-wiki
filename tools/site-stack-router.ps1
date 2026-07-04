@@ -80,6 +80,22 @@ $riskDetailPatterns = @(
 )
 
 $rules = @(
+    (New-Rule -Id "woocommerce" -Route "WordPress + WooCommerce commerce/marketplace" -Stack "WordPress + WooCommerce + custom mu-plugin (маркетплейс-логика); React SPA кабинет при необходимости" `
+        -Patterns @('woocommerce', 'вукоммерс', 'woo.?commerce', 'wordpress.*(магазин|маркетплейс|commerce|shop)', '(магазин|маркетплейс).*wordpress') `
+        -WikiLinks @('docs/03-backend/WordPress-WooCommerce-backend.md', 'docs/13-playbooks/marketplace.md', 'docs/02-frontend/WordPress.md', 'patterns/backend/woocommerce-marketplace-order-split.md', 'patterns/devops/php-fpm-nginx-vps-deploy.md') `
+        -Assumptions @('WooCommerce зафиксирован клиентом или требованием; кастомная логика строится поверх нативных хуков (mu-plugin), не через готовые multivendor-плагины, если требуется кастомный REST/кабинет.') `
+        -OpenQuestions @('Один продавец (e-commerce) или несколько (маркетплейс: суб-заказы, комиссия, выплаты)?', 'Оплата: реальный эквайринг с самого начала или ручное подтверждение/экспорт для MVP?', 'Где хостинг: managed WP или VPS (PHP-FPM/Nginx/MySQL)?') `
+        -RejectedAlternatives @('Dokan/WCFM: избыточны и конфликтуют с требованием кастомного REST/кабинета.', 'Next.js marketplace-стек: лучше при свободном выборе стека, но не при зафиксированном WordPress.', 'Shopify: другой vendor lock-in, не подходит при требовании WordPress.') `
+        -AcceptanceGates @('Мультивендорная корзина корректно разбивается на суб-заказы с верной комиссией.', 'Изоляция продавцов: negative-тесты 403/404 на чужие ресурсы.', 'Локальный smoke (local-wp-smoke) + site audit на staging URL.') `
+        -Priority 75),
+    (New-Rule -Id "marketplace" -Route "Marketplace" -Stack "Next.js + NestJS/FastAPI + PostgreSQL + Redis + split-payments (Stripe Connect или аналог)" `
+        -Patterns @('маркетплейс', 'marketplace', 'мульти.?вендор', 'multi.?vendor', 'нескольк.*продавц', 'продавц.*кабинет', 'комисси.*(продавц|заказ)', 'выплат.*продавц') `
+        -WikiLinks @('docs/13-playbooks/marketplace.md', 'docs/01-development-process/stack-selection.md', 'docs/04-databases/Multi-tenancy.md') `
+        -Assumptions @('Несколько независимых продавцов; нужны модерация, комиссия, выплаты и изоляция данных продавцов.') `
+        -OpenQuestions @('Стек свободный или зафиксирован клиентом (например, WordPress/WooCommerce)?', 'Выплаты: сплит-платежи через эквайринг или ручной реестр/экспорт?', 'Какая модерация нужна: продавцов, товаров, отзывов?') `
+        -RejectedAlternatives @('Обычный e-commerce: недостаточен при нескольких продавцах с выплатами.', 'WooCommerce+Dokan: только при зафиксированном WordPress и без кастомного кабинета.', 'Готовые SaaS-маркетплейсы: vendor lock-in и ограничение кастомной логики.') `
+        -AcceptanceGates @('Order split / комиссия / выплаты покрыты интеграционными тестами.', 'Tenant-изоляция продавцов: negative permission tests.', 'KYC/модерация и anti-fraud отзывов включены в UAT.') `
+        -Priority 55),
     (New-Rule -Id "wordpress" -Route "WordPress/editorial" -Stack "WordPress theme или headless WordPress + Astro/Next.js" `
         -Patterns @('wordpress', 'вордпресс', 'wp\b', 'редактор', 'editorial', 'block theme', 'plugin', 'плагин', 'headless wp', 'headless wordpress') `
         -WikiLinks @('docs/02-frontend/WordPress.md', 'docs/02-frontend/CMS-content.md', 'docs/01-development-process/site-architecture-decision-router.md') `
