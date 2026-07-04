@@ -72,13 +72,15 @@ $redirectDocs = ($rows | Where-Object { $_.Status -eq "redirect" }).Count
 $archivedDocs = ($rows | Where-Object { $_.Status -eq "archived" }).Count
 $totalChars = ($rows | Measure-Object -Property Chars -Sum).Sum
 
-$generated = (Get-Date -Format "yyyy-MM-dd")
+# Дата подставляется после сборки: если содержимое индекса не изменилось, сохраняется
+# прежняя дата — иначе локальная и CI-генерация в разных часовых поясах дают ложный diff.
+$updatedToken = "{{UPDATED}}"
 
 $sb = [System.Text.StringBuilder]::new()
 [void]$sb.AppendLine("---")
 [void]$sb.AppendLine('title: "Wiki INDEX"')
 [void]$sb.AppendLine('category: "navigation"')
-[void]$sb.AppendLine("updated: `"$generated`"")
+[void]$sb.AppendLine("updated: `"$updatedToken`"")
 [void]$sb.AppendLine('status: "active"')
 [void]$sb.AppendLine('tags: ["index", "navigation"]')
 [void]$sb.AppendLine('source_priority: "internal"')
@@ -133,7 +135,21 @@ foreach ($cr in $contentRoots) {
 [void]$sb.AppendLine("- Источник правды — front matter в каждом документе.")
 [void]$sb.AppendLine('- CI проверяет идемпотентность: запуск `tools/build-index.ps1` не должен давать diff между запусками.')
 
+$newText = $sb.ToString() -replace "`r`n", "`n"
+$todayUtc = (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd")
+$finalDate = $todayUtc
+if (Test-Path -LiteralPath $outPath) {
+    $existing = [System.IO.File]::ReadAllText($outPath)
+    if ($existing -match '(?m)^updated:\s*"(\d{4}-\d{2}-\d{2})"') {
+        $existingDate = $matches[1]
+        if ($newText.Replace($updatedToken, $existingDate) -eq $existing) {
+            $finalDate = $existingDate
+        }
+    }
+}
+$newText = $newText.Replace($updatedToken, $finalDate)
+
 # Write file with UTF-8 (no BOM) and LF for cross-platform generated diffs.
-[System.IO.File]::WriteAllText($outPath, ($sb.ToString() -replace "`r`n", "`n"), [System.Text.UTF8Encoding]::new($false))
+[System.IO.File]::WriteAllText($outPath, $newText, [System.Text.UTF8Encoding]::new($false))
 
 Write-Output ("Wrote {0} ({1} docs, {2} chars)" -f $Output, $totalDocs, $totalChars)
