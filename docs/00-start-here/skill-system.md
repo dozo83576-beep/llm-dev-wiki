@@ -60,8 +60,8 @@ Trigger-фраза для обоих рантаймов: если пользов
 | `site-architecture` | Архитектура | design-architecture, implementation-plan, design-database |
 | `site-content` | Контент | [CMS-content](../02-frontend/CMS-content.md), [Payload-CMS](../02-frontend/Payload-CMS.md), [I18n](../02-frontend/I18n.md), [Compliance-baseline](../05-auth-security/Compliance-baseline.md) |
 | `site-design` | Дизайн | frontend-доки + дизайн-движок рантайма + дизайн-слой предпочтений |
-| `site-frontend` | Frontend | implement-frontend + frontend-доки/паттерны |
 | `site-backend` | Backend | implement-backend + backend/database-доки/паттерны |
+| `site-frontend` | Frontend | implement-frontend + frontend-доки/паттерны |
 | `site-seo` | SEO | [SEO](../02-frontend/SEO.md), [Performance](../02-frontend/Performance.md), [Analytics](../02-frontend/Analytics.md), [Accessibility](../02-frontend/Accessibility.md) |
 | `site-review` | Ревью | review-чеклисты + code-review/security-review |
 | `site-deploy` | Деплой | deploy + devops-доки + release-readiness |
@@ -95,6 +95,18 @@ Trigger-фраза для обоих рантаймов: если пользов
 - Мелкая правка готового проекта — иди сразу в нужный фазовый скилл, минуя оркестратор.
 - Чистый research без сборки.
 - Не превращать разовую вкусовую гипотезу в правило: предпочтение сохраняется только после явного approval.
+
+## Утилиты вне пайплайна
+
+Не входят в цикл `build-modern-site`, вызываются ad-hoc по ситуации:
+
+- `prompts/debug-issue.md` — систематическая отладка бага в существующем проекте.
+- `prompts/refactor.md` — рефакторинг без изменения поведения.
+- `prompts/write-tests.md` — добавление недостающих тестов (также подключён из `site-review`).
+- `prompts/backend-audit.md`, `prompts/frontend-audit.md` — аудит существующего кода вне полного цикла ревью.
+- `tools/ask-wiki.ps1` — offline BM25-поиск по корпусу вики из любой задачи.
+- `tools/migrate-links.ps1` — массовая миграция ссылок при переименовании/переносе вики-доков (dry-run по умолчанию).
+- `D:\Work\tools\new-agent-task-prompt.ps1` — генератор постановки задачи для агента (site/automation/mixed).
 
 ## Как раскатывать и обновлять
 

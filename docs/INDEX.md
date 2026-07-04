@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **300**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **865274** символов
+- Суммарный объём: **866602** символов
 
 ## docs
 
@@ -25,9 +25,9 @@ source_priority: "internal"
 |------|-----------|-----------|-------|---------|--------|-----------------|
 | [docs/00-start-here/document-standard.md](../docs/00-start-here/document-standard.md) | Стандарт production-документа | governance | 1433 | 2026-05-24 | active | internal |
 | [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2202 | 2026-05-24 | active | internal |
-| [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 8759 | 2026-06-10 | active | internal |
+| [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 9511 | 2026-06-10 | active | internal |
 | [docs/01-development-process/competitive-analysis.md](../docs/01-development-process/competitive-analysis.md) | Конкурентный анализ и адаптация под бриф | process | 5611 | 2026-06-08 | active | internal |
-| [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 3704 | 2026-07-01 | active | internal |
+| [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 3870 | 2026-07-01 | active | internal |
 | [docs/01-development-process/new-site-preflight-tool.md](../docs/01-development-process/new-site-preflight-tool.md) | New site preflight tool | process | 2623 | 2026-06-10 | active | internal |
 | [docs/01-development-process/runtime-selection.md](../docs/01-development-process/runtime-selection.md) | Runtime selection | process | 2374 | 2026-06-04 | active | mixed |
 | [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 8056 | 2026-06-10 | active | internal |
@@ -210,14 +210,14 @@ source_priority: "internal"
 | [docs/13-playbooks/shopify-hydrogen.md](../docs/13-playbooks/shopify-hydrogen.md) | Playbook: Shopify Hydrogen | playbooks | 2605 | 2026-06-22 | active | official-docs |
 | [docs/14-llm-indexing/chunking-policy.md](../docs/14-llm-indexing/chunking-policy.md) | Chunking policy | llm-indexing | 3109 | 2026-05-24 | active | internal |
 | [docs/14-llm-indexing/freshness-checks.md](../docs/14-llm-indexing/freshness-checks.md) | Freshness checks | llm-indexing | 3598 | 2026-06-29 | active | internal |
-| [docs/14-llm-indexing/index.md](../docs/14-llm-indexing/index.md) | LLM indexing | llm-indexing | 4780 | 2026-05-25 | active | internal |
+| [docs/14-llm-indexing/index.md](../docs/14-llm-indexing/index.md) | LLM indexing | llm-indexing | 4812 | 2026-05-25 | active | internal |
 | [docs/14-llm-indexing/llms-txt-rules.md](../docs/14-llm-indexing/llms-txt-rules.md) | llms.txt rules | llm-indexing | 2238 | 2026-05-24 | active | community |
 | [docs/14-llm-indexing/metadata-policy.md](../docs/14-llm-indexing/metadata-policy.md) | Metadata policy | llm-indexing | 3280 | 2026-06-29 | active | internal |
 | [docs/14-llm-indexing/rag-file-search.md](../docs/14-llm-indexing/rag-file-search.md) | RAG and File Search | llm-indexing | 3855 | 2026-05-24 | active | official-docs |
 | [docs/14-llm-indexing/source-priority.md](../docs/14-llm-indexing/source-priority.md) | Source priority | llm-indexing | 2750 | 2026-05-24 | active | internal |
-| [docs/15-maintenance/retro-process.md](../docs/15-maintenance/retro-process.md) | Retro-процесс после инцидентов и провальных релизов | maintenance | 4000 | 2026-06-07 | active | internal |
+| [docs/15-maintenance/retro-process.md](../docs/15-maintenance/retro-process.md) | Retro-процесс после инцидентов и провальных релизов | maintenance | 4288 | 2026-06-07 | active | internal |
 | [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 6158 | 2026-06-07 | active | internal |
-| [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 6104 | 2026-06-29 | active | internal |
+| [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 6194 | 2026-06-29 | active | internal |
 
 ## patterns
 

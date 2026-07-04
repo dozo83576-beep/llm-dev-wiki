@@ -27,6 +27,7 @@ description: >-
 - `D:\Work\llm-dev-wiki\prompts\post-task-learning-review.md` — как классифицировать и роутить опыт.
 - `D:\Work\llm-dev-wiki\prompts\update-user-preferences.md` — правила сохранения предпочтения.
 - `D:\Work\AGENT-PREFERENCES.local.md` — текущие записи (дедуп, не плодить).
+- `D:\Work\llm-dev-wiki\prompts\update-wiki.md` — правила ручного обновления вики-артефактов.
 
 ## Стоки (куда направлять)
 1. **Личные предпочтения → `D:\Work\AGENT-PREFERENCES.local.md`** (основной автосток).
@@ -57,7 +58,12 @@ description: >-
 4. **Deduplicate** — найти существующие записи, обновить вместо дубля.
 5. **Sanitize** — убрать секреты, PII, приватный код, customer payloads; личные референсы не уносить в GitHub-wiki.
 6. **Apply** — preference только после approval (`-Apply`); wiki-артефакты после подтверждения.
-7. **Quality gate вики** — если менялись файлы вики:
+7. **Backlink в проект** — если записан case-study/урок по конкретному проекту, добавь в
+   `AGENTS.md` этого проекта секцию `## Связанные знания` (или строку в неё) со ссылками на
+   созданные wiki-артефакты. Это двусторонняя трассируемость: вернувшись в проект через полгода,
+   агент увидит его документированные решения.
+8. **Quality gate вики** — если менялись файлы вики, прогони и сверься с
+   `D:\Work\llm-dev-wiki\checklists\wiki-maintenance.md`:
    ```
    pwsh D:\Work\llm-dev-wiki\tools\ci-local.ps1
    ```

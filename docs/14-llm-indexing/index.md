@@ -58,7 +58,7 @@ OpenAI embeddings остаются optional enhanced mode:
 
 ```bash
 OPENAI_API_KEY=... python tools/build_embeddings.py --mode openai-embeddings
-python tools/run_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10
+python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10 --warn-rank 3
 ```
 
 Такой режим не является обязательным quality gate и не должен блокировать работу без ключей.

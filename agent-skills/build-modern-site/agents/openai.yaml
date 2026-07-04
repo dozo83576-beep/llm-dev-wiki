@@ -1,7 +1,7 @@
 interface:
   display_name: "Build Modern Site"
   short_description: "Оркестратор сборки сайта от идеи до деплоя"
-  default_prompt: "Use $build-modern-site to plan and build a new website end to end with the D:\\Work wiki."
+  default_prompt: "Use $build-modern-site to plan and build a new website end to end with the D:\\Work wiki. All 17 phases are mandatory (incl. content/legal pages, design, SEO, review); run tools/new-site-preflight.ps1 first and read its Lessons learned links."
 
 policy:
   allow_implicit_invocation: true

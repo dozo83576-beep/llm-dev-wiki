@@ -11,8 +11,20 @@ description: >-
 
 Тонкий роутер. Источник правды — `D:\Work\llm-dev-wiki`. Оспаривай слабые решения аргументированно.
 
+## Requires
+- `site-frontend` завершён (и `site-backend`, если у проекта есть серверная часть, и `site-seo`,
+  если сайт публичный).
+- Для API-only backend (playbook `api-only-backend`, нет визуального UI): достаточно, что
+  `site-backend` завершён — `site-design`/`site-frontend`/`site-seo` для этого типа проекта не
+  применяются.
+
 ## Сначала прочитай
-- `D:\Work\llm-dev-wiki\prompts\code-review.md`, `security-review.md`.
+- Перед ревью: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<стек + ревью/безопасность>"` — поднимет чеклисты и уроки, которых нет в списке ниже.
+- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
+  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- `D:\Work\llm-dev-wiki\prompts\code-review.md`, `security-review.md`, `mcp-security-review.md`
+  (если проект использует MCP/AI-инструменты).
+- `D:\Work\llm-dev-wiki\prompts\write-tests.md` — каркас добавления недостающих тестов по найденным в ревью пробелам.
 - `D:\Work\llm-dev-wiki\checklists\` — `frontend-review.md`, `backend-review.md`, `api-review.md`,
   `database-review.md`, `security-review.md`, `ai-agent-review.md` (если есть AI/MCP), `qa-acceptance.md`,
   `legal-compliance.md` (ПДн/152-ФЗ для РФ-аудитории), `release-readiness.md`.

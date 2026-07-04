@@ -20,7 +20,15 @@ description: >-
 - Наполнение публичного сайта; проектирование контент-модели и CMS.
 - Многоязычные сайты; страницы с юридическим/consent-контентом.
 
+## Когда НЕ использовать
+- Playbook `api-only-backend` без визуального UI — контент-модель/копирайтинг не нужны, из
+  `site-architecture` сразу в `site-backend`.
+
 ## Сначала прочитай
+- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
+  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- `_competitive-analysis.md` проекта (артефакт `site-competitive-analysis`) — контент-углы, темы,
+  FAQ-паттерны конкурентов напрямую, не только через архитектуру.
 - `D:\Work\llm-dev-wiki\docs\02-frontend\CMS-content.md` — выбор и модель контента.
 - `D:\Work\llm-dev-wiki\docs\02-frontend\Payload-CMS.md` — headless CMS, если нужен редактируемый контент.
 - `D:\Work\llm-dev-wiki\docs\02-frontend\I18n.md` — многоязычность и структура переводов.
@@ -58,4 +66,5 @@ description: >-
 - Проверяет: self-check агента + подтверждение контента заказчиком (тексты/медиа — внешний вход).
 
 ## Передача дальше
-`site-frontend` и `site-seo` — **параллельные соседи после site-content** (вёрстка по контенту/токенам и метаданные/hreflang/structured data соответственно).
+`site-design` — визуальный слой поверх зафиксированного контента (строго последовательно, без
+параллельных веток).

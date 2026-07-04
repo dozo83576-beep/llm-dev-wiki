@@ -9,7 +9,9 @@ source_priority: "internal"
 
 # Retro-процесс после инцидентов и провальных релизов
 
-Структурированный разбор причин инцидента или неудачного релиза. Цель — извлечь action items, а не найти виноватых. Результат retro всегда попадает в `case-studies/failures/` и `lessons-learned/`.
+Last retro: 2026-07-02 (аудит обхода пайплайна build-modern-site → `lessons-learned/2026-07-02-build-modern-site-plan-mode-bypass.md`)
+
+Структурированный разбор причин инцидента или неудачного релиза. Цель — извлечь action items, а не найти виноватых. Результат retro всегда попадает в `case-studies/failures/` и `lessons-learned/`. После каждого retro обновляй поле `Last retro:` выше — еженедельный freshness-отчёт (`tools/check-updates.ps1`) предупреждает, если оно старше 30 дней.
 
 Используй этот процесс, когда нужно превратить неудачную задачу в lesson learned: сначала доказанный failure case, затем короткое правило, checklist update и retrieval coverage для будущих похожих запросов.
 

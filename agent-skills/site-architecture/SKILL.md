@@ -15,16 +15,32 @@ description: >-
 - `site-stack` завершён (стек выбран и обоснован) и есть план сайта из `site-competitive-analysis`.
 
 ## Сначала прочитай
+- Перед проектированием: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<домен + API/данные/auth>"` — поднимет паттерны и уроки по архитектуре.
+- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
+  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- `_competitive-analysis.md` проекта (артефакт `site-competitive-analysis`) — полный план, sitemap
+  и приоритизированные фичи из конкурентного анализа.
 - `D:\Work\llm-dev-wiki\prompts\design-architecture.md` — каркас архитектуры.
 - `D:\Work\llm-dev-wiki\prompts\implementation-plan.md` — разбивка на этапы с acceptance.
 - `D:\Work\llm-dev-wiki\prompts\design-database.md` — модель данных, индексы, миграции.
 - `D:\Work\llm-dev-wiki\docs\13-playbooks\` — профильный playbook выбранного типа продукта.
+- `D:\Work\llm-dev-wiki\docs\06-api-design\` — REST/OpenAPI, контракт ошибок, пагинация, версии API
+  (обязателен при проектировании API-контрактов).
 - `D:\Work\llm-dev-wiki\patterns\` — применимые паттерны (api, backend, database, security, devops).
 - `D:\Work\llm-dev-wiki\docs\07-mcp-and-ai-tools\External-site-skills.md` — optional helpers для API/БД,
   если они установлены. Конфликтующий внешний `site-architecture` не использовать вместо этого локального скилла.
 
 ## Шаги
-1. Опиши компоненты и границы ответственности: frontend, backend, данные, auth, API, очереди, интеграции, deploy.
+1. Опиши компоненты и границы ответственности: frontend, backend, данные, auth, API, очереди,
+   интеграции, deploy. Для playbook `ai-rag-app` — отдельным компонентом добавь ingestion/indexing
+   pipeline (source curation, chunking, embedding, версионирование индекса), это не «просто backend».
+   Для playbook `real-time-app` — явно зафиксируй транспорт (WebSocket/SSE/polling) и
+   hosting-совместимость: stateful long-lived соединения требуют не-serverless таргет, не
+   Vercel-style edge functions.
+1.5. Сверься с `D:\Work\llm-dev-wiki\resources\technology-watchlist.json` и (если подключены)
+   context7/WebSearch на предмет текущих best-practice архитектурных паттернов для этого типа
+   продукта (RSC/edge functions/ISR/streaming/event-driven и т.п.). Цель — не просто повторить то,
+   что уже сделали конкуренты (план из `site-competitive-analysis`), а по возможности их обогнать.
 2. Нарисуй data flow и ключевые контракты (REST/OpenAPI, события, вебхуки).
 2.5. Если доступны `api-design-reviewer` или `database-designer`, используй их как ревью контрактов/схем,
    но итоговую архитектуру фиксируй по локальным prompts и playbook.
@@ -38,5 +54,13 @@ description: >-
 - Проверяет: self-check агента по prompts/implementation-plan; план зафиксирован как артефакт.
 
 ## Передача дальше
-Порядок: `site-content` (контент-модель) → `site-design` (визуальный слой) → затем `site-frontend` и
-`site-backend` по этапам плана (parallel/sequenced), `site-seo` параллельно frontend.
+Если playbook — `api-only-backend` (нет визуального frontend): пропусти `site-content`/
+`site-design`/`site-frontend`/`site-seo`, сразу `site-backend` → `site-review`.
+
+Иначе (есть визуальный UI) — строго последовательно, без параллельных веток: `site-content`
+(контент-модель) → `site-design` (визуальный слой) → `site-backend` (API на финальной контент-модели)
+→ `site-frontend` (UI против уже работающего backend) → `site-seo` (метрики на финальном билде).
+
+Для playbook `marketplace`: `site-design` → `site-frontend` проходятся **дважды** — публичная
+витрина (SEO, покупатели) и внутренняя консоль продавца/модерации (без публичной индексации, по
+плотности как `admin-dashboard`). Не смешивать токены и SEO-требования одного прохода с другим.

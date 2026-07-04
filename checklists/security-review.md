@@ -1,7 +1,7 @@
 ---
 title: "Security review checklist"
 category: "checklist"
-updated: "2026-06-21"
+updated: "2026-07-01"
 status: "active"
 tags: ["security", "release-gate"]
 source_priority: "internal"
@@ -32,6 +32,7 @@ Gated checklist. Каждая строка — критерий, способ п
 - [ ] **CORS** — `Access-Control-Allow-Origin` указывает только нужные домены — backend owner — block — [CORS-CSRF-CSP](../docs/05-auth-security/CORS-CSRF-CSP.md).
 - [ ] **CSP** — `Content-Security-Policy` совместим с frontend и снижает XSS-риск — frontend owner — warn — [CORS-CSRF-CSP](../docs/05-auth-security/CORS-CSRF-CSP.md).
 - [ ] **Security headers** — `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, HSTS; smoke: `pwsh tools/site-audit.ps1 -Url <url> -SkipLighthouse` — frontend/devops — warn — [Site audit tooling](../docs/09-testing/Site-audit-tooling.md).
+- [ ] **Secure cookies** — все session/auth cookie имеют `HttpOnly`, `Secure`, `SameSite=Lax`/`Strict` явно выставленными (не default браузера) — frontend/backend owner — block — [Authentication](../docs/05-auth-security/Authentication.md), [CORS-CSRF-CSP](../docs/05-auth-security/CORS-CSRF-CSP.md).
 
 ## Secrets & dependencies
 

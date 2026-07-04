@@ -42,6 +42,7 @@ description: >-
 Приоритет при конфликте: project-local > security/compliance > официальные актуальные источники > AGENT-PREFERENCES > wiki defaults.
 
 ## Сначала прочитай
+- Точечный поиск по вики в любой фазе: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<тема + стек>"` — offline BM25 по всему корпусу (docs, patterns, checklists, lessons-learned).
 - `D:\Work\llm-dev-wiki\prompts\create-new-project.md` — каркас kickoff.
 - `D:\Work\llm-dev-wiki\docs\01-development-process\new-site-preflight-tool.md` — единый preflight.
 - `D:\Work\llm-dev-wiki\docs\01-development-process\full-cycle.md` — полный цикл.
@@ -113,7 +114,8 @@ description: >-
    последовательно после шага 10, не параллельно.
 12. **SEO и производительность.** Подключи скилл `site-seo`: метаданные, sitemap/robots, structured data,
    Core Web Vitals и performance budgets — метрики снимаются на уже реализованных страницах (шаг 11).
-13. **Ревью.** Подключи скилл `site-review` (frontend/backend/api/database/security + UAT/приёмка через
+13. **Ревью (тестирование + security).** Соответствует стадиям «Тестирование» и «Security review»
+   `full-cycle.md`, выполняемым одним шагом. Подключи скилл `site-review` (frontend/backend/api/database/security + UAT/приёмка через
    `qa-acceptance` + release-readiness). Для лендингов с экранными секциями проверяй не только
    viewport screenshots, но и DOM-метрики (`getBoundingClientRect`, `scrollHeight/clientHeight`,
    видимость последнего интерактивного элемента), особенно для hero, catalog, calculator, FAQ,

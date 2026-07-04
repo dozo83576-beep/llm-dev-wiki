@@ -13,9 +13,13 @@ description: >-
 
 ## Requires
 - `site-design` завершён (есть утверждённые дизайн-токены) и `site-content` (контент-модель/тексты).
-- Идёт **параллельно с `site-seo`** после site-content.
+- Если у проекта есть backend: `site-backend` завершён — UI строится против реально работающего API,
+  а не бумажного контракта. Для чисто статических сайтов без backend это условие снимается.
+- Строго последовательно после `site-backend` (если есть), не параллельно.
 
 ## Сначала прочитай
+- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
+  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
 - `D:\Work\llm-dev-wiki\prompts\implement-frontend.md` — каркас реализации.
 - `D:\Work\llm-dev-wiki\docs\02-frontend\` — `React.md`, `TypeScript.md`, `Routing.md`, `Shadcn.md`, `I18n.md`.
 - `D:\Work\llm-dev-wiki\patterns\frontend\` — границы server/client, валидация форм, токены текста.
@@ -25,7 +29,9 @@ description: >-
   `senior-frontend`, `api-design-reviewer`, `database-designer`, если они установлены и релевантны.
 
 ## Шаги
-1. Реализуй маршруты и компоненты по плану этапов и дизайн-токенам из `site-design`.
+1. Реализуй маршруты и компоненты по плану этапов и дизайн-токенам из `site-design`. Если существует
+   `DESIGN-DIRECTION.md` (лендинг/продающая страница) — сверяйся с ним при реализации first
+   viewport, карточек, CTA, секционного ритма, типографики и mobile, не только с токенами.
 1.5. Если доступен `senior-frontend`, используй его как review/helper для React/Next/TypeScript; для простого
    Astro/static сайта не тащи React/Tailwind только из-за helper-а.
 2. Состояние и данные: явные границы server/client, кэш-политика, загрузка/ошибки/пустые состояния.
@@ -45,4 +51,5 @@ description: >-
 - Проверяет: `frontend-review.md` как self-check + локальный прогон в браузере.
 
 ## Передача дальше
-`site-backend` (если есть серверная часть). SEO (`site-seo`) идёт параллельно. Затем `site-review`.
+`site-seo` — оптимизация уже реализованных страниц (метрики снимаются на реальном билде, не на
+промежуточном состоянии), строго последовательно. Затем `site-review`.

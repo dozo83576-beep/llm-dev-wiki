@@ -85,6 +85,7 @@ $result = [pscustomobject]@{
     rejectedAlternatives = @($router.rejectedAlternatives)
     acceptanceGates = @($router.acceptanceGates)
     requiredWikiDocs = $requiredWikiDocs
+    lessonLinks = @($router.lessonLinks | Where-Object { $_ })
     siteAuditCommand = $siteAuditCommand
     nextSteps = $nextSteps
     router = $router
@@ -104,6 +105,11 @@ else {
     Write-Host ""
     Write-Host "Required wiki docs:"
     foreach ($item in $result.requiredWikiDocs) { Write-Host "- $item" }
+    if ($result.lessonLinks.Count -gt 0) {
+        Write-Host ""
+        Write-Host "Lessons learned (прочитать до реализации):"
+        foreach ($item in $result.lessonLinks) { Write-Host "- $item" }
+    }
     Write-Host ""
     Write-Host "Site audit command:"
     Write-Host $result.siteAuditCommand

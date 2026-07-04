@@ -38,5 +38,28 @@ Set-Content -LiteralPath $marker -Value $now.ToString('o') -Encoding UTF8
 
 $reason = '[capture-loop] Перед завершением: если в этой сессии были одобренные решения, предпочтения, дизайн-выборы или переиспользуемый опыт/ошибка — запусти /capture-learnings и зафиксируй их. Если фиксировать нечего — ответь одной строкой, что фиксировать нечего, и заверши.'
 
+# Enforcement дат ревизии (WS4, 2026-07-04): у записей AGENT-PREFERENCES.local.md
+# есть "Review after: <дата>", но раньше их никто не проверял. Хук — естественная
+# точка: срабатывает в момент рефлексии, уже троттлится.
+$prefFile = 'D:\Work\AGENT-PREFERENCES.local.md'
+if (Test-Path -LiteralPath $prefFile) {
+    $expired = @()
+    $currentTitle = ''
+    foreach ($line in (Get-Content -LiteralPath $prefFile -Encoding UTF8)) {
+        if ($line -match '^###\s+(.+)$') {
+            $currentTitle = $Matches[1].Trim()
+        }
+        elseif ($line -match 'Review after:\s*(\d{4}-\d{2}-\d{2})') {
+            # ISO-даты сравниваются лексикографически — парсер не нужен.
+            if ($Matches[1] -lt $now.ToString('yyyy-MM-dd')) {
+                $expired += $currentTitle
+            }
+        }
+    }
+    if ($expired.Count -gt 0) {
+        $reason += " ⚠ Просрочены на ревизию $($expired.Count) предпочтений в AGENT-PREFERENCES.local.md: " + ($expired -join '; ') + '. Предложи пользователю пересмотреть их (подтвердить/обновить/удалить).'
+    }
+}
+
 @{ decision = 'block'; reason = $reason } | ConvertTo-Json -Compress
 exit 0

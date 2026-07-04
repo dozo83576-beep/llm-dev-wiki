@@ -15,6 +15,9 @@ description: >-
 - `site-review` пройден: нет block-пунктов, UAT и client sign-off (`qa-acceptance`) получены.
 
 ## Сначала прочитай
+- Перед деплоем: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<платформа + деплой>"` — поднимет deploy-паттерны и уроки по платформе.
+- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
+  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
 - `D:\Work\llm-dev-wiki\prompts\deploy.md` — каркас выпуска.
 - `D:\Work\llm-dev-wiki\docs\08-devops-deploy\` — `Vercel.md`, `Render.md`, `Docker.md`,
   `Docker-compose.md`, `Environment-variables.md`, `Release-flow.md`, `Rollback.md`, `Observability.md`,

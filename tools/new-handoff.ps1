@@ -15,6 +15,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+. (Join-Path $PSScriptRoot "lib\secret-scan.ps1")
+
 function Invoke-GitValue {
     param(
         [string]$Root,
@@ -151,6 +153,12 @@ $productionUrlText
 - В гарантию не входят новые функции, новые страницы, правки дизайна, новые интеграции, изменение текстов и изменение бизнес-логики.
 - Хостинг, домен, платные сервисы и подписки оплачивает заказчик, если не согласовано иначе.
 "@
+
+$secretFindings = @(Find-SecretLikeText -Text $content)
+if ($secretFindings.Count -gt 0) {
+    $summary = ($secretFindings | ForEach-Object { "line $($_.Line): $($_.Rule)" }) -join "; "
+    throw "secret-scan: подозрительные данные в сгенерированном handoff.md ($summary). Проверьте параметры ProjectName/ProductionUrl/PreviewUrl/RepoUrl на встроенные credentials/токены и повторите запуск. Файл не записан."
+}
 
 [System.IO.File]::WriteAllText($handoffPath, $content, [System.Text.UTF8Encoding]::new($false))
 

@@ -12,15 +12,27 @@ description: >-
 Тонкий роутер. Источник правды — `D:\Work\llm-dev-wiki`. Секреты и валидация — всегда на серверной границе.
 
 ## Requires
-- `site-architecture` завершён (API-контракты, модель данных, план этапов с acceptance).
+- `site-architecture` завершён (API-контракты, модель данных, план этапов с acceptance) **и**
+  `site-content` завершён, если у проекта есть визуальный контент/CMS (финальная контент-модель
+  фиксирует точные data shapes для API — backend реализуется без недосказанностей). Для playbook
+  `api-only-backend` без визуального UI это условие не применяется — достаточно завершённой
+  архитектуры.
 
 ## Сначала прочитай
+- Перед реализацией: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<стек + интеграция/очереди/ошибки>"` — поднимет backend-паттерны и уроки.
+- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
+  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
 - `D:\Work\llm-dev-wiki\prompts\implement-backend.md` — каркас реализации.
 - `D:\Work\llm-dev-wiki\prompts\design-database.md`, `database-migration-review.md` — данные и миграции.
 - `D:\Work\llm-dev-wiki\docs\03-backend\` и `docs\04-databases\` — профильные доки выбранного стека.
+- `D:\Work\llm-dev-wiki\docs\06-api-design\` — REST-конвенции, контракт ошибок, идемпотентность,
+  пагинация — сверяй реализацию эндпоинтов с ними.
 - `D:\Work\llm-dev-wiki\patterns\backend\` (service-layer, webhook-idempotency, background-job-retry,
   telegram-lead-notification), `patterns\database\`, `patterns\security\`.
 - `D:\Work\llm-dev-wiki\checklists\backend-review.md`, `database-review.md`, `api-review.md`.
+- `D:\Work\llm-dev-wiki\docs\05-auth-security\RU-152fz-and-ai-data-handling.md` — при работе с
+  реальными клиентскими данными/дампами БД для отладки деперсонализировать перед отправкой в
+  облачный AI.
 - `D:\Work\llm-dev-wiki\docs\07-mcp-and-ai-tools\External-site-skills.md` — optional helpers
   `senior-backend`, `api-design-reviewer`, `database-designer`, если они установлены.
 
@@ -35,9 +47,12 @@ description: >-
 
 ## Quality gate
 - Проходит `checklists\backend-review.md`, `database-review.md`, `api-review.md` (нет block-пунктов).
+- Для playbook `ai-rag-app`: evals/golden-set precision@K и refusal accuracy пройдены
+  (`D:\Work\llm-dev-wiki\prompts\rag-design.md`) — это отдельный gate, не заменяется backend-review.
 - Нет секретов в коде/логах; миграции обратимы (expand-contract).
 - Рискованные операции имеют dry-run или план отката.
 - Проверяет: review-чеклисты как self-check + прогон тестов (tool).
 
 ## Передача дальше
-`site-review` — сводное ревью перед релизом.
+`site-frontend` — реализация UI против уже работающего backend (реальные эндпоинты, не бумажный
+контракт), строго последовательно, без параллельного трека.

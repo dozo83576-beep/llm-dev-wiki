@@ -26,6 +26,8 @@ description: >-
 - Для передачи секретов — только password manager / штатное приглашение в сервис, не файл.
 
 ## Сначала прочитай
+- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
+  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
 - `D:\Work\llm-dev-wiki\docs\10-templates\handoff.md` — шаблон передачи и команда генерации.
 - `D:\Work\llm-dev-wiki\docs\15-maintenance\` — `update-monitoring.md`, `retro-process.md`, `wiki-update-cadence.md`.
 - `D:\Work\llm-dev-wiki\checklists\release-readiness.md` — секции Client handoff и Communication.

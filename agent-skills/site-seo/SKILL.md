@@ -13,8 +13,9 @@ description: >-
 Тонкий роутер. Источник правды — `D:\Work\llm-dev-wiki`. SEO без производительности и доступности неполноценно.
 
 ## Requires
-- `site-content` завершён (страницы, тексты, hreflang определены).
-- Идёт **параллельно с `site-frontend`** после site-content; финальные метрики снимаются на реализованных страницах.
+- `site-frontend` завершён (и `site-backend`, если у проекта есть серверная часть) — метрики Core
+  Web Vitals и structured data снимаются на финально построенных страницах, а не на промежуточном/
+  незавершённом фронтенде. Строго последовательно, не параллельно с `site-frontend`.
 
 ## Когда использовать
 - Перед релизом публичного сайта; при SEO/performance-аудите.
@@ -24,6 +25,10 @@ description: >-
 - Внутренние админки/дашборды за авторизацией без публичной индексации — достаточно базовых метатегов и `noindex`.
 
 ## Сначала прочитай
+- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
+  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- Контент-модель и i18n-строки из `site-content` — `hreflang`/локали берутся оттуда, не
+  придумываются заново.
 - `D:\Work\llm-dev-wiki\docs\02-frontend\SEO.md` — метатеги, sitemap, robots, structured data, canonical.
 - `D:\Work\llm-dev-wiki\docs\02-frontend\Performance.md` — Core Web Vitals и performance budgets.
 - `D:\Work\llm-dev-wiki\docs\02-frontend\Analytics.md` — измерение трафика и событий.
@@ -49,4 +54,6 @@ description: >-
 - Проверяет: инструменты (Lighthouse/PSI, Rich Results Test, валидатор sitemap) + self-check.
 
 ## Передача дальше
-`site-deploy` — выпуск. Удачные SEO-приёмы фиксируй через `capture-learnings`.
+`site-review` — сводное ревью перед релизом (не напрямую в `site-deploy`: security/QA/legal-гейт
+обязателен для всех реализационных стадий, включая SEO). Удачные SEO-приёмы фиксируй через
+`capture-learnings`.

@@ -179,6 +179,27 @@ foreach ($row in $rows) {
 $report.Add("") | Out-Null
 $report.Add("Manual entries require human review of the linked official documentation.") | Out-Null
 
+# Retro freshness (WS4, 2026-07-04): предупреждаем, если поле "Last retro:" в
+# retro-process.md старше 30 дней — процесс без триггера мёртв.
+$retroDoc = Join-Path $PSScriptRoot "..\docs\15-maintenance\retro-process.md"
+if (Test-Path -LiteralPath $retroDoc) {
+    $retroLine = (Get-Content -LiteralPath $retroDoc -Encoding UTF8 | Where-Object { $_ -match '^Last retro:\s*(\d{4}-\d{2}-\d{2})' } | Select-Object -First 1)
+    $report.Add("") | Out-Null
+    if ($retroLine -and $retroLine -match '(\d{4}-\d{2}-\d{2})') {
+        $lastRetro = $Matches[1]
+        $threshold = (Get-Date).AddDays(-30).ToString('yyyy-MM-dd')
+        if ($lastRetro -lt $threshold) {
+            $report.Add("WARNING: last retro is older than 30 days ($lastRetro) - review docs/15-maintenance/retro-process.md and run a retro or confirm none was needed.") | Out-Null
+        }
+        else {
+            $report.Add("Retro freshness: OK (last retro $lastRetro).") | Out-Null
+        }
+    }
+    else {
+        $report.Add("WARNING: 'Last retro:' field not found in docs/15-maintenance/retro-process.md - add it (YYYY-MM-DD).") | Out-Null
+    }
+}
+
 $report | ForEach-Object { Write-Output $_ }
 
 if ($FailOnUpdates -and $updatesFound -gt 0) {

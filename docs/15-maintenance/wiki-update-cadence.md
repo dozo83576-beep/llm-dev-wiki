@@ -50,7 +50,7 @@ source_priority: "internal"
 3. Проверить внешние ссылки (особенно `official-docs` разделы) на актуальность.
 4. Обновить `docs/14-llm-indexing/golden-qa.yaml` новыми вопросами по накопленному опыту.
 5. Пересобрать embeddings: `python tools/build_embeddings.py` (нужен `OPENAI_API_KEY`).
-6. Прогнать evals: `python tools/run_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10`.
+6. Прогнать evals (offline, без API-ключей): `python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10 --warn-rank 3`.
 
 ## Production-паттерны
 
@@ -82,7 +82,7 @@ python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-
 
 # Semantic embeddings + evals (нужен OPENAI_API_KEY)
 python tools/build_embeddings.py --mode openai-embeddings
-python tools/run_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10
+python tools/run_offline_retrieval_evals.py --min-precision 0.6 --top-k 5 --top-k-strict 10 --warn-rank 3
 ```
 
 Local-only изменения в `D:\Work\AGENT-PREFERENCES.local.md` не требуют wiki commit и не должны попадать в GitHub. Для них используй `pwsh tools/update-local-preferences.ps1 -DryRun`, затем `-Apply` только после подтверждения пользователя. Проверка существующего local preference file также не требует commit: `pwsh tools/scan-local-preferences.ps1 -PreferenceFile D:\Work\AGENT-PREFERENCES.local.md`.

@@ -3,7 +3,7 @@ param(
     [string]$Request,
     [switch]$OutputJson,
     [switch]$FailOnLowConfidence,
-    [string]$Root = (Resolve-Path ".").Path
+    [string]$Root = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 )
 
 $ErrorActionPreference = "Stop"
@@ -59,6 +59,39 @@ function New-Rule {
 function Limit-Items {
     param([string[]]$Items, [int]$Count)
     return @($Items | Select-Object -First $Count)
+}
+
+function Get-LessonLinks {
+    <#
+        Возвращает уроки из lessons-learned/, чьи frontmatter-теги совпадают
+        с id сработавшего правила или встречаются в тексте запроса.
+        Замыкает петлю знаний: записанные уроки поднимаются автоматически,
+        а не «по памяти» (прецедент: WP-7.0-урок 2026-06-21 переоткрывался заново).
+    #>
+    param([string]$RuleId, [string]$NormalizedRequest, [string]$RootPath, [int]$Limit = 5)
+
+    $links = @()
+    $lessonsDir = Join-Path $RootPath 'lessons-learned'
+    if (-not (Test-Path -LiteralPath $lessonsDir)) {
+        return $links
+    }
+
+    foreach ($file in Get-ChildItem -LiteralPath $lessonsDir -Filter '*.md' -File) {
+        $head = Get-Content -LiteralPath $file.FullName -TotalCount 15 -ErrorAction SilentlyContinue
+        $tagsLine = $head | Where-Object { $_ -match '^tags:' } | Select-Object -First 1
+        if (-not $tagsLine) { continue }
+
+        $tags = [regex]::Matches($tagsLine, '"([^"]+)"') | ForEach-Object { $_.Groups[1].Value.ToLowerInvariant() }
+        foreach ($tag in $tags) {
+            if ($tag -eq $RuleId -or ($tag.Length -ge 4 -and $NormalizedRequest.Contains($tag))) {
+                $links += "lessons-learned/$($file.Name)"
+                break
+            }
+        }
+        if ($links.Count -ge $Limit) { break }
+    }
+
+    return $links
 }
 
 $rootPath = Resolve-Path -LiteralPath $Root
@@ -282,6 +315,11 @@ $classification = [pscustomobject]@{
     genericRequest = $isGeneric
 }
 
+# @() снаружи if: пустой вывод if-выражения иначе присваивается как $null и в JSON уходит null.
+$lessonLinks = @(if ($null -ne $bestMatch) {
+    Get-LessonLinks -RuleId $bestMatch.id -NormalizedRequest $normalized -RootPath $rootPath.Path
+})
+
 $result = [pscustomobject]@{
     confidence = $confidence
     classification = $classification
@@ -292,6 +330,7 @@ $result = [pscustomobject]@{
     rejectedAlternatives = @($rejectedAlternatives)
     acceptanceGates = @($acceptanceGates)
     wikiLinks = @($wikiLinks)
+    lessonLinks = $lessonLinks
 }
 
 if ($OutputJson) {
@@ -317,6 +356,11 @@ else {
     Write-Host ""
     Write-Host "Wiki links:"
     foreach ($item in $wikiLinks) { Write-Host "- $item" }
+    if ($lessonLinks.Count -gt 0) {
+        Write-Host ""
+        Write-Host "Lessons learned (прочитать до реализации):"
+        foreach ($item in $lessonLinks) { Write-Host "- $item" }
+    }
 }
 
 if ($FailOnLowConfidence -and ($confidence -eq "low" -or $confidence -eq "blocker")) {
