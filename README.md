@@ -28,6 +28,12 @@ source_priority: "internal"
 
 Сквозную сборку сайтов ведут вызываемые скиллы: оркестратор `build-modern-site`, фазовые `site-*` (discovery, stack, architecture, design, frontend, backend, review, deploy) и controlled learning loop `capture-learnings`. Скиллы — тонкие роутеры в эту вики; они не обучаются автономно и не меняют веса модели, а помогают сохранять подтверждённые знания в wiki/preferences после evidence или явного approval. Описание: [docs/00-start-here/skill-system.md](docs/00-start-here/skill-system.md).
 
+## Локальные проверки и CI
+
+- Полный локальный гейт: `pwsh tools/ci-local.ps1` (audit, skills, quality, INDEX, embeddings, evals); он же выполняется в GitHub Actions (`.github/workflows/wiki-audit.yml`).
+- Быстрый pre-commit гейт (ссылки/front matter + паритет скиллов) подключается один раз: `git config core.hooksPath tools/git-hooks`.
+- После правок в `agent-skills/` раскатай канон по рантаймам: `pwsh agent-skills/sync-skills.ps1` (проверка: `pwsh tools/verify-agent-skills.ps1`).
+
 ## Принципы качества
 
 - Документы короткие, проверяемые и связаны внутренними ссылками.

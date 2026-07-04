@@ -1,0 +1,8 @@
+#!/bin/sh
+# Быстрый гейт перед коммитом: ссылки/front matter + паритет скиллов.
+# Полный прогон (индекс, embeddings, evals, тесты): pwsh tools/ci-local.ps1
+# Подключение: git config core.hooksPath tools/git-hooks
+set -e
+
+pwsh -NoProfile -File tools/wiki-audit.ps1
+pwsh -NoProfile -File tools/verify-agent-skills.ps1

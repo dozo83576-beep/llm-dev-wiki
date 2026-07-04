@@ -27,6 +27,10 @@
 .PARAMETER DryRun
     Только показать, что было бы сделано, без изменений.
 
+.PARAMETER Prune
+    Удалить из runtime cache элементы верхнего уровня, которых нет в каноне (кроме logs).
+    Защита от сирот вроде тестовых скиллов, скопированных в cache вручную.
+
 .EXAMPLE
     pwsh D:\Work\.agent-skills\sync-skills.ps1 -DryRun
     pwsh D:\Work\.agent-skills\sync-skills.ps1
@@ -37,7 +41,8 @@ param(
     [switch]$Codex,
     [switch]$RuntimeCache,
     [string]$RuntimeRoot = "D:\Work\.agent-skills",
-    [switch]$DryRun
+    [switch]$DryRun,
+    [switch]$Prune
 )
 
 $ErrorActionPreference = "Stop"
@@ -108,6 +113,21 @@ if ($RuntimeCache) {
         }
         Copy-Item -LiteralPath $item.FullName -Destination $dest -Recurse -Force
         Write-Host "   synced: $($item.Name)"
+    }
+
+    if ($Prune -and (Test-Path -LiteralPath $runtimeRoot)) {
+        $sourceNames = Get-ChildItem -LiteralPath $source -Force | Select-Object -ExpandProperty Name
+        foreach ($runtimeItem in Get-ChildItem -LiteralPath $runtimeRoot -Force) {
+            if ($runtimeItem.Name -eq "logs") { continue }
+            if ($sourceNames -contains $runtimeItem.Name) { continue }
+            if ($DryRun) {
+                Write-Host "   [dry-run] prune: $($runtimeItem.Name) (нет в каноне)"
+                continue
+            }
+            Assert-ChildPath -Parent $runtimeRoot -Child $runtimeItem.FullName
+            Remove-Item -LiteralPath $runtimeItem.FullName -Recurse -Force
+            Write-Host "   pruned: $($runtimeItem.Name) (нет в каноне)"
+        }
     }
     Write-Host ""
 }

@@ -267,6 +267,16 @@ function Test-FrontMatter {
             }
         }
 
+        # Пустой tags: [] допустим только в шаблонах и README — остальные документы без тегов
+        # невидимы для tag-based поиска (site-stack-router, lessons-learned lookup).
+        $isTemplateOrReadme = $file.Name -like "_template*" -or $file.Name -eq "README.md"
+        if (-not $isTemplateOrReadme -and $frontMatter.ContainsKey("tags")) {
+            $tagsValue = ([string]$frontMatter["tags"]).Trim()
+            if ($tagsValue -match '^\[\s*\]$') {
+                Add-Failure $Failures ("Empty tags list (document invisible to tag-based lookup): {0}" -f $file.FullName)
+            }
+        }
+
         if ($frontMatter.ContainsKey("status")) {
             $status = ([string]$frontMatter["status"]).Trim(" `"'").ToLowerInvariant()
             if ($allowedStatuses -notcontains $status) {

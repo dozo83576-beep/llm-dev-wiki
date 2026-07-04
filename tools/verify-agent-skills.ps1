@@ -57,7 +57,8 @@ if ($failures.Count -eq 0) {
         }
     }
     else {
-        Write-Host "Skill validator not found, skipped: $SkillValidator"
+        Write-Warning "Skill validator not found, skipped: $SkillValidator (pass -SkillValidator to point at preflight_skills.py)"
+        $script:validatorSkipped = $true
     }
 
     if (-not $SkipRuntimeCompare -and (Test-Path -LiteralPath $RuntimeRoot -PathType Container)) {
@@ -77,6 +78,9 @@ if ($failures.Count -eq 0) {
 Write-Host "Agent skills verification"
 Write-Host "Source: $source"
 Write-Host "Runtime: $RuntimeRoot"
+if ($script:validatorSkipped) {
+    Write-Host "Validator: SKIPPED (not found)"
+}
 Write-Host "Failures: $($failures.Count)"
 foreach ($failure in $failures) {
     Write-Host "- $failure"

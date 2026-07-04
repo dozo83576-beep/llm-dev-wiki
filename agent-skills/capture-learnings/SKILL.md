@@ -71,6 +71,13 @@ description: >-
    ```
    pwsh D:\Work\llm-dev-wiki\tools\ci-local.ps1 -IncludeUpdateCheck
    ```
+9. **Синхронизация скиллов** — если менялись файлы в `llm-dev-wiki\agent-skills\` (SKILL.md, hooks,
+   tools), раскати канон по рантаймам, иначе агентские рантаймы продолжат работать по старой версии:
+   ```
+   pwsh D:\Work\llm-dev-wiki\agent-skills\sync-skills.ps1 -DryRun   # просмотр
+   pwsh D:\Work\llm-dev-wiki\agent-skills\sync-skills.ps1          # применить
+   ```
+   Проверка паритета: `pwsh D:\Work\llm-dev-wiki\tools\verify-agent-skills.ps1`.
 
 ## Output schema
 ```

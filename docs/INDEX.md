@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-07-04"
+updated: "2026-07-05"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **317**
-- Активных: **300**
+- Всего документов: **318**
+- Активных: **301**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **866602** символов
+- Суммарный объём: **869863** символов
 
 ## docs
 
@@ -194,6 +194,7 @@ source_priority: "internal"
 | [docs/09-testing/Visual-testing.md](../docs/09-testing/Visual-testing.md) | Visual testing | testing | 2891 | 2026-06-04 | active | internal |
 | [docs/10-templates/handoff.md](../docs/10-templates/handoff.md) | Site handoff template | templates | 4916 | 2026-06-19 | active | internal |
 | [docs/10-templates/index.md](../docs/10-templates/index.md) | Templates | templates | 644 | 2026-06-19 | active | internal |
+| [docs/10-templates/pipeline-status.md](../docs/10-templates/pipeline-status.md) | Pipeline status template | templates | 3261 | 2026-07-05 | active | internal |
 | [docs/10-templates/site-audit-project-command.md](../docs/10-templates/site-audit-project-command.md) | Site audit project command | templates | 2065 | 2026-06-10 | active | internal |
 | [docs/11-prompts/index.md](../docs/11-prompts/index.md) | Prompts | prompts | 742 | 2026-06-07 | active | internal |
 | [docs/12-resources/index.md](../docs/12-resources/index.md) | Resources | resources | 604 | 2026-05-24 | active | internal |

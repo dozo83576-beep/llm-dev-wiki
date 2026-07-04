@@ -39,6 +39,11 @@ description: >-
 2. Security review: OWASP Top-10, authz на сервере, CORS/CSRF/CSP, секреты, dependency scan.
 3. Для публичного сайта запусти lightweight smoke: `pwsh D:\Work\llm-dev-wiki\tools\site-audit.ps1 -Url <dev-or-staging-url>` или зафиксируй documented exception. Это не pentest. Для интерактивной проверки UI используй **Preview MCP** (`preview_snapshot`/`preview_console_logs`/`preview_screenshot`/`preview_resize`) или **Playwright MCP**: первый экран, mobile/desktop, формы, navigation, CTA, отсутствие overlap.
 4. Для портфолио/кейсов: smoke изображений case gallery — preview и fullImage загружаются, lightbox закрывается по `Esc`/фону/кнопке, mobile без horizontal scroll; для lead-form проверить happy/error/fallback.
+4.2. Сгенерируй недостающие smoke-тесты инструментами вики и адаптируй селекторы под проект:
+   для lead-generation лендинга с каталогом/калькулятором —
+   `pwsh D:\Work\llm-dev-wiki\tools\add-lead-landing-smoke.ps1`; для многосекционных/многостраничных
+   сайтов (консистентность layout между страницами/секциями) —
+   `pwsh D:\Work\llm-dev-wiki\tools\add-layout-consistency-smoke.ps1`.
 4.5. Для service/portfolio сайта: проверить analytics без PII, CTA-paths, FAQ, proof-блоки, блок подготовки заявки
    и отсутствие шаблонного вида «hero + одинаковые карточки».
 5. Сухой прогон: логика, гонки, утечки, права доступа, крайние случаи.

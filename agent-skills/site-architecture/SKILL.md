@@ -12,7 +12,8 @@ description: >-
 Тонкий роутер. Источник правды — `D:\Work\llm-dev-wiki`. Перед кодом всегда сначала архитектура.
 
 ## Requires
-- `site-stack` завершён (стек выбран и обоснован) и есть план сайта из `site-competitive-analysis`.
+- `site-stack` завершён (стек выбран и обоснован — артефакт `_stack.md` проекта) и есть план сайта
+  из `site-competitive-analysis` (`_competitive-analysis.md`); требования — из `_discovery.md`.
 
 ## Сначала прочитай
 - Перед проектированием: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<домен + API/данные/auth>"` — поднимет паттерны и уроки по архитектуре.
@@ -47,11 +48,16 @@ description: >-
 3. Спроектируй модель данных: сущности, связи, индексы, миграции, audit log, backup.
 4. Перечисли top-5 security-рисков и mitigations; отметь edge cases (≥5).
 5. Разбей реализацию на 3–6 этапов, каждый с измеримым acceptance.
+6. **Артефакт.** Сохрани архитектуру в корень проекта как `_architecture.md`: компоненты и границы,
+   data flow, API-контракты, модель данных, top-5 рисков, edge cases и план этапов с acceptance.
+   Это вход для `site-content`, `site-backend` и `site-frontend` — и точка resume. Если файл уже
+   существует — актуализируй, а не проектируй с нуля.
 
 ## Quality gate
 - Есть карта компонентов, data flow, модель данных и API-контракты.
 - План этапов с acceptance; top-5 рисков; ≥5 edge cases.
-- Проверяет: self-check агента по prompts/implementation-plan; план зафиксирован как артефакт.
+- Проверяет: self-check агента по prompts/implementation-plan; план зафиксирован как артефакт
+  `_architecture.md` (или запланирован к материализации после одобрения плана).
 
 ## Передача дальше
 Если playbook — `api-only-backend` (нет визуального frontend): пропусти `site-content`/
