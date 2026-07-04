@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-07-05"
+updated: "2026-07-04"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **318**
-- Активных: **301**
+- Всего документов: **320**
+- Активных: **303**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **869863** символов
+- Суммарный объём: **875026** символов
 
 ## docs
 
@@ -366,6 +366,8 @@ source_priority: "internal"
 | [lessons-learned/2026-06-29-astro7-vercel-static-no-adapter.md](../lessons-learned/2026-06-29-astro7-vercel-static-no-adapter.md) | Astro 7 → Vercel статикой: без адаптера, деплой через GitHub-import | lesson | 2451 | 2026-06-29 | active | internal |
 | [lessons-learned/2026-07-02-build-modern-site-plan-mode-bypass.md](../lessons-learned/2026-07-02-build-modern-site-plan-mode-bypass.md) | Plan-режим обходит оркестратор build-modern-site | lesson | 3047 | 2026-07-02 | active | internal |
 | [lessons-learned/2026-07-02-subagent-photo-sourcing-tool-call-explosion.md](../lessons-learned/2026-07-02-subagent-photo-sourcing-tool-call-explosion.md) | Lesson: делегирование фото-сорсинга субагенту — взрыв tool calls без результата | lesson | 5501 | 2026-07-02 | active | internal |
+| [lessons-learned/2026-07-05-generated-file-timezone-date.md](../lessons-learned/2026-07-05-generated-file-timezone-date.md) | Lesson: дата в генерируемых файлах — UTC и стабильность, иначе ложный stale в CI | lesson | 2621 | 2026-07-05 | active | internal |
+| [lessons-learned/2026-07-05-pytest-package-import-script-tools.md](../lessons-learned/2026-07-05-pytest-package-import-script-tools.md) | Lesson: pytest импортирует script-style инструменты как пакет — нужен conftest с sys.path | lesson | 2542 | 2026-07-05 | active | internal |
 | [lessons-learned/_template.md](../lessons-learned/_template.md) | Lesson: <короткое название> | lesson | 1027 | YYYY-MM-DD | active | internal |
 
 ## mcp

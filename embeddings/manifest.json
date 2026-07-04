@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2528,
-  "corpus_hash": "8f26143f379f14ce7adde76d22c323b0f84fafdd6a0832d8ffe0ab84c97cde2c",
+  "chunk_count": 2546,
+  "corpus_hash": "d75010233bcf35e7d62f7e7aea9859ac71b34fc0d97e49d78d4e5bdaa8e1e6d8",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -243,6 +243,8 @@
     "lessons-learned/2026-06-29-astro7-vercel-static-no-adapter.md",
     "lessons-learned/2026-07-02-build-modern-site-plan-mode-bypass.md",
     "lessons-learned/2026-07-02-subagent-photo-sourcing-tool-call-explosion.md",
+    "lessons-learned/2026-07-05-generated-file-timezone-date.md",
+    "lessons-learned/2026-07-05-pytest-package-import-script-tools.md",
     "patterns/ai/mcp-read-only-default.md",
     "patterns/ai/rag-metadata.md",
     "patterns/api/error-contract.md",
@@ -311,7 +313,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-07-04T21:31:01Z",
+  "generated_at": "2026-07-04T21:44:36Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }
