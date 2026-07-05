@@ -2,6 +2,7 @@
 title: "WordPress"
 category: "frontend"
 updated: "2026-06-10"
+reviewed: "2026-07-05"
 status: "active"
 tags: ["wordpress", "cms", "headless", "content"]
 source_priority: "official-docs"

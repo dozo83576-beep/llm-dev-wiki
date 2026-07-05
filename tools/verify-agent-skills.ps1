@@ -2,7 +2,8 @@ param(
     [string]$Root = (Resolve-Path ".").Path,
     [string]$RuntimeRoot = "D:\Work\.agent-skills",
     [string]$SkillValidator = "$env:USERPROFILE\.codex\skills\skill-maintainer\scripts\preflight_skills.py",
-    [switch]$SkipRuntimeCompare
+    [switch]$SkipRuntimeCompare,
+    [switch]$VerifyUserRuntimes
 )
 
 $ErrorActionPreference = "Stop"
@@ -27,6 +28,42 @@ function Get-RelativeFileHashMap {
             $map[$relative] = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash
         }
     return $map
+}
+
+function Test-SkillRuntime {
+    param(
+        [string]$SourceRoot,
+        [string]$TargetRoot,
+        [string]$TargetName,
+        [System.Collections.Generic.List[string]]$Failures
+    )
+
+    if (-not (Test-Path -LiteralPath $TargetRoot -PathType Container)) {
+        Add-Failure $Failures "$TargetName skills directory missing: $TargetRoot"
+        return
+    }
+
+    $skills = Get-ChildItem -LiteralPath $SourceRoot -Directory |
+        Where-Object { Test-Path -LiteralPath (Join-Path $_.FullName "SKILL.md") }
+
+    foreach ($skill in $skills) {
+        $targetSkill = Join-Path $TargetRoot $skill.Name
+        if (-not (Test-Path -LiteralPath $targetSkill -PathType Container)) {
+            Add-Failure $Failures "$TargetName missing skill: $($skill.Name)"
+            continue
+        }
+
+        $sourceMap = Get-RelativeFileHashMap -Path $skill.FullName
+        $targetMap = Get-RelativeFileHashMap -Path $targetSkill
+        foreach ($key in $sourceMap.Keys) {
+            if (-not $targetMap.ContainsKey($key)) {
+                Add-Failure $Failures "$TargetName skill $($skill.Name) missing file: $key"
+            }
+            elseif ($targetMap[$key] -ne $sourceMap[$key]) {
+                Add-Failure $Failures "$TargetName skill $($skill.Name) differs: $key"
+            }
+        }
+    }
 }
 
 $rootPath = (Resolve-Path -LiteralPath $Root).Path
@@ -73,11 +110,19 @@ if ($failures.Count -eq 0) {
             }
         }
     }
+
+    if ($VerifyUserRuntimes) {
+        Test-SkillRuntime -SourceRoot $source -TargetRoot (Join-Path $env:USERPROFILE ".codex\skills") -TargetName "Codex" -Failures $failures
+        Test-SkillRuntime -SourceRoot $source -TargetRoot (Join-Path $env:USERPROFILE ".claude\skills") -TargetName "Claude Code" -Failures $failures
+    }
 }
 
 Write-Host "Agent skills verification"
 Write-Host "Source: $source"
 Write-Host "Runtime: $RuntimeRoot"
+if ($VerifyUserRuntimes) {
+    Write-Host "User runtimes: enabled"
+}
 if ($script:validatorSkipped) {
     Write-Host "Validator: SKIPPED (not found)"
 }

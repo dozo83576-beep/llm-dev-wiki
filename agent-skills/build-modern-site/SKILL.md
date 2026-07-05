@@ -24,7 +24,7 @@ description: >-
 ## Plan-режим slash-command runtime (обязательное правило)
 Если сессия находится в plan-режиме, это **не отменяет** вход в этот скилл — триггер «Я хочу создать
 сайт …» требует войти в пайплайн в любом режиме. Взаимодействие такое:
-- Фазы 1–7 (preflight → discovery → playbook → конкурентный анализ → стек → AGENTS.md → архитектура)
+- Фазы 1–7 (preflight → discovery → playbook → конкурентный анализ → стек → архитектура → AGENTS.md)
   и есть содержимое плана: их результаты записываются в plan-файл, `ExitPlanMode` вызывается после
   фазы 7 (архитектура с этапами и acceptance).
 - После одобрения плана реализация продолжает пайплайн с фазы 8 — по скиллам, не в свободном стиле.
@@ -64,6 +64,7 @@ description: >-
 - `D:\Work\llm-dev-wiki\prompts\create-new-project.md` — каркас kickoff.
 - `D:\Work\llm-dev-wiki\docs\01-development-process\new-site-preflight-tool.md` — единый preflight.
 - `D:\Work\llm-dev-wiki\docs\01-development-process\full-cycle.md` — полный цикл.
+- `D:\Work\llm-dev-wiki\docs\01-development-process\site-pipeline-map.md` — канонические 17 фаз и маппинг стадий.
 - `D:\Work\llm-dev-wiki\docs\01-development-process\site-architecture-decision-router.md` — роутер типа проекта.
 - `D:\Work\llm-dev-wiki\docs\13-playbooks\index.md` — выбор playbook по типу продукта.
 - `D:\Work\llm-dev-wiki\docs\10-templates\handoff.md` — шаблон передачи клиенту (фаза 14).
@@ -152,6 +153,7 @@ description: >-
 
 ## Quality gate
 - Каждый этап даёт проверяемый результат: документ, тест, diff, скриншот, лог, метрика или ссылка на deploy.
+- Список фаз сверяется с `docs/01-development-process/site-pipeline-map.md`; если фаза пропущена, причина записана в `_pipeline-status.md`.
 - Перед релизом пройдены security-review и release-readiness чеклисты.
 - Нет незавершённых маркеров и заглушек.
 

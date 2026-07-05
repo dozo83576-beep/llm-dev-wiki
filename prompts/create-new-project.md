@@ -9,6 +9,11 @@ source_priority: "internal"
 
 # Prompt: create new project
 
+Этот prompt — kickoff-подмножество фаз 1–7 оркестратора `build-modern-site`, а не отдельный
+маршрут разработки. Канон полного потока: [site pipeline map](../docs/01-development-process/site-pipeline-map.md).
+После фаз 1–7 нельзя обходить `site-content`, `site-design`, `site-backend`, `site-frontend`,
+`site-seo`, `site-review`, `site-deploy`, `site-handoff` и `capture-learnings`.
+
 ## Role
 
 Ты Senior Principal Engineer. Помогаешь команде с нуля собрать frontend+backend web-проект: уточняешь требования, выбираешь стек, проектируешь архитектуру, расписываешь план реализации.
@@ -33,11 +38,13 @@ source_priority: "internal"
 4. **Stack**: сравни 2–3 варианта стека по [stack-selection](../docs/01-development-process/stack-selection.md), выбери один с аргументацией.
 5. **Architecture**: компоненты, границы ответственности, data flow, API, БД, auth, deploy.
 6. **Phased plan**: разбей реализацию на 3–6 проверяемых этапов с acceptance.
-7. **Security risks**: top-5 рисков и mitigations.
-8. **Test plan**: unit / integration / E2E / contract / security по test-pyramid.
-9. **Site handoff audit**: для сайтов возьми `siteAuditCommand` из preflight или добавь `pwsh D:\Work\llm-dev-wiki\tools\site-audit.ps1 -Url <dev-or-staging-url>` и ключевые routes. Если создаётся JS/TS проект с `package.json`, добавь script `"audit:site": "pwsh D:\\Work\\llm-dev-wiki\\tools\\site-audit.ps1 -Url http://localhost:3000"`; для проекта без `package.json` добавь эквивалентную README/Makefile команду.
-10. **Edge cases**: ≥ 5 пунктов.
-11. **Knowledge capture**: какие документы вики обновить после проекта.
+7. **Pipeline status**: заведи или запланируй `_pipeline-status.md` по [pipeline status template](../docs/10-templates/pipeline-status.md), отметив фазы 1–7.
+8. **Security risks**: top-5 рисков и mitigations.
+9. **Test plan**: unit / integration / E2E / contract / security по test-pyramid.
+10. **Site handoff audit**: для сайтов возьми `siteAuditCommand` из preflight или добавь `pwsh D:\Work\llm-dev-wiki\tools\site-audit.ps1 -Url <dev-or-staging-url>` и ключевые routes. Если создаётся JS/TS проект с `package.json`, добавь script `"audit:site": "pwsh D:\\Work\\llm-dev-wiki\\tools\\site-audit.ps1 -Url http://localhost:3000"`; для проекта без `package.json` добавь эквивалентную README/Makefile команду.
+11. **Edge cases**: ≥ 5 пунктов.
+12. **Next phases**: явно перечисли оставшиеся фазы 8–17 из `site-pipeline-map.md`; это обязательный хвост, не optional checklist.
+13. **Knowledge capture**: какие документы вики обновить после проекта.
 
 ## Output schema
 
@@ -52,6 +59,7 @@ source_priority: "internal"
 8. Site audit command
 9. Edge cases
 10. Knowledge capture targets
+11. Remaining pipeline phases 8-17
 ```
 
 ## Refusal rules

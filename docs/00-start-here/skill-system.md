@@ -15,6 +15,8 @@ controlled learning loop: фиксирует одобренные предпоч
 а скиллы лишь направляют в нужные документы, playbooks, паттерны и чеклисты и применяют локальные предпочтения.
 Скиллы не обучаются автономно и не меняют веса модели.
 
+Канонические 17 фаз цикла описаны в [site pipeline map](../01-development-process/site-pipeline-map.md).
+
 ## Назначение
 
 - Дать единый сквозной маршрут «идея → деплой → передача клиенту → фиксация знаний» с проверяемыми этапами.
@@ -67,6 +69,8 @@ Trigger-фраза для обоих рантаймов: если пользов
 | `site-deploy` | Деплой | deploy + devops-доки + release-readiness |
 | `site-handoff` | Передача клиенту | [handoff template](../10-templates/handoff.md) + `tools/new-handoff.ps1` + [maintenance](../15-maintenance/retro-process.md) |
 | `capture-learnings` | Learning review | [post-task-learning-review](../../prompts/post-task-learning-review.md) |
+
+Полная нумерация и соответствие стадиям `full-cycle.md`: [site pipeline map](../01-development-process/site-pipeline-map.md).
 
 ## Петля накопления знаний
 

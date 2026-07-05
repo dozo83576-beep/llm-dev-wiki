@@ -183,6 +183,10 @@ try {
         & ./tools/verify-workflows.ps1
     }
 
+    Invoke-Step "Verify site pipeline" {
+        & ./tools/verify-site-pipeline.ps1
+    }
+
     Invoke-Step "Verify agent skills" {
         & ./tools/verify-agent-skills.ps1
     }

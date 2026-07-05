@@ -26,7 +26,7 @@ source_priority: "internal"
 
 ## Система скиллов (Claude Code + Codex)
 
-Сквозную сборку сайтов ведут вызываемые скиллы: оркестратор `build-modern-site`, фазовые `site-*` (discovery, stack, architecture, design, frontend, backend, review, deploy) и controlled learning loop `capture-learnings`. Скиллы — тонкие роутеры в эту вики; они не обучаются автономно и не меняют веса модели, а помогают сохранять подтверждённые знания в wiki/preferences после evidence или явного approval. Описание: [docs/00-start-here/skill-system.md](docs/00-start-here/skill-system.md).
+Сквозную сборку сайтов ведут вызываемые скиллы: оркестратор `build-modern-site`, фазовые `site-*` и controlled learning loop `capture-learnings`. Канонические 17 фаз описаны в [site pipeline map](docs/01-development-process/site-pipeline-map.md). Скиллы — тонкие роутеры в эту вики; они не обучаются автономно и не меняют веса модели, а помогают сохранять подтверждённые знания в wiki/preferences после evidence или явного approval. Описание: [docs/00-start-here/skill-system.md](docs/00-start-here/skill-system.md).
 
 ## Локальные проверки и CI
 

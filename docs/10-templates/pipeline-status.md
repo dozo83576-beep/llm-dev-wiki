@@ -14,6 +14,8 @@ source_priority: "internal"
 перезапуска сессии или компакции контекста. Без этого файла состояние пайплайна живёт только в чате
 и теряется вместе с ним.
 
+Канонический список фаз — [site pipeline map](../01-development-process/site-pipeline-map.md).
+
 ## Когда использовать
 
 - Оркестратор `build-modern-site` создаёт файл при первом проходе quality gate любой фазы и
@@ -52,7 +54,7 @@ Playbook: <landing | saas | ecommerce | marketplace | api-only-backend | ...>
 | 4 | site-competitive-analysis | done | YYYY-MM-DD | `_competitive-analysis.md` |
 | 5 | site-stack | done | YYYY-MM-DD | `_stack.md` |
 | 6 | site-architecture | in-progress | YYYY-MM-DD | `_architecture.md` |
-| 7 | AGENTS.md проекта | pending | — | `AGENTS.md` |
+| 7 | project-agents | pending | — | `AGENTS.md` |
 | 8 | site-content | pending | — | `_content-model.md` |
 | 9 | site-design | pending | — | `DESIGN-DIRECTION.md` (лендинг) / токены |
 | 10 | site-backend | pending | — | — (код + тесты) |
@@ -61,7 +63,8 @@ Playbook: <landing | saas | ecommerce | marketplace | api-only-backend | ...>
 | 13 | site-review | pending | — | — (чеклисты + sign-off) |
 | 14 | site-deploy | pending | — | — (production URL) |
 | 15 | site-handoff | pending | — | `handoff.md` |
-| 16 | capture-learnings | pending | — | — (записи в preferences/wiki) |
+| 16 | post-release | pending | — | — (30-90 day review plan) |
+| 17 | capture-learnings | pending | — | — (записи в preferences/wiki) |
 
 ## Пропуски и причины
 
@@ -75,5 +78,6 @@ Playbook: <landing | saas | ecommerce | marketplace | api-only-backend | ...>
 ## Связанные документы
 
 - [Оркестратор build-modern-site](../00-start-here/skill-system.md) — как фазы связаны в цикл.
+- [Site pipeline map](../01-development-process/site-pipeline-map.md) — канонические 17 фаз.
 - [Полный цикл разработки](../01-development-process/full-cycle.md) — стадии и гейты.
 - [Handoff template](handoff.md) — финальный артефакт передачи клиенту.

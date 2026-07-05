@@ -54,14 +54,16 @@ foreach ($pattern in $intentPatterns) {
 }
 if (-not $matched) { exit 0 }
 
-# Одна инъекция за сессию.
+# Одна инъекция на уникальный site-intent в сессии.
 $sessionId = [string]$payload.session_id
 if ([string]::IsNullOrWhiteSpace($sessionId)) { $sessionId = 'unknown' }
-$marker = Join-Path $env:TEMP ("site-intent-" + ($sessionId -replace '[^\w-]', '_') + '.flag')
+$hashBytes = [System.Security.Cryptography.SHA256]::HashData([System.Text.Encoding]::UTF8.GetBytes($normalized))
+$hash = -join ($hashBytes[0..5] | ForEach-Object { $_.ToString('x2') })
+$marker = Join-Path $env:TEMP ("site-intent-" + ($sessionId -replace '[^\w-]', '_') + '-' + $hash + '.flag')
 if (Test-Path -LiteralPath $marker) { exit 0 }
 Set-Content -LiteralPath $marker -Value (Get-Date -Format 'o') -Encoding UTF8
 
-$context = 'ОБЯЗАТЕЛЬНО: запрос — новый сайт. Войти в скилл /build-modern-site (все 17 фаз), первым шагом запустить pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "<запрос>". Если активен plan-режим — фазы 1–7 пайплайна и есть содержимое плана, и план ОБЯЗАН перечислить все фазы, включая контент (юридические страницы/152-ФЗ), дизайн, SEO и ревью по чеклистам. Молчаливый пропуск фаз запрещён; осознанный пропуск фиксируется в плане с причиной.'
+$context = 'ОБЯЗАТЕЛЬНО: запрос — новый сайт. Войти в скилл /build-modern-site (все 17 фаз по D:\Work\llm-dev-wiki\docs\01-development-process\site-pipeline-map.md), первым шагом запустить pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "<запрос>". Если активен plan-режим — фазы 1–7 пайплайна и есть содержимое плана, и план ОБЯЗАН перечислить все фазы, включая контент (юридические страницы/152-ФЗ), дизайн, SEO и ревью по чеклистам. Молчаливый пропуск фаз запрещён; осознанный пропуск фиксируется в плане с причиной.'
 
 @{ hookSpecificOutput = @{ hookEventName = 'UserPromptSubmit'; additionalContext = $context } } | ConvertTo-Json -Compress
 exit 0
