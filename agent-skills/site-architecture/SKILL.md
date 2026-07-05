@@ -60,8 +60,9 @@ description: >-
   `_architecture.md` (или запланирован к материализации после одобрения плана).
 
 ## Передача дальше
-Если playbook — `api-only-backend` (нет визуального frontend): пропусти `site-content`/
-`site-design`/`site-frontend`/`site-seo`, сразу `site-backend` → `site-review`.
+Если playbook — `api-only-backend` (нет визуального frontend): после обязательной фазы
+`project-agents` пропусти `site-content`/`site-design`/`site-frontend`/`site-seo` с причиной,
+затем `site-backend` → `site-review`.
 
 Иначе (есть визуальный UI) — строго последовательно, без параллельных веток: `site-content`
 (контент-модель) → `site-design` (визуальный слой) → `site-backend` (API на финальной контент-модели)

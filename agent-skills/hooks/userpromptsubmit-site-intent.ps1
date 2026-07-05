@@ -15,7 +15,8 @@
 #>
 $ErrorActionPreference = 'SilentlyContinue'
 
-# stdout хука читается как UTF-8; без этого кириллица уходит кракозябрами (cp866).
+# stdin/stdout хука читаются как UTF-8; без этого кириллица уходит кракозябрами (cp866).
+[Console]::InputEncoding = [System.Text.UTF8Encoding]::new($false)
 [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
 
 $stdin = [Console]::In.ReadToEnd()

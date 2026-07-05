@@ -36,7 +36,8 @@ source_priority: "internal"
 
 ## Допустимые пропуски
 
-- `api-only-backend`: фазы 8, 9, 11 и 12 получают `skipped` с причиной; после 6 идёт 10, затем 13.
+- `api-only-backend`: фазы 8, 9, 11 и 12 получают `skipped` с причиной; фаза 7
+  `project-agents` обязательна всегда, поэтому после 7 идёт 10, затем 13.
 - Внутренние admin/private проекты: `site-seo` может быть сокращён до `noindex`/basic metadata, но не
   удалён молча.
 - `post-release` optional, но строка фазы остаётся в `_pipeline-status.md`: дата review или причина

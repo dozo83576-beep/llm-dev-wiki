@@ -13,8 +13,9 @@
 #>
 $ErrorActionPreference = 'SilentlyContinue'
 
-# Claude Code читает stdout хука как UTF-8, а PowerShell по умолчанию пишет в OEM
-# (cp866 на русской Windows) — без этой строки кириллица в reason приходит кракозябрами.
+# Claude Code читает stdin/stdout хука как UTF-8, а PowerShell по умолчанию использует OEM
+# (cp866 на русской Windows) — без этих строк кириллица приходит кракозябрами.
+[Console]::InputEncoding = [System.Text.UTF8Encoding]::new($false)
 [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
 
 $throttleMinutes = 30

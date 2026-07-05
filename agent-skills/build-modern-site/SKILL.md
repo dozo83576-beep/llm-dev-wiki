@@ -71,7 +71,7 @@ description: >-
 - `D:\Work\llm-dev-wiki\docs\01-development-process\site-pipeline-map.md` — канонические 17 фаз и маппинг стадий.
 - `D:\Work\llm-dev-wiki\docs\01-development-process\site-architecture-decision-router.md` — роутер типа проекта.
 - `D:\Work\llm-dev-wiki\docs\13-playbooks\index.md` — выбор playbook по типу продукта.
-- `D:\Work\llm-dev-wiki\docs\10-templates\handoff.md` — шаблон передачи клиенту (фаза 14).
+- `D:\Work\llm-dev-wiki\docs\10-templates\handoff.md` — шаблон передачи клиенту (фаза 15).
 
 ## MCP и внешние инструменты по фазам
 Система использует **подключённые к рантайму MCP и установленные скиллы**, а не только встроенную библиотеку.
@@ -108,8 +108,8 @@ description: >-
    (landing, saas, ecommerce, admin-dashboard, marketplace, ai-rag-app, api-only-backend,
    headless-commerce, real-time-app) или объяви микс из N playbooks с обоснованием. Если выбран
    `api-only-backend` (нет визуального frontend) — шаги 8 (Контент)/9 (Дизайн)/11 (Frontend)/12
-   (SEO) ниже пропускаются целиком; после шага 6 (Архитектура) сразу шаг 10 (Backend), затем шаг 13
-   (Ревью).
+   (SEO) ниже получают `skipped` с причиной; шаг 7 (`project-agents`) обязателен всегда, поэтому
+   после шага 7 сразу шаг 10 (Backend), затем шаг 13 (Ревью).
 4. **Конкурентный анализ.** Подключи скилл `site-competitive-analysis`: по типу продукта найди 5–6 топовых
    конкурентов, извлеки структуру/навигацию/UX/контент/фичи и тех-метрики, адаптируй под бриф и получи
    окончательный план сайта. Этот план питает архитектуру, контент и дизайн.

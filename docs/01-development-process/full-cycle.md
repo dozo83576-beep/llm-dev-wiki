@@ -1,7 +1,7 @@
 ---
 title: "Полный цикл разработки"
 category: "process"
-updated: "2026-07-01"
+updated: "2026-07-05"
 status: "active"
 tags: ["process", "delivery"]
 source_priority: "internal"
@@ -52,8 +52,9 @@ source_priority: "internal"
 Для API-only backend без визуального UI (playbook [api-only-backend](../13-playbooks/api-only-backend.md))
 шаги 8-9 и 11-12 не применяются: архитектура (шаг 5) → backend (шаг 10) → тестирование/security
 review/деплой (шаги 13-15) напрямую, контент/дизайн/frontend/SEO пропускаются целиком.
+В site pipeline при этом фаза `project-agents` остаётся обязательной: `build-modern-site` идёт
+через фазы 1-7, затем 10, затем 13-17.
 
 Acceptance (UAT и client sign-off) проходит в фазе ревью до релиза по чеклисту [qa-acceptance](../../checklists/qa-acceptance.md).
 
 Результат каждого этапа должен быть проверяемым: документ, тест, diff, скриншот, лог, метрика или ссылка на deploy.
-

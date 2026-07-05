@@ -34,6 +34,25 @@ function Get-ArtifactToken {
     return ""
 }
 
+function Test-PlaceholderArtifact {
+    param([string]$Text)
+
+    if ([string]::IsNullOrWhiteSpace($Text)) {
+        return $true
+    }
+    $trimmed = $Text.Trim()
+    return $trimmed -eq "—" -or $trimmed -match '^—\s*\('
+}
+
+function Test-DeployUrlEvidence {
+    param([string]$Text)
+
+    if ([string]::IsNullOrWhiteSpace($Text)) {
+        return $false
+    }
+    return $Text.Trim() -match '^https?://'
+}
+
 function Read-ProjectPipelineRows {
     param([string]$StatusPath)
 
@@ -103,16 +122,6 @@ function Test-ProjectPipeline {
         $skipReasons = $matches[1]
     }
 
-    $artifactRequired = @{
-        "site-discovery" = "_discovery.md"
-        "site-competitive-analysis" = "_competitive-analysis.md"
-        "site-stack" = "_stack.md"
-        "site-architecture" = "_architecture.md"
-        "project-agents" = "AGENTS.md"
-        "site-content" = "_content-model.md"
-        "site-design" = "DESIGN-DIRECTION.md"
-        "site-handoff" = "handoff.md"
-    }
     $apiOnlySkips = @("site-content", "site-design", "site-frontend", "site-seo")
 
     for ($i = 0; $i -lt $PhaseNames.Count; $i++) {
@@ -153,11 +162,21 @@ function Test-ProjectPipeline {
             }
         }
 
-        if ($item.Status -eq "done" -and $artifactRequired.ContainsKey($item.Phase)) {
+        if ($item.Status -eq "done") {
+            if (Test-PlaceholderArtifact -Text $item.Artifact) {
+                Add-Failure $Failures "Project pipeline done phase has no artifact/evidence: $($item.Phase)"
+                continue
+            }
+
             $artifact = Get-ArtifactToken -Text $item.Artifact
             if ([string]::IsNullOrWhiteSpace($artifact)) {
-                $artifact = $artifactRequired[$item.Phase]
+                if ($item.Phase -eq "site-deploy" -and (Test-DeployUrlEvidence -Text $item.Artifact)) {
+                    continue
+                }
+                Add-Failure $Failures "Project pipeline done phase must use a file artifact: $($item.Phase)"
+                continue
             }
+
             $artifactPath = Join-Path $projectFullPath $artifact
             if (-not (Test-Path -LiteralPath $artifactPath -PathType Leaf)) {
                 Add-Failure $Failures "Project pipeline done phase missing artifact: $($item.Phase) -> $artifact"

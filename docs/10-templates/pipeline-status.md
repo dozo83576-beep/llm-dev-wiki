@@ -33,8 +33,9 @@ source_priority: "internal"
 
 1. Статусы фаз: `done` (quality gate пройден), `in-progress`, `skipped` (с причиной — молчаливый
    пропуск запрещён), `pending`.
-2. Каждая `done`-фаза указывает артефакт-файл, если фаза его производит. Артефакт — источник правды;
-   строка в статусе — только указатель.
+2. Каждая `done`-фаза указывает проверяемый artifact/evidence. Для файлов используй backtick-path
+   относительно корня проекта; для `site-deploy` допустим staging/production URL. `done` с `—`
+   запрещён: строка статуса должна доказывать, чем закрыта фаза.
 3. Дату ставить в формате `YYYY-MM-DD`; при повторном прохождении фазы дата обновляется.
 4. Файл в корне проекта, рядом с `_competitive-analysis.md`; в вики не переносится (приватные данные проекта).
 
@@ -48,23 +49,23 @@ Playbook: <landing | saas | ecommerce | marketplace | api-only-backend | ...>
 
 | # | Фаза | Статус | Дата | Артефакт |
 |---|------|--------|------|----------|
-| 1 | preflight | done | YYYY-MM-DD | — |
+| 1 | preflight | done | YYYY-MM-DD | `_preflight.md` |
 | 2 | site-discovery | done | YYYY-MM-DD | `_discovery.md` |
-| 3 | playbook | done | YYYY-MM-DD | — (строка Playbook выше) |
+| 3 | playbook | done | YYYY-MM-DD | `_pipeline-status.md` (строка Playbook выше) |
 | 4 | site-competitive-analysis | done | YYYY-MM-DD | `_competitive-analysis.md` |
 | 5 | site-stack | done | YYYY-MM-DD | `_stack.md` |
 | 6 | site-architecture | in-progress | YYYY-MM-DD | `_architecture.md` |
 | 7 | project-agents | pending | — | `AGENTS.md` |
 | 8 | site-content | pending | — | `_content-model.md` |
 | 9 | site-design | pending | — | `DESIGN-DIRECTION.md` (лендинг) / токены |
-| 10 | site-backend | pending | — | — (код + тесты) |
-| 11 | site-frontend | pending | — | — (код + скриншоты) |
-| 12 | site-seo | pending | — | — (метаданные + метрики) |
-| 13 | site-review | pending | — | — (чеклисты + sign-off) |
-| 14 | site-deploy | pending | — | — (production URL) |
+| 10 | site-backend | pending | — | `_backend-gate.md` |
+| 11 | site-frontend | pending | — | `_frontend-smoke.md` |
+| 12 | site-seo | pending | — | `_seo-report.md` |
+| 13 | site-review | pending | — | `_review-report.md` |
+| 14 | site-deploy | pending | — | `_deploy.md` или production URL |
 | 15 | site-handoff | pending | — | `handoff.md` |
-| 16 | post-release | pending | — | — (30-90 day review plan) |
-| 17 | capture-learnings | pending | — | — (записи в preferences/wiki) |
+| 16 | post-release | pending | — | `_post-release-plan.md` |
+| 17 | capture-learnings | pending | — | `_learning-review.md` |
 
 ## Пропуски и причины
 

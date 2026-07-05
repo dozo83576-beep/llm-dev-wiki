@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **304**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **880501** символов
+- Суммарный объём: **880834** символов
 
 ## docs
 
@@ -27,11 +27,11 @@ source_priority: "internal"
 | [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2202 | 2026-05-24 | active | internal |
 | [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 10092 | 2026-06-10 | active | internal |
 | [docs/01-development-process/competitive-analysis.md](../docs/01-development-process/competitive-analysis.md) | Конкурентный анализ и адаптация под бриф | process | 5611 | 2026-06-08 | active | internal |
-| [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 3870 | 2026-07-01 | active | internal |
+| [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 4003 | 2026-07-05 | active | internal |
 | [docs/01-development-process/new-site-preflight-tool.md](../docs/01-development-process/new-site-preflight-tool.md) | New site preflight tool | process | 2623 | 2026-06-10 | active | internal |
 | [docs/01-development-process/runtime-selection.md](../docs/01-development-process/runtime-selection.md) | Runtime selection | process | 2374 | 2026-06-04 | active | mixed |
 | [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 8056 | 2026-06-10 | active | internal |
-| [docs/01-development-process/site-pipeline-map.md](../docs/01-development-process/site-pipeline-map.md) | Site pipeline map | process | 3541 | 2026-07-05 | active | internal |
+| [docs/01-development-process/site-pipeline-map.md](../docs/01-development-process/site-pipeline-map.md) | Site pipeline map | process | 3595 | 2026-07-05 | active | internal |
 | [docs/01-development-process/site-stack-router-tool.md](../docs/01-development-process/site-stack-router-tool.md) | Site stack router tool | process | 3235 | 2026-06-10 | active | internal |
 | [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 7865 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/AI-UI-streaming.md](../docs/02-frontend/AI-UI-streaming.md) | AI UI streaming | frontend | 3217 | 2026-06-22 | active | mixed |
@@ -195,7 +195,7 @@ source_priority: "internal"
 | [docs/09-testing/Visual-testing.md](../docs/09-testing/Visual-testing.md) | Visual testing | testing | 2891 | 2026-06-04 | active | internal |
 | [docs/10-templates/handoff.md](../docs/10-templates/handoff.md) | Site handoff template | templates | 4916 | 2026-06-19 | active | internal |
 | [docs/10-templates/index.md](../docs/10-templates/index.md) | Templates | templates | 644 | 2026-06-19 | active | internal |
-| [docs/10-templates/pipeline-status.md](../docs/10-templates/pipeline-status.md) | Pipeline status template | templates | 3511 | 2026-07-05 | active | internal |
+| [docs/10-templates/pipeline-status.md](../docs/10-templates/pipeline-status.md) | Pipeline status template | templates | 3657 | 2026-07-05 | active | internal |
 | [docs/10-templates/site-audit-project-command.md](../docs/10-templates/site-audit-project-command.md) | Site audit project command | templates | 2065 | 2026-06-10 | active | internal |
 | [docs/11-prompts/index.md](../docs/11-prompts/index.md) | Prompts | prompts | 742 | 2026-06-07 | active | internal |
 | [docs/12-resources/index.md](../docs/12-resources/index.md) | Resources | resources | 604 | 2026-05-24 | active | internal |

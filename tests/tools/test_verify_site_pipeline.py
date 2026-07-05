@@ -77,18 +77,29 @@ def write_project_fixture(
     skip_reason: bool = True,
     missing_artifact: str | None = None,
     pending_phase: str | None = None,
+    artifact_override: dict[str, str] | None = None,
 ) -> None:
     project.mkdir(parents=True)
     artifact_by_phase = {
+        "preflight": "_preflight.md",
         "site-discovery": "_discovery.md",
+        "playbook": "_pipeline-status.md",
         "site-competitive-analysis": "_competitive-analysis.md",
         "site-stack": "_stack.md",
         "site-architecture": "_architecture.md",
         "project-agents": "AGENTS.md",
         "site-content": "_content-model.md",
         "site-design": "DESIGN-DIRECTION.md",
+        "site-backend": "_backend-gate.md",
+        "site-frontend": "_frontend-smoke.md",
+        "site-seo": "_seo-report.md",
+        "site-review": "_review-report.md",
+        "site-deploy": "_deploy.md",
         "site-handoff": "handoff.md",
+        "post-release": "_post-release-plan.md",
+        "capture-learnings": "_learning-review.md",
     }
+    artifact_override = artifact_override or {}
 
     rows = []
     for index, phase in enumerate(PHASES, start=1):
@@ -97,9 +108,14 @@ def write_project_fixture(
             status = "skipped"
         if phase == pending_phase:
             status = "pending"
-        artifact = f"`{artifact_by_phase[phase]}`" if phase in artifact_by_phase else "—"
+        artifact = artifact_override.get(phase, f"`{artifact_by_phase[phase]}`")
         rows.append(f"| {index} | {phase} | {status} | 2026-07-05 | {artifact} |")
-        if status == "done" and phase in artifact_by_phase and phase != missing_artifact:
+        if (
+            status == "done"
+            and phase in artifact_by_phase
+            and phase != missing_artifact
+            and artifact.startswith("`")
+        ):
             (project / artifact_by_phase[phase]).write_text(phase, encoding="utf-8")
 
     skip_lines = []
@@ -193,6 +209,17 @@ def test_done_project_phase_without_artifact_fails(tmp_path: Path) -> None:
     assert "site-design -> DESIGN-DIRECTION.md" in result.stdout
 
 
+def test_done_project_phase_with_placeholder_artifact_fails(tmp_path: Path) -> None:
+    write_fixture(tmp_path)
+    project = tmp_path / "project"
+    write_project_fixture(project, artifact_override={"site-backend": "—"})
+
+    result = run_verify_project(tmp_path, project)
+
+    assert result.returncode == 1
+    assert "done phase has no artifact/evidence: site-backend" in result.stdout
+
+
 def test_skipped_project_phase_without_reason_fails(tmp_path: Path) -> None:
     write_fixture(tmp_path)
     project = tmp_path / "project"
@@ -219,6 +246,27 @@ def test_api_only_backend_allows_documented_content_skip(tmp_path: Path) -> None
     write_fixture(tmp_path)
     project = tmp_path / "project"
     write_project_fixture(project, playbook="api-only-backend", skip_phase="site-content")
+
+    result = run_verify_project(tmp_path, project)
+
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_api_only_backend_cannot_skip_project_agents(tmp_path: Path) -> None:
+    write_fixture(tmp_path)
+    project = tmp_path / "project"
+    write_project_fixture(project, playbook="api-only-backend", skip_phase="project-agents")
+
+    result = run_verify_project(tmp_path, project)
+
+    assert result.returncode == 1
+    assert "api-only-backend cannot skip phase: project-agents" in result.stdout
+
+
+def test_deploy_done_phase_allows_url_evidence(tmp_path: Path) -> None:
+    write_fixture(tmp_path)
+    project = tmp_path / "project"
+    write_project_fixture(project, artifact_override={"site-deploy": "https://example.test"})
 
     result = run_verify_project(tmp_path, project)
 
