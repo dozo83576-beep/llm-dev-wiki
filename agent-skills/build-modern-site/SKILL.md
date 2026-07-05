@@ -41,13 +41,16 @@ description: >-
 Каждая фаза оставляет файловый артефакт в корне проекта, а оркестратор ведёт `_pipeline-status.md`
 (шаблон и правила — `docs/10-templates/pipeline-status.md`): статус каждой фазы, дата, артефакт,
 причины пропусков.
-- **Карта артефактов:** preflight → `_preflight.md`; `site-discovery` → `_discovery.md`;
+- **Карта артефактов (все 17 фаз):** preflight → `_preflight.md`; `site-discovery` → `_discovery.md`;
+  playbook → строка `Playbook:` с путём к playbook-файлу в `_pipeline-status.md`;
   `site-competitive-analysis` → `_competitive-analysis.md`; `site-stack` → `_stack.md`;
-  `site-architecture` → `_architecture.md`; `site-content` → `_content-model.md`; `site-design` →
+  `site-architecture` → `_architecture.md`; project-agents → `AGENTS.md` проекта;
+  `site-content` → `_content-model.md`; `site-design` →
   `DESIGN-DIRECTION.md` (лендинг/продающий) + дизайн-токены; `site-backend` → `_backend-gate.md`;
   `site-frontend` → `_frontend-smoke.md`; `site-seo` → `_seo-report.md`; `site-review` →
-  `_review-report.md`; `site-deploy` → `_deploy.md`; `site-handoff` → `handoff.md` +
-  `_post-release-plan.md`; `capture-learnings` → `_learning-review.md`.
+  `_review-report.md`; `site-deploy` → `_deploy.md`; `site-handoff` → `handoff.md`;
+  post-release → `_post-release-plan.md` (optional, создаёт `site-handoff` на шаге 9);
+  `capture-learnings` → `_learning-review.md`.
 - **Обновление статуса:** после прохождения quality gate фазы обнови её строку в
   `_pipeline-status.md` (создай файл при первом gate). Пропуск фазы — статус `skipped` с причиной.
 - **Проверка статуса:** после обновления `_pipeline-status.md` запусти

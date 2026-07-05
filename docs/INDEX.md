@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **304**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **881257** символов
+- Суммарный объём: **881640** символов
 
 ## docs
 
@@ -27,7 +27,7 @@ source_priority: "internal"
 | [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2202 | 2026-05-24 | active | internal |
 | [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 10092 | 2026-06-10 | active | internal |
 | [docs/01-development-process/competitive-analysis.md](../docs/01-development-process/competitive-analysis.md) | Конкурентный анализ и адаптация под бриф | process | 5611 | 2026-06-08 | active | internal |
-| [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 4003 | 2026-07-05 | active | internal |
+| [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 4386 | 2026-07-05 | active | internal |
 | [docs/01-development-process/new-site-preflight-tool.md](../docs/01-development-process/new-site-preflight-tool.md) | New site preflight tool | process | 2623 | 2026-06-10 | active | internal |
 | [docs/01-development-process/runtime-selection.md](../docs/01-development-process/runtime-selection.md) | Runtime selection | process | 2374 | 2026-06-04 | active | mixed |
 | [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 8056 | 2026-06-10 | active | internal |
