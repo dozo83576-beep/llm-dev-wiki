@@ -34,6 +34,10 @@ def cleanup_markers(session_id: str) -> None:
         marker.unlink(missing_ok=True)
 
 
+def marker_paths(session_id: str) -> list[Path]:
+    return list(Path(tempfile.gettempdir()).glob(f"site-intent-{session_id}-*.flag"))
+
+
 def test_russian_utf8_site_intent_injects_context() -> None:
     session_id = f"pytest-{uuid.uuid4().hex}"
     try:
@@ -44,6 +48,7 @@ def test_russian_utf8_site_intent_injects_context() -> None:
         context = body["hookSpecificOutput"]["additionalContext"]
         assert "build-modern-site" in context
         assert "17 фаз" in context
+        assert len(marker_paths(session_id)) == 1
     finally:
         cleanup_markers(session_id)
 

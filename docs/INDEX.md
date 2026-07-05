@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **304**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **880834** символов
+- Суммарный объём: **881128** символов
 
 ## docs
 
@@ -218,7 +218,7 @@ source_priority: "internal"
 | [docs/14-llm-indexing/rag-file-search.md](../docs/14-llm-indexing/rag-file-search.md) | RAG and File Search | llm-indexing | 3855 | 2026-05-24 | active | official-docs |
 | [docs/14-llm-indexing/source-priority.md](../docs/14-llm-indexing/source-priority.md) | Source priority | llm-indexing | 2750 | 2026-05-24 | active | internal |
 | [docs/15-maintenance/retro-process.md](../docs/15-maintenance/retro-process.md) | Retro-процесс после инцидентов и провальных релизов | maintenance | 4288 | 2026-06-07 | active | internal |
-| [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 6158 | 2026-06-07 | active | internal |
+| [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 6234 | 2026-07-05 | active | internal |
 | [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 6194 | 2026-06-29 | active | internal |
 
 ## patterns
@@ -310,7 +310,7 @@ source_priority: "internal"
 | [checklists/qa-acceptance.md](../checklists/qa-acceptance.md) | QA / UAT acceptance checklist | checklist | 2817 | 2026-06-19 | active | internal |
 | [checklists/release-readiness.md](../checklists/release-readiness.md) | Release readiness checklist | checklist | 5264 | 2026-06-19 | active | internal |
 | [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 6230 | 2026-07-01 | active | internal |
-| [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 3468 | 2026-06-29 | active | internal |
+| [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 3686 | 2026-07-05 | active | internal |
 
 ## stacks
 

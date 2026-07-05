@@ -19,7 +19,7 @@ $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
 
 $throttleMinutes = 30
-$marker = Join-Path $env:TEMP 'agent-capture-reminder.marker'
+$marker = Join-Path ([System.IO.Path]::GetTempPath()) 'agent-capture-reminder.marker'
 $now = Get-Date
 
 # Защита от петли: если это продолжение после нашего же блока, молча выходим.

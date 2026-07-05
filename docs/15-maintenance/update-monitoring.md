@@ -1,7 +1,7 @@
 ---
 title: "Мониторинг обновлений технологий"
 category: "maintenance"
-updated: "2026-06-07"
+updated: "2026-07-05"
 status: "active"
 tags: ["maintenance", "updates", "automation"]
 source_priority: "internal"
@@ -16,6 +16,12 @@ source_priority: "internal"
 Обязательные проверки вики должны выполняться без внешних LLM API, платных embeddings и секретов. Внешние API допустимы только для явно опциональных режимов, например semantic retrieval benchmark с `OPENAI_API_KEY`.
 
 Основной локальный pre-push цикл:
+
+```powershell
+pwsh ./tools/pre-release-local.ps1
+```
+
+Полный локальный CI:
 
 ```powershell
 pwsh ./tools/ci-local.ps1

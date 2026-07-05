@@ -60,7 +60,8 @@ $sessionId = [string]$payload.session_id
 if ([string]::IsNullOrWhiteSpace($sessionId)) { $sessionId = 'unknown' }
 $hashBytes = [System.Security.Cryptography.SHA256]::HashData([System.Text.Encoding]::UTF8.GetBytes($normalized))
 $hash = -join ($hashBytes[0..5] | ForEach-Object { $_.ToString('x2') })
-$marker = Join-Path $env:TEMP ("site-intent-" + ($sessionId -replace '[^\w-]', '_') + '-' + $hash + '.flag')
+$tempRoot = [System.IO.Path]::GetTempPath()
+$marker = Join-Path $tempRoot ("site-intent-" + ($sessionId -replace '[^\w-]', '_') + '-' + $hash + '.flag')
 if (Test-Path -LiteralPath $marker) { exit 0 }
 Set-Content -LiteralPath $marker -Value (Get-Date -Format 'o') -Encoding UTF8
 

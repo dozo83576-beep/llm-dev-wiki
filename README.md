@@ -1,7 +1,7 @@
 ---
 title: "LLM Dev Wiki"
 category: "start"
-updated: "2026-06-10"
+updated: "2026-07-05"
 status: "active"
 tags: ["llm", "frontend", "backend", "wiki", "obsidian"]
 source_priority: "internal"
@@ -31,8 +31,11 @@ source_priority: "internal"
 ## Локальные проверки и CI
 
 - Полный локальный гейт: `pwsh tools/ci-local.ps1` (audit, skills, quality, INDEX, embeddings, evals); он же выполняется в GitHub Actions (`.github/workflows/wiki-audit.yml`).
+- Быстрый pre-release/pre-push гейт для wiki/tooling/pipeline правок: `pwsh tools/pre-release-local.ps1`.
 - Быстрый pre-commit гейт (ссылки/front matter + паритет скиллов) подключается один раз: `git config core.hooksPath tools/git-hooks`.
-- После правок в `agent-skills/` раскатай канон по рантаймам: `pwsh agent-skills/sync-skills.ps1` (проверка: `pwsh tools/verify-agent-skills.ps1`).
+- После правок в `agent-skills/` раскатай и проверь канон: `pwsh tools/verify-agent-skills.ps1`,
+  `pwsh agent-skills/sync-skills.ps1 -DryRun`, `pwsh agent-skills/sync-skills.ps1`, затем
+  `pwsh tools/verify-agent-skills.ps1 -VerifyUserRuntimes`.
 
 ## Принципы качества
 

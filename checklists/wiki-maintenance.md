@@ -1,8 +1,8 @@
 ---
 title: "Wiki maintenance checklist"
 category: "checklist"
-updated: "2026-06-29"
-reviewed: "2026-06-29"
+updated: "2026-07-05"
+reviewed: "2026-07-05"
 status: "active"
 tags: ["wiki", "maintenance", "rag", "offline"]
 source_priority: "internal"
@@ -49,3 +49,4 @@ Gated checklist для регулярного обслуживания вики.
 ## Agent skills release
 
 - [ ] **Правки `agent-skills/` раскатаны и проверены в реальных рантаймах**: `pwsh ./tools/verify-agent-skills.ps1`, `pwsh ./agent-skills/sync-skills.ps1 -DryRun`, `pwsh ./agent-skills/sync-skills.ps1`, затем `pwsh ./tools/verify-agent-skills.ps1 -VerifyUserRuntimes` - maintainer - block - [skill system](../docs/00-start-here/skill-system.md).
+- [ ] **Pipeline/hook/tooling правки прошли быстрый локальный pre-release gate**: `pwsh ./tools/pre-release-local.ps1`; ручной fallback — команды выше плюс targeted pytest для pipeline/hook tests - maintainer - block.
