@@ -34,17 +34,20 @@ description: >-
 - Перед фазами реализации (8–12) проверь `lessons-learned/` по тегам выбранного стека — записанные
   уроки не должны решаться заново.
 - Сразу после одобрения плана (`ExitPlanMode`) материализуй результаты фаз 1–7 из plan-файла в
-  файловые артефакты проекта (`_discovery.md`, `_stack.md`, `_architecture.md`,
+  файловые артефакты проекта (`_preflight.md`, `_discovery.md`, `_stack.md`, `_architecture.md`,
   `_pipeline-status.md`) — состояние пайплайна не должно жить только в чате.
 
 ## Состояние пайплайна и возобновление (resume)
 Каждая фаза оставляет файловый артефакт в корне проекта, а оркестратор ведёт `_pipeline-status.md`
 (шаблон и правила — `docs/10-templates/pipeline-status.md`): статус каждой фазы, дата, артефакт,
 причины пропусков.
-- **Карта артефактов:** `site-discovery` → `_discovery.md`; `site-competitive-analysis` →
-  `_competitive-analysis.md`; `site-stack` → `_stack.md`; `site-architecture` → `_architecture.md`;
-  `site-content` → `_content-model.md`; `site-design` → `DESIGN-DIRECTION.md` (лендинг/продающий) +
-  дизайн-токены; `site-handoff` → `handoff.md`.
+- **Карта артефактов:** preflight → `_preflight.md`; `site-discovery` → `_discovery.md`;
+  `site-competitive-analysis` → `_competitive-analysis.md`; `site-stack` → `_stack.md`;
+  `site-architecture` → `_architecture.md`; `site-content` → `_content-model.md`; `site-design` →
+  `DESIGN-DIRECTION.md` (лендинг/продающий) + дизайн-токены; `site-backend` → `_backend-gate.md`;
+  `site-frontend` → `_frontend-smoke.md`; `site-seo` → `_seo-report.md`; `site-review` →
+  `_review-report.md`; `site-deploy` → `_deploy.md`; `site-handoff` → `handoff.md` +
+  `_post-release-plan.md`; `capture-learnings` → `_learning-review.md`.
 - **Обновление статуса:** после прохождения quality gate фазы обнови её строку в
   `_pipeline-status.md` (создай файл при первом gate). Пропуск фазы — статус `skipped` с причиной.
 - **Проверка статуса:** после обновления `_pipeline-status.md` запусти
@@ -62,6 +65,20 @@ description: >-
 3. `D:\Work\AGENT-PREFERENCES.local.md` — одобренные предпочтения (стек, дизайн, шрифты, анти-паттерны).
 4. `D:\Work\llm-dev-wiki` — профильные docs, stacks, playbooks, patterns, checklists.
 Приоритет при конфликте: project-local > security/compliance > официальные актуальные источники > AGENT-PREFERENCES > wiki defaults.
+Слои 1–3 читаются **один раз за сессию** — фазовые скиллы не перечитывают их, если они уже в контексте.
+
+## Контекст-бюджет (обязательная дисциплина всех фаз)
+Полный цикл наивным чтением стоит сотни тысяч токенов — читай выборочно:
+- **Каталоги вики целиком не читать.** Сначала `ask-wiki.ps1 "<тема + стек>"`, затем полностью
+  открывать только top-2–3 релевантных файла из выдачи. Это касается `patterns\`, `docs\03-backend\`,
+  `docs\08-devops-deploy\`, `docs\13-playbooks\`, `docs\06-api-design\` и подобных ссылок-каталогов.
+- **Playbook читается один раз.** Выбранный на фазе 3 playbook-файл фиксируется строкой в
+  `_pipeline-status.md` (`Playbook: <имя> — docs/13-playbooks/<файл>.md`); последующие фазы открывают
+  только его, а не каталог playbooks.
+- **Входы фазы = её Requires.** Не перечитывай все `_*.md` артефакты подряд — только те, что названы
+  во входах текущей фазы; `_pipeline-status.md` — указатель, не источник содержимого.
+- **Большие справочники — точечно.** `technology-watchlist.json`, каталоги шрифтов/палитр читать
+  только в части, относящейся к выбранным кандидатам/направлению (Select-String / вывод инструментов).
 
 ## Сначала прочитай
 - Точечный поиск по вики в любой фазе: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<тема + стек>"` — offline BM25 по всему корпусу (docs, patterns, checklists, lessons-learned).
@@ -101,12 +118,14 @@ description: >-
   `Tool-permissions.md`).
 
 ## Шаги
-1. **Preflight.** Если пользователь пишет `Я хочу создать сайт <описание сайта>`, трактуй текст после фразы как raw request. До scaffold запусти `pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "<raw request>"`. Если status `needs-discovery`, задай вопросы из вывода и не выбирай стек. Параллельно сделай **Шаг 0** (инвентаризация MCP/скиллов, см. раздел выше).
+1. **Preflight.** Если пользователь пишет `Я хочу создать сайт <описание сайта>`, трактуй текст после фразы как raw request. До scaffold запусти `pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "<raw request>"`. Если status `needs-discovery`, задай вопросы из вывода и не выбирай стек. Итог сохрани в `_preflight.md` проекта (status, confidence, route, открытые вопросы, audit-команда); если каталога проекта ещё нет — вместе с остальными артефактами при материализации. Параллельно сделай **Шаг 0** (инвентаризация MCP/скиллов, см. раздел выше).
 2. **Discovery.** Подключи скилл `site-discovery`. Зафиксируй цель, аудиторию, роли, страницы,
    интеграции, сроки, hosting, auth, БД, бюджет, AI-функции и измеримые acceptance criteria.
 3. **Тип проекта и playbook.** Примени decision router, выбери playbook из `docs/13-playbooks/`
    (landing, saas, ecommerce, admin-dashboard, marketplace, ai-rag-app, api-only-backend,
-   headless-commerce, real-time-app) или объяви микс из N playbooks с обоснованием. Если выбран
+   headless-commerce, real-time-app) или объяви микс из N playbooks с обоснованием. Зафиксируй
+   путь к выбранному playbook-файлу в `_pipeline-status.md` — дальше фазы читают только его
+   (см. Контекст-бюджет). Если выбран
    `api-only-backend` (нет визуального frontend) — шаги 8 (Контент)/9 (Дизайн)/11 (Frontend)/12
    (SEO) ниже получают `skipped` с причиной; шаг 7 (`project-agents`) обязателен всегда, поэтому
    после шага 7 сразу шаг 10 (Backend), затем шаг 13 (Ревью).

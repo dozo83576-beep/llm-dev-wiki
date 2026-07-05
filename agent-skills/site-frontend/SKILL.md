@@ -19,11 +19,11 @@ description: >-
 - Строго последовательно после `site-backend` (если есть), не параллельно.
 
 ## Сначала прочитай
-- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
-  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
 - `D:\Work\llm-dev-wiki\prompts\implement-frontend.md` — каркас реализации.
 - `D:\Work\llm-dev-wiki\docs\02-frontend\` — `React.md`, `TypeScript.md`, `Routing.md`, `Shadcn.md`, `I18n.md`.
-- `D:\Work\llm-dev-wiki\patterns\frontend\` — границы server/client, валидация форм, токены текста.
+- `patterns\frontend\` — выборочно через `ask-wiki.ps1 "<стек + компонент/проблема>"` (top-2–3:
+  границы server/client, валидация форм, токены текста), не каталог целиком (~150KB).
 - Для портфолио и кейсов: `D:\Work\llm-dev-wiki\patterns\frontend\portfolio-case-screenshot-gallery.md`.
 - `D:\Work\llm-dev-wiki\checklists\frontend-review.md` — критерии качества (использовать как self-check).
 - `D:\Work\llm-dev-wiki\docs\07-mcp-and-ai-tools\External-site-skills.md` — optional helpers
@@ -43,9 +43,13 @@ description: >-
 7. **Верификация в браузере (а не «проверь вручную»):** если подключён **Preview MCP** — `preview_start`,
    затем `preview_console_logs`/`preview_snapshot`/`preview_screenshot`/`preview_resize` (mobile/desktop);
    иначе **Playwright MCP**. Проверь первый экран, формы (happy/error), CTA, отсутствие overlap и horizontal scroll.
+8. **Артефакт.** Сохрани в корень проекта `_frontend-smoke.md`: результаты браузерной верификации из
+   шага 7 (первый экран, формы happy/error, mobile/desktop, console без критичных ошибок, пути к
+   скриншотам), статус `frontend-review.md`. Это evidence фазы для `_pipeline-status.md` и вход для `site-seo`/`site-review`.
 
 ## Quality gate
 - Проходит `checklists\frontend-review.md` (нет block-пунктов).
+- Результаты браузерного smoke зафиксированы в `_frontend-smoke.md` проекта.
 - Локальная проверка в браузере: через локальный http-сервер, а не `file://`; предпочтительно Preview MCP / Playwright MCP (см. шаг 7).
 - Для case gallery: preview не должен быть full-page полотном, fullImage открывается в lightbox, нет пустых хвостов и horizontal scroll на mobile.
 - Нет незавершённых маркеров; ошибки обрабатываются.

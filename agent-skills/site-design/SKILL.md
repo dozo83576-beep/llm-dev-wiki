@@ -38,17 +38,19 @@ description: >-
 которая остаётся **source of truth по принципам**; внешние движки — исполнители.
 
 ## Сначала прочитай
-- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
-  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
 - `D:\Work\AGENT-PREFERENCES.local.md` — секции «Frontend и design preferences», «Шрифты, визуальные
   референсы и стилистика», «Любимые приемы», «Не предлагать / анти-паттерны». Это приоритетный слой вкуса.
 - `D:\Work\llm-dev-wiki\docs\02-frontend\Shadcn.md`, `React.md`, `TypeScript.md`, `Routing.md`, `I18n.md`.
 - `D:\Work\llm-dev-wiki\patterns\frontend\` — `semantic-theme-text-tokens.md`, `anti-ai-slop-design.md`,
   `purposeful-motion.md`, `cyrillic-self-host-fonts.md`, `server-client-boundary.md`, `form-validation-boundary.md`.
 - Анимации: `D:\Work\llm-dev-wiki\docs\02-frontend\Motion.md` (длительности, easing, reduced-motion, performance).
-- Шрифты/цвет/компоновка: `D:\Work\llm-dev-wiki\docs\02-frontend\Typography-fonts.md` (каталог + кириллица + лицензии + стартер-пак `resources\fonts\`),
-  `Color-palettes.md`, `patterns\frontend\layout-archetypes.md`.
-- Референс-галереи: `D:\Work\llm-dev-wiki\resources\design-inspiration.md` (Refero Styles/Awwwards/Godly/Land-book/Mobbin/21st.dev и т.д.).
+- Шрифты/цвет/компоновка — **по требованию после выбора направления**, не заранее целиком:
+  `docs\02-frontend\Typography-fonts.md` (нужная секция: кириллица + лицензия выбранных кандидатов,
+  стартер-пак `resources\fonts\`), `Color-palettes.md` (палитры выбранного настроения),
+  `patterns\frontend\layout-archetypes.md` (архетип выбранного лендинга/приложения).
+- Референс-галереи `resources\design-inspiration.md` — только если у клиента нет референсов
+  (см. шаг 1.5), не по умолчанию.
 - Для лендингов/продающих страниц: `D:\Work\llm-dev-wiki\docs\02-frontend\Premium-components.md`,
   `D:\Work\llm-dev-wiki\prompts\design-direction-brief.md`.
 

@@ -20,8 +20,7 @@ description: >-
 
 ## Сначала прочитай
 - Перед ревью: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<стек + ревью/безопасность>"` — поднимет чеклисты и уроки, которых нет в списке ниже.
-- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
-  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
 - `D:\Work\llm-dev-wiki\prompts\code-review.md`, `security-review.md`, `mcp-security-review.md`
   (если проект использует MCP/AI-инструменты).
 - `D:\Work\llm-dev-wiki\prompts\write-tests.md` — каркас добавления недостающих тестов по найденным в ревью пробелам.
@@ -51,6 +50,10 @@ description: >-
 7. UAT и приёмка: прогон `qa-acceptance.md` — маппинг на acceptance criteria, cross-browser/device, defect-triage, **client sign-off** до релиза.
 8. Legal/152-ФЗ: для РФ-аудитории прогон `legal-compliance.md` — политика/согласие/локализация ПДн, ИИ-юр-тексты проверены человеком.
 9. release-readiness: env vars, миграции, rollback, monitoring, alerts.
+10. **Артефакт.** Сохрани в корень проекта `_review-report.md`: свод чек-листов (block/warn по
+   областям), security-находки и их закрытие, статус тестов, маппинг UAT на acceptance criteria,
+   client sign-off (дата / кто / где зафиксирован). Это evidence фазы для `_pipeline-status.md`
+   и обязательный вход `site-deploy`.
 
 ## Quality gate
 - Нет открытых block-пунктов в чеклистах (включая `qa-acceptance`).
@@ -60,6 +63,7 @@ description: >-
 - Для lead analytics: нет имени, контакта, сообщения, IP, user-agent и raw payload в событиях.
 - Тесты прогнаны, статус отражён честно (если падают — указать вывод).
 - Client sign-off получен письменно до передачи в `site-deploy`/`site-handoff`.
+- Свод ревью зафиксирован в `_review-report.md` проекта.
 - Для РФ-аудитории `legal-compliance` пройден (нет block): политика/согласие/локализация ПДн, юр-тексты проверены человеком.
 - Проверяет: профильные чеклисты (self-check + tool) + приёмка заказчиком (внешний gate).
 

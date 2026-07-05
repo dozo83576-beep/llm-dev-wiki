@@ -16,12 +16,11 @@ description: >-
 
 ## Сначала прочитай
 - Перед деплоем: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<платформа + деплой>"` — поднимет deploy-паттерны и уроки по платформе.
-- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
-  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
 - `D:\Work\llm-dev-wiki\prompts\deploy.md` — каркас выпуска.
-- `D:\Work\llm-dev-wiki\docs\08-devops-deploy\` — `Vercel.md`, `Render.md`, `Docker.md`,
-  `Docker-compose.md`, `Environment-variables.md`, `Release-flow.md`, `Rollback.md`, `Observability.md`,
-  `Sentry.md`, `OpenTelemetry.md`, `CI-templates.md`, `GitHub-actions.md`.
+- `D:\Work\llm-dev-wiki\docs\08-devops-deploy\` — только док выбранного deploy-таргета
+  (`Vercel.md` / `Render.md` / `Docker.md` / …) + `Release-flow.md` и `Rollback.md`; остальное
+  (observability, CI) — по потребности, не весь каталог (~96KB).
 - `D:\Work\llm-dev-wiki\patterns\devops\` — `preview-before-production.md`, `rollback-first-release.md`.
 - Для VPS Node-сайта: `D:\Work\llm-dev-wiki\patterns\devops\non-root-vps-node-pm2-nginx-deploy.md`.
 - `D:\Work\llm-dev-wiki\checklists\` — `release-readiness.md`, `infrastructure-readiness.md` (DNS/SSL/CDN),
@@ -40,6 +39,10 @@ description: >-
 5.5. Если доступны deploy/ops helpers, используй их для черновика CI, observability или runbook; prod-мутации,
    DNS, billing и секреты всё равно только после явного подтверждения.
 6. Прогон release-readiness; зафиксируй ссылку на deploy и метрики.
+7. **Артефакт.** Сохрани в корень проекта `_deploy.md`: production/staging URL, commit/tag релиза,
+   применённые миграции, rollback-путь, статус monitoring/alerts, результат site-audit smoke.
+   Это evidence фазы для `_pipeline-status.md` (verifier принимает и голый production URL в строке
+   статуса, но файл — основной путь) и вход для `site-handoff`.
 
 ## Quality gate
 - release-readiness и infrastructure-readiness пройдены; rollback-путь проверен.
@@ -48,6 +51,7 @@ description: >-
 - Секреты не в репозитории/логах; monitoring активен.
 - Для VPS Node-сайта: `pm2 status` показывает не-root пользователя, `.env.production` не перетёрт deploy-архивом, Nginx reload выполняется через ограниченный sudo.
 - Prod-мутации/DNS/billing — только после явного подтверждения.
+- Релиз зафиксирован в `_deploy.md` проекта (URL, tag, rollback, monitoring).
 - Проверяет: чеклисты (self-check + tool: site-audit, монитор) + явное подтверждение для рискованных операций.
 
 ## Передача дальше

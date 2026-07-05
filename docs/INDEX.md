@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **304**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **881128** символов
+- Суммарный объём: **881257** символов
 
 ## docs
 
@@ -31,7 +31,7 @@ source_priority: "internal"
 | [docs/01-development-process/new-site-preflight-tool.md](../docs/01-development-process/new-site-preflight-tool.md) | New site preflight tool | process | 2623 | 2026-06-10 | active | internal |
 | [docs/01-development-process/runtime-selection.md](../docs/01-development-process/runtime-selection.md) | Runtime selection | process | 2374 | 2026-06-04 | active | mixed |
 | [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 8056 | 2026-06-10 | active | internal |
-| [docs/01-development-process/site-pipeline-map.md](../docs/01-development-process/site-pipeline-map.md) | Site pipeline map | process | 3595 | 2026-07-05 | active | internal |
+| [docs/01-development-process/site-pipeline-map.md](../docs/01-development-process/site-pipeline-map.md) | Site pipeline map | process | 3724 | 2026-07-05 | active | internal |
 | [docs/01-development-process/site-stack-router-tool.md](../docs/01-development-process/site-stack-router-tool.md) | Site stack router tool | process | 3235 | 2026-06-10 | active | internal |
 | [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 7865 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/AI-UI-streaming.md](../docs/02-frontend/AI-UI-streaming.md) | AI UI streaming | frontend | 3217 | 2026-06-22 | active | mixed |

@@ -20,17 +20,18 @@ description: >-
 
 ## Сначала прочитай
 - Перед сравнением вариантов: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<тип продукта + кандидаты стека>"` — поднимет профильные доки и уроки по стекам.
-- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
-  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
 - `D:\Work\llm-dev-wiki\docs\01-development-process\new-site-preflight-tool.md` — executable preflight для raw request.
 - `D:\Work\llm-dev-wiki\docs\01-development-process\site-stack-router-tool.md` — rule-based router,
   исполняемый смоук перед выбором стека.
 - `D:\Work\llm-dev-wiki\docs\01-development-process\stack-selection.md` — критерии выбора.
-- `D:\Work\llm-dev-wiki\resources\technology-watchlist.json` — актуальность версий/паттернов по
-  отслеживаемым технологиям (не только для `site-architecture` — здесь стек фиксируется впервые).
+- `D:\Work\llm-dev-wiki\resources\technology-watchlist.json` — **точечно по кандидатам**
+  (Select-String по имени технологии или вывод `check-updates.ps1`), не весь файл: здесь стек
+  фиксируется впервые, важна актуальность именно сравниваемых вариантов.
 - `D:\Work\llm-dev-wiki\docs\01-development-process\site-architecture-decision-router.md` — роутер по типу.
-- `D:\Work\llm-dev-wiki\stacks\` — готовые blueprints: `nextjs-fullstack.md`, `react-spa-api.md`,
-  `nestjs-postgres.md`, `fastapi-postgres.md`, `django-postgres.md`, `laravel.md`.
+- `D:\Work\llm-dev-wiki\stacks\` — только blueprints сравниваемых кандидатов (2–3 файла из:
+  `nextjs-fullstack.md`, `react-spa-api.md`, `nestjs-postgres.md`, `fastapi-postgres.md`,
+  `django-postgres.md`, `laravel.md`), не все шесть.
 - `D:\Work\llm-dev-wiki\prompts\choose-stack.md` — формат сравнения.
 - `D:\Work\AGENT-PREFERENCES.local.md` — одобренные стек-defaults (применять как preference layer, но
   проверять актуальность версий по официальным источникам, не по памяти).

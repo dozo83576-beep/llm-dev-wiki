@@ -26,8 +26,7 @@ description: >-
 - Для передачи секретов — только password manager / штатное приглашение в сервис, не файл.
 
 ## Сначала прочитай
-- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
-  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
 - `D:\Work\llm-dev-wiki\docs\10-templates\handoff.md` — шаблон передачи и команда генерации.
 - `D:\Work\llm-dev-wiki\docs\15-maintenance\` — `update-monitoring.md`, `retro-process.md`, `wiki-update-cadence.md`.
 - `D:\Work\llm-dev-wiki\checklists\release-readiness.md` — секции Client handoff и Communication.
@@ -41,10 +40,14 @@ description: >-
 6. Передать клиенту: прод-ссылку, инструкции (вход в админку, изменение контента, просмотр заявок), чеклист проверки, текст приёмки.
 7. Получить **письменное подтверждение приёмки**; зафиксировать дату/кто принял/где.
 8. Зафиксировать условия гарантийной поддержки (срок, что входит/не входит).
-9. Запланировать пост-релизный review (30–90 дней) по `docs/15-maintenance/` (мониторинг, ретро).
+9. Запланировать пост-релизный review (30–90 дней) по `docs/15-maintenance/` (мониторинг, ретро) и
+   сохранить план в корень проекта как `_post-release-plan.md`: дата review, какие метрики смотреть,
+   зона ответственности, условия поддержки. Это evidence фазы `post-release` в `_pipeline-status.md`
+   (фаза optional — при осознанном отказе вместо файла пишется причина пропуска).
 
 ## Quality gate
 - `handoff.md` создан и заполнен: production URL, дата, commit/branch/tag.
+- `_post-release-plan.md` создан (или пропуск post-release зафиксирован с причиной в `_pipeline-status.md`).
 - Секреты не записаны в файл; доступы переданы через приглашение / password manager.
 - Финоперации/критичные доступы подтверждены по второму каналу; не по видео/голосу.
 - Post-deploy smoke пройден; критичных ошибок в консоли нет.

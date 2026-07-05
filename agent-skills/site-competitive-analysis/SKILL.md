@@ -32,8 +32,7 @@ description: >-
 2. Бриф и ответы интервью из `site-discovery` — это фильтр, по которому отбирается «лучшее».
 
 ## Сначала прочитай
-- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
-  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
 - `D:\Work\llm-dev-wiki\docs\01-development-process\competitive-analysis.md` — метод, таксономия извлечения,
   граница «что не копировать», output schema финального плана и чеклист.
 - `D:\Work\llm-dev-wiki\docs\07-mcp-and-ai-tools\External-site-skills.md` — optional helpers

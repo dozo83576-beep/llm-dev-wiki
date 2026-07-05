@@ -26,8 +26,7 @@ description: >-
   `site-architecture` сразу в `site-backend`.
 
 ## Сначала прочитай
-- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
-  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
 - `_competitive-analysis.md` проекта (артефакт `site-competitive-analysis`) — контент-углы, темы,
   FAQ-паттерны конкурентов напрямую, не только через архитектуру.
 - `D:\Work\llm-dev-wiki\docs\02-frontend\CMS-content.md` — выбор и модель контента.

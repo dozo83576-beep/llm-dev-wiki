@@ -25,8 +25,7 @@ description: >-
 - Внутренние админки/дашборды за авторизацией без публичной индексации — достаточно базовых метатегов и `noindex`.
 
 ## Сначала прочитай
-- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
-  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
 - Контент-модель и i18n-строки из `site-content` — `hreflang`/локали берутся оттуда, не
   придумываются заново.
 - `D:\Work\llm-dev-wiki\docs\02-frontend\SEO.md` — метатеги, sitemap, robots, structured data, canonical.
@@ -45,12 +44,16 @@ description: >-
 3. Structured data (Schema.org) под тип страницы (Organization, Product, Article, FAQ, LocalBusiness).
 4. Core Web Vitals: LCP/CLS/INP в бюджете; изображения с размерами и lazy-load; шрифты без layout shift.
 5. Аналитика и измеримость: проверка по `analytics-verification.md`; выдача rich-результатов через Google Rich Results Test.
+6. **Артефакт.** Сохрани в корень проекта `_seo-report.md`: метаданные по ключевым страницам,
+   статус sitemap/robots/structured data, числа Lighthouse/PSI (LCP/CLS/INP), статус аналитики.
+   Это evidence фазы для `_pipeline-status.md` и вход для `site-review`.
 
 ## Quality gate
 - Уникальные title/description и canonical на ключевых публичных страницах (hero/каталог/карточка/контент-страница); sitemap и robots валидны.
 - Structured data проходит Google Rich Results Test; нет случайного `noindex` на публичных страницах.
 - Core Web Vitals в бюджете — измерено Lighthouse / PageSpeed Insights на проде/preview, а не на глаз.
 - Аналитика подтверждена по `analytics-verification.md` (события приходят, consent уважается).
+- Результаты зафиксированы в `_seo-report.md` проекта.
 - Проверяет: инструменты (Lighthouse/PSI, Rich Results Test, валидатор sitemap) + self-check.
 
 ## Передача дальше

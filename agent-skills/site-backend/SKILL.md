@@ -20,15 +20,16 @@ description: >-
 
 ## Сначала прочитай
 - Перед реализацией: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<стек + интеграция/очереди/ошибки>"` — поднимет backend-паттерны и уроки.
-- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
-  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
 - `D:\Work\llm-dev-wiki\prompts\implement-backend.md` — каркас реализации.
 - `D:\Work\llm-dev-wiki\prompts\design-database.md`, `database-migration-review.md` — данные и миграции.
-- `D:\Work\llm-dev-wiki\docs\03-backend\` и `docs\04-databases\` — профильные доки выбранного стека.
+- `D:\Work\llm-dev-wiki\docs\03-backend\` и `docs\04-databases\` — только доки выбранного стека
+  (runtime + БД из `_stack.md`, обычно 2–3 файла), не каталоги целиком.
 - `D:\Work\llm-dev-wiki\docs\06-api-design\` — REST-конвенции, контракт ошибок, идемпотентность,
   пагинация — сверяй реализацию эндпоинтов с ними.
-- `D:\Work\llm-dev-wiki\patterns\backend\` (service-layer, webhook-idempotency, background-job-retry,
-  telegram-lead-notification), `patterns\database\`, `patterns\security\`.
+- `patterns\backend\`, `patterns\database\`, `patterns\security\` — выборочно через
+  `ask-wiki.ps1 "<стек + интеграция>"` (top-2–3, напр. service-layer, webhook-idempotency,
+  background-job-retry), не каталоги целиком.
 - `D:\Work\llm-dev-wiki\checklists\backend-review.md`, `database-review.md`, `api-review.md`.
 - `D:\Work\llm-dev-wiki\docs\05-auth-security\RU-152fz-and-ai-data-handling.md` — при работе с
   реальными клиентскими данными/дампами БД для отладки деперсонализировать перед отправкой в
@@ -44,9 +45,13 @@ description: >-
 3. Фоновые задачи с retry; явное логирование; аккуратная обработка ошибок и контракт ошибок API.
 4. Auth/authz по deny-by-default и tenant isolation; секреты только из env, никогда в код/логи.
 5. Unit/integration-тесты, dry-run для рискованных операций, ≥5 edge cases.
+6. **Артефакт.** Сохрани в корень проекта `_backend-gate.md`: статусы backend/database/api-review
+   чек-листов (block/warn), фактический вывод прогона тестов, покрытые edge cases, известные
+   ограничения. Это evidence фазы для `_pipeline-status.md` и вход для `site-review`.
 
 ## Quality gate
 - Проходит `checklists\backend-review.md`, `database-review.md`, `api-review.md` (нет block-пунктов).
+- Результаты зафиксированы в `_backend-gate.md` проекта.
 - Для playbook `ai-rag-app`: evals/golden-set precision@K и refusal accuracy пройдены
   (`D:\Work\llm-dev-wiki\prompts\rag-design.md`) — это отдельный gate, не заменяется backend-review.
 - Нет секретов в коде/логах; миграции обратимы (expand-contract).

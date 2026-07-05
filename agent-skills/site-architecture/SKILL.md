@@ -17,17 +17,18 @@ description: >-
 
 ## Сначала прочитай
 - Перед проектированием: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<домен + API/данные/auth>"` — поднимет паттерны и уроки по архитектуре.
-- Project-local `AGENTS.md` в корне проекта, если есть — высший приоритет контекста (см.
-  `D:\Work\AGENTS.md` и оркестратор `build-modern-site`).
+- Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
 - `_competitive-analysis.md` проекта (артефакт `site-competitive-analysis`) — полный план, sitemap
   и приоритизированные фичи из конкурентного анализа.
 - `D:\Work\llm-dev-wiki\prompts\design-architecture.md` — каркас архитектуры.
 - `D:\Work\llm-dev-wiki\prompts\implementation-plan.md` — разбивка на этапы с acceptance.
 - `D:\Work\llm-dev-wiki\prompts\design-database.md` — модель данных, индексы, миграции.
-- `D:\Work\llm-dev-wiki\docs\13-playbooks\` — профильный playbook выбранного типа продукта.
-- `D:\Work\llm-dev-wiki\docs\06-api-design\` — REST/OpenAPI, контракт ошибок, пагинация, версии API
-  (обязателен при проектировании API-контрактов).
-- `D:\Work\llm-dev-wiki\patterns\` — применимые паттерны (api, backend, database, security, devops).
+- Только файл playbook, выбранного на фазе 3 (путь — в `_pipeline-status.md`), не каталог
+  `docs\13-playbooks\` целиком.
+- `D:\Work\llm-dev-wiki\docs\06-api-design\` — выборочно: при проектировании API-контрактов открой
+  REST/OpenAPI + контракт ошибок; остальное (пагинация, версии, WebSockets) — по потребности проекта.
+- `D:\Work\llm-dev-wiki\patterns\` — не каталог целиком: `ask-wiki.ps1 "<домен + паттерн>"` → открой
+  top-2–3 релевантных (api, backend, database, security, devops).
 - `D:\Work\llm-dev-wiki\docs\07-mcp-and-ai-tools\External-site-skills.md` — optional helpers для API/БД,
   если они установлены. Конфликтующий внешний `site-architecture` не использовать вместо этого локального скилла.
 
