@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **304**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **879781** символов
+- Суммарный объём: **880501** символов
 
 ## docs
 
@@ -25,7 +25,7 @@ source_priority: "internal"
 |------|-----------|-----------|-------|---------|--------|-----------------|
 | [docs/00-start-here/document-standard.md](../docs/00-start-here/document-standard.md) | Стандарт production-документа | governance | 1433 | 2026-05-24 | active | internal |
 | [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2202 | 2026-05-24 | active | internal |
-| [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 9744 | 2026-06-10 | active | internal |
+| [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 10092 | 2026-06-10 | active | internal |
 | [docs/01-development-process/competitive-analysis.md](../docs/01-development-process/competitive-analysis.md) | Конкурентный анализ и адаптация под бриф | process | 5611 | 2026-06-08 | active | internal |
 | [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 3870 | 2026-07-01 | active | internal |
 | [docs/01-development-process/new-site-preflight-tool.md](../docs/01-development-process/new-site-preflight-tool.md) | New site preflight tool | process | 2623 | 2026-06-10 | active | internal |
@@ -271,7 +271,7 @@ source_priority: "internal"
 | [prompts/chat-widget-system-prompt.md](../prompts/chat-widget-system-prompt.md) | Prompt: chat widget system prompt | prompt | 3342 | 2026-06-22 | active | internal |
 | [prompts/choose-stack.md](../prompts/choose-stack.md) | Prompt: choose stack | prompt | 3069 | 2026-06-10 | active | internal |
 | [prompts/code-review.md](../prompts/code-review.md) | Prompt: code review | prompt | 1903 | 2026-05-24 | active | internal |
-| [prompts/create-new-project.md](../prompts/create-new-project.md) | Prompt: create new project | prompt | 4832 | 2026-06-10 | active | internal |
+| [prompts/create-new-project.md](../prompts/create-new-project.md) | Prompt: create new project | prompt | 4832 | 2026-07-05 | active | internal |
 | [prompts/database-migration-review.md](../prompts/database-migration-review.md) | Prompt: database migration review | prompt | 2849 | 2026-05-24 | active | internal |
 | [prompts/debug-issue.md](../prompts/debug-issue.md) | Prompt: debug issue | prompt | 2283 | 2026-05-24 | active | internal |
 | [prompts/deploy.md](../prompts/deploy.md) | Prompt: deploy | prompt | 2483 | 2026-05-24 | active | internal |
@@ -310,7 +310,7 @@ source_priority: "internal"
 | [checklists/qa-acceptance.md](../checklists/qa-acceptance.md) | QA / UAT acceptance checklist | checklist | 2817 | 2026-06-19 | active | internal |
 | [checklists/release-readiness.md](../checklists/release-readiness.md) | Release readiness checklist | checklist | 5264 | 2026-06-19 | active | internal |
 | [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 6230 | 2026-07-01 | active | internal |
-| [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 3096 | 2026-06-29 | active | internal |
+| [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 3468 | 2026-06-29 | active | internal |
 
 ## stacks
 

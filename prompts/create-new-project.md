@@ -1,7 +1,7 @@
 ---
 title: "Prompt: create new project"
 category: "prompt"
-updated: "2026-06-10"
+updated: "2026-07-05"
 status: "active"
 tags: ["project", "kickoff", "architecture"]
 source_priority: "internal"

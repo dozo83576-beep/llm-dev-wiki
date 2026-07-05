@@ -1,5 +1,6 @@
 param(
-    [string]$Root = (Resolve-Path ".").Path
+    [string]$Root = (Resolve-Path ".").Path,
+    [string]$ProjectRoot = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -18,6 +19,151 @@ function Get-Text {
         return ""
     }
     return Get-Content -Raw -Encoding UTF8 -LiteralPath $Path
+}
+
+function Get-ArtifactToken {
+    param([string]$Text)
+
+    if ([string]::IsNullOrWhiteSpace($Text) -or $Text.Trim() -eq "—") {
+        return ""
+    }
+    $match = [regex]::Match($Text, '`([^`]+)`')
+    if ($match.Success) {
+        return $match.Groups[1].Value
+    }
+    return ""
+}
+
+function Read-ProjectPipelineRows {
+    param([string]$StatusPath)
+
+    $rows = @()
+    foreach ($line in Get-Content -Encoding UTF8 -LiteralPath $StatusPath) {
+        if ($line -notmatch '^\|\s*(\d+)\s*\|') {
+            continue
+        }
+        if ($line -match '^\|\s*---') {
+            continue
+        }
+
+        $cells = @($line.Trim().Trim("|").Split("|") | ForEach-Object { $_.Trim() })
+        if ($cells.Count -lt 5 -or $cells[0] -notmatch '^\d+$') {
+            continue
+        }
+
+        $rows += [pscustomobject]@{
+            Number = [int]$cells[0]
+            Phase = $cells[1]
+            Status = $cells[2].ToLowerInvariant()
+            Date = $cells[3]
+            Artifact = $cells[4]
+        }
+    }
+    return $rows
+}
+
+function Test-ProjectPipeline {
+    param(
+        [string]$ProjectPath,
+        [string[]]$PhaseNames,
+        [System.Collections.Generic.List[string]]$Failures
+    )
+
+    if ([string]::IsNullOrWhiteSpace($ProjectPath)) {
+        return
+    }
+
+    if (-not (Test-Path -LiteralPath $ProjectPath -PathType Container)) {
+        Add-Failure $Failures "ProjectRoot does not exist: $ProjectPath"
+        return
+    }
+
+    $projectFullPath = (Resolve-Path -LiteralPath $ProjectPath).Path
+    $statusPath = Join-Path $projectFullPath "_pipeline-status.md"
+    if (-not (Test-Path -LiteralPath $statusPath -PathType Leaf)) {
+        Add-Failure $Failures "Project pipeline status missing: $statusPath"
+        return
+    }
+
+    $statusText = Get-Text $statusPath
+    $playbook = ""
+    if ($statusText -match '(?im)^Playbook:\s*(.+)$') {
+        $playbook = $matches[1].Trim()
+    }
+
+    $rows = @(Read-ProjectPipelineRows -StatusPath $statusPath)
+    if ($rows.Count -ne $PhaseNames.Count) {
+        Add-Failure $Failures "Project pipeline must contain $($PhaseNames.Count) phases, found $($rows.Count): $statusPath"
+    }
+
+    $allowedStatuses = @("done", "in-progress", "skipped", "pending")
+    $seenIncomplete = $false
+    $skipReasons = ""
+    if ($statusText -match '(?ms)^## Пропуски и причины\s*(.*?)(\r?\n## |\z)') {
+        $skipReasons = $matches[1]
+    }
+
+    $artifactRequired = @{
+        "site-discovery" = "_discovery.md"
+        "site-competitive-analysis" = "_competitive-analysis.md"
+        "site-stack" = "_stack.md"
+        "site-architecture" = "_architecture.md"
+        "project-agents" = "AGENTS.md"
+        "site-content" = "_content-model.md"
+        "site-design" = "DESIGN-DIRECTION.md"
+        "site-handoff" = "handoff.md"
+    }
+    $apiOnlySkips = @("site-content", "site-design", "site-frontend", "site-seo")
+
+    for ($i = 0; $i -lt $PhaseNames.Count; $i++) {
+        $expectedNumber = $i + 1
+        $expectedPhase = $PhaseNames[$i]
+        $row = @($rows | Where-Object { $_.Number -eq $expectedNumber } | Select-Object -First 1)
+        if ($row.Count -eq 0) {
+            Add-Failure $Failures "Project pipeline missing phase ${expectedNumber}: $expectedPhase"
+            continue
+        }
+
+        $item = $row[0]
+        if ($item.Phase -ne $expectedPhase) {
+            Add-Failure $Failures "Project pipeline phase ${expectedNumber} must be $expectedPhase, found $($item.Phase)"
+        }
+        if ($allowedStatuses -notcontains $item.Status) {
+            Add-Failure $Failures "Project pipeline phase $($item.Phase) has unsupported status: $($item.Status)"
+        }
+
+        if ($seenIncomplete -and $item.Status -eq "done") {
+            Add-Failure $Failures "Project pipeline has done phase after incomplete phase: $($item.Phase)"
+        }
+        if ($item.Status -in @("pending", "in-progress")) {
+            $seenIncomplete = $true
+        }
+
+        if ($item.Status -eq "skipped") {
+            if ([string]::IsNullOrWhiteSpace($skipReasons) -or $skipReasons -notmatch [regex]::Escape($item.Phase)) {
+                Add-Failure $Failures "Project pipeline skipped phase has no reason: $($item.Phase)"
+            }
+            if ($playbook -match "api-only-backend") {
+                if ($apiOnlySkips -notcontains $item.Phase) {
+                    Add-Failure $Failures "api-only-backend cannot skip phase: $($item.Phase)"
+                }
+            }
+            elseif ($item.Phase -in @("site-content", "site-design", "site-backend", "site-frontend", "site-seo", "site-review", "site-deploy", "site-handoff", "capture-learnings")) {
+                Add-Failure $Failures "Non-api project cannot skip required phase: $($item.Phase)"
+            }
+        }
+
+        if ($item.Status -eq "done" -and $artifactRequired.ContainsKey($item.Phase)) {
+            $artifact = Get-ArtifactToken -Text $item.Artifact
+            if ([string]::IsNullOrWhiteSpace($artifact)) {
+                $artifact = $artifactRequired[$item.Phase]
+            }
+            $artifactPath = Join-Path $projectFullPath $artifact
+            if (-not (Test-Path -LiteralPath $artifactPath -PathType Leaf)) {
+                Add-Failure $Failures "Project pipeline done phase missing artifact: $($item.Phase) -> $artifact"
+            }
+        }
+    }
 }
 
 $rootPath = (Resolve-Path -LiteralPath $Root).Path
@@ -116,8 +262,13 @@ if (Test-Path -LiteralPath $workAgents -PathType Leaf) {
     }
 }
 
+Test-ProjectPipeline -ProjectPath $ProjectRoot -PhaseNames $phaseNames -Failures $failures
+
 Write-Host "Site pipeline verification"
 Write-Host "Root: $rootPath"
+if (-not [string]::IsNullOrWhiteSpace($ProjectRoot)) {
+    Write-Host "ProjectRoot: $ProjectRoot"
+}
 Write-Host "Expected phases: $($phaseNames.Count)"
 Write-Host "Failures: $($failures.Count)"
 foreach ($failure in $failures) {

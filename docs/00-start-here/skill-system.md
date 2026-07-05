@@ -115,9 +115,14 @@ Trigger-фраза для обоих рантаймов: если пользов
 ## Как раскатывать и обновлять
 
 - Отредактируй канон в `D:\Work\llm-dev-wiki\agent-skills\<name>\SKILL.md`.
-- Проверка: `pwsh D:\Work\llm-dev-wiki\tools\verify-agent-skills.ps1`, затем
-  `pwsh D:\Work\llm-dev-wiki\agent-skills\sync-skills.ps1 -DryRun`.
+- Локальный gate перед релизом правок `agent-skills/`:
+  1. `pwsh D:\Work\llm-dev-wiki\tools\verify-agent-skills.ps1`
+  2. `pwsh D:\Work\llm-dev-wiki\agent-skills\sync-skills.ps1 -DryRun`
+  3. `pwsh D:\Work\llm-dev-wiki\agent-skills\sync-skills.ps1`
+  4. `pwsh D:\Work\llm-dev-wiki\tools\verify-agent-skills.ps1 -VerifyUserRuntimes`
 - Runtime cache `D:\Work\.agent-skills` должен совпадать с tracked source; расхождение ловит wiki CI.
+- Реальные Codex/Claude runtime (`~\.codex\skills`, `~\.claude\skills`) GitHub CI не видит, поэтому
+  `-VerifyUserRuntimes` обязателен локально после раскатки.
 - Альтернатива для распространения — `npx skills` (agent-skills CLI) или Codex `skill-installer`.
 
 ## MCP и внешние скиллы

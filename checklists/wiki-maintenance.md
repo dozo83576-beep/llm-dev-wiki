@@ -45,3 +45,7 @@ Gated checklist для регулярного обслуживания вики.
 - [ ] **Ошибки** сохранены в `case-studies/failures` и связаны с чеклистами - tech lead - block.
 - [ ] **Повторяемые выводы** добавлены в `lessons-learned` без секретов, PII и приватного кода - tech lead - block.
 - [ ] **Learning review** по значимым задачам завершён: artifact создан/обновлен или указана причина `no artifact needed` - tech lead - warn - [Agent self-improvement loop](../docs/07-mcp-and-ai-tools/Agent-self-improvement.md).
+
+## Agent skills release
+
+- [ ] **Правки `agent-skills/` раскатаны и проверены в реальных рантаймах**: `pwsh ./tools/verify-agent-skills.ps1`, `pwsh ./agent-skills/sync-skills.ps1 -DryRun`, `pwsh ./agent-skills/sync-skills.ps1`, затем `pwsh ./tools/verify-agent-skills.ps1 -VerifyUserRuntimes` - maintainer - block - [skill system](../docs/00-start-here/skill-system.md).
