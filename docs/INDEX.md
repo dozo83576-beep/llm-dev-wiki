@@ -141,7 +141,7 @@ source_priority: "internal"
 | [docs/07-mcp-and-ai-tools/AI-chat-widget.md](../docs/07-mcp-and-ai-tools/AI-chat-widget.md) | AI chat widget | ai-tools | 3977 | 2026-06-22 | active | mixed |
 | [docs/07-mcp-and-ai-tools/Agent-memory.md](../docs/07-mcp-and-ai-tools/Agent-memory.md) | Agent memory | ai-tools | 2809 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Agent-self-improvement.md](../docs/07-mcp-and-ai-tools/Agent-self-improvement.md) | Agent self-improvement loop | ai-tools | 3456 | 2026-06-07 | active | internal |
-| [docs/07-mcp-and-ai-tools/Agent-workflows.md](../docs/07-mcp-and-ai-tools/Agent-workflows.md) | Agent workflows | ai-tools | 1737 | 2026-06-07 | active | internal |
+| [docs/07-mcp-and-ai-tools/Agent-workflows.md](../docs/07-mcp-and-ai-tools/Agent-workflows.md) | Agent workflows | ai-tools | 1737 | 2026-07-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Claude-Code-best-practices.md](../docs/07-mcp-and-ai-tools/Claude-Code-best-practices.md) | Claude Code best practices (конспект) | ai-tools | 13014 | 2026-07-07 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Embeddings.md](../docs/07-mcp-and-ai-tools/Embeddings.md) | Embeddings | ai-tools | 2163 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Evaluation.md](../docs/07-mcp-and-ai-tools/Evaluation.md) | AI evaluation | ai-tools | 2098 | 2026-05-24 | active | official-docs |
