@@ -27,6 +27,7 @@
 - [Code review](prompts/code-review.md)
 - [Security review](prompts/security-review.md)
 - [Update wiki](prompts/update-wiki.md)
+- [Claude Code prompt library (конспект, 52 промпта)](prompts/claude-code-prompt-library.md)
 
 ## Safety
 

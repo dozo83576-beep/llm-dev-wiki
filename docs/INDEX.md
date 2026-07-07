@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-07-05"
+updated: "2026-07-07"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **321**
-- Активных: **304**
+- Всего документов: **322**
+- Активных: **305**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **881640** символов
+- Суммарный объём: **903709** символов
 
 ## docs
 
@@ -270,6 +270,7 @@ source_priority: "internal"
 | [prompts/backend-audit.md](../prompts/backend-audit.md) | Prompt: backend audit | prompt | 2412 | 2026-05-24 | active | internal |
 | [prompts/chat-widget-system-prompt.md](../prompts/chat-widget-system-prompt.md) | Prompt: chat widget system prompt | prompt | 3342 | 2026-06-22 | active | internal |
 | [prompts/choose-stack.md](../prompts/choose-stack.md) | Prompt: choose stack | prompt | 3069 | 2026-06-10 | active | internal |
+| [prompts/claude-code-prompt-library.md](../prompts/claude-code-prompt-library.md) | Библиотека промптов Claude Code (конспект официальной библиотеки) | prompt | 22069 | 2026-07-07 | active | official-docs |
 | [prompts/code-review.md](../prompts/code-review.md) | Prompt: code review | prompt | 1903 | 2026-05-24 | active | internal |
 | [prompts/create-new-project.md](../prompts/create-new-project.md) | Prompt: create new project | prompt | 4832 | 2026-07-05 | active | internal |
 | [prompts/database-migration-review.md](../prompts/database-migration-review.md) | Prompt: database migration review | prompt | 2849 | 2026-05-24 | active | internal |
