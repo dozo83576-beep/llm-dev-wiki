@@ -37,4 +37,4 @@ Small scoped task, explicit plan, limited tools, diff review, verification comma
 
 ## Источники
 
-См. [Tool permissions](Tool-permissions.md), [Prompt injection](Prompt-injection.md), [Agent self-improvement loop](Agent-self-improvement.md), [AI agent review](../../checklists/ai-agent-review.md).
+См. [Tool permissions](Tool-permissions.md), [Prompt injection](Prompt-injection.md), [Agent self-improvement loop](Agent-self-improvement.md), [Claude Code best practices](Claude-Code-best-practices.md), [AI agent review](../../checklists/ai-agent-review.md).

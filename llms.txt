@@ -13,6 +13,7 @@
 - [Project playbooks](docs/13-playbooks/index.md)
 - [LLM indexing](docs/14-llm-indexing/index.md)
 - [Source priority taxonomy](docs/14-llm-indexing/source-priority.md)
+- [Claude Code best practices (конспект)](docs/07-mcp-and-ai-tools/Claude-Code-best-practices.md)
 
 ## Rules
 
