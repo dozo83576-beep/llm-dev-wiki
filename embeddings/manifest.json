@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2550,
-  "corpus_hash": "c3426896e3876e22eb1755d517f018d7c7525d70363a6589a37f4c6de8fc5cc5",
+  "chunk_count": 2580,
+  "corpus_hash": "6d8864cb0c214fe64643d320c46330abe34f4f739917f40ad7ec6acc06c24d14",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -285,6 +285,7 @@
     "prompts/backend-audit.md",
     "prompts/chat-widget-system-prompt.md",
     "prompts/choose-stack.md",
+    "prompts/claude-code-prompt-library.md",
     "prompts/code-review.md",
     "prompts/create-new-project.md",
     "prompts/database-migration-review.md",
@@ -314,7 +315,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-07-05T14:14:51Z",
+  "generated_at": "2026-07-07T09:50:49Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }
