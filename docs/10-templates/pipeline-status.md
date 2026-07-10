@@ -1,7 +1,7 @@
 ---
 title: "Pipeline status template"
 category: "templates"
-updated: "2026-07-05"
+updated: "2026-07-11"
 status: "active"
 tags: ["pipeline", "orchestration", "resume", "artifacts", "website"]
 source_priority: "internal"
@@ -18,8 +18,10 @@ source_priority: "internal"
 
 ## Когда использовать
 
-- Оркестратор `build-modern-site` создаёт файл при первом проходе quality gate любой фазы и
-  обновляет его после каждой следующей фазы.
+- Новый файл создаётся только bootstrap-инструментом:
+  `pwsh tools/new-site-pipeline-status.ps1 -ProjectRoot <путь> -ProjectName "<имя>" -Playbook <playbook>`
+  (по умолчанию dry-run, запись — `-Apply`). Дальше оркестратор `build-modern-site` обновляет файл
+  после каждой фазы.
 - Новая сессия в проекте: если файл существует, оркестратор читает его и артефакты завершённых фаз
   и продолжает с первой незавершённой фазы — не переспрашивая discovery заново.
 

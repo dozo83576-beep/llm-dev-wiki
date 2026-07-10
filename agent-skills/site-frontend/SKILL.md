@@ -17,6 +17,8 @@ description: >-
 - Если у проекта есть backend: `site-backend` завершён — UI строится против реально работающего API,
   а не бумажного контракта. Для чисто статических сайтов без backend это условие снимается.
 - Строго последовательно после `site-backend` (если есть), не параллельно.
+- Для `marketplace` фаза единична: один `_frontend-smoke.md` обязан содержать явно маркированные
+  секции `Public storefront` и `Private console`; 18-я фаза не создаётся.
 
 ## Сначала прочитай
 - Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
@@ -45,11 +47,14 @@ description: >-
    иначе **Playwright MCP**. Проверь первый экран, формы (happy/error), CTA, отсутствие overlap и horizontal scroll.
 8. **Артефакт.** Сохрани в корень проекта `_frontend-smoke.md`: результаты браузерной верификации из
    шага 7 (первый экран, формы happy/error, mobile/desktop, console без критичных ошибок, пути к
-   скриншотам), статус `frontend-review.md`. Это evidence фазы для `_pipeline-status.md` и вход для `site-seo`/`site-review`.
+   скриншотам), статус `frontend-review.md`. Для `marketplace` в этом одном файле сделай секции
+   `Public storefront` и `Private console`. Это evidence фазы для `_pipeline-status.md` и вход для
+   `site-seo`/`site-review`.
 
 ## Quality gate
 - Проходит `checklists\frontend-review.md` (нет block-пунктов).
 - Результаты браузерного smoke зафиксированы в `_frontend-smoke.md` проекта.
+- Для `marketplace` `_frontend-smoke.md` содержит секции `Public storefront` и `Private console`.
 - Локальная проверка в браузере: через локальный http-сервер, а не `file://`; предпочтительно Preview MCP / Playwright MCP (см. шаг 7).
 - Для case gallery: preview не должен быть full-page полотном, fullImage открывается в lightbox, нет пустых хвостов и horizontal scroll на mobile.
 - Нет незавершённых маркеров; ошибки обрабатываются.

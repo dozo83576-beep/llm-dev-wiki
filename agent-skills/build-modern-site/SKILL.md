@@ -28,31 +28,39 @@ description: >-
   и есть содержимое плана: их результаты записываются в plan-файл, `ExitPlanMode` вызывается после
   фазы 7 (архитектура с этапами и acceptance).
 - После одобрения плана реализация продолжает пайплайн с фазы 8 — по скиллам, не в свободном стиле.
-- Любой пропуск фазы фиксируется в плане явно, с причиной (см. Quality gate). Молчаливый пропуск —
+- Любой пропуск фазы фиксируется в плане явно, с причиной и только по единой политике ниже.
+  Молчаливый пропуск —
   дефект процесса: прецедент `lessons-learned/2026-07-02-build-modern-site-plan-mode-bypass.md`
   (пропущенные контент/дизайн/SEO/ревью → сайт без юрстраниц и метаданных).
 - Перед фазами реализации (8–12) проверь `lessons-learned/` по тегам выбранного стека — записанные
   уроки не должны решаться заново.
 - Сразу после одобрения плана (`ExitPlanMode`) материализуй результаты фаз 1–7 из plan-файла в
   файловые артефакты проекта (`_preflight.md`, `_discovery.md`, `_stack.md`, `_architecture.md`,
-  `_pipeline-status.md`) — состояние пайплайна не должно жить только в чате.
+  `_pipeline-status.md`) — состояние пайплайна не должно жить только в чате. Для создания status
+  используй bootstrap `new-site-pipeline-status.ps1`: сначала Dry Run, затем `-Apply`.
 
 ## Состояние пайплайна и возобновление (resume)
 Каждая фаза оставляет файловый артефакт в корне проекта, а оркестратор ведёт `_pipeline-status.md`
 (шаблон и правила — `docs/10-templates/pipeline-status.md`): статус каждой фазы, дата, артефакт,
-причины пропусков.
+причины пропусков. Новый файл создавай только bootstrap-командой:
+`pwsh D:\Work\llm-dev-wiki\tools\new-site-pipeline-status.ps1 -ProjectRoot <путь> -ProjectName "<имя>" -Playbook <playbook>`;
+по умолчанию это Dry Run, запись выполняет только `-Apply`.
 - **Карта артефактов (все 17 фаз):** preflight → `_preflight.md`; `site-discovery` → `_discovery.md`;
   playbook → строка `Playbook:` с путём к playbook-файлу в `_pipeline-status.md`;
   `site-competitive-analysis` → `_competitive-analysis.md`; `site-stack` → `_stack.md`;
   `site-architecture` → `_architecture.md`; project-agents → `AGENTS.md` проекта;
   `site-content` → `_content-model.md`; `site-design` →
-  `DESIGN-DIRECTION.md` (лендинг/продающий) + дизайн-токены; `site-backend` → `_backend-gate.md`;
-  `site-frontend` → `_frontend-smoke.md`; `site-seo` → `_seo-report.md`; `site-review` →
+  `DESIGN-DIRECTION.md` (лендинг/продающий) + дизайн-токены (marketplace: один artifact с секциями
+  `Public storefront` и `Private console`); `site-backend` → `_backend-gate.md`;
+  `site-frontend` → `_frontend-smoke.md` (marketplace: один artifact с секциями `Public storefront`
+  и `Private console`); `site-seo` → `_seo-report.md`; `site-review` →
   `_review-report.md`; `site-deploy` → `_deploy.md`; `site-handoff` → `handoff.md`;
   post-release → `_post-release-plan.md` (optional, создаёт `site-handoff` на шаге 9);
   `capture-learnings` → `_learning-review.md`.
 - **Обновление статуса:** после прохождения quality gate фазы обнови её строку в
-  `_pipeline-status.md` (создай файл при первом gate). Пропуск фазы — статус `skipped` с причиной.
+  `_pipeline-status.md`. Обычный проект может пропустить только `post-release` с причиной;
+  `api-only-backend` обязан пропустить ровно `site-content`, `site-design`, `site-frontend`, `site-seo`
+  с причиной; иных пропусков нет. Выбери один разрешённый playbook — mix запрещён.
 - **Проверка статуса:** после обновления `_pipeline-status.md` запусти
   `pwsh D:\Work\llm-dev-wiki\tools\verify-site-pipeline.ps1 -ProjectRoot <путь проекта>`. Перед
   `site-review` и `site-handoff` эта проверка должна быть зелёной: нельзя входить в ревью/передачу,
@@ -126,11 +134,11 @@ description: >-
    интеграции, сроки, hosting, auth, БД, бюджет, AI-функции и измеримые acceptance criteria.
 3. **Тип проекта и playbook.** Примени decision router, выбери playbook из `docs/13-playbooks/`
    (landing, saas, ecommerce, admin-dashboard, marketplace, ai-rag-app, api-only-backend,
-   headless-commerce, real-time-app) или объяви микс из N playbooks с обоснованием. Зафиксируй
+   headless-commerce, real-time-app); выбери ровно один, mix playbooks запрещён. Зафиксируй
    путь к выбранному playbook-файлу в `_pipeline-status.md` — дальше фазы читают только его
    (см. Контекст-бюджет). Если выбран
-   `api-only-backend` (нет визуального frontend) — шаги 8 (Контент)/9 (Дизайн)/11 (Frontend)/12
-   (SEO) ниже получают `skipped` с причиной; шаг 7 (`project-agents`) обязателен всегда, поэтому
+   `api-only-backend` (нет визуального frontend) — ровно шаги 8 (Контент)/9 (Дизайн)/11 (Frontend)/12
+   (SEO) получают `skipped` с причиной; шаг 7 (`project-agents`) обязателен всегда, поэтому
    после шага 7 сразу шаг 10 (Backend), затем шаг 13 (Ревью).
 4. **Конкурентный анализ.** Подключи скилл `site-competitive-analysis`: по типу продукта найди 5–6 топовых
    конкурентов, извлеки структуру/навигацию/UX/контент/фичи и тех-метрики, адаптируй под бриф и получи
@@ -179,7 +187,8 @@ description: >-
 
 ## Quality gate
 - Каждый этап даёт проверяемый результат: документ, тест, diff, скриншот, лог, метрика или ссылка на deploy.
-- Список фаз сверяется с `docs/01-development-process/site-pipeline-map.md`; если фаза пропущена, причина записана в `_pipeline-status.md`.
+- Список фаз сверяется с `docs/01-development-process/site-pipeline-map.md`; применяется только её
+  политика пропусков и одного playbook, а причина записана в `_pipeline-status.md`.
 - Перед релизом пройдены security-review и release-readiness чеклисты.
 - Нет незавершённых маркеров и заглушек.
 

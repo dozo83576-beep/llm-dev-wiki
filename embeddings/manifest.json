@@ -1,6 +1,6 @@
 {
   "chunk_count": 2599,
-  "corpus_hash": "1f293d26b8e67220d1cd26b638f344615831e24238901241c4b4e38e701d18c8",
+  "corpus_hash": "c32df4a7c9f17abe2e6efc23906c4400a207a762f15cee20556efbe59e449a4f",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -316,7 +316,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-07-07T10:01:47Z",
+  "generated_at": "2026-07-10T19:01:52Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }
