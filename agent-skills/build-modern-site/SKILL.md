@@ -111,8 +111,9 @@ description: >-
 - **Маппинг по фазам** (используй то, что реально подключено; нет — обычный путь):
   - Все фазы: **context7 MCP** — актуальные доки библиотек вместо памяти модели.
   - Discovery / конкуренты: **WebSearch/WebFetch**, **Chrome/Playwright MCP** — разбор живых сайтов.
-  - Дизайн: **Figma MCP** (импорт макета), **Canva/Gamma MCP** (ассеты/деки) + любой установленный
-    дизайн-скилл (см. `site-design`).
+  - Дизайн: **дизайн-канвас claude.ai/design + DesignSync** (design-first UI-кит/дизайн-система на
+    канвасе → handoff-бандл; приоритет при доступном инструменте DesignSync), **Figma MCP** (импорт
+    макета), **Canva/Gamma MCP** (ассеты/деки) + любой установленный дизайн-скилл (см. `site-design`).
   - Архитектура / бэкенд / БД: **Supabase MCP** (схема, миграции, advisors, типы) — read-first,
     мутации только с подтверждением.
   - Frontend / ревью: **Preview MCP** (`preview_*`) + **Playwright MCP** — первый экран, mobile/desktop, формы, CTA.

@@ -1,7 +1,7 @@
 ---
 title: "Recommended MCP servers"
 category: "ai-tools"
-updated: "2026-06-21"
+updated: "2026-07-11"
 status: "active"
 tags: ["mcp", "tools"]
 source_priority: "internal"
@@ -50,7 +50,7 @@ MCP inventory review, permission review, dry-run для write tools, secret expo
 |---|---|---|
 | Все фазы | **context7** (актуальные доки библиотек) | read |
 | Discovery / конкуренты | **WebSearch/WebFetch**, **Chrome / Playwright** (разбор живых сайтов) | read |
-| Дизайн | **Figma** (импорт макета/токенов), **Canva / Gamma** (ассеты/деки) | read / generate |
+| Дизайн | **Claude Design + DesignSync** (встроенный tool Claude Code, не MCP; UI-кит/дизайн-система → handoff), **Figma** (импорт макета/токенов), **Canva / Gamma** (ассеты/деки) | read / generate; write в design-system проект только через `finalize_plan` |
 | Архитектура / бэкенд / БД | **Supabase** (схема, миграции, advisors, типы) | read-first, мутации с подтверждением |
 | Frontend / ревью | **Claude Preview**, **Playwright** (первый экран, mobile/desktop, формы, CTA) | read |
 | Деплой | **Vercel / Cloudflare / Render / GitHub** | prod-мутации только с подтверждением |

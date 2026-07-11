@@ -1,7 +1,7 @@
 ---
 title: "Design systems"
 category: "frontend"
-updated: "2026-06-22"
+updated: "2026-07-11"
 status: "active"
 tags: ["design-system", "ui"]
 source_priority: "internal"
@@ -55,4 +55,4 @@ Design system нужен, когда интерфейс должен масшт�
 
 ## Источники
 
-См. [shadcn/ui](Shadcn.md), [Accessibility](Accessibility.md), [Styling systems](Styling-systems.md), [Component-driven development](Component-driven-development.md), [UI architecture](UI-architecture.md), [Frontend blueprints](Frontend-blueprints.md), [User preference memory](../07-mcp-and-ai-tools/User-preference-memory.md), [semantic text tokens](../../patterns/frontend/semantic-theme-text-tokens.md) и [W3C Design Tokens Community Group](https://www.w3.org/community/design-tokens/).
+См. [shadcn/ui](Shadcn.md), [Accessibility](Accessibility.md), [Styling systems](Styling-systems.md), [Component-driven development](Component-driven-development.md), [UI architecture](UI-architecture.md), [Frontend blueprints](Frontend-blueprints.md), [User preference memory](../07-mcp-and-ai-tools/User-preference-memory.md), [semantic text tokens](../../patterns/frontend/semantic-theme-text-tokens.md), [W3C Design Tokens Community Group](https://www.w3.org/community/design-tokens/) и [Claude Design & DesignSync](../07-mcp-and-ai-tools/Claude-Design-and-DesignSync.md) — живая дизайн-система из кода (пуш/пулл витрины компонентов).

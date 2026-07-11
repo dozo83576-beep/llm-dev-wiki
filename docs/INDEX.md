@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-07-10"
+updated: "2026-07-11"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **323**
-- Активных: **306**
+- Всего документов: **324**
+- Активных: **307**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **917147** символов
+- Суммарный объём: **927733** символов
 
 ## docs
 
@@ -44,7 +44,7 @@ source_priority: "internal"
 | [docs/02-frontend/Component-driven-development.md](../docs/02-frontend/Component-driven-development.md) | Component-driven development | frontend | 2877 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Content-migration.md](../docs/02-frontend/Content-migration.md) | Content migration | frontend | 3311 | 2026-06-19 | active | internal |
 | [docs/02-frontend/Data-fetching.md](../docs/02-frontend/Data-fetching.md) | Frontend data fetching | frontend | 1614 | 2026-05-24 | active | official-docs |
-| [docs/02-frontend/Design-systems.md](../docs/02-frontend/Design-systems.md) | Design systems | frontend | 3739 | 2026-06-22 | active | internal |
+| [docs/02-frontend/Design-systems.md](../docs/02-frontend/Design-systems.md) | Design systems | frontend | 3887 | 2026-07-11 | active | internal |
 | [docs/02-frontend/Directus.md](../docs/02-frontend/Directus.md) | Directus | frontend | 2315 | 2026-06-22 | active | official-docs |
 | [docs/02-frontend/Eleventy.md](../docs/02-frontend/Eleventy.md) | Eleventy | frontend | 1758 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Forms-validation.md](../docs/02-frontend/Forms-validation.md) | Forms and validation | frontend | 1927 | 2026-05-27 | active | official-docs |
@@ -143,9 +143,10 @@ source_priority: "internal"
 | [docs/07-mcp-and-ai-tools/Agent-self-improvement.md](../docs/07-mcp-and-ai-tools/Agent-self-improvement.md) | Agent self-improvement loop | ai-tools | 3456 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Agent-workflows.md](../docs/07-mcp-and-ai-tools/Agent-workflows.md) | Agent workflows | ai-tools | 1737 | 2026-07-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Claude-Code-best-practices.md](../docs/07-mcp-and-ai-tools/Claude-Code-best-practices.md) | Claude Code best practices (конспект) | ai-tools | 13014 | 2026-07-07 | active | official-docs |
+| [docs/07-mcp-and-ai-tools/Claude-Design-and-DesignSync.md](../docs/07-mcp-and-ai-tools/Claude-Design-and-DesignSync.md) | Claude Design & DesignSync | ai-tools | 9313 | 2026-07-11 | active | internal |
 | [docs/07-mcp-and-ai-tools/Embeddings.md](../docs/07-mcp-and-ai-tools/Embeddings.md) | Embeddings | ai-tools | 2163 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Evaluation.md](../docs/07-mcp-and-ai-tools/Evaluation.md) | AI evaluation | ai-tools | 2098 | 2026-05-24 | active | official-docs |
-| [docs/07-mcp-and-ai-tools/External-design-skills.md](../docs/07-mcp-and-ai-tools/External-design-skills.md) | External design skills & design MCP | ai-tools | 4424 | 2026-06-21 | active | internal |
+| [docs/07-mcp-and-ai-tools/External-design-skills.md](../docs/07-mcp-and-ai-tools/External-design-skills.md) | External design skills & design MCP | ai-tools | 5387 | 2026-07-11 | active | internal |
 | [docs/07-mcp-and-ai-tools/External-site-skills.md](../docs/07-mcp-and-ai-tools/External-site-skills.md) | External site skills | ai-tools | 4136 | 2026-06-21 | active | internal |
 | [docs/07-mcp-and-ai-tools/MCP-overview.md](../docs/07-mcp-and-ai-tools/MCP-overview.md) | MCP overview | ai-tools | 2655 | 2026-06-06 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/OpenAI-API.md](../docs/07-mcp-and-ai-tools/OpenAI-API.md) | OpenAI API | ai-tools | 1600 | 2026-06-22 | active | official-docs |
@@ -154,7 +155,7 @@ source_priority: "internal"
 | [docs/07-mcp-and-ai-tools/Qdrant.md](../docs/07-mcp-and-ai-tools/Qdrant.md) | Qdrant | ai-tools | 2107 | 2026-06-06 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/RAG-ingestion.md](../docs/07-mcp-and-ai-tools/RAG-ingestion.md) | RAG ingestion | ai-tools | 1437 | 2026-05-24 | active | internal |
 | [docs/07-mcp-and-ai-tools/RAG.md](../docs/07-mcp-and-ai-tools/RAG.md) | RAG | ai-tools | 1331 | 2026-05-24 | active | internal |
-| [docs/07-mcp-and-ai-tools/Recommended-MCP-servers.md](../docs/07-mcp-and-ai-tools/Recommended-MCP-servers.md) | Recommended MCP servers | ai-tools | 4389 | 2026-06-21 | active | internal |
+| [docs/07-mcp-and-ai-tools/Recommended-MCP-servers.md](../docs/07-mcp-and-ai-tools/Recommended-MCP-servers.md) | Recommended MCP servers | ai-tools | 4551 | 2026-07-11 | active | internal |
 | [docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md](../docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md) | Claude Desktop MCP setup | ai-tools | 2887 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Setup-Codex.md](../docs/07-mcp-and-ai-tools/Setup-Codex.md) | Codex MCP setup | ai-tools | 2610 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Token-efficient-agent-workflow.md](../docs/07-mcp-and-ai-tools/Token-efficient-agent-workflow.md) | Token-efficient agent workflow | ai-tools | 4146 | 2026-06-20 | active | internal |

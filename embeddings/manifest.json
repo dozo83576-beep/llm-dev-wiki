@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2599,
-  "corpus_hash": "c32df4a7c9f17abe2e6efc23906c4400a207a762f15cee20556efbe59e449a4f",
+  "chunk_count": 2615,
+  "corpus_hash": "765a3be32059a44c3bf56ee1f381c3a52aff50c470e9b12a4ff4316c29808ee2",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -152,6 +152,7 @@
     "docs/07-mcp-and-ai-tools/Agent-self-improvement.md",
     "docs/07-mcp-and-ai-tools/Agent-workflows.md",
     "docs/07-mcp-and-ai-tools/Claude-Code-best-practices.md",
+    "docs/07-mcp-and-ai-tools/Claude-Design-and-DesignSync.md",
     "docs/07-mcp-and-ai-tools/Embeddings.md",
     "docs/07-mcp-and-ai-tools/Evaluation.md",
     "docs/07-mcp-and-ai-tools/External-design-skills.md",
@@ -316,7 +317,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-07-10T19:01:52Z",
+  "generated_at": "2026-07-11T07:19:08Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }
