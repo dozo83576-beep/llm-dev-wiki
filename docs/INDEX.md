@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-07-11"
+updated: "2026-07-16"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **324**
-- Активных: **307**
+- Всего документов: **326**
+- Активных: **309**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **927733** символов
+- Суммарный объём: **937124** символов
 
 ## docs
 
@@ -261,6 +261,7 @@ source_priority: "internal"
 | [patterns/frontend/static-site-dev-only-cms-flag.md](../patterns/frontend/static-site-dev-only-cms-flag.md) | Pattern: Static site + dev-only CMS behind build flag | pattern | 5235 | 2026-06-12 | active | internal |
 | [patterns/frontend/stock-photo-id-verification.md](../patterns/frontend/stock-photo-id-verification.md) | Pattern: Проверка stock-фото (не доверять ID по памяти) | patterns | 5831 | 2026-07-02 | active | internal |
 | [patterns/frontend/third-party-booking-widget.md](../patterns/frontend/third-party-booking-widget.md) | Pattern: Third-party booking widget (попап записи) | pattern | 4127 | 2026-06-13 | active | internal |
+| [patterns/frontend/vanilla-countup-via-reveal-observer.md](../patterns/frontend/vanilla-countup-via-reveal-observer.md) | Pattern: Count-up чисел через существующий IntersectionObserver, без нового острова | pattern | 5520 | 2026-07-02 | active | internal |
 | [patterns/security/deny-by-default.md](../patterns/security/deny-by-default.md) | Pattern: Deny by default | patterns | 394 | 2026-05-24 | active | internal |
 | [patterns/security/tenant-isolation.md](../patterns/security/tenant-isolation.md) | Pattern: Tenant isolation | patterns | 1085 | 2026-05-24 | active | internal |
 | [patterns/security/untrusted-tool-output.md](../patterns/security/untrusted-tool-output.md) | Pattern: Untrusted tool output (operational prompt-injection defense) | pattern | 4015 | 2026-06-21 | active | internal |
@@ -369,6 +370,7 @@ source_priority: "internal"
 | [lessons-learned/2026-06-25-astro7-vercel-adapter.md](../lessons-learned/2026-06-25-astro7-vercel-adapter.md) | Astro 7 + Vercel adapter: import path and audit | lesson | 1016 | 2026-06-25 | active | internal |
 | [lessons-learned/2026-06-29-astro7-vercel-static-no-adapter.md](../lessons-learned/2026-06-29-astro7-vercel-static-no-adapter.md) | Astro 7 → Vercel статикой: без адаптера, деплой через GitHub-import | lesson | 2451 | 2026-06-29 | active | internal |
 | [lessons-learned/2026-07-02-build-modern-site-plan-mode-bypass.md](../lessons-learned/2026-07-02-build-modern-site-plan-mode-bypass.md) | Plan-режим обходит оркестратор build-modern-site | lesson | 3047 | 2026-07-02 | active | internal |
+| [lessons-learned/2026-07-02-section-index-renumbering-gap.md](../lessons-learned/2026-07-02-section-index-renumbering-gap.md) | Lesson: правки структуры секций оставляют дыры в ручной нумерации блоков | lesson | 3871 | 2026-07-02 | active | internal |
 | [lessons-learned/2026-07-02-subagent-photo-sourcing-tool-call-explosion.md](../lessons-learned/2026-07-02-subagent-photo-sourcing-tool-call-explosion.md) | Lesson: делегирование фото-сорсинга субагенту — взрыв tool calls без результата | lesson | 5501 | 2026-07-02 | active | internal |
 | [lessons-learned/2026-07-05-generated-file-timezone-date.md](../lessons-learned/2026-07-05-generated-file-timezone-date.md) | Lesson: дата в генерируемых файлах — UTC и стабильность, иначе ложный stale в CI | lesson | 2621 | 2026-07-05 | active | internal |
 | [lessons-learned/2026-07-05-pytest-package-import-script-tools.md](../lessons-learned/2026-07-05-pytest-package-import-script-tools.md) | Lesson: pytest импортирует script-style инструменты как пакет — нужен conftest с sys.path | lesson | 2542 | 2026-07-05 | active | internal |
