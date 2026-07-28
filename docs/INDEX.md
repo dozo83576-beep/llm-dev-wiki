@@ -17,7 +17,7 @@ source_priority: "internal"
 - Активных: **315**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **969156** символов
+- Суммарный объём: **970520** символов
 
 ## docs
 
@@ -139,7 +139,7 @@ source_priority: "internal"
 | [docs/06-api-design/Versioning.md](../docs/06-api-design/Versioning.md) | API versioning | api | 1950 | 2026-05-24 | active | internal |
 | [docs/06-api-design/WebSockets.md](../docs/06-api-design/WebSockets.md) | WebSockets | api | 1291 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/AI-chat-widget.md](../docs/07-mcp-and-ai-tools/AI-chat-widget.md) | AI chat widget | ai-tools | 3977 | 2026-06-22 | active | mixed |
-| [docs/07-mcp-and-ai-tools/Agent-harness-review.md](../docs/07-mcp-and-ai-tools/Agent-harness-review.md) | Разбор внешних харнесс-источников (2026-07) | ai-tools | 12038 | 2026-07-28 | active | mixed |
+| [docs/07-mcp-and-ai-tools/Agent-harness-review.md](../docs/07-mcp-and-ai-tools/Agent-harness-review.md) | Разбор внешних харнесс-источников (2026-07) | ai-tools | 13402 | 2026-07-28 | active | mixed |
 | [docs/07-mcp-and-ai-tools/Agent-memory.md](../docs/07-mcp-and-ai-tools/Agent-memory.md) | Agent memory | ai-tools | 2809 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Agent-self-improvement.md](../docs/07-mcp-and-ai-tools/Agent-self-improvement.md) | Agent self-improvement loop | ai-tools | 3456 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Agent-workflows.md](../docs/07-mcp-and-ai-tools/Agent-workflows.md) | Agent workflows | ai-tools | 1737 | 2026-07-07 | active | internal |
