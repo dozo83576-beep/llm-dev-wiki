@@ -1,7 +1,7 @@
 ---
 title: "Payload CMS"
 category: "frontend"
-updated: "2026-06-11"
+updated: "2026-07-21"
 status: "active"
 tags: ["payload", "cms", "nextjs", "content"]
 source_priority: "vendor-docs"
@@ -62,6 +62,6 @@ Localized slugs, scheduled publish, deleted referenced media, rollback content v
 
 ## Источники
 
-- [Payload Concepts](https://payloadcms.com/docs/getting-started/concepts) — watchlist refreshed to `payload` 3.85.1 on 2026-06-10.
+- [Payload Concepts](https://payloadcms.com/docs/getting-started/concepts) — `payload` 3.86.0 reviewed 2026-07-21; CMS/security guidance unchanged.
 - [Payload Plugins](https://payloadcms.com/docs/plugins/overview)
 - См. [CMS content](CMS-content.md), [Next.js](Nextjs.md), [SEO](SEO.md), [File uploads](../03-backend/File-uploads.md).

@@ -151,6 +151,7 @@ function Invoke-TechnologyUpdateCheck {
             "- Checked at: $((Get-Date).ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss 'UTC'"))",
             "- Entries: 0",
             "- Updates found: 0",
+            "- Baseline holds: 0",
             "- Check failures: 1",
             "",
             $message

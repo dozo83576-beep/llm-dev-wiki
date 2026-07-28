@@ -1,7 +1,7 @@
 ---
 title: "Laravel Livewire"
 category: "frontend"
-updated: "2026-06-10"
+updated: "2026-07-21"
 status: "active"
 tags: ["laravel", "livewire", "php", "hypermedia"]
 source_priority: "official-docs"
@@ -10,6 +10,8 @@ source_priority: "official-docs"
 # Laravel Livewire
 
 Laravel Livewire — full-stack UI layer для Laravel: dynamic interfaces без отдельной SPA, с server-owned state and PHP-first development.
+
+Livewire `4.3.3` проверен как latest stable 2026-07-21. Patch release не меняет архитектурную рекомендацию; после обновления повторяй component/action authorization, form race и browser smoke.
 
 ## Когда использовать
 

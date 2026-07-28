@@ -1,7 +1,7 @@
 ---
 title: "Runtime selection"
 category: "process"
-updated: "2026-06-04"
+updated: "2026-07-21"
 status: "active"
 tags: ["runtime", "node", "bun", "deno", "edge"]
 source_priority: "mixed"
@@ -24,7 +24,7 @@ Runtime choice defines available APIs, deployment targets, dependency compatibil
 
 ## Production-паттерны
 
-- Node.js remains conservative default for broad compatibility.
+- Node.js `24.18.0` LTS remains conservative default for broad compatibility; Current `26.5.0` требует project-level compatibility smoke.
 - Bun can be tooling-first before production runtime adoption.
 - Deno/Fresh is a deliberate ecosystem choice, not a transparent Node replacement.
 - Workers/edge runtimes use Web APIs and bindings; Node APIs are not assumed.
@@ -56,6 +56,7 @@ ESM/CJS, native modules, binary dependencies, timezone/locale, file system acces
 ## Источники
 
 - [Node.js Docs](https://nodejs.org/en/learn)
+- [Node.js release index](https://nodejs.org/dist/index.json) — LTS/Current проверены 2026-07-21.
 - [Bun Docs](https://bun.com/docs)
 - [Deno Docs](https://docs.deno.com/)
 - [Cloudflare Workers Docs](https://developers.cloudflare.com/workers/)

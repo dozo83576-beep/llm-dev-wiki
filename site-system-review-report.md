@@ -1,59 +1,84 @@
-# Финальное ревью системы создания сайтов — отчёт
+# Ревью и усиление системы создания сайтов
 
-Дата: 2026-07-11. Скоуп: работоспособность, сквозная связность 17 фаз, висящие ресурсы, ошибки, безопасность. Методика: автоматические гейты + 3 Explore-субагента (связность / сироты и синтаксис / безопасность) + функциональные прогоны + ручная верификация каждой находки по первоисточнику.
+Дата: 2026-07-21. Скоуп: contract, 17-фазный workflow, router/preflight, canonical skills,
+runtime parity, два pilot status и локальные gates.
 
-## Вердикт
+## Итог
 
-**Система работоспособна и пригодна к реальной сборке сайтов.** Вход в пайплайн (hook-детект интента → preflight → router) работает end-to-end; все 17 фаз имеют исполнителя, входы/выходы и gate; связность канона полная (сирот и битых ссылок нет); инструменты синтаксически чисты; тесты 81/81; секретов/PII нет; хуки без инъекционных векторов. Найденные дефекты (2 block, 4 warn, 2 nit) исправлены в этом же ревью, кроме двух warn-рекомендаций ниже.
+17 контрольных фаз сохранены, но система переведена с жёсткой линейности на проверяемый dependency
+graph. Единственный источник правды — `resources/site-pipeline-contract.json` v2. Bootstrap,
+verifier, карта и оркестратор больше не должны поддерживать независимые массивы фаз.
 
-**Ограничение вердикта:** механизм `_pipeline-status.md` введён 2026-07-05 — позже всех 13 существующих проектов, поэтому сквозной прогон всех 17 фаз с файловыми статусами ещё ни разу не выполнялся на реальном проекте. Компонентно способность доказана; финальное доказательство даст первый новый сайт.
+## Исправленные критические дефекты
 
-## Что проверено и зелено (evidence)
+- Verifier теперь отклоняет неизвестные playbook/profile/guides, неверные `not-applicable`/`skipped`,
+  несуществующие календарные даты, пустые или неканонические artifacts, выход из project root и
+  symlink/junction escape.
+- Проверка готовности идёт по зависимостям. Design и backend могут закрываться независимо;
+  frontend ждёт оба применимых результата.
+- Bootstrap status v2 использует `FileMode.CreateNew`, остаётся dry-run-first и безопасен при гонке.
+- Добавлены `-RequirePhase` и `-RequireComplete`.
 
-| Проверка | Результат |
-|---|---|
-| `ci-local.ps1` (аудит 350 md, quality, 17 фаз, синк скиллов, retrieval-эвалы) | EXIT=0; 0 failures; 0 warnings; Precision@5 = 1.000 |
-| `pytest tests` (вики) | 81 passed |
-| Синтаксис всех `.ps1` (wiki tools, agent-skills, hooks, D:\Work\tools) | 0 ошибок парсинга; python `py_compile` — чисто |
-| Хук site-intent (функционально) | позитив → JSON-инъекция требования пайплайна; негатив → молчание; stdin-JSON, регэксп-матч data-only, без Invoke-Expression |
-| Stop-хук capture-loop | `decision: block` + напоминание; записывает только маркер с датой в %TEMP% |
-| `new-site-preflight.ps1` (функционально) | status ready, route/stack/вопросы/6 wiki-доков (все существуют)/audit-команда; аргументы экранируются |
-| Связность канона (субагент + ручная верификация) | ~150 путей в SKILL.md существуют; 14/14 скиллов имеют `agents/openai.yaml`; карта↔скиллы↔артефакты без расхождений |
-| Сироты | нет: все 26 промптов и все инструменты имеют входящие ссылки (перепроверено вручную, 1–7 ссылок на файл) |
-| Секреты/PII | чисто; `AGENT-PREFERENCES.local.md` не в git; `update-local-preferences.ps1` — dry-run по умолчанию + скан секретов; pre-commit = wiki-audit + verify-agent-skills |
-| Permission-allowlist `.claude/settings.json` | все 6 целей существуют; масок шире необходимых нет |
-| `.github/workflows` | ссылаются на существующие скрипты |
+## Contract v2
 
-## Findings и статус
+- Метаданные status: `Contract-Version`, один primary `Playbook`, `Supporting-Guides`,
+  `Delivery-Profile`.
+- Profiles: `public-static`, `public-fullstack`, `private-app`, `api-only`.
+- Статусы: `pending`, `in-progress`, `done`, `not-applicable`, `skipped`.
+- Только `post-release` может быть осознанно `skipped`; неприменимость остальных фаз задаётся profile.
+- Добавлен primary playbook `content-site`; headless commerce и Shopify Hydrogen переведены в guides.
 
-### BLOCK — исправлено
+## Router и preflight
 
-1. **Отсутствовал `tools/new-site-pipeline-status.ps1`**, на который ссылается обновлённый `build-modern-site` (bootstrap статуса фазы 1). Команда входа в пайплайн падала бы. → **Создан** (dry-run по умолчанию, `-Apply` для записи, отказ при существующем файле и неизвестном playbook, авто-skip 4 фаз для `api-only-backend`). Протестирован: `verify-site-pipeline -ProjectRoot` на сгенерированных статусах (landing и api-only) — 0 failures; негативные кейсы отклоняются.
-2. **Дрейф runtime ≠ canon в 5 скиллах** (`build-modern-site`, `site-architecture`, `site-design`, `site-frontend`, `site-handoff`): правки 2026-07-10 13:09 были сделаны в runtime-кэше `.agent-skills` вместо канона — следующий sync молча затёр бы их. Содержимое правок качественное (bootstrap-инструмент, единая политика пропусков: обычный проект — только `post-release`, `api-only-backend` — ровно 4 фазы, mix playbook запрещён; marketplace — одна фаза с секциями `Public storefront`/`Private console`). → **Перенесено в канон**, sync во все 3 рантайма, `verify-agent-skills` — 0 failures. Правило на будущее: скиллы правятся ТОЛЬКО в каноне `llm-dev-wiki\agent-skills\` + sync.
+Классификация разделена на продуктовую и платформенную оси. JSON output содержит
+`recommendedPlaybook`, `recommendedDeliveryProfile`, `supportingGuides`. Shopify выбирается только
+по явному положительному ограничению; отрицание «Shopify не используется» учитывается. Покрыты
+landing, content/CMS, SaaS, e-commerce, admin, marketplace, API-only, AI/RAG и real-time.
 
-### WARN — исправлено
+## Границы skills
 
-3. **`site-competitive-analysis` без prompt-injection guard** при WebFetch чужих сайтов. → Добавлено в SKILL.md (шаг извлечения) и `docs/01-development-process/competitive-analysis.md`: fetched-контент — недоверенный ввод, встроенные инструкции игнорируются, ссылка на `Prompt-injection.md`.
-4. **`site-handoff` без 152-ФЗ чек-пункта.** → Добавлен в Quality gate: в handoff-материалах нет ПДн; обработка ПДн на сайте соответствует `RU-152fz-and-ai-data-handling.md`.
+Все 14 canonical skills сохранены.
 
-### WARN — рекомендации (не исправлялось)
+- `build-modern-site` сокращён до orchestration/resume/contract verification.
+- `site-stack` не повторяет preflight.
+- `site-competitive-analysis` владеет market/reference/standards benchmark и visual signals.
+- `site-design` потребляет готовые signals и не повторяет competitor outlier research.
+- `site-frontend` создаёт один smoke-набор; review/deploy/handoff повторяют его в своих окружениях.
+- Review фиксирует UAT readiness, deploy — approval на promotion, handoff — production acceptance.
+- Optional helpers централизованы: default zero, максимум один узкий helper на фазу с обоснованием.
 
-5. **CI не проверяет `_pipeline-status.md` реальных проектов**: `verify-site-pipeline.ps1` делает это только при явном `-ProjectRoot` (иначе early-return). Рекомендация: на первом новом сайте пройти полный цикл со статусами; затем добавить в CI список активных проектов для сквозной проверки.
-6. **Регэксп intent-хука не ловит редкие формулировки** («построить сайт», «нужен веб-сайт»). Основные варианты покрыты; при желании — расширить паттерны в `hooks/userpromptsubmit-site-intent.ps1` (канон) + sync.
+## Pilot migration
 
-### NIT
+- `D:\Work\ferrolease-ural-site`: `landing`, `public-fullstack`.
+- `D:\Work\local-market-woo`: `marketplace`, `public-fullstack`, guide `wordpress-woocommerce`.
 
-7. Маркеры хуков пишутся в общий `%TEMP%` — теоретический риск на мультиюзер-машине; практически незначим.
-8. Методологическое: субагентские отчёты дали 3 ложные находки («check-ai-tools.ps1 отсутствует» — существует в `D:\Work\tools\`; «9 промптов-сирот» и «2 инструмента-сироты» — у всех 1–7 входящих ссылок). Сняты ручной верификацией; правило «finding без проверки по файлу не принимается» обязательно.
+Все исторические фазы оставлены `pending`: evidence не выдумывалось. Оба status v2 проходят verifier.
 
-## Изменения, внесённые этим ревью
+## Проверка
 
-- `agent-skills/{build-modern-site,site-architecture,site-design,site-frontend,site-handoff}/SKILL.md` — порт дрейфа из runtime + 152-ФЗ и injection-guard.
-- `tools/new-site-pipeline-status.ps1` — новый bootstrap-инструмент (создан и протестирован).
-- `docs/01-development-process/competitive-analysis.md` — правило недоверенного ввода.
-- `docs/10-templates/pipeline-status.md` — bootstrap-команда создания файла.
-- Sync скиллов во все рантаймы; паритет подтверждён.
+- Финальный full pytest: `113 passed, 1 skipped` (file symlink test требует недоступную локальную
+  привилегию; Windows junction regression выполнена и прошла).
+- `ci-local.ps1 -IncludeToolTests -SkipGeneratedDiffCheck`: passed; wiki audit `Failures: 0`,
+  pipeline verifier `Failures: 0`, Node tests `6 passed`.
+- Offline retrieval: `Precision@5 = 1.000`, weak warnings `0`, missing paths `0`.
+- Canonical/runtime sync: 14 skills; runtime cache, Claude Code и Codex; `Failures: 0`.
+- Оба pilot status v2: `Failures: 0`.
 
-## Покрытие 17 фаз
+Wiki quality оставляет три stamp-warning до будущего commit: изменённые документы имеют дату
+2026-07-21, а последний commit у них старше. Это не content defect; commit в этот scope не входит.
 
-Каждая фаза карты имеет исполнителя, артефакт и gate (проверено субагентом и вручную): preflight→`_preflight.md`, site-discovery→`_discovery.md`, playbook→строка в статусе, site-competitive-analysis→`_competitive-analysis.md`, site-stack→`_stack.md`, site-architecture→`_architecture.md`, project-agents→`AGENTS.md`, site-content→`_content-model.md`, site-design→`DESIGN-DIRECTION.md`/токены, site-backend→`_backend-gate.md`, site-frontend→`_frontend-smoke.md`, site-seo→`_seo-report.md`, site-review→`_review-report.md`, site-deploy→`_deploy.md`, site-handoff→`handoff.md`, post-release→`_post-release-plan.md` (optional, с причиной), capture-learnings→`_learning-review.md`. Историческая база: 13 проектов созданы до механизма статусов; частичные артефакты старого образца — DESIGN-DIRECTION.md (3 проекта), handoff.md (1), project-AGENTS.md (9).
+## Оставшееся ограничение
+
+Механика полного перехода по графу доказана интеграционными fixtures для четырёх profiles, но реальный
+проект всё ещё не прошёл все 17 фаз до production evidence. Pilot status честно остаются `pending`;
+это операционная следующая проверка, а не основание искусственно помечать историю `done`.
+
+## Learning review
+
+Decision: update existing artifact and canonical project-local skills.
+
+Reusable knowledge: contract v2, двухосевой router, profile applicability, dependency gates и
+границы review/deploy/handoff закреплены в этом отчёте, профильных docs и
+`llm-dev-wiki/agent-skills`. Отдельный lesson/case-study не создан, чтобы не дублировать аудит.
+Глобальные skills и `AGENT-PREFERENCES.local.md` не менялись: это системный контракт проекта, а не
+личное предпочтение. Evidence — verifier, 113 Python tests, 6 Node tests, runtime parity и retrieval evals.

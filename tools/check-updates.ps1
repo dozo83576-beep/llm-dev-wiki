@@ -38,7 +38,76 @@ function Get-GitHubLatestRelease {
 }
 
 function Get-GitHubLatestTag {
-    param([string]$Repository)
+    param(
+        [string]$Repository,
+        [switch]$AllowPrerelease,
+        $FixturePayload = $null
+    )
+
+    if ($null -ne $FixturePayload) {
+        if ($FixturePayload -is [string]) {
+            return [string]$FixturePayload
+        }
+        $response = $FixturePayload
+    }
+    else {
+        $headers = @{
+            "Accept" = "application/vnd.github+json"
+            "User-Agent" = "llm-dev-wiki-update-check"
+        }
+        if (-not [string]::IsNullOrWhiteSpace($env:GITHUB_TOKEN)) {
+            $headers["Authorization"] = "Bearer $env:GITHUB_TOKEN"
+        }
+        $response = Invoke-RestMethod -Uri "https://api.github.com/repos/$Repository/tags?per_page=100" -Headers $headers
+    }
+
+    foreach ($tag in @($response)) {
+        $name = if ($tag -is [string]) { [string]$tag } else { [string]$tag.name }
+        if ([string]::IsNullOrWhiteSpace($name)) {
+            continue
+        }
+        if ($AllowPrerelease -or -not (Test-PrereleaseVersion -Version $name)) {
+            return $name
+        }
+    }
+    return ""
+}
+
+function Get-NodeLtsVersion {
+    param($FixturePayload = $null)
+
+    $releases = if ($null -ne $FixturePayload) {
+        $FixturePayload
+    }
+    else {
+        Invoke-RestMethod -Uri "https://nodejs.org/dist/index.json" -Headers @{ "User-Agent" = "llm-dev-wiki-update-check" }
+    }
+    $lts = @($releases) | Where-Object { $_.lts -and $_.lts -ne $false } | Select-Object -First 1
+    if ($null -eq $lts) {
+        throw "Node.js release feed did not contain an LTS release"
+    }
+    return ([string]$lts.version).TrimStart('v')
+}
+
+function Get-StableSemverTag {
+    param($Tags)
+
+    $candidates = foreach ($tag in @($Tags)) {
+        $name = if ($tag -is [string]) { [string]$tag } else { [string]$tag.name }
+        if ($name -match '^v?(\d+\.\d+\.\d+)$') {
+            [pscustomobject]@{ Raw = $name; Parsed = [version]$Matches[1] }
+        }
+    }
+    $latest = $candidates | Sort-Object Parsed -Descending | Select-Object -First 1
+    if ($null -eq $latest) {
+        throw "Release feed did not contain a stable semantic version"
+    }
+    return [string]$latest.Raw
+}
+
+function Get-PythonStableVersion {
+    param($FixturePayload = $null)
+
     $headers = @{
         "Accept" = "application/vnd.github+json"
         "User-Agent" = "llm-dev-wiki-update-check"
@@ -46,51 +115,116 @@ function Get-GitHubLatestTag {
     if (-not [string]::IsNullOrWhiteSpace($env:GITHUB_TOKEN)) {
         $headers["Authorization"] = "Bearer $env:GITHUB_TOKEN"
     }
-    $response = Invoke-RestMethod -Uri "https://api.github.com/repos/$Repository/tags?per_page=1" -Headers $headers
-    if ($response.Count -eq 0) {
-        return ""
+    $tags = if ($null -ne $FixturePayload) {
+        $FixturePayload
     }
-    return $response[0].name
+    else {
+        Invoke-RestMethod -Uri "https://api.github.com/repos/python/cpython/tags?per_page=100" -Headers $headers
+    }
+    return (Get-StableSemverTag -Tags $tags).TrimStart('v')
+}
+
+function Get-PhpStableVersion {
+    param($FixturePayload = $null)
+
+    $releases = if ($null -ne $FixturePayload) {
+        $FixturePayload
+    }
+    else {
+        Invoke-RestMethod -Uri "https://www.php.net/releases/index.php?json&version=8&max=20" -Headers @{ "User-Agent" = "llm-dev-wiki-update-check" }
+    }
+    $versions = if ($releases -is [System.Collections.IDictionary]) {
+        @($releases.Keys)
+    }
+    elseif ($releases.PSObject.Properties.Count -gt 0 -and -not ($releases -is [array])) {
+        @($releases.PSObject.Properties.Name)
+    }
+    else {
+        @($releases)
+    }
+    return (Get-StableSemverTag -Tags $versions).TrimStart('v')
+}
+
+function Get-WordPressCoreVersion {
+    param($FixturePayload = $null)
+
+    $response = if ($null -ne $FixturePayload) {
+        $FixturePayload
+    }
+    else {
+        Invoke-RestMethod -Uri "https://api.wordpress.org/core/version-check/1.7/" -Headers @{ "User-Agent" = "llm-dev-wiki-update-check" }
+    }
+    $offer = @($response.offers) | Where-Object { -not (Test-PrereleaseVersion -Version ([string]$_.version)) } | Select-Object -First 1
+    if ($null -eq $offer) {
+        throw "WordPress version feed did not contain a stable offer"
+    }
+    return [string]$offer.version
+}
+
+function Get-PostgreSqlStableVersion {
+    param($FixturePayload = $null)
+
+    $versions = if ($null -ne $FixturePayload) {
+        $FixturePayload
+    }
+    else {
+        Invoke-RestMethod -Uri "https://www.postgresql.org/versions.json" -Headers @{ "User-Agent" = "llm-dev-wiki-update-check" }
+    }
+    $latest = @($versions) |
+        Where-Object { $_.supported -eq $true } |
+        Sort-Object { [int]$_.major } -Descending |
+        Select-Object -First 1
+    if ($null -eq $latest) {
+        throw "PostgreSQL version feed did not contain a supported release"
+    }
+    return "$($latest.major).$($latest.latestMinor)"
 }
 
 function Get-EntryVersion {
     param($Entry)
 
-    if ($UseFixtureVersions) {
-        $fixtureVersion = Get-FixtureVersion -Entry $Entry
-        if ($null -ne $fixtureVersion) {
-            if ($fixtureVersion -eq "__ERROR__") {
+    $fixture = Get-FixtureValue -Entry $Entry
+    if ($fixture.Found -and $fixture.Value -is [string] -and $fixture.Value -eq "__ERROR__") {
                 throw "Fixture forced update check failure for $($Entry.name)"
-            }
-            return $fixtureVersion
-        }
     }
+
+    $payload = if ($fixture.Found) { $fixture.Value } else { $null }
+    if ($fixture.Found -and $Entry.ecosystem -in @("npm", "pypi", "github-releases", "manual")) {
+        return [string]$payload
+    }
+
+    $allowPrerelease = (Get-VersionPolicy -Entry $Entry) -eq "allow-prerelease"
 
     switch ($Entry.ecosystem) {
         "npm" { return Get-NpmVersion -PackageName $Entry.package }
         "pypi" { return Get-PyPiVersion -PackageName $Entry.package }
         "github-releases" { return Get-GitHubLatestRelease -Repository $Entry.repository }
-        "github-tags" { return Get-GitHubLatestTag -Repository $Entry.repository }
+        "github-tags" { return Get-GitHubLatestTag -Repository $Entry.repository -AllowPrerelease:$allowPrerelease -FixturePayload $payload }
+        "nodejs-lts" { return Get-NodeLtsVersion -FixturePayload $payload }
+        "python-stable" { return Get-PythonStableVersion -FixturePayload $payload }
+        "php-stable" { return Get-PhpStableVersion -FixturePayload $payload }
+        "wordpress-core" { return Get-WordPressCoreVersion -FixturePayload $payload }
+        "postgresql-stable" { return Get-PostgreSqlStableVersion -FixturePayload $payload }
         "manual" { return "manual-check" }
         default { throw "Unsupported ecosystem: $($Entry.ecosystem)" }
     }
 }
 
-function Get-FixtureVersion {
+function Get-FixtureValue {
     param($Entry)
 
-    if ([string]::IsNullOrWhiteSpace($env:LLM_DEV_WIKI_UPDATE_FIXTURES_JSON)) {
-        return $null
+    if (-not $UseFixtureVersions -or [string]::IsNullOrWhiteSpace($env:LLM_DEV_WIKI_UPDATE_FIXTURES_JSON)) {
+        return [pscustomobject]@{ Found = $false; Value = $null }
     }
 
     $fixtures = $env:LLM_DEV_WIKI_UPDATE_FIXTURES_JSON | ConvertFrom-Json
-    $packageOrRepo = if ($Entry.package) { [string]$Entry.package } elseif ($Entry.repository) { [string]$Entry.repository } else { "" }
+    $packageOrRepo = if ($Entry.package) { [string]$Entry.package } elseif ($Entry.repository) { [string]$Entry.repository } else { [string]$Entry.name }
     $key = "$($Entry.ecosystem):$packageOrRepo"
     if ($fixtures.PSObject.Properties.Name.Contains($key)) {
-        return [string]$fixtures.$key
+        return [pscustomobject]@{ Found = $true; Value = $fixtures.PSObject.Properties[$key].Value }
     }
 
-    return $null
+    return [pscustomobject]@{ Found = $false; Value = $null }
 }
 
 function Test-PrereleaseVersion {
@@ -123,12 +257,14 @@ if (-not (Test-Path -LiteralPath $watchlistPath)) {
 $entries = Get-Content -Raw -LiteralPath $watchlistPath | ConvertFrom-Json
 $checkedAt = (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss 'UTC'")
 $updatesFound = 0
+$baselineHolds = 0
 $errorCount = 0
 $rows = [System.Collections.Generic.List[string]]::new()
 
 foreach ($entry in $entries) {
     $currentVersion = if ($entry.currentVersion) { [string]$entry.currentVersion } else { "" }
     $latestVersion = ""
+    $recommendedBaseline = if ($entry.recommendedBaseline) { [string]$entry.recommendedBaseline } else { "" }
     $status = "ok"
 
     try {
@@ -144,6 +280,10 @@ foreach ($entry in $entries) {
             $status = "update-available"
             $updatesFound++
         }
+        elseif (-not [string]::IsNullOrWhiteSpace($recommendedBaseline) -and $recommendedBaseline -ne $currentVersion) {
+            $status = "baseline-hold"
+            $baselineHolds++
+        }
     }
     catch {
         if (-not [string]::IsNullOrWhiteSpace($currentVersion)) {
@@ -158,9 +298,22 @@ foreach ($entry in $entries) {
         }
     }
 
-    $packageOrRepo = if ($entry.package) { $entry.package } elseif ($entry.repository) { $entry.repository } else { "manual" }
+    $packageOrRepo = if ($entry.package) {
+        $entry.package
+    } elseif ($entry.repository) {
+        $entry.repository
+    } else {
+        switch ([string]$entry.ecosystem) {
+            "nodejs-lts" { "nodejs.org/dist/index.json" }
+            "python-stable" { "python/cpython" }
+            "php-stable" { "php.net/releases" }
+            "wordpress-core" { "api.wordpress.org/core/version-check" }
+            "postgresql-stable" { "postgresql.org/versions.json" }
+            default { "manual" }
+        }
+    }
     $docsLink = if ($entry.docsUrl) { "[docs]($($entry.docsUrl))" } else { "" }
-    $rows.Add("| $($entry.name) | $($entry.ecosystem) | $packageOrRepo | $currentVersion | $latestVersion | $status | $docsLink |") | Out-Null
+    $rows.Add("| $($entry.name) | $($entry.ecosystem) | $packageOrRepo | $currentVersion | $latestVersion | $recommendedBaseline | $status | $docsLink |") | Out-Null
 }
 
 $report = [System.Collections.Generic.List[string]]::new()
@@ -169,10 +322,11 @@ $report.Add("") | Out-Null
 $report.Add("- Checked at: $checkedAt") | Out-Null
 $report.Add("- Entries: $($entries.Count)") | Out-Null
 $report.Add("- Updates found: $updatesFound") | Out-Null
+$report.Add("- Baseline holds: $baselineHolds") | Out-Null
 $report.Add("- Check failures: $errorCount") | Out-Null
 $report.Add("") | Out-Null
-$report.Add("| Name | Ecosystem | Package/Repository | Current | Latest | Status | Source |") | Out-Null
-$report.Add("|---|---|---|---|---|---|---|") | Out-Null
+$report.Add("| Name | Ecosystem | Package/Repository | Current | Latest | Recommended baseline | Status | Source |") | Out-Null
+$report.Add("|---|---|---|---|---|---|---|---|") | Out-Null
 foreach ($row in $rows) {
     $report.Add($row) | Out-Null
 }

@@ -1,7 +1,7 @@
 ---
 title: "Security review checklist"
 category: "checklist"
-updated: "2026-07-01"
+updated: "2026-07-21"
 status: "active"
 tags: ["security", "release-gate"]
 source_priority: "internal"
@@ -36,6 +36,7 @@ Gated checklist. Каждая строка — критерий, способ п
 
 ## Secrets & dependencies
 
+- [ ] **Software supply chain** — lockfile immutable; dependency provenance/build scripts и pinned CI actions проверены; base images имеют owner и rebuild cadence — devops/security owner — block — [Dependency security](../docs/05-auth-security/Dependency-security.md), [OWASP](../docs/05-auth-security/OWASP.md).
 - [ ] **Secrets не в git** — gitleaks/TruffleHog CI scan чистый; нет `.env*` в репо — devops owner — block — [Secrets](../docs/05-auth-security/Secrets.md).
 - [ ] **Секреты не в frontend bundle** — `NEXT_PUBLIC_*` не содержит API keys — frontend owner — block — [Secrets](../docs/05-auth-security/Secrets.md).
 - [ ] **Секреты не в logs / error tracker** — PII scrubbing в Sentry — devops owner — block — [Sentry](../docs/08-devops-deploy/Sentry.md).
@@ -57,6 +58,7 @@ Gated checklist. Каждая строка — критерий, способ п
 
 ## Error handling & disclosure
 
+- [ ] **Exceptional conditions fail closed** — timeout, parser/runtime error, dependency outage и partial failure не обходят authz/validation/transaction boundary; negative tests подтверждают безопасный отказ — backend/security owner — block — [OWASP](../docs/05-auth-security/OWASP.md).
 - [ ] **Stack trace** не отдаётся пользователю; SQL/секреты не утекают в ответе — backend owner — block — [Error handling](../docs/03-backend/Error-handling.md).
 - [ ] **Verbose 404** vs **vague 401/403** не позволяет user-enumeration — backend owner — warn.
 

@@ -35,7 +35,8 @@ description: >-
 1. Реализуй маршруты и компоненты по плану этапов и дизайн-токенам из `site-design`. Если существует
    `DESIGN-DIRECTION.md` (лендинг/продающая страница) — сверяйся с ним при реализации first
    viewport, карточек, CTA, секционного ритма, типографики и mobile, не только с токенами.
-1.5. Если доступен `senior-frontend`, используй его как review/helper для React/Next/TypeScript; для простого
+1.5. По умолчанию helper не нужен. При конкретном пробеле можно использовать один `senior-frontend`
+   как review/helper для React/Next/TypeScript; для простого
    Astro/static сайта не тащи React/Tailwind только из-за helper-а.
 2. Состояние и данные: явные границы server/client, кэш-политика, загрузка/ошибки/пустые состояния.
 3. Формы: client-side UX-валидация + расчёт на серверную перепроверку (валидация не доверяется клиенту).
@@ -45,7 +46,8 @@ description: >-
 7. **Верификация в браузере (а не «проверь вручную»):** если подключён **Preview MCP** — `preview_start`,
    затем `preview_console_logs`/`preview_snapshot`/`preview_screenshot`/`preview_resize` (mobile/desktop);
    иначе **Playwright MCP**. Проверь первый экран, формы (happy/error), CTA, отсутствие overlap и horizontal scroll.
-8. **Артефакт.** Сохрани в корень проекта `_frontend-smoke.md`: результаты браузерной верификации из
+8. **Артефакт.** Создай единый переиспользуемый набор smoke-сценариев и сохрани в корень проекта
+   `_frontend-smoke.md`: команды/сценарии и результаты браузерной верификации из
    шага 7 (первый экран, формы happy/error, mobile/desktop, console без критичных ошибок, пути к
    скриншотам), статус `frontend-review.md`. Для `marketplace` в этом одном файле сделай секции
    `Public storefront` и `Private console`. Это evidence фазы для `_pipeline-status.md` и вход для
@@ -61,8 +63,8 @@ description: >-
 - Проверяет: `frontend-review.md` как self-check + локальный прогон в браузере.
 
 ## Передача дальше
-`site-seo` — оптимизация уже реализованных страниц (метрики снимаются на реальном билде, не на
-промежуточном состоянии), строго последовательно. Затем `site-review`.
+`site-seo` — оптимизация уже реализованных страниц. `site-review`, `site-deploy` и `site-handoff`
+повторяют smoke из `_frontend-smoke.md` в integration, preview и production, не создавая дубликаты.
 Опционально (живая дизайн-система, `docs/07-mcp-and-ai-tools/Claude-Design-and-DesignSync.md`): если
 проект ведёт design-system проект на claude.ai/design — запушь реализованные компоненты/токены обратно
 (DesignSync, `@dsCard`-превью из `_design/ds-preview/`), инкрементально и только после ревью `finalize_plan`.

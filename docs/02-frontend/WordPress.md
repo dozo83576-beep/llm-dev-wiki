@@ -1,8 +1,8 @@
 ---
 title: "WordPress"
 category: "frontend"
-updated: "2026-06-10"
-reviewed: "2026-07-05"
+updated: "2026-07-21"
+reviewed: "2026-07-21"
 status: "active"
 tags: ["wordpress", "cms", "headless", "content"]
 source_priority: "official-docs"
@@ -11,6 +11,8 @@ source_priority: "official-docs"
 # WordPress
 
 WordPress — production reality для редакторских сайтов, корпоративного marketing, newsroom, SEO-контента и legacy-платформ. Выбирай его как CMS/workflow decision, а не как default для custom SaaS.
+
+**Security baseline:** WordPress `7.0.2` — security release. Обновляй core оперативно, но сначала прогоняй на staging совместимость plugins/themes, Block Editor, REST/headless preview и критичные checkout/form flows. Beta/pre-release ветки, включая 7.1 beta, не являются production baseline.
 
 Если WordPress используется как **commerce/marketplace backend** (WooCommerce, кастомные REST-эндпоинты, mu-plugins, Action Scheduler, SPA-кабинеты) — см. [WordPress + WooCommerce backend](../03-backend/WordPress-WooCommerce-backend.md); этот документ покрывает editorial/CMS-сценарии.
 
@@ -52,6 +54,7 @@ WordPress — production reality для редакторских сайтов, �
 ## Источники
 
 - [WordPress Developer Resources](https://developer.wordpress.org/)
+- [WordPress 7.0.2 Security Release](https://wordpress.org/news/2026/07/wordpress-7-0-2-release/) — проверено 2026-07-21.
 - [WordPress REST API Handbook](https://developer.wordpress.org/rest-api/)
 - [Block Editor Theme docs](https://developer.wordpress.org/block-editor/how-to-guides/themes/)
 - См. [CMS content](CMS-content.md), [SEO](SEO.md), [Performance](Performance.md), [Security testing](../09-testing/Security-testing.md).

@@ -1,7 +1,7 @@
 ---
 title: "Directus"
 category: "frontend"
-updated: "2026-06-22"
+updated: "2026-07-21"
 status: "active"
 tags: ["cms", "directus", "headless", "database"]
 source_priority: "official-docs"
@@ -11,7 +11,7 @@ source_priority: "official-docs"
 
 Directus — headless CMS/data platform поверх SQL database: существующая схема становится REST/GraphQL API и admin studio. Это сильный вариант, когда database ownership важнее CMS abstraction.
 
-Freshness note: Directus 12.0.2 adds non-interactive extension scaffolding and fixes a user count bug with conflicting direct policy and role; permission-matrix guidance remains unchanged.
+Freshness note: Directus 12.1.1 reviewed 2026-07-21; permission-matrix and schema-ownership guidance unchanged.
 
 ## Когда использовать
 
@@ -48,6 +48,6 @@ Freshness note: Directus 12.0.2 adds non-interactive extension scaffolding and f
 
 ## Источники
 
-- [Directus Docs](https://directus.com/docs/) — refreshed against Directus 12.0.2 on 2026-06-22.
+- [Directus Docs](https://directus.com/docs/) — refreshed against Directus 12.1.1 on 2026-07-21.
 - [Directus Data API](https://developers.directus.com/)
 - См. [CMS content](CMS-content.md), [API architecture](../03-backend/API-architecture.md), [Security testing](../09-testing/Security-testing.md).

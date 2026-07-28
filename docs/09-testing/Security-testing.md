@@ -1,7 +1,7 @@
 ---
 title: "Security testing"
 category: "testing"
-updated: "2026-06-10"
+updated: "2026-07-21"
 status: "active"
 tags: ["security-tests", "owasp"]
 source_priority: "official-docs"
@@ -9,7 +9,7 @@ source_priority: "official-docs"
 
 # Security testing
 
-Security testing проверяет, что приложение защищено по OWASP Top 10 и не открывает классов уязвимостей: auth bypass, broken access control, injection, XSS, CSRF, SSRF, secrets leak, dependency CVE.
+Security testing проверяет, что приложение защищено по OWASP Top 10:2025 и не открывает классов уязвимостей: auth bypass, broken access control, injection, XSS, CSRF, SSRF, secrets leak, security misconfiguration, software supply-chain failures и fail-open exceptional conditions.
 
 ## Когда использовать
 
@@ -53,6 +53,9 @@ Security testing проверяет, что приложение защищен�
 - Rate limits: brute-force / enumeration защиты.
 - Secrets exposure: в bundle, в error messages, в logs.
 - File upload: MIME, размер, AV-scan, path traversal.
+- Security misconfiguration: debug/admin endpoints, default credentials, permissive CORS/CSP и лишние services выключены.
+- Software supply chain: lockfile/provenance, CI actions, build scripts, package registry и container base images проверены.
+- Exceptional conditions: timeout, dependency outage, parse/runtime error и partial failure не обходят authz, validation или transaction boundary; система fail-closed.
 
 ## Частые ошибки
 
@@ -82,5 +85,5 @@ DoS на собственное production через нагрузочный sec
 ## Источники
 
 - [OWASP WSTG](https://owasp.org/www-project-web-security-testing-guide/) — проверено 2026-05-24.
-- [OWASP Top 10](https://owasp.org/www-project-top-ten/) — проверено 2026-05-24.
+- [OWASP Top 10:2025](https://owasp.org/Top10/2025/) — проверено 2026-07-21.
 - См. [Site audit tooling](Site-audit-tooling.md), [OWASP](../05-auth-security/OWASP.md), [Authentication](../05-auth-security/Authentication.md), [Authorization](../05-auth-security/Authorization.md), [Prompt injection](../07-mcp-and-ai-tools/Prompt-injection.md), [security-review checklist](../../checklists/security-review.md).

@@ -1,7 +1,7 @@
 ---
 title: "OpenAI API"
 category: "ai-tools"
-updated: "2026-06-22"
+updated: "2026-07-21"
 status: "active"
 tags: ["openai", "api"]
 source_priority: "official-docs"
@@ -13,7 +13,7 @@ source_priority: "official-docs"
 
 Правила: не передавать секреты в prompt, логировать request id и usage, ограничивать tool permissions, делать evals для AI-функций.
 
-Источник: [OpenAI Platform Docs](https://platform.openai.com/docs) и [OpenAI Python SDK on PyPI](https://pypi.org/project/openai/) — refreshed against `openai` 2.43.0 on 2026-06-22.
+Источник: [OpenAI Platform Docs](https://platform.openai.com/docs) и [OpenAI Python SDK on PyPI](https://pypi.org/project/openai/) — `openai` 2.46.0 reviewed 2026-07-21; API guidance unchanged.
 
 ## Когда использовать
 

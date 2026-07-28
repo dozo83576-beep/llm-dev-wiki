@@ -1,7 +1,7 @@
 ---
 title: "Выбор стека"
 category: "process"
-updated: "2026-06-10"
+updated: "2026-07-21"
 status: "active"
 tags: ["stack", "architecture"]
 source_priority: "official-docs"
@@ -35,6 +35,8 @@ source_priority: "official-docs"
 | Enterprise Angular | Angular SSR | API/NestJS/.NET/Java | Project-specific | SSO/OIDC | Enterprise cloud | SSR/hydration/E2E | Если Angular не является стандартом команды |
 
 Базовый выбор по умолчанию: [Next.js Fullstack](../../stacks/nextjs-fullstack.md) + TypeScript + PostgreSQL + Prisma/Drizzle + Auth.js/Clerk/Supabase. Отклоняйся от него только при конкретной причине.
+
+В таблице намеренно сохранён TypeScript 6: latest stable `7.0.2` изучен, но production baseline остаётся `6.0.3` до project-level smoke совместимости framework/compiler API. Решение и migration gate описаны в [TypeScript](../02-frontend/TypeScript.md).
 
 ## Автономный выбор по запросу
 

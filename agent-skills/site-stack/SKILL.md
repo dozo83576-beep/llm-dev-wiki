@@ -15,13 +15,12 @@ description: >-
 ## Requires
 - `site-discovery` завершён (тип продукта, требования, acceptance — артефакт `_discovery.md`
   проекта) **и** `site-competitive-analysis` завершён (нужен тех-бенчмарк и stack-сигналы
-  конкурентов из `_competitive-analysis.md`, чтобы решение не принималось вслепую), либо raw
-  request → preflight (см. шаг 1).
+  конкурентов из `_competitive-analysis.md`, чтобы решение не принималось вслепую). Preflight уже
+  выполнен оркестратором и здесь не запускается повторно.
 
 ## Сначала прочитай
 - Перед сравнением вариантов: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<тип продукта + кандидаты стека>"` — поднимет профильные доки и уроки по стекам.
 - Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
-- `D:\Work\llm-dev-wiki\docs\01-development-process\new-site-preflight-tool.md` — executable preflight для raw request.
 - `D:\Work\llm-dev-wiki\docs\01-development-process\site-stack-router-tool.md` — rule-based router,
   исполняемый смоук перед выбором стека.
 - `D:\Work\llm-dev-wiki\docs\01-development-process\stack-selection.md` — критерии выбора.
@@ -39,8 +38,8 @@ description: >-
   default-исключений. Не используй внешние scaffold/generator helpers для выбора стека без явного запроса.
 
 ## Шаги
-1. Если пользователь пишет `Я хочу создать сайт <описание сайта>`, трактуй текст после фразы как raw request. Если есть raw request, запусти `pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "<raw request>"`. При `needs-discovery` задай вопросы и не фиксируй стек.
-2. Возьми тип проекта из discovery и примени decision router.
+1. Возьми primary playbook, delivery profile и supporting guides из status v2; не переклассифицируй продукт.
+2. Возьми ограничения из discovery и примени stack decision router.
 2.5. Сверь тех-бенчмарк и stack & rendering signals конкурентов из `_competitive-analysis.md`: если
    конкуренты на устаревшем/медленном стеке — используй это как шанс обогнать (современный SSR/edge/
    ISR/streaming-стек); если конкуренты уже на современном стеке — минимум не отставать по тем же

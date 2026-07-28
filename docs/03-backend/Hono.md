@@ -1,7 +1,7 @@
 ---
 title: "Hono"
 category: "backend"
-updated: "2026-06-22"
+updated: "2026-07-21"
 status: "active"
 tags: ["hono", "edge", "workers", "api"]
 source_priority: "official-docs"
@@ -57,6 +57,6 @@ Region mismatch с базой, Durable Object hot key, KV eventual consistency, 
 
 ## Источники
 
-- [Hono Docs](https://www.honojs.com/docs/) — watchlist refreshed to `hono` 4.12.26 on 2026-06-22.
+- [Hono Docs](https://www.honojs.com/docs/) — `hono` 4.12.31 reviewed 2026-07-21; runtime/adapter guidance unchanged.
 - [Hono Getting Started](https://hono.dev/docs/getting-started/basic)
 - См. [Cloudflare Workers fullstack](../08-devops-deploy/Cloudflare-Workers-fullstack.md), [API architecture](API-architecture.md), [Webhooks](Webhooks.md).

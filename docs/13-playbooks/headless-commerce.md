@@ -1,13 +1,16 @@
 ---
-title: "Playbook: Headless commerce"
+title: "Supporting guide: Headless commerce"
 category: "playbooks"
-updated: "2026-06-10"
+updated: "2026-07-21"
 status: "active"
 tags: ["commerce", "ecommerce", "headless", "checkout"]
 source_priority: "mixed"
 ---
 
-# Playbook: Headless commerce
+# Supporting guide: Headless commerce
+
+Это платформенный guide к primary playbook `ecommerce` или `marketplace`, а не самостоятельный
+конкурирующий playbook.
 
 Headless commerce отделяет storefront, catalog, checkout, payments, fulfillment и content. Главный выбор: купить готовую commerce-платформу или строить custom commerce с минимальным PCI/tax/inventory риском.
 
@@ -28,7 +31,7 @@ Headless commerce отделяет storefront, catalog, checkout, payments, fulf
 - **Stripe Checkout / Embedded Checkout**: simple one-off/subscription, low PCI scope, limited UI customization.
 - **Shopify Hydrogen**: Shopify operations + custom React Router storefront; Shopify remains source of truth.
 - **Medusa**: custom commerce modules/workflows when team owns backend logic.
-- **Saleor**: GraphQL commerce API for custom storefront/marketplace needs.
+- **Saleor**: GraphQL commerce API for custom storefront/marketplace needs; latest stable `3.23.19` проверен 2026-07-21, guidance unchanged.
 - Provider event is source of truth for payment state; local order state follows webhook/reconciliation.
 - Server calculates price, tax, discounts and inventory reservations.
 

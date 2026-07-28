@@ -12,7 +12,7 @@ description: >-
 Тонкий роутер. Источник правды — `D:\Work\llm-dev-wiki`. Рискованные операции — только через dry-run или план отката и явное подтверждение.
 
 ## Requires
-- `site-review` пройден: нет block-пунктов, UAT и client sign-off (`qa-acceptance`) получены.
+- `site-review` пройден: нет block-пунктов и зафиксирована UAT readiness.
 
 ## Сначала прочитай
 - Перед деплоем: `pwsh D:\Work\llm-dev-wiki\tools\ask-wiki.ps1 "<платформа + деплой>"` — поднимет deploy-паттерны и уроки по платформе.
@@ -33,21 +33,23 @@ description: >-
 1.5. Инфраструктура: пройди `infrastructure-readiness.md` (домен, DNS, SSL/HTTPS, CDN) до переключения на production-домен. Для проектов с данными — `backup-restore-drill.md`.
 1.6. Если deploy target — VPS для Node-сайта, root-деплой запрещён как default: создать отдельного пользователя, SSH key, PM2 под этим пользователем, `.env.production` вне архива, ограниченный sudo только для `nginx -t` и reload.
 2. Подготовь миграции (обратимые, expand-contract) и план отката.
-3. Выкат сначала в preview/staging, затем production; rollback-first — путь отката готов до релиза.
-4. На preview/staging для public routes запусти `pwsh D:\Work\llm-dev-wiki\tools\site-audit.ps1 -Url <preview-url>` или зафиксируй documented exception.
+3. Выкат сначала в preview/staging; rollback-first — путь отката готов до promotion.
+4. На preview повтори smoke-набор из `_frontend-smoke.md` и site audit для public routes.
+4.5. Покажи preview/evidence уполномоченному владельцу и получи явный письменный approval на
+   promotion. Только после него выполняй production promotion.
 5. Подключи monitoring/alerts (Sentry/OTel) и проверь, что они получают данные.
-5.5. Если доступны deploy/ops helpers, используй их для черновика CI, observability или runbook; prod-мутации,
+5.5. По умолчанию helper не нужен; при конкретном пробеле используй максимум один deploy/ops helper. Prod-мутации,
    DNS, billing и секреты всё равно только после явного подтверждения.
 6. Прогон release-readiness; зафиксируй ссылку на deploy и метрики.
 7. **Артефакт.** Сохрани в корень проекта `_deploy.md`: production/staging URL, commit/tag релиза,
-   применённые миграции, rollback-путь, статус monitoring/alerts, результат site-audit smoke.
+   применённые миграции, rollback-путь, статус monitoring/alerts, preview smoke и promotion approval.
    Это evidence фазы для `_pipeline-status.md` (verifier принимает и голый production URL в строке
    статуса, но файл — основной путь) и вход для `site-handoff`.
 
 ## Quality gate
 - release-readiness и infrastructure-readiness пройдены; rollback-путь проверен.
 - Для проектов с данными — backup-restore-drill пройден.
-- Site audit smoke пройден для public routes перед production.
+- Единый smoke и site audit пройдены на preview; promotion approval зафиксирован до production.
 - Секреты не в репозитории/логах; monitoring активен.
 - Для VPS Node-сайта: `pm2 status` показывает не-root пользователя, `.env.production` не перетёрт deploy-архивом, Nginx reload выполняется через ограниченный sudo.
 - Prod-мутации/DNS/billing — только после явного подтверждения.

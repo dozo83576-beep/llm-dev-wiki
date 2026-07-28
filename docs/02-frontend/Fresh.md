@@ -1,7 +1,7 @@
 ---
 title: "Fresh"
 category: "frontend"
-updated: "2026-06-04"
+updated: "2026-07-21"
 status: "active"
 tags: ["fresh", "deno", "islands", "frontend"]
 source_priority: "official-docs"
@@ -10,6 +10,8 @@ source_priority: "official-docs"
 # Fresh
 
 Fresh — Deno full-stack framework with server-side rendering and islands of interactivity. В wiki это специализированный вариант для Deno/edge проектов, не default для Node/React teams.
+
+Fresh `2.3.3` проверен как latest stable 2026-07-21. Patch release не меняет архитектурную рекомендацию: Deno/runtime compatibility и deploy smoke остаются обязательными.
 
 ## Когда использовать
 

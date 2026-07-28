@@ -152,7 +152,18 @@ function Test-TechnologyWatchlist {
         return
     }
 
-    $allowedEcosystems = @("npm", "pypi", "github-releases", "github-tags", "manual")
+    $allowedEcosystems = @(
+        "npm",
+        "pypi",
+        "github-releases",
+        "github-tags",
+        "nodejs-lts",
+        "python-stable",
+        "php-stable",
+        "wordpress-core",
+        "postgresql-stable",
+        "manual"
+    )
     $allowedVersionPolicies = @("stable", "allow-prerelease")
     $index = 0
     foreach ($entry in $entries) {
@@ -171,6 +182,19 @@ function Test-TechnologyWatchlist {
             $versionPolicy = ([string]$entry.versionPolicy).Trim()
             if ($allowedVersionPolicies -notcontains $versionPolicy) {
                 Add-Failure $Failures ("Watchlist entry {0} has unsupported versionPolicy: {1}" -f $index, $entry.versionPolicy)
+            }
+        }
+
+        if ($entry.PSObject.Properties.Name.Contains("recommendedBaseline")) {
+            $recommendedBaseline = ([string]$entry.recommendedBaseline).Trim()
+            if ([string]::IsNullOrWhiteSpace($recommendedBaseline)) {
+                Add-Failure $Failures ("Watchlist entry {0} has empty recommendedBaseline" -f $index)
+            }
+            elseif ($recommendedBaseline -match '(?i)(^|[.\-+_])(?:rc|alpha|beta|preview|pre|canary|dev|nightly|snapshot)(?:[.\-+_0-9]|$)') {
+                Add-Failure $Failures ("Watchlist entry {0} recommendedBaseline must be stable: {1}" -f $index, $entry.recommendedBaseline)
+            }
+            elseif ([string]::IsNullOrWhiteSpace([string]$entry.currentVersion)) {
+                Add-Failure $Failures ("Watchlist entry {0} with recommendedBaseline requires currentVersion" -f $index)
             }
         }
 

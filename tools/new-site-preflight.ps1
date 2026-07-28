@@ -79,6 +79,9 @@ $result = [pscustomobject]@{
     status = if ($canStartImplementation) { "ready" } else { "needs-discovery" }
     confidence = $router.confidence
     recommendedRoute = $router.recommendedRoute
+    recommendedPlaybook = $router.recommendedPlaybook
+    recommendedDeliveryProfile = $router.recommendedDeliveryProfile
+    supportingGuides = @($router.supportingGuides)
     recommendedStack = $router.recommendedStack
     assumptions = @($router.assumptions)
     openQuestions = @($router.openQuestions)
@@ -97,6 +100,9 @@ if ($OutputJson) {
 else {
     Write-Host "Preflight status: $($result.status)"
     Write-Host "Decision confidence: $($result.confidence)"
+    Write-Host "Primary playbook: $($result.recommendedPlaybook)"
+    Write-Host "Delivery profile: $($result.recommendedDeliveryProfile)"
+    Write-Host "Supporting guides: $($result.supportingGuides -join ', ')"
     Write-Host "Recommended route: $($result.recommendedRoute)"
     Write-Host "Recommended stack: $($result.recommendedStack)"
     Write-Host ""

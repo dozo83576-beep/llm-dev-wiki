@@ -1,7 +1,7 @@
 ---
 title: "Tailwind CSS"
 category: "frontend"
-updated: "2026-06-22"
+updated: "2026-07-21"
 status: "active"
 tags: ["tailwind", "css"]
 source_priority: "official-docs"
@@ -13,7 +13,7 @@ source_priority: "official-docs"
 
 Правила: компоненты выделять при повторении, не плодить произвольные значения без причины, хранить цвета и радиусы в теме, проверять мобильные размеры.
 
-Источник: [Tailwind CSS Docs](https://tailwindcss.com/docs). Freshness note: `tailwindcss` 4.3.1 — patch release with CLI, `@apply`, `@source`, Vite sourcemap and scanner fixes; guidance unchanged.
+Источник: [Tailwind CSS Docs](https://tailwindcss.com/docs). Freshness note: `tailwindcss` 4.3.3 reviewed 2026-07-21; component/theme and visual-regression guidance unchanged.
 
 ## Когда использовать
 
@@ -37,5 +37,5 @@ Visual review, responsive smoke, contrast, отсутствие overflow тек�
 
 ## Источники
 
-- [Tailwind CSS Docs](https://tailwindcss.com/docs) — refreshed against `tailwindcss` 4.3.1 on 2026-06-22.
+- [Tailwind CSS Docs](https://tailwindcss.com/docs) — refreshed against `tailwindcss` 4.3.3 on 2026-07-21.
 - См. [Styling systems](Styling-systems.md), [Design systems](Design-systems.md).

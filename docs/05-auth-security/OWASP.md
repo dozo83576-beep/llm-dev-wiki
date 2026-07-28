@@ -1,8 +1,8 @@
 ---
 title: "OWASP"
 category: "security"
-updated: "2026-05-24"
-reviewed: "2026-06-29"
+updated: "2026-07-21"
+reviewed: "2026-07-21"
 status: "active"
 tags: ["owasp", "security"]
 source_priority: "official-docs"
@@ -10,11 +10,13 @@ source_priority: "official-docs"
 
 # OWASP
 
-Минимум для web-проектов: broken access control, cryptographic failures, injection, insecure design, security misconfiguration, vulnerable components, auth failures, integrity failures, logging failures, SSRF.
+OWASP Top 10:2025 задаёт десять категорий: **Broken Access Control**, **Security Misconfiguration**, **Software Supply Chain Failures**, **Cryptographic Failures**, **Injection**, **Insecure Design**, **Authentication Failures**, **Software or Data Integrity Failures**, **Security Logging & Alerting Failures**, **Mishandling of Exceptional Conditions**.
+
+Это не простое переименование списка 2021: SSRF рассматривается внутри Broken Access Control, риск vulnerable/outdated components расширен до software supply chain, а небезопасная обработка исключительных ситуаций выделена отдельно. Threat model, review и negative tests должны покрывать все десять категорий, а не только injection/auth.
 
 Каждый релиз должен проходить [security review](../../checklists/security-review.md).
 
-Источник: [OWASP Top 10](https://owasp.org/www-project-top-ten/).
+Источник: [OWASP Top 10:2025](https://owasp.org/Top10/2025/) — проверено 2026-07-21.
 
 ## Когда использовать
 
@@ -30,9 +32,9 @@ OWASP checklist используй перед release, после добавле
 
 ## Частые ошибки
 
-Проверить только injection и забыть broken access control, SSRF, logging gaps, vulnerable components и insecure design.
+Проверить только injection и забыть broken access control/SSRF, supply chain, misconfiguration, logging/alerting gaps, integrity, insecure design и fail-open exception paths.
 
 ## Проверка
 
-Security review checklist, dependency scan, authz negative tests, upload/SSRF tests, secrets scan, logs review.
+Security review checklist, dependency/provenance scan, authz negative tests, upload/SSRF tests, secure-config diff, secrets scan, logs/alerts review и fail-closed tests для timeouts/exceptions.
 

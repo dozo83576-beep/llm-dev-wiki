@@ -20,9 +20,11 @@ description: >-
 ## Когда использовать
 - Перед релизом публичного сайта; при SEO/performance-аудите.
 - Когда важна индексация, выдача и Core Web Vitals.
+- Для `private-app` — сокращённый обязательный gate: `noindex`, закрытый sitemap/robots boundary,
+  отсутствие утечки приватных route metadata и проверка базовой performance/accessibility.
 
 ## Когда НЕ использовать
-- Внутренние админки/дашборды за авторизацией без публичной индексации — достаточно базовых метатегов и `noindex`.
+- Только profile `api-only`, где контракт выставляет фазу `not-applicable`.
 
 ## Сначала прочитай
 - Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
@@ -38,7 +40,7 @@ description: >-
 
 ## Шаги
 1. Метаданные на каждую страницу: title, description, canonical, Open Graph/Twitter, lang/hreflang при i18n.
-1.5. Если доступны SEO/analytics helpers, используй их для аудита и draft schema/событий; финальная проверка
+1.5. По умолчанию helper не нужен; при конкретном пробеле используй максимум один SEO/analytics helper. Финальная проверка
    всё равно через валидаторы, Lighthouse/PSI и analytics checklist.
 2. Индексация: `sitemap.xml`, `robots.txt`, корректные `noindex` для приватных/служебных маршрутов.
 3. Structured data (Schema.org) под тип страницы (Organization, Product, Article, FAQ, LocalBusiness).

@@ -1,7 +1,7 @@
 ---
 title: "Official docs"
 category: "resource"
-updated: "2026-05-25"
+updated: "2026-07-21"
 status: "active"
 tags: ["resources"]
 source_priority: "mixed"
@@ -20,6 +20,9 @@ source_priority: "mixed"
 ## Backend
 
 - [Node.js](https://nodejs.org/en/learn) — runtime и platform guidance.
+- [Node.js release index](https://nodejs.org/dist/index.json) — официальный список LTS/Current releases.
+- [Python releases](https://github.com/python/cpython/tags) — официальные stable/prerelease tags CPython.
+- [PHP releases](https://www.php.net/releases/) — официальные поддерживаемые release-линии PHP.
 - [NestJS](https://docs.nestjs.com/) — TypeScript backend architecture.
 - [FastAPI](https://fastapi.tiangolo.com/) — Python API framework.
 - [Django](https://docs.djangoproject.com/) — Python web framework.
@@ -36,5 +39,5 @@ source_priority: "mixed"
 
 - [Model Context Protocol](https://modelcontextprotocol.io/docs) — MCP standard.
 - [OpenAI Platform](https://platform.openai.com/docs) — API, tools, agents, embeddings.
-- [OWASP Top 10](https://owasp.org/www-project-top-ten/) — web security risks.
+- [OWASP Top 10:2025](https://owasp.org/Top10/2025/) — web security risks.
 - [OWASP WSTG](https://owasp.org/www-project-web-security-testing-guide/) — security testing guide.

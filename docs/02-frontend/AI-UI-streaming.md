@@ -1,7 +1,7 @@
 ---
 title: "AI UI streaming"
 category: "frontend"
-updated: "2026-06-22"
+updated: "2026-07-21"
 status: "active"
 tags: ["ai", "streaming", "chat", "frontend"]
 source_priority: "mixed"
@@ -10,6 +10,8 @@ source_priority: "mixed"
 # AI UI streaming
 
 AI UI streaming covers chat, generation, tool calls, partial responses, cancellation and telemetry. The UI must make model uncertainty and long-running work visible without leaking secrets or losing state.
+
+**Версионное решение:** latest stable `ai` изучен на `7.0.33`, но production baseline остаётся `6.0.208` до project-level migration smoke. AI SDK 7 требует Node.js 22+, поставляется только как ESM и меняет API/lifecycle, tool context и telemetry. Миграцию начинай codemod-командой `npx @ai-sdk/codemod v7`, затем вручную проверяй streaming, cancel/retry, tool approval/context, message persistence и telemetry; для новых smoke-окружений предпочитай Node.js 24 LTS.
 
 ## Когда использовать
 
@@ -60,6 +62,7 @@ User navigates away mid-stream, duplicate submit, model emits invalid JSON, cita
 
 ## Источники
 
-- [Vercel AI SDK](https://vercel.com/ai-sdk) — refreshed against `ai` 6.0.208 on 2026-06-22.
+- [AI SDK 7 migration guide](https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0) — latest `7.0.33` изучен 2026-07-21; production baseline удерживается на `6.0.208`.
+- [AI SDK 7 announcement](https://vercel.com/blog/ai-sdk-7) — lifecycle/tool-context/telemetry changes проверены 2026-07-21.
 - [OpenAI Platform Docs](https://platform.openai.com/docs) — refreshed 2026-06-06.
 - См. [AI/RAG app playbook](../13-playbooks/ai-rag-app.md), [AI chat widget](../07-mcp-and-ai-tools/AI-chat-widget.md), [OpenAI API](../07-mcp-and-ai-tools/OpenAI-API.md), [Evaluation](../07-mcp-and-ai-tools/Evaluation.md), [Prompt injection](../07-mcp-and-ai-tools/Prompt-injection.md).

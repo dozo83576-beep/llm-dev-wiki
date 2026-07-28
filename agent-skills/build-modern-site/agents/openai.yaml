@@ -1,7 +1,7 @@
 interface:
   display_name: "Build Modern Site"
   short_description: "Оркестратор сборки сайта от идеи до деплоя"
-  default_prompt: "Use $build-modern-site to plan and build a new website end to end with the D:\\Work wiki. All 17 phases from docs/01-development-process/site-pipeline-map.md are mandatory (incl. content/legal pages, design, SEO, review, handoff, learning); run tools/new-site-preflight.ps1 first and read its Lessons learned links."
+  default_prompt: "Use $build-modern-site, docs/01-development-process/site-pipeline-map.md and resources/site-pipeline-contract.json v2 to route a new site through all 17 phases by dependency graph. Run tools/new-site-preflight.ps1 first, record one primary playbook, delivery profile and supporting guides, verify phase evidence, then complete capture-learnings."
 
 policy:
   allow_implicit_invocation: true

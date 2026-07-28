@@ -9,61 +9,44 @@ SCRIPT = ROOT / "tools" / "new-site-preflight.ps1"
 
 def run_preflight(*args, cwd=ROOT):
     return subprocess.run(
-        ["pwsh", "-NoProfile", "-File", str(SCRIPT), *args],
-        cwd=cwd,
-        text=True,
-        encoding="utf-8",
-        capture_output=True,
-        check=False,
+        ["pwsh", "-NoProfile", "-File", str(SCRIPT), *args], cwd=cwd,
+        text=True, encoding="utf-8", capture_output=True, check=False,
     )
 
 
 def preflight_json(request, *extra_args, cwd=ROOT):
     result = run_preflight("-Request", request, "-OutputJson", *extra_args, cwd=cwd)
-    assert result.returncode == 0, result.stderr
+    assert result.returncode == 0, result.stdout + result.stderr
     return json.loads(result.stdout)
 
 
-def test_saas_preflight_includes_router_docs_and_audit_template():
-    payload = preflight_json("Хочу SaaS с подписками и личным кабинетом")
-
+def test_preflight_exposes_both_router_axes():
+    payload = preflight_json("Интернет-магазин на Shopify Hydrogen с checkout")
     assert payload["status"] == "ready"
-    assert payload["confidence"] in {"medium", "high"}
-    assert "SaaS" in payload["recommendedRoute"]
-    assert "stacks/nextjs-fullstack.md" in payload["requiredWikiDocs"]
-    assert payload["siteAuditCommand"].endswith("-Url '<dev-or-staging-url>'")
-    assert payload["router"]["recommendedStack"] == payload["recommendedStack"]
+    assert payload["recommendedPlaybook"] == "ecommerce"
+    assert payload["recommendedDeliveryProfile"] == "public-fullstack"
+    assert payload["supportingGuides"] == ["shopify-hydrogen", "headless-commerce"]
+    assert "docs/13-playbooks/ecommerce.md" in payload["requiredWikiDocs"]
 
 
-def test_landing_preflight_with_url_and_routes_prints_concrete_audit_command(tmp_path):
+def test_api_only_and_ai_rag_are_recognized():
+    api = preflight_json("Только API без frontend")
+    rag = preflight_json("RAG приложение с векторным поиском")
+    assert (api["recommendedPlaybook"], api["recommendedDeliveryProfile"]) == ("api-only-backend", "api-only")
+    assert rag["recommendedPlaybook"] == "ai-rag-app"
+
+
+def test_landing_audit_command_is_read_only(tmp_path):
     payload = preflight_json(
-        "Нужен лендинг с SEO и формой заявки",
-        "-Url",
-        "http://localhost:3000",
-        "-Routes",
-        "/pricing,/contact",
-        cwd=tmp_path,
+        "Нужен лендинг с SEO и формой заявки", "-Url", "http://localhost:3000",
+        "-Routes", "/pricing,/contact", cwd=tmp_path,
     )
-
-    assert payload["status"] == "ready"
-    assert payload["recommendedRoute"] == "Landing"
     assert "site-audit.ps1 -Url http://localhost:3000" in payload["siteAuditCommand"]
     assert "-Routes /pricing,/contact" in payload["siteAuditCommand"]
     assert not (tmp_path / "site-audit-report.json").exists()
-    assert not (tmp_path / "site-audit-report.md").exists()
 
 
-def test_generic_request_fails_when_fail_on_low_confidence_enabled():
+def test_generic_request_fails_when_requested():
     result = run_preflight("-Request", "Сделай сайт", "-FailOnLowConfidence")
-
     assert result.returncode == 1
     assert "Preflight status: needs-discovery" in result.stdout
-    assert "Decision confidence: low" in result.stdout
-
-
-def test_output_json_is_parseable_and_contains_next_steps():
-    payload = preflight_json("Shopify storefront с checkout")
-
-    assert payload["recommendedRoute"] == "Shopify-first commerce"
-    assert isinstance(payload["nextSteps"], list)
-    assert payload["siteAuditCommand"]

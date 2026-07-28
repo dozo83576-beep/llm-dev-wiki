@@ -3,7 +3,7 @@
     "name": "Next.js",
     "ecosystem": "npm",
     "package": "next",
-    "currentVersion": "16.2.9",
+    "currentVersion": "16.2.10",
     "docsUrl": "https://nextjs.org/docs",
     "notes": "Full-stack React framework and App Router baseline."
   },
@@ -19,15 +19,16 @@
     "name": "TypeScript",
     "ecosystem": "npm",
     "package": "typescript",
-    "currentVersion": "6.0.3",
+    "currentVersion": "7.0.2",
+    "recommendedBaseline": "6.0.3",
     "docsUrl": "https://www.typescriptlang.org/docs/",
-    "notes": "Type system and compiler for JavaScript projects."
+    "notes": "Latest stable is tracked separately from the TypeScript 6 production baseline until framework/compiler API migration smoke passes."
   },
   {
     "name": "Prisma",
     "ecosystem": "npm",
     "package": "prisma",
-    "currentVersion": "7.8.0",
+    "currentVersion": "7.9.0",
     "docsUrl": "https://www.prisma.io/docs",
     "notes": "TypeScript ORM and migration tooling."
   },
@@ -35,7 +36,7 @@
     "name": "NestJS",
     "ecosystem": "npm",
     "package": "@nestjs/core",
-    "currentVersion": "11.1.27",
+    "currentVersion": "11.1.28",
     "docsUrl": "https://docs.nestjs.com/",
     "notes": "Structured TypeScript backend framework."
   },
@@ -43,7 +44,7 @@
     "name": "Tailwind CSS",
     "ecosystem": "npm",
     "package": "tailwindcss",
-    "currentVersion": "4.3.1",
+    "currentVersion": "4.3.3",
     "docsUrl": "https://tailwindcss.com/docs",
     "notes": "Utility-first CSS framework."
   },
@@ -59,7 +60,7 @@
     "name": "TanStack Start",
     "ecosystem": "npm",
     "package": "@tanstack/react-start",
-    "currentVersion": "1.168.26",
+    "currentVersion": "1.168.32",
     "docsUrl": "https://tanstack.com/start/latest/docs/framework/react/overview",
     "notes": "React full-stack framework alternative with Router and Query-first patterns."
   },
@@ -67,7 +68,7 @@
     "name": "Hono",
     "ecosystem": "npm",
     "package": "hono",
-    "currentVersion": "4.12.27",
+    "currentVersion": "4.12.31",
     "docsUrl": "https://www.honojs.com/docs/",
     "notes": "Lightweight Web Standards framework for edge/serverless APIs."
   },
@@ -75,7 +76,7 @@
     "name": "SvelteKit",
     "ecosystem": "npm",
     "package": "@sveltejs/kit",
-    "currentVersion": "2.68.0",
+    "currentVersion": "2.70.1",
     "docsUrl": "https://svelte.dev/docs/kit",
     "notes": "Svelte full-stack framework with SSR, routing, form actions and adapters."
   },
@@ -83,7 +84,7 @@
     "name": "Nuxt",
     "ecosystem": "npm",
     "package": "nuxt",
-    "currentVersion": "4.4.8",
+    "currentVersion": "4.5.0",
     "docsUrl": "https://nuxt.com/docs/getting-started",
     "notes": "Vue meta-framework for SSR, SSG, server routes and content sites."
   },
@@ -99,7 +100,7 @@
     "name": "Payload CMS",
     "ecosystem": "npm",
     "package": "payload",
-    "currentVersion": "3.85.1",
+    "currentVersion": "3.86.0",
     "docsUrl": "https://payloadcms.com/docs/getting-started/concepts",
     "notes": "Code-first TypeScript CMS for Next.js and content sites."
   },
@@ -107,22 +108,23 @@
     "name": "Medusa",
     "ecosystem": "npm",
     "package": "@medusajs/medusa",
-    "currentVersion": "2.17.1",
+    "currentVersion": "2.17.2",
     "docsUrl": "https://docs.medusajs.com/learn",
     "notes": "Composable commerce platform for custom ecommerce backends."
   },
   {
     "name": "Saleor",
-    "ecosystem": "manual",
-    "currentVersion": "",
+    "ecosystem": "github-releases",
+    "repository": "saleor/saleor",
+    "currentVersion": "3.23.19",
     "docsUrl": "https://docs.saleor.io/docs/3.x/",
-    "notes": "GraphQL-first commerce platform; review manually because deployment/API versions are product-specific."
+    "notes": "GraphQL-first commerce platform; release monitoring is automated while deployment/API compatibility remains project-specific."
   },
   {
     "name": "Storybook",
     "ecosystem": "npm",
     "package": "storybook",
-    "currentVersion": "10.4.6",
+    "currentVersion": "10.5.3",
     "docsUrl": "https://storybook.js.org/docs/writing-tests",
     "notes": "Component-driven development and UI testing toolchain."
   },
@@ -136,10 +138,11 @@
   },
   {
     "name": "Fresh",
-    "ecosystem": "manual",
-    "currentVersion": "",
+    "ecosystem": "github-releases",
+    "repository": "freshframework/fresh",
+    "currentVersion": "2.3.3",
     "docsUrl": "https://fresh.deno.dev/docs/introduction",
-    "notes": "Deno full-stack framework with SSR and islands; review manually with Deno/Fresh release notes."
+    "notes": "Deno full-stack framework with SSR and islands; stable releases are tracked from the official repository."
   },
   {
     "name": "Bun",
@@ -148,6 +151,13 @@
     "currentVersion": "1.3.14",
     "docsUrl": "https://bun.com/docs",
     "notes": "JavaScript runtime, package manager, bundler and test runner."
+  },
+  {
+    "name": "Node.js",
+    "ecosystem": "nodejs-lts",
+    "currentVersion": "24.18.0",
+    "docsUrl": "https://nodejs.org/en/about/previous-releases",
+    "notes": "Production JavaScript runtime; track the latest LTS line rather than the newer Current line."
   },
   {
     "name": "Panda CSS",
@@ -161,22 +171,23 @@
     "name": "Vercel AI SDK",
     "ecosystem": "npm",
     "package": "ai",
-    "currentVersion": "6.0.208",
+    "currentVersion": "7.0.33",
+    "recommendedBaseline": "6.0.208",
     "docsUrl": "https://vercel.com/ai-sdk",
-    "notes": "TypeScript SDK for streaming AI UIs and provider-agnostic model integrations."
+    "notes": "Latest stable is tracked separately from the AI SDK 6 production baseline until Node/ESM/API lifecycle migration smoke passes."
   },
   {
     "name": "WordPress",
-    "ecosystem": "manual",
-    "currentVersion": "",
+    "ecosystem": "wordpress-core",
+    "currentVersion": "7.0.2",
     "docsUrl": "https://developer.wordpress.org/",
-    "notes": "CMS, block themes, REST API and security/plugin lifecycle; review manually because hosting/core/plugin versions are deployment-specific."
+    "notes": "CMS core stable version; plugin/theme compatibility and hosting lifecycle remain project-specific review items."
   },
   {
     "name": "React Router",
     "ecosystem": "npm",
     "package": "react-router",
-    "currentVersion": "8.0.1",
+    "currentVersion": "8.2.0",
     "docsUrl": "https://reactrouter.com/",
     "notes": "React routing and framework mode successor path for Remix-style apps."
   },
@@ -192,7 +203,7 @@
     "name": "Strapi",
     "ecosystem": "npm",
     "package": "@strapi/strapi",
-    "currentVersion": "5.49.0",
+    "currentVersion": "5.50.2",
     "docsUrl": "https://docs.strapi.io/",
     "notes": "Self-hosted headless CMS with content APIs and admin UI."
   },
@@ -200,7 +211,7 @@
     "name": "Sanity",
     "ecosystem": "npm",
     "package": "sanity",
-    "currentVersion": "6.2.0",
+    "currentVersion": "6.5.0",
     "docsUrl": "https://www.sanity.io/docs",
     "notes": "Hosted structured content platform with Studio and visual editing."
   },
@@ -208,16 +219,17 @@
     "name": "Directus",
     "ecosystem": "npm",
     "package": "directus",
-    "currentVersion": "12.0.2",
+    "currentVersion": "12.1.1",
     "docsUrl": "https://directus.com/docs/",
     "notes": "SQL-first headless CMS/data platform with REST and GraphQL APIs."
   },
   {
     "name": "Laravel Livewire",
-    "ecosystem": "manual",
-    "currentVersion": "",
+    "ecosystem": "github-releases",
+    "repository": "livewire/livewire",
+    "currentVersion": "v4.3.3",
     "docsUrl": "https://livewire.laravel.com/",
-    "notes": "Laravel full-stack UI framework; review manually with Laravel and Livewire release notes."
+    "notes": "Laravel full-stack UI framework; stable releases are tracked from the official repository."
   },
   {
     "name": "Webflow",
@@ -238,7 +250,7 @@
     "name": "Hugo",
     "ecosystem": "github-releases",
     "repository": "gohugoio/hugo",
-    "currentVersion": "v0.163.3",
+    "currentVersion": "v0.164.0",
     "docsUrl": "https://gohugo.io/documentation/",
     "notes": "Go-based static site generator for large content and documentation sites."
   },
@@ -262,7 +274,7 @@
     "name": "Angular",
     "ecosystem": "npm",
     "package": "@angular/core",
-    "currentVersion": "22.0.4",
+    "currentVersion": "22.0.7",
     "docsUrl": "https://angular.dev/",
     "notes": "Enterprise frontend framework; monitor SSR, hydration and platform releases."
   },
@@ -270,7 +282,7 @@
     "name": "FastAPI",
     "ecosystem": "pypi",
     "package": "fastapi",
-    "currentVersion": "0.138.1",
+    "currentVersion": "0.139.2",
     "docsUrl": "https://fastapi.tiangolo.com/",
     "notes": "Python API framework."
   },
@@ -278,7 +290,7 @@
     "name": "Django",
     "ecosystem": "pypi",
     "package": "django",
-    "currentVersion": "6.0.6",
+    "currentVersion": "6.0.7",
     "docsUrl": "https://docs.djangoproject.com/",
     "notes": "Python web framework."
   },
@@ -294,7 +306,7 @@
     "name": "OpenAI Python SDK",
     "ecosystem": "pypi",
     "package": "openai",
-    "currentVersion": "2.44.0",
+    "currentVersion": "2.46.0",
     "docsUrl": "https://platform.openai.com/docs",
     "notes": "OpenAI API client for Python."
   },
@@ -302,7 +314,7 @@
     "name": "Qdrant",
     "ecosystem": "github-releases",
     "repository": "qdrant/qdrant",
-    "currentVersion": "v1.18.2",
+    "currentVersion": "v1.18.3",
     "docsUrl": "https://qdrant.tech/documentation/",
     "notes": "Vector database for RAG and semantic search."
   },
@@ -310,7 +322,7 @@
     "name": "pgvector",
     "ecosystem": "github-releases",
     "repository": "pgvector/pgvector",
-    "currentVersion": "v0.8.3",
+    "currentVersion": "v0.8.5",
     "docsUrl": "https://github.com/pgvector/pgvector",
     "notes": "PostgreSQL vector extension."
   },
@@ -324,18 +336,33 @@
     "notes": "MCP specification and protocol updates; 2026-07-28-RC is a release-candidate/draft spec and production guidance still requires stable-docs review."
   },
   {
+    "name": "Python",
+    "ecosystem": "python-stable",
+    "currentVersion": "3.14.6",
+    "docsUrl": "https://www.python.org/downloads/",
+    "notes": "Stable Python language/runtime line used by FastAPI, Django and automation projects."
+  },
+  {
+    "name": "PHP",
+    "ecosystem": "php-stable",
+    "currentVersion": "8.5.8",
+    "docsUrl": "https://www.php.net/supported-versions.php",
+    "notes": "Latest actively supported PHP line used by WordPress and Laravel stacks."
+  },
+  {
     "name": "PostgreSQL",
-    "ecosystem": "manual",
-    "currentVersion": "",
+    "ecosystem": "postgresql-stable",
+    "currentVersion": "18.4",
     "docsUrl": "https://www.postgresql.org/docs/",
-    "notes": "Check major releases and documentation updates manually."
+    "notes": "Latest supported PostgreSQL major; security patch lines for older supported majors remain documented separately."
   },
   {
     "name": "Docker",
-    "ecosystem": "manual",
-    "currentVersion": "",
+    "ecosystem": "github-tags",
+    "repository": "docker/cli",
+    "currentVersion": "v29.6.2",
     "docsUrl": "https://docs.docker.com/",
-    "notes": "Check Docker Engine, Compose and security updates manually."
+    "notes": "Docker Engine/CLI stable release; Compose and Desktop lifecycle still require separate review when relevant."
   },
   {
     "name": "Vercel",
@@ -355,7 +382,7 @@
     "name": "OWASP",
     "ecosystem": "manual",
     "currentVersion": "",
-    "docsUrl": "https://owasp.org/www-project-top-ten/",
+    "docsUrl": "https://owasp.org/Top10/2025/",
     "notes": "Check OWASP Top 10, WSTG and LLM Top 10 updates manually."
   },
   {

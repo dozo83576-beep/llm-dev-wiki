@@ -1,8 +1,8 @@
 ---
 title: "Authorization"
 category: "security"
-updated: "2026-05-24"
-reviewed: "2026-06-29"
+updated: "2026-07-21"
+reviewed: "2026-07-21"
 status: "active"
 tags: ["authorization", "permissions"]
 source_priority: "mixed"
@@ -36,4 +36,4 @@ Negative integration tests: чужой объект нельзя читать, �
 
 ## Источники
 
-См. [Deny by default](../../patterns/security/deny-by-default.md), [Tenant isolation](../../patterns/security/tenant-isolation.md), [Clerk](Clerk.md), [Auth.js](Authjs.md), [OWASP Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/).
+См. [Deny by default](../../patterns/security/deny-by-default.md), [Tenant isolation](../../patterns/security/tenant-isolation.md), [Clerk](Clerk.md), [Auth.js](Authjs.md), [OWASP Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/).

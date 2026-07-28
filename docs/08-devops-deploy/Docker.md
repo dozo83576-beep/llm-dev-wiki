@@ -1,8 +1,8 @@
 ---
 title: "Docker"
 category: "devops"
-updated: "2026-05-24"
-reviewed: "2026-06-29"
+updated: "2026-07-21"
+reviewed: "2026-07-21"
 status: "active"
 tags: ["docker", "containers"]
 source_priority: "official-docs"
@@ -11,6 +11,8 @@ source_priority: "official-docs"
 # Docker
 
 Docker фиксирует runtime окружение и упаковывает приложение со всеми зависимостями. Цель — воспроизводимая, маленькая, безопасная image, одинаковая для CI, staging и production.
+
+**Security baseline:** Docker Engine `29.6.2` содержит исправления нескольких CVE. После обновления Engine/CLI пересобери images из актуальных base layers, повторно запусти CVE scan и smoke в staging; обновление host runtime не заменяет rebuild приложений.
 
 ## Когда использовать
 
@@ -28,7 +30,7 @@ Docker фиксирует runtime окружение и упаковывает �
 
 - Multi-stage build: отдельная stage для зависимостей и финальный slim-image.
 - Не-root user (`USER node` / `USER app`) и read-only filesystem где возможно.
-- Маленькие базовые образы: `node:22-alpine`, `python:3.12-slim`, `distroless` для prod.
+- Поддерживаемые базовые образы: `node:24-alpine`, `python:3.14-slim`, `distroless` для prod.
 - `HEALTHCHECK` инструкция или k8s liveness/readiness probes.
 - `.dockerignore` исключает `.git`, `node_modules`, `.env`, тесты, fixtures.
 - Pin базового образа на digest (`@sha256:...`) для воспроизводимости.
@@ -66,5 +68,6 @@ CVE в базовых образах без regular rebuild, утечка сек
 ## Источники
 
 - [Docker Docs](https://docs.docker.com/) — проверено 2026-05-24.
+- [Docker Engine 29 release notes](https://docs.docker.com/engine/release-notes/29/) — версия 29.6.2 и security fixes проверены 2026-07-21.
 - [OWASP Docker Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html) — проверено 2026-05-24.
 - См. [Docker Compose](Docker-compose.md), [Secrets](../05-auth-security/Secrets.md), [Dependency security](../05-auth-security/Dependency-security.md).

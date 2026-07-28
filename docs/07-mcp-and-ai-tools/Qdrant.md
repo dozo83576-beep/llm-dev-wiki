@@ -1,7 +1,7 @@
 ---
 title: "Qdrant"
 category: "ai-tools"
-updated: "2026-06-06"
+updated: "2026-07-21"
 status: "active"
 tags: ["qdrant", "vector-db"]
 source_priority: "official-docs"
@@ -11,7 +11,7 @@ source_priority: "official-docs"
 
 Qdrant подходит для production vector search, metadata filtering и RAG. Используй collections по типам знаний или единый индекс с сильной metadata-схемой.
 
-Источник: [Qdrant Documentation](https://qdrant.tech/documentation/) и [Qdrant releases](https://github.com/qdrant/qdrant/releases) — refreshed against v1.18.2 on 2026-06-06.
+Источник: [Qdrant Documentation](https://qdrant.tech/documentation/) и [Qdrant releases](https://github.com/qdrant/qdrant/releases) — v1.18.3 reviewed 2026-07-21; collection/filter guidance unchanged.
 
 ## Когда использовать
 
@@ -47,5 +47,5 @@ Open Qdrant port без auth (исторически частая ошибка),
 ## Источники
 
 - [Qdrant Documentation](https://qdrant.tech/documentation/) — refreshed 2026-06-06.
-- [Qdrant releases](https://github.com/qdrant/qdrant/releases) — v1.18.2 checked 2026-06-06.
+- [Qdrant releases](https://github.com/qdrant/qdrant/releases) — v1.18.3 checked 2026-07-21.
 - См. [Vector databases](Vector-databases.md), [pgvector](../04-databases/pgvector.md), [RAG](RAG.md), [Embeddings](Embeddings.md).

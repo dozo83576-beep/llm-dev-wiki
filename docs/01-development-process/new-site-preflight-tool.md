@@ -1,7 +1,7 @@
 ---
 title: "New site preflight tool"
 category: "process"
-updated: "2026-06-10"
+updated: "2026-07-21"
 status: "active"
 tags: ["site", "preflight", "stack", "audit"]
 source_priority: "internal"
@@ -9,7 +9,9 @@ source_priority: "internal"
 
 # New site preflight tool
 
-`tools/new-site-preflight.ps1` — единая offline-команда перед созданием сайта. Она запускает rule-based stack router, возвращает confidence, docs to read и готовую команду `site-audit.ps1` для handoff. Скрипт не использует LLM/API, не ходит в сеть, не запускает Lighthouse и не меняет проект.
+`tools/new-site-preflight.ps1` — единая offline-команда перед созданием сайта. Router классифицирует
+две независимые оси: продукт → primary playbook; platform constraints → supporting guides/stack.
+Также выбирается delivery profile. Скрипт не использует LLM/API, не ходит в сеть и не меняет проект.
 
 Это **канонический источник** триггер-фразы raw request: скиллы (`build-modern-site`, `site-stack`) её не переопределяют, а ссылаются сюда.
 
@@ -34,7 +36,8 @@ pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "Сделай с
 
 - `status`: `ready` или `needs-discovery`.
 - `confidence`: значение из stack router.
-- `recommendedRoute` и `recommendedStack`.
+- `recommendedPlaybook`, `recommendedDeliveryProfile`, `supportingGuides`.
+- `recommendedRoute` и `recommendedStack` — человекочитаемое объяснение решения.
 - `openQuestions`, `assumptions`, `rejectedAlternatives`, `acceptanceGates`.
 - `requiredWikiDocs`: документы, которые агент обязан прочитать перед coding.
 - `siteAuditCommand`: команда для handoff/release smoke; не запускается автоматически.
@@ -44,6 +47,8 @@ pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "Сделай с
 - При `needs-discovery` не scaffolding: сначала задать вопросы из результата.
 - При `blocker` не начинать код до security/compliance discovery.
 - Wrapper не должен дублировать routing rules из `site-stack-router.ps1`.
+- Shopify/Hydrogen выбирается только по явному положительному ограничению; слова «каталог» и
+  «товар» сами по себе не являются платформенным сигналом, отрицания учитываются.
 - Site audit запускается отдельно, потому что Lighthouse через `npx --yes lighthouse` является network/supply-chain шагом.
 
 ## Проверка

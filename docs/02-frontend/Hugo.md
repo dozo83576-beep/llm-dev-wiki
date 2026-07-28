@@ -1,7 +1,7 @@
 ---
 title: "Hugo"
 category: "frontend"
-updated: "2026-06-22"
+updated: "2026-07-21"
 status: "active"
 tags: ["hugo", "static-site", "docs", "go"]
 source_priority: "official-docs"
@@ -11,7 +11,7 @@ source_priority: "official-docs"
 
 Hugo — быстрый Go-based static site generator для больших docs/blog/content сайтов, где build speed, taxonomy and static output важнее JavaScript framework ecosystem.
 
-Freshness note: Hugo v0.163.3 includes fixes around default code block rendering, non-ASCII whitespace, Babel/PostCSS config variants and page/section name collisions; current guidance remains valid.
+Freshness note: Hugo v0.164.0 reviewed 2026-07-21; static-content, taxonomy and build guidance unchanged.
 
 ## Когда использовать
 
@@ -48,6 +48,6 @@ Freshness note: Hugo v0.163.3 includes fixes around default code block rendering
 
 ## Источники
 
-- [Hugo Docs](https://gohugo.io/documentation/) — refreshed against Hugo v0.163.3 on 2026-06-22.
+- [Hugo Docs](https://gohugo.io/documentation/) — refreshed against Hugo v0.164.0 on 2026-07-21.
 - [Hugo homepage](https://gohugo.io/)
 - См. [Eleventy](Eleventy.md), [Astro](Astro.md), [SEO](SEO.md).

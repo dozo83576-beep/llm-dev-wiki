@@ -1,13 +1,16 @@
 ---
-title: "Playbook: Shopify Hydrogen"
+title: "Supporting guide: Shopify Hydrogen"
 category: "playbooks"
-updated: "2026-06-22"
+updated: "2026-07-21"
 status: "active"
 tags: ["shopify", "hydrogen", "commerce", "react-router"]
 source_priority: "official-docs"
 ---
 
-# Playbook: Shopify Hydrogen
+# Supporting guide: Shopify Hydrogen
+
+Используется только как supporting guide к primary `ecommerce` при явном требовании Shopify/Hydrogen.
+Слова «каталог», «товар» или «checkout» без Shopify не активируют этот guide.
 
 Shopify Hydrogen — Shopify-first custom storefront stack. Он built on React Router and Storefront API, а Shopify остаётся source of truth для catalog, cart, checkout and commerce operations.
 

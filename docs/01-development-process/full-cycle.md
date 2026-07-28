@@ -1,7 +1,7 @@
 ---
 title: "Полный цикл разработки"
 category: "process"
-updated: "2026-07-05"
+updated: "2026-07-21"
 status: "active"
 tags: ["process", "delivery"]
 source_priority: "internal"
@@ -9,9 +9,9 @@ source_priority: "internal"
 
 # Полный цикл разработки
 
-Строго линейная цепочка — без параллельных/независимых веток. Каждый этап явно потребляет
-результаты предыдущих, включая конкурентный анализ и визуальные референсы, а не только
-непосредственно предшествующий этап.
+Цикл управляется графом зависимостей из `resources/site-pipeline-contract.json`. Каждый этап явно
+потребляет нужные результаты. После архитектуры и контента дизайн и backend можно закрывать
+независимо; frontend ждёт оба применимых результата.
 
 Это детализация процесса (18 шагов). Канонические 17 фаз пайплайна и маппинг шагов на них —
 [site-pipeline-map.md](site-pipeline-map.md): шаги 13–14 (Тестирование + Security review) = одна
@@ -42,24 +42,27 @@ source_priority: "internal"
 10. Backend: модули, сервисы, валидация, транзакции, логирование, ошибки — реализуется на уже
     зафиксированной контент-модели (шаг 8), без недосказанностей в data shapes.
 11. Frontend: маршруты, компоненты, состояние, формы, доступность, performance budgets — реализуется
-    против уже работающего backend (шаг 10), а не бумажного контракта.
+    против утверждённого design artifact и применимого backend. Здесь создаётся единый набор smoke,
+    который review/deploy/handoff повторяют в соответствующих окружениях.
 12. SEO и производительность: метаданные, sitemap.xml, robots.txt, structured data, Core Web Vitals —
     метрики снимаются на финально построенных страницах (шаг 11), а не на промежуточном состоянии.
 13. Тестирование: unit, integration, E2E, contract, security, load по рискам.
 14. Security review: OWASP, секреты, authz, CORS/CSRF/CSP, dependency scan.
     (В оркестраторе `build-modern-site` стадии 13–14 выполняются одним шагом
     «Ревью (тестирование + security)» через скилл `site-review` — содержание идентично.)
-15. Деплой: environment variables, migrations, rollback, monitoring, alerts.
-16. Передача клиенту: post-deploy smoke, handoff.md, безопасная передача доступов, инструкции, письменное подтверждение приёмки, условия поддержки.
+15. Деплой: preview, environment variables, migrations, rollback, monitoring и approval на promotion.
+16. Передача клиенту: production smoke, handoff.md, безопасная передача доступов, инструкции и
+    письменное подтверждение финальной production-приёмки.
 17. Пост-релиз: мониторинг и ретро через 30–90 дней (см. docs/15-maintenance).
 18. Knowledge capture: success/failure кейсы, lessons learned, обновленные чеклисты.
 
 Для API-only backend без визуального UI (playbook [api-only-backend](../13-playbooks/api-only-backend.md))
-шаги 8-9 и 11-12 не применяются: архитектура (шаг 5) → backend (шаг 10) → тестирование/security
-review/деплой (шаги 13-15) напрямую, контент/дизайн/frontend/SEO пропускаются целиком.
+шаги 8-9 и 11-12 имеют статус `not-applicable`: архитектура (шаг 5) → backend (шаг 10) →
+testing/security review/deploy (шаги 13-15).
 В site pipeline при этом фаза `project-agents` остаётся обязательной: `build-modern-site` идёт
 через фазы 1-7, затем 10, затем 13-17.
 
-Acceptance (UAT и client sign-off) проходит в фазе ревью до релиза по чеклисту [qa-acceptance](../../checklists/qa-acceptance.md).
+Фаза review доказывает готовность к UAT. Approval на promotion после preview фиксирует deploy;
+финальный client sign-off production фиксирует handoff.
 
 Результат каждого этапа должен быть проверяемым: документ, тест, diff, скриншот, лог, метрика или ссылка на deploy.

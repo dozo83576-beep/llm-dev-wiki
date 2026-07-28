@@ -1,65 +1,67 @@
 ---
 title: "Site stack router tool"
 category: "process"
-updated: "2026-06-10"
+updated: "2026-07-21"
 status: "active"
-tags: ["stack", "router", "site", "tooling"]
+tags: ["stack", "router", "site", "tooling", "contract-v2"]
 source_priority: "internal"
 ---
 
 # Site stack router tool
 
-`tools/site-stack-router.ps1` — локальный deterministic preflight для выбора архитектуры сайта по сырому запросу. Он не использует LLM/API и не заменяет discovery; его задача — быстро поймать low confidence, high-risk blockers and obvious stack routes. Для нового сайта удобнее начинать с [new site preflight tool](new-site-preflight-tool.md), который вызывает router и сразу печатает handoff-команду `site-audit.ps1`.
+`tools/site-stack-router.ps1` — deterministic offline classifier перед discovery/scaffold. Он не
+использует LLM/API и разделяет решение на две оси:
 
-## Когда использовать
+Практический ответ на вопрос «как автоматически определить стек сайта по сырому запросу»: запустить
+router, принять его product/profile/platform classification как preflight hint, затем подтвердить
+ограничения в discovery и выбрать стек в `site-stack`.
 
-- Перед `prompts/create-new-project.md`, если пользователь написал свободный запрос: "сделай сайт", "нужен SaaS", "лендинг с формой", "магазин на Shopify".
-- Перед сравнением стеков в `prompts/choose-stack.md`.
-- Для ревью агентского решения: проверить, что выбранный stack не противоречит router policy.
+1. Тип продукта → один `recommendedPlaybook`.
+2. Явные platform/runtime constraints → `supportingGuides` и stack hints.
 
-## Когда не использовать
-
-- Как единственный источник требований. Router не знает бизнес-контекст, бюджет, hosting policy, legal constraints and team skill.
-- Для security/compliance approval. Если request содержит payments, PII, SSO, tenant isolation или production data, нужен discovery/security review.
-- Для генерации кода: перед реализацией всё равно нужно читать linked wiki docs.
+Отдельно выбирается `recommendedDeliveryProfile`. Допустимые значения проверяются по
+`resources/site-pipeline-contract.json`.
 
 ## Команды
 
 ```powershell
-pwsh tools/site-stack-router.ps1 -Request "Хочу SaaS с подписками"
-pwsh tools/site-stack-router.ps1 -Request "Нужен лендинг с SEO и формой" -OutputJson
+pwsh tools/site-stack-router.ps1 -Request "Корпоративный каталог услуг" -OutputJson
+pwsh tools/site-stack-router.ps1 -Request "Интернет-магазин на Shopify Hydrogen" -OutputJson
 pwsh tools/site-stack-router.ps1 -Request "Сделай сайт" -FailOnLowConfidence
 ```
 
 ## Output contract
 
-- `confidence`: `high`, `medium`, `low` или `blocker`.
-- `classification`: найденные product/risk signals.
-- `recommendedRoute` и `recommendedStack`: пустые при `low`, stack пустой при `blocker`.
-- `assumptions`: что принято без подтверждения.
-- `openQuestions`: максимум 3 вопроса, которые меняют архитектуру.
-- `rejectedAlternatives`: почему не выбраны другие стеки.
-- `acceptanceGates`: проверки, которые должны попасть в план.
-- `wikiLinks`: документы, которые агент обязан прочитать перед реализацией.
+- `confidence`: `high`, `medium`, `low`, `blocker`.
+- `classification.productSignals` и `classification.platformSignals`.
+- `recommendedPlaybook`, `recommendedDeliveryProfile`, `supportingGuides`.
+- `recommendedRoute`, `recommendedStack`, assumptions, questions, gates и wiki links.
 
-## Production-паттерны
+Primary playbooks: landing, content-site, saas, ecommerce, admin-dashboard, marketplace,
+ai-rag-app, api-only-backend, real-time-app. Platform constraint не заменяет продукт: например,
+WordPress/WooCommerce marketplace остаётся `marketplace` + guide `wordpress-woocommerce`.
 
-- При `low` не выбирать стек; сначала задать вопросы из результата.
-- При `blocker` не начинать реализацию без security/compliance discovery.
-- При `medium` можно предложить default, но assumptions and open questions должны быть в ответе.
-- При `high` всё равно перечислить rejected alternatives and gates.
+## Правила
+
+- Generic/неопределённый запрос → `low`, без playbook/stack.
+- Одновременные payments + PII без security details → `blocker`.
+- Shopify/Hydrogen guide активируется только явным положительным упоминанием. Отрицания вида
+  «Shopify не используется» и обычные слова «каталог/товар» не являются Shopify-сигналом.
+- `content-site` покрывает corporate/catalog services/blog/docs/CMS без checkout.
+- Router не заменяет discovery, stack comparison или security approval.
 
 ## Частые ошибки
 
-- Использовать router как "магический выбор стека" без чтения wiki docs.
-- Игнорировать `blocker`, потому что пользователь попросил "сразу сделать".
-- Добавлять правила без tests: это ломает retrieval и будущий выбор архитектуры.
-- Делать keyword rules слишком широкими, из-за чего "сделай сайт" получает stack.
+- Смешивать несколько primary playbook вместо одного primary + guides.
+- Делать platform keyword продуктовым типом.
+- Повторно запускать preflight из `site-stack` и получать второе решение.
+- Добавлять широкое keyword-правило без negative/negation tests.
 
-## Проверка
+## Проверка и источники
 
-Tool покрыт `tests/tools/test_site_stack_router.py` и входит в `python -m pytest tests/tools`, а через `pwsh tools/ci-local.ps1 -IncludeToolTests` — в обязательный локальный gate.
+Тесты: `tests/tools/test_site_stack_router.py`; полный gate:
+`pwsh tools/ci-local.ps1 -IncludeToolTests`.
 
-## Источники
-
-- См. [Site architecture decision router](site-architecture-decision-router.md), [Stack selection](stack-selection.md), [Create new project prompt](../../prompts/create-new-project.md), [Choose stack prompt](../../prompts/choose-stack.md).
+- [Pipeline contract](../../resources/site-pipeline-contract.json)
+- [Architecture decision router](site-architecture-decision-router.md)
+- [New site preflight](new-site-preflight-tool.md)

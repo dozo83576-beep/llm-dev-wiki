@@ -1,7 +1,7 @@
 ---
 title: "Nuxt"
 category: "frontend"
-updated: "2026-06-10"
+updated: "2026-07-21"
 status: "active"
 tags: ["nuxt", "vue", "ssr", "frontend"]
 source_priority: "official-docs"
@@ -60,6 +60,6 @@ Hybrid rendering cache invalidation, i18n route generation, plugin server/client
 
 ## Источники
 
-- [Nuxt Docs](https://nuxt.com/docs/getting-started) — watchlist refreshed to `nuxt` 4.4.8 on 2026-06-10.
+- [Nuxt Docs](https://nuxt.com/docs/getting-started) — `nuxt` 4.5.0 reviewed 2026-07-21; rendering/deploy guidance unchanged.
 - [Nuxt Server Docs](https://nuxt.com/docs/getting-started/server)
 - См. [Frontend blueprints](Frontend-blueprints.md), [CMS content](CMS-content.md), [Stack selection](../01-development-process/stack-selection.md).

@@ -44,8 +44,8 @@ description: >-
    продукта (RSC/edge functions/ISR/streaming/event-driven и т.п.). Цель — не просто повторить то,
    что уже сделали конкуренты (план из `site-competitive-analysis`), а по возможности их обогнать.
 2. Нарисуй data flow и ключевые контракты (REST/OpenAPI, события, вебхуки).
-2.5. Если доступны `api-design-reviewer` или `database-designer`, используй их как ревью контрактов/схем,
-   но итоговую архитектуру фиксируй по локальным prompts и playbook.
+2.5. По умолчанию helper не нужен. При конкретном пробеле выбери не более одного из
+   `api-design-reviewer`/`database-designer`; итог остаётся по локальным prompts и playbook.
 3. Спроектируй модель данных: сущности, связи, индексы, миграции, audit log, backup.
 4. Перечисли top-5 security-рисков и mitigations; отметь edge cases (≥5).
 5. Разбей реализацию на 3–6 этапов, каждый с измеримым acceptance.
@@ -61,13 +61,9 @@ description: >-
   `_architecture.md` (или запланирован к материализации после одобрения плана).
 
 ## Передача дальше
-Если playbook — `api-only-backend` (нет визуального frontend): после обязательной фазы
-`project-agents` пропусти `site-content`/`site-design`/`site-frontend`/`site-seo` с причиной,
-затем `site-backend` → `site-review`.
-
-Иначе (есть визуальный UI) — строго последовательно, без параллельных веток: `site-content`
-(контент-модель) → `site-design` (визуальный слой) → `site-backend` (API на финальной контент-модели)
-→ `site-frontend` (UI против уже работающего backend) → `site-seo` (метрики на финальном билде).
+После `project-agents` выполни применимый `site-content`. Затем `site-design` и `site-backend`
+независимы и могут закрываться в любом порядке; `site-frontend` ждёт оба применимых результата.
+Для profile `api-only` контракт выставляет content/design/frontend/SEO как `not-applicable`.
 
 Для playbook `marketplace` фазы `site-design` и `site-frontend` остаются единичными (18-й фазы нет):
 их artifact обязан содержать две явно маркированные секции — `Public storefront` (SEO, покупатели) и

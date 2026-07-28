@@ -1,7 +1,7 @@
 ---
 title: "External site skills"
 category: "ai-tools"
-updated: "2026-06-21"
+updated: "2026-07-21"
 status: "active"
 tags: ["skills", "site-building", "agents"]
 source_priority: "internal"
@@ -19,7 +19,8 @@ source_priority: "internal"
 
 - Сначала проверь доступность: `pwsh D:\Work\tools\check-ai-tools.ps1` и директории `~\.codex\skills`,
   `~\.claude\skills`.
-- В фазе используй максимум 1-2 внешних helper-а, если они реально подходят задаче.
+- По умолчанию внешние helpers не вызываются. Допустим максимум один узкий helper на фазу и только
+  когда сформулировано, какой конкретный пробел он закрывает.
 - Внешний helper даёт draft/review/идеи; финальное решение сверяется с wiki и локальными правилами.
 - Не устанавливай весь внешний пакет как default: в нём есть конфликтующие имена, включая `site-architecture`.
 - Не вызывай helpers, которые навязывают стек или scope, если это не одобрено явно.
@@ -38,7 +39,7 @@ source_priority: "internal"
 
 ## Маппинг по фазам
 
-| Фаза | Optional helpers |
+| Фаза | Единственный допустимый optional helper выбирается из |
 | --- | --- |
 | Discovery / market | `market-research`, `product-discovery`, `marketing-context` |
 | Competitors | `competitive-intel`, `competitive-teardown`, `competitor-alternatives` |

@@ -1,8 +1,8 @@
 ---
 title: "PostgreSQL"
 category: "database"
-updated: "2026-05-24"
-reviewed: "2026-06-29"
+updated: "2026-07-21"
+reviewed: "2026-07-21"
 status: "active"
 tags: ["postgresql", "database"]
 source_priority: "official-docs"
@@ -14,7 +14,9 @@ PostgreSQL — база по умолчанию для production web-прило
 
 Правила: внешние ключи для целостности, уникальные индексы для бизнес-инвариантов, `EXPLAIN` для медленных запросов, транзакции для связанных изменений.
 
-Источник: [PostgreSQL Docs](https://www.postgresql.org/docs/).
+**Поддерживаемые patch-линии на 2026-07-21:** PostgreSQL `18.4`, `17.10`, `16.14`, `15.18`, `14.23`. Обновляй текущую major-линию до её последнего patch без ожидания feature release; major upgrade требует отдельной репетиции migration/rollback. PostgreSQL 14 достигает EOL 2026-11-12, поэтому для него уже нужен план перехода на поддерживаемую major-линию.
+
+Источники: [PostgreSQL Docs](https://www.postgresql.org/docs/) и [релиз 18.4/17.10/16.14/15.18/14.23](https://www.postgresql.org/about/news/postgresql-184-1710-1614-1518-and-1423-released-3297/) — проверено 2026-07-21.
 
 ## Когда использовать
 

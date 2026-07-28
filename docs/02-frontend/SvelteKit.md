@@ -1,7 +1,7 @@
 ---
 title: "SvelteKit"
 category: "frontend"
-updated: "2026-06-22"
+updated: "2026-07-21"
 status: "active"
 tags: ["sveltekit", "svelte", "ssr", "frontend"]
 source_priority: "official-docs"
@@ -60,5 +60,5 @@ Adapter mismatch, prerendered route с dynamic data, stale form errors, i18n rou
 
 ## Источники
 
-- [SvelteKit Docs](https://svelte.dev/docs/kit) — watchlist refreshed to `@sveltejs/kit` 2.66.0 on 2026-06-22.
+- [SvelteKit Docs](https://svelte.dev/docs/kit) — `@sveltejs/kit` 2.70.1 reviewed 2026-07-21; SSR/forms guidance unchanged.
 - См. [Frontend blueprints](Frontend-blueprints.md), [Stack selection](../01-development-process/stack-selection.md), [Forms validation](Forms-validation.md).
