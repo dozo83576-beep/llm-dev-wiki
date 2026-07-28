@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2661,
-  "corpus_hash": "fe0321598527e8317551421bcfa7c1fe86eb6e641704338eb0dac6fe6ef017f8",
+  "chunk_count": 2675,
+  "corpus_hash": "7f3b66198daf61f9200d2b3025a63af0193141efe1b2be11439ec5dc3f43dfab",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -148,6 +148,7 @@
     "docs/06-api-design/Versioning.md",
     "docs/06-api-design/WebSockets.md",
     "docs/07-mcp-and-ai-tools/AI-chat-widget.md",
+    "docs/07-mcp-and-ai-tools/Agent-harness-review.md",
     "docs/07-mcp-and-ai-tools/Agent-memory.md",
     "docs/07-mcp-and-ai-tools/Agent-self-improvement.md",
     "docs/07-mcp-and-ai-tools/Agent-workflows.md",
@@ -324,7 +325,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-07-28T12:52:44Z",
+  "generated_at": "2026-07-28T17:12:39Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }

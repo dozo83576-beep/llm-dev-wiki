@@ -115,6 +115,23 @@ if ($failures.Count -eq 0) {
         Test-SkillRuntime -SourceRoot $source -TargetRoot (Join-Path $env:USERPROFILE ".codex\skills") -TargetName "Codex" -Failures $failures
         Test-SkillRuntime -SourceRoot $source -TargetRoot (Join-Path $env:USERPROFILE ".claude\skills") -TargetName "Claude Code" -Failures $failures
     }
+
+    # Второй проход: соответствие открытому стандарту Agent Skills (agentskills.io).
+    # Ловит то, чего не видит сравнение хешей: посторонние поля frontmatter, битый YAML,
+    # расхождение name с именем каталога — всё, что ломает перенос скилла на Codex/Gemini/Cursor.
+    # Пропускается, если валидатор не установлен: uv tool install skills-ref
+    $specValidator = Join-Path $PSScriptRoot "validate-skills-spec.ps1"
+    if ((Test-Path -LiteralPath $specValidator -PathType Leaf) -and (Get-Command agentskills -ErrorAction SilentlyContinue)) {
+        $global:LASTEXITCODE = 0
+        $specOutput = & $specValidator -Root $source 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            Add-Failure $failures "Agent Skills spec validation failed for tracked source."
+            $specOutput | Write-Host
+        }
+    }
+    else {
+        Write-Warning "Agent Skills spec validator not available, skipped (uv tool install skills-ref)."
+    }
 }
 
 Write-Host "Agent skills verification"

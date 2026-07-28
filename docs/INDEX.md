@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **331**
-- Активных: **314**
+- Всего документов: **332**
+- Активных: **315**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **954720** символов
+- Суммарный объём: **969156** символов
 
 ## docs
 
@@ -128,7 +128,7 @@ source_priority: "internal"
 | [docs/05-auth-security/OWASP.md](../docs/05-auth-security/OWASP.md) | OWASP | security | 1885 | 2026-07-21 | active | official-docs |
 | [docs/05-auth-security/Privacy-policy-and-consent.md](../docs/05-auth-security/Privacy-policy-and-consent.md) | Privacy policy and cookie consent | auth-security | 3677 | 2026-06-19 | active | mixed |
 | [docs/05-auth-security/RBAC-ABAC.md](../docs/05-auth-security/RBAC-ABAC.md) | RBAC and ABAC | security | 1957 | 2026-05-24 | active | internal |
-| [docs/05-auth-security/RU-152fz-and-ai-data-handling.md](../docs/05-auth-security/RU-152fz-and-ai-data-handling.md) | RU 152-FZ and AI data handling | security | 5130 | 2026-06-19 | active | mixed |
+| [docs/05-auth-security/RU-152fz-and-ai-data-handling.md](../docs/05-auth-security/RU-152fz-and-ai-data-handling.md) | RU 152-FZ and AI data handling | security | 7528 | 2026-07-28 | active | mixed |
 | [docs/05-auth-security/Rate-limiting.md](../docs/05-auth-security/Rate-limiting.md) | Rate limiting | security | 1319 | 2026-05-24 | active | mixed |
 | [docs/05-auth-security/Secrets.md](../docs/05-auth-security/Secrets.md) | Secrets | security | 1875 | 2026-05-27 | active | internal |
 | [docs/06-api-design/Error-contracts.md](../docs/06-api-design/Error-contracts.md) | API error contracts | api | 1327 | 2026-05-24 | active | internal |
@@ -139,6 +139,7 @@ source_priority: "internal"
 | [docs/06-api-design/Versioning.md](../docs/06-api-design/Versioning.md) | API versioning | api | 1950 | 2026-05-24 | active | internal |
 | [docs/06-api-design/WebSockets.md](../docs/06-api-design/WebSockets.md) | WebSockets | api | 1291 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/AI-chat-widget.md](../docs/07-mcp-and-ai-tools/AI-chat-widget.md) | AI chat widget | ai-tools | 3977 | 2026-06-22 | active | mixed |
+| [docs/07-mcp-and-ai-tools/Agent-harness-review.md](../docs/07-mcp-and-ai-tools/Agent-harness-review.md) | Разбор внешних харнесс-источников (2026-07) | ai-tools | 12038 | 2026-07-28 | active | mixed |
 | [docs/07-mcp-and-ai-tools/Agent-memory.md](../docs/07-mcp-and-ai-tools/Agent-memory.md) | Agent memory | ai-tools | 2809 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Agent-self-improvement.md](../docs/07-mcp-and-ai-tools/Agent-self-improvement.md) | Agent self-improvement loop | ai-tools | 3456 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Agent-workflows.md](../docs/07-mcp-and-ai-tools/Agent-workflows.md) | Agent workflows | ai-tools | 1737 | 2026-07-07 | active | internal |
