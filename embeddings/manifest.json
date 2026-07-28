@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2638,
-  "corpus_hash": "bf92a6d5dc7518b24aa4eb5ff7b4e97e081717f58315f34c32f39f50a12a2d86",
+  "chunk_count": 2661,
+  "corpus_hash": "fe0321598527e8317551421bcfa7c1fe86eb6e641704338eb0dac6fe6ef017f8",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -250,6 +250,7 @@
     "lessons-learned/2026-07-02-subagent-photo-sourcing-tool-call-explosion.md",
     "lessons-learned/2026-07-05-generated-file-timezone-date.md",
     "lessons-learned/2026-07-05-pytest-package-import-script-tools.md",
+    "lessons-learned/2026-07-28-astro-jsx-whitespace-collapse.md",
     "patterns/ai/mcp-read-only-default.md",
     "patterns/ai/rag-metadata.md",
     "patterns/api/error-contract.md",
@@ -273,6 +274,7 @@
     "patterns/frontend/form-validation-boundary.md",
     "patterns/frontend/full-height-first-screen.md",
     "patterns/frontend/layout-archetypes.md",
+    "patterns/frontend/lead-form-without-backend.md",
     "patterns/frontend/localstorage-mini-crm.md",
     "patterns/frontend/photo-header-text-panel-card.md",
     "patterns/frontend/portfolio-case-screenshot-gallery.md",
@@ -282,8 +284,10 @@
     "patterns/frontend/server-client-boundary.md",
     "patterns/frontend/static-site-dev-only-cms-flag.md",
     "patterns/frontend/stock-photo-id-verification.md",
+    "patterns/frontend/tailwind-token-name-collisions.md",
     "patterns/frontend/third-party-booking-widget.md",
     "patterns/frontend/vanilla-countup-via-reveal-observer.md",
+    "patterns/frontend/warm-accent-needs-dark-text.md",
     "patterns/security/deny-by-default.md",
     "patterns/security/tenant-isolation.md",
     "patterns/security/untrusted-tool-output.md",
@@ -320,7 +324,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-07-21T14:29:10Z",
+  "generated_at": "2026-07-28T12:52:44Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }
