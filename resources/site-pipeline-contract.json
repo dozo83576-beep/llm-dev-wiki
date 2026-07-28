@@ -1,0 +1,70 @@
+{
+  "contractVersion": 2,
+  "primaryPlaybooks": [
+    { "id": "landing", "path": "docs/13-playbooks/landing.md", "defaultDeliveryProfile": "public-fullstack", "allowedDeliveryProfiles": ["public-static", "public-fullstack"] },
+    { "id": "content-site", "path": "docs/13-playbooks/content-site.md", "defaultDeliveryProfile": "public-static", "allowedDeliveryProfiles": ["public-static", "public-fullstack"] },
+    { "id": "saas", "path": "docs/13-playbooks/saas.md", "defaultDeliveryProfile": "public-fullstack", "allowedDeliveryProfiles": ["public-fullstack"] },
+    { "id": "ecommerce", "path": "docs/13-playbooks/ecommerce.md", "defaultDeliveryProfile": "public-fullstack", "allowedDeliveryProfiles": ["public-fullstack"] },
+    { "id": "admin-dashboard", "path": "docs/13-playbooks/admin-dashboard.md", "defaultDeliveryProfile": "private-app", "allowedDeliveryProfiles": ["private-app"] },
+    { "id": "marketplace", "path": "docs/13-playbooks/marketplace.md", "defaultDeliveryProfile": "public-fullstack", "allowedDeliveryProfiles": ["public-fullstack"] },
+    { "id": "ai-rag-app", "path": "docs/13-playbooks/ai-rag-app.md", "defaultDeliveryProfile": "public-fullstack", "allowedDeliveryProfiles": ["public-fullstack", "private-app"] },
+    { "id": "api-only-backend", "path": "docs/13-playbooks/api-only-backend.md", "defaultDeliveryProfile": "api-only", "allowedDeliveryProfiles": ["api-only"] },
+    { "id": "real-time-app", "path": "docs/13-playbooks/real-time-app.md", "defaultDeliveryProfile": "public-fullstack", "allowedDeliveryProfiles": ["public-fullstack", "private-app"] }
+  ],
+  "supportingGuides": [
+    { "id": "headless-commerce", "path": "docs/13-playbooks/headless-commerce.md" },
+    { "id": "shopify-hydrogen", "path": "docs/13-playbooks/shopify-hydrogen.md" },
+    { "id": "wordpress-woocommerce", "path": "docs/03-backend/WordPress-WooCommerce-backend.md" },
+    { "id": "wordpress", "path": "docs/02-frontend/WordPress.md" },
+    { "id": "webflow", "path": "docs/02-frontend/Webflow.md" },
+    { "id": "edge-runtime", "path": "docs/08-devops-deploy/Cloudflare-Workers-fullstack.md" }
+  ],
+  "deliveryProfiles": [
+    {
+      "id": "public-static",
+      "notApplicablePhases": ["site-backend"],
+      "phaseModes": { "site-competitive-analysis": "market", "site-seo": "public" }
+    },
+    {
+      "id": "public-fullstack",
+      "notApplicablePhases": [],
+      "phaseModes": { "site-competitive-analysis": "market", "site-seo": "public" }
+    },
+    {
+      "id": "private-app",
+      "notApplicablePhases": [],
+      "phaseModes": { "site-competitive-analysis": "reference", "site-seo": "private-noindex" }
+    },
+    {
+      "id": "api-only",
+      "notApplicablePhases": ["site-content", "site-design", "site-frontend", "site-seo"],
+      "phaseModes": { "site-competitive-analysis": "standards-benchmark", "site-seo": "not-applicable" }
+    }
+  ],
+  "optionalSkippedPhases": ["post-release"],
+  "phases": [
+    { "number": 1, "id": "preflight", "executor": "new-site-preflight.ps1", "artifact": "_preflight.md", "dependsOn": [] },
+    { "number": 2, "id": "site-discovery", "executor": "site-discovery", "artifact": "_discovery.md", "dependsOn": ["preflight"] },
+    { "number": 3, "id": "playbook", "executor": "decision-router", "artifact": "_pipeline-status.md", "dependsOn": ["site-discovery"] },
+    { "number": 4, "id": "site-competitive-analysis", "executor": "site-competitive-analysis", "artifact": "_competitive-analysis.md", "dependsOn": ["site-discovery", "playbook"] },
+    { "number": 5, "id": "site-stack", "executor": "site-stack", "artifact": "_stack.md", "dependsOn": ["site-discovery", "playbook", "site-competitive-analysis"] },
+    { "number": 6, "id": "site-architecture", "executor": "site-architecture", "artifact": "_architecture.md", "dependsOn": ["site-stack", "site-competitive-analysis"] },
+    { "number": 7, "id": "project-agents", "executor": "create-project-agents", "artifact": "AGENTS.md", "dependsOn": ["site-architecture"] },
+    { "number": 8, "id": "site-content", "executor": "site-content", "artifact": "_content-model.md", "dependsOn": ["site-architecture", "site-competitive-analysis", "project-agents"] },
+    { "number": 9, "id": "site-design", "executor": "site-design", "artifact": "DESIGN-DIRECTION.md", "dependsOn": ["site-architecture", "site-competitive-analysis", "site-content", "project-agents"] },
+    { "number": 10, "id": "site-backend", "executor": "site-backend", "artifact": "_backend-gate.md", "dependsOn": ["site-architecture", "site-content", "project-agents"] },
+    { "number": 11, "id": "site-frontend", "executor": "site-frontend", "artifact": "_frontend-smoke.md", "dependsOn": ["site-content", "site-design", "site-backend"] },
+    { "number": 12, "id": "site-seo", "executor": "site-seo", "artifact": "_seo-report.md", "dependsOn": ["site-content", "site-frontend"] },
+    { "number": 13, "id": "site-review", "executor": "site-review", "artifact": "_review-report.md", "dependsOn": ["site-backend", "site-frontend", "site-seo"] },
+    { "number": 14, "id": "site-deploy", "executor": "site-deploy", "artifact": "_deploy.md", "dependsOn": ["site-review"] },
+    { "number": 15, "id": "site-handoff", "executor": "site-handoff", "artifact": "handoff.md", "dependsOn": ["site-deploy"] },
+    { "number": 16, "id": "post-release", "executor": "site-handoff", "artifact": "_post-release-plan.md", "dependsOn": ["site-handoff"] },
+    { "number": 17, "id": "capture-learnings", "executor": "capture-learnings", "artifact": "_learning-review.md", "dependsOn": ["site-review"] }
+  ],
+  "artifactMarkers": {
+    "marketplace": {
+      "site-design": ["Public storefront", "Private console"],
+      "site-frontend": ["Public storefront", "Private console"]
+    }
+  }
+}

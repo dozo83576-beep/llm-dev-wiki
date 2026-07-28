@@ -1,49 +1,77 @@
 ---
 title: "Site pipeline map"
 category: "process"
-updated: "2026-07-05"
+updated: "2026-07-21"
 status: "active"
-tags: ["site", "pipeline", "skills", "orchestration", "resume"]
+tags: ["site", "pipeline", "skills", "orchestration", "resume", "contract"]
 source_priority: "internal"
 ---
 
 # Site pipeline map
 
-Каноническая карта фаз `build-modern-site`. Все документы, hooks и runtime prompts должны ссылаться
-на эту карту, а не держать отдельную нумерацию. В цикле 17 фаз: стадии `full-cycle.md`
-`Тестирование` и `Security review` объединены в `site-review`; `Пост-релиз` остаётся optional
-планом maintenance внутри `site-handoff`.
+Человекочитаемое представление [pipeline contract](../../resources/site-pipeline-contract.json).
+JSON-контракт v2 — единственный источник фаз, зависимостей, canonical artifacts, primary playbook,
+supporting guides и delivery profiles. Bootstrap, verifier и `build-modern-site` потребляют его;
+эта карта не вводит собственные правила.
 
-| # | Фаза | Skill / действие | Вход | Выход | Gate |
-|---|------|------------------|------|-------|------|
-| 1 | preflight | `new-site-preflight.ps1` | raw request | `_preflight.md` (route, stack hint, audit command) | `ready` или вопросы `needs-discovery` |
-| 2 | site-discovery | `site-discovery` | raw request / preflight | `_discovery.md` | требования, reference-pointers, acceptance |
-| 3 | playbook | decision router | `_discovery.md` | playbook в `_pipeline-status.md` | выбран один playbook или обоснованный mix |
-| 4 | site-competitive-analysis | `site-competitive-analysis` | `_discovery.md` | `_competitive-analysis.md` | 5-6 конкурентов, UX/content/stack/visual signals |
-| 5 | site-stack | `site-stack` | `_discovery.md`, `_competitive-analysis.md` | `_stack.md` | один стек, rejected alternatives, versions check |
-| 6 | site-architecture | `site-architecture` | `_stack.md`, `_competitive-analysis.md` | `_architecture.md` | компоненты, data/API flow, риски, этапы |
-| 7 | project-agents | создать project `AGENTS.md` | `_architecture.md`, stack | `AGENTS.md` проекта | команды и quality gate проекта зафиксированы |
-| 8 | site-content | `site-content` | `_architecture.md`, `_competitive-analysis.md` | `_content-model.md` | контент-модель, legal/consent, i18n |
-| 9 | site-design | `site-design` | `_content-model.md`, references | `DESIGN-DIRECTION.md` / tokens | выбранное направление, a11y/motion/tokens |
-| 10 | site-backend | `site-backend` | `_architecture.md`, `_content-model.md` | код + тесты, `_backend-gate.md` | backend/API/database checks без block |
-| 11 | site-frontend | `site-frontend` | backend, `_content-model.md`, design tokens | код, `_frontend-smoke.md` | frontend checks и browser verification |
-| 12 | site-seo | `site-seo` | финальные public pages | `_seo-report.md` (metadata, sitemap, metrics) | SEO/performance/analytics checks |
-| 13 | site-review | `site-review` | реализованный проект | `_review-report.md` (чеклисты, smoke, sign-off) | testing + security + legal/UAT без block |
-| 14 | site-deploy | `site-deploy` | passed review | `_deploy.md` (staging/production URL) | release/infrastructure/rollback gates |
-| 15 | site-handoff | `site-handoff` | production deploy | `handoff.md` | post-deploy smoke, доступы, acceptance |
-| 16 | post-release | maintenance plan | `handoff.md` | `_post-release-plan.md` (30-90 day review) | optional, дата/условия зафиксированы |
-| 17 | capture-learnings | `capture-learnings` | evidence / approval | `_learning-review.md` + preferences/wiki artifacts | learning review выполнен |
+В цикле сохраняются 17 контрольных фаз, но выполнение управляется графом зависимостей, а не номером
+строки. После архитектуры, project rules и контента `site-design` и `site-backend` независимы;
+`site-frontend` ждёт оба применимых результата.
 
-## Допустимые пропуски
+| # | Фаза | Исполнитель | Canonical artifact | Зависит от |
+|---|------|-------------|--------------------|------------|
+| 1 | preflight | `new-site-preflight.ps1` | `_preflight.md` | — |
+| 2 | site-discovery | `site-discovery` | `_discovery.md` | preflight |
+| 3 | playbook | decision router | `_pipeline-status.md` | site-discovery |
+| 4 | site-competitive-analysis | `site-competitive-analysis` | `_competitive-analysis.md` | site-discovery, playbook |
+| 5 | site-stack | `site-stack` | `_stack.md` | site-discovery, playbook, site-competitive-analysis |
+| 6 | site-architecture | `site-architecture` | `_architecture.md` | site-stack, site-competitive-analysis |
+| 7 | project-agents | create project rules | `AGENTS.md` | site-architecture |
+| 8 | site-content | `site-content` | `_content-model.md` | site-architecture, site-competitive-analysis, project-agents |
+| 9 | site-design | `site-design` | `DESIGN-DIRECTION.md` | site-architecture, site-competitive-analysis, site-content, project-agents |
+| 10 | site-backend | `site-backend` | `_backend-gate.md` | site-architecture, site-content, project-agents |
+| 11 | site-frontend | `site-frontend` | `_frontend-smoke.md` | site-content, site-design, site-backend |
+| 12 | site-seo | `site-seo` | `_seo-report.md` | site-content, site-frontend |
+| 13 | site-review | `site-review` | `_review-report.md` | site-backend, site-frontend, site-seo |
+| 14 | site-deploy | `site-deploy` | `_deploy.md` | site-review |
+| 15 | site-handoff | `site-handoff` | `handoff.md` | site-deploy |
+| 16 | post-release | `site-handoff` | `_post-release-plan.md` | site-handoff |
+| 17 | capture-learnings | `capture-learnings` | `_learning-review.md` | site-review |
 
-- `api-only-backend`: фазы 8, 9, 11 и 12 получают `skipped` с причиной; фаза 7
-  `project-agents` обязательна всегда, поэтому после 7 идёт 10, затем 13.
-- Внутренние admin/private проекты: `site-seo` может быть сокращён до `noindex`/basic metadata, но не
-  удалён молча.
-- `post-release` optional, но строка фазы остаётся в `_pipeline-status.md`: дата review или причина
-  пропуска фиксируются явно.
+Зависимость считается закрытой статусом `done` или контрактным `not-applicable`; для единственной
+optional-фазы `post-release` также допустим обоснованный `skipped`.
 
-## Проверка связности
+`capture-learnings` зависит от `site-review`, а не от деплоя: знание фиксируется, пока оно свежее.
+Проект, где хостинг ещё не выбран, закрывает фазу сразу после ревью — иначе выводы остаются в
+`_learning-review.md` и не доезжают до вики. Эксплуатационные наблюдения после прода дописываются
+отдельно, когда появятся.
 
-`tools/verify-site-pipeline.ps1` проверяет, что эта карта, `build-modern-site`, `_pipeline-status.md`,
-hook context и Codex `openai.yaml` используют один и тот же набор фаз.
+## Primary playbook и supporting guides
+
+У проекта ровно один `Playbook`: `landing`, `content-site`, `saas`, `ecommerce`,
+`admin-dashboard`, `marketplace`, `ai-rag-app`, `api-only-backend` или `real-time-app`.
+Платформенные ограничения не конкурируют с типом продукта и фиксируются в `Supporting-Guides`:
+например, e-commerce + `shopify-hydrogen` или marketplace + `wordpress-woocommerce`.
+
+## Delivery profiles
+
+| Profile | Контрактная применимость |
+|---------|--------------------------|
+| `public-static` | `site-backend` = `not-applicable` |
+| `public-fullstack` | все фазы применимы |
+| `private-app` | SEO выполняется как сокращённый `noindex` gate |
+| `api-only` | content, design, frontend и SEO = `not-applicable` |
+
+`not-applicable` определяется только profile и требует структурированной причины. `skipped`
+используется только для `post-release` и также требует причины.
+
+## Проверка
+
+```powershell
+pwsh tools/verify-site-pipeline.ps1
+pwsh tools/verify-site-pipeline.ps1 -ProjectRoot <project> -RequirePhase site-review
+pwsh tools/verify-site-pipeline.ps1 -ProjectRoot <project> -RequireComplete
+```
+
+Verifier проверяет контракт, схему status v2, граф, ISO-даты, точные artifacts, непустые файлы и
+containment с учётом symlink/junction.

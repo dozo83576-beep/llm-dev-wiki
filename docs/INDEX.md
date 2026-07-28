@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-07-16"
+updated: "2026-07-28"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **326**
-- Активных: **309**
+- Всего документов: **331**
+- Активных: **314**
 - Redirect-stubs: **5**
 - Archived: **0**
-- Суммарный объём: **937124** символов
+- Суммарный объём: **954720** символов
 
 ## docs
 
@@ -27,62 +27,62 @@ source_priority: "internal"
 | [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2202 | 2026-05-24 | active | internal |
 | [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 10092 | 2026-06-10 | active | internal |
 | [docs/01-development-process/competitive-analysis.md](../docs/01-development-process/competitive-analysis.md) | Конкурентный анализ и адаптация под бриф | process | 5831 | 2026-07-10 | active | internal |
-| [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 4386 | 2026-07-05 | active | internal |
-| [docs/01-development-process/new-site-preflight-tool.md](../docs/01-development-process/new-site-preflight-tool.md) | New site preflight tool | process | 2623 | 2026-06-10 | active | internal |
-| [docs/01-development-process/runtime-selection.md](../docs/01-development-process/runtime-selection.md) | Runtime selection | process | 2374 | 2026-06-04 | active | mixed |
-| [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 8056 | 2026-06-10 | active | internal |
-| [docs/01-development-process/site-pipeline-map.md](../docs/01-development-process/site-pipeline-map.md) | Site pipeline map | process | 3724 | 2026-07-05 | active | internal |
-| [docs/01-development-process/site-stack-router-tool.md](../docs/01-development-process/site-stack-router-tool.md) | Site stack router tool | process | 3235 | 2026-06-10 | active | internal |
-| [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 7865 | 2026-06-10 | active | official-docs |
-| [docs/02-frontend/AI-UI-streaming.md](../docs/02-frontend/AI-UI-streaming.md) | AI UI streaming | frontend | 3217 | 2026-06-22 | active | mixed |
+| [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 4520 | 2026-07-21 | active | internal |
+| [docs/01-development-process/new-site-preflight-tool.md](../docs/01-development-process/new-site-preflight-tool.md) | New site preflight tool | process | 2917 | 2026-07-21 | active | internal |
+| [docs/01-development-process/runtime-selection.md](../docs/01-development-process/runtime-selection.md) | Runtime selection | process | 2546 | 2026-07-21 | active | mixed |
+| [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 8456 | 2026-07-21 | active | internal |
+| [docs/01-development-process/site-pipeline-map.md](../docs/01-development-process/site-pipeline-map.md) | Site pipeline map | process | 4238 | 2026-07-21 | active | internal |
+| [docs/01-development-process/site-stack-router-tool.md](../docs/01-development-process/site-stack-router-tool.md) | Site stack router tool | process | 2801 | 2026-07-21 | active | internal |
+| [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 8119 | 2026-07-21 | active | official-docs |
+| [docs/02-frontend/AI-UI-streaming.md](../docs/02-frontend/AI-UI-streaming.md) | AI UI streaming | frontend | 3890 | 2026-07-21 | active | mixed |
 | [docs/02-frontend/Accessibility.md](../docs/02-frontend/Accessibility.md) | Accessibility | frontend | 1928 | 2026-05-27 | active | official-docs |
 | [docs/02-frontend/Analytics.md](../docs/02-frontend/Analytics.md) | Analytics | frontend | 1353 | 2026-05-24 | active | internal |
-| [docs/02-frontend/Angular-SSR.md](../docs/02-frontend/Angular-SSR.md) | Angular SSR | frontend | 2141 | 2026-06-22 | active | official-docs |
+| [docs/02-frontend/Angular-SSR.md](../docs/02-frontend/Angular-SSR.md) | Angular SSR | frontend | 2075 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/Astro.md](../docs/02-frontend/Astro.md) | Astro | frontend | 2221 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/CMS-content.md](../docs/02-frontend/CMS-content.md) | CMS and content sites | frontend | 3467 | 2026-06-10 | active | mixed |
 | [docs/02-frontend/Color-palettes.md](../docs/02-frontend/Color-palettes.md) | Цветовые палитры и токены | frontend | 4835 | 2026-06-20 | active | mixed |
-| [docs/02-frontend/Component-driven-development.md](../docs/02-frontend/Component-driven-development.md) | Component-driven development | frontend | 2877 | 2026-06-10 | active | official-docs |
+| [docs/02-frontend/Component-driven-development.md](../docs/02-frontend/Component-driven-development.md) | Component-driven development | frontend | 2898 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/Content-migration.md](../docs/02-frontend/Content-migration.md) | Content migration | frontend | 3311 | 2026-06-19 | active | internal |
 | [docs/02-frontend/Data-fetching.md](../docs/02-frontend/Data-fetching.md) | Frontend data fetching | frontend | 1614 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Design-systems.md](../docs/02-frontend/Design-systems.md) | Design systems | frontend | 3887 | 2026-07-11 | active | internal |
-| [docs/02-frontend/Directus.md](../docs/02-frontend/Directus.md) | Directus | frontend | 2315 | 2026-06-22 | active | official-docs |
+| [docs/02-frontend/Directus.md](../docs/02-frontend/Directus.md) | Directus | frontend | 2238 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/Eleventy.md](../docs/02-frontend/Eleventy.md) | Eleventy | frontend | 1758 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Forms-validation.md](../docs/02-frontend/Forms-validation.md) | Forms and validation | frontend | 1927 | 2026-05-27 | active | official-docs |
-| [docs/02-frontend/Fresh.md](../docs/02-frontend/Fresh.md) | Fresh | frontend | 2363 | 2026-06-04 | active | official-docs |
+| [docs/02-frontend/Fresh.md](../docs/02-frontend/Fresh.md) | Fresh | frontend | 2535 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/Frontend-blueprints.md](../docs/02-frontend/Frontend-blueprints.md) | Frontend blueprints | frontend | 4354 | 2026-06-10 | active | internal |
 | [docs/02-frontend/Frontend-testing.md](../docs/02-frontend/Frontend-testing.md) | Frontend testing | frontend | 1888 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/HTMX.md](../docs/02-frontend/HTMX.md) | htmx | frontend | 2927 | 2026-06-04 | active | official-docs |
-| [docs/02-frontend/Hugo.md](../docs/02-frontend/Hugo.md) | Hugo | frontend | 1985 | 2026-06-22 | active | official-docs |
+| [docs/02-frontend/Hugo.md](../docs/02-frontend/Hugo.md) | Hugo | frontend | 1891 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/I18n.md](../docs/02-frontend/I18n.md) | Internationalization | frontend | 1312 | 2026-05-24 | active | official-docs |
-| [docs/02-frontend/Laravel-Livewire.md](../docs/02-frontend/Laravel-Livewire.md) | Laravel Livewire | frontend | 2015 | 2026-06-10 | active | official-docs |
+| [docs/02-frontend/Laravel-Livewire.md](../docs/02-frontend/Laravel-Livewire.md) | Laravel Livewire | frontend | 2209 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/Motion.md](../docs/02-frontend/Motion.md) | Motion / UI-анимации | frontend | 6534 | 2026-06-20 | active | mixed |
 | [docs/02-frontend/Nextjs.md](../docs/02-frontend/Nextjs.md) | Next.js | frontend | 2105 | 2026-06-04 | active | official-docs |
-| [docs/02-frontend/Nuxt.md](../docs/02-frontend/Nuxt.md) | Nuxt | frontend | 2708 | 2026-06-10 | active | official-docs |
-| [docs/02-frontend/Payload-CMS.md](../docs/02-frontend/Payload-CMS.md) | Payload CMS | frontend | 3414 | 2026-06-11 | active | vendor-docs |
+| [docs/02-frontend/Nuxt.md](../docs/02-frontend/Nuxt.md) | Nuxt | frontend | 2728 | 2026-07-21 | active | official-docs |
+| [docs/02-frontend/Payload-CMS.md](../docs/02-frontend/Payload-CMS.md) | Payload CMS | frontend | 3430 | 2026-07-21 | active | vendor-docs |
 | [docs/02-frontend/Performance.md](../docs/02-frontend/Performance.md) | Frontend performance | frontend | 2817 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Premium-components.md](../docs/02-frontend/Premium-components.md) | Premium components | frontend | 4289 | 2026-06-19 | active | community |
 | [docs/02-frontend/Qwik.md](../docs/02-frontend/Qwik.md) | Qwik | frontend | 2446 | 2026-06-04 | active | official-docs |
-| [docs/02-frontend/React-Router.md](../docs/02-frontend/React-Router.md) | React Router | frontend | 3214 | 2026-06-22 | active | official-docs |
+| [docs/02-frontend/React-Router.md](../docs/02-frontend/React-Router.md) | React Router | frontend | 3154 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/React.md](../docs/02-frontend/React.md) | React | frontend | 1659 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Routing.md](../docs/02-frontend/Routing.md) | Frontend routing | frontend | 1573 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/SEO.md](../docs/02-frontend/SEO.md) | SEO for web apps | frontend | 2460 | 2026-06-04 | active | official-docs |
-| [docs/02-frontend/Sanity.md](../docs/02-frontend/Sanity.md) | Sanity | frontend | 2375 | 2026-06-22 | active | official-docs |
+| [docs/02-frontend/Sanity.md](../docs/02-frontend/Sanity.md) | Sanity | frontend | 2309 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/Shadcn.md](../docs/02-frontend/Shadcn.md) | shadcn/ui | frontend | 1355 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/SolidStart.md](../docs/02-frontend/SolidStart.md) | SolidStart | frontend | 1837 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/State-management.md](../docs/02-frontend/State-management.md) | State management | frontend | 1562 | 2026-05-24 | active | official-docs |
-| [docs/02-frontend/Strapi.md](../docs/02-frontend/Strapi.md) | Strapi | frontend | 2332 | 2026-06-22 | active | official-docs |
+| [docs/02-frontend/Strapi.md](../docs/02-frontend/Strapi.md) | Strapi | frontend | 2240 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/Styling-systems.md](../docs/02-frontend/Styling-systems.md) | Styling systems | frontend | 2797 | 2026-06-07 | active | mixed |
-| [docs/02-frontend/SvelteKit.md](../docs/02-frontend/SvelteKit.md) | SvelteKit | frontend | 2799 | 2026-06-22 | active | official-docs |
-| [docs/02-frontend/Tailwind.md](../docs/02-frontend/Tailwind.md) | Tailwind CSS | frontend | 1702 | 2026-06-22 | active | official-docs |
+| [docs/02-frontend/SvelteKit.md](../docs/02-frontend/SvelteKit.md) | SvelteKit | frontend | 2812 | 2026-07-21 | active | official-docs |
+| [docs/02-frontend/Tailwind.md](../docs/02-frontend/Tailwind.md) | Tailwind CSS | frontend | 1680 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/TanStack-Query.md](../docs/02-frontend/TanStack-Query.md) | TanStack Query | frontend | 2363 | 2026-05-24 | active | official-docs |
-| [docs/02-frontend/TanStack-Start.md](../docs/02-frontend/TanStack-Start.md) | TanStack Start | frontend | 3700 | 2026-06-22 | active | official-docs |
-| [docs/02-frontend/TypeScript.md](../docs/02-frontend/TypeScript.md) | TypeScript | frontend | 1310 | 2026-05-24 | active | official-docs |
+| [docs/02-frontend/TanStack-Start.md](../docs/02-frontend/TanStack-Start.md) | TanStack Start | frontend | 3761 | 2026-07-21 | active | official-docs |
+| [docs/02-frontend/TypeScript.md](../docs/02-frontend/TypeScript.md) | TypeScript | frontend | 2302 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/Typography-fonts.md](../docs/02-frontend/Typography-fonts.md) | Типографика и библиотека шрифтов | frontend | 8156 | 2026-06-20 | active | mixed |
 | [docs/02-frontend/UI-architecture.md](../docs/02-frontend/UI-architecture.md) | UI architecture | frontend | 2384 | 2026-06-04 | active | internal |
 | [docs/02-frontend/Vike.md](../docs/02-frontend/Vike.md) | Vike | frontend | 1844 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Vite-React.md](../docs/02-frontend/Vite-React.md) | Vite + React | frontend | 2108 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/Webflow.md](../docs/02-frontend/Webflow.md) | Webflow | frontend | 2083 | 2026-06-10 | active | official-docs |
-| [docs/02-frontend/WordPress.md](../docs/02-frontend/WordPress.md) | WordPress | frontend | 3038 | 2026-06-10 | active | official-docs |
+| [docs/02-frontend/WordPress.md](../docs/02-frontend/WordPress.md) | WordPress | frontend | 3453 | 2026-07-21 | active | official-docs |
 | [docs/03-backend/API-architecture.md](../docs/03-backend/API-architecture.md) | Backend API architecture | backend | 1551 | 2026-05-24 | active | internal |
 | [docs/03-backend/Auth-flows.md](../docs/03-backend/Auth-flows.md) | Backend auth flows | backend | 1712 | 2026-05-24 | active | mixed |
 | [docs/03-backend/Background-jobs.md](../docs/03-backend/Background-jobs.md) | Background jobs | backend | 1811 | 2026-05-24 | active | official-docs |
@@ -92,13 +92,13 @@ source_priority: "internal"
 | [docs/03-backend/Django.md](../docs/03-backend/Django.md) | Django | backend | 1270 | 2026-05-24 | active | official-docs |
 | [docs/03-backend/Email.md](../docs/03-backend/Email.md) | Email | backend | 1778 | 2026-05-24 | active | internal |
 | [docs/03-backend/Error-handling.md](../docs/03-backend/Error-handling.md) | Error handling | backend | 1326 | 2026-05-24 | active | internal |
-| [docs/03-backend/FastAPI.md](../docs/03-backend/FastAPI.md) | FastAPI | backend | 2151 | 2026-06-22 | active | official-docs |
+| [docs/03-backend/FastAPI.md](../docs/03-backend/FastAPI.md) | FastAPI | backend | 2095 | 2026-07-21 | active | official-docs |
 | [docs/03-backend/Fastify.md](../docs/03-backend/Fastify.md) | Fastify | backend | 1942 | 2026-05-24 | active | official-docs |
 | [docs/03-backend/File-uploads.md](../docs/03-backend/File-uploads.md) | File uploads | backend | 1796 | 2026-05-24 | active | internal |
-| [docs/03-backend/Hono.md](../docs/03-backend/Hono.md) | Hono | backend | 2839 | 2026-06-22 | active | official-docs |
+| [docs/03-backend/Hono.md](../docs/03-backend/Hono.md) | Hono | backend | 2858 | 2026-07-21 | active | official-docs |
 | [docs/03-backend/Logging.md](../docs/03-backend/Logging.md) | Logging | backend | 1317 | 2026-05-24 | active | internal |
-| [docs/03-backend/Nestjs.md](../docs/03-backend/Nestjs.md) | NestJS | backend | 1321 | 2026-06-22 | active | official-docs |
-| [docs/03-backend/Nodejs.md](../docs/03-backend/Nodejs.md) | Node.js | backend | 1260 | 2026-05-24 | active | official-docs |
+| [docs/03-backend/Nestjs.md](../docs/03-backend/Nestjs.md) | NestJS | backend | 1337 | 2026-07-21 | active | official-docs |
+| [docs/03-backend/Nodejs.md](../docs/03-backend/Nodejs.md) | Node.js | backend | 1552 | 2026-07-21 | active | official-docs |
 | [docs/03-backend/Payments.md](../docs/03-backend/Payments.md) | Payments | backend | 1415 | 2026-05-24 | active | internal |
 | [docs/03-backend/Stripe.md](../docs/03-backend/Stripe.md) | Stripe | backend | 2413 | 2026-05-24 | active | vendor-docs |
 | [docs/03-backend/Supabase.md](../docs/03-backend/Supabase.md) | Supabase | backend | 2415 | 2026-05-24 | active | vendor-docs |
@@ -110,22 +110,22 @@ source_priority: "internal"
 | [docs/04-databases/Drizzle.md](../docs/04-databases/Drizzle.md) | Drizzle ORM | database | 1880 | 2026-05-24 | active | official-docs |
 | [docs/04-databases/Migrations.md](../docs/04-databases/Migrations.md) | Database migrations | database | 1390 | 2026-05-24 | active | mixed |
 | [docs/04-databases/Multi-tenancy.md](../docs/04-databases/Multi-tenancy.md) | Multi-tenancy | database | 1368 | 2026-05-24 | active | internal |
-| [docs/04-databases/PostgreSQL.md](../docs/04-databases/PostgreSQL.md) | PostgreSQL | database | 1328 | 2026-05-24 | active | official-docs |
+| [docs/04-databases/PostgreSQL.md](../docs/04-databases/PostgreSQL.md) | PostgreSQL | database | 1842 | 2026-07-21 | active | official-docs |
 | [docs/04-databases/Prisma.md](../docs/04-databases/Prisma.md) | Prisma | database | 1246 | 2026-05-24 | active | official-docs |
 | [docs/04-databases/Query-optimization.md](../docs/04-databases/Query-optimization.md) | Query optimization | database | 2004 | 2026-05-24 | active | official-docs |
 | [docs/04-databases/Redis.md](../docs/04-databases/Redis.md) | Redis | database | 1985 | 2026-05-24 | active | official-docs |
 | [docs/04-databases/SQLAlchemy.md](../docs/04-databases/SQLAlchemy.md) | SQLAlchemy | database | 2138 | 2026-06-22 | active | official-docs |
 | [docs/04-databases/Transactions.md](../docs/04-databases/Transactions.md) | Transactions | database | 2122 | 2026-05-24 | active | official-docs |
-| [docs/04-databases/pgvector.md](../docs/04-databases/pgvector.md) | pgvector | database | 2184 | 2026-06-22 | active | official-docs |
+| [docs/04-databases/pgvector.md](../docs/04-databases/pgvector.md) | pgvector | database | 2178 | 2026-07-21 | active | official-docs |
 | [docs/05-auth-security/Authentication.md](../docs/05-auth-security/Authentication.md) | Authentication | security | 1571 | 2026-05-24 | active | official-docs |
 | [docs/05-auth-security/Authjs.md](../docs/05-auth-security/Authjs.md) | Auth.js | security | 2494 | 2026-05-24 | active | official-docs |
-| [docs/05-auth-security/Authorization.md](../docs/05-auth-security/Authorization.md) | Authorization | security | 1549 | 2026-05-24 | active | mixed |
+| [docs/05-auth-security/Authorization.md](../docs/05-auth-security/Authorization.md) | Authorization | security | 1554 | 2026-07-21 | active | mixed |
 | [docs/05-auth-security/CORS-CSRF-CSP.md](../docs/05-auth-security/CORS-CSRF-CSP.md) | CORS, CSRF, CSP | security | 1399 | 2026-05-24 | active | official-docs |
 | [docs/05-auth-security/Clerk.md](../docs/05-auth-security/Clerk.md) | Clerk | security | 2401 | 2026-05-24 | active | vendor-docs |
 | [docs/05-auth-security/Compliance-baseline.md](../docs/05-auth-security/Compliance-baseline.md) | Compliance baseline | security | 2330 | 2026-05-24 | active | mixed |
 | [docs/05-auth-security/Dependency-security.md](../docs/05-auth-security/Dependency-security.md) | Dependency security | security | 1299 | 2026-05-24 | active | official-docs |
 | [docs/05-auth-security/MCP-security.md](../docs/05-auth-security/MCP-security.md) | MCP security | security | 1458 | 2026-05-24 | active | official-docs |
-| [docs/05-auth-security/OWASP.md](../docs/05-auth-security/OWASP.md) | OWASP | security | 1244 | 2026-05-24 | active | official-docs |
+| [docs/05-auth-security/OWASP.md](../docs/05-auth-security/OWASP.md) | OWASP | security | 1885 | 2026-07-21 | active | official-docs |
 | [docs/05-auth-security/Privacy-policy-and-consent.md](../docs/05-auth-security/Privacy-policy-and-consent.md) | Privacy policy and cookie consent | auth-security | 3677 | 2026-06-19 | active | mixed |
 | [docs/05-auth-security/RBAC-ABAC.md](../docs/05-auth-security/RBAC-ABAC.md) | RBAC and ABAC | security | 1957 | 2026-05-24 | active | internal |
 | [docs/05-auth-security/RU-152fz-and-ai-data-handling.md](../docs/05-auth-security/RU-152fz-and-ai-data-handling.md) | RU 152-FZ and AI data handling | security | 5130 | 2026-06-19 | active | mixed |
@@ -147,12 +147,12 @@ source_priority: "internal"
 | [docs/07-mcp-and-ai-tools/Embeddings.md](../docs/07-mcp-and-ai-tools/Embeddings.md) | Embeddings | ai-tools | 2163 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Evaluation.md](../docs/07-mcp-and-ai-tools/Evaluation.md) | AI evaluation | ai-tools | 2098 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/External-design-skills.md](../docs/07-mcp-and-ai-tools/External-design-skills.md) | External design skills & design MCP | ai-tools | 5387 | 2026-07-11 | active | internal |
-| [docs/07-mcp-and-ai-tools/External-site-skills.md](../docs/07-mcp-and-ai-tools/External-site-skills.md) | External site skills | ai-tools | 4136 | 2026-06-21 | active | internal |
+| [docs/07-mcp-and-ai-tools/External-site-skills.md](../docs/07-mcp-and-ai-tools/External-site-skills.md) | External site skills | ai-tools | 4250 | 2026-07-21 | active | internal |
 | [docs/07-mcp-and-ai-tools/MCP-overview.md](../docs/07-mcp-and-ai-tools/MCP-overview.md) | MCP overview | ai-tools | 2655 | 2026-06-06 | active | official-docs |
-| [docs/07-mcp-and-ai-tools/OpenAI-API.md](../docs/07-mcp-and-ai-tools/OpenAI-API.md) | OpenAI API | ai-tools | 1600 | 2026-06-22 | active | official-docs |
+| [docs/07-mcp-and-ai-tools/OpenAI-API.md](../docs/07-mcp-and-ai-tools/OpenAI-API.md) | OpenAI API | ai-tools | 1612 | 2026-07-21 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Prompt-engineering.md](../docs/07-mcp-and-ai-tools/Prompt-engineering.md) | Prompt engineering | ai-tools | 1351 | 2026-05-24 | active | internal |
 | [docs/07-mcp-and-ai-tools/Prompt-injection.md](../docs/07-mcp-and-ai-tools/Prompt-injection.md) | Prompt injection | ai-tools | 1964 | 2026-06-21 | active | official-docs |
-| [docs/07-mcp-and-ai-tools/Qdrant.md](../docs/07-mcp-and-ai-tools/Qdrant.md) | Qdrant | ai-tools | 2107 | 2026-06-06 | active | official-docs |
+| [docs/07-mcp-and-ai-tools/Qdrant.md](../docs/07-mcp-and-ai-tools/Qdrant.md) | Qdrant | ai-tools | 2133 | 2026-07-21 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/RAG-ingestion.md](../docs/07-mcp-and-ai-tools/RAG-ingestion.md) | RAG ingestion | ai-tools | 1437 | 2026-05-24 | active | internal |
 | [docs/07-mcp-and-ai-tools/RAG.md](../docs/07-mcp-and-ai-tools/RAG.md) | RAG | ai-tools | 1331 | 2026-05-24 | active | internal |
 | [docs/07-mcp-and-ai-tools/Recommended-MCP-servers.md](../docs/07-mcp-and-ai-tools/Recommended-MCP-servers.md) | Recommended MCP servers | ai-tools | 4551 | 2026-07-11 | active | internal |
@@ -168,7 +168,7 @@ source_priority: "internal"
 | [docs/08-devops-deploy/Cloudflare-Workers-fullstack.md](../docs/08-devops-deploy/Cloudflare-Workers-fullstack.md) | Cloudflare Workers full-stack | devops | 3059 | 2026-06-04 | active | vendor-docs |
 | [docs/08-devops-deploy/Cloudflare.md](../docs/08-devops-deploy/Cloudflare.md) | Cloudflare | devops | 3062 | 2026-06-04 | active | vendor-docs |
 | [docs/08-devops-deploy/Docker-compose.md](../docs/08-devops-deploy/Docker-compose.md) | Docker Compose | devops | 2750 | 2026-05-24 | active | official-docs |
-| [docs/08-devops-deploy/Docker.md](../docs/08-devops-deploy/Docker.md) | Docker | devops | 2763 | 2026-05-24 | active | official-docs |
+| [docs/08-devops-deploy/Docker.md](../docs/08-devops-deploy/Docker.md) | Docker | devops | 3166 | 2026-07-21 | active | official-docs |
 | [docs/08-devops-deploy/Environment-variables.md](../docs/08-devops-deploy/Environment-variables.md) | Environment variables | devops | 2873 | 2026-05-24 | active | internal |
 | [docs/08-devops-deploy/GitHub-actions.md](../docs/08-devops-deploy/GitHub-actions.md) | GitHub Actions | devops | 2964 | 2026-05-24 | active | official-docs |
 | [docs/08-devops-deploy/Incident-workflow.md](../docs/08-devops-deploy/Incident-workflow.md) | Incident workflow | devops | 3644 | 2026-05-24 | active | internal |
@@ -189,7 +189,7 @@ source_priority: "internal"
 | [docs/09-testing/Load-testing.md](../docs/09-testing/Load-testing.md) | Load testing | testing | 2936 | 2026-05-24 | active | official-docs |
 | [docs/09-testing/Mocks.md](../docs/09-testing/Mocks.md) | Mocks | testing | 2861 | 2026-05-24 | active | internal |
 | [docs/09-testing/Playwright.md](../docs/09-testing/Playwright.md) | Playwright | testing | 2094 | 2026-05-24 | active | official-docs |
-| [docs/09-testing/Security-testing.md](../docs/09-testing/Security-testing.md) | Security testing | testing | 3660 | 2026-06-10 | active | official-docs |
+| [docs/09-testing/Security-testing.md](../docs/09-testing/Security-testing.md) | Security testing | testing | 4154 | 2026-07-21 | active | official-docs |
 | [docs/09-testing/Site-audit-tooling.md](../docs/09-testing/Site-audit-tooling.md) | Site audit tooling | testing | 5079 | 2026-06-11 | active | internal |
 | [docs/09-testing/Test-data.md](../docs/09-testing/Test-data.md) | Test data | testing | 2699 | 2026-05-24 | active | internal |
 | [docs/09-testing/Test-pyramid.md](../docs/09-testing/Test-pyramid.md) | Test pyramid | testing | 3211 | 2026-05-24 | active | internal |
@@ -197,21 +197,22 @@ source_priority: "internal"
 | [docs/09-testing/Visual-testing.md](../docs/09-testing/Visual-testing.md) | Visual testing | testing | 2891 | 2026-06-04 | active | internal |
 | [docs/10-templates/handoff.md](../docs/10-templates/handoff.md) | Site handoff template | templates | 4916 | 2026-06-19 | active | internal |
 | [docs/10-templates/index.md](../docs/10-templates/index.md) | Templates | templates | 644 | 2026-06-19 | active | internal |
-| [docs/10-templates/pipeline-status.md](../docs/10-templates/pipeline-status.md) | Pipeline status template | templates | 3800 | 2026-07-11 | active | internal |
+| [docs/10-templates/pipeline-status.md](../docs/10-templates/pipeline-status.md) | Pipeline status template | templates | 2873 | 2026-07-21 | active | internal |
 | [docs/10-templates/site-audit-project-command.md](../docs/10-templates/site-audit-project-command.md) | Site audit project command | templates | 2065 | 2026-06-10 | active | internal |
 | [docs/11-prompts/index.md](../docs/11-prompts/index.md) | Prompts | prompts | 742 | 2026-06-07 | active | internal |
 | [docs/12-resources/index.md](../docs/12-resources/index.md) | Resources | resources | 604 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/admin-dashboard.md](../docs/13-playbooks/admin-dashboard.md) | Playbook: Admin dashboard | playbooks | 3278 | 2026-06-04 | active | internal |
 | [docs/13-playbooks/ai-rag-app.md](../docs/13-playbooks/ai-rag-app.md) | Playbook: AI/RAG app | playbooks | 4052 | 2026-06-04 | active | internal |
 | [docs/13-playbooks/api-only-backend.md](../docs/13-playbooks/api-only-backend.md) | Playbook: API-only backend | playbooks | 3671 | 2026-06-04 | active | internal |
+| [docs/13-playbooks/content-site.md](../docs/13-playbooks/content-site.md) | Playbook: Content site | playbooks | 3857 | 2026-07-21 | active | internal |
 | [docs/13-playbooks/ecommerce.md](../docs/13-playbooks/ecommerce.md) | Playbook: E-commerce | playbooks | 4558 | 2026-06-10 | active | internal |
-| [docs/13-playbooks/headless-commerce.md](../docs/13-playbooks/headless-commerce.md) | Playbook: Headless commerce | playbooks | 2967 | 2026-06-10 | active | mixed |
-| [docs/13-playbooks/index.md](../docs/13-playbooks/index.md) | Project playbooks | playbooks | 2967 | 2026-05-24 | active | internal |
+| [docs/13-playbooks/headless-commerce.md](../docs/13-playbooks/headless-commerce.md) | Supporting guide: Headless commerce | playbooks | 3168 | 2026-07-21 | active | mixed |
+| [docs/13-playbooks/index.md](../docs/13-playbooks/index.md) | Project playbooks | playbooks | 1340 | 2026-07-21 | active | internal |
 | [docs/13-playbooks/landing.md](../docs/13-playbooks/landing.md) | Playbook: Landing | playbooks | 9533 | 2026-06-22 | active | internal |
 | [docs/13-playbooks/marketplace.md](../docs/13-playbooks/marketplace.md) | Playbook: Marketplace | playbooks | 4451 | 2026-06-04 | active | internal |
 | [docs/13-playbooks/real-time-app.md](../docs/13-playbooks/real-time-app.md) | Playbook: Real-time app | playbooks | 3886 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/saas.md](../docs/13-playbooks/saas.md) | Playbook: SaaS | playbooks | 5027 | 2026-06-04 | active | internal |
-| [docs/13-playbooks/shopify-hydrogen.md](../docs/13-playbooks/shopify-hydrogen.md) | Playbook: Shopify Hydrogen | playbooks | 2605 | 2026-06-22 | active | official-docs |
+| [docs/13-playbooks/shopify-hydrogen.md](../docs/13-playbooks/shopify-hydrogen.md) | Supporting guide: Shopify Hydrogen | playbooks | 2802 | 2026-07-21 | active | official-docs |
 | [docs/14-llm-indexing/chunking-policy.md](../docs/14-llm-indexing/chunking-policy.md) | Chunking policy | llm-indexing | 3109 | 2026-05-24 | active | internal |
 | [docs/14-llm-indexing/freshness-checks.md](../docs/14-llm-indexing/freshness-checks.md) | Freshness checks | llm-indexing | 3598 | 2026-06-29 | active | internal |
 | [docs/14-llm-indexing/index.md](../docs/14-llm-indexing/index.md) | LLM indexing | llm-indexing | 4812 | 2026-05-25 | active | internal |
@@ -220,7 +221,7 @@ source_priority: "internal"
 | [docs/14-llm-indexing/rag-file-search.md](../docs/14-llm-indexing/rag-file-search.md) | RAG and File Search | llm-indexing | 3855 | 2026-05-24 | active | official-docs |
 | [docs/14-llm-indexing/source-priority.md](../docs/14-llm-indexing/source-priority.md) | Source priority | llm-indexing | 2750 | 2026-05-24 | active | internal |
 | [docs/15-maintenance/retro-process.md](../docs/15-maintenance/retro-process.md) | Retro-процесс после инцидентов и провальных релизов | maintenance | 4288 | 2026-06-07 | active | internal |
-| [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 6234 | 2026-07-05 | active | internal |
+| [docs/15-maintenance/update-monitoring.md](../docs/15-maintenance/update-monitoring.md) | Мониторинг обновлений технологий | maintenance | 8147 | 2026-07-21 | active | internal |
 | [docs/15-maintenance/wiki-update-cadence.md](../docs/15-maintenance/wiki-update-cadence.md) | Периодичность обновления вики | maintenance | 6194 | 2026-06-29 | active | internal |
 
 ## patterns
@@ -251,6 +252,7 @@ source_priority: "internal"
 | [patterns/frontend/form-validation-boundary.md](../patterns/frontend/form-validation-boundary.md) | Pattern: Form validation boundary | patterns | 999 | 2026-05-24 | active | internal |
 | [patterns/frontend/full-height-first-screen.md](../patterns/frontend/full-height-first-screen.md) | Pattern: Full-height first screen (контроль сгиба) | pattern | 4560 | 2026-06-29 | active | internal |
 | [patterns/frontend/layout-archetypes.md](../patterns/frontend/layout-archetypes.md) | Pattern: Layout archetypes | pattern | 5760 | 2026-07-02 | active | internal |
+| [patterns/frontend/lead-form-without-backend.md](../patterns/frontend/lead-form-without-backend.md) | Pattern: форма заявки без подключённого канала не должна терять лиды | patterns | 1710 | 2026-07-28 | active | internal |
 | [patterns/frontend/localstorage-mini-crm.md](../patterns/frontend/localstorage-mini-crm.md) | Pattern: LocalStorage mini-CRM (клиентский CRUD без бэкенда) | pattern | 3891 | 2026-06-11 | active | internal |
 | [patterns/frontend/photo-header-text-panel-card.md](../patterns/frontend/photo-header-text-panel-card.md) | Pattern: Photo-header + text-panel card (гибридная карточка) | pattern | 5766 | 2026-07-02 | active | internal |
 | [patterns/frontend/portfolio-case-screenshot-gallery.md](../patterns/frontend/portfolio-case-screenshot-gallery.md) | Pattern: Portfolio case screenshot gallery | pattern | 2798 | 2026-06-20 | active | internal |
@@ -259,9 +261,11 @@ source_priority: "internal"
 | [patterns/frontend/semantic-theme-text-tokens.md](../patterns/frontend/semantic-theme-text-tokens.md) | Pattern: Semantic theme text tokens | patterns | 2980 | 2026-05-27 | active | internal |
 | [patterns/frontend/server-client-boundary.md](../patterns/frontend/server-client-boundary.md) | Pattern: Server/client boundary | patterns | 446 | 2026-05-24 | active | internal |
 | [patterns/frontend/static-site-dev-only-cms-flag.md](../patterns/frontend/static-site-dev-only-cms-flag.md) | Pattern: Static site + dev-only CMS behind build flag | pattern | 5235 | 2026-06-12 | active | internal |
-| [patterns/frontend/stock-photo-id-verification.md](../patterns/frontend/stock-photo-id-verification.md) | Pattern: Проверка stock-фото (не доверять ID по памяти) | patterns | 5831 | 2026-07-02 | active | internal |
+| [patterns/frontend/stock-photo-id-verification.md](../patterns/frontend/stock-photo-id-verification.md) | Pattern: Проверка stock-фото (не доверять ID по памяти) | patterns | 6331 | 2026-07-02 | active | internal |
+| [patterns/frontend/tailwind-token-name-collisions.md](../patterns/frontend/tailwind-token-name-collisions.md) | Pattern: имена токенов Tailwind v4 не должны совпадать со шкалами утилит | patterns | 1948 | 2026-07-28 | active | internal |
 | [patterns/frontend/third-party-booking-widget.md](../patterns/frontend/third-party-booking-widget.md) | Pattern: Third-party booking widget (попап записи) | pattern | 4127 | 2026-06-13 | active | internal |
 | [patterns/frontend/vanilla-countup-via-reveal-observer.md](../patterns/frontend/vanilla-countup-via-reveal-observer.md) | Pattern: Count-up чисел через существующий IntersectionObserver, без нового острова | pattern | 5520 | 2026-07-02 | active | internal |
+| [patterns/frontend/warm-accent-needs-dark-text.md](../patterns/frontend/warm-accent-needs-dark-text.md) | Pattern: на тёплом акценте текст тёмный, а не белый | patterns | 1721 | 2026-07-28 | active | internal |
 | [patterns/security/deny-by-default.md](../patterns/security/deny-by-default.md) | Pattern: Deny by default | patterns | 394 | 2026-05-24 | active | internal |
 | [patterns/security/tenant-isolation.md](../patterns/security/tenant-isolation.md) | Pattern: Tenant isolation | patterns | 1085 | 2026-05-24 | active | internal |
 | [patterns/security/untrusted-tool-output.md](../patterns/security/untrusted-tool-output.md) | Pattern: Untrusted tool output (operational prompt-injection defense) | pattern | 4015 | 2026-06-21 | active | internal |
@@ -313,7 +317,7 @@ source_priority: "internal"
 | [checklists/project-discovery.md](../checklists/project-discovery.md) | Project discovery checklist | checklist | 4242 | 2026-06-13 | active | internal |
 | [checklists/qa-acceptance.md](../checklists/qa-acceptance.md) | QA / UAT acceptance checklist | checklist | 2817 | 2026-06-19 | active | internal |
 | [checklists/release-readiness.md](../checklists/release-readiness.md) | Release readiness checklist | checklist | 5264 | 2026-06-19 | active | internal |
-| [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 6230 | 2026-07-01 | active | internal |
+| [checklists/security-review.md](../checklists/security-review.md) | Security review checklist | checklist | 6831 | 2026-07-21 | active | internal |
 | [checklists/wiki-maintenance.md](../checklists/wiki-maintenance.md) | Wiki maintenance checklist | checklist | 3686 | 2026-07-05 | active | internal |
 
 ## stacks
@@ -374,6 +378,7 @@ source_priority: "internal"
 | [lessons-learned/2026-07-02-subagent-photo-sourcing-tool-call-explosion.md](../lessons-learned/2026-07-02-subagent-photo-sourcing-tool-call-explosion.md) | Lesson: делегирование фото-сорсинга субагенту — взрыв tool calls без результата | lesson | 5501 | 2026-07-02 | active | internal |
 | [lessons-learned/2026-07-05-generated-file-timezone-date.md](../lessons-learned/2026-07-05-generated-file-timezone-date.md) | Lesson: дата в генерируемых файлах — UTC и стабильность, иначе ложный stale в CI | lesson | 2621 | 2026-07-05 | active | internal |
 | [lessons-learned/2026-07-05-pytest-package-import-script-tools.md](../lessons-learned/2026-07-05-pytest-package-import-script-tools.md) | Lesson: pytest импортирует script-style инструменты как пакет — нужен conftest с sys.path | lesson | 2542 | 2026-07-05 | active | internal |
+| [lessons-learned/2026-07-28-astro-jsx-whitespace-collapse.md](../lessons-learned/2026-07-28-astro-jsx-whitespace-collapse.md) | Lesson: Astro схлопывает пробелы вокруг выражений — бьёт по юрстраницам | lesson | 1594 | 2026-07-28 | active | internal |
 | [lessons-learned/_template.md](../lessons-learned/_template.md) | Lesson: <короткое название> | lesson | 1027 | YYYY-MM-DD | active | internal |
 
 ## mcp

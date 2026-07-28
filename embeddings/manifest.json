@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2615,
-  "corpus_hash": "765a3be32059a44c3bf56ee1f381c3a52aff50c470e9b12a4ff4316c29808ee2",
+  "chunk_count": 2638,
+  "corpus_hash": "bf92a6d5dc7518b24aa4eb5ff7b4e97e081717f58315f34c32f39f50a12a2d86",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -212,6 +212,7 @@
     "docs/13-playbooks/admin-dashboard.md",
     "docs/13-playbooks/ai-rag-app.md",
     "docs/13-playbooks/api-only-backend.md",
+    "docs/13-playbooks/content-site.md",
     "docs/13-playbooks/ecommerce.md",
     "docs/13-playbooks/headless-commerce.md",
     "docs/13-playbooks/index.md",
@@ -245,6 +246,7 @@
     "lessons-learned/2026-06-25-astro7-vercel-adapter.md",
     "lessons-learned/2026-06-29-astro7-vercel-static-no-adapter.md",
     "lessons-learned/2026-07-02-build-modern-site-plan-mode-bypass.md",
+    "lessons-learned/2026-07-02-section-index-renumbering-gap.md",
     "lessons-learned/2026-07-02-subagent-photo-sourcing-tool-call-explosion.md",
     "lessons-learned/2026-07-05-generated-file-timezone-date.md",
     "lessons-learned/2026-07-05-pytest-package-import-script-tools.md",
@@ -281,6 +283,7 @@
     "patterns/frontend/static-site-dev-only-cms-flag.md",
     "patterns/frontend/stock-photo-id-verification.md",
     "patterns/frontend/third-party-booking-widget.md",
+    "patterns/frontend/vanilla-countup-via-reveal-observer.md",
     "patterns/security/deny-by-default.md",
     "patterns/security/tenant-isolation.md",
     "patterns/security/untrusted-tool-output.md",
@@ -317,7 +320,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-07-11T07:19:08Z",
+  "generated_at": "2026-07-21T14:29:10Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }

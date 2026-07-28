@@ -1,104 +1,70 @@
 ---
 name: capture-learnings
 description: >-
-  Замыкает петлю самообучения после завершённой задачи или значимого этапа в D:\Work. Использовать,
-  когда пользователь явно одобрил подход, стиль, шрифт, референс, стек, дизайн-решение, запрет или
-  повторяемый приём, либо когда задача дала переиспользуемое знание, ошибку или риск. Решает, что
-  сохранить, и куда: личные предпочтения → D:\Work\AGENT-PREFERENCES.local.md (через безопасный
-  PowerShell-инструмент со сканом секретов и dry-run); обезличенные паттерны/кейсы/уроки → wiki
-  (предлагается, подтверждается вручную). Триггерится Stop-hook'ом slash-command runtime, правилом AGENTS.md
-  в Codex и ручным вызовом.
+  Фиксирует переиспользуемое знание после задачи в D:\Work. Использовать, когда пользователь явно
+  одобрил подход, стиль, шрифт, референс, стек или запрет, либо когда задача дала паттерн, ошибку
+  или риск, полезные в следующий раз. Личные предпочтения → AGENT-PREFERENCES.local.md через
+  PowerShell-инструмент со сканом секретов и dry-run; обезличенные паттерны и кейсы → llm-dev-wiki.
 ---
 
-# capture-learnings — петля самообучения
+# capture-learnings
 
-Тонкий роутер логики `D:\Work\llm-dev-wiki\prompts\post-task-learning-review.md`. Цель — отделить
-подтверждённое знание от шума и направить его в правильный сток, не сохранив ничего приватного.
+Отделить подтверждённое знание от шума и направить в нужный сток, ничего приватного не сохранив.
 
-## Когда использовать
-- Пользователь явно сказал «запомни», одобрил или повторно подтвердил предпочтение/приём.
-- Завершена задача с новым стеком, риском, удачным приёмом, hard-won fix или ошибкой.
+Вызывается вручную или когда в работе появилось что-то, что пригодится в следующий раз. Не для
+каждой задачи: нет явного одобрения и нет свидетельств (команды, diff, тесты, источники, отзыв
+пользователя) — значит фиксировать нечего, так и скажи.
 
-## Когда НЕ использовать / отказ
-- Нет явного approval и нет evidence (команды, diff, тесты, источники, user feedback) — не выдумывать опыт.
-- Тривиальная задача без переиспользуемого знания — зафиксируй `no artifact needed` и причину.
+Детали классификации и роутинга — `D:\Work\llm-dev-wiki\prompts\post-task-learning-review.md`,
+правила предпочтений — `prompts\update-user-preferences.md`, правила вики — `prompts\update-wiki.md`.
+Читай их, когда дошло до соответствующего шага.
 
-## Сначала прочитай
-- `D:\Work\llm-dev-wiki\prompts\post-task-learning-review.md` — как классифицировать и роутить опыт.
-- `D:\Work\llm-dev-wiki\prompts\update-user-preferences.md` — правила сохранения предпочтения.
-- `D:\Work\AGENT-PREFERENCES.local.md` — текущие записи (дедуп, не плодить).
-- `D:\Work\llm-dev-wiki\prompts\update-wiki.md` — правила ручного обновления вики-артефактов.
+## Личные предпочтения
 
-## Стоки (куда направлять)
-1. **Личные предпочтения → `D:\Work\AGENT-PREFERENCES.local.md`** (основной автосток).
-   Только через инструмент, никогда не дописывать файл руками в обход скана секретов:
-   - Dry-run (показать предложенную запись, обязательно сначала):
-     ```
-     pwsh D:\Work\llm-dev-wiki\tools\update-local-preferences.ps1 -DryRun `
-       -Title "<кратко>" -Scope "global|site-building|frontend|backend|design|project:<name>" `
-       -Preference "<что предпочитать>" -Avoid "<что не предлагать>" `
-       -Evidence "<user approval | project result | test | diff | source>" `
-       -ReviewAfter "<дата или условие>" -Links "<публичные/локальные безопасные ссылки>"
-     ```
-   - Apply только после явного подтверждения пользователя: заменить `-DryRun` на `-Apply`.
-   - Инструмент сам блокирует токены, ключи, cookies, пароли, PII — если blocked, переформулируй без приватных данных.
-2. **Обезличенное переиспользуемое знание → wiki** (предлагается, подтверждается вручную):
-   - Удачный приём → `D:\Work\llm-dev-wiki\patterns\<area>\<pattern-name>.md`.
-   - Успех → `D:\Work\llm-dev-wiki\case-studies\successes\YYYY-MM-DD-<slug>.md`.
-   - Ошибка/риск → `D:\Work\llm-dev-wiki\case-studies\failures\YYYY-MM-DD-<slug>.md` или
-     `D:\Work\llm-dev-wiki\lessons-learned\YYYY-MM-DD-<topic>.md`.
-   - Новый критерий ревью → файл в `D:\Work\llm-dev-wiki\checklists\`.
-   - Портфолио/service-site с reusable deploy, screenshot gallery или lead-form flow → case-study + patterns, если есть тесты/deploy evidence.
-   - Перед созданием артефакта проверь существующие — обновляй, а не дублируй. Используй `_template-*.md`.
+Только через инструмент — он сканирует секреты и PII. Руками файл не дописывать.
 
-## Шаги
-1. **Classify significance** — был ли новый стек, риск, failure, reusable pattern, необычный trade-off или fix.
-2. **Check evidence** — без команд/diff/тестов/источников/feedback не фиксировать.
-3. **Route** — preference (local) и/или wiki-артефакт; для предпочтений всегда сначала `-DryRun`.
-4. **Deduplicate** — найти существующие записи, обновить вместо дубля.
-5. **Sanitize** — убрать секреты, PII, приватный код, customer payloads; личные референсы не уносить в GitHub-wiki.
-6. **Apply** — preference только после approval (`-Apply`); wiki-артефакты после подтверждения.
-7. **Backlink в проект** — если записан case-study/урок по конкретному проекту, добавь в
-   `AGENTS.md` этого проекта секцию `## Связанные знания` (или строку в неё) со ссылками на
-   созданные wiki-артефакты. Это двусторонняя трассируемость: вернувшись в проект через полгода,
-   агент увидит его документированные решения.
-8. **Quality gate вики** — если менялись файлы вики, прогони и сверься с
-   `D:\Work\llm-dev-wiki\checklists\wiki-maintenance.md`:
-   ```
-   pwsh D:\Work\llm-dev-wiki\tools\ci-local.ps1
-   ```
-   Если задача про актуальность технологий:
-   ```
-   pwsh D:\Work\llm-dev-wiki\tools\ci-local.ps1 -IncludeUpdateCheck
-   ```
-9. **Синхронизация скиллов** — если менялись файлы в `llm-dev-wiki\agent-skills\` (SKILL.md, hooks,
-   tools), раскати канон по рантаймам, иначе агентские рантаймы продолжат работать по старой версии:
-   ```
-   pwsh D:\Work\llm-dev-wiki\tools\verify-agent-skills.ps1
-   pwsh D:\Work\llm-dev-wiki\agent-skills\sync-skills.ps1 -DryRun
-   pwsh D:\Work\llm-dev-wiki\agent-skills\sync-skills.ps1
-   pwsh D:\Work\llm-dev-wiki\tools\verify-agent-skills.ps1 -VerifyUserRuntimes
-   ```
-   Последняя команда обязательна локально: GitHub CI не видит оба пользовательских skill runtime-каталога.
-
-## Output schema
 ```
-## Learning review
-Decision: save local preference | propose wiki artifact | both | no artifact needed
-Reason: ...
-Evidence: команды/тесты/источники/user feedback
-
-## Routing
-- AGENT-PREFERENCES.local.md: <proposed entry или ->
-- patterns/case-studies/lessons/checklists: <путь + краткое описание или ->
-
-## Commands
-- pwsh ...\update-local-preferences.ps1 -DryRun ...
-- pwsh ...\ci-local.ps1   (если менялась вики)
+pwsh D:\Work\llm-dev-wiki\tools\update-local-preferences.ps1 -DryRun `
+  -Title "<кратко>" -Scope "global|site-building|frontend|backend|design|project:<name>" `
+  -Preference "<что предпочитать>" -Avoid "<что не предлагать>" `
+  -Evidence "<user approval | project result | test | diff | source>" `
+  -ReviewAfter "<дата или условие>" -Links "<безопасные ссылки>"
 ```
-Если работа шла в проекте сайта (пайплайн `build-modern-site`), сохрани заполненную схему в корень
-проекта как `_learning-review.md` — это evidence финальной фазы в `_pipeline-status.md`. Для
-тривиальных задач файл содержит `no artifact needed` и причину.
 
-## Передача дальше
-Это финальный скилл цикла. После него — короткое резюме: что сохранено, что предложено в вики, что осталось от пользователя.
+Сначала `-DryRun`, `-Apply` — после подтверждения пользователя. Если инструмент заблокировал запись,
+значит в ней токен, ключ, cookie, пароль или PII — переформулируй без них.
+
+Перед записью посмотри `AGENT-PREFERENCES.local.md`: обнови существующую запись, а не плоди дубль.
+
+## Обезличенное знание → вики
+
+- Удачный приём → `llm-dev-wiki\patterns\<area>\<pattern-name>.md`
+- Успех → `case-studies\successes\YYYY-MM-DD-<slug>.md`
+- Ошибка или риск → `case-studies\failures\...` либо `lessons-learned\YYYY-MM-DD-<topic>.md`
+- Новый критерий ревью → файл в `checklists\`
+
+Проверь существующие артефакты и шаблоны `_template-*.md` — обновляй, а не дублируй. Секреты, PII,
+приватный код, клиентские payload и личные референсы в вики не уходят.
+
+Если знание привязано к конкретному проекту, добавь в его `AGENTS.md` секцию `## Связанные знания`
+со ссылками — вернувшись через полгода, агент увидит документированные решения.
+
+## После правок
+
+Менялась вики:
+```
+pwsh D:\Work\llm-dev-wiki\tools\ci-local.ps1
+```
+
+Менялись файлы в `llm-dev-wiki\agent-skills\` — раскатай канон, иначе рантаймы останутся на старой
+версии. Последняя команда нужна локально: GitHub CI не видит пользовательские skill-каталоги.
+```
+pwsh D:\Work\llm-dev-wiki\agent-skills\sync-skills.ps1 -DryRun
+pwsh D:\Work\llm-dev-wiki\agent-skills\sync-skills.ps1
+pwsh D:\Work\llm-dev-wiki\tools\verify-agent-skills.ps1 -VerifyUserRuntimes
+```
+
+## Итог
+
+Короткое резюме: что сохранено, что предложено в вики, что осталось за пользователем. В проекте
+сайта сложи его в `_learning-review.md` — это evidence финальной фазы пайплайна.
