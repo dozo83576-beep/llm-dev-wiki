@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 4,
+  "targetModels": [
+    "gpt-5.6-sol",
+    "claude-fable-5",
+    "claude-sonnet-5"
+  ],
+  "layers": {
+    "nativeModel": "Reasoning, planning, architecture, code and content work from supplied context.",
+    "nativeRuntime": "Repository inspection, edits, commands, tests, builds and visual checks.",
+    "localSkill": "D:\\Work policy, phase ownership, evidence artifacts and non-obvious failure patterns.",
+    "externalTool": "Current or external state such as live sites, accounts, deployment and monitoring."
+  },
+  "routeModes": {
+    "direct": "Focused change or simple static site; no pipeline status file.",
+    "full-pipeline": "Complex new site using contract v2 and artifact-backed resume."
+  },
+  "designCapability": {
+    "nativeOwner": [
+      "brief-inference",
+      "design-direction",
+      "composition-and-typography",
+      "ux-and-accessibility-reasoning",
+      "frontend-code",
+      "static-review"
+    ],
+    "localArtifactOwner": {
+      "skill": "site-design",
+      "artifact": "DESIGN-DIRECTION.md",
+      "activation": ["full-pipeline", "explicit"],
+      "explicitMeaning": "The user explicitly asks to create or record a design direction/artifact; routeMode may remain direct."
+    },
+    "preferencePrecedence": [
+      "project-brief",
+      "brand-and-accessibility",
+      "local-user-preferences",
+      "wiki-defaults"
+    ],
+    "externalToolConditions": {
+      "reference-search": "Required for current visual evidence, competitor surfaces, font licenses or availability claims.",
+      "browser": "Rendered desktop/mobile behavior and visual acceptance.",
+      "figma": "Explicit Figma source or requested Figma deliverable.",
+      "image-generation": "A requested image asset or visual reference cannot be derived from supplied assets."
+    },
+    "gateVocabulary": {
+      "brand": "Preserve supplied brand constraints and incumbent visual truth.",
+      "responsive": "Define and verify relevant desktop/mobile behavior.",
+      "accessibility": "Keep contrast, keyboard, focus and reduced-motion requirements applicable to the surface.",
+      "real-data": "Do not fabricate cases, metrics, testimonials, identities or product evidence.",
+      "cyrillic-license": "Verify Cyrillic coverage, commercial license and self-host plan when Russian typography is selected.",
+      "states": "Cover behavior states that exist on the implemented surface.",
+      "evidence": "Distinguish supplied context from current externally verified facts.",
+      "browser-evidence": "Use a rendered browser result for factual visual acceptance."
+    },
+    "externalToolTiming": "Mark an external tool only when the current requested outcome depends on external/current state; do not mark one solely for a possible later implementation choice.",
+    "verification": "Inspect desktop and mobile in one bounded batch, fix supported findings, then confirm; expand only when risk or evidence requires it."
+  },
+  "motionMediaCapability": {
+    "nativeOwner": [
+      "motion-direction",
+      "interaction-design",
+      "animation-code",
+      "static-motion-review"
+    ],
+    "interactionTiers": {
+      "base": "CSS, Web Animations API and View Transitions; Motion only for justified React/Astro gestures, layout or reactive scroll.",
+      "cinematic": "GSAP ScrollTrigger only for an explicit pinned, scrubbed or snapped multi-scene narrative after a current license check.",
+      "specialized": "Rive requires a .riv asset and state/data-binding contract; Three.js requires a real 3D scene or model and a static fallback."
+    },
+    "routeOwnership": {
+      "direct": {
+        "owner": "native-model",
+        "statusFile": false,
+        "briefContract": "hero-media-brief.json"
+      },
+      "full-pipeline": {
+        "designOwner": "site-design",
+        "integrationOwner": "site-frontend",
+        "verificationOwner": "site-review",
+        "briefContract": "hero-media-brief.json"
+      }
+    },
+    "artifactOwners": {
+      "hero-media-package": {
+        "owner": "D:\\kontent",
+        "interface": "py content_agent.py web-hero --brief <file> --output <directory>",
+        "manifest": "media-manifest.json"
+      },
+      "rendered-browser-evidence": {
+        "owner": "site-review",
+        "requiresTool": true
+      }
+    },
+    "mediaModes": {
+      "decorative": "Muted autoplay loop with poster, pause, reduced-motion/save-data fallback and no audio track.",
+      "meaningful": "User-initiated controls with captions and transcript; no unmuted autoplay.",
+      "synchronized": "requestVideoFrameCallback only when DOM or canvas must follow presented video frames."
+    },
+    "providerPolicy": {
+      "default": "remotion-ffmpeg-local",
+      "sora": {
+        "status": "deprecated",
+        "shutsDownAt": "2026-09-24",
+        "activation": "explicit-paid-approval-and-current-provider-snapshot",
+        "replacementRequired": true
+      }
+    },
+    "globalSkill": false
+  },
+  "externalSkillDecisions": {
+    "impeccable": {
+      "decision": "extract-only",
+      "hooks": false,
+      "installed": false,
+      "reason": "Broad trigger, duplicate design/review commands and low additive value in the local detector pilot."
+    },
+    "taste-skill": {
+      "decision": "extract-only",
+      "hooks": false,
+      "installed": false,
+      "reason": "Experimental broad prompt with forced style, motion and layout defaults that overlap native models."
+    }
+  },
+  "providerSpecificSkills": {
+    "codex": {
+      "pluginManaged": [
+        "product-design:index",
+        "figma:figma-use"
+      ],
+      "activation": "Explicit product-design or Figma intent. React, shadcn and general frontend work remain native."
+    },
+    "claude": {
+      "direct": ["vercel-react-best-practices"],
+      "nativeFallback": ["shadcn-ui"],
+      "activation": "React reference only for a concrete React/Next.js task; shadcn remains native unless explicitly requested."
+    }
+  },
+  "toolRouting": {
+    "browser-hierarchy": [
+      {
+        "owner": "specialized-connector-or-api",
+        "when": "The outcome requires current external data or a provider action better represented by its API."
+      },
+      {
+        "owner": "browser@openai-bundled",
+        "when": "Primary rendered-site inspection, interaction and desktop/mobile visual evidence."
+      },
+      {
+        "owner": "chrome@openai-bundled",
+        "when": "The task explicitly requires an existing authenticated user Chrome session."
+      },
+      {
+        "owner": "playwright",
+        "tool": "playwright MCP or project-local Playwright",
+        "when": "A reproducible isolated browser test or terminal automation artifact is required."
+      },
+      {
+        "owner": "computer-use@openai-bundled",
+        "when": "A non-browser Windows application is required, or the preferred scoped tool is unavailable and fallback is authorized."
+      }
+    ],
+    "planning": {
+      "owner": "native-model",
+      "taskmaster": "disabled-generic-duplicate"
+    },
+    "current-documentation": {
+      "owner": "official-source-via-web-or-context7",
+      "activation": "Only when the task depends on current library or platform behavior."
+    }
+  },
+  "forbiddenMcpServers": ["taskmaster-ai"],
+  "phaseInputAliases": {
+    "site-design": ["дизайн-направление", "design direction"],
+    "site-handoff": ["handoff план", "handoff plan", "release/handoff"]
+  },
+  "skillCapabilityOwners": {
+    "general-planning-architecture-code-review": "native-model",
+    "full-DWork-site-route": "build-modern-site",
+    "full-route-design-artifact": "site-design",
+    "full-route-frontend-artifact": "site-frontend",
+    "full-route-browser-acceptance": "site-review",
+    "reusable-DWork-learning": "capture-learnings",
+    "skill-instruction-maintenance": "skill-maintainer",
+    "codex-skill-installation": "skill-installer",
+    "explicit-cross-runtime-skill-package-management": "agent-skills-cli",
+    "pdf-artifact-work": "pdf@openai-primary-runtime",
+    "general-postgresql": "native-model",
+    "supabase-postgresql": "supabase@openai-curated"
+  },
+  "pluginPolicy": {
+    "canva@openai-curated": { "enabled": true, "activation": "explicit-canva" },
+    "figma@openai-curated": { "enabled": true, "activation": "explicit-figma" },
+    "github@openai-curated": { "enabled": true, "activation": "explicit-github-or-repository-state" },
+    "notion@openai-curated": { "enabled": true, "activation": "explicit-notion" },
+    "remotion@openai-curated": { "enabled": false, "activation": "D:\\kontent-remotion-work-only" },
+    "hyperframes@openai-curated": { "enabled": false, "activation": "explicit-provider" },
+    "shutterstock@openai-curated": { "enabled": true, "activation": "explicit-stock-asset" },
+    "circleci@openai-curated": { "enabled": true, "activation": "explicit-circleci-or-current-ci-state" },
+    "game-studio@openai-curated": { "enabled": false, "activation": "explicit-game-development" },
+    "cloudflare@openai-curated": { "enabled": true, "activation": "explicit-cloudflare-or-current-provider-state" },
+    "sites@openai-bundled": {
+      "enabled": false,
+      "reason": "Broad website trigger conflicts with D:\\Work direct/full-pipeline routing."
+    },
+    "superpowers@superpowers-adaptive-lite": {
+      "enabled": false,
+      "reason": "Generic planning, debugging and verification duplicate native runtime behavior."
+    },
+    "build-web-apps@openai-curated": {
+      "enabled": false,
+      "reason": "Broad hero, redesign, frontend and browser-testing triggers conflict with native work and D:\\Work routing."
+    },
+    "vercel@openai-curated": {
+      "enabled": false,
+      "reason": "The bundle contains broad browser and frontend helpers that cannot be disabled independently; use native work and official provider evidence."
+    },
+    "cloudinary@openai-curated": { "enabled": true, "activation": "explicit-cloudinary-or-current-provider-state" },
+    "render@openai-curated": { "enabled": true, "activation": "explicit-render-or-current-provider-state" },
+    "convex@openai-curated": { "enabled": true, "activation": "matching-convex-technology" },
+    "openai-developers@openai-curated": { "enabled": true, "activation": "matching-openai-product-or-api" },
+    "coderabbit@openai-curated": { "enabled": true, "activation": "explicit-coderabbit-or-current-review-state" },
+    "computer-use@openai-bundled": { "enabled": true, "activation": "non-browser-windows-ui-or-authorized-fallback" },
+    "chrome@openai-bundled": { "enabled": true, "activation": "existing-authenticated-chrome-session" },
+    "visualize@openai-bundled": { "enabled": true, "activation": "explicit-conversation-visualization" },
+    "documents@openai-primary-runtime": { "enabled": true, "activation": "document-file-task" },
+    "pdf@openai-primary-runtime": { "enabled": true, "activation": "pdf-file-task" },
+    "spreadsheets@openai-primary-runtime": { "enabled": true, "activation": "spreadsheet-file-task" },
+    "presentations@openai-primary-runtime": { "enabled": true, "activation": "presentation-file-task" },
+    "template-creator@openai-primary-runtime": { "enabled": true, "activation": "explicit-reusable-template-task" },
+    "browser@openai-bundled": { "enabled": true, "activation": "primary-rendered-site-evidence" },
+    "product-design@openai-curated": { "enabled": true, "activation": "explicit-product-design-audit-clone-or-visual-exploration", "managedByConfig": false }
+  },
+  "criticalMarkers": [
+    "152-ФЗ",
+    "секрет",
+    "подтвержден",
+    "production",
+    "артефакт"
+  ],
+  "forbiddenSkillPatterns": [
+    "5–6",
+    "≥5",
+    "top-5",
+    "3–4 направления",
+    "senior-backend",
+    "senior-frontend",
+    "senior-qa",
+    "frontend-design",
+    "ui-ux-pro-max",
+    "code-reviewer",
+    "WebSearch",
+    "WebFetch",
+    "Preview MCP",
+    "Playwright MCP",
+    "DesignSync",
+    "AGENT-WORKFLOW.md"
+  ],
+  "forbiddenOpenAiPatterns": [
+    "all 17 phases",
+    "все 17 фаз"
+  ],
+  "requiredFiles": [
+    "resources/site-pipeline-contract.json",
+    "docs/00-start-here/skill-system.md",
+    "docs/01-development-process/site-pipeline-map.md",
+    "docs/07-mcp-and-ai-tools/Model-capability-boundaries.md",
+    "docs/02-frontend/Animated-sites-and-hero-media.md",
+    "patterns/frontend/hero-video-delivery.md"
+  ],
+  "documentationAudit": {
+    "files": [
+      "docs/00-start-here/skill-system.md",
+      "docs/07-mcp-and-ai-tools/External-site-skills.md",
+      "docs/07-mcp-and-ai-tools/External-design-skills.md",
+      "docs/07-mcp-and-ai-tools/Token-efficient-agent-workflow.md",
+      "docs/07-mcp-and-ai-tools/Model-capability-boundaries.md"
+    ],
+    "forbiddenPatterns": [
+      "AGENT-WORKFLOW.md",
+      "frontend-design",
+      "ui-ux-pro-max",
+      "WebSearch",
+      "WebFetch",
+      "Playwright MCP",
+      "Stop-hook в D:\\Work\\.claude\\settings.json"
+    ]
+  },
+  "designDocumentationAudit": {
+    "files": [
+      "patterns/frontend/anti-ai-slop-design.md",
+      "prompts/design-direction-brief.md",
+      "resources/design-inspiration.md",
+      "docs/07-mcp-and-ai-tools/External-design-skills.md",
+      "docs/13-playbooks/landing.md"
+    ],
+    "forbiddenPatterns": [
+      "показать 3–4 направления",
+      "предложи 3–4 направления",
+      "питает 3–4 направления",
+      "спросить нужно всегда",
+      "обязательный GSAP",
+      "dark mode mandatory",
+      "image-generation tool first",
+      "python-driven true randomization",
+      "static interfaces are strictly forbidden"
+    ]
+  },
+  "motionDocumentationAudit": {
+    "files": [
+      "docs/02-frontend/Animated-sites-and-hero-media.md",
+      "docs/02-frontend/Motion.md",
+      "docs/02-frontend/Performance.md",
+      "patterns/frontend/hero-video-delivery.md",
+      "prompts/design-direction-brief.md",
+      "docs/13-playbooks/landing.md"
+    ],
+    "forbiddenPatterns": [
+      "обязательный GSAP",
+      "обязательный Rive",
+      "обязательный Three.js",
+      "animation helper required",
+      "Remotion Player по умолчанию",
+      "Sora по умолчанию"
+    ]
+  },
+  "budgets": {
+    "totalSkillLines": 450,
+    "defaultSkillLines": 28
+  },
+  "canonicalSkills": {
+    "build-modern-site": { "artifact": "", "lineBudget": 55 },
+    "capture-learnings": { "artifact": "_learning-review.md", "lineBudget": 32 },
+    "site-architecture": { "artifact": "_architecture.md", "lineBudget": 28 },
+    "site-backend": { "artifact": "_backend-gate.md", "lineBudget": 28 },
+    "site-competitive-analysis": { "artifact": "_competitive-analysis.md", "lineBudget": 36 },
+    "site-content": { "artifact": "_content-model.md", "lineBudget": 28 },
+    "site-deploy": { "artifact": "_deploy.md", "lineBudget": 28 },
+    "site-design": { "artifact": "DESIGN-DIRECTION.md", "lineBudget": 38 },
+    "site-discovery": { "artifact": "_discovery.md", "lineBudget": 28 },
+    "site-frontend": { "artifact": "_frontend-smoke.md", "lineBudget": 28 },
+    "site-handoff": { "artifact": "handoff.md", "lineBudget": 28 },
+    "site-review": { "artifact": "_review-report.md", "lineBudget": 28 },
+    "site-seo": { "artifact": "_seo-report.md", "lineBudget": 28 },
+    "site-stack": { "artifact": "_stack.md", "lineBudget": 28 }
+  },
+  "catalog": {
+    "activeSkills": [
+      "agent-skills-cli",
+      "build-modern-site",
+      "capture-learnings",
+      "harness-bench",
+      "mcp-builder",
+      "playwright",
+      "qa-capture",
+      "qa-defects",
+      "qa-design",
+      "qa-execute",
+      "qa-intake",
+      "qa-plan",
+      "qa-report",
+      "qa-toolkit",
+      "run-qa-project",
+      "site-architecture",
+      "site-backend",
+      "site-competitive-analysis",
+      "site-content",
+      "site-deploy",
+      "site-design",
+      "site-discovery",
+      "site-frontend",
+      "site-handoff",
+      "site-review",
+      "site-seo",
+      "site-stack",
+      "skill-creator",
+      "skill-maintainer",
+      "vercel-react-best-practices"
+    ],
+    "providerQuarantine": {
+      "agents": ["skill-creator", "vercel-react-best-practices"],
+      "claude": ["skill-creator"],
+      "codex": ["pdf"]
+    },
+    "forbiddenActiveSkills": [
+      "impeccable",
+      "design-taste-frontend",
+      "gpt-taste",
+      "react-best-practices",
+      "shadcn-ui",
+      "frontend-design",
+      "ui-ux-pro-max",
+      "web-design-guidelines",
+      "ui-design-system"
+      ,"animation-skill"
+      ,"hero-video-skill"
+    ],
+    "quarantineSkills": [
+      "ab-test-setup",
+      "aeo",
+      "analytics-tracking",
+      "api-design-reviewer",
+      "brand-guidelines",
+      "canvas-design",
+      "ci-cd-pipeline-builder",
+      "code-reviewer",
+      "codebase-design",
+      "competitive-intel",
+      "competitive-teardown",
+      "competitor-alternatives",
+      "content-strategy",
+      "copy-editing",
+      "copywriting",
+      "database-designer",
+      "dependency-auditor",
+      "design-an-interface",
+      "diagnosing-bugs",
+      "domain-modeling",
+      "env-secrets-manager",
+      "form-cro",
+      "frontend-design",
+      "grill-me",
+      "grill-with-docs",
+      "grilling",
+      "handoff",
+      "improve-codebase-architecture",
+      "market-research",
+      "marketing-context",
+      "observability-designer",
+      "page-cro",
+      "product-discovery",
+      "programmatic-seo",
+      "prototype",
+      "react-best-practices",
+      "research",
+      "agent-reach",
+      "mp-code-review",
+      "mp-pipeline",
+      "pdf",
+      "postgres-best-practices",
+      "ralph-loop",
+      "runbook-generator",
+      "schema-markup",
+      "security-pen-testing",
+      "senior-backend",
+      "senior-frontend",
+      "senior-qa",
+      "seo-audit",
+      "setup-matt-pocock-skills",
+      "shadcn-ui",
+      "ship-gate",
+      "signup-flow-cro",
+      "superpowers",
+      "to-spec",
+      "to-tickets",
+      "ui-design-system",
+      "ui-ux-pro-max",
+      "ux-researcher-designer",
+      "web-design-guidelines"
+    ],
+    "forbiddenInstructionPatterns": [
+      "git reset --hard",
+      "parallel sub-agents",
+      "/setup-matt-pocock-skills",
+      "agent-reach check-update",
+      "пользователь только должен предоставить cookies"
+    ]
+  }
+}

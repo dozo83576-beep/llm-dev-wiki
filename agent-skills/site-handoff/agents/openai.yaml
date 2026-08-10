@@ -1,7 +1,7 @@
 interface:
   display_name: "Site Handoff"
   short_description: "Передача клиенту: handoff.md, доступы, приёмка, поддержка"
-  default_prompt: "Use $site-handoff to deliver the site to the client: handoff doc, access transfer, sign-off."
+  default_prompt: "Use $site-handoff for this explicit phase or the active full pipeline; create evidence-based handoff.md without exposing credentials."
 
 policy:
   allow_implicit_invocation: false

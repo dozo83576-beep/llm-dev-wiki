@@ -1,7 +1,7 @@
 interface:
   display_name: "Build Modern Site"
-  short_description: "Оркестратор сборки сайта от идеи до деплоя"
-  default_prompt: "Use $build-modern-site, docs/01-development-process/site-pipeline-map.md and resources/site-pipeline-contract.json v2 to route a new site through all 17 phases by dependency graph. Run tools/new-site-preflight.ps1 first, record one primary playbook, delivery profile and supporting guides, verify phase evidence, then complete capture-learnings."
+  short_description: "Маршрут direct или полный pipeline для сайта"
+  default_prompt: "Use $build-modern-site to run preflight. Follow direct mode for a focused or simple static task; use contract v2 and only required phases for a complex full-pipeline project."
 
 policy:
   allow_implicit_invocation: true

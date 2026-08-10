@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "routingCases": [
+    {"id": "direct-copy", "request": "Исправь опечатку в заголовке существующей страницы", "expectedRoute": "direct"},
+    {"id": "direct-hero", "request": "Обнови hero-секцию существующего лендинга", "expectedRoute": "direct"},
+    {"id": "direct-css", "request": "Поправь отступ кнопки на мобильном экране", "expectedRoute": "direct"},
+    {"id": "direct-static", "request": "Создай простой статический лендинг на HTML и CSS без backend, CMS, оплаты и авторизации", "expectedRoute": "direct"},
+    {"id": "direct-page", "request": "Добавь отдельную статическую страницу контактов в существующий сайт", "expectedRoute": "direct"},
+    {"id": "direct-section", "request": "Добавь FAQ-секцию без серверной логики", "expectedRoute": "direct"},
+    {"id": "full-auth", "request": "Создай SaaS с регистрацией, ролями и личным кабинетом", "expectedRoute": "full-pipeline"},
+    {"id": "full-payment", "request": "Новый интернет-магазин с оплатой, заказами и webhook", "expectedRoute": "full-pipeline"},
+    {"id": "full-data", "request": "Новый сервис с CMS, PostgreSQL и миграцией данных", "expectedRoute": "full-pipeline"},
+    {"id": "full-explicit", "request": "Создай корпоративный сайт под ключ полным циклом", "expectedRoute": "full-pipeline"}
+  ],
+  "pilotCases": [
+    {"id": "pilot-short", "request": "В существующем сайте замени текст CTA в hero; внешние факты и production не нужны", "expectedRoute": "direct"},
+    {"id": "pilot-full", "request": "Спроектируй новый SaaS с auth, ролями, PostgreSQL, платежами, webhook и 152-ФЗ", "expectedRoute": "full-pipeline"}
+  ]
+}

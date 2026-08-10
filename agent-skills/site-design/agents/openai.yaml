@@ -1,7 +1,7 @@
 interface:
   display_name: "Site Design"
   short_description: "Современная дизайн-система и токены UI"
-  default_prompt: "Use $site-design to craft a modern design system layered with my saved preferences."
+  default_prompt: "Use $site-design for this explicit phase or the active full pipeline; produce one justified DESIGN-DIRECTION.md unless real uncertainty requires alternatives."
 
 policy:
   allow_implicit_invocation: false

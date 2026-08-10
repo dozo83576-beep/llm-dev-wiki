@@ -29,6 +29,9 @@ Performance budget нужен для всех публичных страниц,
 
 - Public pages: LCP < 2.5s, CLS < 0.1, INP < 200ms как baseline; для landing желательно LCP < 2s.
 - Hero media: explicit dimensions, correct mobile crop, AVIF/WebP, `fetchpriority="high"` только для LCP image, poster для video.
+- Hero video: poster остаётся стабильным first-frame/LCP fallback; декоративный loop не содержит audio,
+  останавливается вне viewport и заменяется poster при reduced-motion/save-data. MP4/WebM проверяются
+  по фактическому transfer size из `media-manifest.json`, а не по универсальной квоте.
 - Fonts: self-host или trusted provider, `font-display: swap`, ограничить weights/styles.
 - JavaScript: islands или lazy loading для charts, maps, editors, carousels, chat widgets.
 - Third-party scripts: load after consent/interaction where possible, measure GTM/chat/analytics cost separately.
@@ -47,3 +50,5 @@ Lighthouse/WebPageTest для публичных страниц, bundle analyzer
 - [web.dev Core Web Vitals](https://web.dev/articles/vitals)
 - [Next.js Image Optimization](https://nextjs.org/docs/app/building-your-application/optimizing/images)
 - См. [Astro](Astro.md), [Frontend blueprints](Frontend-blueprints.md), [Visual testing](../09-testing/Visual-testing.md), [Site audit tooling](../09-testing/Site-audit-tooling.md).
+- Для video delivery см. [Animated sites and hero media](Animated-sites-and-hero-media.md) и
+  [Hero video delivery](../../patterns/frontend/hero-video-delivery.md).

@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-08-10T05:15:33.463616+00:00",
+  "offline": {
+    "caseCount": 8,
+    "pilotCaseCount": 2,
+    "passed": true
+  },
+  "live": {
+    "requested": true,
+    "allCases": true,
+    "results": [
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "hero-direct",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility"
+          ],
+          "rationale": "Локальная точечная правка hero существующего статического лендинга без создания направления, полного маршрута или внешних зависимостей."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "complex-full-site",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "full-pipeline",
+          "designOwner": "site-design",
+          "useExternalTool": true,
+          "requiredArtifact": "DESIGN-DIRECTION.md",
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "real-data",
+            "cyrillic-license",
+            "states",
+            "evidence",
+            "browser-evidence"
+          ],
+          "rationale": "Полный цикл с нуля: роли, платежи, CMS требуют full-pipeline, site-design артефакт, лицензии шрифтов и браузерную проверку."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "regulated-public-page",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "real-data",
+            "cyrillic-license",
+            "evidence"
+          ],
+          "rationale": "Single conceptual page for a regulated gov service; no explicit design-direction artifact request or full pipeline, so native model owns design directly with trust/accessibility/Cyrillic gates; no current external-state dependency yet."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "dashboard-redesign",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "states"
+          ],
+          "rationale": "Локальная правка визуальной иерархии существующего dashboard без нового направления или полного маршрута — native model, IA и дизайн-система сохраняются."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "ru-landing-font",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "site-design",
+          "useExternalTool": true,
+          "requiredArtifact": "DESIGN-DIRECTION.md",
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "cyrillic-license",
+            "evidence"
+          ],
+          "rationale": "Явный запрос на дизайн-направление с проверкой кириллической лицензии шрифта требует внешнего поиска для актуальных данных о лицензии."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "dense-product-ui",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "states"
+          ],
+          "rationale": "Focused addition to existing product UI; no full-pipeline or explicit direction-artifact request, so native model owns design directly and preserves incumbent system."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "current-references",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": true,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "responsive",
+            "cyrillic-license",
+            "evidence"
+          ],
+          "rationale": "Explicit request for current competitor visuals and font license verification needs external reference-search; no full pipeline or explicit design-direction artifact requested."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "browser-render-proof",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": true,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "browser-evidence"
+          ],
+          "rationale": "Browser-based visual confirmation on desktop/mobile requires external tool; no design-direction artifact requested."
+        }
+      }
+    ],
+    "failures": [],
+    "updatedGatePassed": true
+  }
+}

@@ -66,6 +66,36 @@ function Test-SkillRuntime {
     }
 }
 
+function Get-ProviderSkillRoot {
+    param([string]$Provider)
+    switch ($Provider) {
+        "claude" { return (Join-Path $env:USERPROFILE ".claude\skills") }
+        "agents" { return (Join-Path $env:USERPROFILE ".agents\skills") }
+        "codex" { return (Join-Path $env:USERPROFILE ".codex\skills") }
+        default { return "" }
+    }
+}
+
+function Test-PluginEnabledState {
+    param(
+        [string]$ConfigText,
+        [string]$PluginName,
+        [bool]$ExpectedEnabled,
+        [System.Collections.Generic.List[string]]$Failures
+    )
+    $escaped = [regex]::Escape($PluginName)
+    $pattern = '(?ms)^\[plugins\."' + $escaped + '"\]\s*\r?\n(?:(?!^\[).)*?^enabled\s*=\s*(true|false)\s*$'
+    $match = [regex]::Match($ConfigText, $pattern)
+    if (-not $match.Success) {
+        Add-Failure $Failures "Plugin state missing from Codex config: $PluginName"
+        return
+    }
+    $actual = $match.Groups[1].Value -eq "true"
+    if ($actual -ne $ExpectedEnabled) {
+        Add-Failure $Failures "Plugin state differs for ${PluginName}: expected enabled=$($ExpectedEnabled.ToString().ToLowerInvariant())"
+    }
+}
+
 $rootPath = (Resolve-Path -LiteralPath $Root).Path
 $source = Join-Path $rootPath "agent-skills"
 $failures = [System.Collections.Generic.List[string]]::new()
@@ -98,6 +128,19 @@ if ($failures.Count -eq 0) {
         $script:validatorSkipped = $true
     }
 
+    $semanticVerifier = Join-Path $rootPath "tools\verify_skill_semantics.py"
+    $capabilityPolicy = Join-Path $rootPath "resources\skill-capability-policy.json"
+    if ((Test-Path -LiteralPath $semanticVerifier -PathType Leaf) -and
+        (Test-Path -LiteralPath $capabilityPolicy -PathType Leaf)) {
+        $semanticArgs = @("--root", $rootPath)
+        if ($VerifyUserRuntimes) { $semanticArgs += "--verify-runtime" }
+        $semanticOutput = & python $semanticVerifier @semanticArgs 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            Add-Failure $failures "Skill semantic verification failed."
+            $semanticOutput | Write-Host
+        }
+    }
+
     if (-not $SkipRuntimeCompare -and (Test-Path -LiteralPath $RuntimeRoot -PathType Container)) {
         $sourceMap = Get-RelativeFileHashMap -Path $source
         $runtimeMap = Get-RelativeFileHashMap -Path $RuntimeRoot
@@ -114,6 +157,48 @@ if ($failures.Count -eq 0) {
     if ($VerifyUserRuntimes) {
         Test-SkillRuntime -SourceRoot $source -TargetRoot (Join-Path $env:USERPROFILE ".codex\skills") -TargetName "Codex" -Failures $failures
         Test-SkillRuntime -SourceRoot $source -TargetRoot (Join-Path $env:USERPROFILE ".claude\skills") -TargetName "Claude Code" -Failures $failures
+        Test-SkillRuntime -SourceRoot $source -TargetRoot (Join-Path $env:USERPROFILE ".agents\skills") -TargetName "Shared agents" -Failures $failures
+
+        if (Test-Path -LiteralPath $capabilityPolicy -PathType Leaf) {
+            $policy = Get-Content -LiteralPath $capabilityPolicy -Raw -Encoding UTF8 | ConvertFrom-Json
+            $userSkillRoots = @(
+                (Join-Path $env:USERPROFILE ".codex\skills"),
+                (Join-Path $env:USERPROFILE ".claude\skills"),
+                (Join-Path $env:USERPROFILE ".agents\skills")
+            )
+            foreach ($name in @($policy.catalog.forbiddenActiveSkills)) {
+                foreach ($userRoot in $userSkillRoots) {
+                    if (Test-Path -LiteralPath (Join-Path $userRoot ([string]$name)) -PathType Container) {
+                        Add-Failure $failures "Forbidden direct skill is active: $name at $userRoot"
+                    }
+                }
+            }
+            if ($policy.catalog.providerQuarantine) {
+                foreach ($provider in $policy.catalog.providerQuarantine.PSObject.Properties) {
+                    $providerRoot = Get-ProviderSkillRoot -Provider $provider.Name
+                    if ([string]::IsNullOrWhiteSpace($providerRoot)) { continue }
+                    foreach ($name in @($provider.Value)) {
+                        if (Test-Path -LiteralPath (Join-Path $providerRoot ([string]$name)) -PathType Container) {
+                            Add-Failure $failures "Provider-specific overlap is active: $name at $providerRoot"
+                        }
+                    }
+                }
+            }
+
+            $codexConfig = Join-Path $env:USERPROFILE ".codex\config.toml"
+            if (Test-Path -LiteralPath $codexConfig -PathType Leaf) {
+                $configText = Get-Content -LiteralPath $codexConfig -Raw -Encoding UTF8
+                foreach ($plugin in $policy.pluginPolicy.PSObject.Properties) {
+                    if ($plugin.Value.managedByConfig -eq $false) { continue }
+                    if ($null -ne $plugin.Value.enabled) {
+                        Test-PluginEnabledState -ConfigText $configText -PluginName $plugin.Name -ExpectedEnabled ([bool]$plugin.Value.enabled) -Failures $failures
+                    }
+                }
+            }
+            else {
+                Add-Failure $failures "Codex plugin config missing: $codexConfig"
+            }
+        }
     }
 
     # Второй проход: соответствие открытому стандарту Agent Skills (agentskills.io).

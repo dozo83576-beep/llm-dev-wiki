@@ -59,7 +59,7 @@
     { "number": 14, "id": "site-deploy", "executor": "site-deploy", "artifact": "_deploy.md", "dependsOn": ["site-review"] },
     { "number": 15, "id": "site-handoff", "executor": "site-handoff", "artifact": "handoff.md", "dependsOn": ["site-deploy"] },
     { "number": 16, "id": "post-release", "executor": "site-handoff", "artifact": "_post-release-plan.md", "dependsOn": ["site-handoff"] },
-    { "number": 17, "id": "capture-learnings", "executor": "capture-learnings", "artifact": "_learning-review.md", "dependsOn": ["site-review"] }
+    { "number": 17, "id": "capture-learnings", "executor": "capture-learnings", "artifact": "_learning-review.md", "dependsOn": ["post-release"] }
   ],
   "artifactMarkers": {
     "marketplace": {

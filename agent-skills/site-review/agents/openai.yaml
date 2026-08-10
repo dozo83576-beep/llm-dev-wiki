@@ -1,7 +1,7 @@
 interface:
   display_name: "Site Review"
   short_description: "Сводное ревью и security перед релизом"
-  default_prompt: "Use $site-review to run the pre-release review and security checklists."
+  default_prompt: "Use $site-review for this explicit phase or the active full pipeline; review the actual diff and fresh evidence in _review-report.md."
 
 policy:
   allow_implicit_invocation: false

@@ -47,7 +47,8 @@ def test_russian_utf8_site_intent_injects_context() -> None:
         body = json.loads(result.stdout)
         context = body["hookSpecificOutput"]["additionalContext"]
         assert "build-modern-site" in context
-        assert "17 фаз" in context
+        assert "routeMode" in context
+        assert "все 17 фаз" not in context
         assert len(marker_paths(session_id)) == 1
     finally:
         cleanup_markers(session_id)

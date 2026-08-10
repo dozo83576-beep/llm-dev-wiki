@@ -51,6 +51,17 @@ $rootPath = (Resolve-Path -LiteralPath $Root).Path
 $contractPath = Join-Path $rootPath "resources/site-pipeline-contract.json"
 $contract = Get-Content -Raw -Encoding UTF8 -LiteralPath $contractPath | ConvertFrom-Json
 $normalized = $Request.ToLowerInvariant()
+$classificationText = $normalized
+$capabilityPatterns = @(
+    'backend|бэкенд', 'cms', 'авторизац\w*|auth',
+    'плат[её]ж\w*|оплат\w*', 'баз\w*\s+данн\w*|бд', 'server|сервер\w*'
+)
+foreach ($capabilityPattern in $capabilityPatterns) {
+    if ($normalized -match "без[^.;]{0,120}($capabilityPattern)") {
+        $classificationText = $classificationText -replace "($capabilityPattern)", ''
+    }
+}
+$classificationText = $classificationText -replace '(не\s+нуж(?:ен|на|ны)?|не\s+использ(?:уется|овать)?)\s+(backend|бэкенд|cms|авторизац\w*|auth|плат[её]ж\w*|оплат\w*|баз\w*\s+данн\w*|бд|server|сервер\w*)', ''
 
 $productRules = @(
     [pscustomobject]@{ id='marketplace'; route='Marketplace'; patterns=@('маркетплейс','marketplace','multi.?vendor','мульти.?вендор','нескольк.*продавц','выплат.*продавц'); stack='Next.js + backend service + PostgreSQL + Redis'; gates=@('Order split, комиссии и выплаты покрыты интеграционными тестами.','Tenant-изоляция продавцов покрыта negative permission tests.'); questions=@('Как устроены выплаты продавцам и комиссия?','Какая модерация продавцов и товаров нужна?') },
@@ -65,7 +76,7 @@ $productRules = @(
 )
 
 $matches = foreach ($rule in $productRules) {
-    $score = Get-PatternCount -Text $normalized -Patterns $rule.patterns
+    $score = Get-PatternCount -Text $classificationText -Patterns $rule.patterns
     if ($score -gt 0) { [pscustomobject]@{ rule=$rule; score=$score } }
 }
 $best = @($matches | Sort-Object score -Descending | Select-Object -First 1)
@@ -112,7 +123,7 @@ if (Test-Pattern $normalized @('nuxt','\bvue\b')) { $frameworkSignals += 'vue'; 
 if (Test-Pattern $normalized @('svelte')) { $frameworkSignals += 'svelte'; $stackSuffix += 'SvelteKit' }
 $platformSignals += $frameworkSignals
 
-$hasPayments = Test-Pattern $normalized @('плат[её]ж','payment','stripe','эквайринг')
+$hasPayments = Test-Pattern $classificationText @('плат[её]ж','payment','stripe','эквайринг')
 $hasPii = Test-Pattern $normalized @('персональн','\bpii\b','медицинск','паспорт','152[- ]?фз','gdpr')
 $hasRiskDetails = Test-Pattern $normalized @('pci','oidc','rbac','изоляц','data residency','152[- ]?фз','gdpr','stripe checkout','shopify payments')
 $isGeneric = Test-Pattern $normalized @('^\s*(сделай|создай|нужен|нужна|хочу)?\s*(сайт|проект|веб[- ]?сайт)\s*\.?\s*$')
@@ -128,7 +139,7 @@ else {
     $route = $bestRule.route
     $entry = @($contract.primaryPlaybooks | Where-Object id -eq $playbook)[0]
     $profile = $entry.defaultDeliveryProfile
-    $serverSignals = Test-Pattern $normalized @('форма заявк','crm','api','auth','логин','личн.*кабинет','server','backend','бэкенд','динамич')
+    $serverSignals = Test-Pattern $classificationText @('форма заявк','crm','api','auth','логин','личн.*кабинет','server','backend','бэкенд','динамич')
     $privateSignals = Test-Pattern $normalized @('внутренн','private','только сотруд','закрыт.*систем')
     if (($playbook -in @('landing','content-site')) -and $serverSignals) { $profile = 'public-fullstack' }
     if (($playbook -in @('ai-rag-app','real-time-app')) -and $privateSignals) { $profile = 'private-app' }

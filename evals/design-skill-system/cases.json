@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "id": "hero-direct",
+      "pilot": true,
+      "request": "Сделай выразительнее hero существующего статического лендинга. Бренд, стек и остальную страницу не меняй.",
+      "expectedRoute": "direct",
+      "expectedOwner": "native-model",
+      "expectedExternalTool": false,
+      "expectedArtifact": null,
+      "preserveIncumbent": true,
+      "requiredGates": ["brand", "responsive"]
+    },
+    {
+      "id": "complex-full-site",
+      "pilot": true,
+      "request": "Создай с нуля полный сайт сервиса с личными кабинетами клиента и менеджера, ролями, CMS, платежами и серверными интеграциями. Нужен полный цикл D:\\Work.",
+      "expectedRoute": "full-pipeline",
+      "expectedOwner": "site-design",
+      "expectedExternalTool": true,
+      "expectedArtifact": "DESIGN-DIRECTION.md",
+      "preserveIncumbent": false,
+      "requiredGates": ["accessibility", "responsive", "real-data"]
+    },
+    {
+      "id": "regulated-public-page",
+      "pilot": false,
+      "request": "Спроектируй одну информационную страницу для регулируемой государственной услуги. Приоритеты: доверие, доступность и понятность.",
+      "expectedRoute": "direct",
+      "expectedOwner": "native-model",
+      "expectedExternalTool": false,
+      "expectedArtifact": null,
+      "preserveIncumbent": false,
+      "requiredGates": ["accessibility", "responsive"]
+    },
+    {
+      "id": "dashboard-redesign",
+      "pilot": false,
+      "request": "Улучши визуальную иерархию существующего dashboard, сохранив IA, компоненты и дизайн-систему. Полный редизайн не разрешён.",
+      "expectedRoute": "direct",
+      "expectedOwner": "native-model",
+      "expectedExternalTool": false,
+      "expectedArtifact": null,
+      "preserveIncumbent": true,
+      "requiredGates": ["brand", "accessibility", "responsive"]
+    },
+    {
+      "id": "ru-landing-font",
+      "pilot": false,
+      "request": "Сделай дизайн-направление русскоязычного лендинга. Шрифт должен поддерживать кириллицу, иметь коммерчески допустимую лицензию и self-host.",
+      "expectedRoute": "direct",
+      "expectedOwner": "site-design",
+      "expectedExternalTool": true,
+      "expectedArtifact": "DESIGN-DIRECTION.md",
+      "preserveIncumbent": false,
+      "requiredGates": ["cyrillic-license", "responsive"]
+    },
+    {
+      "id": "dense-product-ui",
+      "pilot": false,
+      "request": "Добавь экран управления правами в существующий продуктовый интерфейс. Это плотный рабочий UI, не маркетинговая страница.",
+      "expectedRoute": "direct",
+      "expectedOwner": "native-model",
+      "expectedExternalTool": false,
+      "expectedArtifact": null,
+      "preserveIncumbent": true,
+      "requiredGates": ["accessibility", "responsive", "states"]
+    },
+    {
+      "id": "current-references",
+      "pilot": false,
+      "request": "Подбери актуальные визуальные референсы конкурентов и проверь лицензии выбранных шрифтов перед дизайном.",
+      "expectedRoute": "direct",
+      "expectedOwner": "native-model",
+      "expectedExternalTool": true,
+      "expectedArtifact": null,
+      "preserveIncumbent": false,
+      "requiredGates": ["evidence"]
+    },
+    {
+      "id": "browser-render-proof",
+      "pilot": false,
+      "request": "Проверь готовую страницу в реальном браузере на desktop и mobile и подтверди визуальный результат.",
+      "expectedRoute": "direct",
+      "expectedOwner": "native-model",
+      "expectedExternalTool": true,
+      "expectedArtifact": null,
+      "preserveIncumbent": false,
+      "requiredGates": ["browser-evidence", "responsive"]
+    }
+  ]
+}

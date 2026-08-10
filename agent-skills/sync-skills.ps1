@@ -18,6 +18,9 @@
 .PARAMETER Codex
     Раскатывать в Codex. Если не указан ни -Claude, ни -Codex — раскатка в оба.
 
+.PARAMETER Agents
+    Раскатывать в общий runtime <UserProfile>\.agents\skills.
+
 .PARAMETER RuntimeCache
     Обновить D:\Work\.agent-skills. Если не указан ни один таргет — обновляется runtime cache, Claude и Codex.
 
@@ -39,6 +42,7 @@
 param(
     [switch]$Claude,
     [switch]$Codex,
+    [switch]$Agents,
     [switch]$RuntimeCache,
     [string]$RuntimeRoot = "D:\Work\.agent-skills",
     [switch]$DryRun,
@@ -62,15 +66,17 @@ function Assert-ChildPath {
 }
 
 # Если ни один таргет не выбран — runtime cache и оба agent runtime.
-if (-not $RuntimeCache -and -not $Claude -and -not $Codex) {
+if (-not $RuntimeCache -and -not $Claude -and -not $Codex -and -not $Agents) {
     $RuntimeCache = $true
     $Claude = $true
     $Codex = $true
+    $Agents = $true
 }
 
 $targets = @()
 if ($Claude) { $targets += [pscustomobject]@{ Name = "Claude Code"; Path = (Join-Path $env:USERPROFILE ".claude\skills") } }
 if ($Codex)  { $targets += [pscustomobject]@{ Name = "Codex";       Path = (Join-Path $env:USERPROFILE ".codex\skills") } }
+if ($Agents) { $targets += [pscustomobject]@{ Name = "Shared agents"; Path = (Join-Path $env:USERPROFILE ".agents\skills") } }
 
 # Скиллы = подкаталоги канона, содержащие SKILL.md.
 $skills = Get-ChildItem -LiteralPath $source -Directory |

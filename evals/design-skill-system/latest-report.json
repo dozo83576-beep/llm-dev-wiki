@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-08-10T08:02:50.278181+00:00",
+  "offline": {
+    "caseCount": 8,
+    "pilotCaseCount": 2,
+    "passed": true
+  },
+  "live": {
+    "requested": false,
+    "allCases": false,
+    "results": [],
+    "failures": [],
+    "updatedGatePassed": true
+  }
+}

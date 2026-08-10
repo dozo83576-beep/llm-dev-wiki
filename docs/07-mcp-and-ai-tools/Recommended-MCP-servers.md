@@ -1,7 +1,7 @@
 ---
 title: "Recommended MCP servers"
 category: "ai-tools"
-updated: "2026-07-11"
+updated: "2026-08-10"
 status: "active"
 tags: ["mcp", "tools"]
 source_priority: "internal"
@@ -49,12 +49,12 @@ MCP inventory review, permission review, dry-run для write tools, secret expo
 | Фаза | MCP / инструмент | Режим |
 |---|---|---|
 | Все фазы | **context7** (актуальные доки библиотек) | read |
-| Discovery / конкуренты | **WebSearch/WebFetch**, **Chrome / Playwright** (разбор живых сайтов) | read |
-| Дизайн | **Claude Design + DesignSync** (встроенный tool Claude Code, не MCP; UI-кит/дизайн-система → handoff), **Figma** (импорт макета/токенов), **Canva / Gamma** (ассеты/деки) | read / generate; write в design-system проект только через `finalize_plan` |
+| Discovery / конкуренты | Доступные web и browser-инструменты для фактов и живых сайтов | read |
+| Дизайн | Доступный дизайн-коннектор для импорта макета/токенов или генерации ассетов | read / generate; write только после явного approval |
 | Архитектура / бэкенд / БД | **Supabase** (схема, миграции, advisors, типы) | read-first, мутации с подтверждением |
-| Frontend / ревью | **Claude Preview**, **Playwright** (первый экран, mobile/desktop, формы, CTA) | read |
+| Frontend / ревью | **Browser**; Playwright только для воспроизводимого изолированного теста | read |
 | Деплой | **Vercel / Cloudflare / Render / GitHub** | prod-мутации только с подтверждением |
-| Многошаговость / трекинг | **Task Master**; **Linear / Notion / Asana** | read / write по задаче |
+| Внешний трекинг | **Linear / Notion / Asana** только когда задача живёт в этой системе | read / write по задаче |
 
 ### Security-постура
 
@@ -71,8 +71,8 @@ MCP inventory review, permission review, dry-run для write tools, secret expo
 - **Где живут.** Тяжёлые/ситуативные серверы (Supabase, Figma, Canva, Gamma, и т.п.) держим как
   **account-level коннекторы** (claude.ai) — они доступны каждую сессию и их инструменты отдаются
   **deferred** (грузятся по запросу через tool-search), а не висят в контексте со старта. Локальный
-  `mcpServers` (`~/.claude.json` / `~/.codex/config.toml`) держим **минимальным** — только постоянно нужное
-  (context7, playwright, taskmaster). **Не добавляй** ситуативные серверы как always-on stdio.
+  `mcpServers` (`~/.claude.json` / `~/.codex/config.toml`) держим **минимальным**. Context7 и Playwright
+  допустимы как специализированные evidence-tools; общий planning/task manager не держится always-on. **Не добавляй** ситуативные серверы как always-on stdio.
 - **Что значит «по запросу системы».** Триггер — Шаг 0 инвентаризации + per-phase mapping в
   `build-modern-site`: фаза называет нужный сервер, и только тогда его инструменты подтягиваются.
 - **Как добавить коннектор.** Через UI claude.ai (Connectors) или `claude mcp add` — это ручной шаг
@@ -82,4 +82,3 @@ MCP inventory review, permission review, dry-run для write tools, secret expo
 ## Источники
 
 См. [MCP overview](MCP-overview.md), [Tool permissions](Tool-permissions.md), [MCP security](../05-auth-security/MCP-security.md), [External design skills](External-design-skills.md), [untrusted tool output](../../patterns/security/untrusted-tool-output.md).
-

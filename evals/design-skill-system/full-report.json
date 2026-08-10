@@ -1,0 +1,1223 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-08-10T05:06:39.945095+00:00",
+  "offline": {
+    "caseCount": 8,
+    "pilotCaseCount": 2,
+    "passed": true
+  },
+  "live": {
+    "requested": true,
+    "allCases": true,
+    "results": [
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "native",
+        "case": "hero-direct",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "browser-evidence"
+          ],
+          "rationale": "Локальное улучшение hero существующего лендинга без смены бренда, стека и остальной страницы."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "native",
+        "case": "complex-full-site",
+        "passed": false,
+        "failures": [
+          "owner",
+          "artifact"
+        ],
+        "result": {
+          "routeMode": "full-pipeline",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "real-data",
+            "cyrillic-license",
+            "states",
+            "evidence",
+            "browser-evidence"
+          ],
+          "rationale": "Сложный новый сайт и явный запрос полного цикла D:\\Work требуют full-pipeline; профильный design skill отсутствует, поэтому дизайн ведёт native model."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "native",
+        "case": "regulated-public-page",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "real-data",
+            "states",
+            "evidence",
+            "browser-evidence"
+          ],
+          "rationale": "Одна информационная страница без доступного профильного design skill; достаточно прямого проектирования с нативной оценкой модели и проверками доверия, доступности, понятности и фактических данных."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "native",
+        "case": "dashboard-redesign",
+        "passed": false,
+        "failures": [
+          "missing-gates:brand"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "states",
+            "browser-evidence"
+          ],
+          "rationale": "Локальное улучшение визуальной иерархии без изменения IA, компонентов и действующей дизайн-системы."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "native",
+        "case": "ru-landing-font",
+        "passed": false,
+        "failures": [
+          "external-tool"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "cyrillic-license"
+          ],
+          "rationale": "Задача ограничена дизайн-направлением лендинга; нативной модели достаточно, а выбор self-host шрифта требует проверки кириллицы и коммерчески допустимой лицензии."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "native",
+        "case": "dense-product-ui",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "states"
+          ],
+          "rationale": "Локальный экран в существующем продуктовом интерфейсе; достаточно прямой работы с сохранением действующих паттернов."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "native",
+        "case": "current-references",
+        "passed": false,
+        "failures": [
+          "external-tool"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "cyrillic-license",
+            "evidence"
+          ],
+          "rationale": "Нужны актуальные внешние референсы и подтверждение лицензий шрифтов; маршрут прямой, но фактическая проверка требует доступа к источникам."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "native",
+        "case": "browser-render-proof",
+        "passed": false,
+        "failures": [
+          "external-tool"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "responsive",
+            "browser-evidence"
+          ],
+          "rationale": "Проверка готовой страницы на desktop и mobile — прямая задача; новый дизайн-маршрут не требуется."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "current",
+        "case": "hero-direct",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "browser-evidence"
+          ],
+          "rationale": "Локальная правка hero существующего статического лендинга: сохраняем бренд, стек и остальную страницу, полный дизайн-маршрут не нужен."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "current",
+        "case": "complex-full-site",
+        "passed": false,
+        "failures": [
+          "owner",
+          "artifact"
+        ],
+        "result": {
+          "routeMode": "full-pipeline",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "real-data",
+            "cyrillic-license",
+            "states",
+            "evidence",
+            "browser-evidence"
+          ],
+          "rationale": "Сложный greenfield-сервис с ролями, кабинетами, CMS, платежами и интеграциями требует полного цикла D:\\Work; дизайн и код явно оставлены на усмотрение модели."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "current",
+        "case": "regulated-public-page",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "real-data",
+            "cyrillic-license",
+            "states"
+          ],
+          "rationale": "Одна информационная страница с приоритетом доверия, доступности и понятности не требует полного дизайн-пайплайна; нативная модель может спроектировать её напрямую без внешних инструментов и навязанных стилевых решений."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "current",
+        "case": "dashboard-redesign",
+        "passed": false,
+        "failures": [
+          "missing-gates:brand"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "states",
+            "browser-evidence"
+          ],
+          "rationale": "Локальное улучшение существующего dashboard без смены IA, компонентов и дизайн-системы не требует полного дизайн-маршрута."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "current",
+        "case": "ru-landing-font",
+        "passed": false,
+        "failures": [
+          "external-tool",
+          "missing-gates:responsive"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "real-data",
+            "cyrillic-license"
+          ],
+          "rationale": "Нужно только дизайн-направление, а не полный цикл создания сложного сайта; native model может зафиксировать визуальные решения, проверяя кириллицу, коммерческую лицензию и self-host без передачи маршрута site-design."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "current",
+        "case": "dense-product-ui",
+        "passed": false,
+        "failures": [
+          "missing-gates:responsive"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "accessibility",
+            "states",
+            "evidence"
+          ],
+          "rationale": "Плотный экран управления правами в существующем продуктовом UI требует прямого расширения текущих паттернов и дизайн-системы, а не маркетингового site-design маршрута."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "current",
+        "case": "current-references",
+        "passed": false,
+        "failures": [
+          "external-tool"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "cyrillic-license",
+            "evidence"
+          ],
+          "rationale": "Подбор актуальных референсов и проверка лицензий - точечная предпроектная разведка, не полный цикл разработки сайта."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "current",
+        "case": "browser-render-proof",
+        "passed": false,
+        "failures": [
+          "external-tool"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "responsive",
+            "browser-evidence"
+          ],
+          "rationale": "Проверка готовой страницы на desktop и mobile является прямой задачей браузерной валидации без полного дизайн-пайплайна; существующий визуал нужно сохранить, а подтверждение требует browser-evidence."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "updated",
+        "case": "hero-direct",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility"
+          ],
+          "rationale": "Локальное изменение hero существующего статического лендинга; нативная модель сохраняет бренд, стек, остальную страницу и текущее поведение."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "updated",
+        "case": "complex-full-site",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "full-pipeline",
+          "designOwner": "site-design",
+          "useExternalTool": false,
+          "requiredArtifact": "DESIGN-DIRECTION.md",
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "real-data",
+            "cyrillic-license",
+            "states",
+            "evidence",
+            "browser-evidence"
+          ],
+          "rationale": "Сложный новый сервис с ролями, кабинетами, CMS, платежами и серверными интеграциями требует полного маршрута D:\\Work; site-design фиксирует локальный дизайн-артефакт, а модель нативно выполняет дизайн и код."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "updated",
+        "case": "regulated-public-page",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "real-data",
+            "cyrillic-license",
+            "evidence"
+          ],
+          "rationale": "Одна информационная страница — сфокусированная direct-задача; нативная модель проектирует её без отдельного артефакта и внешних инструментов."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "updated",
+        "case": "dashboard-redesign",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "states",
+            "evidence"
+          ],
+          "rationale": "Локальное улучшение иерархии dashboard без изменения IA, компонентов и дизайн-системы; отдельная дизайн-фаза и внешний инструмент не требуются."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "updated",
+        "case": "ru-landing-font",
+        "passed": false,
+        "failures": [
+          "external-tool"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "real-data",
+            "cyrillic-license",
+            "evidence"
+          ],
+          "rationale": "Запрошено одно дизайн-направление без полного цикла и отдельного артефакта; нативная модель определяет решение, а требования к кириллице, лицензии и self-host остаются обязательными gates."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "updated",
+        "case": "dense-product-ui",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "real-data",
+            "states"
+          ],
+          "rationale": "Сфокусированное добавление продуктового экрана в существующий плотный UI; нужно сохранить текущую дизайн-систему и реализовать применимые состояния без отдельной дизайн-фазы."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "updated",
+        "case": "current-references",
+        "passed": false,
+        "failures": [
+          "blocked-without-helper"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": true,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": true,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "cyrillic-license",
+            "evidence"
+          ],
+          "rationale": "Актуальные референсы конкурентов и проверка лицензий зависят от текущих внешних источников; полный маршрут и локальный дизайн-артефакт не запрошены."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "updated",
+        "case": "browser-render-proof",
+        "passed": false,
+        "failures": [
+          "blocked-without-helper"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": true,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": true,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "browser-evidence"
+          ],
+          "rationale": "Визуальное подтверждение готовой страницы на desktop и mobile требует реального браузерного рендера; без browser helper результат подтвердить нельзя."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "native",
+        "case": "hero-direct",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "states"
+          ],
+          "rationale": "Small scoped edit to existing hero on a static site; no full pipeline or design-direction artifact needed, but brand/incumbent must be preserved and result checked responsive/accessible."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "native",
+        "case": "complex-full-site",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "full-pipeline",
+          "designOwner": "site-design",
+          "useExternalTool": false,
+          "requiredArtifact": "DESIGN-DIRECTION.md",
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "real-data",
+            "cyrillic-license",
+            "states",
+            "evidence",
+            "browser-evidence"
+          ],
+          "rationale": "Полный сайт с нуля, ролями, CMS и платежами — крупный масштаб, требует полного маршрута build-modern-site с владением дизайном site-design и DESIGN-DIRECTION.md"
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "native",
+        "case": "regulated-public-page",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "accessibility",
+            "responsive",
+            "states",
+            "cyrillic-license",
+            "real-data"
+          ],
+          "rationale": "Одна информационная страница гос.услуги — прямой маршрут native-model достаточен; критичны доступность, читаемость и достоверность контента, а не полный дизайн-пайплайн."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "native",
+        "case": "dashboard-redesign",
+        "passed": false,
+        "failures": [
+          "missing-gates:brand,responsive"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "accessibility",
+            "states",
+            "evidence"
+          ],
+          "rationale": "Small-scope hierarchy fix preserving IA/components/design system; no full pipeline or design-direction artifact needed."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "native",
+        "case": "ru-landing-font",
+        "passed": false,
+        "failures": [
+          "external-tool",
+          "missing-gates:responsive"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "cyrillic-license"
+          ],
+          "rationale": "Одна задача — направление шрифта/дизайна для лендинга, полный пайплайн не нужен, но лицензия и кириллица должны быть проверены."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "native",
+        "case": "dense-product-ui",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "accessibility",
+            "states",
+            "responsive"
+          ],
+          "rationale": "Экран прав добавляется в существующий плотный рабочий UI — точечная задача внутри продукта, полный дизайн-пайплайн избыточен, важно сохранить текущие паттерны интерфейса."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "native",
+        "case": "current-references",
+        "passed": false,
+        "failures": [
+          "external-tool"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "cyrillic-license",
+            "evidence"
+          ],
+          "rationale": "Одноразовая задача — подбор референсов и проверка лицензий шрифтов, не требует полного дизайн-пайплайна или профильного скилла."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "native",
+        "case": "browser-render-proof",
+        "passed": false,
+        "failures": [
+          "external-tool",
+          "preserve-incumbent"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "responsive",
+            "browser-evidence"
+          ],
+          "rationale": "Проверка визуального результата в браузере на desktop и mobile — это evidence-задача, не требующая site-design skill; нужен реальный браузерный прогон, не может быть подтверждён без него."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "current",
+        "case": "hero-direct",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility"
+          ],
+          "rationale": "Small scoped edit to existing hero, brand/stack/rest of page must stay unchanged — no full design-direction pipeline needed"
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "current",
+        "case": "complex-full-site",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "full-pipeline",
+          "designOwner": "site-design",
+          "useExternalTool": false,
+          "requiredArtifact": "DESIGN-DIRECTION.md",
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "real-data",
+            "cyrillic-license",
+            "states",
+            "evidence"
+          ],
+          "rationale": "Полный цикл сложного продукта (роли, CMS, платежи, серверные интеграции) требует полного маршрута с фиксацией дизайн-направления перед кодом."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "current",
+        "case": "regulated-public-page",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "accessibility",
+            "responsive",
+            "real-data",
+            "states"
+          ],
+          "rationale": "Single informational page for a regulated gov service is a small, well-scoped task — direct build with native judgment, prioritizing clarity/trust over anti-slop stylistic direction; no fabricated data, verify a11y and legal text with a human."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "current",
+        "case": "dashboard-redesign",
+        "passed": false,
+        "failures": [
+          "missing-gates:brand,responsive"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "accessibility",
+            "states",
+            "evidence"
+          ],
+          "rationale": "Изолированное улучшение иерархии в рамках существующей дизайн-системы, без выбора нового направления — полный anti-slop pipeline избыточен."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "current",
+        "case": "ru-landing-font",
+        "passed": false,
+        "failures": [
+          "route",
+          "owner",
+          "external-tool",
+          "artifact",
+          "missing-gates:responsive"
+        ],
+        "result": {
+          "routeMode": "full-pipeline",
+          "designOwner": "site-design",
+          "useExternalTool": false,
+          "requiredArtifact": "DESIGN-DIRECTION.md",
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "cyrillic-license",
+            "brand",
+            "real-data"
+          ],
+          "rationale": "Landing design direction request maps to design-direction-brief prompt owned by site-design skill; cyrillic self-host font licensing is an explicit constraint requiring a gate"
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "current",
+        "case": "dense-product-ui",
+        "passed": false,
+        "failures": [
+          "missing-gates:responsive"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "accessibility",
+            "states"
+          ],
+          "rationale": "Плотный рабочий UI внутри существующего продукта — задача точечная, anti-slop/design-direction для маркетинговых лендингов не применимы, следовать текущей дизайн-системе продукта."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "current",
+        "case": "current-references",
+        "passed": false,
+        "failures": [
+          "external-tool"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "evidence",
+            "cyrillic-license"
+          ],
+          "rationale": "Single research task (competitor references + font license check), not a full design build needing DESIGN-DIRECTION.md ownership."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "current",
+        "case": "browser-render-proof",
+        "passed": false,
+        "failures": [
+          "external-tool"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "responsive",
+            "browser-evidence",
+            "accessibility"
+          ],
+          "rationale": "Read-only visual verification task in browser, no design direction or code generation involved; cannot claim verification without actual tool use."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "hero-direct",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility"
+          ],
+          "rationale": "Локальная точечная правка hero существующего статического лендинга без неопределённости, требующей отдельного направления или артефакта; бренд и остальная страница сохраняются."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "complex-full-site",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "full-pipeline",
+          "designOwner": "site-design",
+          "useExternalTool": false,
+          "requiredArtifact": "DESIGN-DIRECTION.md",
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "real-data",
+            "cyrillic-license",
+            "states",
+            "evidence",
+            "browser-evidence"
+          ],
+          "rationale": "Полный сайт с нуля: роли, кабинеты, CMS, платежи, серверные интеграции — требует контракта v2 и артефактов фазы"
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "regulated-public-page",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "accessibility",
+            "responsive",
+            "cyrillic-license",
+            "real-data"
+          ],
+          "rationale": "Одна информационная страница — прямой маршрут, направление выбирает нативная модель без явного вызова site-design."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "dashboard-redesign",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "states",
+            "browser-evidence"
+          ],
+          "rationale": "Focused hierarchy fix on existing dashboard; no pipeline status file, IA/components/design system explicitly preserved, full redesign disallowed."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "ru-landing-font",
+        "passed": false,
+        "failures": [
+          "owner",
+          "artifact"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "site-design",
+          "useExternalTool": true,
+          "requiredArtifact": "DESIGN-DIRECTION.md",
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "cyrillic-license",
+            "accessibility",
+            "responsive",
+            "evidence"
+          ],
+          "rationale": "Explicit design-direction request activates site-design artifact; cyrillic font license/self-host claim needs external verification, not full-pipeline since it's one landing page."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "dense-product-ui",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "states",
+            "real-data"
+          ],
+          "rationale": "Точечное добавление экрана в существующий плотный продуктовый UI — direct-маршрут, нативная реализация с сохранением текущей системы, без выделенной design-фазы или артефакта."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "current-references",
+        "passed": false,
+        "failures": [
+          "blocked-without-helper"
+        ],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": true,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": true,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "cyrillic-license",
+            "evidence"
+          ],
+          "rationale": "Explicit ask for current competitor references and font license verification requires external reference-search; no full-pipeline signal, so native model handles it directly without DESIGN-DIRECTION.md."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "browser-render-proof",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": true,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "browser-evidence"
+          ],
+          "rationale": "Focused visual acceptance check on an existing page needs a rendered browser pass, not the full design-direction pipeline."
+        }
+      }
+    ],
+    "failures": [],
+    "updatedGatePassed": false
+  }
+}

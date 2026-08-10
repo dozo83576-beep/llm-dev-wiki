@@ -1,7 +1,7 @@
 interface:
   display_name: "Site Discovery"
   short_description: "Требования и критерии приёмки нового сайта"
-  default_prompt: "Use $site-discovery to capture requirements and acceptance criteria for a new site."
+  default_prompt: "Use $site-discovery for this explicit phase or the active full pipeline; ask only material missing questions and produce _discovery.md."
 
 policy:
   allow_implicit_invocation: false

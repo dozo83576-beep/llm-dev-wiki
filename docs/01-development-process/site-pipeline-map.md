@@ -1,13 +1,15 @@
 ---
 title: "Site pipeline map"
 category: "process"
-updated: "2026-07-21"
+updated: "2026-08-10"
 status: "active"
 tags: ["site", "pipeline", "skills", "orchestration", "resume", "contract"]
 source_priority: "internal"
 ---
 
 # Site pipeline map
+
+Эта карта применяется только при `routeMode: full-pipeline`. Для `direct` status-файл и фазовый граф не создаются; выполняются только gates, релевантные локальной задаче.
 
 Человекочитаемое представление [pipeline contract](../../resources/site-pipeline-contract.json).
 JSON-контракт v2 — единственный источник фаз, зависимостей, canonical artifacts, primary playbook,
@@ -36,12 +38,12 @@ supporting guides и delivery profiles. Bootstrap, verifier и `build-modern-sit
 | 14 | site-deploy | `site-deploy` | `_deploy.md` | site-review |
 | 15 | site-handoff | `site-handoff` | `handoff.md` | site-deploy |
 | 16 | post-release | `site-handoff` | `_post-release-plan.md` | site-handoff |
-| 17 | capture-learnings | `capture-learnings` | `_learning-review.md` | site-review |
+| 17 | capture-learnings | `capture-learnings` | `_learning-review.md` | post-release |
 
 Зависимость считается закрытой статусом `done` или контрактным `not-applicable`; для единственной
 optional-фазы `post-release` также допустим обоснованный `skipped`.
 
-`capture-learnings` зависит от `site-review`, а не от деплоя: знание фиксируется, пока оно свежее.
+`capture-learnings` зависит от `post-release`: финальное знание не фиксируется до deploy, handoff и решения о post-release. Пропуск `post-release` допустим только с фактической причиной, после чего он считается завершённой зависимостью.
 Проект, где хостинг ещё не выбран, закрывает фазу сразу после ревью — иначе выводы остаются в
 `_learning-review.md` и не доезжают до вики. Эксплуатационные наблюдения после прода дописываются
 отдельно, когда появятся.

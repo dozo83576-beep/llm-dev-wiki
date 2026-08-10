@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-08-10T04:04:12.482586+00:00",
+  "routing": {
+    "directFalseFull": 0,
+    "directTotal": 6,
+    "fullCorrect": 4,
+    "fullTotal": 4,
+    "passed": true,
+    "results": [
+      {
+        "id": "direct-copy",
+        "expected": "direct",
+        "actual": "direct",
+        "passed": true,
+        "routeReasons": [
+          "focused-existing-change"
+        ]
+      },
+      {
+        "id": "direct-hero",
+        "expected": "direct",
+        "actual": "direct",
+        "passed": true,
+        "routeReasons": [
+          "focused-existing-change"
+        ]
+      },
+      {
+        "id": "direct-css",
+        "expected": "direct",
+        "actual": "direct",
+        "passed": true,
+        "routeReasons": [
+          "focused-existing-change"
+        ]
+      },
+      {
+        "id": "direct-static",
+        "expected": "direct",
+        "actual": "direct",
+        "passed": true,
+        "routeReasons": [
+          "static-no-server"
+        ]
+      },
+      {
+        "id": "direct-page",
+        "expected": "direct",
+        "actual": "direct",
+        "passed": true,
+        "routeReasons": [
+          "focused-existing-change"
+        ]
+      },
+      {
+        "id": "direct-section",
+        "expected": "direct",
+        "actual": "direct",
+        "passed": true,
+        "routeReasons": [
+          "focused-existing-change"
+        ]
+      },
+      {
+        "id": "full-auth",
+        "expected": "full-pipeline",
+        "actual": "full-pipeline",
+        "passed": true,
+        "routeReasons": [
+          "auth-or-roles",
+          "complex-product"
+        ]
+      },
+      {
+        "id": "full-payment",
+        "expected": "full-pipeline",
+        "actual": "full-pipeline",
+        "passed": true,
+        "routeReasons": [
+          "payments",
+          "server-integration",
+          "complex-product"
+        ]
+      },
+      {
+        "id": "full-data",
+        "expected": "full-pipeline",
+        "actual": "full-pipeline",
+        "passed": true,
+        "routeReasons": [
+          "data-or-cms"
+        ]
+      },
+      {
+        "id": "full-explicit",
+        "expected": "full-pipeline",
+        "actual": "full-pipeline",
+        "passed": true,
+        "routeReasons": [
+          "explicit-full-cycle"
+        ]
+      }
+    ]
+  },
+  "live": {
+    "requested": true,
+    "results": [],
+    "failures": [
+      "claude/claude-fable-5/no-skills/pilot-short: {\"type\":\"result\",\"subtype\":\"success\",\"is_error\":true,\"api_error_status\":429,\"duration_ms\":2642,\"duration_api_ms\":0,\"num_turns\":1,\"result\":\"Usage credits are required for this model.\",\"stop_reason\":\"stop_sequence\",\"session_id\":\"f9201981-4143-4622-b04f-bec51d8c1e24\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permission_denials\":[],\"terminal_reason\":\"completed\",\"fast_mode_state\":\"off\",\"uuid\":\"28f71cf8-f45a-4bef-9256-002c72bdc266\"}\nSessionEnd hook [node \"${CLAUDE_PLUGIN_ROOT}/scripts/session-lifecycle-hook.mjs\" SessionEnd] failed: Hook cancelled\n",
+      "claude/claude-fable-5/no-skills/pilot-full: {\"type\":\"result\",\"subtype\":\"success\",\"is_error\":true,\"api_error_status\":429,\"duration_ms\":3673,\"duration_api_ms\":0,\"num_turns\":1,\"result\":\"Usage credits are required for this model.\",\"stop_reason\":\"stop_sequence\",\"session_id\":\"0a784944-8275-43f1-b7d4-63ff4871b7ae\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permission_denials\":[],\"terminal_reason\":\"completed\",\"fast_mode_state\":\"off\",\"uuid\":\"ba5a80f3-d53b-44f2-b67d-8de539c95169\"}\nSessionEnd hook [node \"${CLAUDE_PLUGIN_ROOT}/scripts/session-lifecycle-hook.mjs\" SessionEnd] failed: Hook cancelled\n",
+      "claude/claude-fable-5/current/pilot-short: {\"type\":\"result\",\"subtype\":\"success\",\"is_error\":true,\"api_error_status\":429,\"duration_ms\":3764,\"duration_api_ms\":0,\"num_turns\":1,\"result\":\"Usage credits are required for this model.\",\"stop_reason\":\"stop_sequence\",\"session_id\":\"9383fb48-ebb7-49d7-b150-a996721cd88e\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permission_denials\":[],\"terminal_reason\":\"completed\",\"fast_mode_state\":\"off\",\"uuid\":\"7009cc71-ec84-445a-98e8-900fb0c82598\"}\nSessionEnd hook [node \"${CLAUDE_PLUGIN_ROOT}/scripts/session-lifecycle-hook.mjs\" SessionEnd] failed: Hook cancelled\n",
+      "claude/claude-fable-5/current/pilot-full: {\"type\":\"result\",\"subtype\":\"success\",\"is_error\":true,\"api_error_status\":429,\"duration_ms\":1223,\"duration_api_ms\":0,\"num_turns\":1,\"result\":\"Usage credits are required for this model.\",\"stop_reason\":\"stop_sequence\",\"session_id\":\"2c098ba4-fd1c-4645-91fc-f08db0a61987\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permission_denials\":[],\"terminal_reason\":\"completed\",\"fast_mode_state\":\"off\",\"uuid\":\"bf7cc4f3-7e88-468d-924f-f05bc7ce252d\"}\nSessionEnd hook [node \"${CLAUDE_PLUGIN_ROOT}/scripts/session-lifecycle-hook.mjs\" SessionEnd] failed: Hook cancelled\n",
+      "claude/claude-fable-5/updated/pilot-short: {\"type\":\"result\",\"subtype\":\"success\",\"is_error\":true,\"api_error_status\":429,\"duration_ms\":1321,\"duration_api_ms\":0,\"num_turns\":1,\"result\":\"Usage credits are required for this model.\",\"stop_reason\":\"stop_sequence\",\"session_id\":\"39b5775c-d0d0-4ae7-aa2a-35feac6c8cf8\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permission_denials\":[],\"terminal_reason\":\"completed\",\"fast_mode_state\":\"off\",\"uuid\":\"a5296a59-20e8-45d2-a40b-2a3de71c1345\"}\n",
+      "claude/claude-fable-5/updated/pilot-full: {\"type\":\"result\",\"subtype\":\"success\",\"is_error\":true,\"api_error_status\":429,\"duration_ms\":1946,\"duration_api_ms\":0,\"num_turns\":1,\"result\":\"Usage credits are required for this model.\",\"stop_reason\":\"stop_sequence\",\"session_id\":\"99b38d3e-f336-4c6a-a828-d95a05ed73fd\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permission_denials\":[],\"terminal_reason\":\"completed\",\"fast_mode_state\":\"off\",\"uuid\":\"8747c9a1-e229-4549-a9dd-5d15234f7df1\"}\nSessionEnd hook [node \"${CLAUDE_PLUGIN_ROOT}/scripts/session-lifecycle-hook.mjs\" SessionEnd] failed: Hook cancelled\n"
+    ]
+  }
+}

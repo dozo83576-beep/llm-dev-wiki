@@ -1,12 +1,9 @@
 <#
-    UserPromptSubmit-хук: механический вход в оркестратор build-modern-site.
+    Неактивный по умолчанию UserPromptSubmit-хук: подсказка для preflight сайта.
 
     Зачем: вход в пайплайн по триггер-фразе был вероятностным (зависел от внимания
-    модели) — реальный проект (local-market-woo, 2026-07-02) прошёл мимо оркестратора,
-    т.к. plan-режим перехватил управление. Этот хук детектирует интент «новый сайт»
-    в тексте запроса и МЕХАНИЧЕСКИ инъецирует требование пайплайна через
-    additionalContext — оно попадает в контекст ДО планирования, поэтому работает
-    и в plan-режиме.
+    модели). Если владелец когда-либо включит хук явно, он только требует preflight,
+    но не выбирает полный маршрут за модель и не перечисляет обязательные фазы.
 
     Поведение:
     - Нет матча / мета-разговор о самой системе / уже инъецировано в этой сессии
@@ -65,7 +62,7 @@ $marker = Join-Path $tempRoot ("site-intent-" + ($sessionId -replace '[^\w-]', '
 if (Test-Path -LiteralPath $marker) { exit 0 }
 Set-Content -LiteralPath $marker -Value (Get-Date -Format 'o') -Encoding UTF8
 
-$context = 'ОБЯЗАТЕЛЬНО: запрос — новый сайт. Войти в скилл /build-modern-site (все 17 фаз по D:\Work\llm-dev-wiki\docs\01-development-process\site-pipeline-map.md), первым шагом запустить pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "<запрос>". Если активен plan-режим — фазы 1–7 пайплайна и есть содержимое плана, и план ОБЯЗАН перечислить все фазы, включая контент (юридические страницы/152-ФЗ), дизайн, SEO и ревью по чеклистам. Молчаливый пропуск фаз запрещён; осознанный пропуск фиксируется в плане с причиной.'
+$context = 'Запрос похож на создание сайта. Используй /build-modern-site только как preflight-router: запусти pwsh D:\Work\llm-dev-wiki\tools\new-site-preflight.ps1 -Request "<запрос>" -OutputJson. При routeMode direct не создавай pipeline state; при routeMode full-pipeline следуй contract v2 и только применимым фазам из site-pipeline-map.md.'
 
 @{ hookSpecificOutput = @{ hookEventName = 'UserPromptSubmit'; additionalContext = $context } } | ConvertTo-Json -Compress
 exit 0

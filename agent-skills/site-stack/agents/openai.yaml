@@ -1,7 +1,7 @@
 interface:
   display_name: "Site Stack"
   short_description: "Выбор стека с аргументацией и blueprint"
-  default_prompt: "Use $site-stack to compare and choose a stack from the D:\\Work wiki blueprints."
+  default_prompt: "Use $site-stack for this explicit phase or the active full pipeline; choose the simplest verified stack and produce _stack.md."
 
 policy:
   allow_implicit_invocation: false

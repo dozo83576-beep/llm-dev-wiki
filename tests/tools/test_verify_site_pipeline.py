@@ -108,6 +108,19 @@ def test_canonical_contract_and_docs_are_consistent() -> None:
     assert "Failures: 0" in result.stdout
 
 
+def test_contract_rejects_dependency_on_future_phase(tmp_path: Path) -> None:
+    contract = json.loads(json.dumps(CONTRACT))
+    phase = next(item for item in contract["phases"] if item["id"] == "site-content")
+    phase["dependsOn"].append("site-design")
+    contract_path = tmp_path / "contract.json"
+    contract_path.write_text(json.dumps(contract), encoding="utf-8")
+
+    result = run_verify(None, "-ContractPath", str(contract_path))
+
+    assert result.returncode == 1
+    assert "depends on same or future phase: site-design" in result.stdout
+
+
 @pytest.mark.parametrize(
     ("playbook", "profile"),
     [

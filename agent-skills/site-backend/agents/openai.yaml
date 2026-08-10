@@ -1,7 +1,7 @@
 interface:
   display_name: "Site Backend"
   short_description: "API, сервисы, БД и серверная безопасность"
-  default_prompt: "Use $site-backend to implement APIs, services, and the server security boundary."
+  default_prompt: "Use $site-backend for this explicit phase or the active full pipeline; implement accepted server contracts and produce _backend-gate.md."
 
 policy:
   allow_implicit_invocation: false

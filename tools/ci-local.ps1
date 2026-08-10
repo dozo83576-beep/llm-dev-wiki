@@ -192,6 +192,11 @@ try {
         & ./tools/verify-agent-skills.ps1
     }
 
+    Invoke-Step "Motion/media routing evals (offline)" {
+        $motionReport = Join-Path $env:TEMP "llm-dev-wiki-motion-media-eval.json"
+        & python ./tools/run_motion_media_evals.py --root . --report $motionReport
+    }
+
     Invoke-WikiQuality
 
     if ($IncludeToolTests) {

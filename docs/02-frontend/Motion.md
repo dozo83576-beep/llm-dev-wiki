@@ -10,6 +10,10 @@ area: "frontend"
 
 # Motion / UI-анимации
 
+Для animated landing, scroll-storytelling и hero-video сначала используй
+[Animated sites and hero media](Animated-sites-and-hero-media.md). Этот документ остаётся справочником
+для локальных UI-переходов и микроинтеракций.
+
 ## Назначение
 
 Документ задаёт production-правила для анимаций интерфейса: когда анимировать, какие
@@ -139,4 +143,5 @@ UI-анимации держать < 300ms. ~180ms ощущается отзыв
 - Emil Kowalski — «Animations on the Web» / emil-design-eng skill: https://animations.dev , https://emilkowal.ski/skill (проверено 2026-06-20)
 - Easing-кривые: https://easing.dev , https://easings.co
 - [Pattern: Purposeful motion](../../patterns/frontend/purposeful-motion.md)
+- [Pattern: Hero video delivery](../../patterns/frontend/hero-video-delivery.md)
 - [Accessibility](Accessibility.md), [Performance](Performance.md)

@@ -130,7 +130,11 @@ def test_verify_user_runtimes_compares_only_skill_directories(tmp_path: Path) ->
         encoding="utf-8",
     )
     shutil.copytree(source_skill, runtime_skill, dirs_exist_ok=True)
-    for runtime in (user_profile / ".codex" / "skills", user_profile / ".claude" / "skills"):
+    for runtime in (
+        user_profile / ".codex" / "skills",
+        user_profile / ".claude" / "skills",
+        user_profile / ".agents" / "skills",
+    ):
         shutil.copytree(source_skill, runtime / "demo-skill", dirs_exist_ok=True)
     shutil.copy2(VERIFY_SCRIPT, tools / "verify-agent-skills.ps1")
 

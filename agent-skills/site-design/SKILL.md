@@ -1,129 +1,28 @@
 ---
 name: site-design
-description: >-
-  Фаза визуального дизайна сайта в D:\Work: создаёт современный, отличимый от шаблонного «AI-вида»
-  интерфейс — типографика, цветовые токены по поверхностям, сетка, отступы, состояния, доступность.
-  Использовать при проектировании UI/дизайн-системы лендинга, SaaS, дашборда или веб-приложения.
-  Подключает встроенный дизайн-скилл рантайма (frontend-design в slash-command runtime, ui-ux-pro-max в Codex),
-  накладывает одобренные предпочтения из AGENT-PREFERENCES.local.md и frontend-доки/паттерны вики.
+description: Дизайн-фаза только внутри полного маршрута D:\Work или при явном вызове; не активируется на любую frontend/UI задачу.
 ---
 
-# site-design — современный визуальный слой
+# Site design
 
-Тонкий роутер. Цель — production-уровень дизайна, а не дженерик-шаблон. Источник правды по приёмам —
-встроенный дизайн-скилл рантайма + `D:\Work\llm-dev-wiki` + одобренные предпочтения.
+Входы: discovery, конкурентный evidence, content model, project/brand constraints и
+`AGENT-PREFERENCES.local.md`, если он доступен. Project brief, бренд и accessibility выше preferences.
 
-## Requires
-- `site-architecture` и `site-content` завершены (структура и контент-модель известны — артефакты
-  `_architecture.md` и `_content-model.md` проекта). Идёт до `site-frontend`.
-- Для playbook `marketplace`: фаза единична (18-й фазы нет), а один design artifact обязан содержать
-  явно маркированные секции `Public storefront` (покупатели, SEO) и `Private console`
-  (продавец/модерация, без публичной индексации, плотность `admin-dashboard`). Токены и решения
-  секций не смешивать.
+Нативно выбери одно обоснованное направление и проработай ключевые поверхности. Несколько направлений нужны только при реальной неопределённости, влияющей на решение пользователя.
 
-## Подключи дизайн-движок (сначала обнаружь доступные)
-Используй **лучший доступный** движок, а не только встроенный. Сначала проверь, что подключено
-(`pwsh D:\Work\tools\check-ai-tools.ps1` + список установленных скиллов), затем подключай:
-- **Дизайн-канвас claude.ai/design + DesignSync (приоритетный, если доступен):** когда в сессии
-  slash-command runtime есть инструмент `DesignSync` и логин claude.ai — UI-кит/дизайн-система и
-  ключевые экраны создаются на канвасе claude.ai/design, handoff-бандл конвертируется в канонические
-  артефакты фазы (шаг 1.7). `check-ai-tools.ps1` его не видит (это встроенный tool, не MCP) —
-  проверяй наличие инструмента в сессии. В Codex DesignSync нет — fallback: ручной экспорт из
-  Design UI. Рецепты, `@dsCard`, безопасность — `docs/07-mcp-and-ai-tools/Claude-Design-and-DesignSync.md`.
-- **Скиллы:** `frontend-design` (slash-command runtime), `ui-ux-pro-max` (Codex, `$ui-ux-pro-max`), и любой
-  установленный пользователем дизайн-скилл (напр. `emil-design-eng`/`impeccable`/`taste`) — бери как движок.
-- **Дизайн-MCP:** Figma MCP (импорт макета/токенов из готового дизайна), Canva/Gamma MCP (генерация
-  ассетов/слайдов) — если подключены и задача того требует.
-- **Компоненты:** `shadcn-ui`, `react-best-practices`; премиум-эффекты — `docs/02-frontend/Premium-components.md`.
-- **Motion:** `emil-design-eng` если установлен; правила всё равно сверяй с `docs/02-frontend/Motion.md`.
-- **Optional helper:** по общей карте по умолчанию не нужен; при конкретном пробеле допустим один
-  узкий design/CRO helper. Он не заменяет дизайн-токены, anti-slop правила и предпочтения.
-- Нет внешних движков → работает встроенный `frontend-design` + вики (полноценный fallback).
-Как добавить внешние дизайн-скиллы/MCP — `docs/07-mcp-and-ai-tools/External-design-skills.md`.
-Этот скилл не дублирует их приёмы — он добавляет слой предпочтений (вкус, лицензии, кириллица) и связь с вики,
-которая остаётся **source of truth по принципам**; внешние движки — исполнители.
+Локальные gates:
 
-## Сначала прочитай
-- Слои контекста: project `AGENTS.md` → `D:\Work\AGENTS.md` → `AGENT-PREFERENCES.local.md` → вики — один раз за сессию, не перечитывать, если уже в контексте (правила — оркестратор `build-modern-site`).
-- `D:\Work\AGENT-PREFERENCES.local.md` — секции «Frontend и design preferences», «Шрифты, визуальные
-  референсы и стилистика», «Любимые приемы», «Не предлагать / анти-паттерны». Это приоритетный слой вкуса.
-- `D:\Work\llm-dev-wiki\docs\02-frontend\Shadcn.md`, `React.md`, `TypeScript.md`, `Routing.md`, `I18n.md`.
-- `D:\Work\llm-dev-wiki\patterns\frontend\` — `semantic-theme-text-tokens.md`, `anti-ai-slop-design.md`,
-  `purposeful-motion.md`, `cyrillic-self-host-fonts.md`, `server-client-boundary.md`, `form-validation-boundary.md`.
-- Анимации: `D:\Work\llm-dev-wiki\docs\02-frontend\Motion.md` (длительности, easing, reduced-motion, performance).
-- Шрифты/цвет/компоновка — **по требованию после выбора направления**, не заранее целиком:
-  `docs\02-frontend\Typography-fonts.md` (нужная секция: кириллица + лицензия выбранных кандидатов,
-  стартер-пак `resources\fonts\`), `Color-palettes.md` (палитры выбранного настроения),
-  `patterns\frontend\layout-archetypes.md` (архетип выбранного лендинга/приложения).
-- Референс-галереи `resources\design-inspiration.md` — только если у клиента нет референсов
-  (см. шаг 1.5), не по умолчанию.
-- Для лендингов/продающих страниц: `D:\Work\llm-dev-wiki\docs\02-frontend\Premium-components.md`,
-  `D:\Work\llm-dev-wiki\prompts\design-direction-brief.md`.
+- направление связано с аудиторией и задачей, а не с модой;
+- типографика поддерживает кириллицу и имеет допустимую лицензию;
+- цвета, состояния, responsive-поведение, accessibility и motion описаны проверяемо;
+- qualitative axes `visual variance`, `information density` и `motion budget` следуют задаче;
+- interaction tier и hero media выбираются по назначению, а не для обязательного wow-эффекта;
+- референсы служат evidence, но не копируются;
+- реальные пользовательские данные и секреты не входят в макеты.
 
-## Шаги
-1. Применить предпочтения из AGENT-PREFERENCES (шрифты, палитра, стиль, запрещённые приёмы) как стартовые ограничения.
-1.5. Перебить дефолтный house style модели (кремовый ~`#F4F1EA` / serif / терракот): задать **конкретные** значения
-   `фон hex / акцент hex / шрифт`, а не общие фразы. Сначала проверь `reference-pointers`,
-   зафиксированные на `site-discovery` — не спрашивай про референсы повторно, если они уже даны.
-   Если в discovery зафиксировано «референсов нет» — спроси ещё раз (мог появиться референс в
-   процессе); если всё ещё пусто — **активно сходи (WebFetch/WebSearch) на галереи из
-   `resources/design-inspiration.md`** под нишу и извлеки ДНК (не копируя вёрстку): типографику,
-   палитру, spacing, motion, иллюстрации и графический язык. Дополнительно сверься с «Visual signal
-   notes» из `_competitive-analysis.md` (стадия `site-competitive-analysis`) — это калибратор «как
-   выглядят конкуренты», чтобы осознанно **не сходиться** с их визуальным языком, а выбрать
-   дифференцирующее направление. Для лендингов сначала проверь
-   Refero Styles (`https://styles.refero.design/`) как источник AI-readable `DESIGN.md` примеров, чтобы не скатиться
-   в скучный статичный hero/cards без визуальной причины. Шрифт брать из `Typography-fonts.md` (кириллица + лицензия проверены), палитру — из `Color-palettes.md`,
-   компоновку — из `layout-archetypes.md`. Для лендингов записать артефакт `DESIGN-DIRECTION.md`
-   по `prompts/design-direction-brief.md` и **показать 3–4 направления на выбор до реализации**. Для продающих
-   страниц используй уже готовые visual signals/outlier findings из `_competitive-analysis.md`;
-   повторный поиск и анализ конкурентов в этой фазе запрещён.
-1.6. Для продающего сайта/портфолио `DESIGN-DIRECTION.md` обязателен даже если проект уже начат: без него не продолжать
-   визуальный редизайн, иначе агент скатится в прежний шаблон.
-1.7. **Design-first через канвас claude.ai/design (если доступен DesignSync).** Вход: бриф,
-   `reference-pointers` (фаза 2) и visual DNA из `_competitive-analysis.md` — деперсонализированные
-   (152-ФЗ). UI-кит и 2–4 ключевых экрана можно собирать на канвасе параллельно фазам 5–8, но
-   посадка и конвертация — здесь: handoff-экспорт из Design UI → `_design/handoff/<YYYY-MM-DD>-<slug>/` проекта → конвертация в
-   канонические артефакты фазы: `DESIGN-DIRECTION.md` (по `prompts/design-direction-brief.md`) +
-   CSS-токены по поверхностям. **Бандл — вход, не источник правды**; anti-slop, шрифты (кириллица +
-   лицензия) и AGENT-PREFERENCES применяются **после** импорта как фильтр — шаги 2–5 идут как
-   ревизия поверх импортированного, а не с нуля. Рецепт —
-   `docs/07-mcp-and-ai-tools/Claude-Design-and-DesignSync.md`.
-2. Подключить дизайн-движок рантайма и собрать дизайн-направление: типографическая шкала, цветовые токены
-   **по поверхностям** (text-on-dark / text-on-light — не один глобальный `--text`), сетка, отступы, радиусы, тени.
-   Анти-слоп детали: Lucide вместо эмодзи, дефис вместо тире, mono-метки/индексы, hairline, ghost-числа.
-2.5. Анти-повторяемость: явно выбрать оси вариативности (hero-архитектура / типографический стек /
-   плотность сетки / характер motion) и не переиспользовать связку из прошлого проекта (сверься с `case-studies/`).
-3. Определить состояния (hover/focus/disabled/loading/empty/error) и motion-бюджет по `Motion.md`
-   (UI < 300ms, `ease-out`, только `transform`/`opacity`).
-4. Доступность: контраст AA+, фокус-ринги, клавиатура, семантика, prefers-reduced-motion.
-5. Зафиксировать дизайн-токены как single source (CSS vars / theme), на которые опирается реализация.
-   Для `marketplace` сохрани обе маркированные секции в одном design artifact фазы.
-
-## Команды-ручки ревью дизайна
-Общий словарь для итераций над уже собранным экраном (можно адресовать секции или всему макету):
-- `audit` — пройтись по чек-листу анти-слопа и a11y, выписать конкретные нарушения.
-- `critique` — честная оценка «дёшево vs дорого» с причинами.
-- `polish` — довести детали (типографика, спейсинг, состояния, hairline/ghost-числа) без смены направления.
-- `distill` — убрать лишнее, упростить до сути (меньше блоков, тише декор).
-- `bolder` / `quieter` — усилить или приглушить визуальную интенсивность (контраст, размер, motion).
-- `animate` — добавить motion по `Motion.md`/`purposeful-motion.md` строго в бюджете.
-
-## Quality gate
-- Контраст проверен (фактические computed-цвета, не только ожидаемые); нет светлого текста на светлом фоне.
-- Токены по поверхностям, а не одна глобальная переменная текста.
-- Соблюдены анти-паттерны из AGENT-PREFERENCES.
-- Нет дефолтного «AI-вида»: эмодзи, длинного/среднего тире, дефолтного кремового/serif, layout «hero + 3 карточки».
-- Для продающего сайта есть `DESIGN-DIRECTION.md` с выбранным направлением, hex-цветами, типографикой и стоп-факторами.
-- Landing conversion basics соблюдены: H1 до 7 слов, один экран = одна мысль, proof/trust до первого сомнения.
-- Есть микро-детали (mono-метки/индексы, hairline, ghost-числа) и motion-бюджет (`prefers-reduced-motion`).
-- Кириллица не сыпется в tofu; шрифт self-host для прода / СНГ.
-- Если вход был handoff-бандл с канваса claude.ai/design: бандл сохранён в `_design/handoff/`, канонические
-  артефакты созданы из него (не наоборот), аннотации канваса перенесены в `DESIGN-DIRECTION.md`,
-  фильтр предпочтений применён после импорта.
-- Проверяет: self-check агента + дизайн-движок рантайма; контраст по computed-цветам (tool).
-
-## Передача дальше
-`site-backend` — независимая ветвь графа. `site-frontend` ждёт завершения design и применимого
-backend и реализует UI по обоим artifacts. Удачные дизайн-решения, одобренные пользователем,
-в конце цикла фиксируй через `capture-learnings`.
+Сохрани `DESIGN-DIRECTION.md`: surface, аудитория, brand constraints, направление, tokens,
+qualitative axes, компоненты/состояния, responsive и визуальные acceptance criteria. При наличии
+hero media укажи purpose, interaction tier, fallback/reduced-motion, controls, provenance и acceptance;
+для full-pipeline подготовь вспомогательный `hero-media-brief.json`. В direct такой brief создаёт
+нативная модель без запуска phase skill. Реализация может начаться после подтверждения направления,
+если оно требовалось пользователем.

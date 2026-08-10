@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "sources": {
+    "taste-candidate": {
+      "url": "https://github.com/leonxlnx/taste-skill",
+      "decision": "evaluation-only",
+      "context": "Candidate guidance: infer the surface and audience, set design variance, motion intensity and visual density, avoid generic AI defaults, use a real design system when appropriate, preserve incumbent structure on redesign, and run a strict pre-flight. The upstream candidate also contains fixed AIDA, GSAP, dark-mode, image-generation and quota rules; do not treat those as local policy."
+    },
+    "impeccable-candidate": {
+      "url": "https://github.com/pbakaus/impeccable",
+      "decision": "evaluation-only",
+      "context": "Candidate guidance: distinguish brand, product, reading and experience surfaces; ground work in product/design context; avoid generic AI patterns; inspect desktop and mobile together; fix findings in one batch and confirm once. Do not install its commands, context files, detector or hooks in this evaluation."
+    }
+  }
+}

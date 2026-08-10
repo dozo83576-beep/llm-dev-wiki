@@ -1,7 +1,7 @@
 interface:
   display_name: "Site Architecture"
   short_description: "Архитектура, модель данных и план этапов"
-  default_prompt: "Use $site-architecture to design components, data model, and a phased plan."
+  default_prompt: "Use $site-architecture for this explicit phase or the active full pipeline; produce _architecture.md from accepted inputs."
 
 policy:
   allow_implicit_invocation: false

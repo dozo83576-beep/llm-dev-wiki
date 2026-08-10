@@ -1,7 +1,7 @@
 interface:
   display_name: "Site Competitive Analysis"
   short_description: "Анализ конкурентов и адаптированный план"
-  default_prompt: "Use $site-competitive-analysis to study top competitor sites and produce an adapted site plan."
+  default_prompt: "Use $site-competitive-analysis for this explicit phase or the active full pipeline; gather sufficient sourced evidence and produce _competitive-analysis.md."
 
 policy:
   allow_implicit_invocation: false

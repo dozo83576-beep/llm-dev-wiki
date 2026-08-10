@@ -1,7 +1,7 @@
 interface:
   display_name: "Site Content"
   short_description: "Контент-модель, копирайтинг, i18n, CMS"
-  default_prompt: "Use $site-content to design the content model, copy, i18n, and legal pages."
+  default_prompt: "Use $site-content for this explicit phase or the active full pipeline; use verified facts and produce _content-model.md."
 
 policy:
   allow_implicit_invocation: false

@@ -1,94 +1,76 @@
 ---
 title: "Prompt: design direction brief"
 category: "prompt"
-updated: "2026-06-22"
+updated: "2026-08-10"
 status: "active"
 tags: ["design", "landing", "brief", "anti-ai-slop"]
 source_priority: "internal"
 ---
 
-# Prompt: design direction brief
+# Design direction brief
 
-## Role
+Используй для крупной design-фазы или когда пользователь явно просит создать либо зафиксировать направление.
+Локальная правка может идти `direct` без отдельного артефакта.
 
-Senior веб-дизайнер уровня топового агентства. Делаешь сайты уровня Awwwards, а не AI-шаблоны. На этом шаге собираешь дизайн-направление и фиксируешь его в артефакт — код не пишешь.
+## Входы
+
+- surface: marketing / product / content / experience;
+- аудитория, задача и целевое действие;
+- brand system, существующий UI и то, что нельзя менять;
+- реальный контент и assets либо честно обозначенные пробелы;
+- предоставленные референсы и локальные preferences.
+
+Если критичный выбор нельзя вывести из контекста, задай один короткий вопрос. В остальных случаях
+сформулируй одно обоснованное направление. Несколько вариантов нужны только при материальной
+неопределённости, которую должен разрешить пользователь.
+
+Внешний поиск выполняй только когда нужны актуальные референсы, конкурентное evidence, лицензии или
+доступность шрифтов/assets. Не выдавай модельное знание за проверенный внешний факт.
+
+## Артефакт `DESIGN-DIRECTION.md`
+
+```markdown
+# Design direction
 
 ## Context
+- Surface:
+- Audience and task:
+- Brand constraints:
+- Preserved incumbent system:
 
-Перед сборкой лендинга / продающей страницы нужно перебить дефолтный house style модели и дать пользователю выбрать направление. Артефакт хранится в папке проекта как `DESIGN-DIRECTION.md`, а не «в голове», иначе на каждом блоке агент скатывается в дефолт. Приёмы анти-слопа — в [Anti-AI-slop design](../patterns/frontend/anti-ai-slop-design.md).
+## Direction
+- Rationale:
+- Visual variance: restrained | balanced | expressive
+- Information density: spacious | balanced | dense
+- Motion budget: static | functional | expressive
+- Motion purpose and interaction tier: base | cinematic | specialized
+- Hero media purpose: none | decorative | meaningful | synchronized
+- Playback, pause, poster, reduced-motion and save-data behavior:
+- Asset provenance and optional `hero-media-brief.json`:
+- Typography and licensing:
+- Palette and surface tokens:
+- Spacing, layout and image language:
 
-## Inputs
+## Components and states
+- Key components:
+- Loading / empty / error / success / disabled / focus where applicable:
 
-- `{{niche}}` — ниша / клиент, чем занимается, чем отличается.
-- `{{goal}}` — целевое действие посетителя (записаться / купить / заявка / в мессенджер).
-- `{{audience_pain}}` — кто покупатель и что болит.
-- `{{offer}}` — что продаём, тарифы, что входит.
-- `{{real_data}}` — тексты, кейсы с цифрами, отзывы, соцсети (или явные плейсхолдеры).
-- `{{references}}` — 1–3 референса (скрины сайтов, которые нравятся). Из них берём шрифты, палитру, визуал и ритм — это приоритетный источник вкуса, если они есть.
-- `{{brand}}` — цвет/шрифт бренда и стоп-факторы (что точно надо / чего точно НЕ надо).
+## Responsive and accessibility
+- Desktop/mobile behavior:
+- Contrast, keyboard, reduced motion and content overflow:
 
-## Steps
-
-1. **Спроси про референсы (явно).** «Есть ли референсы? Кинь 1–3 скрина сайтов, которые нравятся — возьму оттуда шрифты, цвета, визуал и ритм. Нет — сам подберу под нишу.» Это опционально для пользователя, но спросить нужно всегда.
-   - **Нет референсов → активно сходи на галереи** (WebFetch/WebSearch) под нишу/настроение и собери 3–6 примеров: [Refero Styles](https://styles.refero.design/) для AI-readable `DESIGN.md` примеров, [Awwwards](https://www.awwwards.com), [Godly](https://godly.website), [recent.design](https://recent.design), [Land-book](https://land-book.com), [Lapa Ninja](https://www.lapa.ninja), [supahero.io](https://supahero.io), [Mobbin](https://mobbin.com), [21st.dev](https://21st.dev/community/components), [Behance](https://www.behance.net), [Dribbble](https://dribbble.com), [Typewolf](https://www.typewolf.com). Полный список и правила — [resources/design-inspiration.md](../resources/design-inspiration.md).
-   - Шрифты бери из [Typography-fonts](../docs/02-frontend/Typography-fonts.md) (кириллица + лицензия проверены; стартер-пак в `resources/fonts/`), палитру — из [Color-palettes](../docs/02-frontend/Color-palettes.md), компоновку — из [layout-archetypes](../patterns/frontend/layout-archetypes.md).
-2. **Разбери ДНК референсов** (если их дали — не копировать, а извлечь): типографика (гарнитуры, font-weights, line-height в px), палитра, spacing / white-space, структура, ритм секций, motion, иллюстрации и графический язык. Можно стакать 2–6 референсов и cherry-pick лучшее. Извлечённое кладётся в `<design_direction>` артефакта и питает 3–4 направления.
-   - Для продающего лендинга добавь **outlier-анализ**: посмотри 3–5 сильных сайтов ниши и 3–5 слабых. Из сильных бери структуру доверия, ритм и CTA; из слабых явно выпиши, чего избегать (перегруз текста, шаблонные карточки, фейковые отзывы, слепые CTA).
-3. **Дозадай неясное** одним блоком: целевое действие, стоп-факторы, реальные данные. Нет данных — фиксируй плейсхолдеры, не выдумывай.
-4. **Запиши `DESIGN-DIRECTION.md`** в папку проекта (схема ниже).
-5. **Покажи 3–4 направления** на выбор, каждое одной строкой: `фон hex / акцент hex / шрифт — одна строка почему`. Если есть референсы — направления опираются на их ДНК, а не на дефолт модели. Каждое направление должно иметь свой тип hero, ритм секций и motion-идею, а не только другой цвет.
-6. **Жди выбор.** Пользователь выбирает один — дальше строится только он. До выбора код не начинается.
-
-## Output schema (DESIGN-DIRECTION.md)
-
-```
-<role> Senior веб-дизайнер агентского уровня. Не AI-шаблоны. </role>
-<task> Конверсионный лендинг для [ниша]. Цель посетителя: [действие]. </task>
-<context>
-Клиент: [кто, отличие]
-Аудитория и боль: [...]
-Оффер и тарифы: [что, цены, что входит]
-Реальные данные: [кейсы/отзывы/тексты или явные плейсхолдеры]
-Референсы и их ДНК: [шрифты/веса/line-height, палитра, spacing, ритм, структура — что берём]
-</context>
-<design_direction>
-Выбрано: [фон hex / акцент hex / шрифт]
-Шрифт: конкретная гарнитура (НЕ дефолтный Inter/Arial/Oswald). Кириллица — проверить, self-host.
-Анти-слоп: Lucide (не эмодзи); без длинного/среднего тире; mono-метки/индексы; hairline; ghost-числа; grain.
-Анимации: counter-up, reveal-stagger, hover-lift, spotlight, marquee. Уважать prefers-reduced-motion.
-Конверсия: H1 до 7 слов; один экран = одна мысль; trust/proof виден до первого сомнения; CTA без лишнего выбора.
-</design_direction>
-<constraints>
-- НЕ дефолтный layout (не hero + 3 карточки). Асимметрия, воздух, наложения.
-- НЕ выдумывать кейсы/цифры/отзывы — только реальные данные или явные плейсхолдеры.
-- НЕ дефолтный кремовый/serif. Цвет текста по поверхностям, не один глобальный --text.
-- НЕ начинать код до выбора направления; после выбора собирать и ревьюить страницу блоками, чтобы не потерять дизайн-ритм.
-</constraints>
-<output> Один рабочий файл (index.html / React-компонент), адаптивный, рабочие интерактивы. </output>
+## Evidence and acceptance
+- References and assets:
+- Visual acceptance criteria:
+- Unknowns requiring an external tool or user input:
 ```
 
-## Output schema (направления на выбор)
+Не выдумывай кейсы, цифры, отзывы, лицензии или подтверждение браузерной проверки. Пользовательские
+вкусы применяй как preference layer: project brief, бренд и accessibility имеют приоритет.
 
-```
-A) #0A0A0B / #FF2E7E / Saira Extra Condensed — чёрный + горячий розовый, брутальные капс-заголовки
-B) #F3EFE6 / #0A0A0B / Archivo — светлый, строгий, чёрная жирная типографика
-C) #0E1014 / #C5F84A / Unbounded — тёмный + кислотный лайм, спортивный неон
-```
+## Связанное
 
-## Refusal rules
-
-- Не открывать редактор и не писать код, пока `DESIGN-DIRECTION.md` не записан и направление не выбрано.
-- Не предлагать «сделаю красиво» без точных hex/шрифт-значений — это скатывание в дефолт.
-- Не выдумывать данные клиента; нет — явные плейсхолдеры.
-- Не копировать вёрстку, тексты или бренд референса — извлекать только принципы (ДНК): типографику, палитру, spacing, ритм.
-- Не сохранять PII / приватные данные клиента в wiki.
-
-## Related
-
-- [Anti-AI-slop design](../patterns/frontend/anti-ai-slop-design.md)
-- [Typography-fonts](../docs/02-frontend/Typography-fonts.md), [Color-palettes](../docs/02-frontend/Color-palettes.md)
-- [Layout archetypes](../patterns/frontend/layout-archetypes.md), [design-inspiration](../resources/design-inspiration.md)
-- [Cyrillic / self-host fonts](../patterns/frontend/cyrillic-self-host-fonts.md)
-- [Premium-components](../docs/02-frontend/Premium-components.md)
-- [Playbook: Landing](../docs/13-playbooks/landing.md)
-- [Semantic theme text tokens](../patterns/frontend/semantic-theme-text-tokens.md)
+- [Contextual anti-AI-slop design](../patterns/frontend/anti-ai-slop-design.md)
+- [Design inspiration](../resources/design-inspiration.md)
+- [Typography fonts](../docs/02-frontend/Typography-fonts.md)
+- [External design skills and tools](../docs/07-mcp-and-ai-tools/External-design-skills.md)

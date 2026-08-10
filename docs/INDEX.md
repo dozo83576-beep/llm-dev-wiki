@@ -1,7 +1,7 @@
 ---
 title: "Wiki INDEX"
 category: "navigation"
-updated: "2026-07-28"
+updated: "2026-08-10"
 status: "active"
 tags: ["index", "navigation"]
 source_priority: "internal"
@@ -13,11 +13,11 @@ source_priority: "internal"
 
 ## Сводка
 
-- Всего документов: **332**
-- Активных: **315**
+- Всего документов: **335**
+- Активных: **317**
 - Redirect-stubs: **5**
-- Archived: **0**
-- Суммарный объём: **970520** символов
+- Archived: **1**
+- Суммарный объём: **957015** символов
 
 ## docs
 
@@ -25,26 +25,27 @@ source_priority: "internal"
 |------|-----------|-----------|-------|---------|--------|-----------------|
 | [docs/00-start-here/document-standard.md](../docs/00-start-here/document-standard.md) | Стандарт production-документа | governance | 1433 | 2026-05-24 | active | internal |
 | [docs/00-start-here/overview.md](../docs/00-start-here/overview.md) | Карта LLM-вики | start | 2202 | 2026-05-24 | active | internal |
-| [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 10092 | 2026-06-10 | active | internal |
+| [docs/00-start-here/skill-system.md](../docs/00-start-here/skill-system.md) | Система скиллов сборки сайтов | start | 3686 | 2026-08-10 | active | internal |
 | [docs/01-development-process/competitive-analysis.md](../docs/01-development-process/competitive-analysis.md) | Конкурентный анализ и адаптация под бриф | process | 5831 | 2026-07-10 | active | internal |
 | [docs/01-development-process/full-cycle.md](../docs/01-development-process/full-cycle.md) | Полный цикл разработки | process | 4520 | 2026-07-21 | active | internal |
-| [docs/01-development-process/new-site-preflight-tool.md](../docs/01-development-process/new-site-preflight-tool.md) | New site preflight tool | process | 2917 | 2026-07-21 | active | internal |
+| [docs/01-development-process/new-site-preflight-tool.md](../docs/01-development-process/new-site-preflight-tool.md) | New site preflight tool | process | 3423 | 2026-08-10 | active | internal |
 | [docs/01-development-process/runtime-selection.md](../docs/01-development-process/runtime-selection.md) | Runtime selection | process | 2546 | 2026-07-21 | active | mixed |
 | [docs/01-development-process/site-architecture-decision-router.md](../docs/01-development-process/site-architecture-decision-router.md) | Site architecture decision router | process | 8456 | 2026-07-21 | active | internal |
-| [docs/01-development-process/site-pipeline-map.md](../docs/01-development-process/site-pipeline-map.md) | Site pipeline map | process | 4238 | 2026-07-21 | active | internal |
+| [docs/01-development-process/site-pipeline-map.md](../docs/01-development-process/site-pipeline-map.md) | Site pipeline map | process | 4549 | 2026-08-10 | active | internal |
 | [docs/01-development-process/site-stack-router-tool.md](../docs/01-development-process/site-stack-router-tool.md) | Site stack router tool | process | 2801 | 2026-07-21 | active | internal |
 | [docs/01-development-process/stack-selection.md](../docs/01-development-process/stack-selection.md) | Выбор стека | process | 8119 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/AI-UI-streaming.md](../docs/02-frontend/AI-UI-streaming.md) | AI UI streaming | frontend | 3890 | 2026-07-21 | active | mixed |
 | [docs/02-frontend/Accessibility.md](../docs/02-frontend/Accessibility.md) | Accessibility | frontend | 1928 | 2026-05-27 | active | official-docs |
 | [docs/02-frontend/Analytics.md](../docs/02-frontend/Analytics.md) | Analytics | frontend | 1353 | 2026-05-24 | active | internal |
 | [docs/02-frontend/Angular-SSR.md](../docs/02-frontend/Angular-SSR.md) | Angular SSR | frontend | 2075 | 2026-07-21 | active | official-docs |
+| [docs/02-frontend/Animated-sites-and-hero-media.md](../docs/02-frontend/Animated-sites-and-hero-media.md) | Animated sites and hero media | frontend | 5249 | 2026-08-10 | active | official-docs |
 | [docs/02-frontend/Astro.md](../docs/02-frontend/Astro.md) | Astro | frontend | 2221 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/CMS-content.md](../docs/02-frontend/CMS-content.md) | CMS and content sites | frontend | 3467 | 2026-06-10 | active | mixed |
 | [docs/02-frontend/Color-palettes.md](../docs/02-frontend/Color-palettes.md) | Цветовые палитры и токены | frontend | 4835 | 2026-06-20 | active | mixed |
 | [docs/02-frontend/Component-driven-development.md](../docs/02-frontend/Component-driven-development.md) | Component-driven development | frontend | 2898 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/Content-migration.md](../docs/02-frontend/Content-migration.md) | Content migration | frontend | 3311 | 2026-06-19 | active | internal |
 | [docs/02-frontend/Data-fetching.md](../docs/02-frontend/Data-fetching.md) | Frontend data fetching | frontend | 1614 | 2026-05-24 | active | official-docs |
-| [docs/02-frontend/Design-systems.md](../docs/02-frontend/Design-systems.md) | Design systems | frontend | 3887 | 2026-07-11 | active | internal |
+| [docs/02-frontend/Design-systems.md](../docs/02-frontend/Design-systems.md) | Design systems | frontend | 3825 | 2026-07-11 | active | internal |
 | [docs/02-frontend/Directus.md](../docs/02-frontend/Directus.md) | Directus | frontend | 2238 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/Eleventy.md](../docs/02-frontend/Eleventy.md) | Eleventy | frontend | 1758 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Forms-validation.md](../docs/02-frontend/Forms-validation.md) | Forms and validation | frontend | 1927 | 2026-05-27 | active | official-docs |
@@ -55,11 +56,11 @@ source_priority: "internal"
 | [docs/02-frontend/Hugo.md](../docs/02-frontend/Hugo.md) | Hugo | frontend | 1891 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/I18n.md](../docs/02-frontend/I18n.md) | Internationalization | frontend | 1312 | 2026-05-24 | active | official-docs |
 | [docs/02-frontend/Laravel-Livewire.md](../docs/02-frontend/Laravel-Livewire.md) | Laravel Livewire | frontend | 2209 | 2026-07-21 | active | official-docs |
-| [docs/02-frontend/Motion.md](../docs/02-frontend/Motion.md) | Motion / UI-анимации | frontend | 6534 | 2026-06-20 | active | mixed |
+| [docs/02-frontend/Motion.md](../docs/02-frontend/Motion.md) | Motion / UI-анимации | frontend | 6838 | 2026-06-20 | active | mixed |
 | [docs/02-frontend/Nextjs.md](../docs/02-frontend/Nextjs.md) | Next.js | frontend | 2105 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/Nuxt.md](../docs/02-frontend/Nuxt.md) | Nuxt | frontend | 2728 | 2026-07-21 | active | official-docs |
 | [docs/02-frontend/Payload-CMS.md](../docs/02-frontend/Payload-CMS.md) | Payload CMS | frontend | 3430 | 2026-07-21 | active | vendor-docs |
-| [docs/02-frontend/Performance.md](../docs/02-frontend/Performance.md) | Frontend performance | frontend | 2817 | 2026-06-10 | active | official-docs |
+| [docs/02-frontend/Performance.md](../docs/02-frontend/Performance.md) | Frontend performance | frontend | 3276 | 2026-06-10 | active | official-docs |
 | [docs/02-frontend/Premium-components.md](../docs/02-frontend/Premium-components.md) | Premium components | frontend | 4289 | 2026-06-19 | active | community |
 | [docs/02-frontend/Qwik.md](../docs/02-frontend/Qwik.md) | Qwik | frontend | 2446 | 2026-06-04 | active | official-docs |
 | [docs/02-frontend/React-Router.md](../docs/02-frontend/React-Router.md) | React Router | frontend | 3154 | 2026-07-21 | active | official-docs |
@@ -139,27 +140,28 @@ source_priority: "internal"
 | [docs/06-api-design/Versioning.md](../docs/06-api-design/Versioning.md) | API versioning | api | 1950 | 2026-05-24 | active | internal |
 | [docs/06-api-design/WebSockets.md](../docs/06-api-design/WebSockets.md) | WebSockets | api | 1291 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/AI-chat-widget.md](../docs/07-mcp-and-ai-tools/AI-chat-widget.md) | AI chat widget | ai-tools | 3977 | 2026-06-22 | active | mixed |
-| [docs/07-mcp-and-ai-tools/Agent-harness-review.md](../docs/07-mcp-and-ai-tools/Agent-harness-review.md) | Разбор внешних харнесс-источников (2026-07) | ai-tools | 13402 | 2026-07-28 | active | mixed |
+| [docs/07-mcp-and-ai-tools/Agent-harness-review.md](../docs/07-mcp-and-ai-tools/Agent-harness-review.md) | Разбор внешних харнесс-источников (2026-07) | ai-tools | 13483 | 2026-07-28 | active | mixed |
 | [docs/07-mcp-and-ai-tools/Agent-memory.md](../docs/07-mcp-and-ai-tools/Agent-memory.md) | Agent memory | ai-tools | 2809 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Agent-self-improvement.md](../docs/07-mcp-and-ai-tools/Agent-self-improvement.md) | Agent self-improvement loop | ai-tools | 3456 | 2026-06-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Agent-workflows.md](../docs/07-mcp-and-ai-tools/Agent-workflows.md) | Agent workflows | ai-tools | 1737 | 2026-07-07 | active | internal |
 | [docs/07-mcp-and-ai-tools/Claude-Code-best-practices.md](../docs/07-mcp-and-ai-tools/Claude-Code-best-practices.md) | Claude Code best practices (конспект) | ai-tools | 13014 | 2026-07-07 | active | official-docs |
-| [docs/07-mcp-and-ai-tools/Claude-Design-and-DesignSync.md](../docs/07-mcp-and-ai-tools/Claude-Design-and-DesignSync.md) | Claude Design & DesignSync | ai-tools | 9313 | 2026-07-11 | active | internal |
+| [docs/07-mcp-and-ai-tools/Claude-Design-and-DesignSync.md](../docs/07-mcp-and-ai-tools/Claude-Design-and-DesignSync.md) | Legacy design runtime integration | ai-tools | 1867 | 2026-08-10 | archived | internal |
 | [docs/07-mcp-and-ai-tools/Embeddings.md](../docs/07-mcp-and-ai-tools/Embeddings.md) | Embeddings | ai-tools | 2163 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Evaluation.md](../docs/07-mcp-and-ai-tools/Evaluation.md) | AI evaluation | ai-tools | 2098 | 2026-05-24 | active | official-docs |
-| [docs/07-mcp-and-ai-tools/External-design-skills.md](../docs/07-mcp-and-ai-tools/External-design-skills.md) | External design skills & design MCP | ai-tools | 5387 | 2026-07-11 | active | internal |
-| [docs/07-mcp-and-ai-tools/External-site-skills.md](../docs/07-mcp-and-ai-tools/External-site-skills.md) | External site skills | ai-tools | 4250 | 2026-07-21 | active | internal |
+| [docs/07-mcp-and-ai-tools/External-design-skills.md](../docs/07-mcp-and-ai-tools/External-design-skills.md) | External design skills and tools | ai-tools | 3186 | 2026-08-10 | active | internal |
+| [docs/07-mcp-and-ai-tools/External-site-skills.md](../docs/07-mcp-and-ai-tools/External-site-skills.md) | External site skills | ai-tools | 3332 | 2026-08-10 | active | internal |
 | [docs/07-mcp-and-ai-tools/MCP-overview.md](../docs/07-mcp-and-ai-tools/MCP-overview.md) | MCP overview | ai-tools | 2655 | 2026-06-06 | active | official-docs |
+| [docs/07-mcp-and-ai-tools/Model-capability-boundaries.md](../docs/07-mcp-and-ai-tools/Model-capability-boundaries.md) | Model capability boundaries | ai-tools | 3280 | 2026-08-10 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/OpenAI-API.md](../docs/07-mcp-and-ai-tools/OpenAI-API.md) | OpenAI API | ai-tools | 1612 | 2026-07-21 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Prompt-engineering.md](../docs/07-mcp-and-ai-tools/Prompt-engineering.md) | Prompt engineering | ai-tools | 1351 | 2026-05-24 | active | internal |
 | [docs/07-mcp-and-ai-tools/Prompt-injection.md](../docs/07-mcp-and-ai-tools/Prompt-injection.md) | Prompt injection | ai-tools | 1964 | 2026-06-21 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Qdrant.md](../docs/07-mcp-and-ai-tools/Qdrant.md) | Qdrant | ai-tools | 2133 | 2026-07-21 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/RAG-ingestion.md](../docs/07-mcp-and-ai-tools/RAG-ingestion.md) | RAG ingestion | ai-tools | 1437 | 2026-05-24 | active | internal |
 | [docs/07-mcp-and-ai-tools/RAG.md](../docs/07-mcp-and-ai-tools/RAG.md) | RAG | ai-tools | 1331 | 2026-05-24 | active | internal |
-| [docs/07-mcp-and-ai-tools/Recommended-MCP-servers.md](../docs/07-mcp-and-ai-tools/Recommended-MCP-servers.md) | Recommended MCP servers | ai-tools | 4551 | 2026-07-11 | active | internal |
+| [docs/07-mcp-and-ai-tools/Recommended-MCP-servers.md](../docs/07-mcp-and-ai-tools/Recommended-MCP-servers.md) | Recommended MCP servers | ai-tools | 4496 | 2026-08-10 | active | internal |
 | [docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md](../docs/07-mcp-and-ai-tools/Setup-Claude-Desktop.md) | Claude Desktop MCP setup | ai-tools | 2887 | 2026-05-24 | active | official-docs |
 | [docs/07-mcp-and-ai-tools/Setup-Codex.md](../docs/07-mcp-and-ai-tools/Setup-Codex.md) | Codex MCP setup | ai-tools | 2610 | 2026-05-24 | active | official-docs |
-| [docs/07-mcp-and-ai-tools/Token-efficient-agent-workflow.md](../docs/07-mcp-and-ai-tools/Token-efficient-agent-workflow.md) | Token-efficient agent workflow | ai-tools | 4146 | 2026-06-20 | active | internal |
+| [docs/07-mcp-and-ai-tools/Token-efficient-agent-workflow.md](../docs/07-mcp-and-ai-tools/Token-efficient-agent-workflow.md) | Token-efficient agent workflow | ai-tools | 2373 | 2026-08-10 | active | internal |
 | [docs/07-mcp-and-ai-tools/Tool-permissions.md](../docs/07-mcp-and-ai-tools/Tool-permissions.md) | Tool permissions | ai-tools | 1415 | 2026-05-24 | active | internal |
 | [docs/07-mcp-and-ai-tools/User-preference-memory.md](../docs/07-mcp-and-ai-tools/User-preference-memory.md) | User preference memory | ai-tools | 4409 | 2026-06-10 | active | internal |
 | [docs/07-mcp-and-ai-tools/Vector-databases.md](../docs/07-mcp-and-ai-tools/Vector-databases.md) | Vector databases | ai-tools | 1927 | 2026-05-24 | active | internal |
@@ -209,7 +211,7 @@ source_priority: "internal"
 | [docs/13-playbooks/ecommerce.md](../docs/13-playbooks/ecommerce.md) | Playbook: E-commerce | playbooks | 4558 | 2026-06-10 | active | internal |
 | [docs/13-playbooks/headless-commerce.md](../docs/13-playbooks/headless-commerce.md) | Supporting guide: Headless commerce | playbooks | 3168 | 2026-07-21 | active | mixed |
 | [docs/13-playbooks/index.md](../docs/13-playbooks/index.md) | Project playbooks | playbooks | 1340 | 2026-07-21 | active | internal |
-| [docs/13-playbooks/landing.md](../docs/13-playbooks/landing.md) | Playbook: Landing | playbooks | 9533 | 2026-06-22 | active | internal |
+| [docs/13-playbooks/landing.md](../docs/13-playbooks/landing.md) | Playbook: Landing | playbooks | 9837 | 2026-08-10 | active | internal |
 | [docs/13-playbooks/marketplace.md](../docs/13-playbooks/marketplace.md) | Playbook: Marketplace | playbooks | 4451 | 2026-06-04 | active | internal |
 | [docs/13-playbooks/real-time-app.md](../docs/13-playbooks/real-time-app.md) | Playbook: Real-time app | playbooks | 3886 | 2026-05-24 | active | internal |
 | [docs/13-playbooks/saas.md](../docs/13-playbooks/saas.md) | Playbook: SaaS | playbooks | 5027 | 2026-06-04 | active | internal |
@@ -246,12 +248,13 @@ source_priority: "internal"
 | [patterns/devops/preview-before-production.md](../patterns/devops/preview-before-production.md) | Pattern: Preview before production | patterns | 392 | 2026-05-24 | active | internal |
 | [patterns/devops/rollback-first-release.md](../patterns/devops/rollback-first-release.md) | Pattern: Rollback-first release | patterns | 987 | 2026-05-24 | active | internal |
 | [patterns/frontend/ambient-sound-toggle.md](../patterns/frontend/ambient-sound-toggle.md) | Pattern: Тумблер ambient-звука (опциональный, real audio) | patterns | 2383 | 2026-06-23 | active | internal |
-| [patterns/frontend/anti-ai-slop-design.md](../patterns/frontend/anti-ai-slop-design.md) | Pattern: Anti-AI-slop design | patterns | 8129 | 2026-06-22 | active | internal |
+| [patterns/frontend/anti-ai-slop-design.md](../patterns/frontend/anti-ai-slop-design.md) | Pattern: Contextual anti-AI-slop design | patterns | 4792 | 2026-08-10 | active | internal |
 | [patterns/frontend/astro-react-island-animated-hero.md](../patterns/frontend/astro-react-island-animated-hero.md) | Pattern: Анимированный hero как React-остров в Astro | pattern | 4351 | 2026-06-29 | active | internal |
 | [patterns/frontend/cyrillic-self-host-fonts.md](../patterns/frontend/cyrillic-self-host-fonts.md) | Pattern: Cyrillic / self-host fonts | patterns | 3927 | 2026-06-19 | active | internal |
 | [patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md](../patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md) | Pattern: Fixed overlays vs backdrop-filter containing block | patterns | 4002 | 2026-06-08 | active | internal |
 | [patterns/frontend/form-validation-boundary.md](../patterns/frontend/form-validation-boundary.md) | Pattern: Form validation boundary | patterns | 999 | 2026-05-24 | active | internal |
 | [patterns/frontend/full-height-first-screen.md](../patterns/frontend/full-height-first-screen.md) | Pattern: Full-height first screen (контроль сгиба) | pattern | 4560 | 2026-06-29 | active | internal |
+| [patterns/frontend/hero-video-delivery.md](../patterns/frontend/hero-video-delivery.md) | Hero video delivery | pattern | 2179 | 2026-08-10 | active | internal |
 | [patterns/frontend/layout-archetypes.md](../patterns/frontend/layout-archetypes.md) | Pattern: Layout archetypes | pattern | 5760 | 2026-07-02 | active | internal |
 | [patterns/frontend/lead-form-without-backend.md](../patterns/frontend/lead-form-without-backend.md) | Pattern: форма заявки без подключённого канала не должна терять лиды | patterns | 1710 | 2026-07-28 | active | internal |
 | [patterns/frontend/localstorage-mini-crm.md](../patterns/frontend/localstorage-mini-crm.md) | Pattern: LocalStorage mini-CRM (клиентский CRUD без бэкенда) | pattern | 3891 | 2026-06-11 | active | internal |
@@ -286,7 +289,7 @@ source_priority: "internal"
 | [prompts/deploy.md](../prompts/deploy.md) | Prompt: deploy | prompt | 2483 | 2026-05-24 | active | internal |
 | [prompts/design-architecture.md](../prompts/design-architecture.md) | Prompt: design architecture | prompt | 2695 | 2026-05-24 | active | internal |
 | [prompts/design-database.md](../prompts/design-database.md) | Prompt: design database | prompt | 2592 | 2026-05-24 | active | internal |
-| [prompts/design-direction-brief.md](../prompts/design-direction-brief.md) | Prompt: design direction brief | prompt | 6656 | 2026-06-22 | active | internal |
+| [prompts/design-direction-brief.md](../prompts/design-direction-brief.md) | Prompt: design direction brief | prompt | 2676 | 2026-08-10 | active | internal |
 | [prompts/discovery-interview.md](../prompts/discovery-interview.md) | Prompt: discovery interview | prompt | 2734 | 2026-05-24 | active | internal |
 | [prompts/frontend-audit.md](../prompts/frontend-audit.md) | Prompt: frontend audit | prompt | 2304 | 2026-05-24 | active | internal |
 | [prompts/implement-backend.md](../prompts/implement-backend.md) | Prompt: implement backend | prompt | 2496 | 2026-05-24 | active | internal |

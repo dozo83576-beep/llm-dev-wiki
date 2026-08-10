@@ -27,6 +27,8 @@ def test_preflight_exposes_both_router_axes():
     assert payload["recommendedDeliveryProfile"] == "public-fullstack"
     assert payload["supportingGuides"] == ["shopify-hydrogen", "headless-commerce"]
     assert "docs/13-playbooks/ecommerce.md" in payload["requiredWikiDocs"]
+    assert payload["routeMode"] == "full-pipeline"
+    assert payload["routeReasons"]
 
 
 def test_api_only_and_ai_rag_are_recognized():
@@ -44,6 +46,29 @@ def test_landing_audit_command_is_read_only(tmp_path):
     assert "site-audit.ps1 -Url http://localhost:3000" in payload["siteAuditCommand"]
     assert "-Routes /pricing,/contact" in payload["siteAuditCommand"]
     assert not (tmp_path / "site-audit-report.json").exists()
+
+
+def test_static_landing_uses_direct_route_without_pipeline_status():
+    payload = preflight_json(
+        "Простой статический лендинг на HTML и CSS, без backend, CMS, оплаты и авторизации"
+    )
+    assert payload["status"] == "ready"
+    assert payload["recommendedPlaybook"] == "landing"
+    assert payload["routeMode"] == "direct"
+    assert "_pipeline-status.md" not in " ".join(payload["nextSteps"])
+
+
+def test_local_page_edit_uses_direct_route_even_without_product_playbook():
+    payload = preflight_json("Поправить текст и отступы в hero-блоке существующей страницы")
+    assert payload["status"] == "ready"
+    assert payload["routeMode"] == "direct"
+    assert payload["routeReasons"]
+
+
+def test_auth_and_payment_require_full_pipeline():
+    payload = preflight_json("Новый SaaS: регистрация, роли, PostgreSQL и платежи")
+    assert payload["routeMode"] == "full-pipeline"
+    assert any("payment" in reason or "auth" in reason for reason in payload["routeReasons"])
 
 
 def test_generic_request_fails_when_requested():

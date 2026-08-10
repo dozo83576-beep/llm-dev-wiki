@@ -1,7 +1,7 @@
 interface:
   display_name: "Site Frontend"
   short_description: "Реализация UI: маршруты, формы, a11y"
-  default_prompt: "Use $site-frontend to implement UI on the chosen stack and design tokens."
+  default_prompt: "Use $site-frontend for this explicit phase or the active full pipeline; preserve accepted contracts and produce browser-backed _frontend-smoke.md."
 
 policy:
   allow_implicit_invocation: false

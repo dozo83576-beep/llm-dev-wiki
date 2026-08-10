@@ -127,6 +127,8 @@ function Test-Contract {
     }
 
     $phaseIds = @($phases.id)
+    $phaseNumbers = @{}
+    foreach ($phase in $phases) { $phaseNumbers[[string]$phase.id] = [int]$phase.number }
     for ($index = 0; $index -lt $phases.Count; $index++) {
         if ($phases[$index].number -ne ($index + 1)) {
             Add-Failure $Failures "Pipeline contract phase numbering must be contiguous at $($phases[$index].id)."
@@ -134,6 +136,10 @@ function Test-Contract {
         foreach ($dependency in @($phases[$index].dependsOn)) {
             if ($phaseIds -notcontains $dependency) {
                 Add-Failure $Failures "Pipeline contract phase $($phases[$index].id) has unknown dependency: $dependency"
+                continue
+            }
+            if ($phaseNumbers[[string]$dependency] -ge [int]$phases[$index].number) {
+                Add-Failure $Failures "Pipeline contract phase $($phases[$index].id) depends on same or future phase: $dependency"
             }
         }
     }
@@ -384,14 +390,25 @@ if ($null -ne $contract) {
     }
     foreach ($document in @(
         @{ Name = "build-modern-site SKILL.md"; Text = $buildSkill },
-        @{ Name = "UserPromptSubmit hook"; Text = $hook },
-        @{ Name = "build-modern-site openai.yaml"; Text = $openAiYaml }
+        @{ Name = "UserPromptSubmit hook"; Text = $hook }
     )) {
         if ($document.Text -and -not $document.Text.Contains("site-pipeline-map.md")) {
             Add-Failure $failures "$($document.Name) must reference site-pipeline-map.md"
         }
-        if ($document.Text -and -not ($document.Text -match "17\s+фаз|17 phases")) {
-            Add-Failure $failures "$($document.Name) must state 17 phases."
+    }
+    foreach ($document in @(
+        @{ Name = "build-modern-site SKILL.md"; Text = $buildSkill },
+        @{ Name = "UserPromptSubmit hook"; Text = $hook },
+        @{ Name = "build-modern-site openai.yaml"; Text = $openAiYaml }
+    )) {
+        if ($document.Text -and -not $document.Text.Contains("direct")) {
+            Add-Failure $failures "$($document.Name) must preserve direct routing."
+        }
+        if ($document.Text -and -not $document.Text.Contains("full-pipeline")) {
+            Add-Failure $failures "$($document.Name) must preserve full-pipeline routing."
+        }
+        if ($document.Text -and ($document.Text -match "все\s+17\s+фаз|all\s+17\s+phases")) {
+            Add-Failure $failures "$($document.Name) must not require every pipeline phase."
         }
     }
     if ($buildSkill -and -not $buildSkill.Contains("site-pipeline-contract.json")) {

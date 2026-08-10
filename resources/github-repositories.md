@@ -28,5 +28,5 @@ source_priority: "mixed"
 (single source); сами репозитории — внешняя зависимость, обновляются upstream.
 
 - [emilkowalski/skill](https://github.com/emilkowalski/skill) — Emil Kowalski (Sonner/Vaul), motion/анимации. Установка: `npx skills add emilkowalski/skill`. Конспект → [docs/02-frontend/Motion.md](../docs/02-frontend/Motion.md). Проверено 2026-06-20.
-- [pbakaus/impeccable](https://github.com/pbakaus/impeccable) — anti-slop дизайн + словарь команд (polish/audit/critique/distill). Принципы вынесены в [patterns/frontend/anti-ai-slop-design.md](../patterns/frontend/anti-ai-slop-design.md) и site-design. Проверено 2026-06-20.
-- [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) — анти-повторяемость, «дёшево vs дорого». Принципы вынесены в [anti-ai-slop-design.md](../patterns/frontend/anti-ai-slop-design.md). Проверено 2026-06-20.
+- [pbakaus/impeccable](https://github.com/pbakaus/impeccable) — audited 2026-08-10: не устанавливается из-за широкого trigger, дублирующих commands/hooks и слабой добавочной ценности detector в локальном пилоте. Контекстные surface modes и bounded visual QA вынесены в [anti-ai-slop pattern](../patterns/frontend/anti-ai-slop-design.md).
+- [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) — audited 2026-08-10: v2 experimental и строгие варианты не устанавливаются. Качественные оси variance/density/motion и preservation при redesign вынесены в [anti-ai-slop pattern](../patterns/frontend/anti-ai-slop-design.md) без AIDA, GSAP и стилевых квот.

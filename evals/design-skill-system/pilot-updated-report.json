@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-08-10T04:59:20.173608+00:00",
+  "offline": {
+    "caseCount": 8,
+    "pilotCaseCount": 2,
+    "passed": true
+  },
+  "live": {
+    "requested": true,
+    "allCases": false,
+    "results": [
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "updated",
+        "case": "hero-direct",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility"
+          ],
+          "rationale": "Локальное усиление hero существующего статического лендинга выполняется нативно с сохранением бренда, стека, остальной страницы и применимого поведения."
+        }
+      },
+      {
+        "engine": "codex",
+        "model": "gpt-5.6-sol",
+        "mode": "updated",
+        "case": "complex-full-site",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "full-pipeline",
+          "designOwner": "site-design",
+          "useExternalTool": false,
+          "requiredArtifact": "DESIGN-DIRECTION.md",
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "responsive",
+            "accessibility",
+            "real-data",
+            "cyrillic-license",
+            "states",
+            "evidence",
+            "browser-evidence"
+          ],
+          "rationale": "Сложный новый сайт с ролями, кабинетами, CMS, платежами и серверными интеграциями требует полного маршрута; site-design фиксирует локальный дизайн-артефакт, а решения и реализация остаются за native model."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "hero-direct",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "direct",
+          "designOwner": "native-model",
+          "useExternalTool": false,
+          "requiredArtifact": null,
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": true,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "states",
+            "browser-evidence"
+          ],
+          "rationale": "Focused hero-only edit on an existing static site; no pipeline status file, so direct routing with native design ownership; rest of page and brand must stay untouched."
+        }
+      },
+      {
+        "engine": "claude",
+        "model": "claude-sonnet-5",
+        "mode": "updated",
+        "case": "complex-full-site",
+        "passed": true,
+        "failures": [],
+        "result": {
+          "routeMode": "full-pipeline",
+          "designOwner": "site-design",
+          "useExternalTool": false,
+          "requiredArtifact": "DESIGN-DIRECTION.md",
+          "blockedWithoutHelper": false,
+          "forcedDefaults": [],
+          "preserveIncumbent": false,
+          "gates": [
+            "brand",
+            "responsive",
+            "accessibility",
+            "real-data",
+            "cyrillic-license",
+            "states",
+            "evidence",
+            "browser-evidence"
+          ],
+          "rationale": "Новый комплексный сервис с ролями, CMS, платежами и серверными интеграциями требует полного маршрута с артефактом направления и всеми применимыми gates."
+        }
+      }
+    ],
+    "failures": [],
+    "updatedGatePassed": true
+  }
+}

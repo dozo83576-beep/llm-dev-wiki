@@ -1,6 +1,6 @@
 {
-  "chunk_count": 2675,
-  "corpus_hash": "2c1d0715033226b8a363090a5cdf61d59d960a5b68e0a4925884b23dea3879c6",
+  "chunk_count": 2662,
+  "corpus_hash": "c97c1fe357a806a77b6e0bddab81f872e7a06d59feb34c775e5043bba4f78b0b",
   "embedding_model": null,
   "files_indexed": [
     "case-studies/failures/2026-05-24-client-only-permission-check.md",
@@ -47,6 +47,7 @@
     "docs/02-frontend/Accessibility.md",
     "docs/02-frontend/Analytics.md",
     "docs/02-frontend/Angular-SSR.md",
+    "docs/02-frontend/Animated-sites-and-hero-media.md",
     "docs/02-frontend/Astro.md",
     "docs/02-frontend/CMS-content.md",
     "docs/02-frontend/Color-palettes.md",
@@ -153,12 +154,12 @@
     "docs/07-mcp-and-ai-tools/Agent-self-improvement.md",
     "docs/07-mcp-and-ai-tools/Agent-workflows.md",
     "docs/07-mcp-and-ai-tools/Claude-Code-best-practices.md",
-    "docs/07-mcp-and-ai-tools/Claude-Design-and-DesignSync.md",
     "docs/07-mcp-and-ai-tools/Embeddings.md",
     "docs/07-mcp-and-ai-tools/Evaluation.md",
     "docs/07-mcp-and-ai-tools/External-design-skills.md",
     "docs/07-mcp-and-ai-tools/External-site-skills.md",
     "docs/07-mcp-and-ai-tools/MCP-overview.md",
+    "docs/07-mcp-and-ai-tools/Model-capability-boundaries.md",
     "docs/07-mcp-and-ai-tools/OpenAI-API.md",
     "docs/07-mcp-and-ai-tools/Prompt-engineering.md",
     "docs/07-mcp-and-ai-tools/Prompt-injection.md",
@@ -274,6 +275,7 @@
     "patterns/frontend/fixed-overlay-backdrop-filter-containing-block.md",
     "patterns/frontend/form-validation-boundary.md",
     "patterns/frontend/full-height-first-screen.md",
+    "patterns/frontend/hero-video-delivery.md",
     "patterns/frontend/layout-archetypes.md",
     "patterns/frontend/lead-form-without-backend.md",
     "patterns/frontend/localstorage-mini-crm.md",
@@ -325,7 +327,7 @@
     "stacks/nextjs-fullstack.md",
     "stacks/react-spa-api.md"
   ],
-  "generated_at": "2026-07-28T18:23:10Z",
+  "generated_at": "2026-08-10T08:12:28Z",
   "has_vectors": false,
   "retrieval_mode": "offline-text"
 }

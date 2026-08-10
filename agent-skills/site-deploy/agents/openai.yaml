@@ -1,7 +1,7 @@
 interface:
   display_name: "Site Deploy"
   short_description: "Релиз: env, миграции, rollback, monitoring"
-  default_prompt: "Use $site-deploy to ship safely with rollback-first and monitoring."
+  default_prompt: "Use $site-deploy for this explicit phase or the active full pipeline; verify preview first and require approval for production actions."
 
 policy:
   allow_implicit_invocation: false

@@ -1,7 +1,7 @@
 ---
 title: "Playbook: Landing"
 category: "playbooks"
-updated: "2026-06-22"
+updated: "2026-08-10"
 status: "active"
 tags: ["landing", "seo", "conversion", "marketing"]
 source_priority: "internal"
@@ -32,13 +32,15 @@ source_priority: "internal"
 1. **Offer**: кому продаём, какую проблему решаем, какой главный CTA.
 2. **Content outline**: hero, social proof, features, objections, FAQ, finally CTA.
 3. **Copy first**: пишем тексты, потом дизайн — а не наоборот.
-4. **Design direction**: перебить дефолтный house style модели (кремовый/serif), записать `DESIGN-DIRECTION.md` по [design-direction-brief](../../prompts/design-direction-brief.md), показать 3–4 направления (`фон hex / акцент hex / шрифт`) и дождаться выбора до UI. Приёмы — [anti-ai-slop design](../../patterns/frontend/anti-ai-slop-design.md).
-5. **Competitor outliers**: перед UI быстро сравнить 3–5 сильных и 3–5 слабых сайтов ниши. Зафиксировать, что берём из лидеров и какие анти-паттерны избегаем.
+4. **Design direction**: сформулировать одно направление по аудитории, задаче, бренду и контенту. `DESIGN-DIRECTION.md` обязателен только для полного маршрута или явного вызова; альтернативы нужны при материальной неопределённости. Приёмы — [contextual anti-ai-slop design](../../patterns/frontend/anti-ai-slop-design.md).
+5. **Competitor evidence**: если направление зависит от актуального рынка, сравнить достаточную выборку сильных и слабых сайтов ниши. Зафиксировать применимые принципы и то, чего нельзя повторять; не выполнять поиск ради квоты.
 6. **SEO**: title, description, OG tags, structured data (Product/Article/FAQ), правильный canonical.
 7. **UI**: responsive, mobile-first, fast first viewport (LCP < 2s), semantic text tokens для светлых и темных секций.
+   Если brief требует motion или hero-video, выбери минимально достаточный interaction tier по
+   [animated sites and hero media](../02-frontend/Animated-sites-and-hero-media.md); отсутствие анимации допустимо.
 8. **Forms / chat widget**: zod / pydantic валидация, honeypot + (опционально) Turnstile/hCaptcha, double opt-in для email, storage в CRM/Sheets/Notion или MVP-уведомление в Telegram/Slack через serverless endpoint. Если нужен AI-консультант, проектируй его по [AI chat widget](../07-mcp-and-ai-tools/AI-chat-widget.md) и держи provider key только на backend.
 9. **Analytics**: page view, scroll depth, CTA click, form submit, conversion funnel.
-10. **Visual/a11y smoke**: после переноса дизайна на реальные секции проверить FAQ, формы, карточки с фото и CTA на computed color + contrast ratio.
+10. **Visual/a11y smoke**: проверить готовый render на desktop/mobile одним пакетом, исправить подтверждённые проблемы и сделать подтверждающий smoke; расширять цикл только по evidence или риску.
 11. **Performance**: image optimization (WebP/AVIF), font-display swap, минимальный JS.
 12. **A/B test plan** (опционально): один тест за раз, понятная метрика.
 
